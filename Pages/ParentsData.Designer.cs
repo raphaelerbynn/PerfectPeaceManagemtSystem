@@ -71,6 +71,7 @@
             this.id.DataPropertyName = "parent_id";
             this.id.HeaderText = "ID";
             this.id.Name = "id";
+            this.id.ReadOnly = true;
             this.id.Width = 43;
             // 
             // name
@@ -79,12 +80,15 @@
             this.name.DataPropertyName = "name";
             this.name.HeaderText = "NAME";
             this.name.Name = "name";
+            this.name.ReadOnly = true;
             // 
             // child
             // 
             this.child.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.child.DataPropertyName = "name";
             this.child.HeaderText = "CHILD";
             this.child.Name = "child";
+            this.child.ReadOnly = true;
             this.child.Width = 64;
             // 
             // relationship
@@ -93,6 +97,7 @@
             this.relationship.DataPropertyName = "relationship";
             this.relationship.HeaderText = "RELATIONSHIP";
             this.relationship.Name = "relationship";
+            this.relationship.ReadOnly = true;
             this.relationship.Width = 111;
             // 
             // contact
@@ -101,6 +106,7 @@
             this.contact.DataPropertyName = "contact";
             this.contact.HeaderText = "CONTACT";
             this.contact.Name = "contact";
+            this.contact.ReadOnly = true;
             this.contact.Width = 83;
             // 
             // view
@@ -108,6 +114,7 @@
             this.view.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.view.HeaderText = "";
             this.view.Name = "view";
+            this.view.ReadOnly = true;
             this.view.Width = 5;
             // 
             // edit
@@ -115,6 +122,7 @@
             this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.edit.HeaderText = "";
             this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
             this.edit.Width = 5;
             // 
             // delete
@@ -122,6 +130,7 @@
             this.delete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.delete.HeaderText = "";
             this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
             this.delete.Width = 5;
             // 
             // message
@@ -129,6 +138,7 @@
             this.message.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.message.HeaderText = "";
             this.message.Name = "message";
+            this.message.ReadOnly = true;
             this.message.Width = 5;
             // 
             // ParentsData

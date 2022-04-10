@@ -19,9 +19,11 @@ namespace Perfect_Peace_System.Pages
         {
             Person parent = new Parent();
             InitializeComponent();
+            
             parent.show_data(showParentDataView);
             columnArrangement();
             getChild();
+
         }
 
         private void columnArrangement()
@@ -67,18 +69,19 @@ namespace Perfect_Peace_System.Pages
                 foreach (DataGridViewRow item in showParentDataView.Rows)
                 {
                     string id = item.Cells["id"].Value.ToString();
+                    item.Cells["child"].Value = "";
 
                     query = "SELECT [f_name]+' '+[l_name] AS name FROM Student WHERE parent_id='" + id + "'";
                     SqlDataReader reader = DbClient.query_reader(query);
+                    showParentDataView.ReadOnly = false;
                     while (reader.Read())
                     {
                         if (reader.IsDBNull(0)) { continue; }
-                        item.Cells["child"].Value = 10;
-                        Console.WriteLine(reader["name"].ToString());
+                        item.Cells["child"].Value = reader["name"].ToString();
                     }
                     reader.Close();
+                    showParentDataView.ReadOnly = true;
                 }
-
 
             }catch (Exception ex) { 
                 Console.WriteLine(ex.Message);
