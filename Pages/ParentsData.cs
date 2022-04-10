@@ -21,6 +21,7 @@ namespace Perfect_Peace_System.Pages
             InitializeComponent();
             parent.show_data(showParentDataView);
             columnArrangement();
+            getChild();
         }
 
         private void columnArrangement()
@@ -36,17 +37,53 @@ namespace Perfect_Peace_System.Pages
             showParentDataView.Columns["view"].DisplayIndex = 6;
             showParentDataView.Columns["edit"].DisplayIndex = 7;
             showParentDataView.Columns["delete"].DisplayIndex = 8;
+            
+
         }
 
         private void getChild()
         {
-            query = "SELECT [f_name]' '[l_name] AS name FROM Student WHERE parent_id='"+id+"'";
-            SqlDataReader reader = DbClient.query_reader(query);
-            while (reader.Read())
+            try
             {
+                List<string> children = new List<string>();
+                List<string> parent_ids = new List<string>();
+                /*foreach (DataGridViewRow item in showParentDataView.Rows)
+                {
+                    parent_ids.Add(item.Cells["id"].Value.ToString());
+                }
 
+                foreach (string id_ in parent_ids)
+                {
+                    query = "SELECT [f_name]+' '+[l_name] AS name FROM Student WHERE parent_id='" + id_ + "'";
+                    SqlDataReader reader = DbClient.query_reader(query);
+                    while (reader.Read())
+                    {   
+                        if (reader.IsDBNull(0)) { continue; }
+                        children.Add(reader["name"].ToString());
+                    }
+                    reader.Close();
+                } */
+
+                foreach (DataGridViewRow item in showParentDataView.Rows)
+                {
+                    string id = item.Cells["id"].Value.ToString();
+
+                    query = "SELECT [f_name]+' '+[l_name] AS name FROM Student WHERE parent_id='" + id + "'";
+                    SqlDataReader reader = DbClient.query_reader(query);
+                    while (reader.Read())
+                    {
+                        if (reader.IsDBNull(0)) { continue; }
+                        item.Cells["child"].Value = 10;
+                        Console.WriteLine(reader["name"].ToString());
+                    }
+                    reader.Close();
+                }
+
+
+            }catch (Exception ex) { 
+                Console.WriteLine(ex.Message);
             }
-
+            
         }
 
 
