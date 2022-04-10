@@ -52,7 +52,7 @@ namespace Perfect_Peace_System
 
         public override void show_data(DataGridView dataGrid)
         {
-            query = "SELECT parent_id,contact, relationship, [f_name]+' '+[l_name] AS name FROM Parent";
+            query = "SELECT parent_id,contact,gender,relationship, [f_name]+' '+[l_name] AS name FROM Parent";
             DbClient.dataGridFill(dataGrid, query);
         }
 

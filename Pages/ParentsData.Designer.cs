@@ -85,7 +85,7 @@
             // child
             // 
             this.child.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.child.DataPropertyName = "name";
+            this.child.DataPropertyName = "gender";
             this.child.HeaderText = "CHILD";
             this.child.Name = "child";
             this.child.ReadOnly = true;

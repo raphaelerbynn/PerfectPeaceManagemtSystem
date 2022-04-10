@@ -47,8 +47,8 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
-                List<string> children = new List<string>();
-                List<string> parent_ids = new List<string>();
+                //List<string> children = new List<string>();
+                //List<string> parent_ids = new List<string>();
                 /*foreach (DataGridViewRow item in showParentDataView.Rows)
                 {
                     parent_ids.Add(item.Cells["id"].Value.ToString());
