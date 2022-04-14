@@ -30,11 +30,13 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.classDataView = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacher_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.section = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.capacity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.teacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viewStudents = new System.Windows.Forms.DataGridViewImageColumn();
+            this.view = new System.Windows.Forms.DataGridViewImageColumn();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1.SuspendLayout();
@@ -56,11 +58,13 @@
             this.classDataView.AllowUserToDeleteRows = false;
             this.classDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.classDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.teacher_id,
             this.name,
             this.section,
             this.capacity,
             this.teacher,
-            this.viewStudents,
+            this.view,
             this.edit,
             this.delete});
             this.classDataView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -70,6 +74,23 @@
             this.classDataView.RowHeadersVisible = false;
             this.classDataView.Size = new System.Drawing.Size(800, 450);
             this.classDataView.TabIndex = 0;
+            this.classDataView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.classDataView_DataError);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "class_id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // teacher_id
+            // 
+            this.teacher_id.DataPropertyName = "teacher_id";
+            this.teacher_id.HeaderText = "TEACHER ID";
+            this.teacher_id.Name = "teacher_id";
+            this.teacher_id.ReadOnly = true;
+            this.teacher_id.Visible = false;
             // 
             // name
             // 
@@ -98,17 +119,18 @@
             // teacher
             // 
             this.teacher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.teacher.DataPropertyName = "teacher";
             this.teacher.HeaderText = "TEACHER";
             this.teacher.Name = "teacher";
             this.teacher.ReadOnly = true;
             // 
-            // viewStudents
+            // view
             // 
-            this.viewStudents.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.viewStudents.HeaderText = "";
-            this.viewStudents.Name = "viewStudents";
-            this.viewStudents.ReadOnly = true;
-            this.viewStudents.Width = 5;
+            this.view.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.view.HeaderText = "";
+            this.view.Name = "view";
+            this.view.ReadOnly = true;
+            this.view.Width = 5;
             // 
             // edit
             // 
@@ -144,11 +166,13 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView classDataView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teacher_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn section;
         private System.Windows.Forms.DataGridViewTextBoxColumn capacity;
         private System.Windows.Forms.DataGridViewTextBoxColumn teacher;
-        private System.Windows.Forms.DataGridViewImageColumn viewStudents;
+        private System.Windows.Forms.DataGridViewImageColumn view;
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;
     }
