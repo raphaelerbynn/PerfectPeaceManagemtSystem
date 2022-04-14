@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.teacherDataGridView = new System.Windows.Forms.DataGridView();
+            this.showDataPanel = new System.Windows.Forms.Panel();
             this.teacher_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._class = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.view = new System.Windows.Forms.DataGridViewImageColumn();
+            this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.teacherDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -51,8 +52,8 @@
             this.phone,
             this.email,
             this._class,
-            this.edit,
             this.view,
+            this.edit,
             this.delete});
             this.teacherDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.teacherDataGridView.Location = new System.Drawing.Point(0, 0);
@@ -62,6 +63,14 @@
             this.teacherDataGridView.Size = new System.Drawing.Size(800, 450);
             this.teacherDataGridView.TabIndex = 0;
             this.teacherDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.teacherDataGridView_CellContentClick);
+            // 
+            // showDataPanel
+            // 
+            this.showDataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.showDataPanel.Location = new System.Drawing.Point(0, 0);
+            this.showDataPanel.Name = "showDataPanel";
+            this.showDataPanel.Size = new System.Drawing.Size(800, 450);
+            this.showDataPanel.TabIndex = 1;
             // 
             // teacher_id
             // 
@@ -107,14 +116,6 @@
             this._class.ReadOnly = true;
             this._class.Width = 66;
             // 
-            // edit
-            // 
-            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.edit.HeaderText = "";
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Width = 5;
-            // 
             // view
             // 
             this.view.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -122,6 +123,14 @@
             this.view.Name = "view";
             this.view.ReadOnly = true;
             this.view.Width = 5;
+            // 
+            // edit
+            // 
+            this.edit.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.edit.HeaderText = "";
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Width = 5;
             // 
             // delete
             // 
@@ -137,8 +146,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.teacherDataGridView);
+            this.Controls.Add(this.showDataPanel);
             this.Name = "TeacherData";
             this.Text = "TeacherData";
+            this.Load += new System.EventHandler(this.TeacherData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.teacherDataGridView)).EndInit();
             this.ResumeLayout(false);
 
@@ -147,13 +158,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView teacherDataGridView;
+        private System.Windows.Forms.Panel showDataPanel;
         private System.Windows.Forms.DataGridViewTextBoxColumn teacher_id;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn phone;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn _class;
-        private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn view;
+        private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;
     }
 }

@@ -12,8 +12,10 @@ namespace Perfect_Peace_System.Pages
 {
     public partial class TeacherData : Form
     {
-        private string id;
+        private static string id;
         private Teacher teacher;
+
+        OpenNewPage openNewPage = new OpenNewPage();
 
         public TeacherData()
         {
@@ -69,16 +71,28 @@ namespace Perfect_Peace_System.Pages
 
                 }
 
-                if (teacherDataGridView.Columns[e.ColumnIndex].Name == "edit")
+                if (teacherDataGridView.Columns[e.ColumnIndex].Name == "edit" && e.RowIndex >= 0)
                 {
                     //update data
-                    //openNewPage.OpenChildForm(new Pages.UpdateStudent(), showDataPanel);
+                    Console.WriteLine("Test");
+                    teacherDataGridView.Visible = false;
+                    openNewPage.OpenChildForm(new Pages.UpdateTeacher(), showDataPanel);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public static string getIdFromSelectedRow()
+        {
+            return id;
+        }
+
+        private void TeacherData_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Perfect_Peace_System.Pages
     public partial class UpdateStudent : Form
     {
         string query;
-        string id = StudentDataDisplay.getIdFromSelectedRow();
+        private string id = StudentDataDisplay.getIdFromSelectedRow();
         OpenNewPage openNewPage = new OpenNewPage();
 
         public UpdateStudent()
@@ -85,6 +85,11 @@ namespace Perfect_Peace_System.Pages
             MessageBox.Show("Student updated successfully");
             
             
+        }
+
+        private void mnameTb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

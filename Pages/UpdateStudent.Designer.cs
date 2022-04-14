@@ -129,6 +129,7 @@
             this.mnameTb.Name = "mnameTb";
             this.mnameTb.Size = new System.Drawing.Size(659, 20);
             this.mnameTb.TabIndex = 10;
+            this.mnameTb.TextChanged += new System.EventHandler(this.mnameTb_TextChanged);
             // 
             // label5
             // 
