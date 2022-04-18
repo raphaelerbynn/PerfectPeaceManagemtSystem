@@ -42,6 +42,8 @@ namespace Perfect_Peace_System
             this.dob = dob;
             this._class = _class;
         }
+        
+        
 
 
 

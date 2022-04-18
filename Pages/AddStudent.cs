@@ -13,6 +13,8 @@ namespace Perfect_Peace_System.Pages
     public partial class AddStudent : Form
     {
         OpenNewPage openNewPage = new OpenNewPage();
+        ClassRoom classroom = new ClassRoom();
+
         string query;
 
         public AddStudent()
@@ -64,10 +66,28 @@ namespace Perfect_Peace_System.Pages
                 }
                 else
                 {
-                    person.save();
-                    MessageBox.Show("Student Saved");
-                    clearFeilds();
-                    openNewPage.OpenChildForm(new Pages.AddParent(), registerPanel);
+                    if (classCb.SelectedIndex > -1)
+                    {
+                        if (classroom.maxCapacity(classCb.Text) > classroom.curCapacity(classCb.Text))
+                        {
+                            Console.WriteLine("Maximum capacity no reach");
+                            Console.WriteLine("Max: " + classroom.maxCapacity(classCb.Text));
+                            Console.WriteLine("Current: " + classroom.curCapacity(classCb.Text));
+                        }
+                        else
+                        {
+                            MessageBox.Show("Class full!!!");
+                        }
+                    }
+                    else
+                    {
+                        person.save();
+                        MessageBox.Show("Student Saved");
+                        clearFeilds();
+                        openNewPage.OpenChildForm(new Pages.AddParent(), registerPanel);
+                    }
+
+                    
                 }
             }
             catch (Exception ex)
@@ -76,6 +96,15 @@ namespace Perfect_Peace_System.Pages
             }
 
         }
+
+
+
+
+
+
+
+
+
 
         private void classCb_SelectedIndexChanged(object sender, EventArgs e)
         {

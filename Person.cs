@@ -16,6 +16,7 @@ namespace Perfect_Peace_System
         protected DateTime dob;
         protected string address;
         protected string gender;
+        protected DateTime _dateUpdated;
         protected DateTime _date_registered;
 
         public Person()

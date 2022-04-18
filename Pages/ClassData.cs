@@ -78,10 +78,7 @@ namespace Perfect_Peace_System.Pages
             e.Cancel = true;
         }
 
-        private void maxCapacity()
-        {
-
-        }
+        
     }
 
 

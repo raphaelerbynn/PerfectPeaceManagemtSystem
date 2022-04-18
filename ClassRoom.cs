@@ -33,5 +33,21 @@ namespace Perfect_Peace_System
             string query = "SELECT class_id, name, section, capacity, teacher_id, CAST(teacher_id AS VARCHAR(50)) AS teacher FROM Class";
             DbClient.dataGridFill(dataGridView, query);
         }
+
+        public int maxCapacity(string name)
+        {
+            string query = "SELECT capacity FROM Class WHERE name='"+name+"'";
+            int capacity = int.Parse(DbClient.query_executeScaler(query));
+
+            return capacity;
+        }
+
+        public int curCapacity(string name)
+        {
+            string query = "SELECT COUNT(*) FROM Student WHERE class='" + name + "'";
+            int capacity = int.Parse(DbClient.query_executeScaler(query));
+
+            return capacity;
+        }
     }
 }

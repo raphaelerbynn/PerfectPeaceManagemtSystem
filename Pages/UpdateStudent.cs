@@ -15,11 +15,13 @@ namespace Perfect_Peace_System.Pages
         string query;
         private string id = StudentDataDisplay.getIdFromSelectedRow();
         OpenNewPage openNewPage = new OpenNewPage();
+        ClassRoom classroom = new ClassRoom();
 
         public UpdateStudent()
         {
             InitializeComponent();
             fillFields();
+            Console.WriteLine("Current: " + classroom.curCapacity("!A"));
         }
 
         private void fillFields()
@@ -80,11 +82,31 @@ namespace Perfect_Peace_System.Pages
 
         private void updateStntBnt_Click(object sender, EventArgs e)
         {
-            Student student = new Student(DateTime.Parse(dobPicker.Text), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
-            student.update(id);
-            MessageBox.Show("Student updated successfully");
             
-            
+            if (classCb.SelectedIndex > -1)
+            {
+                if (classroom.maxCapacity(classCb.Text) > classroom.curCapacity(classCb.Text))
+                {
+                    Console.WriteLine("Maximum capacity no reach");
+                    Console.WriteLine("Max: " + classroom.maxCapacity(classCb.Text));
+                    Console.WriteLine("Current: " + classroom.curCapacity(classCb.Text));
+
+                    Student student = new Student(DateTime.Parse(dobPicker.Text), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
+                    student.update(id);
+                    MessageBox.Show("Student updated successfully");
+                }
+                else
+                {
+                    MessageBox.Show("Class full!!!");
+                }
+            }
+            else
+            {
+                Student student = new Student(DateTime.Parse(dobPicker.Text), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
+                student.update(id);
+                MessageBox.Show("Student updated successfully");
+
+            }
         }
 
         private void mnameTb_TextChanged(object sender, EventArgs e)
