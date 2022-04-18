@@ -43,6 +43,15 @@ namespace Perfect_Peace_System.Pages
 
         }
 
+        private string getRadioBtnValue()
+        {
+            if (femaleRadio.Checked == true)
+            {
+                return "Female";
+            }
+            return "Male";
+        }
+
         private void clearFeildBtn_Click(object sender, EventArgs e)
         {
 
@@ -50,7 +59,17 @@ namespace Perfect_Peace_System.Pages
 
         private void updateTeacherBnt_Click(object sender, EventArgs e)
         {
+            try
+            {
+                Teacher teacher = new Teacher(phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
+                teacher.update(id);
 
+                MessageBox.Show("Teacher Info Updated");
+             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         

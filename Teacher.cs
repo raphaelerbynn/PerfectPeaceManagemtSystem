@@ -50,7 +50,8 @@ namespace Perfect_Peace_System
 
         public override void update(string id)
         {
-            throw new NotImplementedException();
+            query = "UPDATE Teacher SET f_name='" + f_name + "', l_name='" + l_name + "', gender='" + gender + "', phone='" + phone + "', address='" + address + "', email='" + email + "', date_updated='" + DateTime.Now + "' WHERE teacher_id='" + id + "'";
+            DbClient.query_execute(query);
         }
     }
 }
