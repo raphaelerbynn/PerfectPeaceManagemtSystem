@@ -23,6 +23,7 @@ namespace Perfect_Peace_System.Pages
 
         private void fillFields()
         {
+            string _class = "";
             query = "SELECT * FROM Teacher WHERE teacher_id ='" + id + "'";
             System.Data.SqlClient.SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())
@@ -32,6 +33,8 @@ namespace Perfect_Peace_System.Pages
                 phoneTB.Text = reader["phone"].ToString();
                 emailTb.Text = reader["email"].ToString();
                 addressTb.Text = reader["address"].ToString();
+
+                _class = reader["class"].ToString();
                 
                 if (reader["gender"].ToString() == "Female")
                 {
@@ -40,6 +43,18 @@ namespace Perfect_Peace_System.Pages
                 maleRadio.Checked = true;
             }
             reader.Close();
+
+            query = "SELECT name FROM Class EXCEPT SELECT name FROM Class WHERE teacher_id IS NOT NULL";
+            DbClient.query_reader(classCb, query);
+            for (int i = 0; i < classCb.Items.Count; i++)
+            {
+                if (_class == classCb.Items[i].ToString())
+                {
+                    classCb.SelectedIndex = i;
+                    Console.WriteLine(i);
+                    break;
+                }
+            }
 
         }
 
@@ -61,7 +76,7 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
-                Teacher teacher = new Teacher(phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
+                Teacher teacher = new Teacher(classCb.Text, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
                 teacher.update(id);
 
                 MessageBox.Show("Teacher Info Updated");

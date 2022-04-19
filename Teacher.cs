@@ -11,6 +11,7 @@ namespace Perfect_Peace_System
     {
         private string phone;
         private string email;
+        private string _class;
 
         private string query;
 
@@ -27,6 +28,14 @@ namespace Perfect_Peace_System
         {
             this.phone = phone;
             this.email = email;
+        }
+        
+        public Teacher(string _class, string phone, string email, string f_name, string l_name, string address, string gender, DateTime _date_registered):
+            base(f_name, l_name, address, gender, _date_registered)
+        {
+            this.phone = phone;
+            this.email = email;
+            this._class = _class;
         }
 
         public override void delete(string id)
@@ -50,7 +59,7 @@ namespace Perfect_Peace_System
 
         public override void update(string id)
         {
-            query = "UPDATE Teacher SET f_name='" + f_name + "', l_name='" + l_name + "', gender='" + gender + "', phone='" + phone + "', address='" + address + "', email='" + email + "', date_updated='" + DateTime.Now + "' WHERE teacher_id='" + id + "'";
+            query = "UPDATE Teacher SET class='" + _class +"', f_name='" + f_name + "', l_name='" + l_name + "', gender='" + gender + "', phone='" + phone + "', address='" + address + "', email='" + email + "', date_updated='" + DateTime.Now + "' WHERE teacher_id='" + id + "'";
             DbClient.query_execute(query);
         }
     }

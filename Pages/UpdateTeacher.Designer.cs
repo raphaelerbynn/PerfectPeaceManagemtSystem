@@ -44,11 +44,13 @@
             this.addressTb = new System.Windows.Forms.TextBox();
             this.fnameTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.classCb = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.classCb);
             this.panel1.Controls.Add(this.emailTb);
             this.panel1.Controls.Add(this.phoneTB);
             this.panel1.Controls.Add(this.label5);
@@ -221,6 +223,15 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "First Name: *";
             // 
+            // classCb
+            // 
+            this.classCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.classCb.FormattingEnabled = true;
+            this.classCb.Location = new System.Drawing.Point(181, 384);
+            this.classCb.Name = "classCb";
+            this.classCb.Size = new System.Drawing.Size(659, 21);
+            this.classCb.TabIndex = 38;
+            // 
             // UpdateTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,5 +264,6 @@
         private System.Windows.Forms.TextBox addressTb;
         private System.Windows.Forms.TextBox fnameTb;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox classCb;
     }
 }
