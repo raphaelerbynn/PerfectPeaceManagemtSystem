@@ -73,6 +73,11 @@ namespace Perfect_Peace_System.Pages
                             Console.WriteLine("Maximum capacity no reach");
                             Console.WriteLine("Max: " + classroom.maxCapacity(classCb.Text));
                             Console.WriteLine("Current: " + classroom.curCapacity(classCb.Text));
+
+                            person.save();
+                            MessageBox.Show("Student Saved");
+                            clearFeilds();
+                            openNewPage.OpenChildForm(new Pages.AddParent(), registerPanel);
                         }
                         else
                         {

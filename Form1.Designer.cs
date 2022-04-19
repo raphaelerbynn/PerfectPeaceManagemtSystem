@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.settingsBtn = new System.Windows.Forms.Button();
+            this.reportBtn = new System.Windows.Forms.Button();
+            this.feesBtn = new System.Windows.Forms.Button();
             this.attendanceBtn = new System.Windows.Forms.Button();
             this.eventsBtn = new System.Windows.Forms.Button();
             this.parentsBtn = new System.Windows.Forms.Button();
@@ -40,9 +43,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.addStntBtn = new System.Windows.Forms.Button();
             this.panelView = new System.Windows.Forms.Panel();
-            this.feesBtn = new System.Windows.Forms.Button();
-            this.reportBtn = new System.Windows.Forms.Button();
-            this.settingsBtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +65,46 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(154, 627);
             this.panel1.TabIndex = 0;
+            // 
+            // settingsBtn
+            // 
+            this.settingsBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.settingsBtn.FlatAppearance.BorderSize = 0;
+            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.settingsBtn.ForeColor = System.Drawing.Color.White;
+            this.settingsBtn.Location = new System.Drawing.Point(0, 558);
+            this.settingsBtn.Name = "settingsBtn";
+            this.settingsBtn.Size = new System.Drawing.Size(154, 62);
+            this.settingsBtn.TabIndex = 10;
+            this.settingsBtn.Text = "General Settings";
+            this.settingsBtn.UseVisualStyleBackColor = true;
+            // 
+            // reportBtn
+            // 
+            this.reportBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.reportBtn.FlatAppearance.BorderSize = 0;
+            this.reportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reportBtn.ForeColor = System.Drawing.Color.White;
+            this.reportBtn.Location = new System.Drawing.Point(0, 496);
+            this.reportBtn.Name = "reportBtn";
+            this.reportBtn.Size = new System.Drawing.Size(154, 62);
+            this.reportBtn.TabIndex = 7;
+            this.reportBtn.Text = "Student Report";
+            this.reportBtn.UseVisualStyleBackColor = true;
+            // 
+            // feesBtn
+            // 
+            this.feesBtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.feesBtn.FlatAppearance.BorderSize = 0;
+            this.feesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.feesBtn.ForeColor = System.Drawing.Color.White;
+            this.feesBtn.Location = new System.Drawing.Point(0, 434);
+            this.feesBtn.Name = "feesBtn";
+            this.feesBtn.Size = new System.Drawing.Size(154, 62);
+            this.feesBtn.TabIndex = 8;
+            this.feesBtn.Text = "Fees";
+            this.feesBtn.UseVisualStyleBackColor = true;
+            this.feesBtn.Click += new System.EventHandler(this.feesBtn_Click);
             // 
             // attendanceBtn
             // 
@@ -204,45 +244,6 @@
             this.panelView.Padding = new System.Windows.Forms.Padding(10);
             this.panelView.Size = new System.Drawing.Size(966, 578);
             this.panelView.TabIndex = 3;
-            // 
-            // feesBtn
-            // 
-            this.feesBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.feesBtn.FlatAppearance.BorderSize = 0;
-            this.feesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.feesBtn.ForeColor = System.Drawing.Color.White;
-            this.feesBtn.Location = new System.Drawing.Point(0, 434);
-            this.feesBtn.Name = "feesBtn";
-            this.feesBtn.Size = new System.Drawing.Size(154, 62);
-            this.feesBtn.TabIndex = 8;
-            this.feesBtn.Text = "Fees";
-            this.feesBtn.UseVisualStyleBackColor = true;
-            // 
-            // reportBtn
-            // 
-            this.reportBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.reportBtn.FlatAppearance.BorderSize = 0;
-            this.reportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reportBtn.ForeColor = System.Drawing.Color.White;
-            this.reportBtn.Location = new System.Drawing.Point(0, 496);
-            this.reportBtn.Name = "reportBtn";
-            this.reportBtn.Size = new System.Drawing.Size(154, 62);
-            this.reportBtn.TabIndex = 7;
-            this.reportBtn.Text = "Student Report";
-            this.reportBtn.UseVisualStyleBackColor = true;
-            // 
-            // settingsBtn
-            // 
-            this.settingsBtn.Dock = System.Windows.Forms.DockStyle.Top;
-            this.settingsBtn.FlatAppearance.BorderSize = 0;
-            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settingsBtn.ForeColor = System.Drawing.Color.White;
-            this.settingsBtn.Location = new System.Drawing.Point(0, 558);
-            this.settingsBtn.Name = "settingsBtn";
-            this.settingsBtn.Size = new System.Drawing.Size(154, 62);
-            this.settingsBtn.TabIndex = 10;
-            this.settingsBtn.Text = "General Settings";
-            this.settingsBtn.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

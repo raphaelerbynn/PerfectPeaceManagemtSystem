@@ -49,6 +49,12 @@
   <ItemGroup>
     <Compile Include="ClassRoom.cs" />
     <Compile Include="DbClient.cs" />
+    <Compile Include="Pages\FeePaying.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\FeePaying.Designer.cs">
+      <DependentUpon>FeePaying.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UpdateTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FeePaying.resx">
+      <DependentUpon>FeePaying.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ParentsData.resx">
       <DependentUpon>ParentsData.cs</DependentUpon>

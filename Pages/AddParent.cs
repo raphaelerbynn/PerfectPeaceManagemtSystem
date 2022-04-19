@@ -15,10 +15,7 @@ namespace Perfect_Peace_System.Pages
         public AddParent()
         {
             InitializeComponent();
-
             get_child_name();
-
-            
         }
 
         private void get_child_name()

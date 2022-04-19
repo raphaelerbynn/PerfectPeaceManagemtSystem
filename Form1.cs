@@ -107,5 +107,12 @@ namespace Perfect_Peace_System
             addStntBtn.Text = "Add Event";
             openNewPage.OpenChildForm(new Pages.AddEvent(), panelView);
         }
+
+        private void feesBtn_Click(object sender, EventArgs e)
+        {
+            addStntBtn.Visible = false;
+            addStntBtn.Text = "Pay Fee";
+            openNewPage.OpenChildForm(new Pages.FeePaying(), panelView);
+        }
     }
 }
