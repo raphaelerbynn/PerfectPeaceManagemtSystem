@@ -15,11 +15,24 @@ namespace Perfect_Peace_System.Pages
         public FeePaying()
         {
             InitializeComponent();
+            initialisers();
         }
 
         private void amntTb_TextChanged(object sender, EventArgs e)
         {
-            amntTb.Text = string.Format("{0:#,##0.00}", double.Parse(amntTb.Text));
+            //amntTb.Text = string.Format("{0:#,###.00}", double.Parse(amntTb.Text));
+            if (!string.IsNullOrEmpty(amntTb.Text))
+            {
+                double paidAmt = double.Parse(amntTb.Text);
+                double total = double.Parse(totalAmntLbl.Text);
+                double remain = double.Parse(remainAmntLbl.Text);
+
+                remainAmntLbl.Text = (total - paidAmt).ToString();
+            }
+            else
+            {
+                remainAmntLbl.Text = totalAmntLbl.Text;
+            }
         }
 
         private void amntTb_KeyPress(object sender, KeyPressEventArgs e)
@@ -33,6 +46,27 @@ namespace Perfect_Peace_System.Pages
             {
                 e.Handled = true;
             } 
+        }
+
+        private void initialisers()
+        {
+            dateDob.Value = DateTime.Now;
+        }
+
+        
+        private void payFeesBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void feesPrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
+        }
+
+        private void captureScreenToPrint()
+        {
+
         }
     }
 }
