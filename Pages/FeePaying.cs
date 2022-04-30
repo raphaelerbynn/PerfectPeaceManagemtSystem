@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,10 +13,14 @@ namespace Perfect_Peace_System.Pages
 {
     public partial class FeePaying : Form
     {
+        PrintDocument printdoc = new PrintDocument();
+        PrintPreviewDialog printPreview = new PrintPreviewDialog();
+
         public FeePaying()
         {
             InitializeComponent();
             initialisers();
+            
         }
 
         private void amntTb_TextChanged(object sender, EventArgs e)
@@ -56,17 +61,39 @@ namespace Perfect_Peace_System.Pages
         
         private void payFeesBtn_Click(object sender, EventArgs e)
         {
+            Print(this.feePanel);
             
         }
 
-        private void feesPrintDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void Print(Panel panel)
         {
-
+            PrinterSettings ps = new PrinterSettings();
+            feePanel = panel;
+            getPrintArea(panel);
+            printPreview.Document = printdoc;
+            printdoc.PrintPage += new PrintPageEventHandler(printdoc_printPage);
+            printPreview.ShowDialog();
         }
 
-        private void captureScreenToPrint()
+        private void printdoc_printPage(object sender, PrintPageEventArgs e)
         {
-
+            Rectangle pageArea = e.PageBounds;
+            e.Graphics.DrawImage(memoryImg, (pageArea.Width / 2) - (this.feePanel.Width / 2), (pageArea.Height / 2) - (this.feePanel.Height / 2));
         }
+
+        Bitmap memoryImg;
+        private void getPrintArea(Panel panel)
+        {
+            memoryImg = new Bitmap(panel.Width, panel.Height);
+            panel.DrawToBitmap(memoryImg, new Rectangle(0, 0, panel.Width, panel.Height));
+        }
+
+        private void feePanel_Paint(object sender, PaintEventArgs e)
+        {
+             
+        }
+       
+
+
     }
 }

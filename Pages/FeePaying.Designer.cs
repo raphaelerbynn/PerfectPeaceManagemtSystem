@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeePaying));
             this.feePanel = new System.Windows.Forms.Panel();
             this.dateDob = new System.Windows.Forms.DateTimePicker();
             this.label12 = new System.Windows.Forms.Label();
@@ -51,8 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.feesPrintDocument = new System.Drawing.Printing.PrintDocument();
-            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.feePanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,6 +81,7 @@
             this.feePanel.Name = "feePanel";
             this.feePanel.Size = new System.Drawing.Size(950, 539);
             this.feePanel.TabIndex = 0;
+            this.feePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.feePanel_Paint);
             // 
             // dateDob
             // 
@@ -280,21 +278,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Student Name: ";
             // 
-            // feesPrintDocument
-            // 
-            this.feesPrintDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.feesPrintDocument_PrintPage);
-            // 
-            // printPreviewDialog1
-            // 
-            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
-            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
-            this.printPreviewDialog1.Document = this.feesPrintDocument;
-            this.printPreviewDialog1.Enabled = true;
-            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
-            this.printPreviewDialog1.Name = "printPreviewDialog1";
-            this.printPreviewDialog1.Visible = false;
-            // 
             // FeePaying
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,7 +316,5 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateDob;
         private System.Windows.Forms.Label label12;
-        private System.Drawing.Printing.PrintDocument feesPrintDocument;
-        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
     }
 }
