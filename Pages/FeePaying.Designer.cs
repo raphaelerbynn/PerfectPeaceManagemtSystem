@@ -50,11 +50,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.stntCheckBtn = new System.Windows.Forms.Button();
             this.feePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // feePanel
             // 
+            this.feePanel.Controls.Add(this.stntCheckBtn);
             this.feePanel.Controls.Add(this.dateDob);
             this.feePanel.Controls.Add(this.label12);
             this.feePanel.Controls.Add(this.totalAmntLbl);
@@ -81,7 +83,6 @@
             this.feePanel.Name = "feePanel";
             this.feePanel.Size = new System.Drawing.Size(950, 539);
             this.feePanel.TabIndex = 0;
-            this.feePanel.Paint += new System.Windows.Forms.PaintEventHandler(this.feePanel_Paint);
             // 
             // dateDob
             // 
@@ -278,6 +279,15 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Student Name: ";
             // 
+            // stntCheckBtn
+            // 
+            this.stntCheckBtn.Location = new System.Drawing.Point(675, 92);
+            this.stntCheckBtn.Name = "stntCheckBtn";
+            this.stntCheckBtn.Size = new System.Drawing.Size(32, 23);
+            this.stntCheckBtn.TabIndex = 26;
+            this.stntCheckBtn.Text = ">";
+            this.stntCheckBtn.UseVisualStyleBackColor = true;
+            // 
             // FeePaying
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,5 +326,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateDob;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button stntCheckBtn;
     }
 }

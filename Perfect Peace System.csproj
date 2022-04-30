@@ -55,6 +55,12 @@
     <Compile Include="Pages\FeePaying.Designer.cs">
       <DependentUpon>FeePaying.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\FeeReceipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\FeeReceipt.Designer.cs">
+      <DependentUpon>FeeReceipt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UpdateTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\FeePaying.resx">
       <DependentUpon>FeePaying.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\FeeReceipt.resx">
+      <DependentUpon>FeeReceipt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ParentsData.resx">
       <DependentUpon>ParentsData.cs</DependentUpon>
