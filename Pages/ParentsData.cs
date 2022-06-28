@@ -19,11 +19,15 @@ namespace Perfect_Peace_System.Pages
         {
             Person parent = new Parent();
             InitializeComponent();
+
+            showParentDataView.ColumnHeadersDefaultCellStyle.BackColor = Form1.themeColor;
+            showParentDataView.RowsDefaultCellStyle.BackColor = Form1.cellColor;
+            showParentDataView.BackgroundColor = Form1.foreColor;
+            
+            columnArrangement();
             
             parent.show_data(showParentDataView);
-            columnArrangement();
             getChild();
-
         }
 
         private void columnArrangement()
@@ -68,6 +72,7 @@ namespace Perfect_Peace_System.Pages
 
                 foreach (DataGridViewRow item in showParentDataView.Rows)
                 {
+                    
                     string id = item.Cells["id"].Value.ToString();
                     item.Cells["child"].Value = "";
 
@@ -89,6 +94,9 @@ namespace Perfect_Peace_System.Pages
             
         }
 
+        private void showParentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 }

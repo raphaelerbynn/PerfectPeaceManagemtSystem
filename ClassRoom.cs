@@ -12,19 +12,21 @@ namespace Perfect_Peace_System
         private string name;
         private int capacity;
         private string section;
+        private double fees;
 
         public ClassRoom() { }
 
-        public ClassRoom(string name, int capacity, string section)
+        public ClassRoom(string name, int capacity, string section, double fees)
         {
             this.name = name;
             this.capacity = capacity;
             this.section = section;
+            this.fees = fees;
         }
 
         public void insert_class()
         {
-            string query = "INSERT INTO Class(name, section, capacity) VALUES('"+name+"','"+section+"','"+capacity+"')";
+            string query = "INSERT INTO Class(name, section, capacity, fees) VALUES('"+name+"','"+section+"','"+capacity+"','"+fees+"')";
             DbClient.query_execute(query);
         }
 

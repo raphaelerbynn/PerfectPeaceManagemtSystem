@@ -20,9 +20,13 @@ namespace Perfect_Peace_System.Pages
             InitializeComponent();
             ClassRoom classRoom = new ClassRoom();
 
-            classRoom.show_data(classDataView);
+            classDataView.ColumnHeadersDefaultCellStyle.BackColor = Form1.themeColor;
+            classDataView.RowsDefaultCellStyle.BackColor = Form1.cellColor;
+            classDataView.BackgroundColor = Form1.foreColor;
+
             getTeacher();
             columnArrangement();
+            classRoom.show_data(classDataView);
         }
 
         private void columnArrangement()

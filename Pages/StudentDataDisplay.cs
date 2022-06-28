@@ -25,6 +25,10 @@ namespace Perfect_Peace_System.Pages
             parent = new Parent();
             InitializeComponent();
             adjustColumnOrder();
+            studentDataView.ColumnHeadersDefaultCellStyle.BackColor = Form1.themeColor;
+            studentDataView.RowsDefaultCellStyle.BackColor = Form1.cellColor;
+            studentDataView.BackgroundColor = Form1.foreColor;
+
             student.show_data(studentDataView);
 
 
@@ -45,6 +49,7 @@ namespace Perfect_Peace_System.Pages
             studentDataView.Columns["delete"].DisplayIndex = 8;
 
             studentDataView.AutoGenerateColumns = false;
+            searchCb.SelectedIndex = 0;
         }
 
         private void reloadDataBtn_Click(object sender, EventArgs e)
@@ -90,7 +95,6 @@ namespace Perfect_Peace_System.Pages
                 {
                     //update data
                     openNewPage.OpenChildForm(new Pages.UpdateStudent(), showDataPanel);
-                    reloadDataBtn.Visible = false;
                 }
             }catch (Exception ex)
             {
@@ -115,6 +119,37 @@ namespace Perfect_Peace_System.Pages
             reader0.Close();
 
             return parent_id;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            if(!String.IsNullOrEmpty(searchTextBox.Text))
+            {
+                try
+                {
+                    (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format(searchCb.Text + " LIKE '%{0}%'", searchTextBox.Text);
+                }catch(Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
+
+            }
+            else
+            {
+                (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+            }
+        }
+
+        private void displaySearch(string searchText)
+        {
+            //query = "SELECT student_id,age,gender,class, [f_name]+' '+[l_name] AS name FROM Student WHERE " +  + "='" + searchTextBox.Text + "'";
+            //DbClient.dataGridFill(studentDataView, query);
         }
     }
 

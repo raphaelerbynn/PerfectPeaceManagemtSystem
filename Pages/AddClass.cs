@@ -25,7 +25,7 @@ namespace Perfect_Peace_System.Pages
         private void addClassBtn_Click(object sender, EventArgs e)
         {
 
-            ClassRoom classRoom = new ClassRoom(nameTb.Text, int.Parse(capacityTb.Text), sectionCb.SelectedItem.ToString());
+            ClassRoom classRoom = new ClassRoom(nameTb.Text, int.Parse(capacityTb.Text), sectionCb.SelectedItem.ToString(), double.Parse(feesBox.Value.ToString()));
             classRoom.insert_class();
 
             if (!String.IsNullOrEmpty(teacherCb.Text))

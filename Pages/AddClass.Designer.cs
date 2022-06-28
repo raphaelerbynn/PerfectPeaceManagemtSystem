@@ -39,11 +39,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.nameTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.feesBox = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.feesBox)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.feesBox);
+            this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.clearBtn);
             this.panel1.Controls.Add(this.addClassBtn);
             this.panel1.Controls.Add(this.teacherCb);
@@ -62,7 +69,7 @@
             // 
             // clearBtn
             // 
-            this.clearBtn.Location = new System.Drawing.Point(509, 329);
+            this.clearBtn.Location = new System.Drawing.Point(509, 359);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(75, 23);
             this.clearBtn.TabIndex = 23;
@@ -71,7 +78,7 @@
             // 
             // addClassBtn
             // 
-            this.addClassBtn.Location = new System.Drawing.Point(408, 329);
+            this.addClassBtn.Location = new System.Drawing.Point(408, 359);
             this.addClassBtn.Name = "addClassBtn";
             this.addClassBtn.Size = new System.Drawing.Size(75, 23);
             this.addClassBtn.TabIndex = 22;
@@ -154,6 +161,37 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Class Name: ";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(252, 311);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 24;
+            this.label2.Text = "Fees: ";
+            // 
+            // feesBox
+            // 
+            this.feesBox.Location = new System.Drawing.Point(328, 309);
+            this.feesBox.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
+            this.feesBox.Name = "feesBox";
+            this.feesBox.Size = new System.Drawing.Size(120, 20);
+            this.feesBox.TabIndex = 25;
+            this.feesBox.ThousandsSeparator = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(295, 311);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 13);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "Ghc";
+            // 
             // AddClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,6 +202,7 @@
             this.Text = "AddClass";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.feesBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -181,5 +220,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox nameTb;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.NumericUpDown feesBox;
+        private System.Windows.Forms.Label label2;
     }
 }

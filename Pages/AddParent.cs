@@ -12,17 +12,39 @@ namespace Perfect_Peace_System.Pages
 {
     public partial class AddParent : Form
     {
+        private string query;
+
         public AddParent()
         {
             InitializeComponent();
             get_child_name();
+            classDetailsOnStudent();
         }
 
         private void get_child_name()
         {
-            string query = "SELECT [f_name]+' '+[l_name] FROM Student WHERE student_id=" + DbClient.GetLastId("Student");
+            query = "SELECT [f_name]+' '+[l_name] FROM Student WHERE student_id=" + DbClient.GetLastId("Student");
             DbClient.query_reader(childCB, query);
             childCB.SelectedIndex = 0;
+
+        }
+
+        private void classDetailsOnStudent()
+        {
+            string class_id = "", fees_owned="";
+
+            query = "SELECT * FROM Class WHERE name='"+AddStudent.class_name+"'";
+            System.Data.SqlClient.SqlDataReader reader = DbClient.query_reader(query);
+            while (reader.Read())
+            {
+                class_id = reader["class_id"].ToString();
+                fees_owned = reader["fees"].ToString();
+            }
+            reader.Close();
+
+            Console.WriteLine();
+            query = "UPDATE Student SET fees_owing='"+fees_owned+"', class_id='"+class_id+"' WHERE class='"+AddStudent.class_name+"'";
+            DbClient.query_execute(query);
         }
 
         private string getRadioBtnValue()
@@ -39,7 +61,7 @@ namespace Perfect_Peace_System.Pages
             Person parent = new Parent(contactTb.Text, contact1Tb.Text, relationshipCB.Text, fnameTb.Text, lnameTb.Text, getRadioBtnValue(), DateTime.Now);
             parent.save();
 
-            string query = "UPDATE Student SET parent_id=" + DbClient.GetLastId("Parent") + " WHERE student_id=" + DbClient.GetLastId("Student");
+            query = "UPDATE Student SET parent_id=" + DbClient.GetLastId("Parent") + " WHERE student_id=" + DbClient.GetLastId("Student");
             DbClient.query_execute(query);
             MessageBox.Show("Parent Registered");
 

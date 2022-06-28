@@ -11,7 +11,7 @@ namespace Perfect_Peace_System
 {
     static class DbClient
     {
-        public const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\MOUNTAIN\Documents\PerfectPeace.mdf;Integrated Security=True;Connect Timeout=30";
+        public const string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\MOUNTAIN\Desktop\Perfect Peace System\PerfectPeace.mdf;Integrated Security=True;Connect Timeout=30";
         public static SqlConnection connection;
         public static SqlCommand cmd;
         public static SqlDataAdapter dataAdapter;
@@ -35,6 +35,7 @@ namespace Perfect_Peace_System
         {
             cmd = new SqlCommand(query, connection);
             string value = cmd.ExecuteScalar().ToString();
+            
 
             return value;
         }

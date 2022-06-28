@@ -14,6 +14,7 @@ namespace Perfect_Peace_System.Pages
     {
         OpenNewPage openNewPage = new OpenNewPage();
         ClassRoom classroom = new ClassRoom();
+        public static string class_name = "";
 
         string query;
 
@@ -22,7 +23,7 @@ namespace Perfect_Peace_System.Pages
             InitializeComponent();
             query = "SELECT name FROM Class";
             DbClient.query_reader(classCb, query);
-        }
+        } 
 
         private string getRadioBtnValue()
         {
@@ -52,10 +53,13 @@ namespace Perfect_Peace_System.Pages
             try
             {
                 Person person = new Student(
-                    DateTime.Parse(dobPicker.Text), classCb.Text, 0.00f, 0.00f,
+                    DateTime.Parse(dobPicker.Text), classCb.Text, 0.00f,
                     fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text,
                     getRadioBtnValue(), DateTime.Parse(DateTime.Now.ToString())
                     );
+
+                class_name = classCb.Text;
+                Console.WriteLine("class name: " + class_name);
 
                 if (String.IsNullOrWhiteSpace(fnameTb.Text) ||
                     String.IsNullOrWhiteSpace(lnameTb.Text) ||
@@ -78,6 +82,7 @@ namespace Perfect_Peace_System.Pages
                             MessageBox.Show("Student Saved");
                             clearFeilds();
                             openNewPage.OpenChildForm(new Pages.AddParent(), registerPanel);
+
                         }
                         else
                         {
@@ -97,7 +102,7 @@ namespace Perfect_Peace_System.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
 
         }

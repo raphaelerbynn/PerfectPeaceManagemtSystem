@@ -23,16 +23,14 @@ namespace Perfect_Peace_System
 
             this.dob = dob;
             this._class = _class;
-            this.fees_owed = fees_owed;
             this.fees_paid = fees_paid;
         }
 
-        public Student(DateTime dob, string _class, float fees_owed, float fees_paid, string f_name, string m_name, string l_name, string address, string gender, DateTime _date_registerd) :
+        public Student(DateTime dob, string _class, float fees_paid, string f_name, string m_name, string l_name, string address, string gender, DateTime _date_registerd) :
                             base(f_name, m_name, l_name, address, gender, _date_registerd)
         {
             this.dob = dob;
             this._class = _class;
-            this.fees_owed = fees_owed;
             this.fees_paid = fees_paid;
         }
 
@@ -60,8 +58,8 @@ namespace Perfect_Peace_System
         public override void save()
         {
             
-            query = "INSERT INTO Student (f_name, m_name, l_name, dob, gender, class, address, fees_owed, fees_paid, date_registered)" +
-                "VALUES('" + f_name + "','" + m_name + "','" + l_name + "','" + dob + "','" + gender + "','" + _class + "','" + address + "','" + fees_owed + "','" + fees_paid + "','" + _date_registered + "')";
+            query = "INSERT INTO Student (f_name, m_name, l_name, dob, gender, class, address, fees_paid, date_registered)" +
+                "VALUES('" + f_name + "','" + m_name + "','" + l_name + "','" + dob + "','" + gender + "','" + _class + "','" + address + "','" + fees_paid + "','" + _date_registered + "')";
             DbClient.query_execute(query);
         }
 
@@ -73,7 +71,7 @@ namespace Perfect_Peace_System
 
         public override void show_data(DataGridView dataGrid)
         {
-            query = "SELECT student_id,age,gender,class, [f_name]+' '+[l_name] AS name FROM Student";
+            query = "SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student";
             DbClient.dataGridFill(dataGrid, query);
         }
 

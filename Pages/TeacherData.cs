@@ -21,7 +21,11 @@ namespace Perfect_Peace_System.Pages
         {
             teacher = new Teacher();
             InitializeComponent();
-            
+
+            teacherDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Form1.themeColor;
+            teacherDataGridView.RowsDefaultCellStyle.BackColor = Form1.cellColor;
+            teacherDataGridView.BackgroundColor = Form1.foreColor;
+
             adjustColumnOrder();
             teacher.show_data(teacherDataGridView);
 
@@ -39,6 +43,8 @@ namespace Perfect_Peace_System.Pages
             teacherDataGridView.Columns["view"].DisplayIndex = 5;
             teacherDataGridView.Columns["edit"].DisplayIndex = 6;
             teacherDataGridView.Columns["delete"].DisplayIndex = 7;
+
+            searchCb.SelectedIndex = 0;
         }
 
         private void teacherDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -66,9 +72,7 @@ namespace Perfect_Peace_System.Pages
 
                 if (teacherDataGridView.Columns[e.ColumnIndex].Name == "view" && e.RowIndex >= 0)
                 {
-                   
                     //studentDetail.Show();
-
                 }
 
                 if (teacherDataGridView.Columns[e.ColumnIndex].Name == "edit" && e.RowIndex >= 0)
@@ -93,6 +97,27 @@ namespace Perfect_Peace_System.Pages
         private void TeacherData_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(searchTextBox.Text))
+            {
+                try
+                {
+                    (teacherDataGridView.DataSource as DataTable).DefaultView.RowFilter = string.Format(searchCb.Text + " LIKE '%{0}%'", searchTextBox.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
+
+            }
+            else
+            {
+                (teacherDataGridView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+            }
         }
     }
 }

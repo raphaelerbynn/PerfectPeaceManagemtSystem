@@ -19,6 +19,24 @@ namespace Perfect_Peace_System.Pages
         public FeeReceipt()
         {
             InitializeComponent();
+            Console.WriteLine(FeePaying.paidAmnt);
+            updateLabels();
+        }
+
+        private void updateLabels()
+        {
+            amntLbl_0.Text = FeePaying.paidAmnt;
+            totalAmntLbl.Text = FeePaying.totalAmnt;
+            remainingLbl.Text = FeePaying.remainingAmnt;
+            amntWordsLbl.Text = FeePaying.amntWords;
+
+            idLbl.Text = DbClient.GetLastId("Fee");
+            dateLbl.Text = DateTime.Today.ToString();
+            nameLbl.Text = FeePaying.name;
+            classLbl.Text = FeePaying._class;
+            termLbl.Text = FeePaying.term;
+            modeLbl.Text = FeePaying.mode;
+            amntLbl_1.Text = amntLbl_0.Text;
         }
 
         private void printBtn_Click(object sender, EventArgs e)
@@ -54,5 +72,7 @@ namespace Perfect_Peace_System.Pages
         {
 
         }
+
+
     }
 }
