@@ -44,7 +44,7 @@ namespace Perfect_Peace_System.Pages
             showParentDataView.Columns["edit"].DisplayIndex = 7;
             showParentDataView.Columns["delete"].DisplayIndex = 8;
             
-
+            searchCb.SelectedIndex = 0;
         }
 
         private void getChild()
@@ -97,6 +97,27 @@ namespace Perfect_Peace_System.Pages
         private void showParentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(searchTextBox.Text))
+            {
+                try
+                {
+                    (showParentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format(searchCb.Text + " LIKE '%{0}%'", searchTextBox.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
+
+            }
+            else
+            {
+                (showParentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+            }
         }
     }
 }
