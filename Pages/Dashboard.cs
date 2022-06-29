@@ -14,13 +14,15 @@ namespace Perfect_Peace_System.Pages
     public partial class Dashboard : Form
     {
         private string query;
-        OpenNewPage openNewPage = new OpenNewPage();
-        //Form1 form1 = new Form1();
+        OpenNewPage openNewPage;
+        
 
         public Dashboard()
         {
             InitializeComponent();
+            openNewPage = new OpenNewPage();
             
+
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             Resolution objFormResizer = new Resolution();
@@ -142,6 +144,12 @@ namespace Perfect_Peace_System.Pages
             //openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), Form1.displayPanel);
             //form1.studentBtn_Click(sender, e);
 
+        }
+
+        private void studentPanel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), Form1.displayPanel);
         }
     }
 }

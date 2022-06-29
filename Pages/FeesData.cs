@@ -44,6 +44,8 @@ namespace Perfect_Peace_System.Pages
             feesDataView.Columns["date_paid"].DisplayIndex = 6;
             
             feesDataView.Columns["student_id"].Visible = false;
+
+            searchCb.SelectedIndex = 0;
         }
 
         private void getStudent()
@@ -78,6 +80,57 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
-        
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(searchTextBox.Text))
+            {
+                try
+                {
+
+                    if (searchCb.Text == "Student Name")
+                    {
+                        string student_id = "";
+                        query = "SELECT student_id FROM Student WHERE CONCAT(f_name,l_name) LIKE '%" + searchTextBox.Text + "%'";
+                        SqlDataReader reader = DbClient.query_reader(query);
+                        while (reader.Read())
+                        {
+                            student_id = reader["student_id"].ToString();
+                        }
+                        reader.Close();
+
+                        query = "SELECT fee_id, student_id, paid, remaining, payment_mode, date_paid, " +
+                            "CAST(student_id AS VARCHAR(50)) AS student, CAST(class_id AS VARCHAR(50)) AS class FROM Fee" +
+                            " WHERE student_id='" + student_id + "'";
+                        DbClient.dataGridFill(feesDataView, query);
+                        getStudent();
+                    }
+                    else if (searchCb.Text == "Payment Mode")
+                    {
+                        (feesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("payment_mode LIKE '%{0}%'", searchTextBox.Text);
+                    }
+                    else if (searchCb.Text == "Date Paid")
+                    {
+                        string newText = searchCb.Text.Replace(" ", "_");
+                        (feesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT("+newText+", 'System.String') LIKE '%{0}%'", searchTextBox.Text);
+                    }
+
+                    else
+                    {
+                        (feesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format(searchCb.Text + " LIKE '%{0}%'", searchTextBox.Text);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
+
+            }
+            else
+            {
+                fees.show_data(feesDataView);
+                getStudent();
+            }
+        }
     }
 }

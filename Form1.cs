@@ -20,6 +20,7 @@ namespace Perfect_Peace_System
         public static Color cellColor;
         public static Color themeColor;
         public static Panel displayPanel;
+        public static Button _studentBtn, _teachersBtn, _classBtn;
         //public extern bool ReleaseCapture();
 
         public Form1()
@@ -31,6 +32,9 @@ namespace Perfect_Peace_System
             schNameLbl.BackColor = Color.Transparent;
             menuPanel.BackColor = themeColor;
             displayPanel = panelView;
+            _studentBtn = studentBtn;
+            _teachersBtn = teachersBtn;
+            _classBtn = classesBtn;
      
             openNewPage.OpenChildForm(new Pages.Dashboard(), panelView);
             ActivateBtn(dashboardBtn);
@@ -57,7 +61,7 @@ namespace Perfect_Peace_System
             
         }
 
-        private void ActivateBtn(object btnSender)
+        public void ActivateBtn(object btnSender)
         {
             if (btnSender != null)
             {

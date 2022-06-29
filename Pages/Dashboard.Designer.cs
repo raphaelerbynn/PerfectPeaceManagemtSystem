@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.IndianRed, null);
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.HotTrack, null);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panelBg = new System.Windows.Forms.Panel();
@@ -87,19 +87,26 @@
             // 
             // panel8
             // 
+            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel8.AutoSize = true;
             this.panel8.BackColor = System.Drawing.Color.Silver;
-            this.panel8.Location = new System.Drawing.Point(12, 387);
+            this.panel8.Location = new System.Drawing.Point(12, 373);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(540, 184);
+            this.panel8.Size = new System.Drawing.Size(540, 198);
             this.panel8.TabIndex = 1;
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.classChart);
             this.panel3.Location = new System.Drawing.Point(12, 97);
+            this.panel3.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(540, 284);
+            this.panel3.Size = new System.Drawing.Size(540, 270);
             this.panel3.TabIndex = 1;
             // 
             // classChart
@@ -113,58 +120,60 @@
             this.classChart.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
             this.classChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
             this.classChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
-            chartArea1.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea1.AxisX.IsStartedFromZero = false;
-            chartArea1.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisX.LabelStyle.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea1.AxisX.LabelStyle.IsEndLabelVisible = false;
-            chartArea1.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisX.Title = "Class name";
-            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisY.IsMarksNextToAxis = false;
-            chartArea1.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea1.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea1.AxisY.LineWidth = 0;
-            chartArea1.AxisY.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.None;
-            chartArea1.AxisY.ScaleBreakStyle.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea1.AxisY.ScaleBreakStyle.Spacing = 1D;
-            chartArea1.AxisY.Title = "Number of students";
-            chartArea1.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea1.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            chartArea1.BorderColor = System.Drawing.Color.Transparent;
-            chartArea1.BorderWidth = 0;
-            chartArea1.Name = "ChartArea1";
-            this.classChart.ChartAreas.Add(chartArea1);
+            chartArea8.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea8.AxisX.IsStartedFromZero = false;
+            chartArea8.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea8.AxisX.LabelStyle.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea8.AxisX.LabelStyle.IsEndLabelVisible = false;
+            chartArea8.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea8.AxisX.Title = "Class name";
+            chartArea8.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea8.AxisY.IsMarksNextToAxis = false;
+            chartArea8.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea8.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea8.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea8.AxisY.LineWidth = 0;
+            chartArea8.AxisY.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.None;
+            chartArea8.AxisY.ScaleBreakStyle.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea8.AxisY.ScaleBreakStyle.Spacing = 1D;
+            chartArea8.AxisY.Title = "Number of students";
+            chartArea8.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea8.BackColor = System.Drawing.Color.Transparent;
+            chartArea8.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            chartArea8.BorderColor = System.Drawing.Color.Transparent;
+            chartArea8.BorderWidth = 0;
+            chartArea8.Name = "ChartArea1";
+            this.classChart.ChartAreas.Add(chartArea8);
             this.classChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.ItemColumnSpacing = 100;
-            legend1.Name = "Legend1";
-            this.classChart.Legends.Add(legend1);
+            legend8.ItemColumnSpacing = 100;
+            legend8.Name = "Legend1";
+            this.classChart.Legends.Add(legend8);
             this.classChart.Location = new System.Drawing.Point(0, 0);
             this.classChart.Name = "classChart";
             this.classChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
-            series1.BorderColor = System.Drawing.Color.Transparent;
-            series1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            series1.BorderWidth = 0;
-            series1.ChartArea = "ChartArea1";
-            series1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
-            series1.IsValueShownAsLabel = true;
-            series1.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            series1.LabelBorderWidth = 0;
-            series1.Legend = "Legend1";
-            series1.MarkerSize = 0;
-            series1.Name = "Class";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            this.classChart.Series.Add(series1);
-            this.classChart.Size = new System.Drawing.Size(540, 284);
+            series8.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
+            series8.BorderColor = System.Drawing.Color.Transparent;
+            series8.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            series8.BorderWidth = 0;
+            series8.ChartArea = "ChartArea1";
+            series8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
+            series8.IsValueShownAsLabel = true;
+            series8.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            series8.LabelBorderWidth = 0;
+            series8.Legend = "Legend1";
+            series8.MarkerSize = 0;
+            series8.Name = "Class";
+            series8.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.classChart.Series.Add(series8);
+            this.classChart.Size = new System.Drawing.Size(540, 270);
             this.classChart.TabIndex = 0;
             this.classChart.Text = "chart1";
             this.classChart.Click += new System.EventHandler(this.chart1_Click);
             // 
             // panel4
             // 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Silver;
             this.panel4.Controls.Add(this.eventListView);
             this.panel4.Location = new System.Drawing.Point(571, 97);
@@ -182,8 +191,8 @@
             this.eventListView.Dock = System.Windows.Forms.DockStyle.Top;
             this.eventListView.HideSelection = false;
             this.eventListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
+            listViewItem15,
+            listViewItem16});
             this.eventListView.Location = new System.Drawing.Point(0, 0);
             this.eventListView.Name = "eventListView";
             this.eventListView.Size = new System.Drawing.Size(353, 167);
@@ -208,6 +217,7 @@
             // 
             // panel5
             // 
+            this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.Controls.Add(this.pictureBox3);
@@ -229,6 +239,8 @@
             // 
             // lblTotoalRooms
             // 
+            this.lblTotoalRooms.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotoalRooms.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotoalRooms.Location = new System.Drawing.Point(153, 28);
             this.lblTotoalRooms.Name = "lblTotoalRooms";
@@ -239,6 +251,8 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(159, 9);
@@ -249,6 +263,7 @@
             // 
             // panel6
             // 
+            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel6.BackgroundImage")));
             this.panel6.Controls.Add(this.pictureBox2);
@@ -271,6 +286,8 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(172, 9);
@@ -281,6 +298,8 @@
             // 
             // lbltotalTeachers
             // 
+            this.lbltotalTeachers.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lbltotalTeachers.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbltotalTeachers.Location = new System.Drawing.Point(153, 26);
             this.lbltotalTeachers.Name = "lbltotalTeachers";
@@ -300,6 +319,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(290, 67);
             this.panel2.TabIndex = 0;
+            this.panel2.Click += new System.EventHandler(this.studentPanel_Click);
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox1
@@ -310,10 +330,12 @@
             this.pictureBox1.Size = new System.Drawing.Size(56, 50);
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.panelBg_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.studentPanel_Click);
             // 
             // lblTotalStnt
             // 
+            this.lblTotalStnt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotalStnt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalStnt.Location = new System.Drawing.Point(155, 26);
             this.lblTotalStnt.Name = "lblTotalStnt";
@@ -321,10 +343,12 @@
             this.lblTotalStnt.TabIndex = 1;
             this.lblTotalStnt.Text = "0";
             this.lblTotalStnt.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTotalStnt.Click += new System.EventHandler(this.panelBg_Click);
+            this.lblTotalStnt.Click += new System.EventHandler(this.studentPanel_Click);
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(178, 9);
@@ -332,7 +356,7 @@
             this.label1.Size = new System.Drawing.Size(100, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Total Students";
-            this.label1.Click += new System.EventHandler(this.panelBg_Click);
+            this.label1.Click += new System.EventHandler(this.studentPanel_Click);
             // 
             // Dashboard
             // 
@@ -343,6 +367,7 @@
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.panelBg.ResumeLayout(false);
+            this.panelBg.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.classChart)).EndInit();
             this.panel4.ResumeLayout(false);
