@@ -96,6 +96,12 @@
     <Compile Include="Pages\FeesData.Designer.cs">
       <DependentUpon>FeesData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\StudentReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\StudentReport.Designer.cs">
+      <DependentUpon>StudentReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\UpdateTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +237,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\StudentDetail.resx">
       <DependentUpon>StudentDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\StudentReport.resx">
+      <DependentUpon>StudentReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\TeacherData.resx">
       <DependentUpon>TeacherData.cs</DependentUpon>

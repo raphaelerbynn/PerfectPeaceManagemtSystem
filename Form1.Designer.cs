@@ -268,6 +268,7 @@
             this.reportBtn.Text = "Student Report";
             this.reportBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.reportBtn.UseVisualStyleBackColor = true;
+            this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
             // 
             // feesBtn
             // 

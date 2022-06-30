@@ -285,6 +285,14 @@ namespace Perfect_Peace_System
 
         }
 
+        private void reportBtn_Click(object sender, EventArgs e)
+        {
+            ActivateBtn(sender);
+            addStntBtn.Visible = false;
+            titleLbl.Text = "STUDENT REPORT";
+            openNewPage.OpenChildForm(new Pages.StudentReport(), panelView);
+        }
+
         private void topPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if(e.Button == MouseButtons.Left)
