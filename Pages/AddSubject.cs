@@ -71,10 +71,19 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
-                subject = new Subject(subjectNameTB.Text, int.Parse(examTotalMarkTB.Text), int.Parse(classTotalMarksTB.Text), int.Parse(examPercentageTB.Text), int.Parse(classPercentageLB.Text), int.Parse(passMarksTB.Text));
-                subject.insert_data();
-                clearFeild();
-                subject.show_data(subjectDataView);
+                if (!(String.IsNullOrEmpty(subjectNameTB.Text) && String.IsNullOrEmpty(examTotalMarkTB.Text) &&
+                    String.IsNullOrEmpty(classTotalMarksTB.Text) && String.IsNullOrEmpty(examPercentageTB.Text) &&
+                    String.IsNullOrEmpty(passMarksTB.Text)))
+                {
+                    subject = new Subject(subjectNameTB.Text, int.Parse(examTotalMarkTB.Text), int.Parse(classTotalMarksTB.Text), int.Parse(examPercentageTB.Text), int.Parse(classPercentageLB.Text), int.Parse(passMarksTB.Text));
+                    subject.insert_data();
+                    clearFeild();
+                    subject.show_data(subjectDataView);
+                }
+                else
+                {
+                    MessageBox.Show("Every feild must be filled");
+                }
             }
             catch(Exception ex)
             {
@@ -82,11 +91,36 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
+        private void calcuations()
+        {
+            
+        }
+
         private void clearFeild()
         {
             subjectNameTB.Text = null;
             examTotalMarkTB.Text = null;
             examPercentageTB.Text = null;
+            classTotalMarksTB.Text = null;
+            passMarksTB.Text = null;
+            classPercentageLB.Text = "00";
+        }
+
+        private void examPercentageTB_TextChanged(object sender, EventArgs e)
+        {
+            int outputValue = 0;
+            bool isNumber = false;
+
+            isNumber = int.TryParse(examPercentageTB.Text, out outputValue);
+            if (!isNumber)
+            {
+                Console.WriteLine("Not a number");
+            }
+            else
+            {
+                classPercentageLB.Text = (100 - int.Parse(examPercentageTB.Text)).ToString();
+            }
+            
         }
     }
 }
