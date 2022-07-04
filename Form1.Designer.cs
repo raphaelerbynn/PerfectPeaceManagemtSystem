@@ -229,9 +229,10 @@
             this.settingsBtn.TabIndex = 1;
             this.settingsBtn.TabStop = false;
             this.settingsBtn.Tag = "9";
-            this.settingsBtn.Text = "General Settings";
+            this.settingsBtn.Text = "Subjects";
             this.settingsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.settingsBtn.UseVisualStyleBackColor = true;
+            this.settingsBtn.Click += new System.EventHandler(this.subjectBtn_Click);
             // 
             // payrollBtn
             // 

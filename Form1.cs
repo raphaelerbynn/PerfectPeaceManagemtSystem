@@ -293,6 +293,14 @@ namespace Perfect_Peace_System
             openNewPage.OpenChildForm(new Pages.StudentReport(), panelView);
         }
 
+        private void subjectBtn_Click(object sender, EventArgs e)
+        {
+            ActivateBtn(sender);
+            addStntBtn.Visible = false;
+            titleLbl.Text = "SUBJECT INFORMATION";
+            openNewPage.OpenChildForm(new Pages.AddSubject(), panelView);
+        }
+
         private void topPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if(e.Button == MouseButtons.Left)
