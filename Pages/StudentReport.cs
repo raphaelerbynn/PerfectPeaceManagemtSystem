@@ -30,6 +30,7 @@ namespace Perfect_Peace_System.Pages
             query = "SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student WHERE class='"+classCb.Text+"'";
             DbClient.dataGridFill(studentDataView, query);
             studentDataView.Visible = true;
+            searchBtn.Enabled = true;
             adjustColumnOrder();
         }
 
@@ -46,9 +47,25 @@ namespace Perfect_Peace_System.Pages
             studentDataView.AutoGenerateColumns = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void searchBtn_Click(object sender, EventArgs e)
         {
+            if (!String.IsNullOrEmpty(searchTextBox.Text))
+            {
+                try
+                {
+                    (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name LIKE '%{0}%'", searchTextBox.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
 
+            }
+            else
+            {
+                (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+            }
         }
     }
 }
