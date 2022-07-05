@@ -91,11 +91,6 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
-        private void calcuations()
-        {
-            
-        }
-
         private void clearFeild()
         {
             subjectNameTB.Text = null;
