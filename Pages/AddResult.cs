@@ -19,38 +19,40 @@ namespace Perfect_Peace_System.Pages
         public AddResult()
         {
             InitializeComponent();
-            showSubjects();
-            Label label = new Label();
-            label.Text = "Nana";
-            label.Location = new Point(375, 235);
-            label.AutoSize = true;
-            label.ForeColor = Color.Black;
-            this.Controls.Add(label);
+            showSubjectsWithFeilds();
+            
         }
 
-        private void showSubjects()
+        private void showSubjectsWithFeilds()
         {
             subjectLabels = new List<Label>();
-            int subLocationX = subjectName0.Location.X;
-            int subLocationY = subjectName0.Location.Y;
+            int subLocationX = subjectName.Location.X;
+            int subLocationY = subjectName.Location.Y + 48;
 
             query = "SELECT * FROM Subject";
             SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())
             {
-                /*Label label = new Label();
+                Label label = new Label();
                 label.Text = reader["name"].ToString();
+                label.Name = reader["name"].ToString() + "Lbl";
                 label.Location = new Point(subLocationX, subLocationY);
+                label.Anchor = AnchorStyles.Top;
+                label.AutoSize = true;
+                label.Font = new Font("Calibri", 12);
+                label.Margin = new Padding(0, 0, 20, 0);
                 subjectLabels.Add(label);
-
-                subLocationY += 5;*/
+                
+                subLocationY += 50;
             }
             reader.Close();
-            Label label = new Label();
-            label.Text = "Nana";
-            label.Location = new Point(100, 200);
+
+            foreach (Label label in subjectLabels)
+            {
+                inputPanel.Controls.Add(label);
+            }
+            
 
         }
-
     }
 }
