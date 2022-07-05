@@ -424,9 +424,10 @@
             // 
             // maxBtn
             // 
+            this.maxBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.maxBtn.BackColor = System.Drawing.Color.Transparent;
             this.maxBtn.Image = ((System.Drawing.Image)(resources.GetObject("maxBtn.Image")));
-            this.maxBtn.Location = new System.Drawing.Point(1049, 5);
+            this.maxBtn.Location = new System.Drawing.Point(1041, 3);
             this.maxBtn.Name = "maxBtn";
             this.maxBtn.Size = new System.Drawing.Size(20, 20);
             this.maxBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -436,9 +437,10 @@
             // 
             // minBtn
             // 
+            this.minBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.minBtn.BackColor = System.Drawing.Color.Transparent;
             this.minBtn.Image = ((System.Drawing.Image)(resources.GetObject("minBtn.Image")));
-            this.minBtn.Location = new System.Drawing.Point(1069, 5);
+            this.minBtn.Location = new System.Drawing.Point(1061, 3);
             this.minBtn.Name = "minBtn";
             this.minBtn.Size = new System.Drawing.Size(20, 20);
             this.minBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -448,9 +450,10 @@
             // 
             // closeBtn
             // 
+            this.closeBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.closeBtn.BackColor = System.Drawing.Color.Transparent;
             this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
-            this.closeBtn.Location = new System.Drawing.Point(1089, 5);
+            this.closeBtn.Location = new System.Drawing.Point(1081, 3);
             this.closeBtn.Name = "closeBtn";
             this.closeBtn.Size = new System.Drawing.Size(20, 20);
             this.closeBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -460,6 +463,7 @@
             // 
             // titleLbl
             // 
+            this.titleLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.titleLbl.AutoSize = true;
             this.titleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLbl.Location = new System.Drawing.Point(585, 37);
@@ -470,7 +474,7 @@
             // 
             // addStntBtn
             // 
-            this.addStntBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addStntBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.addStntBtn.AutoSize = true;
             this.addStntBtn.Location = new System.Drawing.Point(1005, 25);
             this.addStntBtn.Name = "addStntBtn";
@@ -512,7 +516,7 @@
             // 
             // line1
             // 
-            this.line1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.line1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.line1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.line1.Location = new System.Drawing.Point(160, 54);
             this.line1.Name = "line1";
@@ -521,7 +525,7 @@
             // 
             // line2
             // 
-            this.line2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.line2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.line2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.line2.Location = new System.Drawing.Point(810, 54);
             this.line2.Name = "line2";
@@ -531,7 +535,7 @@
             // 
             // line3
             // 
-            this.line3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.line3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.line3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.line3.Location = new System.Drawing.Point(160, 69);
             this.line3.Name = "line3";

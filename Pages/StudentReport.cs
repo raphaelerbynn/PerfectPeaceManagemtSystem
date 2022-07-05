@@ -14,11 +14,14 @@ namespace Perfect_Peace_System.Pages
     {
         private string query;
         Student student;
+        OpenNewPage openNewpage;
 
         public StudentReport()
         {
             InitializeComponent();
             student = new Student();
+            openNewpage = new OpenNewPage();
+
             query = "SELECT name FROM Class";
             DbClient.query_reader(classCb, query);
             classCb.SelectedIndex = 0;
@@ -65,6 +68,26 @@ namespace Perfect_Peace_System.Pages
             else
             {
                 (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+            }
+        }
+
+        private void studentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = studentDataView.Rows[e.RowIndex];
+                string id = row.Cells["student_Id"].Value.ToString();
+                string name = row.Cells["full_name"].Value.ToString();
+
+
+                if (studentDataView.Columns[e.ColumnIndex].Name == "input_results" && e.RowIndex >= 0)
+                {
+                    openNewpage.OpenChildForm(new Pages.AddResult(), bgPanel);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -77,6 +77,12 @@
     <Compile Include="ClassRoom.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="DbClient.cs" />
+    <Compile Include="Pages\AddResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AddResult.Designer.cs">
+      <DependentUpon>AddResult.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddSubject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\AddParent.resx">
       <DependentUpon>AddParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AddResult.resx">
+      <DependentUpon>AddResult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\AddStudent.resx">
       <DependentUpon>AddStudent.cs</DependentUpon>
