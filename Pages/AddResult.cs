@@ -197,6 +197,7 @@ namespace Perfect_Peace_System.Pages
             nextPageBtn.Text = "Next Page";
             nextPageBtn.Location = new Point(getLastRemarkLbl.Location.X, getLastRemarkLbl.Location.Y + 40);
             inputPanel.Controls.Add(nextPageBtn);
+            nextPageBtn.Click += nextPageBtn_Click;
 
         }
 
@@ -240,27 +241,6 @@ namespace Perfect_Peace_System.Pages
                     //upddating total score
                     totalMarksLbls[i].Text = (double.Parse(examScoreCalcLbls[i].Text) + double.Parse(classScoreCalcLbls[i].Text)).ToString(); 
                 }
-                /*else if (textBox.Location.X == examMarkLbl.Location.X)
-                {
-                    if (textBox.Location.Y == subjectLbls[i].Location.Y)
-                    {
-                        if (!String.IsNullOrEmpty(textBox.Text))
-                        {
-                            //calculate exam mark with %
-                            double exam_percentage = examPercentages[i] / 100.0;
-                            double exam_mark = double.Parse(examScoreTBs[i].Text) * exam_percentage;
-                            examScoreCalcLbls[i].Text = exam_mark.ToString("0.##");
-                            Console.WriteLine(examScoreCalcLbls[i].Text);
-                        }
-                        else
-                        {
-                            examScoreCalcLbls[i].Text = "00";
-                        }
-                    }
-
-                    //updating total score
-                    //if()
-                }*/
             }
         }
 
@@ -277,6 +257,25 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
-        
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            teacherRemarksPanel.Visible = false;
+        }
+
+        private void nextPageBtn_Click(object sender, EventArgs e)
+        {
+            teacherRemarksPanel.Visible = true;
+        }
+
+        private void saveBtn_Click(object sender, EventArgs e)
+        {
+            string message = "Do you want to save this result?";
+            MessageBoxButtons action = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, "", action);
+            if (result == DialogResult.Yes)
+            {
+                
+            }
+        }
     }
 }

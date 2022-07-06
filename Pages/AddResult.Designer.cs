@@ -30,6 +30,17 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.inputPanel = new System.Windows.Forms.Panel();
+            this.teacherRemarksPanel = new System.Windows.Forms.Panel();
+            this.saveBtn = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.remarksLbl = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -53,6 +64,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.inputPanel.SuspendLayout();
+            this.teacherRemarksPanel.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +84,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputPanel.AutoScroll = true;
+            this.inputPanel.Controls.Add(this.teacherRemarksPanel);
             this.inputPanel.Controls.Add(this.label18);
             this.inputPanel.Controls.Add(this.remarksLbl);
             this.inputPanel.Controls.Add(this.label16);
@@ -92,6 +105,132 @@
             this.inputPanel.Name = "inputPanel";
             this.inputPanel.Size = new System.Drawing.Size(879, 556);
             this.inputPanel.TabIndex = 1;
+            // 
+            // teacherRemarksPanel
+            // 
+            this.teacherRemarksPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.teacherRemarksPanel.Controls.Add(this.saveBtn);
+            this.teacherRemarksPanel.Controls.Add(this.backBtn);
+            this.teacherRemarksPanel.Controls.Add(this.textBox6);
+            this.teacherRemarksPanel.Controls.Add(this.textBox5);
+            this.teacherRemarksPanel.Controls.Add(this.textBox4);
+            this.teacherRemarksPanel.Controls.Add(this.textBox3);
+            this.teacherRemarksPanel.Controls.Add(this.label7);
+            this.teacherRemarksPanel.Controls.Add(this.label5);
+            this.teacherRemarksPanel.Controls.Add(this.label4);
+            this.teacherRemarksPanel.Controls.Add(this.label2);
+            this.teacherRemarksPanel.Location = new System.Drawing.Point(0, 0);
+            this.teacherRemarksPanel.Margin = new System.Windows.Forms.Padding(3, 40, 3, 3);
+            this.teacherRemarksPanel.Name = "teacherRemarksPanel";
+            this.teacherRemarksPanel.Size = new System.Drawing.Size(879, 556);
+            this.teacherRemarksPanel.TabIndex = 16;
+            this.teacherRemarksPanel.Visible = false;
+            // 
+            // saveBtn
+            // 
+            this.saveBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.saveBtn.AutoSize = true;
+            this.saveBtn.Location = new System.Drawing.Point(774, 530);
+            this.saveBtn.Name = "saveBtn";
+            this.saveBtn.Size = new System.Drawing.Size(93, 23);
+            this.saveBtn.TabIndex = 10;
+            this.saveBtn.Text = "Finish and Save";
+            this.saveBtn.UseVisualStyleBackColor = true;
+            this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // backBtn
+            // 
+            this.backBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.backBtn.AutoSize = true;
+            this.backBtn.Location = new System.Drawing.Point(12, 530);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(86, 23);
+            this.backBtn.TabIndex = 9;
+            this.backBtn.Text = "Previous Page";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(164, 190);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(628, 26);
+            this.textBox6.TabIndex = 8;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(236, 295);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(558, 26);
+            this.textBox5.TabIndex = 7;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(166, 240);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(628, 26);
+            this.textBox4.TabIndex = 6;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.textBox3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(166, 143);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(628, 26);
+            this.textBox3.TabIndex = 5;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(91, 241);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 19);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Interest: ";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(91, 296);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(139, 19);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Teacher\'s Remarks: ";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(89, 192);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 19);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Attitude: ";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(89, 147);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 19);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Conduct: ";
             // 
             // label18
             // 
@@ -336,6 +475,8 @@
             this.panel1.ResumeLayout(false);
             this.inputPanel.ResumeLayout(false);
             this.inputPanel.PerformLayout();
+            this.teacherRemarksPanel.ResumeLayout(false);
+            this.teacherRemarksPanel.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -367,5 +508,16 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel teacherRemarksPanel;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button saveBtn;
+        private System.Windows.Forms.Button backBtn;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label7;
     }
 }
