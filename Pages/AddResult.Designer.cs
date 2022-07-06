@@ -31,9 +31,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.inputPanel = new System.Windows.Forms.Panel();
             this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.remarksLbl = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.totalMarkLbl = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -42,8 +42,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.classMarkLbl = new System.Windows.Forms.Label();
+            this.examMarkLbl = new System.Windows.Forms.Label();
             this.subjectName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.f = new System.Windows.Forms.Label();
@@ -72,9 +72,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.inputPanel.Controls.Add(this.label18);
-            this.inputPanel.Controls.Add(this.label17);
+            this.inputPanel.Controls.Add(this.remarksLbl);
             this.inputPanel.Controls.Add(this.label16);
-            this.inputPanel.Controls.Add(this.label15);
+            this.inputPanel.Controls.Add(this.totalMarkLbl);
             this.inputPanel.Controls.Add(this.label12);
             this.inputPanel.Controls.Add(this.label13);
             this.inputPanel.Controls.Add(this.label14);
@@ -83,8 +83,8 @@
             this.inputPanel.Controls.Add(this.label9);
             this.inputPanel.Controls.Add(this.textBox2);
             this.inputPanel.Controls.Add(this.textBox1);
-            this.inputPanel.Controls.Add(this.label7);
-            this.inputPanel.Controls.Add(this.label6);
+            this.inputPanel.Controls.Add(this.classMarkLbl);
+            this.inputPanel.Controls.Add(this.examMarkLbl);
             this.inputPanel.Controls.Add(this.subjectName);
             this.inputPanel.Location = new System.Drawing.Point(0, 104);
             this.inputPanel.Name = "inputPanel";
@@ -96,150 +96,160 @@
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(697, 96);
+            this.label18.Location = new System.Drawing.Point(729, 93);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(73, 20);
             this.label18.TabIndex = 15;
             this.label18.Text = "Excellent";
+            this.label18.Visible = false;
             // 
-            // label17
+            // remarksLbl
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(698, 53);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(49, 13);
-            this.label17.TabIndex = 14;
-            this.label17.Text = "Remarks";
+            this.remarksLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.remarksLbl.AutoSize = true;
+            this.remarksLbl.Location = new System.Drawing.Point(730, 54);
+            this.remarksLbl.Name = "remarksLbl";
+            this.remarksLbl.Size = new System.Drawing.Size(49, 13);
+            this.remarksLbl.TabIndex = 14;
+            this.remarksLbl.Text = "Remarks";
             // 
             // label16
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(584, 93);
+            this.label16.Location = new System.Drawing.Point(607, 91);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(32, 24);
             this.label16.TabIndex = 13;
             this.label16.Text = "10";
+            this.label16.Visible = false;
             // 
-            // label15
+            // totalMarkLbl
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(585, 53);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(63, 13);
-            this.label15.TabIndex = 12;
-            this.label15.Text = "Total Marks";
+            this.totalMarkLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.totalMarkLbl.AutoSize = true;
+            this.totalMarkLbl.Location = new System.Drawing.Point(608, 53);
+            this.totalMarkLbl.Name = "totalMarkLbl";
+            this.totalMarkLbl.Size = new System.Drawing.Size(63, 13);
+            this.totalMarkLbl.TabIndex = 12;
+            this.totalMarkLbl.Text = "Total Marks";
             // 
             // label12
             // 
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(522, 98);
+            this.label12.Location = new System.Drawing.Point(530, 95);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(26, 18);
             this.label12.TabIndex = 11;
             this.label12.Text = "10";
+            this.label12.Visible = false;
             // 
             // label13
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(476, 100);
+            this.label13.Location = new System.Drawing.Point(484, 97);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(40, 17);
             this.label13.TabIndex = 10;
             this.label13.Text = "%  = ";
+            this.label13.Visible = false;
             // 
             // label14
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(453, 99);
+            this.label14.Location = new System.Drawing.Point(461, 96);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(24, 18);
             this.label14.TabIndex = 9;
             this.label14.Text = "10";
+            this.label14.Visible = false;
             // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(310, 99);
+            this.label11.Location = new System.Drawing.Point(325, 99);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(26, 18);
             this.label11.TabIndex = 8;
             this.label11.Text = "10";
+            this.label11.Visible = false;
             // 
             // label10
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(264, 101);
+            this.label10.Location = new System.Drawing.Point(290, 98);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(40, 17);
             this.label10.TabIndex = 7;
             this.label10.Text = "%  = ";
+            this.label10.Visible = false;
             // 
             // label9
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(241, 100);
+            this.label9.Location = new System.Drawing.Point(266, 98);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(24, 18);
             this.label9.TabIndex = 6;
             this.label9.Text = "10";
+            this.label9.Visible = false;
             // 
             // textBox2
             // 
             this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Location = new System.Drawing.Point(375, 98);
+            this.textBox2.Location = new System.Drawing.Point(383, 95);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(73, 20);
             this.textBox2.TabIndex = 5;
+            this.textBox2.Visible = false;
             // 
             // textBox1
             // 
             this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Location = new System.Drawing.Point(159, 98);
+            this.textBox1.Location = new System.Drawing.Point(191, 95);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(73, 20);
             this.textBox1.TabIndex = 4;
+            this.textBox1.Visible = false;
             // 
-            // label7
+            // classMarkLbl
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(156, 54);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(64, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Class Marks";
+            this.classMarkLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.classMarkLbl.AutoSize = true;
+            this.classMarkLbl.Location = new System.Drawing.Point(188, 54);
+            this.classMarkLbl.Name = "classMarkLbl";
+            this.classMarkLbl.Size = new System.Drawing.Size(64, 13);
+            this.classMarkLbl.TabIndex = 2;
+            this.classMarkLbl.Text = "Class Marks";
             // 
-            // label6
+            // examMarkLbl
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(372, 54);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(65, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Exam Marks";
+            this.examMarkLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.examMarkLbl.AutoSize = true;
+            this.examMarkLbl.Location = new System.Drawing.Point(380, 54);
+            this.examMarkLbl.Name = "examMarkLbl";
+            this.examMarkLbl.Size = new System.Drawing.Size(65, 13);
+            this.examMarkLbl.TabIndex = 1;
+            this.examMarkLbl.Text = "Exam Marks";
             // 
             // subjectName
             // 
             this.subjectName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.subjectName.AutoSize = true;
-            this.subjectName.Location = new System.Drawing.Point(38, 53);
+            this.subjectName.Location = new System.Drawing.Point(21, 53);
             this.subjectName.Name = "subjectName";
             this.subjectName.Size = new System.Drawing.Size(74, 13);
             this.subjectName.TabIndex = 0;
@@ -340,12 +350,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel inputPanel;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label classMarkLbl;
+        private System.Windows.Forms.Label examMarkLbl;
         private System.Windows.Forms.Label subjectName;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label remarksLbl;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label totalMarkLbl;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
