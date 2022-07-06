@@ -177,6 +177,13 @@ namespace Perfect_Peace_System.Pages
                 classScoreTBs[i].KeyPress += tB_KeyPress;
                 examScoreTBs[i].KeyPress += tB_KeyPress;
             }
+
+            Label getLastRemarkLbl = remarkLbls[remarkLbls.Count-1];
+            Button nextPageBtn = new Button();
+            nextPageBtn.Text = "Next Page";
+            nextPageBtn.Location = new Point(getLastRemarkLbl.Location.X, getLastRemarkLbl.Location.Y + 40);
+            inputPanel.Controls.Add(nextPageBtn);
+
         }
 
         private void tB_TextChanged(object sender, EventArgs e)
@@ -255,6 +262,5 @@ namespace Perfect_Peace_System.Pages
                 e.Handled = true;
             }
         }
-
     }
 }

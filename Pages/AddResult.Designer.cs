@@ -71,6 +71,7 @@
             this.inputPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.inputPanel.AutoScroll = true;
             this.inputPanel.Controls.Add(this.label18);
             this.inputPanel.Controls.Add(this.remarksLbl);
             this.inputPanel.Controls.Add(this.label16);
@@ -87,8 +88,9 @@
             this.inputPanel.Controls.Add(this.examMarkLbl);
             this.inputPanel.Controls.Add(this.subjectName);
             this.inputPanel.Location = new System.Drawing.Point(0, 104);
+            this.inputPanel.Margin = new System.Windows.Forms.Padding(3, 40, 3, 3);
             this.inputPanel.Name = "inputPanel";
-            this.inputPanel.Size = new System.Drawing.Size(879, 577);
+            this.inputPanel.Size = new System.Drawing.Size(879, 554);
             this.inputPanel.TabIndex = 1;
             // 
             // label18
