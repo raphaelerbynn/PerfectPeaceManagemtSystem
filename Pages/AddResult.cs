@@ -182,18 +182,18 @@ namespace Perfect_Peace_System.Pages
         private void tB_TextChanged(object sender, EventArgs e)
         {
             TextBox textBox = (TextBox)sender;
-            if(textBox.Location.X == classMarkLbl.Location.X)
+            for (int i = 0; i < subjectLbls.Count; i++)
             {
-                for(int i=0; i<subjectLbls.Count; i++)
+                if (textBox.Location.Y == subjectLbls[i].Location.Y)
                 {
-                    if(textBox.Location.Y == subjectLbls[i].Location.Y)
+                    if (textBox.Location.X == classMarkLbl.Location.X)
                     {
                         if (!String.IsNullOrEmpty(textBox.Text))
                         {
                             //calculate class mark with %
-                            double percentage = classPercentages[i] / 100.0;
-                            double mark = double.Parse(classScoreTBs[i].Text) * percentage;
-                            classScoreCalcLbls[i].Text = mark.ToString("0.##");
+                            double class_percentage = classPercentages[i] / 100.0;
+                            double class_mark = double.Parse(classScoreTBs[i].Text) * class_percentage;
+                            classScoreCalcLbls[i].Text = class_mark.ToString("0.##");
                             Console.WriteLine(classScoreCalcLbls[i].Text);
                         }
                         else
@@ -201,7 +201,45 @@ namespace Perfect_Peace_System.Pages
                             classScoreCalcLbls[i].Text = "00";
                         }
                     }
+                    if (textBox.Location.X == examMarkLbl.Location.X)
+                    {
+                        if (!String.IsNullOrEmpty(textBox.Text))
+                        {
+                            //calculate exam mark with %
+                            double exam_percentage = examPercentages[i] / 100.0;
+                            double exam_mark = double.Parse(examScoreTBs[i].Text) * exam_percentage;
+                            examScoreCalcLbls[i].Text = exam_mark.ToString("0.##");
+                            Console.WriteLine(examScoreCalcLbls[i].Text);
+                        }
+                        else
+                        {
+                            examScoreCalcLbls[i].Text = "00";
+                        }
+                    }
+                    //upddating total score
+                    totalMarksLbls[i].Text = (double.Parse(examScoreCalcLbls[i].Text) + double.Parse(classScoreCalcLbls[i].Text)).ToString(); 
                 }
+                /*else if (textBox.Location.X == examMarkLbl.Location.X)
+                {
+                    if (textBox.Location.Y == subjectLbls[i].Location.Y)
+                    {
+                        if (!String.IsNullOrEmpty(textBox.Text))
+                        {
+                            //calculate exam mark with %
+                            double exam_percentage = examPercentages[i] / 100.0;
+                            double exam_mark = double.Parse(examScoreTBs[i].Text) * exam_percentage;
+                            examScoreCalcLbls[i].Text = exam_mark.ToString("0.##");
+                            Console.WriteLine(examScoreCalcLbls[i].Text);
+                        }
+                        else
+                        {
+                            examScoreCalcLbls[i].Text = "00";
+                        }
+                    }
+
+                    //updating total score
+                    //if()
+                }*/
             }
         }
 
