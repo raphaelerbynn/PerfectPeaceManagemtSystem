@@ -84,13 +84,12 @@ namespace Perfect_Peace_System.Pages
 
                 //class score labels
                 Label classScoreLabel = new Label();
-                classScoreLabel.Text = reader["class_percentage"].ToString();
+                classScoreLabel.Text = reader["class_percentage"].ToString() + "% =";
                 classScoreLabel.Location = new Point(classMarkLocationX + 75, subLocationY);
                 classScoreLabel.Anchor = AnchorStyles.Top;
                 classScoreLabel.AutoSize = true;
                 classScoreLabel.Font = new Font("Calibri", 12);
                 classScoreLbls.Add(classScoreLabel);
-                //classScoreLabel.Text = classScoreLabel.Text + "% = ";
 
                 //class %
                 int class_percentage = int.Parse(reader["class_percentage"].ToString());
@@ -99,13 +98,12 @@ namespace Perfect_Peace_System.Pages
                 //class marks label
                 Label classScoreCalcLabel = new Label();
                 classScoreCalcLabel.Text = "00";
-                classScoreCalcLabel.Location = new Point(classMarkLocationX + 100, subLocationY);
+                classScoreCalcLabel.Location = new Point(classMarkLocationX + 120, subLocationY);
                 classScoreCalcLabel.Anchor = AnchorStyles.Top;
                 classScoreCalcLabel.AutoSize = true;
-                classScoreCalcLabel.Font = new Font("Calibri", 12);
+                classScoreCalcLabel.Font = new Font("Calibri", 12, FontStyle.Bold);
+                classScoreCalcLabel.ForeColor = Color.BlueViolet;
                 classScoreCalcLbls.Add(classScoreCalcLabel);
-
-                classScoreLabel.Text = classScoreLabel.Text + "% = " + classScoreCalcLabel.Text;
 
                 //exam score textboxes
                 TextBox examScoreTB = new TextBox();
@@ -116,13 +114,12 @@ namespace Perfect_Peace_System.Pages
 
                 //exam score labels
                 Label examScoreLabel = new Label();
-                examScoreLabel.Text = reader["exam_percentage"].ToString();
+                examScoreLabel.Text = reader["exam_percentage"].ToString() + "% =";
                 examScoreLabel.Location = new Point(examMarkLocationX + 75, subLocationY);
                 examScoreLabel.Anchor = AnchorStyles.Top;
                 examScoreLabel.AutoSize = true;
                 examScoreLabel.Font = new Font("Calibri", 12);
                 examScoreLbls.Add(examScoreLabel);
-                //classScoreLabel.Text = classScoreLabel.Text + "% = ";
 
                 //exam %
                 int exam_percentage = int.Parse(reader["exam_percentage"].ToString());
@@ -131,13 +128,14 @@ namespace Perfect_Peace_System.Pages
                 //exam marks label
                 Label examScoreCalcLabel = new Label();
                 examScoreCalcLabel.Text = "00";
-                examScoreCalcLabel.Location = new Point(examMarkLocationX + 100, subLocationY);
+                examScoreCalcLabel.Location = new Point(examMarkLocationX + 120, subLocationY);
                 examScoreCalcLabel.Anchor = AnchorStyles.Top;
                 examScoreCalcLabel.AutoSize = true;
-                examScoreCalcLabel.Font = new Font("Calibri", 12);
+                examScoreCalcLabel.Font = new Font("Calibri", 12, FontStyle.Bold);
+                examScoreCalcLabel.ForeColor = Color.BlueViolet;
                 examScoreCalcLbls.Add(examScoreCalcLabel);
 
-                examScoreLabel.Text = examScoreLabel.Text + "% = " + examScoreCalcLabel.Text;
+
 
                 //total marks label
                 Label totalMarksLabel = new Label();
@@ -166,10 +164,13 @@ namespace Perfect_Peace_System.Pages
                 inputPanel.Controls.Add(subjectLbls[i]);
                 inputPanel.Controls.Add(classScoreTBs[i]);
                 inputPanel.Controls.Add(classScoreLbls[i]);
+                inputPanel.Controls.Add(classScoreCalcLbls[i]);
                 inputPanel.Controls.Add(examScoreTBs[i]);
                 inputPanel.Controls.Add(examScoreLbls[i]);
+                inputPanel.Controls.Add(examScoreCalcLbls[i]);
                 inputPanel.Controls.Add(totalMarksLbls[i]);
                 inputPanel.Controls.Add(remarkLbls[i]);
+                
 
                 classScoreTBs[i].TextChanged += tB_TextChanged;
                 examScoreTBs[i].TextChanged += tB_TextChanged;
@@ -187,9 +188,18 @@ namespace Perfect_Peace_System.Pages
                 {
                     if(textBox.Location.Y == subjectLbls[i].Location.Y)
                     {
-                        //calculate class mark with %
-                        double percentage = classPercentages[i] / 100.0;
-                        double mark;
+                        if (!String.IsNullOrEmpty(textBox.Text))
+                        {
+                            //calculate class mark with %
+                            double percentage = classPercentages[i] / 100.0;
+                            double mark = double.Parse(classScoreTBs[i].Text) * percentage;
+                            classScoreCalcLbls[i].Text = mark.ToString("0.##");
+                            Console.WriteLine(classScoreCalcLbls[i].Text);
+                        }
+                        else
+                        {
+                            classScoreCalcLbls[i].Text = "00";
+                        }
                     }
                 }
             }
