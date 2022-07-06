@@ -8,24 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Text.RegularExpressions;
 
 namespace Perfect_Peace_System.Pages
 {
     public partial class AddResult : Form
     {
         private string query;
-        List<Label> subjectLbls;
-        List<Label> classScoreLbls;
-        List<Label> examScoreLbls;
-        List<Label> classScoreCalcLbls;
+        List<Label> subjectLbls = new List<Label>();
+        List<Label> classScoreLbls = new List<Label>();
+        List<Label> examScoreLbls = new List<Label>();
+        List<Label> classScoreCalcLbls = new List<Label>();
         List<Label> examScoreCalcLbls = new List<Label>();
-        List<Label> classPercentageLbls;
-        List<Label> examPercentageLbls;
-        List<Label> totalMarksLbls;
-        List<Label> remarkLbls;
+        List<Label> totalMarksLbls = new List<Label>();
+        List<Label> remarkLbls = new List<Label>();
 
-        List<TextBox> classScoreTBs;
-        List<TextBox> examScoreTBs;
+        List<TextBox> classScoreTBs = new List<TextBox>();
+        List<TextBox> examScoreTBs = new List<TextBox>();
+
+
+        List<int> classPercentages = new List<int>();
+        List<int> examPercentages = new List<int>();
 
         public AddResult()
         {
@@ -36,7 +39,7 @@ namespace Perfect_Peace_System.Pages
 
         private void showSubjectsWithFeilds()
         {
-            subjectLbls = new List<Label>();
+            /*subjectLbls = new List<Label>();
             classScoreLbls = new List<Label>();
             examScoreLbls = new List<Label>();
             classPercentageLbls = new List<Label>();
@@ -47,7 +50,7 @@ namespace Perfect_Peace_System.Pages
             classScoreCalcLbls = new List<Label>();
 
             classScoreTBs = new List<TextBox>();
-            examScoreTBs = new List<TextBox>();
+            examScoreTBs = new List<TextBox>();*/
 
             int subLocationX = subjectName.Location.X;
             int classMarkLocationX = classMarkLbl.Location.X;
@@ -87,6 +90,10 @@ namespace Perfect_Peace_System.Pages
                 classScoreLbls.Add(classScoreLabel);
                 //classScoreLabel.Text = classScoreLabel.Text + "% = ";
 
+                //class %
+                int class_percentage = int.Parse(reader["class_percentage"].ToString());
+                classPercentages.Add(class_percentage);
+
                 //class marks label
                 Label classScoreCalcLabel = new Label();
                 classScoreCalcLabel.Text = "00";
@@ -107,13 +114,17 @@ namespace Perfect_Peace_System.Pages
 
                 //exam score labels
                 Label examScoreLabel = new Label();
-                examScoreLabel.Text = reader["class_percentage"].ToString();
+                examScoreLabel.Text = reader["exam_percentage"].ToString();
                 examScoreLabel.Location = new Point(examMarkLocationX + 75, subLocationY);
                 examScoreLabel.Anchor = AnchorStyles.Top;
                 examScoreLabel.AutoSize = true;
                 examScoreLabel.Font = new Font("Calibri", 12);
                 examScoreLbls.Add(examScoreLabel);
                 //classScoreLabel.Text = classScoreLabel.Text + "% = ";
+
+                //exam %
+                int exam_percentage = int.Parse(reader["exam_percentage"].ToString());
+                examPercentages.Add(exam_percentage);
 
                 //exam marks label
                 Label examScoreCalcLabel = new Label();
@@ -146,25 +157,7 @@ namespace Perfect_Peace_System.Pages
 
                 subLocationY += 50;
             }
-            reader.Close();
-
-            /*foreach (Label subjectLabel in subjectLbls)
-            {
-                inputPanel.Controls.Add(subjectLabel);
-            }
-            foreach (TextBox classScoreTB in classScoreTBs)
-            {
-                inputPanel.Controls.Add(classScoreTB);
-            }
-            foreach (Label classScoreLabel in classScoreLbls)
-            {
-                inputPanel.Controls.Add(classScoreLabel);
-            }
-            foreach (Label classScoreCalcLabel in classScoreCalcLbls) 
-            { 
-                inputPanel.Controls.Add(classScoreCalcLabel);
-            }*/
-            
+            reader.Close();            
 
             for(int i=0; i<subjectLbls.Count; i++)
             {
@@ -189,7 +182,11 @@ namespace Perfect_Peace_System.Pages
                 {
                     if(textBox.Location.Y == subjectLbls[i].Location.Y)
                     {
-
+                        //calculate class mark with %
+                        double percentage = int.Parse(Regex.Match("10% = ", @"\d+").Value) / 100.0;
+                        double mark;
+                        Console.WriteLine(classPercentages.Count);
+                        Console.WriteLine(classPercentages.Count);
                     }
                 }
             }
