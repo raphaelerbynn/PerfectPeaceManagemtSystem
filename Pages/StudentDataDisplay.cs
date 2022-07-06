@@ -146,11 +146,7 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
-        private void displaySearch(string searchText)
-        {
-            //query = "SELECT student_id,age,gender,class, [f_name]+' '+[l_name] AS name FROM Student WHERE " +  + "='" + searchTextBox.Text + "'";
-            //DbClient.dataGridFill(studentDataView, query);
-        }
+        
     }
 
 }

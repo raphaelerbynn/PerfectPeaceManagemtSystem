@@ -13,6 +13,7 @@ namespace Perfect_Peace_System.Pages
     public partial class StudentReport : Form
     {
         private string query;
+        private static string id;
         Student student;
         OpenNewPage openNewpage;
 
@@ -76,8 +77,7 @@ namespace Perfect_Peace_System.Pages
             try
             {
                 DataGridViewRow row = studentDataView.Rows[e.RowIndex];
-                string id = row.Cells["student_Id"].Value.ToString();
-                string name = row.Cells["full_name"].Value.ToString();
+                id = row.Cells["student_Id"].Value.ToString();
 
 
                 if (studentDataView.Columns[e.ColumnIndex].Name == "input_results" && e.RowIndex >= 0)
@@ -89,6 +89,11 @@ namespace Perfect_Peace_System.Pages
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public static string getIdFromSelectedRow()
+        {
+            return id;
         }
     }
 }

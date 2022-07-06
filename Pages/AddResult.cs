@@ -15,6 +15,7 @@ namespace Perfect_Peace_System.Pages
     public partial class AddResult : Form
     {
         private string query;
+
         List<Label> subjectLbls = new List<Label>();
         List<Label> classScoreLbls = new List<Label>();
         List<Label> examScoreLbls = new List<Label>();
@@ -34,9 +35,22 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
             showSubjectsWithFeilds();
+            getStudentInfo();
             
         }
 
+        private void getStudentInfo()
+        {
+            string id = StudentReport.getIdFromSelectedRow();
+            query = "SELECT * FROM Student WHERE student_id='"+id+"'";
+            SqlDataReader reader = DbClient.query_reader(query);
+            while (reader.Read())
+            {
+                studentNameLbl.Text = reader["f_name"].ToString() + " " + reader["l_name"].ToString();
+                classLbl.Text = reader["class"].ToString();
+            }
+            reader.Close();
+        }
 
 
         private void showSubjectsWithFeilds()
@@ -262,5 +276,7 @@ namespace Perfect_Peace_System.Pages
                 e.Handled = true;
             }
         }
+
+        
     }
 }

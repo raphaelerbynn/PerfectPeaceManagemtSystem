@@ -47,9 +47,9 @@
             this.subjectName = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.f = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.classLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.studentNameLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.inputPanel.SuspendLayout();
@@ -90,7 +90,7 @@
             this.inputPanel.Location = new System.Drawing.Point(0, 104);
             this.inputPanel.Margin = new System.Windows.Forms.Padding(3, 40, 3, 3);
             this.inputPanel.Name = "inputPanel";
-            this.inputPanel.Size = new System.Drawing.Size(879, 554);
+            this.inputPanel.Size = new System.Drawing.Size(879, 556);
             this.inputPanel.TabIndex = 1;
             // 
             // label18
@@ -263,9 +263,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel2.Controls.Add(this.f);
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.classLbl);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.studentNameLbl);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
@@ -283,16 +283,16 @@
             this.f.TabIndex = 6;
             this.f.Text = "Input Result";
             // 
-            // label4
+            // classLbl
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(608, 63);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 18);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "----------------";
+            this.classLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.classLbl.AutoSize = true;
+            this.classLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classLbl.Location = new System.Drawing.Point(608, 63);
+            this.classLbl.Name = "classLbl";
+            this.classLbl.Size = new System.Drawing.Size(88, 18);
+            this.classLbl.TabIndex = 5;
+            this.classLbl.Text = "----------------";
             // 
             // label3
             // 
@@ -304,16 +304,16 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Class: ";
             // 
-            // label2
+            // studentNameLbl
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(258, 62);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 18);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "----------------";
+            this.studentNameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.studentNameLbl.AutoSize = true;
+            this.studentNameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.studentNameLbl.Location = new System.Drawing.Point(258, 62);
+            this.studentNameLbl.Name = "studentNameLbl";
+            this.studentNameLbl.Size = new System.Drawing.Size(88, 18);
+            this.studentNameLbl.TabIndex = 3;
+            this.studentNameLbl.Text = "----------------";
             // 
             // label1
             // 
@@ -347,9 +347,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label f;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label classLbl;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label studentNameLbl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel inputPanel;
         private System.Windows.Forms.Label classMarkLbl;
