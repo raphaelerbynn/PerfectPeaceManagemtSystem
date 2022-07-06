@@ -37,6 +37,8 @@ namespace Perfect_Peace_System.Pages
             
         }
 
+
+
         private void showSubjectsWithFeilds()
         {
             /*subjectLbls = new List<Label>();
@@ -170,6 +172,9 @@ namespace Perfect_Peace_System.Pages
                 inputPanel.Controls.Add(remarkLbls[i]);
 
                 classScoreTBs[i].TextChanged += tB_TextChanged;
+                examScoreTBs[i].TextChanged += tB_TextChanged;
+                classScoreTBs[i].KeyPress += tB_KeyPress;
+                examScoreTBs[i].KeyPress += tB_KeyPress;
             }
         }
 
@@ -183,13 +188,25 @@ namespace Perfect_Peace_System.Pages
                     if(textBox.Location.Y == subjectLbls[i].Location.Y)
                     {
                         //calculate class mark with %
-                        double percentage = int.Parse(Regex.Match("10% = ", @"\d+").Value) / 100.0;
+                        double percentage = classPercentages[i] / 100.0;
                         double mark;
-                        Console.WriteLine(classPercentages.Count);
-                        Console.WriteLine(classPercentages.Count);
                     }
                 }
             }
         }
+
+        private void tB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }
