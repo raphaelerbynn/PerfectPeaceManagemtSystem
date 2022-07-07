@@ -267,7 +267,31 @@ namespace Perfect_Peace_System.Pages
                         }
                     }
                     //upddating total score
-                    totalMarksLbls[i].Text = (double.Parse(examScoreCalcLbls[i].Text) + double.Parse(classScoreCalcLbls[i].Text)).ToString(); 
+                    totalMarksLbls[i].Text = (double.Parse(examScoreCalcLbls[i].Text) + double.Parse(classScoreCalcLbls[i].Text)).ToString();
+                    if (double.Parse(totalMarksLbls[i].Text) >= 80)
+                    {
+                        remarkLbls[i].Text = "Excellent"; 
+                    }
+                    else if (double.Parse(totalMarksLbls[i].Text) >= 70 && double.Parse(totalMarksLbls[i].Text) < 80)
+                    {
+                        remarkLbls[i].Text = "Very Good";
+                    }
+                    else if (double.Parse(totalMarksLbls[i].Text) >= 65 && double.Parse(totalMarksLbls[i].Text) < 70)
+                    {
+                        remarkLbls[i].Text = "Good";
+                    }
+                    else if (double.Parse(totalMarksLbls[i].Text) >= 50 && double.Parse(totalMarksLbls[i].Text) < 65)
+                    {
+                        remarkLbls[i].Text = "Credit";
+                    }
+                    else if (double.Parse(totalMarksLbls[i].Text) >= 40 && double.Parse(totalMarksLbls[i].Text) < 50)
+                    {
+                        remarkLbls[i].Text = "Pass";
+                    }
+                    else 
+                    {
+                        remarkLbls[i].Text = "Fail";
+                    }
                 }
             }
         }
@@ -338,6 +362,8 @@ namespace Perfect_Peace_System.Pages
             Console.WriteLine("Raw score: " + raw_score);
             Console.WriteLine("Pass score: " + pass_score);
             Console.WriteLine("Total raw score: " + total_raw_score);
+
+            this.Close();
         }
     }
 }
