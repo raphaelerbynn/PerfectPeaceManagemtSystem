@@ -15,6 +15,7 @@ namespace Perfect_Peace_System.Pages
     public partial class AddResult : Form
     {
         private string query;
+        private string student_id = StudentReport.getIdFromSelectedRow();
 
         List<Label> subjectLbls = new List<Label>();
         List<Label> classScoreLbls = new List<Label>();
@@ -31,6 +32,9 @@ namespace Perfect_Peace_System.Pages
         List<int> examPercentages = new List<int>();
         List<string> subject_ids = new List<string>();
 
+        List<int> classScores = new List<int>();
+        List<int> examScores = new List<int>();
+
 
         public AddResult()
         {
@@ -42,8 +46,7 @@ namespace Perfect_Peace_System.Pages
 
         private void getStudentInfo()
         {
-            string id = StudentReport.getIdFromSelectedRow();
-            query = "SELECT * FROM Student WHERE student_id='"+id+"'";
+            query = "SELECT * FROM Student WHERE student_id='"+student_id+"'";
             SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())
             {
@@ -81,6 +84,11 @@ namespace Perfect_Peace_System.Pages
             SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())
             {
+                int classTotal = int.Parse(reader["class_total_marks"].ToString());
+                classScores.Add(classTotal);
+                int examTotal = int.Parse(reader["exam_total_marks"].ToString());
+                examScores.Add(examTotal);
+
                 //subjects
                 Label subjectLabel = new Label();
                 subjectLabel.Text = reader["name"].ToString();
@@ -217,11 +225,18 @@ namespace Perfect_Peace_System.Pages
                     {
                         if (!String.IsNullOrEmpty(textBox.Text))
                         {
-                            //calculate class mark with %
-                            double class_percentage = classPercentages[i] / 100.0;
-                            double class_mark = double.Parse(classScoreTBs[i].Text) * class_percentage;
-                            classScoreCalcLbls[i].Text = class_mark.ToString("0.##");
-                            Console.WriteLine(classScoreCalcLbls[i].Text);
+                            if (double.Parse(classScoreTBs[i].Text) > classScores[i])
+                            {
+                                MessageBox.Show("Class score greater than total class mark");
+                                classScoreTBs[i].Text = null;
+                            }
+                            else
+                            {
+                                //calculate class mark with %
+                                //double class_percentage = classPercentages[i] / 100.0;
+                                double class_mark = (double.Parse(classScoreTBs[i].Text) / classScores[i]) * classPercentages[i];
+                                classScoreCalcLbls[i].Text = class_mark.ToString("0.##");
+                            }
                         }
                         else
                         {
@@ -232,11 +247,19 @@ namespace Perfect_Peace_System.Pages
                     {
                         if (!String.IsNullOrEmpty(textBox.Text))
                         {
-                            //calculate exam mark with %
-                            double exam_percentage = examPercentages[i] / 100.0;
-                            double exam_mark = double.Parse(examScoreTBs[i].Text) * exam_percentage;
-                            examScoreCalcLbls[i].Text = exam_mark.ToString("0.##");
-                            Console.WriteLine(examScoreCalcLbls[i].Text);
+                            if (double.Parse(examScoreTBs[i].Text) > examScores[i])
+                            {
+                                MessageBox.Show("Exam score greater than total exam mark");
+                                examScoreTBs[i].Text = null;
+                            }
+                            else
+                            {
+                                //calculate exam mark with %
+                                //double exam_percentage = examPercentages[i] / 100.0;
+                                double exam_mark = (double.Parse(examScoreTBs[i].Text) / examScores[i]) * examPercentages[i];
+                                examScoreCalcLbls[i].Text = exam_mark.ToString("0.##");
+                                Console.WriteLine(examScoreCalcLbls[i].Text);
+                            }
                         }
                         else
                         {
@@ -275,20 +298,46 @@ namespace Perfect_Peace_System.Pages
         private void saveBtn_Click(object sender, EventArgs e)
         {
             string message = "Do you want to save this result?";
+
             MessageBoxButtons action = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, "", action);
             if (result == DialogResult.Yes)
             {
-                for (int i = 0; i < subject_ids.Count; i++)
-                { 
-                    if (!(String.IsNullOrEmpty(classScoreTBs[i].Text) && String.IsNullOrEmpty(examScoreTBs[i].Text)))
+                detailsToDB();
+            }
+        }
+
+        private void detailsToDB()
+        {
+            double raw_score = 0;
+            int pass_score = 0;
+            int total_raw_score = 0;
+            for (int i = 0; i < subject_ids.Count; i++)
+            {
+                if (!(String.IsNullOrEmpty(classScoreTBs[i].Text) || String.IsNullOrEmpty(examScoreTBs[i].Text)))
+                {
+                    query = "INSERT INTO Student_marks(subject_id, student_id, exam_score, exam_score_percentage, class_score, class_score_percentage, total_score, remarks) " +
+                        "VALUES('" + subject_ids[i] + "', '" + student_id + "', '" + examScoreTBs[i].Text + "', '" + examScoreCalcLbls[i].Text + "', '" + classScoreTBs[i].Text + "', '" + classScoreCalcLbls[i].Text + "', '" + totalMarksLbls[i].Text + "', '" + remarkLbls[i].Text + "')";
+                    DbClient.query_execute(query);
+
+                    query = "SELECT * FROM Subject WHERE subject_id='" + subject_ids[i] + "'";
+                    SqlDataReader reader = DbClient.query_reader(query);
+                    while (reader.Read())
                     {
-                        query = "INSERT INTO Student_marks(subject_id, exam_score, exam_score_percentage, class_score, class_score_percentage, total_score, remarks) " +
-                            "VALUES('" + subject_ids[i] + "', '" + examScoreTBs[i].Text + "', '" + examScoreCalcLbls[i].Text + "', '" + classScoreTBs[i].Text + "', '" + classScoreCalcLbls[i].Text + "', '" + totalMarksLbls[i].Text + "', '" + remarkLbls[i].Text + "')";
-                        DbClient.query_execute(query);
+                        pass_score += int.Parse(reader["pass_marks"].ToString());
+                        total_raw_score += 100;
                     }
+                    reader.Close();
+
+                    raw_score += double.Parse(totalMarksLbls[i].Text);
                 }
             }
+            /*query = "INSERT INTO Student_result(student_id, raw_score, pass_raw_score, total_raw_score, result_status, class, term, conduct, attitude, interest, teacher_remarks, date) " +
+                "VALUES('" + student_id + "', '', '', '', '', '', '', '', '', '', '', '')";
+            DbClient.query_execute(query);*/
+            Console.WriteLine("Raw score: " + raw_score);
+            Console.WriteLine("Pass score: " + pass_score);
+            Console.WriteLine("Total raw score: " + total_raw_score);
         }
     }
 }

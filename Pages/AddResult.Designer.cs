@@ -33,10 +33,10 @@
             this.teacherRemarksPanel = new System.Windows.Forms.Panel();
             this.saveBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.attitudeTB = new System.Windows.Forms.TextBox();
+            this.teacherRemarksTB = new System.Windows.Forms.TextBox();
+            this.interestTB = new System.Windows.Forms.TextBox();
+            this.conductTB = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -113,10 +113,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.teacherRemarksPanel.Controls.Add(this.saveBtn);
             this.teacherRemarksPanel.Controls.Add(this.backBtn);
-            this.teacherRemarksPanel.Controls.Add(this.textBox6);
-            this.teacherRemarksPanel.Controls.Add(this.textBox5);
-            this.teacherRemarksPanel.Controls.Add(this.textBox4);
-            this.teacherRemarksPanel.Controls.Add(this.textBox3);
+            this.teacherRemarksPanel.Controls.Add(this.attitudeTB);
+            this.teacherRemarksPanel.Controls.Add(this.teacherRemarksTB);
+            this.teacherRemarksPanel.Controls.Add(this.interestTB);
+            this.teacherRemarksPanel.Controls.Add(this.conductTB);
             this.teacherRemarksPanel.Controls.Add(this.label7);
             this.teacherRemarksPanel.Controls.Add(this.label5);
             this.teacherRemarksPanel.Controls.Add(this.label4);
@@ -152,41 +152,41 @@
             this.backBtn.UseVisualStyleBackColor = true;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
-            // textBox6
+            // attitudeTB
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox6.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(164, 190);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(628, 26);
-            this.textBox6.TabIndex = 8;
+            this.attitudeTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.attitudeTB.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attitudeTB.Location = new System.Drawing.Point(164, 190);
+            this.attitudeTB.Name = "attitudeTB";
+            this.attitudeTB.Size = new System.Drawing.Size(628, 26);
+            this.attitudeTB.TabIndex = 8;
             // 
-            // textBox5
+            // teacherRemarksTB
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox5.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(236, 295);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(558, 26);
-            this.textBox5.TabIndex = 7;
+            this.teacherRemarksTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.teacherRemarksTB.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teacherRemarksTB.Location = new System.Drawing.Point(236, 295);
+            this.teacherRemarksTB.Name = "teacherRemarksTB";
+            this.teacherRemarksTB.Size = new System.Drawing.Size(558, 26);
+            this.teacherRemarksTB.TabIndex = 7;
             // 
-            // textBox4
+            // interestTB
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(166, 240);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(628, 26);
-            this.textBox4.TabIndex = 6;
+            this.interestTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.interestTB.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.interestTB.Location = new System.Drawing.Point(166, 240);
+            this.interestTB.Name = "interestTB";
+            this.interestTB.Size = new System.Drawing.Size(628, 26);
+            this.interestTB.TabIndex = 6;
             // 
-            // textBox3
+            // conductTB
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(166, 143);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(628, 26);
-            this.textBox3.TabIndex = 5;
+            this.conductTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.conductTB.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conductTB.Location = new System.Drawing.Point(166, 143);
+            this.conductTB.Name = "conductTB";
+            this.conductTB.Size = new System.Drawing.Size(628, 26);
+            this.conductTB.TabIndex = 5;
             // 
             // label7
             // 
@@ -514,10 +514,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button backBtn;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox attitudeTB;
+        private System.Windows.Forms.TextBox teacherRemarksTB;
+        private System.Windows.Forms.TextBox interestTB;
+        private System.Windows.Forms.TextBox conductTB;
         private System.Windows.Forms.Label label7;
     }
 }
