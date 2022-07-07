@@ -27,9 +27,10 @@ namespace Perfect_Peace_System.Pages
         List<TextBox> classScoreTBs = new List<TextBox>();
         List<TextBox> examScoreTBs = new List<TextBox>();
 
-
         List<int> classPercentages = new List<int>();
         List<int> examPercentages = new List<int>();
+        List<string> subject_ids = new List<string>();
+
 
         public AddResult()
         {
@@ -88,6 +89,10 @@ namespace Perfect_Peace_System.Pages
                 subjectLabel.AutoSize = true;
                 subjectLabel.Font = new Font("Calibri", 12);
                 subjectLbls.Add(subjectLabel);
+
+                //subject_ids
+                string id = reader["subject_id"].ToString();
+                subject_ids.Add(id);
 
                 //class score textboxes
                 TextBox classScoreTB = new TextBox();
@@ -274,7 +279,15 @@ namespace Perfect_Peace_System.Pages
             DialogResult result = MessageBox.Show(message, "", action);
             if (result == DialogResult.Yes)
             {
-                
+                for (int i = 0; i < subject_ids.Count; i++)
+                { 
+                    if (!(String.IsNullOrEmpty(classScoreTBs[i].Text) && String.IsNullOrEmpty(examScoreTBs[i].Text)))
+                    {
+                        query = "INSERT INTO Student_marks(subject_id, exam_score, exam_score_percentage, class_score, class_score_percentage, total_score, remarks) " +
+                            "VALUES('" + subject_ids[i] + "', '" + examScoreTBs[i].Text + "', '" + examScoreCalcLbls[i].Text + "', '" + classScoreTBs[i].Text + "', '" + classScoreCalcLbls[i].Text + "', '" + totalMarksLbls[i].Text + "', '" + remarkLbls[i].Text + "')";
+                        DbClient.query_execute(query);
+                    }
+                }
             }
         }
     }
