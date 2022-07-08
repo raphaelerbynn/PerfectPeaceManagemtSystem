@@ -62,6 +62,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.studentNameLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.termCb = new System.Windows.Forms.ComboBox();
+            this.statusCb = new System.Windows.Forms.ComboBox();
+            this.classCb = new System.Windows.Forms.ComboBox();
+            this.promotedLbl = new System.Windows.Forms.Label();
+            this.statusLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.inputPanel.SuspendLayout();
             this.teacherRemarksPanel.SuspendLayout();
@@ -111,6 +117,12 @@
             this.teacherRemarksPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.teacherRemarksPanel.Controls.Add(this.statusLbl);
+            this.teacherRemarksPanel.Controls.Add(this.promotedLbl);
+            this.teacherRemarksPanel.Controls.Add(this.classCb);
+            this.teacherRemarksPanel.Controls.Add(this.statusCb);
+            this.teacherRemarksPanel.Controls.Add(this.termCb);
+            this.teacherRemarksPanel.Controls.Add(this.label6);
             this.teacherRemarksPanel.Controls.Add(this.saveBtn);
             this.teacherRemarksPanel.Controls.Add(this.backBtn);
             this.teacherRemarksPanel.Controls.Add(this.attitudeTB);
@@ -464,6 +476,85 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Student Name: ";
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(91, 349);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(49, 19);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Term: ";
+            // 
+            // termCb
+            // 
+            this.termCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.termCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.termCb.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.termCb.FormattingEnabled = true;
+            this.termCb.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.termCb.Location = new System.Drawing.Point(146, 346);
+            this.termCb.Name = "termCb";
+            this.termCb.Size = new System.Drawing.Size(646, 26);
+            this.termCb.TabIndex = 12;
+            this.termCb.SelectedIndexChanged += new System.EventHandler(this.termCb_SelectedIndexChanged);
+            // 
+            // statusCb
+            // 
+            this.statusCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.statusCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.statusCb.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusCb.FormattingEnabled = true;
+            this.statusCb.Items.AddRange(new object[] {
+            "Repeated",
+            "Promoted"});
+            this.statusCb.Location = new System.Drawing.Point(313, 400);
+            this.statusCb.Name = "statusCb";
+            this.statusCb.Size = new System.Drawing.Size(479, 26);
+            this.statusCb.TabIndex = 13;
+            this.statusCb.Visible = false;
+            this.statusCb.SelectedIndexChanged += new System.EventHandler(this.statusCb_SelectedIndexChanged);
+            // 
+            // classCb
+            // 
+            this.classCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.classCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.classCb.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classCb.FormattingEnabled = true;
+            this.classCb.Location = new System.Drawing.Point(195, 446);
+            this.classCb.Name = "classCb";
+            this.classCb.Size = new System.Drawing.Size(597, 26);
+            this.classCb.TabIndex = 14;
+            this.classCb.Visible = false;
+            // 
+            // promotedLbl
+            // 
+            this.promotedLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.promotedLbl.AutoSize = true;
+            this.promotedLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.promotedLbl.Location = new System.Drawing.Point(91, 453);
+            this.promotedLbl.Name = "promotedLbl";
+            this.promotedLbl.Size = new System.Drawing.Size(98, 19);
+            this.promotedLbl.TabIndex = 15;
+            this.promotedLbl.Text = "Promoted To: ";
+            this.promotedLbl.Visible = false;
+            // 
+            // statusLbl
+            // 
+            this.statusLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.statusLbl.AutoSize = true;
+            this.statusLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLbl.Location = new System.Drawing.Point(91, 402);
+            this.statusLbl.Name = "statusLbl";
+            this.statusLbl.Size = new System.Drawing.Size(216, 19);
+            this.statusLbl.TabIndex = 16;
+            this.statusLbl.Text = "Status (Repeated or Promoted): ";
+            this.statusLbl.Visible = false;
+            // 
             // AddResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -519,5 +610,11 @@
         private System.Windows.Forms.TextBox interestTB;
         private System.Windows.Forms.TextBox conductTB;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox termCb;
+        private System.Windows.Forms.Label statusLbl;
+        private System.Windows.Forms.Label promotedLbl;
+        private System.Windows.Forms.ComboBox classCb;
+        private System.Windows.Forms.ComboBox statusCb;
     }
 }

@@ -442,13 +442,14 @@
             // student_idR
             // 
             this.student_idR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.student_idR.DataPropertyName = "student_id";
+            this.student_idR.DataPropertyName = "student_result_id";
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
             this.student_idR.DefaultCellStyle = dataGridViewCellStyle2;
             this.student_idR.HeaderText = "ID";
             this.student_idR.Name = "student_idR";
             this.student_idR.ReadOnly = true;
             this.student_idR.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.student_idR.Visible = false;
             this.student_idR.Width = 57;
             // 
             // student_nameR

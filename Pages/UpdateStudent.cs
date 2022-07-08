@@ -87,10 +87,6 @@ namespace Perfect_Peace_System.Pages
             {
                 if (classroom.maxCapacity(classCb.Text) > classroom.curCapacity(classCb.Text))
                 {
-                    Console.WriteLine("Maximum capacity no reach");
-                    Console.WriteLine("Max: " + classroom.maxCapacity(classCb.Text));
-                    Console.WriteLine("Current: " + classroom.curCapacity(classCb.Text));
-
                     Student student = new Student(DateTime.Parse(dobPicker.Text), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
                     student.update(id);
                     MessageBox.Show("Student updated successfully");

@@ -105,6 +105,9 @@ namespace Perfect_Peace_System.Pages
         {
             studentDataView.Visible = false;
             resultsDataView.Visible = true;
+
+            query = "SELECT * FROM Student_result";
+            DbClient.dataGridFill(resultsDataView, query);
         }
     }
 }

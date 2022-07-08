@@ -71,6 +71,7 @@ namespace Perfect_Peace_System.Pages
 
             classScoreTBs = new List<TextBox>();
             examScoreTBs = new List<TextBox>();*/
+            termCb.SelectedIndex = 1;
 
             int subLocationX = subjectName.Location.X;
             int classMarkLocationX = classMarkLbl.Location.X;
@@ -333,6 +334,8 @@ namespace Perfect_Peace_System.Pages
 
         private void detailsToDB()
         {
+            ClassRoom classRoom = new ClassRoom();
+            string result_status = "";
             double raw_score = 0;
             int pass_score = 0;
             int total_raw_score = 0;
@@ -356,14 +359,60 @@ namespace Perfect_Peace_System.Pages
                     raw_score += double.Parse(totalMarksLbls[i].Text);
                 }
             }
-            /*query = "INSERT INTO Student_result(student_id, raw_score, pass_raw_score, total_raw_score, result_status, class, term, conduct, attitude, interest, teacher_remarks, date) " +
-                "VALUES('" + student_id + "', '', '', '', '', '', '', '', '', '', '', '')";
-            DbClient.query_execute(query);*/
-            Console.WriteLine("Raw score: " + raw_score);
+
+            /*if (classRoom.maxCapacity(classCb.Text) > classRoom.curCapacity(classCb.Text))
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("Class full!!!");
+            }*/
+            if (statusCb.Visible == true)
+            {
+                result_status = statusCb.Text;
+            }
+            query = "INSERT INTO Student_result(student_id, raw_score, pass_raw_score, total_raw_score, result_status, class, term, conduct, attitude, interest, teacher_remarks, date) " +
+                "VALUES('" + student_id + "', '"+raw_score+"', '"+ pass_score +"', '"+total_raw_score+"', '"+result_status+"', '"+classLbl.Text+"', '"+termCb.Text+"', '"+conductTB.Text+"', '"+attitudeTB.Text+"', '"+interestTB.Text+"', '"+teacherRemarksTB.Text+"', '"+DateTime.Today+"')";
+            DbClient.query_execute(query);
+            /*Console.WriteLine("Raw score: " + raw_score);
             Console.WriteLine("Pass score: " + pass_score);
-            Console.WriteLine("Total raw score: " + total_raw_score);
+            Console.WriteLine("Total raw score: " + total_raw_score);*/
 
             this.Close();
+        }
+
+        private void classRanking()
+        {
+
+        }
+
+        private void termCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(termCb.SelectedIndex == 2)
+            {
+                statusLbl.Visible = true;
+                statusCb.Visible = true;
+            }
+            else
+            {
+                statusLbl.Visible = false;
+                statusCb.Visible = false;
+            }
+        }
+
+        private void statusCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (statusCb.SelectedIndex == 2)
+            {
+                promotedLbl.Visible = true;
+                classCb.Visible = true;
+            }
+            else
+            {
+                promotedLbl.Visible = false;
+                classCb.Visible = false;
+            }
         }
     }
 }

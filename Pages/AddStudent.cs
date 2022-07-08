@@ -74,10 +74,6 @@ namespace Perfect_Peace_System.Pages
                     {
                         if (classroom.maxCapacity(classCb.Text) > classroom.curCapacity(classCb.Text))
                         {
-                            Console.WriteLine("Maximum capacity no reach");
-                            Console.WriteLine("Max: " + classroom.maxCapacity(classCb.Text));
-                            Console.WriteLine("Current: " + classroom.curCapacity(classCb.Text));
-
                             person.save();
                             MessageBox.Show("Student Saved");
                             clearFeilds();
