@@ -31,6 +31,9 @@ namespace Perfect_Peace_System.Pages
 
         private void loadListBtn_Click(object sender, EventArgs e)
         {
+            resultsDataView.Visible = false;
+            studentDataView.Visible = true;
+
             query = "SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student WHERE class='"+classCb.Text+"'";
             DbClient.dataGridFill(studentDataView, query);
             studentDataView.Visible = true;
@@ -49,6 +52,8 @@ namespace Perfect_Peace_System.Pages
             studentDataView.Columns["input_results"].DisplayIndex = 6;
 
             studentDataView.AutoGenerateColumns = false;
+
+
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -94,6 +99,12 @@ namespace Perfect_Peace_System.Pages
         public static string getIdFromSelectedRow()
         {
             return id;
+        }
+
+        private void viewResultBtn_Click(object sender, EventArgs e)
+        {
+            studentDataView.Visible = false;
+            resultsDataView.Visible = true;
         }
     }
 }
