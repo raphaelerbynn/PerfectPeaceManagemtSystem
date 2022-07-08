@@ -53,6 +53,18 @@ namespace Perfect_Peace_System.Pages
 
             studentDataView.AutoGenerateColumns = false;
 
+            resultsDataView.Columns["student_result_idR"].DisplayIndex = 0;
+            resultsDataView.Columns["student_nameR"].DisplayIndex = 1;
+            resultsDataView.Columns["student_classR"].DisplayIndex = 2;
+            resultsDataView.Columns["total_raw_score"].DisplayIndex = 3;
+            resultsDataView.Columns["pass_score"].DisplayIndex = 4;
+            resultsDataView.Columns["raw_score"].DisplayIndex = 5;
+            resultsDataView.Columns["position"].DisplayIndex = 6;
+            resultsDataView.Columns["status"].DisplayIndex = 7;
+            resultsDataView.Columns["term"].DisplayIndex = 8;
+            resultsDataView.Columns["deleteR"].DisplayIndex = 9;
+
+            resultsDataView.AutoGenerateColumns = false;
 
         }
 
@@ -106,7 +118,10 @@ namespace Perfect_Peace_System.Pages
             studentDataView.Visible = false;
             resultsDataView.Visible = true;
 
-            query = "SELECT * FROM Student_result";
+            query = "SELECT student_result_id, student_id, raw_score, pass_raw_score, total_raw_score, class, term, date FROM Student_result";
+            DbClient.dataGridFill(resultsDataView, query);
+
+            query = "SELECT f_name+' '+l_name AS student_name FROM Student";
             DbClient.dataGridFill(resultsDataView, query);
         }
     }
