@@ -334,62 +334,47 @@ namespace Perfect_Peace_System.Pages
 
         private void detailsToDB()
         {
-            ClassRoom classRoom = new ClassRoom();
-            string result_status = "";
-            double raw_score = 0;
-            int pass_score = 0;
-            int total_raw_score = 0;
-            for (int i = 0; i < subject_ids.Count; i++)
+            try
             {
-                if (!(String.IsNullOrEmpty(classScoreTBs[i].Text) || String.IsNullOrEmpty(examScoreTBs[i].Text)))
+                ClassRoom classRoom = new ClassRoom();
+                string result_status = "";
+                double raw_score = 0;
+                int pass_score = 0;
+                int total_raw_score = 0;
+                for (int i = 0; i < subject_ids.Count; i++)
                 {
-                    query = "INSERT INTO Student_marks(subject_id, student_id, exam_score, exam_score_percentage, class_score, class_score_percentage, total_score, remarks) " +
-                        "VALUES('" + subject_ids[i] + "', '" + student_id + "', '" + examScoreTBs[i].Text + "', '" + examScoreCalcLbls[i].Text + "', '" + classScoreTBs[i].Text + "', '" + classScoreCalcLbls[i].Text + "', '" + totalMarksLbls[i].Text + "', '" + remarkLbls[i].Text + "')";
-                    DbClient.query_execute(query);
-
-                    query = "SELECT * FROM Subject WHERE subject_id='" + subject_ids[i] + "'";
-                    SqlDataReader reader = DbClient.query_reader(query);
-                    while (reader.Read())
+                    if (!(String.IsNullOrEmpty(classScoreTBs[i].Text) || String.IsNullOrEmpty(examScoreTBs[i].Text)))
                     {
-                        pass_score += int.Parse(reader["pass_marks"].ToString());
-                        total_raw_score += 100;
+                        query = "INSERT INTO Student_marks(subject_id, student_id, exam_score, exam_score_percentage, class_score, class_score_percentage, total_score, remarks) " +
+                            "VALUES('" + subject_ids[i] + "', '" + student_id + "', '" + examScoreTBs[i].Text + "', '" + examScoreCalcLbls[i].Text + "', '" + classScoreTBs[i].Text + "', '" + classScoreCalcLbls[i].Text + "', '" + totalMarksLbls[i].Text + "', '" + remarkLbls[i].Text + "')";
+                        DbClient.query_execute(query);
+
+                        query = "SELECT * FROM Subject WHERE subject_id='" + subject_ids[i] + "'";
+                        SqlDataReader reader = DbClient.query_reader(query);
+                        while (reader.Read())
+                        {
+                            pass_score += int.Parse(reader["pass_marks"].ToString());
+                            total_raw_score += 100;
+                        }
+                        reader.Close();
+
+                        raw_score += double.Parse(totalMarksLbls[i].Text);
                     }
-                    reader.Close();
+                }
 
-                    raw_score += double.Parse(totalMarksLbls[i].Text);
-                }
-            }
 
-            
-            if (statusCb.Visible == true)
-            {
-                result_status = statusCb.Text;
-                if (classRoom.maxCapacity(classCb.Text) > classRoom.curCapacity(classCb.Text))
+                if (statusCb.Visible == true)
                 {
-                    query = "INSERT INTO Student_result(student_id, raw_score, pass_raw_score, total_raw_score, result_status, class, term, conduct, attitude, interest, teacher_remarks, date) " +
-                            "VALUES('" + student_id + "', '" + raw_score + "', '" + pass_score + "', '" + total_raw_score + "', '" + result_status + "', '" + classLbl.Text + "', '" + termCb.Text + "', '" + conductTB.Text + "', '" + attitudeTB.Text + "', '" + interestTB.Text + "', '" + teacherRemarksTB.Text + "', '" + DateTime.Today + "')";
-                    DbClient.query_execute(query);
+                    result_status = statusCb.Text;
                 }
-                else
-                {
-                    MessageBox.Show("Class full!!! Change class");
-                }
-            }
-            else
-            {
                 query = "INSERT INTO Student_result(student_id, raw_score, pass_raw_score, total_raw_score, result_status, class, term, conduct, attitude, interest, teacher_remarks, date) " +
-                "VALUES('" + student_id + "', '" + raw_score + "', '" + pass_score + "', '" + total_raw_score + "', '" + result_status + "', '" + classLbl.Text + "', '" + termCb.Text + "', '" + conductTB.Text + "', '" + attitudeTB.Text + "', '" + interestTB.Text + "', '" + teacherRemarksTB.Text + "', '" + DateTime.Today + "')";
+                        "VALUES('" + student_id + "', '" + raw_score + "', '" + pass_score + "', '" + total_raw_score + "', '" + result_status + "', '" + classLbl.Text + "', '" + termCb.Text + "', '" + conductTB.Text + "', '" + attitudeTB.Text + "', '" + interestTB.Text + "', '" + teacherRemarksTB.Text + "', '" + DateTime.Today + "')";
                 DbClient.query_execute(query);
+                this.Close();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
-            
-
-           
-
-            /*Console.WriteLine("Raw score: " + raw_score);
-            Console.WriteLine("Pass score: " + pass_score);
-            Console.WriteLine("Total raw score: " + total_raw_score);*/
-
-            this.Close();
         }
 
         private void classRanking()
@@ -418,11 +403,28 @@ namespace Perfect_Peace_System.Pages
             {
                 promotedLbl.Visible = true;
                 classCb.Visible = true;
+                loadClassrooms();
             }
             else
             {
                 promotedLbl.Visible = false;
                 classCb.Visible = false;
+            }
+        }
+        
+        private void loadClassrooms()
+        {
+            query = "SELECT name FROM Class";
+            DbClient.query_reader(classCb, query);
+        }
+
+        private void classCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassRoom classRoom = new ClassRoom();
+            if (!(classRoom.maxCapacity(classCb.Text) > classRoom.curCapacity(classCb.Text)))
+            {
+                MessageBox.Show("Class full!!! Change class");
+                classCb.SelectedIndex = -1;
             }
         }
     }

@@ -175,6 +175,7 @@
             this.classCb.Size = new System.Drawing.Size(597, 26);
             this.classCb.TabIndex = 14;
             this.classCb.Visible = false;
+            this.classCb.SelectedIndexChanged += new System.EventHandler(this.classCb_SelectedIndexChanged);
             // 
             // statusCb
             // 
