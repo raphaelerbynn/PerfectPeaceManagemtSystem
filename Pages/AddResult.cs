@@ -71,7 +71,7 @@ namespace Perfect_Peace_System.Pages
 
             classScoreTBs = new List<TextBox>();
             examScoreTBs = new List<TextBox>();*/
-            termCb.SelectedIndex = 1;
+            termCb.SelectedIndex = 0;
 
             int subLocationX = subjectName.Location.X;
             int classMarkLocationX = classMarkLbl.Location.X;
@@ -360,21 +360,31 @@ namespace Perfect_Peace_System.Pages
                 }
             }
 
-            /*if (classRoom.maxCapacity(classCb.Text) > classRoom.curCapacity(classCb.Text))
-            {
-                
-            }
-            else
-            {
-                MessageBox.Show("Class full!!!");
-            }*/
+            
             if (statusCb.Visible == true)
             {
                 result_status = statusCb.Text;
+                if (classRoom.maxCapacity(classCb.Text) > classRoom.curCapacity(classCb.Text))
+                {
+                    query = "INSERT INTO Student_result(student_id, raw_score, pass_raw_score, total_raw_score, result_status, class, term, conduct, attitude, interest, teacher_remarks, date) " +
+                            "VALUES('" + student_id + "', '" + raw_score + "', '" + pass_score + "', '" + total_raw_score + "', '" + result_status + "', '" + classLbl.Text + "', '" + termCb.Text + "', '" + conductTB.Text + "', '" + attitudeTB.Text + "', '" + interestTB.Text + "', '" + teacherRemarksTB.Text + "', '" + DateTime.Today + "')";
+                    DbClient.query_execute(query);
+                }
+                else
+                {
+                    MessageBox.Show("Class full!!! Change class");
+                }
             }
-            query = "INSERT INTO Student_result(student_id, raw_score, pass_raw_score, total_raw_score, result_status, class, term, conduct, attitude, interest, teacher_remarks, date) " +
-                "VALUES('" + student_id + "', '"+raw_score+"', '"+ pass_score +"', '"+total_raw_score+"', '"+result_status+"', '"+classLbl.Text+"', '"+termCb.Text+"', '"+conductTB.Text+"', '"+attitudeTB.Text+"', '"+interestTB.Text+"', '"+teacherRemarksTB.Text+"', '"+DateTime.Today+"')";
-            DbClient.query_execute(query);
+            else
+            {
+                query = "INSERT INTO Student_result(student_id, raw_score, pass_raw_score, total_raw_score, result_status, class, term, conduct, attitude, interest, teacher_remarks, date) " +
+                "VALUES('" + student_id + "', '" + raw_score + "', '" + pass_score + "', '" + total_raw_score + "', '" + result_status + "', '" + classLbl.Text + "', '" + termCb.Text + "', '" + conductTB.Text + "', '" + attitudeTB.Text + "', '" + interestTB.Text + "', '" + teacherRemarksTB.Text + "', '" + DateTime.Today + "')";
+                DbClient.query_execute(query);
+            }
+            
+
+           
+
             /*Console.WriteLine("Raw score: " + raw_score);
             Console.WriteLine("Pass score: " + pass_score);
             Console.WriteLine("Total raw score: " + total_raw_score);*/
@@ -398,12 +408,13 @@ namespace Perfect_Peace_System.Pages
             {
                 statusLbl.Visible = false;
                 statusCb.Visible = false;
+                statusCb.SelectedIndex = -1;
             }
         }
 
         private void statusCb_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (statusCb.SelectedIndex == 2)
+            if (statusCb.SelectedIndex == 1)
             {
                 promotedLbl.Visible = true;
                 classCb.Visible = true;

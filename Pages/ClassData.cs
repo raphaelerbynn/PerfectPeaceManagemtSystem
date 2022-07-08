@@ -24,9 +24,9 @@ namespace Perfect_Peace_System.Pages
             classDataView.RowsDefaultCellStyle.BackColor = Form1.cellColor;
             classDataView.BackgroundColor = Form1.foreColor;
 
-            getTeacher();
             columnArrangement();
             classRoom.show_data(classDataView);
+            getTeacher();
         }
 
         private void columnArrangement()
@@ -56,7 +56,7 @@ namespace Perfect_Peace_System.Pages
                     string teacher_id = item.Cells["teacher_id"].Value.ToString();
                     item.Cells["teacher"].Value = "";
 
-                    Console.WriteLine(item.Cells["teacher"].Value.ToString());
+                    Console.WriteLine("dddddd: "+item.Cells["teacher"].Value.ToString());
 
                     query = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE teacher_id='" + teacher_id + "'";
                     SqlDataReader reader = DbClient.query_reader(query);
@@ -65,6 +65,7 @@ namespace Perfect_Peace_System.Pages
                      {
                          if (reader.IsDBNull(0)) { continue; }
                          item.Cells["teacher"].Value = reader["name"].ToString();
+                        Console.WriteLine(reader["name"].ToString());
                      }
                      reader.Close();
                      classDataView.ReadOnly = true;
