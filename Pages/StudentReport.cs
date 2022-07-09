@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -52,7 +53,7 @@ namespace Perfect_Peace_System.Pages
             studentDataView.Columns["input_results"].DisplayIndex = 6;
 
             studentDataView.AutoGenerateColumns = false;
-
+            
             resultsDataView.Columns["student_result_idR"].DisplayIndex = 0;
             resultsDataView.Columns["student_nameR"].DisplayIndex = 1;
             resultsDataView.Columns["student_classR"].DisplayIndex = 2;
@@ -65,7 +66,6 @@ namespace Perfect_Peace_System.Pages
             resultsDataView.Columns["deleteR"].DisplayIndex = 9;
 
             resultsDataView.AutoGenerateColumns = false;
-
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -74,7 +74,14 @@ namespace Perfect_Peace_System.Pages
             {
                 try
                 {
-                    (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name LIKE '%{0}%'", searchTextBox.Text);
+                    if (studentDataView.Visible == true)
+                    {
+                        (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name LIKE '%{0}%'", searchTextBox.Text);
+                    }
+                    else
+                    {
+                        (resultsDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name LIKE '%{0}%'", searchTextBox.Text); ;
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -85,7 +92,14 @@ namespace Perfect_Peace_System.Pages
             }
             else
             {
-                (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                if (studentDataView.Visible == true)
+                {
+                    (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                }
+                else
+                {
+                    (resultsDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                }
             }
         }
 
@@ -115,14 +129,46 @@ namespace Perfect_Peace_System.Pages
 
         private void viewResultBtn_Click(object sender, EventArgs e)
         {
+            searchBtn.Enabled = true;
             studentDataView.Visible = false;
             resultsDataView.Visible = true;
-
-            query = "SELECT student_result_id, student_id, raw_score, pass_raw_score, total_raw_score, class, term, date FROM Student_result";
+            if(resultsDataView.Visible == true)
+            {
+                adjustColumnOrder();
+            }
+            query = "SELECT student_result_id, student_id, raw_score, pass_raw_score, total_raw_score, class, term, date FROM Student_result WHERE class='"+classCb.Text+ "' AND date LIKE '%"+datePicker.Text+"%'";
             DbClient.dataGridFill(resultsDataView, query);
+            getStudentName();
+        }
 
-            query = "SELECT f_name+' '+l_name AS student_name FROM Student";
-            DbClient.dataGridFill(resultsDataView, query);
+        private void getStudentName()
+        {
+            try
+            {
+                foreach (DataGridViewRow item in resultsDataView.Rows)
+                {
+                    string id = item.Cells["student_idR"].Value.ToString();
+                    query = "SELECT [f_name]+' '+[l_name] AS name FROM Student WHERE student_id='" + id + "'";
+                    SqlDataReader reader = DbClient.query_reader(query);
+                    resultsDataView.ReadOnly = false;
+                    while (reader.Read())
+                    {
+                        item.Cells["student_nameR"].Value = reader["name"].ToString();
+                    }
+                    reader.Close();
+                    resultsDataView.ReadOnly = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void resultsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

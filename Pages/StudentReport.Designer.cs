@@ -28,6 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -40,22 +44,19 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentReport));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bgPanel = new System.Windows.Forms.Panel();
+            this.resultsDataView = new System.Windows.Forms.DataGridView();
             this.studentDataView = new System.Windows.Forms.DataGridView();
             this.student_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,33 +66,33 @@
             this.fees_details = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.input_results = new System.Windows.Forms.DataGridViewImageColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.topPanel = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.viewResultBtn = new System.Windows.Forms.Button();
             this.loadListBtn = new System.Windows.Forms.Button();
             this.classCb = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.resultsDataView = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.deleteR = new System.Windows.Forms.DataGridViewImageColumn();
-            this.term = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.raw_score = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pass_score = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_raw_score = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.student_classR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.student_nameR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.student_result_idR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.student_nameR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.student_idR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.student_classR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_raw_score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pass_score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.raw_score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.term = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deleteR = new System.Windows.Forms.DataGridViewImageColumn();
             this.bgPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resultsDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataView)).BeginInit();
             this.panel1.SuspendLayout();
             this.topPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resultsDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // bgPanel
@@ -105,6 +106,73 @@
             this.bgPanel.Name = "bgPanel";
             this.bgPanel.Size = new System.Drawing.Size(880, 638);
             this.bgPanel.TabIndex = 0;
+            // 
+            // resultsDataView
+            // 
+            this.resultsDataView.AllowUserToAddRows = false;
+            this.resultsDataView.AllowUserToDeleteRows = false;
+            this.resultsDataView.AllowUserToOrderColumns = true;
+            this.resultsDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resultsDataView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.resultsDataView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.resultsDataView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.resultsDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.resultsDataView.ColumnHeadersHeight = 30;
+            this.resultsDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.resultsDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.student_result_idR,
+            this.student_nameR,
+            this.student_idR,
+            this.student_classR,
+            this.total_raw_score,
+            this.pass_score,
+            this.raw_score,
+            this.position,
+            this.status,
+            this.term,
+            this.deleteR});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.resultsDataView.DefaultCellStyle = dataGridViewCellStyle12;
+            this.resultsDataView.EnableHeadersVisualStyles = false;
+            this.resultsDataView.Location = new System.Drawing.Point(-2, 107);
+            this.resultsDataView.Name = "resultsDataView";
+            this.resultsDataView.ReadOnly = true;
+            this.resultsDataView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.resultsDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.resultsDataView.RowHeadersWidth = 18;
+            this.resultsDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Snow;
+            this.resultsDataView.RowsDefaultCellStyle = dataGridViewCellStyle14;
+            this.resultsDataView.RowTemplate.Height = 30;
+            this.resultsDataView.ShowEditingIcon = false;
+            this.resultsDataView.Size = new System.Drawing.Size(880, 523);
+            this.resultsDataView.TabIndex = 6;
+            this.resultsDataView.Visible = false;
+            this.resultsDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.resultsDataView_CellContentClick);
             // 
             // studentDataView
             // 
@@ -271,6 +339,17 @@
             this.panel1.Size = new System.Drawing.Size(895, 38);
             this.panel1.TabIndex = 1;
             // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(470, 11);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(379, 17);
+            this.label2.TabIndex = 9;
+            this.label2.Text = "TRS = Total Raw Score | PS = Pass Score | SRS = Student Raw Score";
+            // 
             // searchTextBox
             // 
             this.searchTextBox.Location = new System.Drawing.Point(161, 8);
@@ -303,7 +382,7 @@
             this.topPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.topPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.topPanel.Controls.Add(this.dateTimePicker1);
+            this.topPanel.Controls.Add(this.datePicker);
             this.topPanel.Controls.Add(this.viewResultBtn);
             this.topPanel.Controls.Add(this.loadListBtn);
             this.topPanel.Controls.Add(this.classCb);
@@ -313,19 +392,19 @@
             this.topPanel.Size = new System.Drawing.Size(895, 67);
             this.topPanel.TabIndex = 0;
             // 
-            // dateTimePicker1
+            // datePicker
             // 
-            this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.dateTimePicker1.CustomFormat = "yyyy";
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dateTimePicker1.Location = new System.Drawing.Point(559, 23);
-            this.dateTimePicker1.MaxDate = new System.DateTime(7060, 12, 28, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2010, 12, 25, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.ShowUpDown = true;
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.datePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.datePicker.CustomFormat = "yyyy";
+            this.datePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.datePicker.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.datePicker.Location = new System.Drawing.Point(559, 23);
+            this.datePicker.MaxDate = new System.DateTime(7060, 12, 28, 0, 0, 0, 0);
+            this.datePicker.MinDate = new System.DateTime(2010, 12, 25, 0, 0, 0, 0);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.ShowUpDown = true;
+            this.datePicker.Size = new System.Drawing.Size(200, 20);
+            this.datePicker.TabIndex = 4;
             // 
             // viewResultBtn
             // 
@@ -380,81 +459,118 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 50;
             // 
-            // resultsDataView
+            // student_result_idR
             // 
-            this.resultsDataView.AllowUserToAddRows = false;
-            this.resultsDataView.AllowUserToDeleteRows = false;
-            this.resultsDataView.AllowUserToOrderColumns = true;
-            this.resultsDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.resultsDataView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.resultsDataView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.resultsDataView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.resultsDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.resultsDataView.ColumnHeadersHeight = 30;
-            this.resultsDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.resultsDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.student_result_idR,
-            this.student_nameR,
-            this.student_classR,
-            this.total_raw_score,
-            this.pass_score,
-            this.raw_score,
-            this.position,
-            this.status,
-            this.term,
-            this.deleteR});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.resultsDataView.DefaultCellStyle = dataGridViewCellStyle12;
-            this.resultsDataView.EnableHeadersVisualStyles = false;
-            this.resultsDataView.Location = new System.Drawing.Point(-2, 107);
-            this.resultsDataView.Name = "resultsDataView";
-            this.resultsDataView.ReadOnly = true;
-            this.resultsDataView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.resultsDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle13;
-            this.resultsDataView.RowHeadersWidth = 18;
-            this.resultsDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.Snow;
-            this.resultsDataView.RowsDefaultCellStyle = dataGridViewCellStyle14;
-            this.resultsDataView.RowTemplate.Height = 30;
-            this.resultsDataView.ShowEditingIcon = false;
-            this.resultsDataView.Size = new System.Drawing.Size(880, 523);
-            this.resultsDataView.TabIndex = 6;
-            this.resultsDataView.Visible = false;
+            this.student_result_idR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.student_result_idR.DataPropertyName = "student_result_id";
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.student_result_idR.DefaultCellStyle = dataGridViewCellStyle2;
+            this.student_result_idR.HeaderText = "ID";
+            this.student_result_idR.Name = "student_result_idR";
+            this.student_result_idR.ReadOnly = true;
+            this.student_result_idR.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.student_result_idR.Visible = false;
+            this.student_result_idR.Width = 57;
             // 
-            // label2
+            // student_nameR
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(470, 11);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(379, 17);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "TRS = Total Raw Score | PS = Pass Score | SRS = Student Raw Score";
+            this.student_nameR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.student_nameR.DataPropertyName = "name";
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.student_nameR.DefaultCellStyle = dataGridViewCellStyle3;
+            this.student_nameR.HeaderText = "NAME";
+            this.student_nameR.Name = "student_nameR";
+            this.student_nameR.ReadOnly = true;
+            this.student_nameR.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // student_idR
+            // 
+            this.student_idR.DataPropertyName = "student_id";
+            this.student_idR.HeaderText = "Student ID";
+            this.student_idR.Name = "student_idR";
+            this.student_idR.ReadOnly = true;
+            this.student_idR.Visible = false;
+            // 
+            // student_classR
+            // 
+            this.student_classR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.student_classR.DataPropertyName = "class";
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.student_classR.DefaultCellStyle = dataGridViewCellStyle4;
+            this.student_classR.HeaderText = "CLASS";
+            this.student_classR.Name = "student_classR";
+            this.student_classR.ReadOnly = true;
+            this.student_classR.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.student_classR.Width = 94;
+            // 
+            // total_raw_score
+            // 
+            this.total_raw_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.total_raw_score.DataPropertyName = "total_raw_score";
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.total_raw_score.DefaultCellStyle = dataGridViewCellStyle5;
+            this.total_raw_score.HeaderText = "TRS";
+            this.total_raw_score.Name = "total_raw_score";
+            this.total_raw_score.ReadOnly = true;
+            this.total_raw_score.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.total_raw_score.Width = 74;
+            // 
+            // pass_score
+            // 
+            this.pass_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.pass_score.DataPropertyName = "pass_raw_score";
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.pass_score.DefaultCellStyle = dataGridViewCellStyle6;
+            this.pass_score.HeaderText = "PS";
+            this.pass_score.Name = "pass_score";
+            this.pass_score.ReadOnly = true;
+            this.pass_score.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.pass_score.Width = 63;
+            // 
+            // raw_score
+            // 
+            this.raw_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.raw_score.DataPropertyName = "raw_score";
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.raw_score.DefaultCellStyle = dataGridViewCellStyle7;
+            this.raw_score.HeaderText = "SRS";
+            this.raw_score.Name = "raw_score";
+            this.raw_score.ReadOnly = true;
+            this.raw_score.Width = 75;
+            // 
+            // position
+            // 
+            this.position.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.position.DataPropertyName = "position";
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.position.DefaultCellStyle = dataGridViewCellStyle8;
+            this.position.HeaderText = "POSITION";
+            this.position.Name = "position";
+            this.position.ReadOnly = true;
+            this.position.Width = 119;
+            // 
+            // status
+            // 
+            this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.status.DataPropertyName = "result_status";
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.status.DefaultCellStyle = dataGridViewCellStyle9;
+            this.status.HeaderText = "STATUS";
+            this.status.Name = "status";
+            this.status.ReadOnly = true;
+            this.status.Width = 105;
+            // 
+            // term
+            // 
+            this.term.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.term.DataPropertyName = "term";
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.term.DefaultCellStyle = dataGridViewCellStyle10;
+            this.term.HeaderText = "TERM";
+            this.term.Name = "term";
+            this.term.ReadOnly = true;
+            this.term.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.term.Width = 88;
             // 
             // deleteR
             // 
@@ -471,111 +587,6 @@
             this.deleteR.ReadOnly = true;
             this.deleteR.Width = 50;
             // 
-            // term
-            // 
-            this.term.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.term.DataPropertyName = "term";
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.term.DefaultCellStyle = dataGridViewCellStyle10;
-            this.term.HeaderText = "TERM";
-            this.term.Name = "term";
-            this.term.ReadOnly = true;
-            this.term.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.term.Width = 88;
-            // 
-            // status
-            // 
-            this.status.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.status.DataPropertyName = "result_status";
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.status.DefaultCellStyle = dataGridViewCellStyle9;
-            this.status.HeaderText = "STATUS";
-            this.status.Name = "status";
-            this.status.ReadOnly = true;
-            this.status.Width = 105;
-            // 
-            // position
-            // 
-            this.position.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.position.DataPropertyName = "position";
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.position.DefaultCellStyle = dataGridViewCellStyle8;
-            this.position.HeaderText = "POSITION";
-            this.position.Name = "position";
-            this.position.ReadOnly = true;
-            this.position.Width = 119;
-            // 
-            // raw_score
-            // 
-            this.raw_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.raw_score.DataPropertyName = "raw_score";
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.raw_score.DefaultCellStyle = dataGridViewCellStyle7;
-            this.raw_score.HeaderText = "RS";
-            this.raw_score.Name = "raw_score";
-            this.raw_score.ReadOnly = true;
-            this.raw_score.Width = 64;
-            // 
-            // pass_score
-            // 
-            this.pass_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.pass_score.DataPropertyName = "pass_raw_score";
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.pass_score.DefaultCellStyle = dataGridViewCellStyle6;
-            this.pass_score.HeaderText = "PS";
-            this.pass_score.Name = "pass_score";
-            this.pass_score.ReadOnly = true;
-            this.pass_score.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.pass_score.Width = 63;
-            // 
-            // total_raw_score
-            // 
-            this.total_raw_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.total_raw_score.DataPropertyName = "total_raw_score";
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.total_raw_score.DefaultCellStyle = dataGridViewCellStyle5;
-            this.total_raw_score.HeaderText = "TRS";
-            this.total_raw_score.Name = "total_raw_score";
-            this.total_raw_score.ReadOnly = true;
-            this.total_raw_score.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.total_raw_score.Width = 74;
-            // 
-            // student_classR
-            // 
-            this.student_classR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.student_classR.DataPropertyName = "class";
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.student_classR.DefaultCellStyle = dataGridViewCellStyle4;
-            this.student_classR.HeaderText = "CLASS";
-            this.student_classR.Name = "student_classR";
-            this.student_classR.ReadOnly = true;
-            this.student_classR.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.student_classR.Width = 94;
-            // 
-            // student_nameR
-            // 
-            this.student_nameR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.student_nameR.DataPropertyName = "student_id";
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.student_nameR.DefaultCellStyle = dataGridViewCellStyle3;
-            this.student_nameR.HeaderText = "NAME";
-            this.student_nameR.Name = "student_nameR";
-            this.student_nameR.ReadOnly = true;
-            this.student_nameR.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // student_result_idR
-            // 
-            this.student_result_idR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.student_result_idR.DataPropertyName = "student_result_id";
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.student_result_idR.DefaultCellStyle = dataGridViewCellStyle2;
-            this.student_result_idR.HeaderText = "ID";
-            this.student_result_idR.Name = "student_result_idR";
-            this.student_result_idR.ReadOnly = true;
-            this.student_result_idR.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.student_result_idR.Visible = false;
-            this.student_result_idR.Width = 57;
-            // 
             // StudentReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -585,12 +596,12 @@
             this.Name = "StudentReport";
             this.Text = "StudentReport";
             this.bgPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.resultsDataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataView)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resultsDataView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -606,7 +617,7 @@
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button searchBtn;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.Button viewResultBtn;
         private System.Windows.Forms.DataGridView studentDataView;
         private System.Windows.Forms.DataGridViewTextBoxColumn student_Id;
@@ -617,10 +628,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn fees_details;
         private System.Windows.Forms.DataGridViewImageColumn input_results;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.DataGridView resultsDataView;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView resultsDataView;
         private System.Windows.Forms.DataGridViewTextBoxColumn student_result_idR;
         private System.Windows.Forms.DataGridViewTextBoxColumn student_nameR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn student_idR;
         private System.Windows.Forms.DataGridViewTextBoxColumn student_classR;
         private System.Windows.Forms.DataGridViewTextBoxColumn total_raw_score;
         private System.Windows.Forms.DataGridViewTextBoxColumn pass_score;
