@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace Perfect_Peace_System.Pages
         private string query;
         private string subject_idR;
         private int no_subject;
+        PrintDocument printdoc = new PrintDocument();
+        PrintPreviewDialog printPreview = new PrintPreviewDialog();
 
         public ReportCard()
         {
@@ -43,79 +46,29 @@ namespace Perfect_Peace_System.Pages
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void printBtn_Click(object sender, EventArgs e)
         {
-
+            Print(reportCardPanel);
         }
 
-        private void label14_Click(object sender, EventArgs e)
+        private void Print(Panel panel)
         {
-
+            PrinterSettings ps = new PrinterSettings();
+            //reportCardPanel = panel;
+            //getPrintArea(panel);
+            printPreview.Document = printdoc;
+            printdoc.PrintPage += new PrintPageEventHandler(printdoc_printPage);
+            ((Form)printPreview).Size = new Size(950, 539);
+            printPreview.ShowDialog();
         }
 
-        private void label8_Click_1(object sender, EventArgs e)
+        private void printdoc_printPage(object sender, PrintPageEventArgs e)
         {
-
+            var bitMap = ControlPrinter.ScrollableControlToBitmap(this.reportCardPanel, true, true);
+            Rectangle pageArea = e.PageBounds;
+            e.Graphics.DrawImage(bitMap, new Rectangle(0, 0, reportCardPanel.Width, reportCardPanel.Height));
         }
 
-        private void label20_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label24_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void nameLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void interestLbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label29_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label28_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label31_Click(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

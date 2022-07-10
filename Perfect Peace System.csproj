@@ -75,6 +75,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClassRoom.cs" />
+    <Compile Include="ControlPrinter.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="DbClient.cs" />
     <Compile Include="Pages\AddResult.cs">
