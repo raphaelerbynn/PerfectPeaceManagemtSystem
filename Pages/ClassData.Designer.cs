@@ -117,6 +117,7 @@
             this.classDataView.RowTemplate.Height = 30;
             this.classDataView.Size = new System.Drawing.Size(800, 450);
             this.classDataView.TabIndex = 0;
+            this.classDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.classDataView_CellContentClick);
             this.classDataView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.classDataView_DataError);
             // 
             // id

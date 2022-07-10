@@ -83,7 +83,10 @@ namespace Perfect_Peace_System.Pages
             e.Cancel = true;
         }
 
-        
+        private void classDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 
 

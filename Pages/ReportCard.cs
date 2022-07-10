@@ -28,8 +28,8 @@ namespace Perfect_Peace_System.Pages
 
         private void populateResults()
         {
-            query = "SELECT COUNT(*) FROM Student";
-            no_subject = int.Parse(DbClient.query_executeScaler(query));
+            query = "SELECT COUNT(*) FROM Subject";
+            no_subject = int.Parse(DbClient.query_executeScaler(query)) + 1;
             int length_of_subject = 30 * no_subject;
             resultDataView.Size = new Size(resultDataView.Width, resultDataView.Height + length_of_subject);
 
