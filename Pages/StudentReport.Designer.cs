@@ -87,7 +87,7 @@
             this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.term = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deleteR = new System.Windows.Forms.DataGridViewImageColumn();
+            this.show_result = new System.Windows.Forms.DataGridViewImageColumn();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.resultsDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataView)).BeginInit();
@@ -140,7 +140,7 @@
             this.position,
             this.status,
             this.term,
-            this.deleteR});
+            this.show_result});
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -572,20 +572,20 @@
             this.term.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.term.Width = 88;
             // 
-            // deleteR
+            // show_result
             // 
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle11.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle11.NullValue")));
             dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.deleteR.DefaultCellStyle = dataGridViewCellStyle11;
-            this.deleteR.FillWeight = 30F;
-            this.deleteR.HeaderText = "";
-            this.deleteR.Image = global::Perfect_Peace_System.Properties.Resources.delete;
-            this.deleteR.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.deleteR.Name = "deleteR";
-            this.deleteR.ReadOnly = true;
-            this.deleteR.Width = 50;
+            this.show_result.DefaultCellStyle = dataGridViewCellStyle11;
+            this.show_result.FillWeight = 30F;
+            this.show_result.HeaderText = "";
+            this.show_result.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.show_result.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.show_result.Name = "show_result";
+            this.show_result.ReadOnly = true;
+            this.show_result.Width = 50;
             // 
             // StudentReport
             // 
@@ -640,6 +640,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn position;
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn term;
-        private System.Windows.Forms.DataGridViewImageColumn deleteR;
+        private System.Windows.Forms.DataGridViewImageColumn show_result;
     }
 }

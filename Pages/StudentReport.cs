@@ -15,13 +15,11 @@ namespace Perfect_Peace_System.Pages
     {
         private string query;
         private static string id;
-        Student student;
         OpenNewPage openNewpage;
 
         public StudentReport()
         {
             InitializeComponent();
-            student = new Student();
             openNewpage = new OpenNewPage();
 
             query = "SELECT name FROM Class";
@@ -63,7 +61,7 @@ namespace Perfect_Peace_System.Pages
             resultsDataView.Columns["position"].DisplayIndex = 6;
             resultsDataView.Columns["status"].DisplayIndex = 7;
             resultsDataView.Columns["term"].DisplayIndex = 8;
-            resultsDataView.Columns["deleteR"].DisplayIndex = 9;
+            resultsDataView.Columns["show_result"].DisplayIndex = 9;
 
             resultsDataView.AutoGenerateColumns = false;
         }
@@ -168,7 +166,20 @@ namespace Perfect_Peace_System.Pages
 
         private void resultsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                DataGridViewRow row = resultsDataView.Rows[e.RowIndex];
+                id = row.Cells["student_idR"].Value.ToString();
 
+                if (resultsDataView.Columns[e.ColumnIndex].Name == "show_result" && e.RowIndex >= 0)
+                {
+                    openNewpage.OpenChildForm(new Pages.ReportCard(), bgPanel);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
