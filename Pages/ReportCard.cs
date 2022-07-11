@@ -27,6 +27,7 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
             populateResults();
+            fillLabels();
         }
 
         private void populateResults()
@@ -82,10 +83,47 @@ namespace Perfect_Peace_System.Pages
         {
             nameLbl.Text = "--------";
             classLbl.Text = "---";
-            positionLbl.Text = "---";
+            positionLbl.Text = "---";//
             termLbl.Text = "---";
+            noInClassLbl.Text = "---";//
+            nextTermDateLbl.Text = "-------";//
+            rawScoreLbl.Text = "---";
+            totalScoreLbl.Text = "---";
+            conductLbl.Text = "-------------------";
+            attitudeLbl.Text = "-------------------";
+            interestLbl.Text = "-------------------";
+            tRemarksLbl.Text = "-------------------";
+            owingLbl.Text = "---";
+            feesLbl.Text = "---";//
+            examsFeesLbl.Text = "---";//
+            extraClassesLbl.Text = "---";//
+            PtaLbl.Text = "---";//
+            totalFeesLbl.Text = "---";//
 
+            query = "SELECT * FROM Student WHERE student_id='" + student_id + "'";
+            SqlDataReader reader = DbClient.query_reader(query);
+            while (reader.Read())
+            {
+                nameLbl.Text = reader["f_name"].ToString() + " " + reader["m_name"].ToString() + " " + reader["l_name"].ToString();
+                classLbl.Text = reader["class"].ToString();
+                termLbl.Text = term;
+                owingLbl.Text = reader["fees_owing"].ToString();
+            }
+            reader.Close();
 
+            query = "SELECT * FROM Student_result WHERE student_result_id='"+result_id+"'";
+            reader = DbClient.query_reader(query);
+            while (reader.Read())
+            {
+                totalScoreLbl.Text = reader["total_raw_score"].ToString();
+                rawScoreLbl.Text = reader["raw_score"].ToString();
+                conductLbl.Text = reader["conduct"].ToString();
+                attitudeLbl.Text = reader["attitude"].ToString();
+                interestLbl.Text = reader["interest"].ToString();
+                tRemarksLbl.Text = reader["teacher_remarks"].ToString();
+
+            }
+            reader.Close();
 
         }
 
