@@ -16,6 +16,8 @@ namespace Perfect_Peace_System.Pages
         private string query;
         private static string id;
         private static string termVal;
+        private static string date;
+        private static string result_id;
         OpenNewPage openNewpage;
 
         public StudentReport()
@@ -123,6 +125,7 @@ namespace Perfect_Peace_System.Pages
 
         private void viewResultBtn_Click(object sender, EventArgs e)
         {
+            date = datePicker.Text;
             searchBtn.Enabled = true;
             studentDataView.Visible = false;
             resultsDataView.Visible = true;
@@ -166,6 +169,7 @@ namespace Perfect_Peace_System.Pages
             {
                 DataGridViewRow row = resultsDataView.Rows[e.RowIndex];
                 id = row.Cells["student_idR"].Value.ToString();
+                result_id = row.Cells["student_result_idR"].Value.ToString();
                 termVal = row.Cells["term"].Value.ToString();
 
                 if (resultsDataView.Columns[e.ColumnIndex].Name == "show_result" && e.RowIndex >= 0)
@@ -188,6 +192,16 @@ namespace Perfect_Peace_System.Pages
         public static string getTermFromSelectedRow()
         {
             return termVal;
+        }
+
+        public static string getDate()
+        {
+            return date;
+        }
+
+        public static string getResultId()
+        {
+            return result_id;
         }
     }
 }

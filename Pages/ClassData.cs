@@ -56,7 +56,6 @@ namespace Perfect_Peace_System.Pages
                     string teacher_id = item.Cells["teacher_id"].Value.ToString();
                     item.Cells["teacher"].Value = "";
 
-                    Console.WriteLine("dddddd: "+item.Cells["teacher"].Value.ToString());
 
                     query = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE teacher_id='" + teacher_id + "'";
                     SqlDataReader reader = DbClient.query_reader(query);

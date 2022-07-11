@@ -17,6 +17,8 @@ namespace Perfect_Peace_System.Pages
         private string query;
         private string student_id = StudentReport.getIdFromSelectedRow();
         private string term = StudentReport.getTermFromSelectedRow();
+        private string date = StudentReport.getDate();
+        private string result_id = StudentReport.getResultId();
         private int no_subject;
         PrintDocument printdoc = new PrintDocument();
         PrintPreviewDialog printPreview = new PrintPreviewDialog();
@@ -29,19 +31,62 @@ namespace Perfect_Peace_System.Pages
 
         private void populateResults()
         {
-            query = "SELECT COUNT(*) FROM Subject";
-            no_subject = int.Parse(DbClient.query_executeScaler(query)) + 1;
-            int length_of_subject = 30 * no_subject;
-            resultDataView.Size = new Size(resultDataView.Width, resultDataView.Height + length_of_subject);
+            try
+            {
+                query = "SELECT COUNT(*) FROM Subject";
+                no_subject = int.Parse(DbClient.query_executeScaler(query)) + 1;
+                int length_of_subject = 30 * no_subject;
+                resultDataView.Size = new Size(resultDataView.Width, resultDataView.Height + length_of_subject);
 
-            query = "SELECT subject_id, name FROM Subject";
-            DbClient.dataGridFill(resultDataView, query);
+                query = "SELECT subject_id, name, CAST(class_total_marks AS VARCHAR(5)) AS class_total_marks, CAST(exam_total_marks AS VARCHAR(5)) AS exam_total_marks, CAST(pass_marks AS VARCHAR(5)) AS pass_marks, CAST(exam_percentage AS VARCHAR(5)) AS position, CAST(class_percentage AS VARCHAR(10)) AS remarks FROM Subject";
+                DbClient.dataGridFill(resultDataView, query);
 
-            remarksPanel.Location = new Point(remarksPanel.Location.X, remarksPanel.Location.Y + length_of_subject);
-            printBtn.Location = new Point(printBtn.Location.X, printBtn.Location.Y + length_of_subject);
+                remarksPanel.Location = new Point(remarksPanel.Location.X, remarksPanel.Location.Y + length_of_subject);
+                printBtn.Location = new Point(printBtn.Location.X, printBtn.Location.Y + length_of_subject);
 
-            
-            query = "SELECT * FROM Student_marks";
+                foreach (DataGridViewRow item in resultDataView.Rows)
+                {
+                    resultDataView.ReadOnly = false;
+                    item.Cells["exam_score"].Value = "---";
+                    item.Cells["class_score"].Value = "---";
+                    item.Cells["total_score"].Value = "---";
+                    item.Cells["total_score"].Value = "---";
+                    item.Cells["position_in_subject"].Value = "---";
+                    item.Cells["remarks"].Value = "--------";
+
+                    string id = item.Cells["subject_id"].Value.ToString();
+                    query = "SELECT * FROM Student_marks WHERE subject_id='"+id+"' AND student_id='"+student_id+"' AND term='"+term+"' AND date LIKE '%"+date+"%'";
+                    SqlDataReader reader = DbClient.query_reader(query);
+                    
+                    while (reader.Read())
+                    {
+                        
+                        item.Cells["exam_score"].Value = reader["exam_score_percentage"].ToString();
+                        item.Cells["class_score"].Value = reader["class_score_percentage"].ToString();
+                        item.Cells["total_score"].Value = reader["total_score"].ToString();
+                        item.Cells["remarks"].Value = reader["remarks"].ToString();
+                        
+                    }
+                    reader.Close();
+                    resultDataView.ReadOnly = true;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void fillLabels()
+        {
+            nameLbl.Text = "--------";
+            classLbl.Text = "---";
+            positionLbl.Text = "---";
+            termLbl.Text = "---";
+
+
+
         }
 
         private void resultDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
