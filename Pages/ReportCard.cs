@@ -15,13 +15,14 @@ namespace Perfect_Peace_System.Pages
     public partial class ReportCard : Form
     {
         private string query;
-        private string student_id = StudentReport.getIdFromSelectedRow();
-        private string term = StudentReport.getTermFromSelectedRow();
-        private string date = StudentReport.getDate();
-        private string result_id = StudentReport.getResultId();
+        private readonly string student_id = StudentReport.getIdFromSelectedRow();
+        private readonly string term = StudentReport.getTermFromSelectedRow();
+        private readonly string date = StudentReport.getDate();
+        private readonly string result_id = StudentReport.getResultId();
         private int no_subject;
-        PrintDocument printdoc = new PrintDocument();
-        PrintPreviewDialog printPreview = new PrintPreviewDialog();
+        private double total_fees;
+        readonly PrintDocument printdoc = new PrintDocument();
+        readonly PrintPreviewDialog printPreview = new PrintPreviewDialog();
 
         public ReportCard()
         {
@@ -81,11 +82,12 @@ namespace Perfect_Peace_System.Pages
 
         private void fillLabels()
         {
+            termDate.Value = DateTime.Today;
             nameLbl.Text = "--------";
             classLbl.Text = "---";
             positionLbl.Text = "---";//
             termLbl.Text = "---";
-            noInClassLbl.Text = "---";//
+            noInClassLbl.Text = "---";
             nextTermDateLbl.Text = "-------";//
             rawScoreLbl.Text = "---";
             totalScoreLbl.Text = "---";
@@ -105,9 +107,9 @@ namespace Perfect_Peace_System.Pages
             while (reader.Read())
             {
                 nameLbl.Text = reader["f_name"].ToString() + " " + reader["m_name"].ToString() + " " + reader["l_name"].ToString();
-                classLbl.Text = reader["class"].ToString();
                 termLbl.Text = term;
                 owingLbl.Text = reader["fees_owing"].ToString();
+                total_fees = double.Parse(reader["fees_owing"].ToString());
             }
             reader.Close();
 
@@ -121,9 +123,13 @@ namespace Perfect_Peace_System.Pages
                 attitudeLbl.Text = reader["attitude"].ToString();
                 interestLbl.Text = reader["interest"].ToString();
                 tRemarksLbl.Text = reader["teacher_remarks"].ToString();
+                classLbl.Text = reader["class"].ToString();
 
             }
             reader.Close();
+
+            query = "SELECT COUNT(*) FROM Student WHERE class='" + classLbl.Text + "'";
+            noInClassLbl.Text = DbClient.query_executeScaler(query);
 
         }
 
@@ -134,10 +140,10 @@ namespace Perfect_Peace_System.Pages
 
         private void printBtn_Click(object sender, EventArgs e)
         {
-            Print(reportCardPanel);
+            Print();
         }
 
-        private void Print(Panel panel)
+        private void Print()
         {
             PrinterSettings ps = new PrinterSettings();
             //reportCardPanel = panel;
@@ -151,10 +157,57 @@ namespace Perfect_Peace_System.Pages
         private void printdoc_printPage(object sender, PrintPageEventArgs e)
         {
             var bitMap = ControlPrinter.ScrollableControlToBitmap(this.reportCardPanel, true, true);
-            Rectangle pageArea = e.PageBounds;
             e.Graphics.DrawImage(bitMap, new Rectangle(0, 0, reportCardPanel.Width, reportCardPanel.Height));
         }
 
-        
+        private void tB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void resultInputBtn_Click(object sender, EventArgs e)
+        {
+            
+            if (!String.IsNullOrEmpty(ptaDuesTb.Text))
+            {
+                PtaLbl.Text = "Ghc " + ptaDuesTb.Text;
+                total_fees += double.Parse(ptaDuesTb.Text);
+            }
+            else
+            {
+                PtaLbl.Text = "---";
+            }
+
+            if (!String.IsNullOrEmpty(examFeesTb.Text))
+            {
+                examsFeesLbl.Text = "Ghc " + examFeesTb.Text;
+                total_fees += double.Parse(examFeesTb.Text);
+            }
+            else
+            {
+                extraClassesLbl.Text = "---";
+            }
+
+            if (!String.IsNullOrEmpty(extraClassesTb.Text))
+            {
+                extraClassesLbl.Text = "Ghc " + extraClassesTb.Text;
+                total_fees += double.Parse(extraClassesTb.Text);
+            }
+            else
+            {
+                extraClassesLbl.Text = "---";
+            }
+            totalFeesLbl.Text = "Ghc "+total_fees.ToString();
+
+            nextTermDateLbl.Text = termDate.Text;
+        }
     }
 }
