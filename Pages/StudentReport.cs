@@ -15,6 +15,7 @@ namespace Perfect_Peace_System.Pages
     {
         private string query;
         private static string id;
+        private static string termVal;
         OpenNewPage openNewpage;
 
         public StudentReport()
@@ -120,11 +121,6 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
-        public static string getIdFromSelectedRow()
-        {
-            return id;
-        }
-
         private void viewResultBtn_Click(object sender, EventArgs e)
         {
             searchBtn.Enabled = true;
@@ -170,6 +166,7 @@ namespace Perfect_Peace_System.Pages
             {
                 DataGridViewRow row = resultsDataView.Rows[e.RowIndex];
                 id = row.Cells["student_idR"].Value.ToString();
+                termVal = row.Cells["term"].Value.ToString();
 
                 if (resultsDataView.Columns[e.ColumnIndex].Name == "show_result" && e.RowIndex >= 0)
                 {
@@ -180,6 +177,17 @@ namespace Perfect_Peace_System.Pages
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+
+        public static string getIdFromSelectedRow()
+        {
+            return id;
+        }
+
+        public static string getTermFromSelectedRow()
+        {
+            return termVal;
         }
     }
 }

@@ -15,7 +15,8 @@ namespace Perfect_Peace_System.Pages
     public partial class ReportCard : Form
     {
         private string query;
-        private string subject_idR;
+        private string student_id = StudentReport.getIdFromSelectedRow();
+        private string term = StudentReport.getTermFromSelectedRow();
         private int no_subject;
         PrintDocument printdoc = new PrintDocument();
         PrintPreviewDialog printPreview = new PrintPreviewDialog();
@@ -38,7 +39,9 @@ namespace Perfect_Peace_System.Pages
 
             remarksPanel.Location = new Point(remarksPanel.Location.X, remarksPanel.Location.Y + length_of_subject);
             printBtn.Location = new Point(printBtn.Location.X, printBtn.Location.Y + length_of_subject);
-            //reportCardPanel.Size = new Size(reportCardPanel.Width, reportCardPanel.Height + remarksPanel.Height);
+
+            
+            query = "SELECT * FROM Student_marks";
         }
 
         private void resultDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
