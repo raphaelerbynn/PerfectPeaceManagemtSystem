@@ -145,7 +145,7 @@
             this.statusLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.statusLbl.AutoSize = true;
             this.statusLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.statusLbl.Location = new System.Drawing.Point(88, 351);
+            this.statusLbl.Location = new System.Drawing.Point(88, 428);
             this.statusLbl.Name = "statusLbl";
             this.statusLbl.Size = new System.Drawing.Size(216, 19);
             this.statusLbl.TabIndex = 16;
@@ -157,7 +157,7 @@
             this.promotedLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.promotedLbl.AutoSize = true;
             this.promotedLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.promotedLbl.Location = new System.Drawing.Point(88, 402);
+            this.promotedLbl.Location = new System.Drawing.Point(88, 479);
             this.promotedLbl.Name = "promotedLbl";
             this.promotedLbl.Size = new System.Drawing.Size(98, 19);
             this.promotedLbl.TabIndex = 15;
@@ -170,7 +170,7 @@
             this.classCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.classCb.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classCb.FormattingEnabled = true;
-            this.classCb.Location = new System.Drawing.Point(192, 395);
+            this.classCb.Location = new System.Drawing.Point(192, 472);
             this.classCb.Name = "classCb";
             this.classCb.Size = new System.Drawing.Size(597, 26);
             this.classCb.TabIndex = 14;
@@ -186,7 +186,7 @@
             this.statusCb.Items.AddRange(new object[] {
             "Repeated",
             "Promoted"});
-            this.statusCb.Location = new System.Drawing.Point(310, 349);
+            this.statusCb.Location = new System.Drawing.Point(310, 426);
             this.statusCb.Name = "statusCb";
             this.statusCb.Size = new System.Drawing.Size(479, 26);
             this.statusCb.TabIndex = 13;
@@ -203,7 +203,7 @@
             "1",
             "2",
             "3"});
-            this.termCb.Location = new System.Drawing.Point(143, 295);
+            this.termCb.Location = new System.Drawing.Point(143, 372);
             this.termCb.Name = "termCb";
             this.termCb.Size = new System.Drawing.Size(646, 26);
             this.termCb.TabIndex = 12;
@@ -214,7 +214,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(88, 298);
+            this.label6.Location = new System.Drawing.Point(88, 375);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 19);
             this.label6.TabIndex = 11;
@@ -224,7 +224,7 @@
             // 
             this.saveBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.saveBtn.AutoSize = true;
-            this.saveBtn.Location = new System.Drawing.Point(774, 530);
+            this.saveBtn.Location = new System.Drawing.Point(774, 529);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(93, 23);
             this.saveBtn.TabIndex = 10;
@@ -236,7 +236,7 @@
             // 
             this.backBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.backBtn.AutoSize = true;
-            this.backBtn.Location = new System.Drawing.Point(12, 530);
+            this.backBtn.Location = new System.Drawing.Point(12, 529);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(86, 23);
             this.backBtn.TabIndex = 9;
@@ -248,7 +248,7 @@
             // 
             this.attitudeTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.attitudeTB.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attitudeTB.Location = new System.Drawing.Point(161, 139);
+            this.attitudeTB.Location = new System.Drawing.Point(161, 216);
             this.attitudeTB.Name = "attitudeTB";
             this.attitudeTB.Size = new System.Drawing.Size(628, 26);
             this.attitudeTB.TabIndex = 8;
@@ -257,7 +257,7 @@
             // 
             this.teacherRemarksTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.teacherRemarksTB.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teacherRemarksTB.Location = new System.Drawing.Point(233, 244);
+            this.teacherRemarksTB.Location = new System.Drawing.Point(233, 321);
             this.teacherRemarksTB.Name = "teacherRemarksTB";
             this.teacherRemarksTB.Size = new System.Drawing.Size(558, 26);
             this.teacherRemarksTB.TabIndex = 7;
@@ -266,7 +266,7 @@
             // 
             this.interestTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.interestTB.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.interestTB.Location = new System.Drawing.Point(163, 189);
+            this.interestTB.Location = new System.Drawing.Point(163, 266);
             this.interestTB.Name = "interestTB";
             this.interestTB.Size = new System.Drawing.Size(628, 26);
             this.interestTB.TabIndex = 6;
@@ -275,7 +275,7 @@
             // 
             this.conductTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.conductTB.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.conductTB.Location = new System.Drawing.Point(163, 92);
+            this.conductTB.Location = new System.Drawing.Point(163, 169);
             this.conductTB.Name = "conductTB";
             this.conductTB.Size = new System.Drawing.Size(628, 26);
             this.conductTB.TabIndex = 5;
@@ -285,7 +285,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(88, 190);
+            this.label7.Location = new System.Drawing.Point(88, 267);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 19);
             this.label7.TabIndex = 4;
@@ -296,7 +296,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(88, 245);
+            this.label5.Location = new System.Drawing.Point(88, 322);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 19);
             this.label5.TabIndex = 2;
@@ -307,7 +307,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(86, 141);
+            this.label4.Location = new System.Drawing.Point(86, 218);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 19);
             this.label4.TabIndex = 1;
@@ -318,7 +318,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(86, 96);
+            this.label2.Location = new System.Drawing.Point(86, 173);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(70, 19);
             this.label2.TabIndex = 0;

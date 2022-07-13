@@ -18,6 +18,7 @@ namespace Perfect_Peace_System.Pages
         private static string termVal;
         private static string date;
         private static string result_id;
+        private static string class_position;
         OpenNewPage openNewpage;
 
         public StudentReport()
@@ -126,14 +127,14 @@ namespace Perfect_Peace_System.Pages
         private void viewResultBtn_Click(object sender, EventArgs e)
         {
             date = datePicker.Text;
+            if(resultsDataView.Visible == true)
             searchBtn.Enabled = true;
             studentDataView.Visible = false;
             resultsDataView.Visible = true;
-            if(resultsDataView.Visible == true)
             {
                 adjustColumnOrder();
             }
-            query = "SELECT student_result_id, student_id, raw_score, pass_raw_score, total_raw_score, class, term, date FROM Student_result WHERE class='"+classCb.Text+ "' AND date LIKE '%"+datePicker.Text+"%'";
+            query = "SELECT student_result_id, student_id, raw_score, pass_raw_score, total_raw_score, result_status, class, term, date, RANK() OVER(ORDER BY raw_score DESC) AS position FROM Student_result WHERE class='"+classCb.Text+ "' AND date LIKE '%"+datePicker.Text+"%' AND term='"+getSelectedTerm()+"'";
             DbClient.dataGridFill(resultsDataView, query);
             getStudentName();
         }
@@ -155,7 +156,6 @@ namespace Perfect_Peace_System.Pages
                     reader.Close();
                     resultsDataView.ReadOnly = true;
                 }
-
             }
             catch (Exception ex)
             {
@@ -171,6 +171,7 @@ namespace Perfect_Peace_System.Pages
                 id = row.Cells["student_idR"].Value.ToString();
                 result_id = row.Cells["student_result_idR"].Value.ToString();
                 termVal = row.Cells["term"].Value.ToString();
+                class_position = row.Cells["position"].Value.ToString();
 
                 if (resultsDataView.Columns[e.ColumnIndex].Name == "show_result" && e.RowIndex >= 0)
                 {
@@ -202,6 +203,38 @@ namespace Perfect_Peace_System.Pages
         public static string getResultId()
         {
             return result_id;
+        }
+
+        public static string getClassPosition()
+        {
+            if (class_position.EndsWith("11") || class_position.EndsWith("12") || class_position.EndsWith("13"))
+            {
+                return class_position + " TH";
+            }
+            else if (class_position.EndsWith("1"))
+            {
+                return class_position + " ST";
+            }else if (class_position.EndsWith("2"))
+            {
+                return class_position + " ND";
+            }else if (class_position.EndsWith("3"))
+            {
+                return class_position + " RD";
+            }
+            return class_position + " TH";
+        }
+
+        private string getSelectedTerm()
+        {
+            if (term1Radio.Checked == true)
+            {
+                return "1";
+            }
+            if(term2Radio.Checked == true)
+            {
+                return "2";
+            }
+            return "3";
         }
     }
 }

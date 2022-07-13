@@ -83,6 +83,7 @@
             this.femaleRadioBtn.TabIndex = 17;
             this.femaleRadioBtn.Text = "Female";
             this.femaleRadioBtn.UseVisualStyleBackColor = true;
+            this.femaleRadioBtn.CheckedChanged += new System.EventHandler(this.femaleRadioBtn_CheckedChanged);
             // 
             // maleRadioBtn
             // 

@@ -68,5 +68,10 @@ namespace Perfect_Peace_System.Pages
             this.Close();
             this.Hide();
         }
+
+        private void femaleRadioBtn_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

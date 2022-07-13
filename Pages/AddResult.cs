@@ -59,18 +59,6 @@ namespace Perfect_Peace_System.Pages
 
         private void showSubjectsWithFeilds()
         {
-            /*subjectLbls = new List<Label>();
-            classScoreLbls = new List<Label>();
-            examScoreLbls = new List<Label>();
-            classPercentageLbls = new List<Label>();
-            examPercentageLbls = new List<Label>();
-            totalMarksLbls = new List<Label>();
-            remarkLbls = new List<Label>();
-
-            classScoreCalcLbls = new List<Label>();
-
-            classScoreTBs = new List<TextBox>();
-            examScoreTBs = new List<TextBox>();*/
             termCb.SelectedIndex = 0;
 
             int subLocationX = subjectName.Location.X;
@@ -338,6 +326,7 @@ namespace Perfect_Peace_System.Pages
             {
                 ClassRoom classRoom = new ClassRoom();
                 string result_status = "";
+                string promoted_to = "";
                 double raw_score = 0;
                 int pass_score = 0;
                 int total_raw_score = 0;
@@ -345,8 +334,8 @@ namespace Perfect_Peace_System.Pages
                 {
                     if (!(String.IsNullOrEmpty(classScoreTBs[i].Text) || String.IsNullOrEmpty(examScoreTBs[i].Text)))
                     {
-                        query = "INSERT INTO Student_marks(subject_id, student_id, exam_score, exam_score_percentage, class_score, class_score_percentage, total_score, remarks, term) " +
-                            "VALUES('" + subject_ids[i] + "', '" + student_id + "', '" + examScoreTBs[i].Text + "', '" + examScoreCalcLbls[i].Text + "', '" + classScoreTBs[i].Text + "', '" + classScoreCalcLbls[i].Text + "', '" + totalMarksLbls[i].Text + "', '" + remarkLbls[i].Text + "','"+termCb.Text+"')";
+                        query = "INSERT INTO Student_marks(subject_id, student_id, exam_score, exam_score_percentage, class_score, class_score_percentage, total_score, remarks, class, term, date) " +
+                            "VALUES('" + subject_ids[i] + "', '" + student_id + "', '" + examScoreTBs[i].Text + "', '" + examScoreCalcLbls[i].Text + "', '" + classScoreTBs[i].Text + "', '" + classScoreCalcLbls[i].Text + "', '" + totalMarksLbls[i].Text + "', '" + remarkLbls[i].Text+"', '" + classLbl.Text + "','"+termCb.Text+"', '"+DateTime.Today+"')";
                         DbClient.query_execute(query);
 
                         query = "SELECT * FROM Subject WHERE subject_id='" + subject_ids[i] + "'";
@@ -362,13 +351,19 @@ namespace Perfect_Peace_System.Pages
                     }
                 }
 
-
+                query = "SELECT COUNT(*) FROM Student WHERE class='" + classLbl.Text + "'";
+                string class_total = DbClient.query_executeScaler(query);
                 if (statusCb.Visible == true)
                 {
                     result_status = statusCb.Text;
+                    if(classCb.Visible == true)
+                    {
+                        promoted_to = classCb.Text;
+                        MessageBox.Show("Take Note: After printing all result. Go to student module and update student to promoted class", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
-                query = "INSERT INTO Student_result(student_id, raw_score, pass_raw_score, total_raw_score, result_status, class, term, conduct, attitude, interest, teacher_remarks, date) " +
-                        "VALUES('" + student_id + "', '" + raw_score + "', '" + pass_score + "', '" + total_raw_score + "', '" + result_status + "', '" + classLbl.Text + "', '" + termCb.Text + "', '" + conductTB.Text + "', '" + attitudeTB.Text + "', '" + interestTB.Text + "', '" + teacherRemarksTB.Text + "', '" + DateTime.Today + "')";
+                query = "INSERT INTO Student_result(student_id, raw_score, pass_raw_score, total_raw_score, result_status, class_total, promoted_to, class, term, conduct, attitude, interest, teacher_remarks, date) " +
+                        "VALUES('" + student_id + "', '" + raw_score + "', '" + pass_score + "', '" + total_raw_score + "', '" + result_status + "', '"+class_total+"', '"+promoted_to+"', '" + classLbl.Text + "', '" + termCb.Text + "', '" + conductTB.Text + "', '" + attitudeTB.Text + "', '" + interestTB.Text + "', '" + teacherRemarksTB.Text + "', '" + DateTime.Today + "')";
                 DbClient.query_execute(query);
                 this.Close();
             }catch(Exception ex)
@@ -377,10 +372,6 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
-        private void classRanking()
-        {
-
-        }
 
         private void termCb_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -427,5 +418,7 @@ namespace Perfect_Peace_System.Pages
                 classCb.SelectedIndex = -1;
             }
         }
+
+        
     }
 }

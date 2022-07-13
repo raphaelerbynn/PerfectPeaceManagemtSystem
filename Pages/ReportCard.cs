@@ -15,20 +15,24 @@ namespace Perfect_Peace_System.Pages
     public partial class ReportCard : Form
     {
         private string query;
+        private string _class;
         private readonly string student_id = StudentReport.getIdFromSelectedRow();
         private readonly string term = StudentReport.getTermFromSelectedRow();
         private readonly string date = StudentReport.getDate();
         private readonly string result_id = StudentReport.getResultId();
+        private readonly string class_position = StudentReport.getClassPosition();
         private int no_subject;
-        private double total_fees;
+        private double total_fees = 0;
         readonly PrintDocument printdoc = new PrintDocument();
         readonly PrintPreviewDialog printPreview = new PrintPreviewDialog();
 
         public ReportCard()
         {
             InitializeComponent();
-            populateResults();
+            
             fillLabels();
+            populateResults();
+
         }
 
         private void populateResults()
@@ -55,14 +59,11 @@ namespace Perfect_Peace_System.Pages
                     item.Cells["total_score"].Value = "---";
                     item.Cells["position_in_subject"].Value = "---";
                     item.Cells["remarks"].Value = "--------";
-
                     string id = item.Cells["subject_id"].Value.ToString();
                     query = "SELECT * FROM Student_marks WHERE subject_id='"+id+"' AND student_id='"+student_id+"' AND term='"+term+"' AND date LIKE '%"+date+"%'";
                     SqlDataReader reader = DbClient.query_reader(query);
-                    
                     while (reader.Read())
                     {
-                        
                         item.Cells["exam_score"].Value = reader["exam_score_percentage"].ToString();
                         item.Cells["class_score"].Value = reader["class_score_percentage"].ToString();
                         item.Cells["total_score"].Value = reader["total_score"].ToString();
@@ -70,7 +71,18 @@ namespace Perfect_Peace_System.Pages
                         
                     }
                     reader.Close();
+
+                    query = "SELECT RANK() OVER(ORDER BY total_score DESC) AS subject_position FROM Student_marks " +
+                        "WHERE class='"+classLbl.Text+"' AND term='"+term+"' AND date LIKE '%"+date+"%' AND subject_id='"+id+"'";
+                    reader = DbClient.query_reader(query);
+                    while (reader.Read())
+                    {
+                        item.Cells["position_in_subject"].Value = getSubjectPosition(reader["subject_position"].ToString());
+                    }
+                    reader.Close();
+                    
                     resultDataView.ReadOnly = true;
+
                 }
 
             }
@@ -85,7 +97,7 @@ namespace Perfect_Peace_System.Pages
             termDate.Value = DateTime.Today;
             nameLbl.Text = "--------";
             classLbl.Text = "---";
-            positionLbl.Text = "---";//
+            positionLbl.Text = "---";
             termLbl.Text = "---";
             noInClassLbl.Text = "---";
             nextTermDateLbl.Text = "-------";//
@@ -101,6 +113,7 @@ namespace Perfect_Peace_System.Pages
             extraClassesLbl.Text = "---";//
             PtaLbl.Text = "---";//
             totalFeesLbl.Text = "---";//
+            promotedClassLbl.Text = "";
 
             query = "SELECT * FROM Student WHERE student_id='" + student_id + "'";
             SqlDataReader reader = DbClient.query_reader(query);
@@ -109,7 +122,7 @@ namespace Perfect_Peace_System.Pages
                 nameLbl.Text = reader["f_name"].ToString() + " " + reader["m_name"].ToString() + " " + reader["l_name"].ToString();
                 termLbl.Text = term;
                 owingLbl.Text = reader["fees_owing"].ToString();
-                total_fees = double.Parse(reader["fees_owing"].ToString());
+                total_fees += double.Parse(reader["fees_owing"].ToString());
             }
             reader.Close();
 
@@ -124,18 +137,23 @@ namespace Perfect_Peace_System.Pages
                 interestLbl.Text = reader["interest"].ToString();
                 tRemarksLbl.Text = reader["teacher_remarks"].ToString();
                 classLbl.Text = reader["class"].ToString();
-
+                promotedClassLbl.Text = reader["promoted_to"].ToString();
+                noInClassLbl.Text = reader["class_total"].ToString();
             }
             reader.Close();
+            positionLbl.Text = class_position;
 
-            query = "SELECT COUNT(*) FROM Student WHERE class='" + classLbl.Text + "'";
-            noInClassLbl.Text = DbClient.query_executeScaler(query);
-
-        }
-
-        private void resultDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            if(promotedClassLbl.Text == "")
+            {
+                query = "SELECT fees FROM Class WHERE name='" + classLbl.Text + "'";
+            }
+            else
+            {
+                query = "SELECT fees FROM Class WHERE name='" + promotedClassLbl.Text + "'";
+            }
+            total_fees += double.Parse(DbClient.query_executeScaler(query));
+            feesLbl.Text = "Ghc "+DbClient.query_executeScaler(query);
+            totalFeesLbl.Text = "Ghc " + total_fees.ToString();
         }
 
         private void printBtn_Click(object sender, EventArgs e)
@@ -186,6 +204,16 @@ namespace Perfect_Peace_System.Pages
                 PtaLbl.Text = "---";
             }
 
+            if (!String.IsNullOrEmpty(ptaDuesTb.Text))
+            {
+                PtaLbl.Text = "Ghc " + ptaDuesTb.Text;
+                total_fees += double.Parse(ptaDuesTb.Text);
+            }
+            else
+            {
+                PtaLbl.Text = "---";
+            }
+            
             if (!String.IsNullOrEmpty(examFeesTb.Text))
             {
                 examsFeesLbl.Text = "Ghc " + examFeesTb.Text;
@@ -208,6 +236,27 @@ namespace Perfect_Peace_System.Pages
             totalFeesLbl.Text = "Ghc "+total_fees.ToString();
 
             nextTermDateLbl.Text = termDate.Text;
+        }
+
+        public string getSubjectPosition(string pos)
+        {
+            if (pos.EndsWith("11") || pos.EndsWith("12") || pos.EndsWith("13"))
+            {
+                return pos + "TH";
+            }
+            else if (pos.EndsWith("1"))
+            {
+                return pos + "ST";
+            }
+            else if (pos.EndsWith("2"))
+            {
+                return pos + "ND";
+            }
+            else if (pos.EndsWith("3"))
+            {
+                return pos + "RD";
+            }
+            return pos + "TH";
         }
     }
 }
