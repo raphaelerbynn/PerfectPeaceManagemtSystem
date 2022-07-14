@@ -236,6 +236,14 @@ namespace Perfect_Peace_System
             titleLbl.Text = "FEES";
             openNewPage.OpenChildForm(new Pages.FeesData(), panelView);
         }
+        
+        private void accBtn_Click(object sender, EventArgs e)
+        {
+            ActivateBtn(sender);
+            addStntBtn.Visible = false;
+            titleLbl.Text = "ACCOUNT";
+            openNewPage.OpenChildForm(new Pages.Account(), panelView);
+        }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {

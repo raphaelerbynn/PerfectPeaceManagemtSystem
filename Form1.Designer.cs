@@ -37,12 +37,14 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.settingsBtn = new System.Windows.Forms.Button();
             this.payrollBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
+            this.accountBtn = new System.Windows.Forms.Button();
             this.feesBtn = new System.Windows.Forms.Button();
             this.attendanceBtn = new System.Windows.Forms.Button();
             this.classesBtn = new System.Windows.Forms.Button();
@@ -71,6 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -92,12 +95,14 @@
             this.menuPanel.Controls.Add(this.pictureBox7);
             this.menuPanel.Controls.Add(this.pictureBox6);
             this.menuPanel.Controls.Add(this.pictureBox5);
+            this.menuPanel.Controls.Add(this.pictureBox10);
             this.menuPanel.Controls.Add(this.pictureBox4);
             this.menuPanel.Controls.Add(this.pictureBox3);
             this.menuPanel.Controls.Add(this.pictureBox2);
             this.menuPanel.Controls.Add(this.settingsBtn);
             this.menuPanel.Controls.Add(this.payrollBtn);
             this.menuPanel.Controls.Add(this.reportBtn);
+            this.menuPanel.Controls.Add(this.accountBtn);
             this.menuPanel.Controls.Add(this.feesBtn);
             this.menuPanel.Controls.Add(this.attendanceBtn);
             this.menuPanel.Controls.Add(this.classesBtn);
@@ -109,13 +114,13 @@
             this.menuPanel.Location = new System.Drawing.Point(0, 74);
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.menuPanel.Size = new System.Drawing.Size(154, 627);
+            this.menuPanel.Size = new System.Drawing.Size(154, 670);
             this.menuPanel.TabIndex = 0;
             // 
             // pictureBox11
             // 
             this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(23, 511);
+            this.pictureBox11.Location = new System.Drawing.Point(23, 554);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(30, 30);
             this.pictureBox11.TabIndex = 20;
@@ -126,7 +131,7 @@
             // 
             this.settingsIcon.BackColor = System.Drawing.Color.Transparent;
             this.settingsIcon.Image = ((System.Drawing.Image)(resources.GetObject("settingsIcon.Image")));
-            this.settingsIcon.Location = new System.Drawing.Point(23, 574);
+            this.settingsIcon.Location = new System.Drawing.Point(23, 617);
             this.settingsIcon.Name = "settingsIcon";
             this.settingsIcon.Size = new System.Drawing.Size(30, 30);
             this.settingsIcon.TabIndex = 19;
@@ -183,6 +188,16 @@
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Tag = "5";
             // 
+            // pictureBox10
+            // 
+            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
+            this.pictureBox10.Location = new System.Drawing.Point(23, 443);
+            this.pictureBox10.Name = "pictureBox10";
+            this.pictureBox10.Size = new System.Drawing.Size(30, 30);
+            this.pictureBox10.TabIndex = 13;
+            this.pictureBox10.TabStop = false;
+            this.pictureBox10.Tag = "6";
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
@@ -196,7 +211,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(23, 451);
+            this.pictureBox3.Location = new System.Drawing.Point(23, 494);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(30, 30);
             this.pictureBox3.TabIndex = 12;
@@ -222,7 +237,7 @@
             this.settingsBtn.FlatAppearance.BorderSize = 0;
             this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.settingsBtn.ForeColor = System.Drawing.Color.White;
-            this.settingsBtn.Location = new System.Drawing.Point(0, 568);
+            this.settingsBtn.Location = new System.Drawing.Point(0, 606);
             this.settingsBtn.Name = "settingsBtn";
             this.settingsBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.settingsBtn.Size = new System.Drawing.Size(155, 62);
@@ -242,7 +257,7 @@
             this.payrollBtn.FlatAppearance.BorderSize = 0;
             this.payrollBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.payrollBtn.ForeColor = System.Drawing.Color.White;
-            this.payrollBtn.Location = new System.Drawing.Point(0, 506);
+            this.payrollBtn.Location = new System.Drawing.Point(0, 544);
             this.payrollBtn.Name = "payrollBtn";
             this.payrollBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.payrollBtn.Size = new System.Drawing.Size(154, 62);
@@ -260,7 +275,7 @@
             this.reportBtn.FlatAppearance.BorderSize = 0;
             this.reportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reportBtn.ForeColor = System.Drawing.Color.White;
-            this.reportBtn.Location = new System.Drawing.Point(0, 444);
+            this.reportBtn.Location = new System.Drawing.Point(0, 482);
             this.reportBtn.Name = "reportBtn";
             this.reportBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.reportBtn.Size = new System.Drawing.Size(154, 62);
@@ -271,6 +286,25 @@
             this.reportBtn.UseVisualStyleBackColor = true;
             this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
             // 
+            // accountBtn
+            // 
+            this.accountBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.accountBtn.AutoSize = true;
+            this.accountBtn.FlatAppearance.BorderSize = 0;
+            this.accountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.accountBtn.ForeColor = System.Drawing.Color.White;
+            this.accountBtn.Location = new System.Drawing.Point(0, 426);
+            this.accountBtn.Name = "accountBtn";
+            this.accountBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            this.accountBtn.Size = new System.Drawing.Size(154, 62);
+            this.accountBtn.TabIndex = 8;
+            this.accountBtn.Tag = "6";
+            this.accountBtn.Text = "Account";
+            this.accountBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.accountBtn.UseVisualStyleBackColor = true;
+            this.accountBtn.Click += new System.EventHandler(this.accBtn_Click);
+            // 
             // feesBtn
             // 
             this.feesBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -279,7 +313,7 @@
             this.feesBtn.FlatAppearance.BorderSize = 0;
             this.feesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.feesBtn.ForeColor = System.Drawing.Color.White;
-            this.feesBtn.Location = new System.Drawing.Point(0, 382);
+            this.feesBtn.Location = new System.Drawing.Point(0, 375);
             this.feesBtn.Name = "feesBtn";
             this.feesBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.feesBtn.Size = new System.Drawing.Size(154, 62);
@@ -298,7 +332,7 @@
             this.attendanceBtn.FlatAppearance.BorderSize = 0;
             this.attendanceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.attendanceBtn.ForeColor = System.Drawing.Color.White;
-            this.attendanceBtn.Location = new System.Drawing.Point(0, 320);
+            this.attendanceBtn.Location = new System.Drawing.Point(0, 313);
             this.attendanceBtn.Name = "attendanceBtn";
             this.attendanceBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.attendanceBtn.Size = new System.Drawing.Size(154, 62);
@@ -316,7 +350,7 @@
             this.classesBtn.FlatAppearance.BorderSize = 0;
             this.classesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.classesBtn.ForeColor = System.Drawing.Color.White;
-            this.classesBtn.Location = new System.Drawing.Point(0, 258);
+            this.classesBtn.Location = new System.Drawing.Point(0, 251);
             this.classesBtn.Name = "classesBtn";
             this.classesBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.classesBtn.Size = new System.Drawing.Size(154, 62);
@@ -335,7 +369,7 @@
             this.parentsBtn.FlatAppearance.BorderSize = 0;
             this.parentsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.parentsBtn.ForeColor = System.Drawing.Color.White;
-            this.parentsBtn.Location = new System.Drawing.Point(0, 196);
+            this.parentsBtn.Location = new System.Drawing.Point(0, 189);
             this.parentsBtn.Name = "parentsBtn";
             this.parentsBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.parentsBtn.Size = new System.Drawing.Size(154, 62);
@@ -354,7 +388,7 @@
             this.teachersBtn.FlatAppearance.BorderSize = 0;
             this.teachersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.teachersBtn.ForeColor = System.Drawing.Color.White;
-            this.teachersBtn.Location = new System.Drawing.Point(0, 134);
+            this.teachersBtn.Location = new System.Drawing.Point(0, 127);
             this.teachersBtn.Name = "teachersBtn";
             this.teachersBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.teachersBtn.Size = new System.Drawing.Size(154, 62);
@@ -373,7 +407,7 @@
             this.studentBtn.FlatAppearance.BorderSize = 0;
             this.studentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.studentBtn.ForeColor = System.Drawing.Color.White;
-            this.studentBtn.Location = new System.Drawing.Point(0, 72);
+            this.studentBtn.Location = new System.Drawing.Point(0, 65);
             this.studentBtn.Name = "studentBtn";
             this.studentBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.studentBtn.Size = new System.Drawing.Size(154, 62);
@@ -392,7 +426,7 @@
             this.dashboardBtn.FlatAppearance.BorderSize = 0;
             this.dashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dashboardBtn.ForeColor = System.Drawing.Color.White;
-            this.dashboardBtn.Location = new System.Drawing.Point(0, 10);
+            this.dashboardBtn.Location = new System.Drawing.Point(0, 3);
             this.dashboardBtn.Name = "dashboardBtn";
             this.dashboardBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.dashboardBtn.Size = new System.Drawing.Size(154, 62);
@@ -549,14 +583,14 @@
             this.panelView.Location = new System.Drawing.Point(154, 74);
             this.panelView.Name = "panelView";
             this.panelView.Padding = new System.Windows.Forms.Padding(5);
-            this.panelView.Size = new System.Drawing.Size(966, 627);
+            this.panelView.Size = new System.Drawing.Size(966, 670);
             this.panelView.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1120, 701);
+            this.ClientSize = new System.Drawing.Size(1120, 744);
             this.Controls.Add(this.panelView);
             this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.topPanel);
@@ -573,6 +607,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -624,6 +659,8 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panelView;
+        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.Button accountBtn;
     }
 }
 
