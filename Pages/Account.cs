@@ -20,6 +20,7 @@ namespace Perfect_Peace_System.Pages
             showExpenses();
             showFeeding();
             showExtraClasses();
+
         }
 
         private void loadInfoBtn_Click(object sender, EventArgs e)
@@ -61,21 +62,24 @@ namespace Perfect_Peace_System.Pages
         private void showExpenses()
         {
             //load data
-            query = "SELECT * FROM Expense";
+            query = "SELECT expense_id, expense, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Expense";
             DbClient.dataGridFill(expensesDataView, query);
+            totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
 
         }
 
         private void showExtraClasses()
         {
-            query = "SELECT * FROM Extra_classes";
+            query = "SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes";
             DbClient.dataGridFill(extraClassesDataView, query);
+            extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
         }
 
         private void showFeeding()
         {
-            query = "SELECT * FROM Feeding_fee";
+            query = "SELECT feeding_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Feeding_fee";
             DbClient.dataGridFill(feedingDataView, query);
+            feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
         }
 
         //feeding
@@ -90,7 +94,9 @@ namespace Perfect_Peace_System.Pages
                 feedingTeacherCb.SelectedIndex = -1;
                 feedingClassCb.SelectedIndex = -1;
                 feedingAmntTb.Text = null;
-            }catch(Exception ex)
+                feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
+            }
+            catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 MessageBox.Show("Input all fields correctly!");
@@ -99,12 +105,22 @@ namespace Perfect_Peace_System.Pages
 
         private void feedingSearchBtn_Click(object sender, EventArgs e)
         {
-
+            feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
         }
 
         private void feedingLoadBtn_Click(object sender, EventArgs e)
         {
-            (feedingDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", expYearPk.Text);
+            string loadListDateF = feedingYearPk.Text;
+            if (monthFeedingPk.Visible == true)
+            {
+                loadListDateF = monthFeedingPk.Text + "-" + feedingYearPk.Text;
+                if (dayExtraClassesPk.Visible == true)
+                {
+                    loadListDateF = dayFeedingPk.Text + "-" + loadListDateF;
+                }
+            }
+            (feedingDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", loadListDateF);
+            feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
         }
 
         private void feedingDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -124,6 +140,7 @@ namespace Perfect_Peace_System.Pages
                         query = "DELETE FROM Feeding_fee WHERE feeding_fee_id='" + id + "'";
                         DbClient.query_execute(query);
                         MessageBox.Show("Data deleted from system");
+                        feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
                     }
 
                 }
@@ -131,6 +148,36 @@ namespace Perfect_Peace_System.Pages
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void addMonthCheckBF_CheckedChanged(object sender, EventArgs e)
+        {
+            if (addMonthCheckBF.Checked)
+            {
+                addDayCheckBF.Visible = true;
+                monthLblF.Visible = true;
+                monthFeedingPk.Visible = true;
+            }
+            else
+            {
+                addDayCheckBF.Visible = false;
+                monthLblF.Visible = false;
+                monthFeedingPk.Visible = false;
+            }
+        }
+
+        private void addDayCheckBF_CheckedChanged(object sender, EventArgs e)
+        {
+            if (addDayCheckBF.Checked)
+            {
+                dayLblF.Visible = true;
+                dayFeedingPk.Visible = true;
+            }
+            else
+            {
+                dayLblF.Visible = false;
+                dayFeedingPk.Visible = false;
             }
         }
 
@@ -146,6 +193,7 @@ namespace Perfect_Peace_System.Pages
                 teacherCb.SelectedIndex = -1;
                 extraClassesClassCb.SelectedIndex = -1;
                 extraClassesAmntTb.Text = null;
+                extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
             }
             catch (Exception ex)
             {
@@ -156,12 +204,22 @@ namespace Perfect_Peace_System.Pages
 
         private void extraClassesSearchBtn_Click(object sender, EventArgs e)
         {
-            
+            extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
         }
 
         private void loadExtraClassesBtn_Click(object sender, EventArgs e)
         {
-            (extraClassesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", expYearPk.Text);
+            string loadListDateC = yearExtraClassesPk.Text;
+            if (monthExtraClassesPk.Visible == true)
+            {
+                loadListDateC = monthExtraClassesPk.Text + "-" + yearExtraClassesPk.Text;
+                if(dayExtraClassesPk.Visible == true)
+                {
+                    loadListDateC = dayExtraClassesPk.Text + "-" + loadListDateC;
+                }
+            }
+            (extraClassesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", loadListDateC);
+            extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
         }
 
         private void extraClassesDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -181,13 +239,44 @@ namespace Perfect_Peace_System.Pages
                         query = "DELETE FROM Extra_classes WHERE extra_classes_id='" + id + "'";
                         DbClient.query_execute(query);
                         MessageBox.Show("Data deleted from system");
+                        extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
                     }
-
+                    extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void addDayCheckBC_CheckedChanged(object sender, EventArgs e)
+        {
+            if (addDayCheckBC.Checked)
+            {
+                dayLblC.Visible = true;
+                dayExtraClassesPk.Visible = true;
+            }
+            else
+            {
+                dayLblC.Visible = false;
+                dayExtraClassesPk.Visible = false;
+            }
+        }
+
+        private void addMonthCheckBC_CheckedChanged(object sender, EventArgs e)
+        {
+            if (addMonthBC.Checked)
+            {
+                addDayCheckBC.Visible = true;
+                monthLblC.Visible = true;
+                monthExtraClassesPk.Visible = true;
+            }
+            else
+            {
+                addDayCheckBC.Visible = false;
+                monthLblC.Visible = false;
+                monthExtraClassesPk.Visible = false;
             }
         }
 
@@ -202,6 +291,7 @@ namespace Perfect_Peace_System.Pages
                 showExpenses();
                 expenseTb.Text = null;
                 expAmountTb.Text = null;
+                totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
             }
             catch (Exception ex)
             {
@@ -212,12 +302,19 @@ namespace Perfect_Peace_System.Pages
 
         private void searchExpBtn_Click(object sender, EventArgs e)
         {
-
+            totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
         }
 
         private void loadExpBtn_Click(object sender, EventArgs e)
         {
-            (expensesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", expYearPk.Text);
+            string loadListDateE = expYearPk.Text;
+            if (expMonthPk.Visible == true)
+            {
+                loadListDateE = expMonthPk.Text + "-" + expYearPk.Text; 
+            }
+            Console.WriteLine(loadListDateE);
+            (expensesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", loadListDateE);
+            totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
         }
 
         private void expensesDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -237,13 +334,27 @@ namespace Perfect_Peace_System.Pages
                         query = "DELETE FROM Expense WHERE expense_id='" + id + "'";
                         DbClient.query_execute(query);
                         MessageBox.Show("Expense deleted from system");
+                        totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
                     }
-
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void addMonthCheckBE_CheckedChanged(object sender, EventArgs e)
+        {
+            if (addMonthCheckBE.Checked)
+            {
+                monthLblE.Visible = true;
+                expMonthPk.Visible = true;
+            }
+            else
+            {
+                monthLblE.Visible = false;
+                expMonthPk.Visible = false;
             }
         }
 
@@ -260,5 +371,16 @@ namespace Perfect_Peace_System.Pages
                 e.Handled = true;
             }
         }
+
+        private string totalAmountInDataView(DataGridView data, string amountColumnId)
+        {
+            double total = 0;
+            foreach(DataGridViewRow item in data.Rows)
+            {
+                total += double.Parse(item.Cells[amountColumnId].Value.ToString());
+            }
+            return total.ToString();
+        }
+                
     }
 }
