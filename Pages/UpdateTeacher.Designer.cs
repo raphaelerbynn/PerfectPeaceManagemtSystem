@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.classCb = new System.Windows.Forms.ComboBox();
             this.emailTb = new System.Windows.Forms.TextBox();
             this.phoneTB = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.addressTb = new System.Windows.Forms.TextBox();
             this.fnameTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.classCb = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,9 +72,19 @@
             this.panel1.Size = new System.Drawing.Size(950, 539);
             this.panel1.TabIndex = 0;
             // 
+            // classCb
+            // 
+            this.classCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.classCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.classCb.FormattingEnabled = true;
+            this.classCb.Location = new System.Drawing.Point(181, 384);
+            this.classCb.Name = "classCb";
+            this.classCb.Size = new System.Drawing.Size(659, 21);
+            this.classCb.TabIndex = 38;
+            // 
             // emailTb
             // 
-            this.emailTb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.emailTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.emailTb.Location = new System.Drawing.Point(181, 247);
             this.emailTb.Name = "emailTb";
             this.emailTb.Size = new System.Drawing.Size(659, 20);
@@ -82,7 +92,7 @@
             // 
             // phoneTB
             // 
-            this.phoneTB.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.phoneTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.phoneTB.Location = new System.Drawing.Point(181, 209);
             this.phoneTB.Name = "phoneTB";
             this.phoneTB.Size = new System.Drawing.Size(659, 20);
@@ -90,7 +100,7 @@
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(137, 250);
             this.label5.Name = "label5";
@@ -100,7 +110,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(131, 212);
             this.label2.Name = "label2";
@@ -110,7 +120,7 @@
             // 
             // clearFeildBtn
             // 
-            this.clearFeildBtn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.clearFeildBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.clearFeildBtn.Location = new System.Drawing.Point(508, 424);
             this.clearFeildBtn.Name = "clearFeildBtn";
             this.clearFeildBtn.Size = new System.Drawing.Size(75, 23);
@@ -120,7 +130,7 @@
             // 
             // updateTeacherBnt
             // 
-            this.updateTeacherBnt.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.updateTeacherBnt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.updateTeacherBnt.Location = new System.Drawing.Point(347, 424);
             this.updateTeacherBnt.Name = "updateTeacherBnt";
             this.updateTeacherBnt.Size = new System.Drawing.Size(75, 23);
@@ -131,7 +141,7 @@
             // 
             // femaleRadio
             // 
-            this.femaleRadio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.femaleRadio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.femaleRadio.AutoSize = true;
             this.femaleRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.femaleRadio.Location = new System.Drawing.Point(273, 171);
@@ -144,7 +154,7 @@
             // 
             // maleRadio
             // 
-            this.maleRadio.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.maleRadio.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.maleRadio.AutoSize = true;
             this.maleRadio.Checked = true;
             this.maleRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -159,7 +169,7 @@
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(123, 299);
             this.label6.Name = "label6";
@@ -169,7 +179,7 @@
             // 
             // lnameTb
             // 
-            this.lnameTb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lnameTb.Location = new System.Drawing.Point(181, 130);
             this.lnameTb.Name = "lnameTb";
             this.lnameTb.Size = new System.Drawing.Size(659, 20);
@@ -177,7 +187,7 @@
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(111, 133);
             this.label4.Name = "label4";
@@ -187,7 +197,7 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(127, 174);
             this.label3.Name = "label3";
@@ -198,7 +208,7 @@
             // addressTb
             // 
             this.addressTb.AcceptsReturn = true;
-            this.addressTb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.addressTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.addressTb.Location = new System.Drawing.Point(180, 299);
             this.addressTb.Multiline = true;
             this.addressTb.Name = "addressTb";
@@ -207,7 +217,7 @@
             // 
             // fnameTb
             // 
-            this.fnameTb.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.fnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.fnameTb.Location = new System.Drawing.Point(181, 91);
             this.fnameTb.Name = "fnameTb";
             this.fnameTb.Size = new System.Drawing.Size(659, 20);
@@ -215,22 +225,13 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(112, 94);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 23;
             this.label1.Text = "First Name: *";
-            // 
-            // classCb
-            // 
-            this.classCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.classCb.FormattingEnabled = true;
-            this.classCb.Location = new System.Drawing.Point(181, 384);
-            this.classCb.Name = "classCb";
-            this.classCb.Size = new System.Drawing.Size(659, 21);
-            this.classCb.TabIndex = 38;
             // 
             // UpdateTeacher
             // 

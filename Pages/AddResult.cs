@@ -301,11 +301,14 @@ namespace Perfect_Peace_System.Pages
         private void backBtn_Click(object sender, EventArgs e)
         {
             teacherRemarksPanel.Visible = false;
+            inputPanel.Visible = true;
         }
 
         private void nextPageBtn_Click(object sender, EventArgs e)
         {
             teacherRemarksPanel.Visible = true;
+            teacherRemarksPanel.Location = inputPanel.Location;
+            inputPanel.Visible = false;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
