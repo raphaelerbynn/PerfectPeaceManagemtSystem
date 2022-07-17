@@ -115,6 +115,12 @@
     <Compile Include="Pages\FeesData.Designer.cs">
       <DependentUpon>FeesData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Payroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Payroll.Designer.cs">
+      <DependentUpon>Payroll.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ReportCard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ParentsData.resx">
       <DependentUpon>ParentsData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Payroll.resx">
+      <DependentUpon>Payroll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ReportCard.resx">
       <DependentUpon>ReportCard.cs</DependentUpon>
