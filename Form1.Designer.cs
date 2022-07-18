@@ -266,6 +266,7 @@
             this.payrollBtn.Text = "Payroll";
             this.payrollBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.payrollBtn.UseVisualStyleBackColor = true;
+            this.payrollBtn.Click += new System.EventHandler(this.payrollBtn_Click);
             // 
             // reportBtn
             // 
@@ -458,10 +459,10 @@
             // 
             // maxBtn
             // 
-            this.maxBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.maxBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.maxBtn.BackColor = System.Drawing.Color.Transparent;
             this.maxBtn.Image = ((System.Drawing.Image)(resources.GetObject("maxBtn.Image")));
-            this.maxBtn.Location = new System.Drawing.Point(1041, 3);
+            this.maxBtn.Location = new System.Drawing.Point(1055, 3);
             this.maxBtn.Name = "maxBtn";
             this.maxBtn.Size = new System.Drawing.Size(20, 20);
             this.maxBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -471,10 +472,10 @@
             // 
             // minBtn
             // 
-            this.minBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.minBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.minBtn.BackColor = System.Drawing.Color.Transparent;
             this.minBtn.Image = ((System.Drawing.Image)(resources.GetObject("minBtn.Image")));
-            this.minBtn.Location = new System.Drawing.Point(1061, 3);
+            this.minBtn.Location = new System.Drawing.Point(1029, 3);
             this.minBtn.Name = "minBtn";
             this.minBtn.Size = new System.Drawing.Size(20, 20);
             this.minBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -484,7 +485,7 @@
             // 
             // closeBtn
             // 
-            this.closeBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.closeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.closeBtn.BackColor = System.Drawing.Color.Transparent;
             this.closeBtn.Image = ((System.Drawing.Image)(resources.GetObject("closeBtn.Image")));
             this.closeBtn.Location = new System.Drawing.Point(1081, 3);

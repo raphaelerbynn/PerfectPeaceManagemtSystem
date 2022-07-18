@@ -310,6 +310,14 @@ namespace Perfect_Peace_System
             openNewPage.OpenChildForm(new Pages.AddSubject(), panelView);
         }
 
+        private void payrollBtn_Click(object sender, EventArgs e)
+        {
+            ActivateBtn(sender);
+            addStntBtn.Visible = false;
+            titleLbl.Text = "PAYROLL";
+            openNewPage.OpenChildForm(new Pages.Payroll(), panelView);
+        }
+
         private void topPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if(e.Button == MouseButtons.Left)
@@ -320,7 +328,7 @@ namespace Perfect_Peace_System
 
         private void minBtn_Click(object sender, EventArgs e)
         {
-
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
