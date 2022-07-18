@@ -88,12 +88,14 @@
             this.titleTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.empSalaryLbl = new System.Windows.Forms.Label();
+            this.backBtn = new System.Windows.Forms.Button();
             this.addSalaryPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // addSalaryPanel
             // 
             this.addSalaryPanel.AutoScroll = true;
+            this.addSalaryPanel.Controls.Add(this.backBtn);
             this.addSalaryPanel.Controls.Add(this.addSalaryBtn);
             this.addSalaryPanel.Controls.Add(this.label30);
             this.addSalaryPanel.Controls.Add(this.label29);
@@ -162,7 +164,7 @@
             // addSalaryBtn
             // 
             this.addSalaryBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.addSalaryBtn.Location = new System.Drawing.Point(473, 589);
+            this.addSalaryBtn.Location = new System.Drawing.Point(528, 589);
             this.addSalaryBtn.Name = "addSalaryBtn";
             this.addSalaryBtn.Size = new System.Drawing.Size(75, 23);
             this.addSalaryBtn.TabIndex = 9;
@@ -766,6 +768,17 @@
             this.empSalaryLbl.TabIndex = 1;
             this.empSalaryLbl.Text = "Employee Salary";
             // 
+            // backBtn
+            // 
+            this.backBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.backBtn.Location = new System.Drawing.Point(424, 589);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(75, 23);
+            this.backBtn.TabIndex = 9;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
             // AddSalary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -841,5 +854,6 @@
         private System.Windows.Forms.TextBox DT1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button backBtn;
     }
 }

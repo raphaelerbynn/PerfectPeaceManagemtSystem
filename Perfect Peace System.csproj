@@ -102,6 +102,12 @@
     <Compile Include="Pages\AddSubject.Designer.cs">
       <DependentUpon>AddSubject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Create.Designer.cs">
+      <DependentUpon>Create.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\FeePaying.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -266,6 +272,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ClassData.resx">
       <DependentUpon>ClassData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Create.resx">
+      <DependentUpon>Create.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>

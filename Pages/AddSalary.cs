@@ -58,6 +58,7 @@ namespace Perfect_Peace_System.Pages
                     Console.WriteLine(salary_id);
                     MessageBox.Show("Salary Base added to system");
                     clearFields();
+                    this.Close();
                 }
                 else
                 {
@@ -90,6 +91,11 @@ namespace Perfect_Peace_System.Pages
             {
                 e.Handled = true;
             }
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            this.Close(); 
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Perfect_Peace_System.Pages
 {
-    partial class Payroll
+    partial class Create
     {
         /// <summary>
         /// Required designer variable.
@@ -37,45 +37,18 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.payrollPanel = new System.Windows.Forms.Panel();
             this.salaryBasedPanel = new System.Windows.Forms.Panel();
             this.salaryBaseDataView = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.addSalaryBtn = new System.Windows.Forms.Button();
-            this.paymentBtn = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.empSalaryBtn = new System.Windows.Forms.Panel();
-            this.empSalaryLbl = new System.Windows.Forms.Label();
-            this.salaryBaseBtn = new System.Windows.Forms.Panel();
-            this.salaryBaseLbl = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.salary_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salaryTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salaryRank = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grossAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.netAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountSalary = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teacher_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employee_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employee_mail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountSalary = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.deleteSalary = new System.Windows.Forms.DataGridViewImageColumn();
-            this.payrollPanel.SuspendLayout();
             this.salaryBasedPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salaryBaseDataView)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.paymentBtn.SuspendLayout();
-            this.empSalaryBtn.SuspendLayout();
-            this.salaryBaseBtn.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // payrollPanel
-            // 
-            this.payrollPanel.AutoScroll = true;
-            this.payrollPanel.Controls.Add(this.salaryBasedPanel);
-            this.payrollPanel.Controls.Add(this.panel1);
-            this.payrollPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.payrollPanel.Location = new System.Drawing.Point(0, 0);
-            this.payrollPanel.Name = "payrollPanel";
-            this.payrollPanel.Size = new System.Drawing.Size(923, 650);
-            this.payrollPanel.TabIndex = 0;
             // 
             // salaryBasedPanel
             // 
@@ -85,10 +58,10 @@
             this.salaryBasedPanel.AutoScroll = true;
             this.salaryBasedPanel.Controls.Add(this.salaryBaseDataView);
             this.salaryBasedPanel.Controls.Add(this.label4);
-            this.salaryBasedPanel.Location = new System.Drawing.Point(3, 74);
+            this.salaryBasedPanel.Location = new System.Drawing.Point(9, 52);
             this.salaryBasedPanel.Name = "salaryBasedPanel";
             this.salaryBasedPanel.Size = new System.Drawing.Size(923, 573);
-            this.salaryBasedPanel.TabIndex = 1;
+            this.salaryBasedPanel.TabIndex = 2;
             this.salaryBasedPanel.Visible = false;
             // 
             // salaryBaseDataView
@@ -114,11 +87,9 @@
             this.salaryBaseDataView.ColumnHeadersHeight = 30;
             this.salaryBaseDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.salaryBaseDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.salary_id,
-            this.salaryTitle,
-            this.salaryRank,
-            this.grossAmount,
-            this.netAmount,
+            this.teacher_id,
+            this.employee_name,
+            this.employee_mail,
             this.amountSalary,
             this.deleteSalary});
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -130,7 +101,7 @@
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.salaryBaseDataView.DefaultCellStyle = dataGridViewCellStyle6;
             this.salaryBaseDataView.EnableHeadersVisualStyles = false;
-            this.salaryBaseDataView.Location = new System.Drawing.Point(3, 78);
+            this.salaryBaseDataView.Location = new System.Drawing.Point(3, 174);
             this.salaryBaseDataView.Name = "salaryBaseDataView";
             this.salaryBaseDataView.ReadOnly = true;
             this.salaryBaseDataView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -149,9 +120,8 @@
             this.salaryBaseDataView.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.salaryBaseDataView.RowTemplate.Height = 30;
             this.salaryBaseDataView.ShowEditingIcon = false;
-            this.salaryBaseDataView.Size = new System.Drawing.Size(917, 486);
+            this.salaryBaseDataView.Size = new System.Drawing.Size(917, 390);
             this.salaryBaseDataView.TabIndex = 34;
-            this.salaryBaseDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.salaryBaseDataView_CellContentClick);
             // 
             // label4
             // 
@@ -160,99 +130,9 @@
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(411, 30);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 19);
+            this.label4.Size = new System.Drawing.Size(115, 19);
             this.label4.TabIndex = 1;
-            this.label4.Text = "Salary Details";
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.addSalaryBtn);
-            this.panel1.Controls.Add(this.paymentBtn);
-            this.panel1.Controls.Add(this.empSalaryBtn);
-            this.panel1.Controls.Add(this.salaryBaseBtn);
-            this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(923, 74);
-            this.panel1.TabIndex = 0;
-            // 
-            // addSalaryBtn
-            // 
-            this.addSalaryBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addSalaryBtn.Location = new System.Drawing.Point(822, 45);
-            this.addSalaryBtn.Name = "addSalaryBtn";
-            this.addSalaryBtn.Size = new System.Drawing.Size(75, 23);
-            this.addSalaryBtn.TabIndex = 4;
-            this.addSalaryBtn.Text = "Add Salary";
-            this.addSalaryBtn.UseVisualStyleBackColor = true;
-            this.addSalaryBtn.Visible = false;
-            this.addSalaryBtn.Click += new System.EventHandler(this.addSalaryBtn_Click);
-            // 
-            // paymentBtn
-            // 
-            this.paymentBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.paymentBtn.Controls.Add(this.label3);
-            this.paymentBtn.Location = new System.Drawing.Point(453, 34);
-            this.paymentBtn.Name = "paymentBtn";
-            this.paymentBtn.Size = new System.Drawing.Size(200, 40);
-            this.paymentBtn.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(45, 12);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(108, 19);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Salary Payment";
-            // 
-            // empSalaryBtn
-            // 
-            this.empSalaryBtn.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.empSalaryBtn.Controls.Add(this.empSalaryLbl);
-            this.empSalaryBtn.Location = new System.Drawing.Point(238, 34);
-            this.empSalaryBtn.Name = "empSalaryBtn";
-            this.empSalaryBtn.Size = new System.Drawing.Size(200, 40);
-            this.empSalaryBtn.TabIndex = 3;
-            this.empSalaryBtn.Click += new System.EventHandler(this.empSalaryBtn_Click);
-            // 
-            // empSalaryLbl
-            // 
-            this.empSalaryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.empSalaryLbl.AutoSize = true;
-            this.empSalaryLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.empSalaryLbl.Location = new System.Drawing.Point(44, 12);
-            this.empSalaryLbl.Name = "empSalaryLbl";
-            this.empSalaryLbl.Size = new System.Drawing.Size(115, 19);
-            this.empSalaryLbl.TabIndex = 0;
-            this.empSalaryLbl.Text = "Employee Salary";
-            // 
-            // salaryBaseBtn
-            // 
-            this.salaryBaseBtn.BackColor = System.Drawing.SystemColors.Control;
-            this.salaryBaseBtn.Controls.Add(this.salaryBaseLbl);
-            this.salaryBaseBtn.Location = new System.Drawing.Point(21, 34);
-            this.salaryBaseBtn.Name = "salaryBaseBtn";
-            this.salaryBaseBtn.Size = new System.Drawing.Size(200, 40);
-            this.salaryBaseBtn.TabIndex = 3;
-            this.salaryBaseBtn.Click += new System.EventHandler(this.salaryBaseBtn_Click);
-            // 
-            // salaryBaseLbl
-            // 
-            this.salaryBaseLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.salaryBaseLbl.AutoSize = true;
-            this.salaryBaseLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salaryBaseLbl.Location = new System.Drawing.Point(55, 12);
-            this.salaryBaseLbl.Name = "salaryBaseLbl";
-            this.salaryBaseLbl.Size = new System.Drawing.Size(84, 19);
-            this.salaryBaseLbl.TabIndex = 0;
-            this.salaryBaseLbl.Text = "Salary Base";
-            this.salaryBaseLbl.Click += new System.EventHandler(this.salaryBaseBtn_Click);
+            this.label4.Text = "Employee Salary";
             // 
             // dataGridViewImageColumn1
             // 
@@ -268,60 +148,46 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Width = 50;
             // 
-            // salary_id
+            // teacher_id
             // 
-            this.salary_id.DataPropertyName = "salary_id";
-            this.salary_id.HeaderText = "ID";
-            this.salary_id.Name = "salary_id";
-            this.salary_id.ReadOnly = true;
-            this.salary_id.Visible = false;
+            this.teacher_id.DataPropertyName = "teacher_id";
+            this.teacher_id.HeaderText = "ID";
+            this.teacher_id.Name = "teacher_id";
+            this.teacher_id.ReadOnly = true;
+            this.teacher_id.Visible = false;
             // 
-            // salaryTitle
+            // employee_name
             // 
-            this.salaryTitle.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.salaryTitle.DataPropertyName = "title";
+            this.employee_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.employee_name.DataPropertyName = "name";
             dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.salaryTitle.DefaultCellStyle = dataGridViewCellStyle2;
-            this.salaryTitle.HeaderText = "TITLE";
-            this.salaryTitle.Name = "salaryTitle";
-            this.salaryTitle.ReadOnly = true;
-            this.salaryTitle.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.employee_name.DefaultCellStyle = dataGridViewCellStyle2;
+            this.employee_name.HeaderText = "NAME";
+            this.employee_name.Name = "employee_name";
+            this.employee_name.ReadOnly = true;
+            this.employee_name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // salaryRank
+            // employee_mail
             // 
-            this.salaryRank.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.salaryRank.DataPropertyName = "rank";
+            this.employee_mail.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.employee_mail.DataPropertyName = "email";
             dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.salaryRank.DefaultCellStyle = dataGridViewCellStyle3;
-            this.salaryRank.HeaderText = "RANK";
-            this.salaryRank.Name = "salaryRank";
-            this.salaryRank.ReadOnly = true;
-            // 
-            // grossAmount
-            // 
-            this.grossAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.grossAmount.DataPropertyName = "gross_amount";
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.grossAmount.DefaultCellStyle = dataGridViewCellStyle4;
-            this.grossAmount.HeaderText = "GROSS AMOUNT";
-            this.grossAmount.Name = "grossAmount";
-            this.grossAmount.ReadOnly = true;
-            // 
-            // netAmount
-            // 
-            this.netAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.netAmount.DataPropertyName = "net_amount";
-            this.netAmount.HeaderText = "NET AMOUNT";
-            this.netAmount.Name = "netAmount";
-            this.netAmount.ReadOnly = true;
+            this.employee_mail.DefaultCellStyle = dataGridViewCellStyle3;
+            this.employee_mail.HeaderText = "E-MAIL";
+            this.employee_mail.Name = "employee_mail";
+            this.employee_mail.ReadOnly = true;
             // 
             // amountSalary
             // 
+            this.amountSalary.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.amountSalary.DataPropertyName = "amount";
-            this.amountSalary.HeaderText = "AMOUNT";
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.amountSalary.DefaultCellStyle = dataGridViewCellStyle4;
+            this.amountSalary.HeaderText = "SALARY BASE";
             this.amountSalary.Name = "amountSalary";
             this.amountSalary.ReadOnly = true;
-            this.amountSalary.Visible = false;
+            this.amountSalary.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.amountSalary.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // deleteSalary
             // 
@@ -338,50 +204,31 @@
             this.deleteSalary.ReadOnly = true;
             this.deleteSalary.Width = 50;
             // 
-            // Payroll
+            // Create
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(923, 650);
-            this.Controls.Add(this.payrollPanel);
-            this.Name = "Payroll";
-            this.Text = "Payroll";
-            this.payrollPanel.ResumeLayout(false);
+            this.ClientSize = new System.Drawing.Size(941, 677);
+            this.Controls.Add(this.salaryBasedPanel);
+            this.Name = "Create";
+            this.Text = "Create";
             this.salaryBasedPanel.ResumeLayout(false);
             this.salaryBasedPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salaryBaseDataView)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.paymentBtn.ResumeLayout(false);
-            this.paymentBtn.PerformLayout();
-            this.empSalaryBtn.ResumeLayout(false);
-            this.empSalaryBtn.PerformLayout();
-            this.salaryBaseBtn.ResumeLayout(false);
-            this.salaryBaseBtn.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel payrollPanel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel paymentBtn;
-        private System.Windows.Forms.Panel empSalaryBtn;
-        private System.Windows.Forms.Panel salaryBaseBtn;
         private System.Windows.Forms.Panel salaryBasedPanel;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button addSalaryBtn;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label empSalaryLbl;
-        private System.Windows.Forms.Label salaryBaseLbl;
         private System.Windows.Forms.DataGridView salaryBaseDataView;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn salary_id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn salaryTitle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn salaryRank;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grossAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn netAmount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn amountSalary;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn teacher_id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employee_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn employee_mail;
+        private System.Windows.Forms.DataGridViewComboBoxColumn amountSalary;
         private System.Windows.Forms.DataGridViewImageColumn deleteSalary;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }
