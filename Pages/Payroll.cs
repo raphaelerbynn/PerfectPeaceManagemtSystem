@@ -21,6 +21,9 @@ namespace Perfect_Peace_System.Pages
             InitializeComponent();
             populateSalaryData();
             adjustColumns();
+            
+            query = "SELECT [title]+'('+[rank]+')' AS position FROM Salary";
+            DbClient.query_reader(salaryBaseCb, query);
         }
 
         //salary base
@@ -66,6 +69,7 @@ namespace Perfect_Peace_System.Pages
         {
             salaryBasedPanel.Visible = true;
             addSalaryBtn.Visible = true;
+            empSalaryPanel.Visible = false;
         }
 
         private void populateSalaryData()
@@ -118,7 +122,99 @@ namespace Perfect_Peace_System.Pages
         private void empSalaryBtn_Click(object sender, EventArgs e)
         {
             salaryBasedPanel.Visible = false;
+            addSalaryBtn.Visible = false;
             empSalaryPanel.Visible = true;
+            populateEmpSalary();
+
+        }
+
+        private void populateEmpSalary()
+        {
+            try
+            {
+                query = "SELECT teacher_id, [f_name]+' '+[l_name] AS name, email, CAST(teacher_id AS VARCHAR(100)) AS salary_base FROM Teacher";
+                DbClient.dataGridFill(empSalaryDataView, query);
+
+                foreach (DataGridViewRow item in empSalaryDataView.Rows)
+                {
+                    string salary_id = "";
+                    item.Cells["emp_salary_base"].Value = null;
+                    string empId = item.Cells["teacher_id"].Value.ToString();
+
+                    query = "SELECT salary_id FROM Employee_salary WHERE teacher_id='" + empId + "'";
+                    SqlDataReader reader = DbClient.query_reader(query);
+                    while (reader.Read())
+                    {
+                        salary_id = reader["salary_id"].ToString();
+                    }
+                    reader.Close();
+                    query = "SELECT [title]+'('+[rank]+')' AS position FROM Salary WHERE salary_id='" + salary_id + "'";
+                    reader = DbClient.query_reader(query);
+                    while (reader.Read())
+                    {
+                        item.Cells["emp_salary_base"].Value = reader["position"].ToString();
+                    }
+                    reader.Close();
+                    
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);  
+            }
+        }
+
+        private string empSalaryId;
+        private void empSalaryDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = empSalaryDataView.Rows[e.RowIndex];
+                empSalaryId = row.Cells["teacher_id"].Value.ToString();
+                string salaryBase = row.Cells["emp_salary_base"].Value.ToString();
+                if (empSalaryDataView.Columns[e.ColumnIndex].Name == "assignSalary" && e.RowIndex >= 0)
+                {
+
+                    empNameTb.Text = row.Cells["employee_name"].Value.ToString();
+                    if (String.IsNullOrEmpty(salaryBase))
+                    {
+                        salaryBaseCb.SelectedIndex = -1;
+                    }
+                    else
+                    {
+                        salaryBaseCb.SelectedItem = salaryBase;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void assignSalaryBaseBtn_Click(object sender, EventArgs e)
+        {
+            if (salaryBaseCb.SelectedIndex != -1)
+            {
+                query = "SELECT salary_id FROM Salary WHERE [title]+'('+[rank]+')'='" + salaryBaseCb.SelectedItem.ToString() + "'";
+                string salaryId = DbClient.getIdFromCombo(query, salaryBaseCb.SelectedItem.ToString()).ToString();
+
+                if (!String.IsNullOrEmpty(empNameTb.Text))
+                {
+                    query = "INSERT INTO Employee_salary(teacher_id, salary_id) VALUES('" + empSalaryId + "', '" + salaryId + "')";
+                    DbClient.query_execute(query);
+
+                    MessageBox.Show("Salary Assigned to Employee");
+                    populateEmpSalary();
+                }
+            }
+        }
+
+
+        //salary payment
+        private void makePaymentBtn_Click(object sender, EventArgs e)
+        {
+            openNewPage.OpenChildForm(new Pages.PaySlip(), paymentPanel);
         }
     }
 }
