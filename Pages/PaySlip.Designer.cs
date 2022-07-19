@@ -39,7 +39,7 @@
             this.label26 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.printBtn = new System.Windows.Forms.Button();
-            this.reportCardPanel = new System.Windows.Forms.Panel();
+            this.payslipPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -94,7 +94,7 @@
             this.datePaidLbl = new System.Windows.Forms.Label();
             this.bankLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.reportCardPanel.SuspendLayout();
+            this.payslipPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -115,7 +115,7 @@
             this.panel1.Controls.Add(this.label26);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.printBtn);
-            this.panel1.Controls.Add(this.reportCardPanel);
+            this.panel1.Controls.Add(this.payslipPanel);
             this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
@@ -223,36 +223,37 @@
             this.printBtn.TabIndex = 3;
             this.printBtn.Text = "Print Result";
             this.printBtn.UseVisualStyleBackColor = true;
+            this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
             // 
-            // reportCardPanel
+            // payslipPanel
             // 
-            this.reportCardPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.reportCardPanel.AutoSize = true;
-            this.reportCardPanel.BackColor = System.Drawing.Color.White;
-            this.reportCardPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.reportCardPanel.Controls.Add(this.label41);
-            this.reportCardPanel.Controls.Add(this.label40);
-            this.reportCardPanel.Controls.Add(this.label39);
-            this.reportCardPanel.Controls.Add(this.label38);
-            this.reportCardPanel.Controls.Add(this.label37);
-            this.reportCardPanel.Controls.Add(this.label36);
-            this.reportCardPanel.Controls.Add(this.panel3);
-            this.reportCardPanel.Controls.Add(this.grossSalaryLbl);
-            this.reportCardPanel.Controls.Add(this.datePaidLbl);
-            this.reportCardPanel.Controls.Add(this.amountPaidLbl);
-            this.reportCardPanel.Controls.Add(this.netSalaryLbl);
-            this.reportCardPanel.Controls.Add(this.salaryMonthLbl);
-            this.reportCardPanel.Controls.Add(this.modeOfPaymentLbl);
-            this.reportCardPanel.Controls.Add(this.label13);
-            this.reportCardPanel.Controls.Add(this.label4);
-            this.reportCardPanel.Controls.Add(this.panel2);
-            this.reportCardPanel.Controls.Add(this.label3);
-            this.reportCardPanel.Controls.Add(this.label2);
-            this.reportCardPanel.Controls.Add(this.label1);
-            this.reportCardPanel.Location = new System.Drawing.Point(38, 152);
-            this.reportCardPanel.Name = "reportCardPanel";
-            this.reportCardPanel.Size = new System.Drawing.Size(720, 859);
-            this.reportCardPanel.TabIndex = 2;
+            this.payslipPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.payslipPanel.AutoSize = true;
+            this.payslipPanel.BackColor = System.Drawing.Color.White;
+            this.payslipPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.payslipPanel.Controls.Add(this.label41);
+            this.payslipPanel.Controls.Add(this.label40);
+            this.payslipPanel.Controls.Add(this.label39);
+            this.payslipPanel.Controls.Add(this.label38);
+            this.payslipPanel.Controls.Add(this.label37);
+            this.payslipPanel.Controls.Add(this.label36);
+            this.payslipPanel.Controls.Add(this.panel3);
+            this.payslipPanel.Controls.Add(this.grossSalaryLbl);
+            this.payslipPanel.Controls.Add(this.datePaidLbl);
+            this.payslipPanel.Controls.Add(this.amountPaidLbl);
+            this.payslipPanel.Controls.Add(this.netSalaryLbl);
+            this.payslipPanel.Controls.Add(this.salaryMonthLbl);
+            this.payslipPanel.Controls.Add(this.modeOfPaymentLbl);
+            this.payslipPanel.Controls.Add(this.label13);
+            this.payslipPanel.Controls.Add(this.label4);
+            this.payslipPanel.Controls.Add(this.panel2);
+            this.payslipPanel.Controls.Add(this.label3);
+            this.payslipPanel.Controls.Add(this.label2);
+            this.payslipPanel.Controls.Add(this.label1);
+            this.payslipPanel.Location = new System.Drawing.Point(38, 152);
+            this.payslipPanel.Name = "payslipPanel";
+            this.payslipPanel.Size = new System.Drawing.Size(720, 859);
+            this.payslipPanel.TabIndex = 2;
             // 
             // panel3
             // 
@@ -877,8 +878,8 @@
             this.Text = "PaySlip";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.reportCardPanel.ResumeLayout(false);
-            this.reportCardPanel.PerformLayout();
+            this.payslipPanel.ResumeLayout(false);
+            this.payslipPanel.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -900,7 +901,7 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button printBtn;
-        private System.Windows.Forms.Panel reportCardPanel;
+        private System.Windows.Forms.Panel payslipPanel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label17;
