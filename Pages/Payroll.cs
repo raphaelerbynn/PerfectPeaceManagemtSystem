@@ -19,11 +19,15 @@ namespace Perfect_Peace_System.Pages
         public Payroll()
         {
             InitializeComponent();
+            salaryBasedPanel.Location = new Point(salaryBasedPanel.Location.X, paymentPanel.Location.Y);
             populateSalaryData();
             adjustColumns();
             
             query = "SELECT [title]+'('+[rank]+')' AS position FROM Salary";
             DbClient.query_reader(salaryBaseCb, query);
+
+            query = "SELECT [f_name]+' '+[l_name] FROM Teacher";
+            DbClient.query_reader(paymentNameCb, query);
         }
 
         //salary base
@@ -70,6 +74,8 @@ namespace Perfect_Peace_System.Pages
             salaryBasedPanel.Visible = true;
             addSalaryBtn.Visible = true;
             empSalaryPanel.Visible = false;
+            paymentPanel.Visible = false;
+            salaryBasedPanel.Location = new Point(salaryBasedPanel.Location.X, paymentPanel.Location.Y);
         }
 
         private void populateSalaryData()
@@ -123,7 +129,10 @@ namespace Perfect_Peace_System.Pages
         {
             salaryBasedPanel.Visible = false;
             addSalaryBtn.Visible = false;
+            paymentPanel.Visible = false;
             empSalaryPanel.Visible = true;
+            empSalaryPanel.Location = new Point(salaryBasedPanel.Location.X, paymentPanel.Location.Y);
+
             populateEmpSalary();
 
         }
@@ -215,6 +224,30 @@ namespace Perfect_Peace_System.Pages
         private void makePaymentBtn_Click(object sender, EventArgs e)
         {
             openNewPage.OpenChildForm(new Pages.PaySlip(), paymentPanel);
+        }
+
+        private void paymentBtn_Click(object sender, EventArgs e)
+        {
+            salaryBasedPanel.Visible = false;
+            addSalaryBtn.Visible = false;
+            paymentPanel.Visible = true;
+            empSalaryPanel.Visible = false;
+
+            paymentPanel.Location = new Point(salaryBasedPanel.Location.X, paymentPanel.Location.Y);
+            //populatePaymentData();
+        }
+
+        private void populatePaymentData()
+        {
+            try
+            {
+                query = "SELECT * FROM Salary_payment";
+                DbClient.dataGridFill(paymentDataView, query);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

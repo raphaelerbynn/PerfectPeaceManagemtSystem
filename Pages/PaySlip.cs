@@ -16,5 +16,10 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
         }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
