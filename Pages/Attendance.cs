@@ -19,90 +19,62 @@ namespace Perfect_Peace_System.Pages
             InitializeComponent();
             query = "SELECT name FROM Class";
             DbClient.query_reader(classCb, query);
-            populateData();
-            todayDateLbl.Text = "("+DateTime.Now.ToString("ddd, dd MMMM, yyyy")+")";
         }
 
-        private void populateData()
-        {
-            query = "SELECT student_id, student_id AS roll_id, [f_name]+' '+[l_name] AS name FROM Student WHERE Class='" + classCb.Text + "'";
-            DbClient.dataGridFill(checkAttendanceDataView, query);
-            
-            int roll = 1;
-            foreach (DataGridViewRow item in checkAttendanceDataView.Rows)
-            {
-                item.Cells["student_roll"].Value = roll;
-                roll++;
-            }
-
-        }
-
-        private void classCb_TextChanged(object sender, EventArgs e)
-        {
-            populateData();
-        }
-
-        private void checkAttendanceDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void loadAttendanceBtn_Click(object sender, EventArgs e)
         {
             try
             {
-                DataGridViewRow row = checkAttendanceDataView.Rows[e.RowIndex];
-                if (checkAttendanceDataView.Columns[e.ColumnIndex].Name == "present_check" && e.RowIndex >= 0)
+                if (classCb.SelectedIndex != -1)
                 {
-                    if(Convert.ToBoolean(row.Cells["absent_check"].Value) == true)
-                    {
-                        row.Cells["absent_check"].Value = false;
-                    }
-                }
-                
-                if (checkAttendanceDataView.Columns[e.ColumnIndex].Name == "absent_check" && e.RowIndex >= 0)
-                {
-                    if(Convert.ToBoolean(row.Cells["present_check"].Value) == true)
-                    {
-                        row.Cells["present_check"].Value = false;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-        }
+                    query = "SELECT student_id, CAST(student_id AS VARCHAR(60)) AS name, status FROM Attendance WHERE class='"+classCb.Text+"' AND date_marked='"+attendanceDatePk.Text+"'";
+                    DbClient.dataGridFill(attendanceDataView, query);
 
-        private void saveAttendanceBtn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string message = "Save today's attendance?";
-                MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
-                DialogResult result = MessageBox.Show(message, "", deleteAction);
-                if (result == DialogResult.Yes)
-                {
-                    foreach (DataGridViewRow row in checkAttendanceDataView.Rows)
+                    int totalPresent = 0;
+                    int totalAbsent = 0;
+                    int roll = 1;
+                    foreach (DataGridViewRow row in attendanceDataView.Rows)
                     {
-                        string id = row.Cells["student_id"].Value.ToString();
-                        string status;
-                        if (Convert.ToBoolean(row.Cells["present_check"].Value) == true)
+                        string student_id = row.Cells["student_name"].Value.ToString();
+                        string statusValue = row.Cells["status"].Value.ToString();
+                        Console.WriteLine(statusValue);
+                        if (statusValue.Contains("Present"))
                         {
-                            status = "Present";
+                            totalPresent++;
                         }
-                        else
+                        if (statusValue.Contains("Absent"))
                         {
-                            status = "Absent";
+                            totalAbsent++;
                         }
-
-                        query = "INSERT INTO Attendance(student_id, class, status, date_marked)" +
-                        "VALUES('" + id + "', '" + classCb.Text + "', '" + status + "', '" + DateTime.Now.ToString("dddd dd MMMM, yyyy") + "')";
-                        DbClient.query_execute(query);
-
-                        this.Close();
+                        query = "SELECT [f_name]+' '+[m_name]+' '+[l_name] AS name FROM Student WHERE student_id='"+student_id+"'";
+                        SqlDataReader reader = DbClient.query_reader(query);
+                        while (reader.Read())
+                        {
+                            row.Cells["student_name"].Value = reader["name"].ToString();
+                            row.Cells["student_roll"].Value = roll;
+                        }
+                        reader.Close();
+                        roll++;
                     }
+
+                    totalPresentLbl.Text = totalPresent.ToString();
+                    totalAbsentLbl.Text = totalAbsent.ToString();
                 }
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-            
+        }
+
+        private void attendanceDataView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
+        }
+
+        private void checkAttendanceBtn_Click(object sender, EventArgs e)
+        {
+            OpenNewPage openNewPage = new OpenNewPage();
+            openNewPage.OpenChildForm(new Pages.MarkAttendance(), attendancePanel);
         }
     }
 }
