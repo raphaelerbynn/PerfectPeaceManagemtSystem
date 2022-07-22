@@ -42,6 +42,7 @@
             this.payslipPanel = new System.Windows.Forms.Panel();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
@@ -71,6 +72,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.grossSalaryLbl = new System.Windows.Forms.Label();
             this.datePaidLbl = new System.Windows.Forms.Label();
+            this.actualSalaryLbl = new System.Windows.Forms.Label();
             this.amountPaidLbl = new System.Windows.Forms.Label();
             this.netSalaryLbl = new System.Windows.Forms.Label();
             this.salaryMonthLbl = new System.Windows.Forms.Label();
@@ -97,8 +99,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.actualSalaryLbl = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.payslipPanel.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -144,6 +144,7 @@
             // 
             // modeOfPaymentCb
             // 
+            this.modeOfPaymentCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.modeOfPaymentCb.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modeOfPaymentCb.FormattingEnabled = true;
             this.modeOfPaymentCb.Items.AddRange(new object[] {
@@ -298,6 +299,17 @@
             this.label40.Size = new System.Drawing.Size(81, 19);
             this.label40.TabIndex = 8;
             this.label40.Text = "DATE PAID:";
+            // 
+            // label19
+            // 
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(371, 767);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(117, 19);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "ACTUAL SALARY:";
             // 
             // label39
             // 
@@ -639,6 +651,17 @@
             this.datePaidLbl.TabIndex = 5;
             this.datePaidLbl.Text = "---------------";
             // 
+            // actualSalaryLbl
+            // 
+            this.actualSalaryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.actualSalaryLbl.AutoSize = true;
+            this.actualSalaryLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actualSalaryLbl.Location = new System.Drawing.Point(496, 767);
+            this.actualSalaryLbl.Name = "actualSalaryLbl";
+            this.actualSalaryLbl.Size = new System.Drawing.Size(84, 19);
+            this.actualSalaryLbl.TabIndex = 5;
+            this.actualSalaryLbl.Text = "---------------";
+            // 
             // amountPaidLbl
             // 
             this.amountPaidLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -937,28 +960,6 @@
             this.label1.Size = new System.Drawing.Size(278, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "PERFECT PEACE  PREPARATORY SCHOOL";
-            // 
-            // actualSalaryLbl
-            // 
-            this.actualSalaryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.actualSalaryLbl.AutoSize = true;
-            this.actualSalaryLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.actualSalaryLbl.Location = new System.Drawing.Point(496, 767);
-            this.actualSalaryLbl.Name = "actualSalaryLbl";
-            this.actualSalaryLbl.Size = new System.Drawing.Size(84, 19);
-            this.actualSalaryLbl.TabIndex = 5;
-            this.actualSalaryLbl.Text = "---------------";
-            // 
-            // label19
-            // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(371, 767);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(117, 19);
-            this.label19.TabIndex = 8;
-            this.label19.Text = "ACTUAL SALARY:";
             // 
             // PaySlip
             // 

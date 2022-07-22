@@ -318,6 +318,14 @@ namespace Perfect_Peace_System
             openNewPage.OpenChildForm(new Pages.Payroll(), panelView);
         }
 
+        private void attendanceBtn_Click(object sender, EventArgs e)
+        {
+            ActivateBtn(sender);
+            addStntBtn.Visible = false;
+            titleLbl.Text = "STUDENT ATTENDANCE";
+            openNewPage.OpenChildForm(new Pages.Attendance(), panelView);
+        }
+
         private void topPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if(e.Button == MouseButtons.Left)

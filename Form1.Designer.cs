@@ -196,7 +196,7 @@
             this.pictureBox10.Size = new System.Drawing.Size(30, 30);
             this.pictureBox10.TabIndex = 13;
             this.pictureBox10.TabStop = false;
-            this.pictureBox10.Tag = "6";
+            this.pictureBox10.Tag = "10";
             // 
             // pictureBox4
             // 
@@ -300,7 +300,7 @@
             this.accountBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.accountBtn.Size = new System.Drawing.Size(154, 62);
             this.accountBtn.TabIndex = 8;
-            this.accountBtn.Tag = "6";
+            this.accountBtn.Tag = "10";
             this.accountBtn.Text = "Account";
             this.accountBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.accountBtn.UseVisualStyleBackColor = true;
@@ -342,6 +342,7 @@
             this.attendanceBtn.Text = "Attendance";
             this.attendanceBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.attendanceBtn.UseVisualStyleBackColor = true;
+            this.attendanceBtn.Click += new System.EventHandler(this.attendanceBtn_Click);
             // 
             // classesBtn
             // 
