@@ -221,9 +221,27 @@ namespace Perfect_Peace_System.Pages
 
 
         //salary payment
+        private static string id;
         private void makePaymentBtn_Click(object sender, EventArgs e)
         {
-            openNewPage.OpenChildForm(new Pages.PaySlip(), paymentPanel);
+            if (!String.IsNullOrEmpty(paymentNameCb.Text))
+            {
+                try
+                {
+                    query = "SELECT teacher_id FROM Teacher WHERE [f_name]+' '+[l_name]='" + paymentNameCb.Text + "'";
+                    id = DbClient.getIdFromCombo(query, paymentNameCb.Text).ToString();
+                    openNewPage.OpenChildForm(new Pages.PaySlip(), paymentPanel);
+                }catch(Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show("Can't find name in staff");
+                }
+            }
+        }
+
+        public static string getPaymentNameId()
+        {
+            return id;
         }
 
         private void paymentBtn_Click(object sender, EventArgs e)
@@ -234,7 +252,7 @@ namespace Perfect_Peace_System.Pages
             empSalaryPanel.Visible = false;
 
             paymentPanel.Location = new Point(salaryBasedPanel.Location.X, paymentPanel.Location.Y);
-            //populatePaymentData();
+            populatePaymentData();
         }
 
         private void populatePaymentData()
@@ -243,11 +261,53 @@ namespace Perfect_Peace_System.Pages
             {
                 query = "SELECT * FROM Salary_payment";
                 DbClient.dataGridFill(paymentDataView, query);
+
+                adjustPaymentColumns();
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void paymentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = paymentDataView.Rows[e.RowIndex];
+                string id = row.Cells["payment_id"].Value.ToString();
+                if (paymentDataView.Columns[e.ColumnIndex].Name == "deletePayment" && e.RowIndex >= 0)
+                {
+                    string message = "Do you want to delete this payment?";
+                    MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, "", deleteAction);
+                    if (result == DialogResult.Yes)
+                    {
+                        paymentDataView.Rows.RemoveAt(e.RowIndex);
+                        query = "DELETE FROM Salary_payment WHERE salary_payment_id='" + id + "'";
+                        DbClient.query_execute(query);
+
+                        MessageBox.Show("Data deleted from system");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void adjustPaymentColumns()
+        {
+            paymentDataView.AutoGenerateColumns = false;
+
+            paymentDataView.Columns["payment_name"].DisplayIndex = 0;
+            paymentDataView.Columns["paymentNetAmount"].DisplayIndex = 1;
+            paymentDataView.Columns["amountPaid"].DisplayIndex = 2;
+            paymentDataView.Columns["mode_of_payment"].DisplayIndex = 3;
+            paymentDataView.Columns["salary_month"].DisplayIndex = 4;
+            paymentDataView.Columns["date_paid"].DisplayIndex = 5;
+            paymentDataView.Columns["deletePayment"].DisplayIndex = 6;
         }
     }
 }

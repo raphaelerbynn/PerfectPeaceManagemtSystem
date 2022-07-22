@@ -15,7 +15,6 @@ namespace Perfect_Peace_System.Pages
     public partial class ReportCard : Form
     {
         private string query;
-        private string _class;
         private readonly string student_id = StudentReport.getIdFromSelectedRow();
         private readonly string term = StudentReport.getTermFromSelectedRow();
         private readonly string date = StudentReport.getDate();

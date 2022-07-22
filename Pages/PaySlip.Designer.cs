@@ -29,24 +29,52 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.salaryMonthPk = new System.Windows.Forms.DateTimePicker();
+            this.modeOfPaymentCb = new System.Windows.Forms.ComboBox();
             this.addToPaymentBtn = new System.Windows.Forms.Button();
-            this.extraClassesTb = new System.Windows.Forms.TextBox();
-            this.examFeesTb = new System.Windows.Forms.TextBox();
             this.amountPaidTb = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.printBtn = new System.Windows.Forms.Button();
+            this.savePaymentBtn = new System.Windows.Forms.Button();
+            this.backBtn = new System.Windows.Forms.Button();
             this.payslipPanel = new System.Windows.Forms.Panel();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label15 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
+            this.deductionLbl6 = new System.Windows.Forms.Label();
+            this.allowanceLbl6 = new System.Windows.Forms.Label();
+            this.deductionLbl5 = new System.Windows.Forms.Label();
+            this.allowanceLbl5 = new System.Windows.Forms.Label();
+            this.deductionLbl4 = new System.Windows.Forms.Label();
+            this.deductionLbl3 = new System.Windows.Forms.Label();
+            this.rankLbl = new System.Windows.Forms.Label();
+            this.positionLbl = new System.Windows.Forms.Label();
+            this.allowanceLbl4 = new System.Windows.Forms.Label();
+            this.deductionLbl2 = new System.Windows.Forms.Label();
+            this.allowanceLbl3 = new System.Windows.Forms.Label();
+            this.totalDeductionsLbl = new System.Windows.Forms.Label();
+            this.totalAllowanceLbl = new System.Windows.Forms.Label();
+            this.deductionLbl1 = new System.Windows.Forms.Label();
             this.allowanceLbl2 = new System.Windows.Forms.Label();
             this.allowanceLbl1 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.grossSalaryLbl = new System.Windows.Forms.Label();
+            this.datePaidLbl = new System.Windows.Forms.Label();
+            this.amountPaidLbl = new System.Windows.Forms.Label();
+            this.netSalaryLbl = new System.Windows.Forms.Label();
+            this.salaryMonthLbl = new System.Windows.Forms.Label();
+            this.modeOfPaymentLbl = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -57,42 +85,20 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.accountNumLbl = new System.Windows.Forms.Label();
+            this.tinLbl = new System.Windows.Forms.Label();
+            this.bankLbl = new System.Windows.Forms.Label();
+            this.ssnitLbl = new System.Windows.Forms.Label();
+            this.contactLbl = new System.Windows.Forms.Label();
+            this.emailLbl = new System.Windows.Forms.Label();
+            this.staffIdLbl = new System.Windows.Forms.Label();
+            this.empNameLbl = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.allowanceLbl3 = new System.Windows.Forms.Label();
-            this.allowanceLbl4 = new System.Windows.Forms.Label();
-            this.allowanceLbl5 = new System.Windows.Forms.Label();
-            this.allowanceLbl6 = new System.Windows.Forms.Label();
-            this.deductionLbl1 = new System.Windows.Forms.Label();
-            this.deductionLbl2 = new System.Windows.Forms.Label();
-            this.deductionLbl3 = new System.Windows.Forms.Label();
-            this.deductionLbl4 = new System.Windows.Forms.Label();
-            this.deductionLbl5 = new System.Windows.Forms.Label();
-            this.deductionLbl6 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.empNameLbl = new System.Windows.Forms.Label();
-            this.staffIdLbl = new System.Windows.Forms.Label();
-            this.emailLbl = new System.Windows.Forms.Label();
-            this.contactLbl = new System.Windows.Forms.Label();
-            this.ssnitLbl = new System.Windows.Forms.Label();
-            this.tinLbl = new System.Windows.Forms.Label();
-            this.accountNumLbl = new System.Windows.Forms.Label();
-            this.modeOfPaymentLbl = new System.Windows.Forms.Label();
-            this.grossSalaryLbl = new System.Windows.Forms.Label();
-            this.salaryMonthLbl = new System.Windows.Forms.Label();
-            this.netSalaryLbl = new System.Windows.Forms.Label();
-            this.amountPaidLbl = new System.Windows.Forms.Label();
-            this.datePaidLbl = new System.Windows.Forms.Label();
-            this.bankLbl = new System.Windows.Forms.Label();
+            this.actualSalaryLbl = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.payslipPanel.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -105,22 +111,50 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.salaryMonthPk);
+            this.panel1.Controls.Add(this.modeOfPaymentCb);
             this.panel1.Controls.Add(this.addToPaymentBtn);
-            this.panel1.Controls.Add(this.extraClassesTb);
-            this.panel1.Controls.Add(this.examFeesTb);
             this.panel1.Controls.Add(this.amountPaidTb);
             this.panel1.Controls.Add(this.label32);
             this.panel1.Controls.Add(this.label31);
             this.panel1.Controls.Add(this.label30);
             this.panel1.Controls.Add(this.label26);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.printBtn);
+            this.panel1.Controls.Add(this.savePaymentBtn);
+            this.panel1.Controls.Add(this.backBtn);
             this.panel1.Controls.Add(this.payslipPanel);
             this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
             this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.panel1.Size = new System.Drawing.Size(832, 681);
+            this.panel1.Size = new System.Drawing.Size(832, 654);
             this.panel1.TabIndex = 1;
+            // 
+            // salaryMonthPk
+            // 
+            this.salaryMonthPk.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.salaryMonthPk.CustomFormat = "MMMM, yyyy";
+            this.salaryMonthPk.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.salaryMonthPk.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.salaryMonthPk.Location = new System.Drawing.Point(578, 58);
+            this.salaryMonthPk.MaxDate = new System.DateTime(7060, 12, 28, 0, 0, 0, 0);
+            this.salaryMonthPk.MinDate = new System.DateTime(2010, 12, 25, 0, 0, 0, 0);
+            this.salaryMonthPk.Name = "salaryMonthPk";
+            this.salaryMonthPk.ShowUpDown = true;
+            this.salaryMonthPk.Size = new System.Drawing.Size(146, 20);
+            this.salaryMonthPk.TabIndex = 54;
+            // 
+            // modeOfPaymentCb
+            // 
+            this.modeOfPaymentCb.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modeOfPaymentCb.FormattingEnabled = true;
+            this.modeOfPaymentCb.Items.AddRange(new object[] {
+            "Cash",
+            "Check",
+            "Bank",
+            "Mobile Money"});
+            this.modeOfPaymentCb.Location = new System.Drawing.Point(147, 84);
+            this.modeOfPaymentCb.Name = "modeOfPaymentCb";
+            this.modeOfPaymentCb.Size = new System.Drawing.Size(228, 22);
+            this.modeOfPaymentCb.TabIndex = 53;
             // 
             // addToPaymentBtn
             // 
@@ -132,22 +166,7 @@
             this.addToPaymentBtn.TabIndex = 52;
             this.addToPaymentBtn.Text = "Add to Payslip";
             this.addToPaymentBtn.UseVisualStyleBackColor = true;
-            // 
-            // extraClassesTb
-            // 
-            this.extraClassesTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.extraClassesTb.Location = new System.Drawing.Point(578, 59);
-            this.extraClassesTb.Name = "extraClassesTb";
-            this.extraClassesTb.Size = new System.Drawing.Size(180, 20);
-            this.extraClassesTb.TabIndex = 50;
-            // 
-            // examFeesTb
-            // 
-            this.examFeesTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.examFeesTb.Location = new System.Drawing.Point(151, 85);
-            this.examFeesTb.Name = "examFeesTb";
-            this.examFeesTb.Size = new System.Drawing.Size(224, 20);
-            this.examFeesTb.TabIndex = 48;
+            this.addToPaymentBtn.Click += new System.EventHandler(this.addToPaymentBtn_Click);
             // 
             // amountPaidTb
             // 
@@ -204,26 +223,27 @@
             this.label26.TabIndex = 4;
             this.label26.Text = "EMPLOYEE PAYSLIP";
             // 
-            // button1
+            // savePaymentBtn
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button1.Location = new System.Drawing.Point(437, 1042);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Save Payment";
-            this.button1.UseVisualStyleBackColor = true;
+            this.savePaymentBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.savePaymentBtn.Location = new System.Drawing.Point(415, 1042);
+            this.savePaymentBtn.Name = "savePaymentBtn";
+            this.savePaymentBtn.Size = new System.Drawing.Size(99, 23);
+            this.savePaymentBtn.TabIndex = 3;
+            this.savePaymentBtn.Text = "Save Payment";
+            this.savePaymentBtn.UseVisualStyleBackColor = true;
+            this.savePaymentBtn.Click += new System.EventHandler(this.savePaymentBtn_Click);
             // 
-            // printBtn
+            // backBtn
             // 
-            this.printBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.printBtn.Location = new System.Drawing.Point(262, 1042);
-            this.printBtn.Name = "printBtn";
-            this.printBtn.Size = new System.Drawing.Size(99, 23);
-            this.printBtn.TabIndex = 3;
-            this.printBtn.Text = "Print Result";
-            this.printBtn.UseVisualStyleBackColor = true;
-            this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
+            this.backBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.backBtn.Location = new System.Drawing.Point(280, 1042);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(66, 23);
+            this.backBtn.TabIndex = 3;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // payslipPanel
             // 
@@ -233,6 +253,7 @@
             this.payslipPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.payslipPanel.Controls.Add(this.label41);
             this.payslipPanel.Controls.Add(this.label40);
+            this.payslipPanel.Controls.Add(this.label19);
             this.payslipPanel.Controls.Add(this.label39);
             this.payslipPanel.Controls.Add(this.label38);
             this.payslipPanel.Controls.Add(this.label37);
@@ -240,6 +261,7 @@
             this.payslipPanel.Controls.Add(this.panel3);
             this.payslipPanel.Controls.Add(this.grossSalaryLbl);
             this.payslipPanel.Controls.Add(this.datePaidLbl);
+            this.payslipPanel.Controls.Add(this.actualSalaryLbl);
             this.payslipPanel.Controls.Add(this.amountPaidLbl);
             this.payslipPanel.Controls.Add(this.netSalaryLbl);
             this.payslipPanel.Controls.Add(this.salaryMonthLbl);
@@ -255,6 +277,72 @@
             this.payslipPanel.Size = new System.Drawing.Size(720, 859);
             this.payslipPanel.TabIndex = 2;
             // 
+            // label41
+            // 
+            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(371, 827);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(108, 19);
+            this.label41.TabIndex = 8;
+            this.label41.Text = "AMOUNT PAID:";
+            // 
+            // label40
+            // 
+            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(31, 768);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(81, 19);
+            this.label40.TabIndex = 8;
+            this.label40.Text = "DATE PAID:";
+            // 
+            // label39
+            // 
+            this.label39.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(371, 797);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(91, 19);
+            this.label39.TabIndex = 8;
+            this.label39.Text = "NET SALARY:";
+            // 
+            // label38
+            // 
+            this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(31, 797);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(109, 19);
+            this.label38.TabIndex = 8;
+            this.label38.Text = "GROSS SALARY:";
+            // 
+            // label37
+            // 
+            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(371, 734);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(139, 19);
+            this.label37.TabIndex = 8;
+            this.label37.Text = "MONTH OF SALARY:";
+            // 
+            // label36
+            // 
+            this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(31, 734);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(142, 19);
+            this.label36.TabIndex = 8;
+            this.label36.Text = "MODE OF PAYMENT:";
+            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -267,9 +355,13 @@
             this.panel3.Controls.Add(this.allowanceLbl5);
             this.panel3.Controls.Add(this.deductionLbl4);
             this.panel3.Controls.Add(this.deductionLbl3);
+            this.panel3.Controls.Add(this.rankLbl);
+            this.panel3.Controls.Add(this.positionLbl);
             this.panel3.Controls.Add(this.allowanceLbl4);
             this.panel3.Controls.Add(this.deductionLbl2);
             this.panel3.Controls.Add(this.allowanceLbl3);
+            this.panel3.Controls.Add(this.totalDeductionsLbl);
+            this.panel3.Controls.Add(this.totalAllowanceLbl);
             this.panel3.Controls.Add(this.deductionLbl1);
             this.panel3.Controls.Add(this.allowanceLbl2);
             this.panel3.Controls.Add(this.allowanceLbl1);
@@ -314,6 +406,161 @@
             this.label16.TabIndex = 6;
             this.label16.Text = "ALLOWANCES:";
             // 
+            // deductionLbl6
+            // 
+            this.deductionLbl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.deductionLbl6.AutoSize = true;
+            this.deductionLbl6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deductionLbl6.Location = new System.Drawing.Point(335, 250);
+            this.deductionLbl6.Name = "deductionLbl6";
+            this.deductionLbl6.Size = new System.Drawing.Size(147, 19);
+            this.deductionLbl6.TabIndex = 6;
+            this.deductionLbl6.Text = "------------      -      -----";
+            // 
+            // allowanceLbl6
+            // 
+            this.allowanceLbl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.allowanceLbl6.AutoSize = true;
+            this.allowanceLbl6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allowanceLbl6.Location = new System.Drawing.Point(14, 250);
+            this.allowanceLbl6.Name = "allowanceLbl6";
+            this.allowanceLbl6.Size = new System.Drawing.Size(147, 19);
+            this.allowanceLbl6.TabIndex = 6;
+            this.allowanceLbl6.Text = "------------      -      -----";
+            // 
+            // deductionLbl5
+            // 
+            this.deductionLbl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.deductionLbl5.AutoSize = true;
+            this.deductionLbl5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deductionLbl5.Location = new System.Drawing.Point(335, 213);
+            this.deductionLbl5.Name = "deductionLbl5";
+            this.deductionLbl5.Size = new System.Drawing.Size(147, 19);
+            this.deductionLbl5.TabIndex = 6;
+            this.deductionLbl5.Text = "------------      -      -----";
+            // 
+            // allowanceLbl5
+            // 
+            this.allowanceLbl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.allowanceLbl5.AutoSize = true;
+            this.allowanceLbl5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allowanceLbl5.Location = new System.Drawing.Point(14, 213);
+            this.allowanceLbl5.Name = "allowanceLbl5";
+            this.allowanceLbl5.Size = new System.Drawing.Size(147, 19);
+            this.allowanceLbl5.TabIndex = 6;
+            this.allowanceLbl5.Text = "------------      -      -----";
+            // 
+            // deductionLbl4
+            // 
+            this.deductionLbl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.deductionLbl4.AutoSize = true;
+            this.deductionLbl4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deductionLbl4.Location = new System.Drawing.Point(335, 178);
+            this.deductionLbl4.Name = "deductionLbl4";
+            this.deductionLbl4.Size = new System.Drawing.Size(147, 19);
+            this.deductionLbl4.TabIndex = 6;
+            this.deductionLbl4.Text = "------------      -      -----";
+            // 
+            // deductionLbl3
+            // 
+            this.deductionLbl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.deductionLbl3.AutoSize = true;
+            this.deductionLbl3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deductionLbl3.Location = new System.Drawing.Point(335, 142);
+            this.deductionLbl3.Name = "deductionLbl3";
+            this.deductionLbl3.Size = new System.Drawing.Size(147, 19);
+            this.deductionLbl3.TabIndex = 6;
+            this.deductionLbl3.Text = "------------      -      -----";
+            // 
+            // rankLbl
+            // 
+            this.rankLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rankLbl.AutoSize = true;
+            this.rankLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rankLbl.Location = new System.Drawing.Point(390, 14);
+            this.rankLbl.Name = "rankLbl";
+            this.rankLbl.Size = new System.Drawing.Size(84, 19);
+            this.rankLbl.TabIndex = 5;
+            this.rankLbl.Text = "---------------";
+            // 
+            // positionLbl
+            // 
+            this.positionLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.positionLbl.AutoSize = true;
+            this.positionLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.positionLbl.Location = new System.Drawing.Point(96, 14);
+            this.positionLbl.Name = "positionLbl";
+            this.positionLbl.Size = new System.Drawing.Size(84, 19);
+            this.positionLbl.TabIndex = 5;
+            this.positionLbl.Text = "---------------";
+            // 
+            // allowanceLbl4
+            // 
+            this.allowanceLbl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.allowanceLbl4.AutoSize = true;
+            this.allowanceLbl4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allowanceLbl4.Location = new System.Drawing.Point(14, 178);
+            this.allowanceLbl4.Name = "allowanceLbl4";
+            this.allowanceLbl4.Size = new System.Drawing.Size(147, 19);
+            this.allowanceLbl4.TabIndex = 6;
+            this.allowanceLbl4.Text = "------------      -      -----";
+            // 
+            // deductionLbl2
+            // 
+            this.deductionLbl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.deductionLbl2.AutoSize = true;
+            this.deductionLbl2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deductionLbl2.Location = new System.Drawing.Point(335, 107);
+            this.deductionLbl2.Name = "deductionLbl2";
+            this.deductionLbl2.Size = new System.Drawing.Size(147, 19);
+            this.deductionLbl2.TabIndex = 6;
+            this.deductionLbl2.Text = "------------      -      -----";
+            // 
+            // allowanceLbl3
+            // 
+            this.allowanceLbl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.allowanceLbl3.AutoSize = true;
+            this.allowanceLbl3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.allowanceLbl3.Location = new System.Drawing.Point(14, 142);
+            this.allowanceLbl3.Name = "allowanceLbl3";
+            this.allowanceLbl3.Size = new System.Drawing.Size(147, 19);
+            this.allowanceLbl3.TabIndex = 6;
+            this.allowanceLbl3.Text = "------------      -      -----";
+            // 
+            // totalDeductionsLbl
+            // 
+            this.totalDeductionsLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.totalDeductionsLbl.AutoSize = true;
+            this.totalDeductionsLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalDeductionsLbl.Location = new System.Drawing.Point(469, 290);
+            this.totalDeductionsLbl.Name = "totalDeductionsLbl";
+            this.totalDeductionsLbl.Size = new System.Drawing.Size(84, 19);
+            this.totalDeductionsLbl.TabIndex = 5;
+            this.totalDeductionsLbl.Text = "---------------";
+            // 
+            // totalAllowanceLbl
+            // 
+            this.totalAllowanceLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.totalAllowanceLbl.AutoSize = true;
+            this.totalAllowanceLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalAllowanceLbl.Location = new System.Drawing.Point(148, 292);
+            this.totalAllowanceLbl.Name = "totalAllowanceLbl";
+            this.totalAllowanceLbl.Size = new System.Drawing.Size(84, 19);
+            this.totalAllowanceLbl.TabIndex = 5;
+            this.totalAllowanceLbl.Text = "---------------";
+            // 
+            // deductionLbl1
+            // 
+            this.deductionLbl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.deductionLbl1.AutoSize = true;
+            this.deductionLbl1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deductionLbl1.Location = new System.Drawing.Point(335, 77);
+            this.deductionLbl1.Name = "deductionLbl1";
+            this.deductionLbl1.Size = new System.Drawing.Size(147, 19);
+            this.deductionLbl1.TabIndex = 6;
+            this.deductionLbl1.Text = "------------      -      -----";
+            this.deductionLbl1.Click += new System.EventHandler(this.label18_Click);
+            // 
             // allowanceLbl2
             // 
             this.allowanceLbl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -337,6 +584,28 @@
             this.allowanceLbl1.Text = "------------      -      -----";
             this.allowanceLbl1.Click += new System.EventHandler(this.label18_Click);
             // 
+            // label35
+            // 
+            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(336, 292);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(127, 17);
+            this.label35.TabIndex = 6;
+            this.label35.Text = "TOTAL DEDUCTIONS:";
+            // 
+            // label34
+            // 
+            this.label34.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(14, 292);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(128, 17);
+            this.label34.TabIndex = 6;
+            this.label34.Text = "TOTAL ALLOWANCES:";
+            // 
             // label14
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -347,6 +616,72 @@
             this.label14.Size = new System.Drawing.Size(76, 19);
             this.label14.TabIndex = 6;
             this.label14.Text = "POSITION:";
+            // 
+            // grossSalaryLbl
+            // 
+            this.grossSalaryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.grossSalaryLbl.AutoSize = true;
+            this.grossSalaryLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grossSalaryLbl.Location = new System.Drawing.Point(148, 795);
+            this.grossSalaryLbl.Name = "grossSalaryLbl";
+            this.grossSalaryLbl.Size = new System.Drawing.Size(84, 19);
+            this.grossSalaryLbl.TabIndex = 5;
+            this.grossSalaryLbl.Text = "---------------";
+            // 
+            // datePaidLbl
+            // 
+            this.datePaidLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.datePaidLbl.AutoSize = true;
+            this.datePaidLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datePaidLbl.Location = new System.Drawing.Point(115, 768);
+            this.datePaidLbl.Name = "datePaidLbl";
+            this.datePaidLbl.Size = new System.Drawing.Size(84, 19);
+            this.datePaidLbl.TabIndex = 5;
+            this.datePaidLbl.Text = "---------------";
+            // 
+            // amountPaidLbl
+            // 
+            this.amountPaidLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.amountPaidLbl.AutoSize = true;
+            this.amountPaidLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountPaidLbl.Location = new System.Drawing.Point(483, 827);
+            this.amountPaidLbl.Name = "amountPaidLbl";
+            this.amountPaidLbl.Size = new System.Drawing.Size(84, 19);
+            this.amountPaidLbl.TabIndex = 5;
+            this.amountPaidLbl.Text = "---------------";
+            // 
+            // netSalaryLbl
+            // 
+            this.netSalaryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.netSalaryLbl.AutoSize = true;
+            this.netSalaryLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.netSalaryLbl.Location = new System.Drawing.Point(467, 798);
+            this.netSalaryLbl.Name = "netSalaryLbl";
+            this.netSalaryLbl.Size = new System.Drawing.Size(84, 19);
+            this.netSalaryLbl.TabIndex = 5;
+            this.netSalaryLbl.Text = "---------------";
+            // 
+            // salaryMonthLbl
+            // 
+            this.salaryMonthLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.salaryMonthLbl.AutoSize = true;
+            this.salaryMonthLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.salaryMonthLbl.Location = new System.Drawing.Point(517, 734);
+            this.salaryMonthLbl.Name = "salaryMonthLbl";
+            this.salaryMonthLbl.Size = new System.Drawing.Size(84, 19);
+            this.salaryMonthLbl.TabIndex = 5;
+            this.salaryMonthLbl.Text = "---------------";
+            // 
+            // modeOfPaymentLbl
+            // 
+            this.modeOfPaymentLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.modeOfPaymentLbl.AutoSize = true;
+            this.modeOfPaymentLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modeOfPaymentLbl.Location = new System.Drawing.Point(182, 734);
+            this.modeOfPaymentLbl.Name = "modeOfPaymentLbl";
+            this.modeOfPaymentLbl.Size = new System.Drawing.Size(84, 19);
+            this.modeOfPaymentLbl.TabIndex = 5;
+            this.modeOfPaymentLbl.Text = "---------------";
             // 
             // label13
             // 
@@ -471,6 +806,94 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "STAFF ID:";
             // 
+            // accountNumLbl
+            // 
+            this.accountNumLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.accountNumLbl.AutoSize = true;
+            this.accountNumLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.accountNumLbl.Location = new System.Drawing.Point(445, 165);
+            this.accountNumLbl.Name = "accountNumLbl";
+            this.accountNumLbl.Size = new System.Drawing.Size(84, 19);
+            this.accountNumLbl.TabIndex = 5;
+            this.accountNumLbl.Text = "---------------";
+            // 
+            // tinLbl
+            // 
+            this.tinLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tinLbl.AutoSize = true;
+            this.tinLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tinLbl.Location = new System.Drawing.Point(376, 130);
+            this.tinLbl.Name = "tinLbl";
+            this.tinLbl.Size = new System.Drawing.Size(84, 19);
+            this.tinLbl.TabIndex = 5;
+            this.tinLbl.Text = "---------------";
+            // 
+            // bankLbl
+            // 
+            this.bankLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bankLbl.AutoSize = true;
+            this.bankLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bankLbl.Location = new System.Drawing.Point(68, 165);
+            this.bankLbl.Name = "bankLbl";
+            this.bankLbl.Size = new System.Drawing.Size(84, 19);
+            this.bankLbl.TabIndex = 5;
+            this.bankLbl.Text = "---------------";
+            // 
+            // ssnitLbl
+            // 
+            this.ssnitLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ssnitLbl.AutoSize = true;
+            this.ssnitLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ssnitLbl.Location = new System.Drawing.Point(68, 130);
+            this.ssnitLbl.Name = "ssnitLbl";
+            this.ssnitLbl.Size = new System.Drawing.Size(84, 19);
+            this.ssnitLbl.TabIndex = 5;
+            this.ssnitLbl.Text = "---------------";
+            // 
+            // contactLbl
+            // 
+            this.contactLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.contactLbl.AutoSize = true;
+            this.contactLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contactLbl.Location = new System.Drawing.Point(95, 98);
+            this.contactLbl.Name = "contactLbl";
+            this.contactLbl.Size = new System.Drawing.Size(84, 19);
+            this.contactLbl.TabIndex = 5;
+            this.contactLbl.Text = "---------------";
+            // 
+            // emailLbl
+            // 
+            this.emailLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.emailLbl.AutoSize = true;
+            this.emailLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.emailLbl.Location = new System.Drawing.Point(74, 68);
+            this.emailLbl.Name = "emailLbl";
+            this.emailLbl.Size = new System.Drawing.Size(84, 19);
+            this.emailLbl.TabIndex = 5;
+            this.emailLbl.Text = "---------------";
+            // 
+            // staffIdLbl
+            // 
+            this.staffIdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.staffIdLbl.AutoSize = true;
+            this.staffIdLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.staffIdLbl.Location = new System.Drawing.Point(88, 40);
+            this.staffIdLbl.Name = "staffIdLbl";
+            this.staffIdLbl.Size = new System.Drawing.Size(84, 19);
+            this.staffIdLbl.TabIndex = 5;
+            this.staffIdLbl.Text = "---------------";
+            // 
+            // empNameLbl
+            // 
+            this.empNameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.empNameLbl.AutoSize = true;
+            this.empNameLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empNameLbl.Location = new System.Drawing.Point(73, 12);
+            this.empNameLbl.Name = "empNameLbl";
+            this.empNameLbl.Size = new System.Drawing.Size(84, 19);
+            this.empNameLbl.TabIndex = 5;
+            this.empNameLbl.Text = "---------------";
+            // 
             // label5
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -515,358 +938,27 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "PERFECT PEACE  PREPARATORY SCHOOL";
             // 
-            // allowanceLbl3
+            // actualSalaryLbl
             // 
-            this.allowanceLbl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.allowanceLbl3.AutoSize = true;
-            this.allowanceLbl3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allowanceLbl3.Location = new System.Drawing.Point(14, 142);
-            this.allowanceLbl3.Name = "allowanceLbl3";
-            this.allowanceLbl3.Size = new System.Drawing.Size(147, 19);
-            this.allowanceLbl3.TabIndex = 6;
-            this.allowanceLbl3.Text = "------------      -      -----";
+            this.actualSalaryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.actualSalaryLbl.AutoSize = true;
+            this.actualSalaryLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actualSalaryLbl.Location = new System.Drawing.Point(496, 767);
+            this.actualSalaryLbl.Name = "actualSalaryLbl";
+            this.actualSalaryLbl.Size = new System.Drawing.Size(84, 19);
+            this.actualSalaryLbl.TabIndex = 5;
+            this.actualSalaryLbl.Text = "---------------";
             // 
-            // allowanceLbl4
+            // label19
             // 
-            this.allowanceLbl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.allowanceLbl4.AutoSize = true;
-            this.allowanceLbl4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allowanceLbl4.Location = new System.Drawing.Point(14, 178);
-            this.allowanceLbl4.Name = "allowanceLbl4";
-            this.allowanceLbl4.Size = new System.Drawing.Size(147, 19);
-            this.allowanceLbl4.TabIndex = 6;
-            this.allowanceLbl4.Text = "------------      -      -----";
-            // 
-            // allowanceLbl5
-            // 
-            this.allowanceLbl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.allowanceLbl5.AutoSize = true;
-            this.allowanceLbl5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allowanceLbl5.Location = new System.Drawing.Point(14, 213);
-            this.allowanceLbl5.Name = "allowanceLbl5";
-            this.allowanceLbl5.Size = new System.Drawing.Size(147, 19);
-            this.allowanceLbl5.TabIndex = 6;
-            this.allowanceLbl5.Text = "------------      -      -----";
-            // 
-            // allowanceLbl6
-            // 
-            this.allowanceLbl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.allowanceLbl6.AutoSize = true;
-            this.allowanceLbl6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.allowanceLbl6.Location = new System.Drawing.Point(14, 250);
-            this.allowanceLbl6.Name = "allowanceLbl6";
-            this.allowanceLbl6.Size = new System.Drawing.Size(147, 19);
-            this.allowanceLbl6.TabIndex = 6;
-            this.allowanceLbl6.Text = "------------      -      -----";
-            // 
-            // deductionLbl1
-            // 
-            this.deductionLbl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.deductionLbl1.AutoSize = true;
-            this.deductionLbl1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deductionLbl1.Location = new System.Drawing.Point(335, 77);
-            this.deductionLbl1.Name = "deductionLbl1";
-            this.deductionLbl1.Size = new System.Drawing.Size(147, 19);
-            this.deductionLbl1.TabIndex = 6;
-            this.deductionLbl1.Text = "------------      -      -----";
-            this.deductionLbl1.Click += new System.EventHandler(this.label18_Click);
-            // 
-            // deductionLbl2
-            // 
-            this.deductionLbl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.deductionLbl2.AutoSize = true;
-            this.deductionLbl2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deductionLbl2.Location = new System.Drawing.Point(335, 107);
-            this.deductionLbl2.Name = "deductionLbl2";
-            this.deductionLbl2.Size = new System.Drawing.Size(147, 19);
-            this.deductionLbl2.TabIndex = 6;
-            this.deductionLbl2.Text = "------------      -      -----";
-            // 
-            // deductionLbl3
-            // 
-            this.deductionLbl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.deductionLbl3.AutoSize = true;
-            this.deductionLbl3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deductionLbl3.Location = new System.Drawing.Point(335, 142);
-            this.deductionLbl3.Name = "deductionLbl3";
-            this.deductionLbl3.Size = new System.Drawing.Size(147, 19);
-            this.deductionLbl3.TabIndex = 6;
-            this.deductionLbl3.Text = "------------      -      -----";
-            // 
-            // deductionLbl4
-            // 
-            this.deductionLbl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.deductionLbl4.AutoSize = true;
-            this.deductionLbl4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deductionLbl4.Location = new System.Drawing.Point(335, 178);
-            this.deductionLbl4.Name = "deductionLbl4";
-            this.deductionLbl4.Size = new System.Drawing.Size(147, 19);
-            this.deductionLbl4.TabIndex = 6;
-            this.deductionLbl4.Text = "------------      -      -----";
-            // 
-            // deductionLbl5
-            // 
-            this.deductionLbl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.deductionLbl5.AutoSize = true;
-            this.deductionLbl5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deductionLbl5.Location = new System.Drawing.Point(335, 213);
-            this.deductionLbl5.Name = "deductionLbl5";
-            this.deductionLbl5.Size = new System.Drawing.Size(147, 19);
-            this.deductionLbl5.TabIndex = 6;
-            this.deductionLbl5.Text = "------------      -      -----";
-            // 
-            // deductionLbl6
-            // 
-            this.deductionLbl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.deductionLbl6.AutoSize = true;
-            this.deductionLbl6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.deductionLbl6.Location = new System.Drawing.Point(335, 250);
-            this.deductionLbl6.Name = "deductionLbl6";
-            this.deductionLbl6.Size = new System.Drawing.Size(147, 19);
-            this.deductionLbl6.TabIndex = 6;
-            this.deductionLbl6.Text = "------------      -      -----";
-            // 
-            // label34
-            // 
-            this.label34.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(14, 292);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(128, 17);
-            this.label34.TabIndex = 6;
-            this.label34.Text = "TOTAL ALLOWANCES:";
-            // 
-            // label35
-            // 
-            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label35.AutoSize = true;
-            this.label35.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(336, 292);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(127, 17);
-            this.label35.TabIndex = 6;
-            this.label35.Text = "TOTAL DEDUCTIONS:";
-            // 
-            // label36
-            // 
-            this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(31, 734);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(142, 19);
-            this.label36.TabIndex = 8;
-            this.label36.Text = "MODE OF PAYMENT:";
-            // 
-            // label37
-            // 
-            this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(371, 734);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(139, 19);
-            this.label37.TabIndex = 8;
-            this.label37.Text = "MONTH OF SALARY:";
-            // 
-            // label38
-            // 
-            this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(31, 766);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(109, 19);
-            this.label38.TabIndex = 8;
-            this.label38.Text = "GROSS SALARY:";
-            // 
-            // label39
-            // 
-            this.label39.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(371, 766);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(91, 19);
-            this.label39.TabIndex = 8;
-            this.label39.Text = "NET SALARY:";
-            // 
-            // label40
-            // 
-            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(29, 817);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(81, 19);
-            this.label40.TabIndex = 8;
-            this.label40.Text = "DATE PAID:";
-            // 
-            // label41
-            // 
-            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(369, 817);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(108, 19);
-            this.label41.TabIndex = 8;
-            this.label41.Text = "AMOUNT PAID:";
-            // 
-            // empNameLbl
-            // 
-            this.empNameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.empNameLbl.AutoSize = true;
-            this.empNameLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.empNameLbl.Location = new System.Drawing.Point(73, 12);
-            this.empNameLbl.Name = "empNameLbl";
-            this.empNameLbl.Size = new System.Drawing.Size(84, 19);
-            this.empNameLbl.TabIndex = 5;
-            this.empNameLbl.Text = "---------------";
-            // 
-            // staffIdLbl
-            // 
-            this.staffIdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.staffIdLbl.AutoSize = true;
-            this.staffIdLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.staffIdLbl.Location = new System.Drawing.Point(88, 40);
-            this.staffIdLbl.Name = "staffIdLbl";
-            this.staffIdLbl.Size = new System.Drawing.Size(84, 19);
-            this.staffIdLbl.TabIndex = 5;
-            this.staffIdLbl.Text = "---------------";
-            // 
-            // emailLbl
-            // 
-            this.emailLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.emailLbl.AutoSize = true;
-            this.emailLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailLbl.Location = new System.Drawing.Point(74, 68);
-            this.emailLbl.Name = "emailLbl";
-            this.emailLbl.Size = new System.Drawing.Size(84, 19);
-            this.emailLbl.TabIndex = 5;
-            this.emailLbl.Text = "---------------";
-            // 
-            // contactLbl
-            // 
-            this.contactLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.contactLbl.AutoSize = true;
-            this.contactLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.contactLbl.Location = new System.Drawing.Point(95, 98);
-            this.contactLbl.Name = "contactLbl";
-            this.contactLbl.Size = new System.Drawing.Size(84, 19);
-            this.contactLbl.TabIndex = 5;
-            this.contactLbl.Text = "---------------";
-            // 
-            // ssnitLbl
-            // 
-            this.ssnitLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ssnitLbl.AutoSize = true;
-            this.ssnitLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ssnitLbl.Location = new System.Drawing.Point(68, 130);
-            this.ssnitLbl.Name = "ssnitLbl";
-            this.ssnitLbl.Size = new System.Drawing.Size(84, 19);
-            this.ssnitLbl.TabIndex = 5;
-            this.ssnitLbl.Text = "---------------";
-            // 
-            // tinLbl
-            // 
-            this.tinLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tinLbl.AutoSize = true;
-            this.tinLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tinLbl.Location = new System.Drawing.Point(376, 130);
-            this.tinLbl.Name = "tinLbl";
-            this.tinLbl.Size = new System.Drawing.Size(84, 19);
-            this.tinLbl.TabIndex = 5;
-            this.tinLbl.Text = "---------------";
-            // 
-            // accountNumLbl
-            // 
-            this.accountNumLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.accountNumLbl.AutoSize = true;
-            this.accountNumLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accountNumLbl.Location = new System.Drawing.Point(445, 165);
-            this.accountNumLbl.Name = "accountNumLbl";
-            this.accountNumLbl.Size = new System.Drawing.Size(84, 19);
-            this.accountNumLbl.TabIndex = 5;
-            this.accountNumLbl.Text = "---------------";
-            // 
-            // modeOfPaymentLbl
-            // 
-            this.modeOfPaymentLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.modeOfPaymentLbl.AutoSize = true;
-            this.modeOfPaymentLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.modeOfPaymentLbl.Location = new System.Drawing.Point(182, 734);
-            this.modeOfPaymentLbl.Name = "modeOfPaymentLbl";
-            this.modeOfPaymentLbl.Size = new System.Drawing.Size(84, 19);
-            this.modeOfPaymentLbl.TabIndex = 5;
-            this.modeOfPaymentLbl.Text = "---------------";
-            // 
-            // grossSalaryLbl
-            // 
-            this.grossSalaryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.grossSalaryLbl.AutoSize = true;
-            this.grossSalaryLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grossSalaryLbl.Location = new System.Drawing.Point(148, 764);
-            this.grossSalaryLbl.Name = "grossSalaryLbl";
-            this.grossSalaryLbl.Size = new System.Drawing.Size(84, 19);
-            this.grossSalaryLbl.TabIndex = 5;
-            this.grossSalaryLbl.Text = "---------------";
-            // 
-            // salaryMonthLbl
-            // 
-            this.salaryMonthLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.salaryMonthLbl.AutoSize = true;
-            this.salaryMonthLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.salaryMonthLbl.Location = new System.Drawing.Point(517, 734);
-            this.salaryMonthLbl.Name = "salaryMonthLbl";
-            this.salaryMonthLbl.Size = new System.Drawing.Size(84, 19);
-            this.salaryMonthLbl.TabIndex = 5;
-            this.salaryMonthLbl.Text = "---------------";
-            // 
-            // netSalaryLbl
-            // 
-            this.netSalaryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.netSalaryLbl.AutoSize = true;
-            this.netSalaryLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.netSalaryLbl.Location = new System.Drawing.Point(467, 767);
-            this.netSalaryLbl.Name = "netSalaryLbl";
-            this.netSalaryLbl.Size = new System.Drawing.Size(84, 19);
-            this.netSalaryLbl.TabIndex = 5;
-            this.netSalaryLbl.Text = "---------------";
-            // 
-            // amountPaidLbl
-            // 
-            this.amountPaidLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.amountPaidLbl.AutoSize = true;
-            this.amountPaidLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.amountPaidLbl.Location = new System.Drawing.Point(481, 817);
-            this.amountPaidLbl.Name = "amountPaidLbl";
-            this.amountPaidLbl.Size = new System.Drawing.Size(84, 19);
-            this.amountPaidLbl.TabIndex = 5;
-            this.amountPaidLbl.Text = "---------------";
-            // 
-            // datePaidLbl
-            // 
-            this.datePaidLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.datePaidLbl.AutoSize = true;
-            this.datePaidLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.datePaidLbl.Location = new System.Drawing.Point(113, 817);
-            this.datePaidLbl.Name = "datePaidLbl";
-            this.datePaidLbl.Size = new System.Drawing.Size(84, 19);
-            this.datePaidLbl.TabIndex = 5;
-            this.datePaidLbl.Text = "---------------";
-            // 
-            // bankLbl
-            // 
-            this.bankLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.bankLbl.AutoSize = true;
-            this.bankLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bankLbl.Location = new System.Drawing.Point(68, 165);
-            this.bankLbl.Name = "bankLbl";
-            this.bankLbl.Size = new System.Drawing.Size(84, 19);
-            this.bankLbl.TabIndex = 5;
-            this.bankLbl.Text = "---------------";
+            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(371, 767);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(117, 19);
+            this.label19.TabIndex = 8;
+            this.label19.Text = "ACTUAL SALARY:";
             // 
             // PaySlip
             // 
@@ -892,15 +984,13 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button addToPaymentBtn;
-        private System.Windows.Forms.TextBox extraClassesTb;
-        private System.Windows.Forms.TextBox examFeesTb;
         private System.Windows.Forms.TextBox amountPaidTb;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button printBtn;
+        private System.Windows.Forms.Button savePaymentBtn;
+        private System.Windows.Forms.Button backBtn;
         private System.Windows.Forms.Panel payslipPanel;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label15;
@@ -955,5 +1045,13 @@
         private System.Windows.Forms.Label emailLbl;
         private System.Windows.Forms.Label staffIdLbl;
         private System.Windows.Forms.Label empNameLbl;
+        private System.Windows.Forms.ComboBox modeOfPaymentCb;
+        private System.Windows.Forms.Label totalDeductionsLbl;
+        private System.Windows.Forms.Label totalAllowanceLbl;
+        private System.Windows.Forms.DateTimePicker salaryMonthPk;
+        private System.Windows.Forms.Label rankLbl;
+        private System.Windows.Forms.Label positionLbl;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label actualSalaryLbl;
     }
 }
