@@ -15,14 +15,20 @@ namespace Perfect_Peace_System
         private Random random;
         private int tempIndex;
         public static Color foreColor;
+        public static Color themeColor;
 
         public Login()
         {
             InitializeComponent();
             random = new Random();
-            loginPanel.BackColor = SelectedThemeColor();
+            themeColor = SelectedThemeColor();
+            bgPanel.BackColor = themeColor;
+            loginPanel.BackColor = themeColor;
             loadingPanel.BackColor = foreColor;
+            pictureBox.BackColor = foreColor;
             loadingLbl.ForeColor = foreColor;
+            welcomeLbl.ForeColor = foreColor;
+            label2.ForeColor = foreColor;
         }
 
         private Color SelectedThemeColor()
@@ -45,7 +51,19 @@ namespace Perfect_Peace_System
             if(loadingPanel.Width >= loadingPlaceholderPanel.Width)
             {
                 timer1.Stop();
-                MessageBox.Show("Loading done");
+                OpenNewPage openNewPage = new OpenNewPage();
+                openNewPage.OpenChildForm(new Pages.LoginAs(), loginPanel);
+            }
+        }
+
+        private void closeBtn_Click(object sender, EventArgs e)
+        {
+            string message = "Do you want to close the application?";
+            MessageBoxButtons action = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, "", action);
+            if (result == DialogResult.Yes)
+            {
+                this.Close();
             }
         }
     }

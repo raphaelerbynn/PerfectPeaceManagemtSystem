@@ -108,6 +108,18 @@
     <Compile Include="Pages\AddSubject.Designer.cs">
       <DependentUpon>AddSubject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\LoginInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\LoginInput.Designer.cs">
+      <DependentUpon>LoginInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginAs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\LoginAs.Designer.cs">
+      <DependentUpon>LoginAs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\MarkAttendance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +309,12 @@
     <EmbeddedResource Include="Pages\AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\LoginInput.resx">
+      <DependentUpon>LoginInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\LoginAs.resx">
+      <DependentUpon>LoginAs.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\MarkAttendance.resx">
       <DependentUpon>MarkAttendance.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,7 +370,7 @@
       <DependentUpon>UpdateTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -376,6 +394,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\controls_white.png" />
+    <None Include="Resources\schoolLogo.png" />
+    <None Include="Resources\normal.png" />
+    <None Include="Resources\perfectpeacelogoSmall.png" />
     <None Include="icons\controls.png" />
     <None Include="icons\delete.png" />
     <None Include="icons\message.png" />
