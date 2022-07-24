@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.ListViewItem listViewItem15 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.IndianRed, null);
-            System.Windows.Forms.ListViewItem listViewItem16 = new System.Windows.Forms.ListViewItem(new string[] {
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
             ""}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.HotTrack, null);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panelBg = new System.Windows.Forms.Panel();
@@ -83,7 +83,6 @@
             this.panelBg.Name = "panelBg";
             this.panelBg.Size = new System.Drawing.Size(941, 588);
             this.panelBg.TabIndex = 0;
-            this.panelBg.Click += new System.EventHandler(this.panelBg_Click);
             // 
             // panel8
             // 
@@ -120,51 +119,51 @@
             this.classChart.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
             this.classChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
             this.classChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
-            chartArea8.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea8.AxisX.IsStartedFromZero = false;
-            chartArea8.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea8.AxisX.LabelStyle.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea8.AxisX.LabelStyle.IsEndLabelVisible = false;
-            chartArea8.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea8.AxisX.Title = "Class name";
-            chartArea8.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea8.AxisY.IsMarksNextToAxis = false;
-            chartArea8.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea8.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea8.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea8.AxisY.LineWidth = 0;
-            chartArea8.AxisY.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.None;
-            chartArea8.AxisY.ScaleBreakStyle.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea8.AxisY.ScaleBreakStyle.Spacing = 1D;
-            chartArea8.AxisY.Title = "Number of students";
-            chartArea8.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea8.BackColor = System.Drawing.Color.Transparent;
-            chartArea8.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            chartArea8.BorderColor = System.Drawing.Color.Transparent;
-            chartArea8.BorderWidth = 0;
-            chartArea8.Name = "ChartArea1";
-            this.classChart.ChartAreas.Add(chartArea8);
+            chartArea2.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea2.AxisX.IsStartedFromZero = false;
+            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisX.LabelStyle.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea2.AxisX.LabelStyle.IsEndLabelVisible = false;
+            chartArea2.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea2.AxisX.Title = "Class name";
+            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisY.IsMarksNextToAxis = false;
+            chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea2.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea2.AxisY.LineWidth = 0;
+            chartArea2.AxisY.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.None;
+            chartArea2.AxisY.ScaleBreakStyle.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea2.AxisY.ScaleBreakStyle.Spacing = 1D;
+            chartArea2.AxisY.Title = "Number of students";
+            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea2.BackColor = System.Drawing.Color.Transparent;
+            chartArea2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            chartArea2.BorderColor = System.Drawing.Color.Transparent;
+            chartArea2.BorderWidth = 0;
+            chartArea2.Name = "ChartArea1";
+            this.classChart.ChartAreas.Add(chartArea2);
             this.classChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend8.ItemColumnSpacing = 100;
-            legend8.Name = "Legend1";
-            this.classChart.Legends.Add(legend8);
+            legend2.ItemColumnSpacing = 100;
+            legend2.Name = "Legend1";
+            this.classChart.Legends.Add(legend2);
             this.classChart.Location = new System.Drawing.Point(0, 0);
             this.classChart.Name = "classChart";
             this.classChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series8.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
-            series8.BorderColor = System.Drawing.Color.Transparent;
-            series8.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            series8.BorderWidth = 0;
-            series8.ChartArea = "ChartArea1";
-            series8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
-            series8.IsValueShownAsLabel = true;
-            series8.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            series8.LabelBorderWidth = 0;
-            series8.Legend = "Legend1";
-            series8.MarkerSize = 0;
-            series8.Name = "Class";
-            series8.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            this.classChart.Series.Add(series8);
+            series2.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
+            series2.BorderColor = System.Drawing.Color.Transparent;
+            series2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            series2.BorderWidth = 0;
+            series2.ChartArea = "ChartArea1";
+            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
+            series2.IsValueShownAsLabel = true;
+            series2.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            series2.LabelBorderWidth = 0;
+            series2.Legend = "Legend1";
+            series2.MarkerSize = 0;
+            series2.Name = "Class";
+            series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.classChart.Series.Add(series2);
             this.classChart.Size = new System.Drawing.Size(540, 270);
             this.classChart.TabIndex = 0;
             this.classChart.Text = "chart1";
@@ -191,8 +190,8 @@
             this.eventListView.Dock = System.Windows.Forms.DockStyle.Top;
             this.eventListView.HideSelection = false;
             this.eventListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem15,
-            listViewItem16});
+            listViewItem3,
+            listViewItem4});
             this.eventListView.Location = new System.Drawing.Point(0, 0);
             this.eventListView.Name = "eventListView";
             this.eventListView.Size = new System.Drawing.Size(353, 167);

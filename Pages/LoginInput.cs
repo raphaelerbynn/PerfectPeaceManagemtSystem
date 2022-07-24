@@ -91,6 +91,7 @@ namespace Perfect_Peace_System.Pages
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
             }
         }
 

@@ -30,15 +30,16 @@ namespace Perfect_Peace_System
             random = new Random();
             schNameLbl.Text = "Perfect Peace \nInt. School";
             schNameLbl.BackColor = Color.Transparent;
-            menuPanel.BackColor = themeColor;
             displayPanel = panelView;
             logo.BackColor = Color.Transparent;
+            logoutLink.BackColor = Color.Transparent;
             _studentBtn = studentBtn;
             _teachersBtn = teachersBtn;
             _classBtn = classesBtn;
      
             openNewPage.OpenChildForm(new Pages.Dashboard(), panelView);
             ActivateBtn(dashboardBtn);
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
             user_details();
 
             //user accessibility
@@ -122,6 +123,9 @@ namespace Perfect_Peace_System
                     line2.BackColor = themeColor;
                     line3.BackColor = themeColor;
                     logoPanel.BackColor = Color.FromArgb((int)(themeColor.A * 0.7), themeColor);
+                    logoutLink.LinkColor = themeColor;
+                    menuPanel.BackColor = themeColor;
+                    this.BackColor = foreColor;
 
                     panelView.BackColor = Color.FromArgb((int)(foreColor.A * 0.8), foreColor);
                     topPanel.BackColor = Color.FromArgb((int)(foreColor.A * 0.8), foreColor);
@@ -261,6 +265,8 @@ namespace Perfect_Peace_System
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
             ActivateBtn(sender);
+            addStntBtn.Visible = false;
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
             titleLbl.Text = "DASHBOARD";
             openNewPage.OpenChildForm(new Pages.Dashboard(), panelView);
         }
