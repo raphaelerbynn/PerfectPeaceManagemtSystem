@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -50,7 +51,7 @@ namespace Perfect_Peace_System.Pages
             try
             {
                 string category = loginAsLbl.Text;
-                string name, email, username, password, cPassword, system_key;
+                string name, email, username, password, cPassword, system_key, adminPassword;
                 foreach(Control c in bgPanel.Controls)
                 {
                     if(c is TextBox && c.Visible == true)
@@ -65,7 +66,6 @@ namespace Perfect_Peace_System.Pages
                         {
                             c.BackColor = DefaultBackColor;
                         }
-                        
                     }
                 }
                 name = nameTb.Text;
@@ -74,6 +74,7 @@ namespace Perfect_Peace_System.Pages
                 password = passwordTb.Text;
                 cPassword = cPasswordTb.Text;
                 system_key = systemKeyTb.Text;
+                adminPassword = adminPasswordTb.Text;
 
                 if (!password.Equals(cPassword))
                 {
@@ -81,14 +82,67 @@ namespace Perfect_Peace_System.Pages
                     return;
                 }
 
-                query = "INSERT INTO User_account(name, username, email, category, password)" +
-                    "VALUES('', '', '', '', '')";
+                if (category.Equals("Administrator"))
+                {
+                    if (!checkSysKey(system_key))
+                    {
+                        MessageBox.Show("Wrong System Key", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                    
+                }
+                else
+                {
+                    if (!ckeckValidAdminPassword(adminPassword))
+                    {
+                        MessageBox.Show("Incorrect Administrator Password", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
+
+                DialogResult result = MessageBox.Show("Confirm to create this account", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    query = "INSERT INTO User_account(name, username, email, category, password)" +
+                        "VALUES('" + name + "', '" + username + "', '" + email + "', '" + category + "', '" + password + "')";
+                    DbClient.query_execute(query);
+
+                    MessageBox.Show("Account Created Successfully");
+                    this.Close();
+                }
                 
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.Message);
+                MessageBox.Show("Username already exists");
             }
+        }
+
+        private bool checkSysKey(string system_key)
+        {
+            foreach (string key in system_keys)
+            {
+                if (key.Equals(system_key))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private bool ckeckValidAdminPassword(string password)
+        {
+            query = "SELECT password FROM User_account WHERE category='Administrator'";
+            SqlDataReader reader = DbClient.query_reader(query);
+            while (reader.Read())
+            {
+                if (password.Equals(reader["password"].ToString()))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void viewPassword_Click(object sender, EventArgs e)
