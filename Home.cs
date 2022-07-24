@@ -41,6 +41,50 @@ namespace Perfect_Peace_System
             ActivateBtn(dashboardBtn);
             user_details();
 
+            //user accessibility
+            string category = Pages.LoginInput.category;
+            if(category.Equals("Class Teacher"))
+            {
+                addStntBtn.Visible = false;
+                studentBtn.Enabled = false;
+                teachersBtn.Enabled = false;
+                parentsBtn.Enabled = false;
+                classesBtn.Enabled = false;
+                feesBtn.Enabled = false;
+                accountBtn.Enabled = false;
+                payrollBtn.Enabled = false;
+                subjectBtn.Enabled = false;
+
+                stu_pic.Enabled = false;
+                teach_pic.Enabled = false;
+                parent_pic.Enabled = false;
+                class_pic.Enabled = false;
+                feees_pic.Enabled = false;
+                acc_pic.Enabled = false;
+                payroll_pic.Enabled = false;
+                subject_pic.Enabled = false;
+            }
+
+            if (category.Equals("Accountant"))
+            {
+                addStntBtn.Visible = false;
+                studentBtn.Enabled = false;
+                teachersBtn.Enabled = false;
+                parentsBtn.Enabled = false;
+                classesBtn.Enabled = false;
+                subjectBtn.Enabled = false;
+                attendanceBtn.Enabled = false;
+                reportBtn.Enabled = false; 
+
+                stu_pic.Enabled = false;
+                teach_pic.Enabled = false;
+                parent_pic.Enabled = false;
+                class_pic.Enabled = false;
+                subject_pic.Enabled = false;
+                att_pic.Enabled = false;
+                report_pic.Enabled = false;
+            }
+
         }
 
         private void DisableBtn()

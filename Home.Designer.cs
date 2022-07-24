@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.menuPanel = new System.Windows.Forms.Panel();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.settingsIcon = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.settingsBtn = new System.Windows.Forms.Button();
+            this.payroll_pic = new System.Windows.Forms.PictureBox();
+            this.subject_pic = new System.Windows.Forms.PictureBox();
+            this.stu_pic = new System.Windows.Forms.PictureBox();
+            this.teach_pic = new System.Windows.Forms.PictureBox();
+            this.parent_pic = new System.Windows.Forms.PictureBox();
+            this.class_pic = new System.Windows.Forms.PictureBox();
+            this.att_pic = new System.Windows.Forms.PictureBox();
+            this.acc_pic = new System.Windows.Forms.PictureBox();
+            this.feees_pic = new System.Windows.Forms.PictureBox();
+            this.report_pic = new System.Windows.Forms.PictureBox();
+            this.dash_pic = new System.Windows.Forms.PictureBox();
+            this.subjectBtn = new System.Windows.Forms.Button();
             this.payrollBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
             this.accountBtn = new System.Windows.Forms.Button();
@@ -50,59 +50,59 @@
             this.classesBtn = new System.Windows.Forms.Button();
             this.parentsBtn = new System.Windows.Forms.Button();
             this.teachersBtn = new System.Windows.Forms.Button();
-            this.studentBtn = new System.Windows.Forms.Button();
             this.dashboardBtn = new System.Windows.Forms.Button();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.usernameLbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.categoryLbl = new System.Windows.Forms.Label();
             this.maxBtn = new System.Windows.Forms.PictureBox();
             this.minBtn = new System.Windows.Forms.PictureBox();
             this.closeBtn = new System.Windows.Forms.PictureBox();
             this.titleLbl = new System.Windows.Forms.Label();
             this.addStntBtn = new System.Windows.Forms.Button();
-            this.logoPanel = new System.Windows.Forms.Panel();
-            this.schNameLbl = new System.Windows.Forms.Label();
-            this.logo = new System.Windows.Forms.PictureBox();
             this.line1 = new System.Windows.Forms.Panel();
             this.line2 = new System.Windows.Forms.Panel();
             this.line3 = new System.Windows.Forms.Panel();
             this.panelView = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.usernameLbl = new System.Windows.Forms.Label();
+            this.studentBtn = new System.Windows.Forms.Button();
+            this.logo = new System.Windows.Forms.PictureBox();
+            this.schNameLbl = new System.Windows.Forms.Label();
+            this.logoPanel = new System.Windows.Forms.Panel();
             this.menuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsIcon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subject_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stu_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teach_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parent_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.class_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.att_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acc_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feees_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_pic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dash_pic)).BeginInit();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maxBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
-            this.logoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
+            this.logoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuPanel
             // 
             this.menuPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.menuPanel.Controls.Add(this.pictureBox11);
-            this.menuPanel.Controls.Add(this.settingsIcon);
-            this.menuPanel.Controls.Add(this.pictureBox9);
-            this.menuPanel.Controls.Add(this.pictureBox8);
-            this.menuPanel.Controls.Add(this.pictureBox7);
-            this.menuPanel.Controls.Add(this.pictureBox6);
-            this.menuPanel.Controls.Add(this.pictureBox5);
-            this.menuPanel.Controls.Add(this.pictureBox10);
-            this.menuPanel.Controls.Add(this.pictureBox4);
-            this.menuPanel.Controls.Add(this.pictureBox3);
-            this.menuPanel.Controls.Add(this.pictureBox2);
-            this.menuPanel.Controls.Add(this.settingsBtn);
+            this.menuPanel.Controls.Add(this.payroll_pic);
+            this.menuPanel.Controls.Add(this.subject_pic);
+            this.menuPanel.Controls.Add(this.stu_pic);
+            this.menuPanel.Controls.Add(this.teach_pic);
+            this.menuPanel.Controls.Add(this.parent_pic);
+            this.menuPanel.Controls.Add(this.class_pic);
+            this.menuPanel.Controls.Add(this.att_pic);
+            this.menuPanel.Controls.Add(this.acc_pic);
+            this.menuPanel.Controls.Add(this.feees_pic);
+            this.menuPanel.Controls.Add(this.report_pic);
+            this.menuPanel.Controls.Add(this.dash_pic);
+            this.menuPanel.Controls.Add(this.subjectBtn);
             this.menuPanel.Controls.Add(this.payrollBtn);
             this.menuPanel.Controls.Add(this.reportBtn);
             this.menuPanel.Controls.Add(this.accountBtn);
@@ -120,137 +120,137 @@
             this.menuPanel.Size = new System.Drawing.Size(154, 670);
             this.menuPanel.TabIndex = 0;
             // 
-            // pictureBox11
+            // payroll_pic
             // 
-            this.pictureBox11.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox11.Image")));
-            this.pictureBox11.Location = new System.Drawing.Point(23, 554);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox11.TabIndex = 20;
-            this.pictureBox11.TabStop = false;
-            this.pictureBox11.Tag = "8";
+            this.payroll_pic.Image = ((System.Drawing.Image)(resources.GetObject("payroll_pic.Image")));
+            this.payroll_pic.Location = new System.Drawing.Point(23, 554);
+            this.payroll_pic.Name = "payroll_pic";
+            this.payroll_pic.Size = new System.Drawing.Size(30, 30);
+            this.payroll_pic.TabIndex = 20;
+            this.payroll_pic.TabStop = false;
+            this.payroll_pic.Tag = "8";
             // 
-            // settingsIcon
+            // subject_pic
             // 
-            this.settingsIcon.BackColor = System.Drawing.Color.Transparent;
-            this.settingsIcon.Image = ((System.Drawing.Image)(resources.GetObject("settingsIcon.Image")));
-            this.settingsIcon.Location = new System.Drawing.Point(23, 617);
-            this.settingsIcon.Name = "settingsIcon";
-            this.settingsIcon.Size = new System.Drawing.Size(30, 30);
-            this.settingsIcon.TabIndex = 19;
-            this.settingsIcon.TabStop = false;
-            this.settingsIcon.Tag = "9";
+            this.subject_pic.BackColor = System.Drawing.Color.Transparent;
+            this.subject_pic.Image = ((System.Drawing.Image)(resources.GetObject("subject_pic.Image")));
+            this.subject_pic.Location = new System.Drawing.Point(23, 617);
+            this.subject_pic.Name = "subject_pic";
+            this.subject_pic.Size = new System.Drawing.Size(30, 30);
+            this.subject_pic.TabIndex = 19;
+            this.subject_pic.TabStop = false;
+            this.subject_pic.Tag = "9";
             // 
-            // pictureBox9
+            // stu_pic
             // 
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(23, 77);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox9.TabIndex = 18;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Tag = "1";
+            this.stu_pic.Image = ((System.Drawing.Image)(resources.GetObject("stu_pic.Image")));
+            this.stu_pic.Location = new System.Drawing.Point(23, 77);
+            this.stu_pic.Name = "stu_pic";
+            this.stu_pic.Size = new System.Drawing.Size(30, 30);
+            this.stu_pic.TabIndex = 18;
+            this.stu_pic.TabStop = false;
+            this.stu_pic.Tag = "1";
             // 
-            // pictureBox8
+            // teach_pic
             // 
-            this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(23, 141);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox8.TabIndex = 17;
-            this.pictureBox8.TabStop = false;
-            this.pictureBox8.Tag = "2";
+            this.teach_pic.Image = ((System.Drawing.Image)(resources.GetObject("teach_pic.Image")));
+            this.teach_pic.Location = new System.Drawing.Point(23, 141);
+            this.teach_pic.Name = "teach_pic";
+            this.teach_pic.Size = new System.Drawing.Size(30, 30);
+            this.teach_pic.TabIndex = 17;
+            this.teach_pic.TabStop = false;
+            this.teach_pic.Tag = "2";
             // 
-            // pictureBox7
+            // parent_pic
             // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(23, 203);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox7.TabIndex = 16;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Tag = "3";
+            this.parent_pic.Image = ((System.Drawing.Image)(resources.GetObject("parent_pic.Image")));
+            this.parent_pic.Location = new System.Drawing.Point(23, 203);
+            this.parent_pic.Name = "parent_pic";
+            this.parent_pic.Size = new System.Drawing.Size(30, 30);
+            this.parent_pic.TabIndex = 16;
+            this.parent_pic.TabStop = false;
+            this.parent_pic.Tag = "3";
             // 
-            // pictureBox6
+            // class_pic
             // 
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(23, 263);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox6.TabIndex = 15;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Tag = "4";
+            this.class_pic.Image = ((System.Drawing.Image)(resources.GetObject("class_pic.Image")));
+            this.class_pic.Location = new System.Drawing.Point(23, 263);
+            this.class_pic.Name = "class_pic";
+            this.class_pic.Size = new System.Drawing.Size(30, 30);
+            this.class_pic.TabIndex = 15;
+            this.class_pic.TabStop = false;
+            this.class_pic.Tag = "4";
             // 
-            // pictureBox5
+            // att_pic
             // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(23, 327);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox5.TabIndex = 14;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Tag = "5";
+            this.att_pic.Image = ((System.Drawing.Image)(resources.GetObject("att_pic.Image")));
+            this.att_pic.Location = new System.Drawing.Point(23, 327);
+            this.att_pic.Name = "att_pic";
+            this.att_pic.Size = new System.Drawing.Size(30, 30);
+            this.att_pic.TabIndex = 14;
+            this.att_pic.TabStop = false;
+            this.att_pic.Tag = "5";
             // 
-            // pictureBox10
+            // acc_pic
             // 
-            this.pictureBox10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox10.Image")));
-            this.pictureBox10.Location = new System.Drawing.Point(23, 443);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox10.TabIndex = 13;
-            this.pictureBox10.TabStop = false;
-            this.pictureBox10.Tag = "10";
+            this.acc_pic.Image = ((System.Drawing.Image)(resources.GetObject("acc_pic.Image")));
+            this.acc_pic.Location = new System.Drawing.Point(23, 443);
+            this.acc_pic.Name = "acc_pic";
+            this.acc_pic.Size = new System.Drawing.Size(30, 30);
+            this.acc_pic.TabIndex = 13;
+            this.acc_pic.TabStop = false;
+            this.acc_pic.Tag = "10";
             // 
-            // pictureBox4
+            // feees_pic
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(23, 387);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox4.TabIndex = 13;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Tag = "6";
+            this.feees_pic.Image = ((System.Drawing.Image)(resources.GetObject("feees_pic.Image")));
+            this.feees_pic.Location = new System.Drawing.Point(23, 387);
+            this.feees_pic.Name = "feees_pic";
+            this.feees_pic.Size = new System.Drawing.Size(30, 30);
+            this.feees_pic.TabIndex = 13;
+            this.feees_pic.TabStop = false;
+            this.feees_pic.Tag = "6";
             // 
-            // pictureBox3
+            // report_pic
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(23, 494);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox3.TabIndex = 12;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Tag = "7";
+            this.report_pic.Image = ((System.Drawing.Image)(resources.GetObject("report_pic.Image")));
+            this.report_pic.Location = new System.Drawing.Point(23, 494);
+            this.report_pic.Name = "report_pic";
+            this.report_pic.Size = new System.Drawing.Size(30, 30);
+            this.report_pic.TabIndex = 12;
+            this.report_pic.TabStop = false;
+            this.report_pic.Tag = "7";
             // 
-            // pictureBox2
+            // dash_pic
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(23, 24);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(30, 30);
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Tag = "0";
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.dash_pic.Image = ((System.Drawing.Image)(resources.GetObject("dash_pic.Image")));
+            this.dash_pic.Location = new System.Drawing.Point(23, 24);
+            this.dash_pic.Name = "dash_pic";
+            this.dash_pic.Size = new System.Drawing.Size(30, 30);
+            this.dash_pic.TabIndex = 11;
+            this.dash_pic.TabStop = false;
+            this.dash_pic.Tag = "0";
+            this.dash_pic.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
-            // settingsBtn
+            // subjectBtn
             // 
-            this.settingsBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.subjectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.settingsBtn.AutoSize = true;
-            this.settingsBtn.FlatAppearance.BorderSize = 0;
-            this.settingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.settingsBtn.ForeColor = System.Drawing.Color.White;
-            this.settingsBtn.Location = new System.Drawing.Point(0, 606);
-            this.settingsBtn.Name = "settingsBtn";
-            this.settingsBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.settingsBtn.Size = new System.Drawing.Size(155, 62);
-            this.settingsBtn.TabIndex = 1;
-            this.settingsBtn.TabStop = false;
-            this.settingsBtn.Tag = "9";
-            this.settingsBtn.Text = "Subjects";
-            this.settingsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.settingsBtn.UseVisualStyleBackColor = true;
-            this.settingsBtn.Click += new System.EventHandler(this.subjectBtn_Click);
+            this.subjectBtn.AutoSize = true;
+            this.subjectBtn.FlatAppearance.BorderSize = 0;
+            this.subjectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.subjectBtn.ForeColor = System.Drawing.Color.White;
+            this.subjectBtn.Location = new System.Drawing.Point(0, 606);
+            this.subjectBtn.Name = "subjectBtn";
+            this.subjectBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            this.subjectBtn.Size = new System.Drawing.Size(155, 62);
+            this.subjectBtn.TabIndex = 1;
+            this.subjectBtn.TabStop = false;
+            this.subjectBtn.Tag = "9";
+            this.subjectBtn.Text = "Subjects";
+            this.subjectBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.subjectBtn.UseVisualStyleBackColor = true;
+            this.subjectBtn.Click += new System.EventHandler(this.subjectBtn_Click);
             // 
             // payrollBtn
             // 
@@ -404,25 +404,6 @@
             this.teachersBtn.UseVisualStyleBackColor = true;
             this.teachersBtn.Click += new System.EventHandler(this.teachersBtn_Click);
             // 
-            // studentBtn
-            // 
-            this.studentBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.studentBtn.AutoSize = true;
-            this.studentBtn.FlatAppearance.BorderSize = 0;
-            this.studentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.studentBtn.ForeColor = System.Drawing.Color.White;
-            this.studentBtn.Location = new System.Drawing.Point(0, 65);
-            this.studentBtn.Name = "studentBtn";
-            this.studentBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
-            this.studentBtn.Size = new System.Drawing.Size(154, 62);
-            this.studentBtn.TabIndex = 2;
-            this.studentBtn.Tag = "1";
-            this.studentBtn.Text = "Students";
-            this.studentBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.studentBtn.UseVisualStyleBackColor = true;
-            this.studentBtn.Click += new System.EventHandler(this.studentBtn_Click);
-            // 
             // dashboardBtn
             // 
             this.dashboardBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -463,6 +444,26 @@
             this.topPanel.TabIndex = 2;
             this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.topPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.topPanel_MouseMove);
+            // 
+            // usernameLbl
+            // 
+            this.usernameLbl.AutoSize = true;
+            this.usernameLbl.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLbl.Location = new System.Drawing.Point(273, 31);
+            this.usernameLbl.Name = "usernameLbl";
+            this.usernameLbl.Size = new System.Drawing.Size(117, 18);
+            this.usernameLbl.TabIndex = 9;
+            this.usernameLbl.Text = "Username/email:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(157, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 16);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Username/email:";
             // 
             // categoryLbl
             // 
@@ -537,36 +538,6 @@
             this.addStntBtn.Visible = false;
             this.addStntBtn.Click += new System.EventHandler(this.addStntBtn_Click);
             // 
-            // logoPanel
-            // 
-            this.logoPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.logoPanel.Controls.Add(this.schNameLbl);
-            this.logoPanel.Controls.Add(this.logo);
-            this.logoPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.logoPanel.Location = new System.Drawing.Point(0, 0);
-            this.logoPanel.Name = "logoPanel";
-            this.logoPanel.Size = new System.Drawing.Size(154, 74);
-            this.logoPanel.TabIndex = 4;
-            // 
-            // schNameLbl
-            // 
-            this.schNameLbl.AutoSize = true;
-            this.schNameLbl.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.schNameLbl.Location = new System.Drawing.Point(68, 25);
-            this.schNameLbl.Name = "schNameLbl";
-            this.schNameLbl.Size = new System.Drawing.Size(0, 13);
-            this.schNameLbl.TabIndex = 1;
-            // 
-            // logo
-            // 
-            this.logo.Image = global::Perfect_Peace_System.Properties.Resources.perfectpeacelogoSmall;
-            this.logo.Location = new System.Drawing.Point(12, 9);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(56, 59);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logo.TabIndex = 0;
-            this.logo.TabStop = false;
-            // 
             // line1
             // 
             this.line1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -605,25 +576,54 @@
             this.panelView.Size = new System.Drawing.Size(966, 670);
             this.panelView.TabIndex = 4;
             // 
-            // label1
+            // studentBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(157, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 16);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Username/email:";
+            this.studentBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.studentBtn.AutoSize = true;
+            this.studentBtn.FlatAppearance.BorderSize = 0;
+            this.studentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.studentBtn.ForeColor = System.Drawing.Color.White;
+            this.studentBtn.Location = new System.Drawing.Point(0, 65);
+            this.studentBtn.Name = "studentBtn";
+            this.studentBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
+            this.studentBtn.Size = new System.Drawing.Size(154, 62);
+            this.studentBtn.TabIndex = 2;
+            this.studentBtn.Tag = "1";
+            this.studentBtn.Text = "Students";
+            this.studentBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.studentBtn.UseVisualStyleBackColor = true;
+            this.studentBtn.Click += new System.EventHandler(this.studentBtn_Click);
             // 
-            // usernameLbl
+            // logo
             // 
-            this.usernameLbl.AutoSize = true;
-            this.usernameLbl.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLbl.Location = new System.Drawing.Point(273, 31);
-            this.usernameLbl.Name = "usernameLbl";
-            this.usernameLbl.Size = new System.Drawing.Size(117, 18);
-            this.usernameLbl.TabIndex = 9;
-            this.usernameLbl.Text = "Username/email:";
+            this.logo.Image = global::Perfect_Peace_System.Properties.Resources.perfectpeacelogoSmall;
+            this.logo.Location = new System.Drawing.Point(12, 9);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(56, 59);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo.TabIndex = 0;
+            this.logo.TabStop = false;
+            // 
+            // schNameLbl
+            // 
+            this.schNameLbl.AutoSize = true;
+            this.schNameLbl.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.schNameLbl.Location = new System.Drawing.Point(68, 25);
+            this.schNameLbl.Name = "schNameLbl";
+            this.schNameLbl.Size = new System.Drawing.Size(0, 13);
+            this.schNameLbl.TabIndex = 1;
+            // 
+            // logoPanel
+            // 
+            this.logoPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.logoPanel.Controls.Add(this.schNameLbl);
+            this.logoPanel.Controls.Add(this.logo);
+            this.logoPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.logoPanel.Location = new System.Drawing.Point(0, 0);
+            this.logoPanel.Name = "logoPanel";
+            this.logoPanel.Size = new System.Drawing.Size(154, 74);
+            this.logoPanel.TabIndex = 4;
             // 
             // Home
             // 
@@ -640,25 +640,25 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsIcon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payroll_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subject_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stu_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teach_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.parent_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.class_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.att_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.acc_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.feees_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.report_pic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dash_pic)).EndInit();
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maxBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.logoPanel.ResumeLayout(false);
             this.logoPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -667,8 +667,7 @@
 
         private System.Windows.Forms.Panel menuPanel;
         private System.Windows.Forms.Button teachersBtn;
-        private System.Windows.Forms.Button studentBtn;
-        private System.Windows.Forms.Button settingsBtn;
+        private System.Windows.Forms.Button subjectBtn;
         private System.Windows.Forms.Button dashboardBtn;
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Button addStntBtn;
@@ -681,29 +680,30 @@
         private System.Windows.Forms.Panel line3;
         private System.Windows.Forms.Panel line2;
         private System.Windows.Forms.Panel line1;
-        private System.Windows.Forms.Panel logoPanel;
         private System.Windows.Forms.PictureBox maxBtn;
         private System.Windows.Forms.PictureBox minBtn;
         private System.Windows.Forms.PictureBox closeBtn;
         private System.Windows.Forms.Label titleLbl;
-        private System.Windows.Forms.Label schNameLbl;
-        private System.Windows.Forms.PictureBox logo;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox11;
-        private System.Windows.Forms.PictureBox settingsIcon;
-        private System.Windows.Forms.PictureBox pictureBox9;
-        private System.Windows.Forms.PictureBox pictureBox8;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox dash_pic;
+        private System.Windows.Forms.PictureBox payroll_pic;
+        private System.Windows.Forms.PictureBox subject_pic;
+        private System.Windows.Forms.PictureBox stu_pic;
+        private System.Windows.Forms.PictureBox teach_pic;
+        private System.Windows.Forms.PictureBox parent_pic;
+        private System.Windows.Forms.PictureBox class_pic;
+        private System.Windows.Forms.PictureBox att_pic;
+        private System.Windows.Forms.PictureBox feees_pic;
+        private System.Windows.Forms.PictureBox report_pic;
         private System.Windows.Forms.Panel panelView;
-        private System.Windows.Forms.PictureBox pictureBox10;
+        private System.Windows.Forms.PictureBox acc_pic;
         private System.Windows.Forms.Button accountBtn;
         private System.Windows.Forms.Label categoryLbl;
         private System.Windows.Forms.Label usernameLbl;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button studentBtn;
+        private System.Windows.Forms.Panel logoPanel;
+        private System.Windows.Forms.Label schNameLbl;
+        private System.Windows.Forms.PictureBox logo;
     }
 }
 
