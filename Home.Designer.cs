@@ -68,6 +68,7 @@
             this.logo = new System.Windows.Forms.PictureBox();
             this.schNameLbl = new System.Windows.Forms.Label();
             this.logoPanel = new System.Windows.Forms.Panel();
+            this.logoutLink = new System.Windows.Forms.LinkLabel();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payroll_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subject_pic)).BeginInit();
@@ -90,6 +91,8 @@
             // 
             // menuPanel
             // 
+            this.menuPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.menuPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.menuPanel.Controls.Add(this.payroll_pic);
             this.menuPanel.Controls.Add(this.subject_pic);
@@ -113,7 +116,6 @@
             this.menuPanel.Controls.Add(this.teachersBtn);
             this.menuPanel.Controls.Add(this.studentBtn);
             this.menuPanel.Controls.Add(this.dashboardBtn);
-            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuPanel.Location = new System.Drawing.Point(0, 74);
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
@@ -425,6 +427,7 @@
             // 
             // topPanel
             // 
+            this.topPanel.Controls.Add(this.logoutLink);
             this.topPanel.Controls.Add(this.usernameLbl);
             this.topPanel.Controls.Add(this.label1);
             this.topPanel.Controls.Add(this.categoryLbl);
@@ -432,7 +435,6 @@
             this.topPanel.Controls.Add(this.minBtn);
             this.topPanel.Controls.Add(this.closeBtn);
             this.topPanel.Controls.Add(this.titleLbl);
-            this.topPanel.Controls.Add(this.addStntBtn);
             this.topPanel.Controls.Add(this.logoPanel);
             this.topPanel.Controls.Add(this.line1);
             this.topPanel.Controls.Add(this.line2);
@@ -527,9 +529,9 @@
             // 
             // addStntBtn
             // 
-            this.addStntBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.addStntBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addStntBtn.AutoSize = true;
-            this.addStntBtn.Location = new System.Drawing.Point(1005, 25);
+            this.addStntBtn.Location = new System.Drawing.Point(999, 80);
             this.addStntBtn.Name = "addStntBtn";
             this.addStntBtn.Size = new System.Drawing.Size(76, 23);
             this.addStntBtn.TabIndex = 0;
@@ -568,12 +570,14 @@
             // 
             // panelView
             // 
+            this.panelView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelView.BackColor = System.Drawing.Color.Transparent;
-            this.panelView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelView.Location = new System.Drawing.Point(154, 74);
+            this.panelView.Location = new System.Drawing.Point(154, 112);
             this.panelView.Name = "panelView";
             this.panelView.Padding = new System.Windows.Forms.Padding(5);
-            this.panelView.Size = new System.Drawing.Size(966, 670);
+            this.panelView.Size = new System.Drawing.Size(966, 632);
             this.panelView.TabIndex = 4;
             // 
             // studentBtn
@@ -625,6 +629,19 @@
             this.logoPanel.Size = new System.Drawing.Size(154, 74);
             this.logoPanel.TabIndex = 4;
             // 
+            // logoutLink
+            // 
+            this.logoutLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logoutLink.AutoSize = true;
+            this.logoutLink.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutLink.Location = new System.Drawing.Point(1044, 30);
+            this.logoutLink.Name = "logoutLink";
+            this.logoutLink.Size = new System.Drawing.Size(57, 19);
+            this.logoutLink.TabIndex = 10;
+            this.logoutLink.TabStop = true;
+            this.logoutLink.Text = "Logout";
+            this.logoutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.logoutLink_LinkClicked);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -633,6 +650,7 @@
             this.Controls.Add(this.panelView);
             this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.topPanel);
+            this.Controls.Add(this.addStntBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.Name = "Home";
@@ -660,6 +678,7 @@
             this.logoPanel.ResumeLayout(false);
             this.logoPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -704,6 +723,7 @@
         private System.Windows.Forms.Panel logoPanel;
         private System.Windows.Forms.Label schNameLbl;
         private System.Windows.Forms.PictureBox logo;
+        private System.Windows.Forms.LinkLabel logoutLink;
     }
 }
 

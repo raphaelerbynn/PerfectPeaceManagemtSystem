@@ -380,6 +380,19 @@ namespace Perfect_Peace_System
             }
         }
 
+        private void logoutLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            string message = "Do you want to logout?";
+            MessageBoxButtons action = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, "", action);
+            if (result == DialogResult.Yes)
+            {
+                 this.Close();
+                Login login = (Login)Application.OpenForms["Login"];
+                login.Show();
+            }
+        }
+
         private void minBtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;

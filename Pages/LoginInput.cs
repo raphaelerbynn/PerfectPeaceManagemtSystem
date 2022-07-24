@@ -78,6 +78,9 @@ namespace Perfect_Peace_System.Pages
 
                     Home home = new Home();
                     home.Show();
+
+                    usernameTb.Text = null;
+                    passwordTb.Text = null;
                 }
                 else
                 {
