@@ -19,6 +19,18 @@ namespace Perfect_Peace_System.Pages
             bgPanel.BackColor = Login.themeColor;
             bgPanel.ForeColor = Login.foreColor;
             loginBtn.ForeColor = Login.themeColor;
+            createAccBtn.ForeColor = Login.themeColor;
+        }
+
+        private void createAccBtn_Click(object sender, EventArgs e)
+        {
+            OpenNewPage openNewPage = new OpenNewPage();
+            openNewPage.OpenChildForm(new Pages.CreateAccount(), bgPanel);
+        }
+
+        private void backLbl_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
