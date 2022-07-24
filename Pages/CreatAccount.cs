@@ -133,16 +133,19 @@ namespace Perfect_Peace_System.Pages
 
         private bool ckeckValidAdminPassword(string password)
         {
+            bool value = false;
             query = "SELECT password FROM User_account WHERE category='Administrator'";
             SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())
             {
                 if (password.Equals(reader["password"].ToString()))
                 {
-                    return true;
+                    value = true;
+                    break;
                 }
             }
-            return false;
+            reader.Close();
+            return value;
         }
 
         private void viewPassword_Click(object sender, EventArgs e)
