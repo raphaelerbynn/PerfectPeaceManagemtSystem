@@ -35,17 +35,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.loginAsLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.createAccBtn = new System.Windows.Forms.Button();
             this.backLbl = new System.Windows.Forms.Label();
+            this.viewPassword = new System.Windows.Forms.PictureBox();
+            this.createAccLink = new System.Windows.Forms.LinkLabel();
             this.bgPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // bgPanel
             // 
+            this.bgPanel.Controls.Add(this.createAccLink);
+            this.bgPanel.Controls.Add(this.viewPassword);
             this.bgPanel.Controls.Add(this.backLbl);
             this.bgPanel.Controls.Add(this.passwordTb);
             this.bgPanel.Controls.Add(this.usernameTb);
-            this.bgPanel.Controls.Add(this.createAccBtn);
             this.bgPanel.Controls.Add(this.loginBtn);
             this.bgPanel.Controls.Add(this.label2);
             this.bgPanel.Controls.Add(this.loginAsLbl);
@@ -58,6 +61,7 @@
             // 
             // passwordTb
             // 
+            this.passwordTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.passwordTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTb.Location = new System.Drawing.Point(233, 173);
             this.passwordTb.Name = "passwordTb";
@@ -67,6 +71,7 @@
             // 
             // usernameTb
             // 
+            this.usernameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.usernameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTb.Location = new System.Drawing.Point(233, 117);
             this.usernameTb.Name = "usernameTb";
@@ -75,17 +80,20 @@
             // 
             // loginBtn
             // 
+            this.loginBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.loginBtn.AutoSize = true;
             this.loginBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginBtn.Location = new System.Drawing.Point(278, 255);
+            this.loginBtn.Location = new System.Drawing.Point(347, 226);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.Size = new System.Drawing.Size(75, 29);
             this.loginBtn.TabIndex = 1;
             this.loginBtn.Text = "Login";
             this.loginBtn.UseVisualStyleBackColor = true;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(136, 177);
@@ -96,6 +104,7 @@
             // 
             // loginAsLbl
             // 
+            this.loginAsLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.loginAsLbl.AutoSize = true;
             this.loginAsLbl.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginAsLbl.Location = new System.Drawing.Point(313, 54);
@@ -106,6 +115,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(85, 121);
@@ -113,18 +123,6 @@
             this.label1.Size = new System.Drawing.Size(142, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Username/email:";
-            // 
-            // createAccBtn
-            // 
-            this.createAccBtn.AutoSize = true;
-            this.createAccBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createAccBtn.Location = new System.Drawing.Point(414, 255);
-            this.createAccBtn.Name = "createAccBtn";
-            this.createAccBtn.Size = new System.Drawing.Size(118, 29);
-            this.createAccBtn.TabIndex = 1;
-            this.createAccBtn.Text = "Create Account";
-            this.createAccBtn.UseVisualStyleBackColor = true;
-            this.createAccBtn.Click += new System.EventHandler(this.createAccBtn_Click);
             // 
             // backLbl
             // 
@@ -137,6 +135,33 @@
             this.backLbl.Text = "<<<";
             this.backLbl.Click += new System.EventHandler(this.backLbl_Click);
             // 
+            // viewPassword
+            // 
+            this.viewPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.viewPassword.BackColor = System.Drawing.Color.White;
+            this.viewPassword.Image = global::Perfect_Peace_System.Properties.Resources.view;
+            this.viewPassword.Location = new System.Drawing.Point(541, 176);
+            this.viewPassword.Name = "viewPassword";
+            this.viewPassword.Size = new System.Drawing.Size(29, 19);
+            this.viewPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.viewPassword.TabIndex = 44;
+            this.viewPassword.TabStop = false;
+            this.viewPassword.Tag = "view";
+            this.viewPassword.Click += new System.EventHandler(this.viewPassword_Click);
+            // 
+            // createAccLink
+            // 
+            this.createAccLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.createAccLink.AutoSize = true;
+            this.createAccLink.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createAccLink.Location = new System.Drawing.Point(574, 362);
+            this.createAccLink.Name = "createAccLink";
+            this.createAccLink.Size = new System.Drawing.Size(114, 19);
+            this.createAccLink.TabIndex = 45;
+            this.createAccLink.TabStop = true;
+            this.createAccLink.Text = "Create Account";
+            this.createAccLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createAccLink_LinkClicked);
+            // 
             // LoginInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,6 +172,7 @@
             this.Text = "Login";
             this.bgPanel.ResumeLayout(false);
             this.bgPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.viewPassword)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -160,7 +186,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label loginAsLbl;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button createAccBtn;
         private System.Windows.Forms.Label backLbl;
+        private System.Windows.Forms.PictureBox viewPassword;
+        private System.Windows.Forms.LinkLabel createAccLink;
     }
 }
