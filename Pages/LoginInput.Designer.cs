@@ -38,12 +38,14 @@
             this.backLbl = new System.Windows.Forms.Label();
             this.viewPassword = new System.Windows.Forms.PictureBox();
             this.createAccLink = new System.Windows.Forms.LinkLabel();
+            this.wrongMeesageLbl = new System.Windows.Forms.Label();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // bgPanel
             // 
+            this.bgPanel.Controls.Add(this.wrongMeesageLbl);
             this.bgPanel.Controls.Add(this.createAccLink);
             this.bgPanel.Controls.Add(this.viewPassword);
             this.bgPanel.Controls.Add(this.backLbl);
@@ -162,6 +164,19 @@
             this.createAccLink.Text = "Create Account";
             this.createAccLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createAccLink_LinkClicked);
             // 
+            // wrongMeesageLbl
+            // 
+            this.wrongMeesageLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.wrongMeesageLbl.AutoSize = true;
+            this.wrongMeesageLbl.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wrongMeesageLbl.ForeColor = System.Drawing.Color.LightCoral;
+            this.wrongMeesageLbl.Location = new System.Drawing.Point(259, 94);
+            this.wrongMeesageLbl.Name = "wrongMeesageLbl";
+            this.wrongMeesageLbl.Size = new System.Drawing.Size(298, 18);
+            this.wrongMeesageLbl.TabIndex = 46;
+            this.wrongMeesageLbl.Text = "Username/email and password does not match";
+            this.wrongMeesageLbl.Visible = false;
+            // 
             // LoginInput
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -189,5 +204,6 @@
         private System.Windows.Forms.Label backLbl;
         private System.Windows.Forms.PictureBox viewPassword;
         private System.Windows.Forms.LinkLabel createAccLink;
+        private System.Windows.Forms.Label wrongMeesageLbl;
     }
 }

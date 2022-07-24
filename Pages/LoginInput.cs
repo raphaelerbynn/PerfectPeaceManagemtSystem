@@ -46,13 +46,42 @@ namespace Perfect_Peace_System.Pages
                 category = loginAsLbl.Text;
                 username = usernameTb.Text;
                 string password = passwordTb.Text;
-                if(checkUserDetails(username, password) == true)
+
+                if (String.IsNullOrEmpty(usernameTb.Text))
                 {
+                    usernameTb.BackColor = Color.LightCoral;
+                    MessageBox.Show("Username missing", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    usernameTb.BackColor = DefaultBackColor;
+                }
+                
+                if (String.IsNullOrEmpty(passwordTb.Text))
+                {
+                    usernameTb.BackColor = Color.LightCoral;
+                    MessageBox.Show("Password missing", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    passwordTb.BackColor = DefaultBackColor;
+                }
+
+
+                if (checkUserDetails(username, password) == true)
+                {
+                    wrongMeesageLbl.Visible = false;
                     Login login = (Login)Application.OpenForms["Login"];
                     login.Hide();
 
                     Home home = new Home();
                     home.Show();
+                }
+                else
+                {
+                    wrongMeesageLbl.Visible = true;
                 }
                 
             }
