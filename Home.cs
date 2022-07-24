@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Perfect_Peace_System
 {
-    public partial class Form1 : Form
+    public partial class Home : Form
     {
         OpenNewPage openNewPage = new OpenNewPage();
         private Button currentBtn;
@@ -23,7 +23,7 @@ namespace Perfect_Peace_System
         public static Button _studentBtn, _teachersBtn, _classBtn;
         //public extern bool ReleaseCapture();
 
-        public Form1()
+        public Home()
         {
             InitializeComponent();
 
@@ -32,12 +32,14 @@ namespace Perfect_Peace_System
             schNameLbl.BackColor = Color.Transparent;
             menuPanel.BackColor = themeColor;
             displayPanel = panelView;
+            logo.BackColor = Color.Transparent;
             _studentBtn = studentBtn;
             _teachersBtn = teachersBtn;
             _classBtn = classesBtn;
      
             openNewPage.OpenChildForm(new Pages.Dashboard(), panelView);
             ActivateBtn(dashboardBtn);
+            user_details();
 
         }
 
@@ -267,7 +269,7 @@ namespace Perfect_Peace_System
             DialogResult result = MessageBox.Show(message, "", action);
             if (result == DialogResult.Yes)
             {
-                this.Close();
+                Application.Exit();
             }
         }
 
@@ -337,6 +339,19 @@ namespace Perfect_Peace_System
         private void minBtn_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void user_details()
+        {
+            try
+            {
+                categoryLbl.Text = Pages.LoginInput.category;
+                usernameLbl.Text = Pages.LoginInput.username;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

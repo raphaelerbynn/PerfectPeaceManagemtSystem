@@ -22,9 +22,9 @@ namespace Perfect_Peace_System.Pages
             teacher = new Teacher();
             InitializeComponent();
 
-            teacherDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Form1.themeColor;
-            teacherDataGridView.RowsDefaultCellStyle.BackColor = Form1.cellColor;
-            teacherDataGridView.BackgroundColor = Form1.foreColor;
+            teacherDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            teacherDataGridView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            teacherDataGridView.BackgroundColor = Home.foreColor;
 
             adjustColumnOrder();
             teacher.show_data(teacherDataGridView);

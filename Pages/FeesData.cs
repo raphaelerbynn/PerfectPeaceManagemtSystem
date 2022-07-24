@@ -20,9 +20,9 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
 
-            feesDataView.ColumnHeadersDefaultCellStyle.BackColor = Form1.themeColor;
-            feesDataView.RowsDefaultCellStyle.BackColor = Form1.cellColor;
-            feesDataView.BackgroundColor = Form1.foreColor;
+            feesDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            feesDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            feesDataView.BackgroundColor = Home.foreColor;
 
            
             fees.show_data(feesDataView);

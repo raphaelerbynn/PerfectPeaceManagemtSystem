@@ -1,6 +1,6 @@
 ﻿namespace Perfect_Peace_System
 {
-    partial class Form1
+    partial class Home
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.menuPanel = new System.Windows.Forms.Panel();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.settingsIcon = new System.Windows.Forms.PictureBox();
@@ -53,6 +53,7 @@
             this.studentBtn = new System.Windows.Forms.Button();
             this.dashboardBtn = new System.Windows.Forms.Button();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.categoryLbl = new System.Windows.Forms.Label();
             this.maxBtn = new System.Windows.Forms.PictureBox();
             this.minBtn = new System.Windows.Forms.PictureBox();
             this.closeBtn = new System.Windows.Forms.PictureBox();
@@ -60,11 +61,13 @@
             this.addStntBtn = new System.Windows.Forms.Button();
             this.logoPanel = new System.Windows.Forms.Panel();
             this.schNameLbl = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.line1 = new System.Windows.Forms.Panel();
             this.line2 = new System.Windows.Forms.Panel();
             this.line3 = new System.Windows.Forms.Panel();
             this.panelView = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.usernameLbl = new System.Windows.Forms.Label();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.settingsIcon)).BeginInit();
@@ -82,7 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.minBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
             this.logoPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
             // menuPanel
@@ -441,6 +444,9 @@
             // 
             // topPanel
             // 
+            this.topPanel.Controls.Add(this.usernameLbl);
+            this.topPanel.Controls.Add(this.label1);
+            this.topPanel.Controls.Add(this.categoryLbl);
             this.topPanel.Controls.Add(this.maxBtn);
             this.topPanel.Controls.Add(this.minBtn);
             this.topPanel.Controls.Add(this.closeBtn);
@@ -457,6 +463,16 @@
             this.topPanel.TabIndex = 2;
             this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.topPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.topPanel_MouseMove);
+            // 
+            // categoryLbl
+            // 
+            this.categoryLbl.AutoSize = true;
+            this.categoryLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryLbl.Location = new System.Drawing.Point(157, 12);
+            this.categoryLbl.Name = "categoryLbl";
+            this.categoryLbl.Size = new System.Drawing.Size(58, 16);
+            this.categoryLbl.TabIndex = 9;
+            this.categoryLbl.Text = "Teacher";
             // 
             // maxBtn
             // 
@@ -525,7 +541,7 @@
             // 
             this.logoPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.logoPanel.Controls.Add(this.schNameLbl);
-            this.logoPanel.Controls.Add(this.pictureBox1);
+            this.logoPanel.Controls.Add(this.logo);
             this.logoPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.logoPanel.Location = new System.Drawing.Point(0, 0);
             this.logoPanel.Name = "logoPanel";
@@ -541,14 +557,15 @@
             this.schNameLbl.Size = new System.Drawing.Size(0, 13);
             this.schNameLbl.TabIndex = 1;
             // 
-            // pictureBox1
+            // logo
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.logo.Image = global::Perfect_Peace_System.Properties.Resources.perfectpeacelogoSmall;
+            this.logo.Location = new System.Drawing.Point(12, 9);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(56, 59);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo.TabIndex = 0;
+            this.logo.TabStop = false;
             // 
             // line1
             // 
@@ -588,7 +605,27 @@
             this.panelView.Size = new System.Drawing.Size(966, 670);
             this.panelView.TabIndex = 4;
             // 
-            // Form1
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(157, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 16);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Username/email:";
+            // 
+            // usernameLbl
+            // 
+            this.usernameLbl.AutoSize = true;
+            this.usernameLbl.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLbl.Location = new System.Drawing.Point(273, 31);
+            this.usernameLbl.Name = "usernameLbl";
+            this.usernameLbl.Size = new System.Drawing.Size(117, 18);
+            this.usernameLbl.TabIndex = 9;
+            this.usernameLbl.Text = "Username/email:";
+            // 
+            // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -598,7 +635,8 @@
             this.Controls.Add(this.topPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.ImeMode = System.Windows.Forms.ImeMode.Disable;
-            this.Name = "Form1";
+            this.Name = "Home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
@@ -620,7 +658,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
             this.logoPanel.ResumeLayout(false);
             this.logoPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -649,7 +687,7 @@
         private System.Windows.Forms.PictureBox closeBtn;
         private System.Windows.Forms.Label titleLbl;
         private System.Windows.Forms.Label schNameLbl;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox logo;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox11;
         private System.Windows.Forms.PictureBox settingsIcon;
@@ -663,6 +701,9 @@
         private System.Windows.Forms.Panel panelView;
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.Button accountBtn;
+        private System.Windows.Forms.Label categoryLbl;
+        private System.Windows.Forms.Label usernameLbl;
+        private System.Windows.Forms.Label label1;
     }
 }
 

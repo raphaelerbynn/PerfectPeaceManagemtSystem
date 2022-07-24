@@ -25,9 +25,9 @@ namespace Perfect_Peace_System.Pages
             parent = new Parent();
             InitializeComponent();
             adjustColumnOrder();
-            studentDataView.ColumnHeadersDefaultCellStyle.BackColor = Form1.themeColor;
-            studentDataView.RowsDefaultCellStyle.BackColor = Form1.cellColor;
-            studentDataView.BackgroundColor = Form1.foreColor;
+            studentDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            studentDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            studentDataView.BackgroundColor = Home.foreColor;
 
             student.show_data(studentDataView);
 

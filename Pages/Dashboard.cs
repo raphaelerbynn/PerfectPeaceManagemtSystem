@@ -27,7 +27,7 @@ namespace Perfect_Peace_System.Pages
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             Resolution objFormResizer = new Resolution();
             objFormResizer.ResizeForm(this, screenHeight, screenWidth);
-            panelBg.BackColor = Form1.themeColor;
+            panelBg.BackColor = Home.themeColor;
             getTotals();
             populateEvents();
             loadDataToDounutChat();
@@ -149,7 +149,7 @@ namespace Perfect_Peace_System.Pages
         private void studentPanel_Click(object sender, EventArgs e)
         {
             this.Close();
-            openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), Form1.displayPanel);
+            openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), Home.displayPanel);
         }
     }
 }

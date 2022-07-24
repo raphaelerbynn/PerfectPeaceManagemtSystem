@@ -14,6 +14,9 @@ namespace Perfect_Peace_System.Pages
     public partial class LoginInput : Form
     {
         private string query;
+        public static string username;
+        public static string category;
+        public static bool logged_in = false;
 
         public LoginInput()
         {
@@ -40,21 +43,18 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
-                string username = usernameTb.Text;
+                category = loginAsLbl.Text;
+                username = usernameTb.Text;
                 string password = passwordTb.Text;
-
-                query = "SELECT username, email, password FROM User_account WHERE category='"+loginAsLbl.Text+"'";
-                SqlDataReader reader = DbClient.query_reader(query);
-                while (reader.Read())
+                if(checkUserDetails(username, password) == true)
                 {
-                    if ((username.Equals(reader["username"].ToString()) && password.Equals(reader["password"].ToString())) ||
-                        (username.Equals(reader["email"].ToString()) && password.Equals(reader["password"].ToString())))
-                    {
-                        Console.WriteLine("User is correct");
-                        break;
-                    }
+                    Login login = (Login)Application.OpenForms["Login"];
+                    login.Hide();
+
+                    Home home = new Home();
+                    home.Show();
                 }
-                reader.Close();
+                
             }
             catch(Exception ex)
             {
@@ -78,6 +78,29 @@ namespace Perfect_Peace_System.Pages
         {
             OpenNewPage openNewPage = new OpenNewPage();
             openNewPage.OpenChildForm(new Pages.CreateAccount(), bgPanel);
+        }
+
+        private bool checkUserDetails(string usrname, string password)
+        {
+            bool value = false;
+            query = "SELECT username, email, password FROM User_account WHERE category='" + loginAsLbl.Text + "'";
+            SqlDataReader reader = DbClient.query_reader(query);
+            while (reader.Read())
+            {
+                if ((usrname.Equals(reader["username"].ToString()) && password.Equals(reader["password"].ToString())) ||
+                    (usrname.Equals(reader["email"].ToString()) && password.Equals(reader["password"].ToString())))
+                {
+                    value = true;
+                    break;
+                }
+            }
+            reader.Close();
+            return value;
+        }
+
+        private void login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

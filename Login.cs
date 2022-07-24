@@ -63,7 +63,7 @@ namespace Perfect_Peace_System
             DialogResult result = MessageBox.Show(message, "", action);
             if (result == DialogResult.Yes)
             {
-                this.Close();
+                Application.Exit();
             }
         }
     }

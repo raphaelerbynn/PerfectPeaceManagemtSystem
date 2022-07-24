@@ -20,9 +20,9 @@ namespace Perfect_Peace_System.Pages
             Person parent = new Parent();
             InitializeComponent();
 
-            showParentDataView.ColumnHeadersDefaultCellStyle.BackColor = Form1.themeColor;
-            showParentDataView.RowsDefaultCellStyle.BackColor = Form1.cellColor;
-            showParentDataView.BackgroundColor = Form1.foreColor;
+            showParentDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            showParentDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            showParentDataView.BackgroundColor = Home.foreColor;
             
             columnArrangement();
             
