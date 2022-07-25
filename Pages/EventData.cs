@@ -19,19 +19,46 @@ namespace Perfect_Peace_System.Pages
             eventDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
             eventDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
             eventDataView.BackgroundColor = Home.foreColor;
-
+            bgPanel.BackColor = Home.foreColor;
+            addEventLink.LinkColor = Home.themeColor;
             populateEventData();
         }
 
         private void classDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            try
+            {
+                DataGridViewRow row = eventDataView.Rows[e.RowIndex];
+                string id = row.Cells["id"].Value.ToString();
+                if (eventDataView.Columns[e.ColumnIndex].Name == "delete" && e.RowIndex >= 0)
+                {
+                    string message = "Do you want this event?";
+                    MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, "", deleteAction);
+                    if (result == DialogResult.Yes)
+                    {
+                        eventDataView.Rows.RemoveAt(e.RowIndex);
+                        query = "DELETE FROM Event WHERE event_id='" + id + "'";
+                        DbClient.query_execute(query);
+                        MessageBox.Show("Event deleted from system");
+                    }
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void populateEventData()
         {
             query = "SELECT event_id, name, description, FORMAT(date, 'dd-MM-yyyy') AS date, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time FROM Event";
             DbClient.dataGridFill(eventDataView, query);
+        }
+
+        private void addEventLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            OpenNewPage openNewPage = new OpenNewPage();
+            openNewPage.OpenChildForm(new Pages.AddEvent(), bgPanel);
         }
     }
 }

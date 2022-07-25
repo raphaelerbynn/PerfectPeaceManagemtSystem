@@ -42,12 +42,14 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.addEventLink = new System.Windows.Forms.LinkLabel();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // bgPanel
             // 
+            this.bgPanel.Controls.Add(this.addEventLink);
             this.bgPanel.Controls.Add(this.eventDataView);
             this.bgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bgPanel.Location = new System.Drawing.Point(0, 0);
@@ -59,6 +61,9 @@
             // 
             this.eventDataView.AllowUserToAddRows = false;
             this.eventDataView.AllowUserToDeleteRows = false;
+            this.eventDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.eventDataView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.eventDataView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.eventDataView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -84,13 +89,12 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.eventDataView.DefaultCellStyle = dataGridViewCellStyle3;
-            this.eventDataView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.eventDataView.EnableHeadersVisualStyles = false;
-            this.eventDataView.Location = new System.Drawing.Point(0, 0);
+            this.eventDataView.Location = new System.Drawing.Point(0, 28);
             this.eventDataView.Name = "eventDataView";
             this.eventDataView.ReadOnly = true;
             this.eventDataView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -107,7 +111,7 @@
             dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.eventDataView.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.eventDataView.RowTemplate.Height = 30;
-            this.eventDataView.Size = new System.Drawing.Size(811, 508);
+            this.eventDataView.Size = new System.Drawing.Size(811, 480);
             this.eventDataView.TabIndex = 1;
             this.eventDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.classDataView_CellContentClick);
             // 
@@ -166,6 +170,19 @@
             this.delete.ReadOnly = true;
             this.delete.Width = 50;
             // 
+            // addEventLink
+            // 
+            this.addEventLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addEventLink.AutoSize = true;
+            this.addEventLink.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEventLink.Location = new System.Drawing.Point(730, 9);
+            this.addEventLink.Name = "addEventLink";
+            this.addEventLink.Size = new System.Drawing.Size(69, 17);
+            this.addEventLink.TabIndex = 2;
+            this.addEventLink.TabStop = true;
+            this.addEventLink.Text = "Add Event";
+            this.addEventLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.addEventLink_LinkClicked);
+            // 
             // EventData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -175,6 +192,7 @@
             this.Name = "EventData";
             this.Text = "EventData";
             this.bgPanel.ResumeLayout(false);
+            this.bgPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventDataView)).EndInit();
             this.ResumeLayout(false);
 
@@ -190,5 +208,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private System.Windows.Forms.LinkLabel addEventLink;
     }
 }

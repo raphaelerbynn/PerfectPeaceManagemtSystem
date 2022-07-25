@@ -269,15 +269,6 @@ namespace Perfect_Peace_System
             openNewPage.OpenChildForm(new Pages.Dashboard(), panelView);
         }
 
-        private void eventsBtn_Click(object sender, EventArgs e)
-        {
-            ActivateBtn(sender);
-            addStntBtn.Visible = true;
-            addStntBtn.Text = "Add Event";
-            titleLbl.Text = "EVENTS";
-            openNewPage.OpenChildForm(new Pages.AddEvent(), panelView);
-        }
-
         private void feesBtn_Click(object sender, EventArgs e)
         {
             ActivateBtn(sender);
