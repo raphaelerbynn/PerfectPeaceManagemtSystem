@@ -32,7 +32,7 @@ namespace Perfect_Peace_System.Pages
             eventPanel.BackColor = Home.themeColor;
             feesListView.BackColor = Home.foreColor;
             eventListView.BackColor = Home.foreColor;
-            feesLink.LinkColor = Home.foreColor;
+            feesLbl.ForeColor = Home.foreColor;
             eventLink.LinkColor = Home.foreColor;
             getTotals();
             populateEvents();
@@ -43,6 +43,13 @@ namespace Perfect_Peace_System.Pages
             if(LoginInput.category.Equals("Class Teacher"))
             {
                 teacherPanel.Enabled = false;
+            }
+
+            if (LoginInput.category.Equals("Accountant"))
+            {
+                studentPanel.Enabled = false;
+                teacherPanel.Enabled = false;
+                classPanel.Enabled = false;
             }
         }
 
@@ -186,6 +193,18 @@ namespace Perfect_Peace_System.Pages
         {
             this.Close();
             openNewPage.OpenChildForm(new Pages.ClassData(), Home.displayPanel);
+        }
+
+        private void feesLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            openNewPage.OpenChildForm(new Pages.FeesData(), Home.displayPanel);
+        }
+
+        private void eventLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            openNewPage.OpenChildForm(new Pages.EventData(), Home.displayPanel);
         }
     }
 }

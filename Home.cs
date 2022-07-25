@@ -247,6 +247,7 @@ namespace Perfect_Peace_System
             addStntBtn.Visible = true;
             titleLbl.Text = "PARENTS";
             addStntBtn.Text = "Send Message";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
         }
 
         private void classesBtn_Click(object sender, EventArgs e)
@@ -255,6 +256,7 @@ namespace Perfect_Peace_System
             addStntBtn.Visible = true;
             addStntBtn.Text = "Add Class";
             titleLbl.Text = "CLASSROOMS";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
             openNewPage.OpenChildForm(new Pages.ClassData(), panelView);
         }
 
