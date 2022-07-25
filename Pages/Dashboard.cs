@@ -27,9 +27,10 @@ namespace Perfect_Peace_System.Pages
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;
             Resolution objFormResizer = new Resolution();
             objFormResizer.ResizeForm(this, screenHeight, screenWidth);
-            panelBg.BackColor = Home.themeColor;
+            panelBg.BackColor = Home.foreColor;
             getTotals();
             populateEvents();
+            populateFees();
             loadDataToDounutChat();
         }
 
@@ -57,27 +58,38 @@ namespace Perfect_Peace_System.Pages
 
         private void populateEvents()
         {
-            eventListView.Columns.Clear();
-            eventListView.Items.Clear();
             eventListView.View = View.Details;
-
-            eventListView.Columns.Add("Name");
-            eventListView.Columns.Add("Description");
-            eventListView.Columns.Add("Time");
-            eventListView.Columns.Add("Date");
-
             query = "SELECT TOP 5 * FROM Event ORDER BY event_id DESC";
             SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())
             {
                 ListViewItem item = new ListViewItem(reader[1].ToString());
-                item.SubItems.Add(reader[2].ToString());
                 item.SubItems.Add(reader[4].ToString());
                 item.SubItems.Add(reader[3].ToString());
                 eventListView.Items.Add(item);
             }
             reader.Close();
+        }
 
+        private void populateFees()
+        {
+            feesListView.View = View.Details;
+            query = "SELECT * FROM Student  WHERE fees_owing>0 ORDER BY fees_owing DESC";
+            SqlDataReader reader = DbClient.query_reader(query);
+            while (reader.Read())
+            {
+                ListViewItem item = new ListViewItem(reader["f_name"].ToString() + " " + reader["l_name"].ToString());
+                item.SubItems.Add(reader["class"].ToString());
+                item.SubItems.Add(reader["fees_owing"].ToString());
+                item.SubItems[2].ForeColor = Color.Red;
+
+                item.SubItems[0].Font = new Font("Calibri", 12, FontStyle.Bold);
+                item.SubItems[1].Font = new Font("Calibri", 12, FontStyle.Bold);
+                item.SubItems[2].Font = new Font("Calibri", 12, FontStyle.Bold);
+                item.UseItemStyleForSubItems = false;
+                feesListView.Items.Add(item);
+            }
+            reader.Close();
         }
 
         private void loadDataToDounutChat()
@@ -122,11 +134,6 @@ namespace Perfect_Peace_System.Pages
             Console.WriteLine("Test 1");
         }
 
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void chart1_Click(object sender, EventArgs e)
         {
 
@@ -150,6 +157,18 @@ namespace Perfect_Peace_System.Pages
         {
             this.Close();
             openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), Home.displayPanel);
+        }
+        
+        private void teacherPanel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            openNewPage.OpenChildForm(new Pages.TeacherData(), Home.displayPanel);
+        }
+        
+        private void classPanel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            openNewPage.OpenChildForm(new Pages.ClassData(), Home.displayPanel);
         }
     }
 }

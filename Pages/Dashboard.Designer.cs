@@ -28,16 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem(new string[] {
-            ""}, -1, System.Drawing.Color.Empty, System.Drawing.Color.IndianRed, null);
-            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem(new string[] {
-            ""}, -1, System.Drawing.Color.Empty, System.Drawing.SystemColors.HotTrack, null);
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panelBg = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
+            this.feesPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.classChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -57,7 +53,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTotalStnt = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.feesLink = new System.Windows.Forms.LinkLabel();
+            this.feesListView = new System.Windows.Forms.ListView();
+            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.student_class = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.fees = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.eventLink = new System.Windows.Forms.LinkLabel();
             this.panelBg.SuspendLayout();
+            this.feesPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.classChart)).BeginInit();
             this.panel4.SuspendLayout();
@@ -72,7 +75,7 @@
             // panelBg
             // 
             this.panelBg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(21)))), ((int)(((byte)(38)))));
-            this.panelBg.Controls.Add(this.panel8);
+            this.panelBg.Controls.Add(this.feesPanel);
             this.panelBg.Controls.Add(this.panel3);
             this.panelBg.Controls.Add(this.panel4);
             this.panelBg.Controls.Add(this.panel5);
@@ -84,16 +87,18 @@
             this.panelBg.Size = new System.Drawing.Size(941, 588);
             this.panelBg.TabIndex = 0;
             // 
-            // panel8
+            // feesPanel
             // 
-            this.panel8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.feesPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel8.AutoSize = true;
-            this.panel8.BackColor = System.Drawing.Color.Silver;
-            this.panel8.Location = new System.Drawing.Point(12, 373);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(540, 198);
-            this.panel8.TabIndex = 1;
+            this.feesPanel.AutoSize = true;
+            this.feesPanel.BackColor = System.Drawing.Color.Silver;
+            this.feesPanel.Controls.Add(this.feesListView);
+            this.feesPanel.Controls.Add(this.feesLink);
+            this.feesPanel.Location = new System.Drawing.Point(512, 97);
+            this.feesPanel.Name = "feesPanel";
+            this.feesPanel.Size = new System.Drawing.Size(417, 479);
+            this.feesPanel.TabIndex = 1;
             // 
             // panel3
             // 
@@ -105,11 +110,14 @@
             this.panel3.Location = new System.Drawing.Point(12, 97);
             this.panel3.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(540, 270);
+            this.panel3.Size = new System.Drawing.Size(482, 270);
             this.panel3.TabIndex = 1;
             // 
             // classChart
             // 
+            this.classChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.classChart.BackColor = System.Drawing.Color.WhiteSmoke;
             this.classChart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.classChart.BackSecondaryColor = System.Drawing.Color.White;
@@ -119,82 +127,82 @@
             this.classChart.BorderSkin.BorderColor = System.Drawing.Color.Transparent;
             this.classChart.BorderSkin.PageColor = System.Drawing.Color.Transparent;
             this.classChart.BorderSkin.SkinStyle = System.Windows.Forms.DataVisualization.Charting.BorderSkinStyle.Emboss;
-            chartArea2.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
-            chartArea2.AxisX.IsStartedFromZero = false;
-            chartArea2.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisX.LabelStyle.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
-            chartArea2.AxisX.LabelStyle.IsEndLabelVisible = false;
-            chartArea2.AxisX.LineColor = System.Drawing.Color.Transparent;
-            chartArea2.AxisX.Title = "Class name";
-            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisY.IsMarksNextToAxis = false;
-            chartArea2.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.AxisY.LineColor = System.Drawing.Color.Transparent;
-            chartArea2.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea2.AxisY.LineWidth = 0;
-            chartArea2.AxisY.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.None;
-            chartArea2.AxisY.ScaleBreakStyle.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            chartArea2.AxisY.ScaleBreakStyle.Spacing = 1D;
-            chartArea2.AxisY.Title = "Number of students";
-            chartArea2.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea2.BackColor = System.Drawing.Color.Transparent;
-            chartArea2.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
-            chartArea2.BorderColor = System.Drawing.Color.Transparent;
-            chartArea2.BorderWidth = 0;
-            chartArea2.Name = "ChartArea1";
-            this.classChart.ChartAreas.Add(chartArea2);
-            this.classChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.ItemColumnSpacing = 100;
-            legend2.Name = "Legend1";
-            this.classChart.Legends.Add(legend2);
+            chartArea6.AxisX.Enabled = System.Windows.Forms.DataVisualization.Charting.AxisEnabled.True;
+            chartArea6.AxisX.IsStartedFromZero = false;
+            chartArea6.AxisX.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea6.AxisX.LabelStyle.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Auto;
+            chartArea6.AxisX.LabelStyle.IsEndLabelVisible = false;
+            chartArea6.AxisX.LineColor = System.Drawing.Color.Transparent;
+            chartArea6.AxisX.Title = "Class name";
+            chartArea6.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea6.AxisY.IsMarksNextToAxis = false;
+            chartArea6.AxisY.LabelStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea6.AxisY.LineColor = System.Drawing.Color.Transparent;
+            chartArea6.AxisY.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea6.AxisY.LineWidth = 0;
+            chartArea6.AxisY.ScaleBreakStyle.BreakLineStyle = System.Windows.Forms.DataVisualization.Charting.BreakLineStyle.None;
+            chartArea6.AxisY.ScaleBreakStyle.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            chartArea6.AxisY.ScaleBreakStyle.Spacing = 1D;
+            chartArea6.AxisY.Title = "Number of students";
+            chartArea6.AxisY.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea6.BackColor = System.Drawing.Color.Transparent;
+            chartArea6.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.TopBottom;
+            chartArea6.BorderColor = System.Drawing.Color.Transparent;
+            chartArea6.BorderWidth = 0;
+            chartArea6.Name = "ChartArea1";
+            this.classChart.ChartAreas.Add(chartArea6);
+            legend6.ItemColumnSpacing = 100;
+            legend6.Name = "Legend1";
+            this.classChart.Legends.Add(legend6);
             this.classChart.Location = new System.Drawing.Point(0, 0);
             this.classChart.Name = "classChart";
             this.classChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series2.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
-            series2.BorderColor = System.Drawing.Color.Transparent;
-            series2.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            series2.BorderWidth = 0;
-            series2.ChartArea = "ChartArea1";
-            series2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
-            series2.IsValueShownAsLabel = true;
-            series2.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
-            series2.LabelBorderWidth = 0;
-            series2.Legend = "Legend1";
-            series2.MarkerSize = 0;
-            series2.Name = "Class";
-            series2.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            this.classChart.Series.Add(series2);
-            this.classChart.Size = new System.Drawing.Size(540, 270);
+            series6.BackHatchStyle = System.Windows.Forms.DataVisualization.Charting.ChartHatchStyle.BackwardDiagonal;
+            series6.BorderColor = System.Drawing.Color.Transparent;
+            series6.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            series6.BorderWidth = 0;
+            series6.ChartArea = "ChartArea1";
+            series6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Italic);
+            series6.IsValueShownAsLabel = true;
+            series6.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.NotSet;
+            series6.LabelBorderWidth = 0;
+            series6.Legend = "Legend1";
+            series6.MarkerSize = 0;
+            series6.Name = "Class";
+            series6.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
+            this.classChart.Series.Add(series6);
+            this.classChart.Size = new System.Drawing.Size(482, 270);
             this.classChart.TabIndex = 0;
             this.classChart.Text = "chart1";
             this.classChart.Click += new System.EventHandler(this.chart1_Click);
             // 
             // panel4
             // 
-            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.panel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel4.BackColor = System.Drawing.Color.Silver;
             this.panel4.Controls.Add(this.eventListView);
-            this.panel4.Location = new System.Drawing.Point(571, 97);
+            this.panel4.Controls.Add(this.eventLink);
+            this.panel4.Location = new System.Drawing.Point(12, 373);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(353, 474);
+            this.panel4.Size = new System.Drawing.Size(482, 203);
             this.panel4.TabIndex = 1;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // eventListView
             // 
+            this.eventListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.eventListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.eventName,
             this.eventDate,
             this.eventTime});
-            this.eventListView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.eventListView.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventListView.HideSelection = false;
-            this.eventListView.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
-            this.eventListView.Location = new System.Drawing.Point(0, 0);
+            this.eventListView.Location = new System.Drawing.Point(6, 33);
             this.eventListView.Name = "eventListView";
-            this.eventListView.Size = new System.Drawing.Size(353, 167);
+            this.eventListView.Size = new System.Drawing.Size(469, 158);
             this.eventListView.TabIndex = 4;
             this.eventListView.UseCompatibleStateImageBehavior = false;
             this.eventListView.View = System.Windows.Forms.View.Details;
@@ -202,17 +210,17 @@
             // eventName
             // 
             this.eventName.Text = "Name";
-            this.eventName.Width = 183;
+            this.eventName.Width = 210;
             // 
             // eventDate
             // 
             this.eventDate.Text = "Date";
-            this.eventDate.Width = 88;
+            this.eventDate.Width = 130;
             // 
             // eventTime
             // 
             this.eventTime.Text = "Time";
-            this.eventTime.Width = 64;
+            this.eventTime.Width = 130;
             // 
             // panel5
             // 
@@ -226,6 +234,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(290, 67);
             this.panel5.TabIndex = 1;
+            this.panel5.Click += new System.EventHandler(this.classPanel_Click);
             // 
             // pictureBox3
             // 
@@ -235,6 +244,7 @@
             this.pictureBox3.Size = new System.Drawing.Size(56, 50);
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.classPanel_Click);
             // 
             // lblTotoalRooms
             // 
@@ -247,6 +257,7 @@
             this.lblTotoalRooms.TabIndex = 3;
             this.lblTotoalRooms.Text = "0";
             this.lblTotoalRooms.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblTotoalRooms.Click += new System.EventHandler(this.classPanel_Click);
             // 
             // label2
             // 
@@ -259,6 +270,7 @@
             this.label2.Size = new System.Drawing.Size(117, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Total Classrooms";
+            this.label2.Click += new System.EventHandler(this.classPanel_Click);
             // 
             // panel6
             // 
@@ -272,7 +284,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(290, 67);
             this.panel6.TabIndex = 1;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            this.panel6.Click += new System.EventHandler(this.teacherPanel_Click);
             // 
             // pictureBox2
             // 
@@ -282,6 +294,7 @@
             this.pictureBox2.Size = new System.Drawing.Size(56, 50);
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.teacherPanel_Click);
             // 
             // label3
             // 
@@ -289,11 +302,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(172, 9);
+            this.label3.Location = new System.Drawing.Point(196, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 17);
+            this.label3.Size = new System.Drawing.Size(80, 17);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Total Teachers";
+            this.label3.Text = "Total Staffs";
+            this.label3.Click += new System.EventHandler(this.teacherPanel_Click);
             // 
             // lbltotalTeachers
             // 
@@ -306,6 +320,7 @@
             this.lbltotalTeachers.TabIndex = 2;
             this.lbltotalTeachers.Text = "0";
             this.lbltotalTeachers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbltotalTeachers.Click += new System.EventHandler(this.teacherPanel_Click);
             // 
             // panel2
             // 
@@ -319,7 +334,6 @@
             this.panel2.Size = new System.Drawing.Size(290, 67);
             this.panel2.TabIndex = 0;
             this.panel2.Click += new System.EventHandler(this.studentPanel_Click);
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // pictureBox1
             // 
@@ -357,6 +371,64 @@
             this.label1.Text = "Total Students";
             this.label1.Click += new System.EventHandler(this.studentPanel_Click);
             // 
+            // feesLink
+            // 
+            this.feesLink.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.feesLink.AutoSize = true;
+            this.feesLink.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesLink.Location = new System.Drawing.Point(139, 12);
+            this.feesLink.Name = "feesLink";
+            this.feesLink.Size = new System.Drawing.Size(130, 19);
+            this.feesLink.TabIndex = 0;
+            this.feesLink.TabStop = true;
+            this.feesLink.Text = "Those Owing Fees";
+            // 
+            // feesListView
+            // 
+            this.feesListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.feesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.name,
+            this.student_class,
+            this.fees});
+            this.feesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesListView.HideSelection = false;
+            this.feesListView.Location = new System.Drawing.Point(12, 38);
+            this.feesListView.Name = "feesListView";
+            this.feesListView.Size = new System.Drawing.Size(393, 429);
+            this.feesListView.TabIndex = 1;
+            this.feesListView.TileSize = new System.Drawing.Size(170, 30);
+            this.feesListView.UseCompatibleStateImageBehavior = false;
+            this.feesListView.View = System.Windows.Forms.View.Details;
+            // 
+            // name
+            // 
+            this.name.Text = "Name";
+            this.name.Width = 220;
+            // 
+            // student_class
+            // 
+            this.student_class.Text = "Class";
+            this.student_class.Width = 120;
+            // 
+            // fees
+            // 
+            this.fees.Text = "Fees";
+            this.fees.Width = 112;
+            // 
+            // eventLink
+            // 
+            this.eventLink.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.eventLink.AutoSize = true;
+            this.eventLink.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventLink.Location = new System.Drawing.Point(224, 11);
+            this.eventLink.Name = "eventLink";
+            this.eventLink.Size = new System.Drawing.Size(54, 19);
+            this.eventLink.TabIndex = 0;
+            this.eventLink.TabStop = true;
+            this.eventLink.Text = "Events";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,9 +439,12 @@
             this.Text = "Dashboard";
             this.panelBg.ResumeLayout(false);
             this.panelBg.PerformLayout();
+            this.feesPanel.ResumeLayout(false);
+            this.feesPanel.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.classChart)).EndInit();
             this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -391,7 +466,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel feesPanel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
@@ -406,5 +481,11 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataVisualization.Charting.Chart classChart;
+        private System.Windows.Forms.LinkLabel feesLink;
+        private System.Windows.Forms.ListView feesListView;
+        private System.Windows.Forms.ColumnHeader name;
+        private System.Windows.Forms.ColumnHeader student_class;
+        private System.Windows.Forms.ColumnHeader fees;
+        private System.Windows.Forms.LinkLabel eventLink;
     }
 }

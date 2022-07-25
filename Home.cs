@@ -36,9 +36,9 @@ namespace Perfect_Peace_System
             _studentBtn = studentBtn;
             _teachersBtn = teachersBtn;
             _classBtn = classesBtn;
-     
-            openNewPage.OpenChildForm(new Pages.Dashboard(), panelView);
             ActivateBtn(dashboardBtn);
+            openNewPage.OpenChildForm(new Pages.Dashboard(), panelView);
+            
             panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
             user_details();
 
@@ -47,18 +47,14 @@ namespace Perfect_Peace_System
             if(category.Equals("Class Teacher"))
             {
                 addStntBtn.Visible = false;
-                studentBtn.Enabled = false;
                 teachersBtn.Enabled = false;
-                parentsBtn.Enabled = false;
                 classesBtn.Enabled = false;
                 feesBtn.Enabled = false;
                 accountBtn.Enabled = false;
                 payrollBtn.Enabled = false;
                 subjectBtn.Enabled = false;
 
-                stu_pic.Enabled = false;
                 teach_pic.Enabled = false;
-                parent_pic.Enabled = false;
                 class_pic.Enabled = false;
                 feees_pic.Enabled = false;
                 acc_pic.Enabled = false;
