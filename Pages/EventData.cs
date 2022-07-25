@@ -22,6 +22,12 @@ namespace Perfect_Peace_System.Pages
             bgPanel.BackColor = Home.foreColor;
             addEventLink.LinkColor = Home.themeColor;
             populateEventData();
+
+            if(Pages.LoginInput.category.Equals("Accountant") || Pages.LoginInput.category.Equals("Class Teacher"))
+            {
+                addEventLink.Enabled = false;
+                delete.Visible = false;
+            }
         }
 
         private void classDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
