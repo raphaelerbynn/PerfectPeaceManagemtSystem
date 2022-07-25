@@ -28,10 +28,22 @@ namespace Perfect_Peace_System.Pages
             Resolution objFormResizer = new Resolution();
             objFormResizer.ResizeForm(this, screenHeight, screenWidth);
             panelBg.BackColor = Home.foreColor;
+            feesPanel.BackColor = Home.themeColor;
+            eventPanel.BackColor = Home.themeColor;
+            feesListView.BackColor = Home.foreColor;
+            eventListView.BackColor = Home.foreColor;
+            feesLink.LinkColor = Home.foreColor;
+            eventLink.LinkColor = Home.foreColor;
             getTotals();
             populateEvents();
             populateFees();
             loadDataToDounutChat();
+
+            //accessibility
+            if(LoginInput.category.Equals("Class Teacher"))
+            {
+                teacherPanel.Enabled = false;
+            }
         }
 
         private void getTotals()
@@ -59,13 +71,18 @@ namespace Perfect_Peace_System.Pages
         private void populateEvents()
         {
             eventListView.View = View.Details;
-            query = "SELECT TOP 5 * FROM Event ORDER BY event_id DESC";
+            query = "SELECT TOP 5 name, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time, FORMAT(date, 'dd-MM-yyyy') AS date FROM Event ORDER BY event_id DESC";
             SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())
             {
-                ListViewItem item = new ListViewItem(reader[1].ToString());
-                item.SubItems.Add(reader[4].ToString());
-                item.SubItems.Add(reader[3].ToString());
+                ListViewItem item = new ListViewItem(reader["name"].ToString());
+                item.SubItems.Add(reader["date"].ToString());
+                item.SubItems.Add(reader["time"].ToString());
+
+                item.SubItems[0].Font = new Font("Calibri", 12, FontStyle.Bold);
+                item.SubItems[1].Font = new Font("Calibri", 12, FontStyle.Bold);
+                item.SubItems[2].Font = new Font("Calibri", 12, FontStyle.Bold);
+                item.UseItemStyleForSubItems = false;
                 eventListView.Items.Add(item);
             }
             reader.Close();
