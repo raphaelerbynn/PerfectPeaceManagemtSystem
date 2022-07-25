@@ -16,6 +16,7 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
             getTime();
+            bgPanel.BackColor = Home.foreColor;
         }
 
         public void getTime()
