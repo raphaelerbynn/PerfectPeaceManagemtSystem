@@ -43,7 +43,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.showDataPanel = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.topPanel = new System.Windows.Forms.Panel();
             this.searchBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -60,13 +60,13 @@
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.showDataPanel.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // showDataPanel
             // 
-            this.showDataPanel.Controls.Add(this.panel1);
+            this.showDataPanel.Controls.Add(this.topPanel);
             this.showDataPanel.Controls.Add(this.studentDataView);
             this.showDataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.showDataPanel.Location = new System.Drawing.Point(0, 0);
@@ -74,26 +74,26 @@
             this.showDataPanel.Size = new System.Drawing.Size(1102, 704);
             this.showDataPanel.TabIndex = 0;
             // 
-            // panel1
+            // topPanel
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.topPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.searchBtn);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.searchCb);
-            this.panel1.Controls.Add(this.searchTextBox);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1102, 59);
-            this.panel1.TabIndex = 5;
+            this.topPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.topPanel.Controls.Add(this.searchBtn);
+            this.topPanel.Controls.Add(this.label2);
+            this.topPanel.Controls.Add(this.label1);
+            this.topPanel.Controls.Add(this.searchCb);
+            this.topPanel.Controls.Add(this.searchTextBox);
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(1102, 59);
+            this.topPanel.TabIndex = 5;
             // 
             // searchBtn
             // 
             this.searchBtn.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.searchBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchBtn.Location = new System.Drawing.Point(927, 20);
+            this.searchBtn.Location = new System.Drawing.Point(964, 20);
             this.searchBtn.Name = "searchBtn";
             this.searchBtn.Size = new System.Drawing.Size(75, 23);
             this.searchBtn.TabIndex = 4;
@@ -105,9 +105,10 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(669, 30);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(594, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(22, 13);
+            this.label2.Size = new System.Drawing.Size(31, 20);
             this.label2.TabIndex = 3;
             this.label2.Text = "By:";
             // 
@@ -115,9 +116,10 @@
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(616, 30);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(511, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(64, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Search:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -126,23 +128,25 @@
             // 
             this.searchCb.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.searchCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchCb.FormattingEnabled = true;
             this.searchCb.Items.AddRange(new object[] {
             "Name",
             "Age",
             "Class",
             "Gender"});
-            this.searchCb.Location = new System.Drawing.Point(694, 22);
+            this.searchCb.Location = new System.Drawing.Point(631, 18);
             this.searchCb.Name = "searchCb";
-            this.searchCb.Size = new System.Drawing.Size(121, 21);
+            this.searchCb.Size = new System.Drawing.Size(94, 28);
             this.searchCb.TabIndex = 1;
             // 
             // searchTextBox
             // 
             this.searchTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.searchTextBox.Location = new System.Drawing.Point(821, 22);
+            this.searchTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchTextBox.Location = new System.Drawing.Point(731, 18);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(100, 20);
+            this.searchTextBox.Size = new System.Drawing.Size(227, 26);
             this.searchTextBox.TabIndex = 0;
             // 
             // studentDataView
@@ -334,8 +338,8 @@
             this.Controls.Add(this.showDataPanel);
             this.Name = "StudentDataDisplay";
             this.showDataPanel.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.topPanel.ResumeLayout(false);
+            this.topPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataView)).EndInit();
             this.ResumeLayout(false);
 
@@ -345,7 +349,7 @@
 
         private System.Windows.Forms.Panel showDataPanel;
         private System.Windows.Forms.DataGridView studentDataView;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox searchCb;
         private System.Windows.Forms.TextBox searchTextBox;

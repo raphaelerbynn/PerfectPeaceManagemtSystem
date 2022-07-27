@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,10 +29,28 @@ namespace Perfect_Peace_System.Pages
             studentDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
             studentDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
             studentDataView.BackgroundColor = Home.foreColor;
+            topPanel.BackColor = Home.foreColor;
+            if (Pages.LoginInput.category.Equals("Administrator"))
+            {
+                student.show_data(studentDataView);
+            }
+            
+            if(Pages.LoginInput.category.Equals("Class Teacher"))
+            {
+                string class_id = "";
+                query = "SELECT class_id FROM Class WHERE teacher_id='" + Pages.LoginInput.teacher_id + "'";
+                SqlDataReader reader = DbClient.query_reader(query);
+                while (reader.Read())
+                {
+                    class_id = reader["class_id"].ToString();
+                }
+                reader.Close();
+                query = "SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student WHERE class_id='"+class_id+"'";
+                DbClient.dataGridFill(studentDataView, query);
+                searchCb.Items.RemoveAt(2);
 
-            student.show_data(studentDataView);
-
-
+                delete.Visible = false;
+            }
         }
 
         

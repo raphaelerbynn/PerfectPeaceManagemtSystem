@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.bgPanel = new System.Windows.Forms.Panel();
+            this.wrongMeesageLbl = new System.Windows.Forms.Label();
+            this.createAccLink = new System.Windows.Forms.LinkLabel();
+            this.viewPassword = new System.Windows.Forms.PictureBox();
+            this.backLbl = new System.Windows.Forms.Label();
             this.passwordTb = new System.Windows.Forms.TextBox();
             this.usernameTb = new System.Windows.Forms.TextBox();
             this.loginBtn = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.loginAsLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.backLbl = new System.Windows.Forms.Label();
-            this.viewPassword = new System.Windows.Forms.PictureBox();
-            this.createAccLink = new System.Windows.Forms.LinkLabel();
-            this.wrongMeesageLbl = new System.Windows.Forms.Label();
+            this.teacher_idLbl = new System.Windows.Forms.Label();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.viewPassword)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             this.bgPanel.Controls.Add(this.usernameTb);
             this.bgPanel.Controls.Add(this.loginBtn);
             this.bgPanel.Controls.Add(this.label2);
+            this.bgPanel.Controls.Add(this.teacher_idLbl);
             this.bgPanel.Controls.Add(this.loginAsLbl);
             this.bgPanel.Controls.Add(this.label1);
             this.bgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -60,6 +62,57 @@
             this.bgPanel.Name = "bgPanel";
             this.bgPanel.Size = new System.Drawing.Size(700, 390);
             this.bgPanel.TabIndex = 0;
+            // 
+            // wrongMeesageLbl
+            // 
+            this.wrongMeesageLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.wrongMeesageLbl.AutoSize = true;
+            this.wrongMeesageLbl.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wrongMeesageLbl.ForeColor = System.Drawing.Color.LightCoral;
+            this.wrongMeesageLbl.Location = new System.Drawing.Point(259, 94);
+            this.wrongMeesageLbl.Name = "wrongMeesageLbl";
+            this.wrongMeesageLbl.Size = new System.Drawing.Size(298, 18);
+            this.wrongMeesageLbl.TabIndex = 46;
+            this.wrongMeesageLbl.Text = "Username/email and password does not match";
+            this.wrongMeesageLbl.Visible = false;
+            // 
+            // createAccLink
+            // 
+            this.createAccLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.createAccLink.AutoSize = true;
+            this.createAccLink.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createAccLink.Location = new System.Drawing.Point(574, 362);
+            this.createAccLink.Name = "createAccLink";
+            this.createAccLink.Size = new System.Drawing.Size(114, 19);
+            this.createAccLink.TabIndex = 45;
+            this.createAccLink.TabStop = true;
+            this.createAccLink.Text = "Create Account";
+            this.createAccLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createAccLink_LinkClicked);
+            // 
+            // viewPassword
+            // 
+            this.viewPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.viewPassword.BackColor = System.Drawing.Color.White;
+            this.viewPassword.Image = global::Perfect_Peace_System.Properties.Resources.view;
+            this.viewPassword.Location = new System.Drawing.Point(541, 176);
+            this.viewPassword.Name = "viewPassword";
+            this.viewPassword.Size = new System.Drawing.Size(29, 19);
+            this.viewPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.viewPassword.TabIndex = 44;
+            this.viewPassword.TabStop = false;
+            this.viewPassword.Tag = "view";
+            this.viewPassword.Click += new System.EventHandler(this.viewPassword_Click);
+            // 
+            // backLbl
+            // 
+            this.backLbl.AutoSize = true;
+            this.backLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backLbl.Location = new System.Drawing.Point(25, 4);
+            this.backLbl.Name = "backLbl";
+            this.backLbl.Size = new System.Drawing.Size(28, 13);
+            this.backLbl.TabIndex = 4;
+            this.backLbl.Text = "<<<";
+            this.backLbl.Click += new System.EventHandler(this.backLbl_Click);
             // 
             // passwordTb
             // 
@@ -126,56 +179,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Username/email:";
             // 
-            // backLbl
+            // teacher_idLbl
             // 
-            this.backLbl.AutoSize = true;
-            this.backLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backLbl.Location = new System.Drawing.Point(25, 4);
-            this.backLbl.Name = "backLbl";
-            this.backLbl.Size = new System.Drawing.Size(28, 13);
-            this.backLbl.TabIndex = 4;
-            this.backLbl.Text = "<<<";
-            this.backLbl.Click += new System.EventHandler(this.backLbl_Click);
-            // 
-            // viewPassword
-            // 
-            this.viewPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.viewPassword.BackColor = System.Drawing.Color.White;
-            this.viewPassword.Image = global::Perfect_Peace_System.Properties.Resources.view;
-            this.viewPassword.Location = new System.Drawing.Point(541, 176);
-            this.viewPassword.Name = "viewPassword";
-            this.viewPassword.Size = new System.Drawing.Size(29, 19);
-            this.viewPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.viewPassword.TabIndex = 44;
-            this.viewPassword.TabStop = false;
-            this.viewPassword.Tag = "view";
-            this.viewPassword.Click += new System.EventHandler(this.viewPassword_Click);
-            // 
-            // createAccLink
-            // 
-            this.createAccLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.createAccLink.AutoSize = true;
-            this.createAccLink.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createAccLink.Location = new System.Drawing.Point(574, 362);
-            this.createAccLink.Name = "createAccLink";
-            this.createAccLink.Size = new System.Drawing.Size(114, 19);
-            this.createAccLink.TabIndex = 45;
-            this.createAccLink.TabStop = true;
-            this.createAccLink.Text = "Create Account";
-            this.createAccLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createAccLink_LinkClicked);
-            // 
-            // wrongMeesageLbl
-            // 
-            this.wrongMeesageLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.wrongMeesageLbl.AutoSize = true;
-            this.wrongMeesageLbl.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.wrongMeesageLbl.ForeColor = System.Drawing.Color.LightCoral;
-            this.wrongMeesageLbl.Location = new System.Drawing.Point(259, 94);
-            this.wrongMeesageLbl.Name = "wrongMeesageLbl";
-            this.wrongMeesageLbl.Size = new System.Drawing.Size(298, 18);
-            this.wrongMeesageLbl.TabIndex = 46;
-            this.wrongMeesageLbl.Text = "Username/email and password does not match";
-            this.wrongMeesageLbl.Visible = false;
+            this.teacher_idLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.teacher_idLbl.AutoSize = true;
+            this.teacher_idLbl.Font = new System.Drawing.Font("Calibri", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teacher_idLbl.Location = new System.Drawing.Point(372, 310);
+            this.teacher_idLbl.Name = "teacher_idLbl";
+            this.teacher_idLbl.Size = new System.Drawing.Size(34, 9);
+            this.teacher_idLbl.TabIndex = 0;
+            this.teacher_idLbl.Text = "teacher_id";
+            this.teacher_idLbl.Visible = false;
             // 
             // LoginInput
             // 
@@ -205,5 +219,6 @@
         private System.Windows.Forms.PictureBox viewPassword;
         private System.Windows.Forms.LinkLabel createAccLink;
         private System.Windows.Forms.Label wrongMeesageLbl;
+        private System.Windows.Forms.Label teacher_idLbl;
     }
 }

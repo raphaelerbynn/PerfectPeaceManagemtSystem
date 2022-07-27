@@ -168,6 +168,7 @@ namespace Perfect_Peace_System
             addStntBtn.Visible = true;
             addStntBtn.Text = "Add Student";
             titleLbl.Text = "STUDENTS";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
         }
 
         private void addStntBtn_Click(object sender, EventArgs e)
@@ -240,9 +241,7 @@ namespace Perfect_Peace_System
 
         private void parentsBtn_Click(object sender, EventArgs e)
         {
-                
-                
-                ActivateBtn(sender);
+            ActivateBtn(sender);
             openNewPage.OpenChildForm(new Pages.ParentsData(), panelView);
             addStntBtn.Visible = true;
             titleLbl.Text = "PARENTS";

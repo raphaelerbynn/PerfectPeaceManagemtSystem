@@ -13,6 +13,7 @@ namespace Perfect_Peace_System.Pages
 {
     public partial class CreateAccount : Form
     {
+        private string teacher_id;
         private List<string> system_keys = new List<string>()
         {
             "master$$$perfect_Peace@2022!",
@@ -38,6 +39,9 @@ namespace Perfect_Peace_System.Pages
                 systemKeyTb.Text = "Not needed";
                 systemKeyTb.PasswordChar = '\0';
                 systemKeyTb.Enabled = false;
+                query = "SELECT [f_name]+' '+[l_name] FROM Teacher";
+                DbClient.query_reader(nameCb, query);
+                nameCb.DropDownStyle = ComboBoxStyle.DropDownList;
             }
         }
 
@@ -68,7 +72,7 @@ namespace Perfect_Peace_System.Pages
                         }
                     }
                 }
-                name = nameTb.Text;
+                name = nameCb.Text;
                 email = emailTb.Text;
                 username = usernameTb.Text;
                 password = passwordTb.Text;
@@ -103,8 +107,17 @@ namespace Perfect_Peace_System.Pages
                 DialogResult result = MessageBox.Show("Confirm to create this account", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    query = "INSERT INTO User_account(name, username, email, category, password)" +
-                        "VALUES('" + name + "', '" + username + "', '" + email + "', '" + category + "', '" + password + "')";
+                    if (category.Equals("Class Teacher"))
+                    {
+                        teacher_id = DbClient.getIdFromCombo("SELECT teacher_id FROM Teacher", nameCb.SelectedItem.ToString()).ToString();
+                        query = "INSERT INTO User_account(name, username, email, category, password, teacher_id)" +
+                            "VALUES('" + name + "', '" + username + "', '" + email + "', '" + category + "', '" + password + "', '" + teacher_id + "')";
+                    }
+                    else
+                    {
+                        query = "INSERT INTO User_account(name, username, email, category, password)" +
+                            "VALUES('" + name + "', '" + username + "', '" + email + "', '" + category + "', '" + password + "')";
+                    }
                     DbClient.query_execute(query);
 
                     MessageBox.Show("Account Created Successfully");

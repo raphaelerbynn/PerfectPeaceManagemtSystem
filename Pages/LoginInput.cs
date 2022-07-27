@@ -16,6 +16,7 @@ namespace Perfect_Peace_System.Pages
         private string query;
         public static string username;
         public static string category;
+        public static string teacher_id;
         public static bool logged_in = false;
 
         public LoginInput()
@@ -116,7 +117,7 @@ namespace Perfect_Peace_System.Pages
         private bool checkUserDetails(string usrname, string password)
         {
             bool value = false;
-            query = "SELECT username, email, password FROM User_account WHERE category='" + loginAsLbl.Text + "'";
+            query = "SELECT username, email, password, teacher_id FROM User_account WHERE category='" + loginAsLbl.Text + "'";
             SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())
             {
@@ -124,6 +125,8 @@ namespace Perfect_Peace_System.Pages
                     (usrname.Equals(reader["email"].ToString()) && password.Equals(reader["password"].ToString())))
                 {
                     value = true;
+                    teacher_idLbl.Text = reader["teacher_id"].ToString();
+                    teacher_id = reader["teacher_id"].ToString();
                     break;
                 }
             }

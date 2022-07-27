@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.bgPanel = new System.Windows.Forms.Panel();
-            this.createAccBtn = new System.Windows.Forms.Button();
-            this.backLbl = new System.Windows.Forms.Label();
-            this.adminPasswordTb = new System.Windows.Forms.TextBox();
-            this.adminPasswordLbl = new System.Windows.Forms.Label();
-            this.nameTb = new System.Windows.Forms.TextBox();
+            this.viewAdminPassword = new System.Windows.Forms.PictureBox();
+            this.viewSysKey = new System.Windows.Forms.PictureBox();
+            this.viewConfirmPassword = new System.Windows.Forms.PictureBox();
+            this.viewPassword = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.emailTb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -46,24 +45,25 @@
             this.systemKeyTb = new System.Windows.Forms.TextBox();
             this.systemKeyLbl = new System.Windows.Forms.Label();
             this.loginAsLbl = new System.Windows.Forms.Label();
-            this.viewPassword = new System.Windows.Forms.PictureBox();
-            this.viewConfirmPassword = new System.Windows.Forms.PictureBox();
-            this.viewSysKey = new System.Windows.Forms.PictureBox();
-            this.viewAdminPassword = new System.Windows.Forms.PictureBox();
+            this.adminPasswordTb = new System.Windows.Forms.TextBox();
+            this.adminPasswordLbl = new System.Windows.Forms.Label();
+            this.backLbl = new System.Windows.Forms.Label();
+            this.createAccBtn = new System.Windows.Forms.Button();
+            this.nameCb = new System.Windows.Forms.ComboBox();
             this.bgPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.viewPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewConfirmPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewSysKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewAdminPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewSysKey)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewConfirmPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewPassword)).BeginInit();
             this.SuspendLayout();
             // 
             // bgPanel
             // 
+            this.bgPanel.Controls.Add(this.nameCb);
             this.bgPanel.Controls.Add(this.viewAdminPassword);
             this.bgPanel.Controls.Add(this.viewSysKey);
             this.bgPanel.Controls.Add(this.viewConfirmPassword);
             this.bgPanel.Controls.Add(this.viewPassword);
-            this.bgPanel.Controls.Add(this.nameTb);
             this.bgPanel.Controls.Add(this.label5);
             this.bgPanel.Controls.Add(this.emailTb);
             this.bgPanel.Controls.Add(this.label4);
@@ -86,59 +86,61 @@
             this.bgPanel.Size = new System.Drawing.Size(700, 390);
             this.bgPanel.TabIndex = 0;
             // 
-            // createAccBtn
+            // viewAdminPassword
             // 
-            this.createAccBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.createAccBtn.AutoSize = true;
-            this.createAccBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.createAccBtn.Location = new System.Drawing.Point(317, 331);
-            this.createAccBtn.Name = "createAccBtn";
-            this.createAccBtn.Size = new System.Drawing.Size(118, 29);
-            this.createAccBtn.TabIndex = 1;
-            this.createAccBtn.Text = "Create Account";
-            this.createAccBtn.UseVisualStyleBackColor = true;
-            this.createAccBtn.Click += new System.EventHandler(this.createAccBtn_Click);
+            this.viewAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.viewAdminPassword.BackColor = System.Drawing.Color.White;
+            this.viewAdminPassword.Image = global::Perfect_Peace_System.Properties.Resources.view;
+            this.viewAdminPassword.Location = new System.Drawing.Point(544, 294);
+            this.viewAdminPassword.Name = "viewAdminPassword";
+            this.viewAdminPassword.Size = new System.Drawing.Size(29, 19);
+            this.viewAdminPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.viewAdminPassword.TabIndex = 43;
+            this.viewAdminPassword.TabStop = false;
+            this.viewAdminPassword.Tag = "view";
+            this.viewAdminPassword.Click += new System.EventHandler(this.viewAdminPassword_Click);
             // 
-            // backLbl
+            // viewSysKey
             // 
-            this.backLbl.AutoSize = true;
-            this.backLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backLbl.Location = new System.Drawing.Point(24, 4);
-            this.backLbl.Name = "backLbl";
-            this.backLbl.Size = new System.Drawing.Size(28, 13);
-            this.backLbl.TabIndex = 3;
-            this.backLbl.Text = "<<<";
-            this.backLbl.Click += new System.EventHandler(this.backLbl_Click);
+            this.viewSysKey.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.viewSysKey.BackColor = System.Drawing.Color.White;
+            this.viewSysKey.Image = global::Perfect_Peace_System.Properties.Resources.view;
+            this.viewSysKey.Location = new System.Drawing.Point(545, 254);
+            this.viewSysKey.Name = "viewSysKey";
+            this.viewSysKey.Size = new System.Drawing.Size(29, 19);
+            this.viewSysKey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.viewSysKey.TabIndex = 43;
+            this.viewSysKey.TabStop = false;
+            this.viewSysKey.Tag = "view";
+            this.viewSysKey.Click += new System.EventHandler(this.viewSysKey_Click);
             // 
-            // adminPasswordTb
+            // viewConfirmPassword
             // 
-            this.adminPasswordTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.adminPasswordTb.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminPasswordTb.Location = new System.Drawing.Point(235, 291);
-            this.adminPasswordTb.Name = "adminPasswordTb";
-            this.adminPasswordTb.PasswordChar = '*';
-            this.adminPasswordTb.Size = new System.Drawing.Size(341, 24);
-            this.adminPasswordTb.TabIndex = 29;
+            this.viewConfirmPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.viewConfirmPassword.BackColor = System.Drawing.Color.White;
+            this.viewConfirmPassword.Image = global::Perfect_Peace_System.Properties.Resources.view;
+            this.viewConfirmPassword.Location = new System.Drawing.Point(544, 213);
+            this.viewConfirmPassword.Name = "viewConfirmPassword";
+            this.viewConfirmPassword.Size = new System.Drawing.Size(29, 19);
+            this.viewConfirmPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.viewConfirmPassword.TabIndex = 43;
+            this.viewConfirmPassword.TabStop = false;
+            this.viewConfirmPassword.Tag = "view";
+            this.viewConfirmPassword.Click += new System.EventHandler(this.viewConfirmPassword_Click);
             // 
-            // adminPasswordLbl
+            // viewPassword
             // 
-            this.adminPasswordLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.adminPasswordLbl.AutoSize = true;
-            this.adminPasswordLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminPasswordLbl.Location = new System.Drawing.Point(109, 296);
-            this.adminPasswordLbl.Name = "adminPasswordLbl";
-            this.adminPasswordLbl.Size = new System.Drawing.Size(120, 19);
-            this.adminPasswordLbl.TabIndex = 28;
-            this.adminPasswordLbl.Text = "Admin Password:";
-            // 
-            // nameTb
-            // 
-            this.nameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.nameTb.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTb.Location = new System.Drawing.Point(235, 55);
-            this.nameTb.Name = "nameTb";
-            this.nameTb.Size = new System.Drawing.Size(341, 24);
-            this.nameTb.TabIndex = 42;
+            this.viewPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.viewPassword.BackColor = System.Drawing.Color.White;
+            this.viewPassword.Image = global::Perfect_Peace_System.Properties.Resources.view;
+            this.viewPassword.Location = new System.Drawing.Point(543, 175);
+            this.viewPassword.Name = "viewPassword";
+            this.viewPassword.Size = new System.Drawing.Size(29, 19);
+            this.viewPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.viewPassword.TabIndex = 43;
+            this.viewPassword.TabStop = false;
+            this.viewPassword.Tag = "view";
+            this.viewPassword.Click += new System.EventHandler(this.viewPassword_Click);
             // 
             // label5
             // 
@@ -265,61 +267,61 @@
             this.loginAsLbl.TabIndex = 30;
             this.loginAsLbl.Text = "Administrator";
             // 
-            // viewPassword
+            // adminPasswordTb
             // 
-            this.viewPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.viewPassword.BackColor = System.Drawing.Color.White;
-            this.viewPassword.Image = global::Perfect_Peace_System.Properties.Resources.view;
-            this.viewPassword.Location = new System.Drawing.Point(543, 175);
-            this.viewPassword.Name = "viewPassword";
-            this.viewPassword.Size = new System.Drawing.Size(29, 19);
-            this.viewPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.viewPassword.TabIndex = 43;
-            this.viewPassword.TabStop = false;
-            this.viewPassword.Tag = "view";
-            this.viewPassword.Click += new System.EventHandler(this.viewPassword_Click);
+            this.adminPasswordTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.adminPasswordTb.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminPasswordTb.Location = new System.Drawing.Point(235, 291);
+            this.adminPasswordTb.Name = "adminPasswordTb";
+            this.adminPasswordTb.PasswordChar = '*';
+            this.adminPasswordTb.Size = new System.Drawing.Size(341, 24);
+            this.adminPasswordTb.TabIndex = 29;
             // 
-            // viewConfirmPassword
+            // adminPasswordLbl
             // 
-            this.viewConfirmPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.viewConfirmPassword.BackColor = System.Drawing.Color.White;
-            this.viewConfirmPassword.Image = global::Perfect_Peace_System.Properties.Resources.view;
-            this.viewConfirmPassword.Location = new System.Drawing.Point(544, 213);
-            this.viewConfirmPassword.Name = "viewConfirmPassword";
-            this.viewConfirmPassword.Size = new System.Drawing.Size(29, 19);
-            this.viewConfirmPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.viewConfirmPassword.TabIndex = 43;
-            this.viewConfirmPassword.TabStop = false;
-            this.viewConfirmPassword.Tag = "view";
-            this.viewConfirmPassword.Click += new System.EventHandler(this.viewConfirmPassword_Click);
+            this.adminPasswordLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.adminPasswordLbl.AutoSize = true;
+            this.adminPasswordLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminPasswordLbl.Location = new System.Drawing.Point(109, 296);
+            this.adminPasswordLbl.Name = "adminPasswordLbl";
+            this.adminPasswordLbl.Size = new System.Drawing.Size(120, 19);
+            this.adminPasswordLbl.TabIndex = 28;
+            this.adminPasswordLbl.Text = "Admin Password:";
             // 
-            // viewSysKey
+            // backLbl
             // 
-            this.viewSysKey.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.viewSysKey.BackColor = System.Drawing.Color.White;
-            this.viewSysKey.Image = global::Perfect_Peace_System.Properties.Resources.view;
-            this.viewSysKey.Location = new System.Drawing.Point(545, 254);
-            this.viewSysKey.Name = "viewSysKey";
-            this.viewSysKey.Size = new System.Drawing.Size(29, 19);
-            this.viewSysKey.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.viewSysKey.TabIndex = 43;
-            this.viewSysKey.TabStop = false;
-            this.viewSysKey.Tag = "view";
-            this.viewSysKey.Click += new System.EventHandler(this.viewSysKey_Click);
+            this.backLbl.AutoSize = true;
+            this.backLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backLbl.Location = new System.Drawing.Point(24, 4);
+            this.backLbl.Name = "backLbl";
+            this.backLbl.Size = new System.Drawing.Size(28, 13);
+            this.backLbl.TabIndex = 3;
+            this.backLbl.Text = "<<<";
+            this.backLbl.Click += new System.EventHandler(this.backLbl_Click);
             // 
-            // viewAdminPassword
+            // createAccBtn
             // 
-            this.viewAdminPassword.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.viewAdminPassword.BackColor = System.Drawing.Color.White;
-            this.viewAdminPassword.Image = global::Perfect_Peace_System.Properties.Resources.view;
-            this.viewAdminPassword.Location = new System.Drawing.Point(544, 294);
-            this.viewAdminPassword.Name = "viewAdminPassword";
-            this.viewAdminPassword.Size = new System.Drawing.Size(29, 19);
-            this.viewAdminPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.viewAdminPassword.TabIndex = 43;
-            this.viewAdminPassword.TabStop = false;
-            this.viewAdminPassword.Tag = "view";
-            this.viewAdminPassword.Click += new System.EventHandler(this.viewAdminPassword_Click);
+            this.createAccBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.createAccBtn.AutoSize = true;
+            this.createAccBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.createAccBtn.Location = new System.Drawing.Point(317, 331);
+            this.createAccBtn.Name = "createAccBtn";
+            this.createAccBtn.Size = new System.Drawing.Size(118, 29);
+            this.createAccBtn.TabIndex = 1;
+            this.createAccBtn.Text = "Create Account";
+            this.createAccBtn.UseVisualStyleBackColor = true;
+            this.createAccBtn.Click += new System.EventHandler(this.createAccBtn_Click);
+            // 
+            // nameCb
+            // 
+            this.nameCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nameCb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.nameCb.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameCb.FormattingEnabled = true;
+            this.nameCb.Location = new System.Drawing.Point(234, 60);
+            this.nameCb.Name = "nameCb";
+            this.nameCb.Size = new System.Drawing.Size(342, 23);
+            this.nameCb.TabIndex = 44;
             // 
             // CreateAccount
             // 
@@ -331,10 +333,10 @@
             this.Text = "Login";
             this.bgPanel.ResumeLayout(false);
             this.bgPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.viewPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewConfirmPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.viewSysKey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.viewAdminPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewSysKey)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewConfirmPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.viewPassword)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -344,7 +346,6 @@
         private System.Windows.Forms.Panel bgPanel;
         private System.Windows.Forms.Button createAccBtn;
         private System.Windows.Forms.Label backLbl;
-        private System.Windows.Forms.TextBox nameTb;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox emailTb;
         private System.Windows.Forms.Label label4;
@@ -363,5 +364,6 @@
         private System.Windows.Forms.PictureBox viewSysKey;
         private System.Windows.Forms.PictureBox viewConfirmPassword;
         private System.Windows.Forms.PictureBox viewPassword;
+        private System.Windows.Forms.ComboBox nameCb;
     }
 }
