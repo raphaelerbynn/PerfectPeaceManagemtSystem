@@ -109,7 +109,7 @@ namespace Perfect_Peace_System.Pages
                 {
                     if (category.Equals("Class Teacher"))
                     {
-                        teacher_id = DbClient.getIdFromCombo("SELECT teacher_id FROM Teacher", nameCb.SelectedItem.ToString()).ToString();
+                        teacher_id = DbClient.query_executeScaler("SELECT teacher_id FROM Teacher WHERE [f_name]+' '+[l_name]='"+ nameCb.SelectedItem.ToString()+"'");
                         query = "INSERT INTO User_account(name, username, email, category, password, teacher_id)" +
                             "VALUES('" + name + "', '" + username + "', '" + email + "', '" + category + "', '" + password + "', '" + teacher_id + "')";
                     }

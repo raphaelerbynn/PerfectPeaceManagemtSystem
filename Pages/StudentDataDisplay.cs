@@ -96,7 +96,6 @@ namespace Perfect_Peace_System.Pages
                         studentDataView.Rows.RemoveAt(e.RowIndex);
                         student.delete(id);
                         parent.delete(parent_id);
-                        Console.WriteLine(parent_id);
                    
                         MessageBox.Show(name + " deleted from system");
                     }
@@ -107,7 +106,8 @@ namespace Perfect_Peace_System.Pages
                 {
                     StudentDetail studentDetail = new StudentDetail();
                     studentDetail.Show();
-
+                    Home home = (Home)Application.OpenForms["Home"];
+                    home.Hide();
                 }
 
                 if (studentDataView.Columns[e.ColumnIndex].Name == "edit")
@@ -140,11 +140,6 @@ namespace Perfect_Peace_System.Pages
             return parent_id;
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void searchBtn_Click(object sender, EventArgs e)
         {
             if(!String.IsNullOrEmpty(searchTextBox.Text))
@@ -164,8 +159,6 @@ namespace Perfect_Peace_System.Pages
                 (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
             }
         }
-
-        
     }
 
 }

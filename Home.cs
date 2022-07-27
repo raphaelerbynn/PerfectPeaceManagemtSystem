@@ -18,6 +18,7 @@ namespace Perfect_Peace_System
         private Random random;
         public static Color foreColor;
         public static Color cellColor;
+        public static Color searchBgColor;
         public static Color themeColor;
         public static Panel displayPanel;
         public static Button _studentBtn, _teachersBtn, _classBtn;
@@ -55,12 +56,6 @@ namespace Perfect_Peace_System
                 subjectBtn.Enabled = false;
                 addStntBtn.Enabled = false;
 
-                teach_pic.Enabled = false;
-                class_pic.Enabled = false;
-                feees_pic.Enabled = false;
-                acc_pic.Enabled = false;
-                payroll_pic.Enabled = false;
-                subject_pic.Enabled = false;
             }
 
             if (category.Equals("Accountant"))
@@ -74,13 +69,6 @@ namespace Perfect_Peace_System
                 attendanceBtn.Enabled = false;
                 reportBtn.Enabled = false; 
 
-                stu_pic.Enabled = false;
-                teach_pic.Enabled = false;
-                parent_pic.Enabled = false;
-                class_pic.Enabled = false;
-                subject_pic.Enabled = false;
-                att_pic.Enabled = false;
-                report_pic.Enabled = false;
             }
 
         }
@@ -107,40 +95,46 @@ namespace Perfect_Peace_System
 
         public void ActivateBtn(object btnSender)
         {
-            if (btnSender != null)
+            try
             {
-                if (currentBtn != (Button)btnSender)
+                if (btnSender != null)
                 {
-                    DisableBtn();
-                    
-                    currentBtn = (Button)btnSender;
-                    currentBtn.BackColor = foreColor;
-                    currentBtn.ForeColor = themeColor;
-                    line1.BackColor = themeColor;
-                    line2.BackColor = themeColor;
-                    line3.BackColor = themeColor;
-                    logoPanel.BackColor = Color.FromArgb((int)(themeColor.A * 0.7), themeColor);
-                    logoutLink.LinkColor = themeColor;
-                    menuPanel.BackColor = themeColor;
-                    this.BackColor = foreColor;
-
-                    panelView.BackColor = Color.FromArgb((int)(foreColor.A * 0.8), foreColor);
-                    topPanel.BackColor = Color.FromArgb((int)(foreColor.A * 0.8), foreColor);
-                    //bgPanel.BackColor = Color.FromArgb((int)(foreColor.A * 0.8), foreColor);
-                    //panelLogo.BackColor = Color.FromArgb(color.A, (int)(color.R * 0.8), (int)(color.G * 0.8), (int)(color.B * 0.8));
-
-                    foreach (Control picBox in menuPanel.Controls)
+                    if (currentBtn != (Button)btnSender)
                     {
-                        if (picBox.GetType() == typeof(PictureBox))
+                        DisableBtn();
+
+                        currentBtn = (Button)btnSender;
+                        currentBtn.BackColor = foreColor;
+                        currentBtn.ForeColor = themeColor;
+                        line1.BackColor = themeColor;
+                        line2.BackColor = themeColor;
+                        line3.BackColor = themeColor;
+                        logoPanel.BackColor = Color.FromArgb((int)(themeColor.A * 0.7), themeColor);
+                        logoutLink.LinkColor = themeColor;
+                        menuPanel.BackColor = themeColor;
+                        this.BackColor = foreColor;
+
+                        panelView.BackColor = Color.FromArgb((int)(foreColor.A * 0.8), foreColor);
+                        topPanel.BackColor = Color.FromArgb((int)(foreColor.A * 0.8), foreColor);
+                        //bgPanel.BackColor = Color.FromArgb((int)(foreColor.A * 0.8), foreColor);
+                        //panelLogo.BackColor = Color.FromArgb(color.A, (int)(color.R * 0.8), (int)(color.G * 0.8), (int)(color.B * 0.8));
+
+                        foreach (Control picBox in menuPanel.Controls)
                         {
-                            if (picBox.Tag == currentBtn.Tag)
+                            if (picBox.GetType() == typeof(PictureBox))
                             {
-                                picBox.BackColor = foreColor;
+                                if (picBox.Tag == currentBtn.Tag)
+                                {
+                                    picBox.BackColor = foreColor;
+                                }
                             }
                         }
-                    }
 
+                    }
                 }
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 

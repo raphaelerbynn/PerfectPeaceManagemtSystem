@@ -17,6 +17,14 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
             fillData();
+            bgPanel.BackColor = Home.foreColor;
+            classPanel.BackColor = Home.themeColor;
+            parentPanel.BackColor = Home.themeColor;
+            studentPanel.BackColor = Home.themeColor;
+
+            classPanel.ForeColor = Home.foreColor;
+            parentPanel.ForeColor = Home.foreColor;
+            studentPanel.ForeColor = Home.foreColor;
         }
 
         public void fillData()
@@ -46,9 +54,9 @@ namespace Perfect_Peace_System.Pages
                 lblClass.Text = reader["class"].ToString();
 
 
-                if (int.Parse(reader["fees_owed"].ToString()) > 0)
+                if (int.Parse(reader["fees_owing"].ToString()) > 0)
                 {
-                    lblFees.Text = "Owing(Ghc" + reader["fees_owed"].ToString() + ")";
+                    lblFees.Text = "Owing(Ghc" + reader["fees_owing"].ToString() + ")";
                 }
                 else
                 {
@@ -78,6 +86,13 @@ namespace Perfect_Peace_System.Pages
             }
             reader1.Close();
             Console.WriteLine(parent_id);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Home home = (Home)Application.OpenForms["Home"];
+            home.Show();
         }
     }
 }

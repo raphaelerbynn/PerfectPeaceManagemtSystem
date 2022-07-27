@@ -31,7 +31,7 @@ namespace Perfect_Peace_System.Pages
             if (!String.IsNullOrEmpty(teacherCb.Text))
             {
                 query = "SELECT teacher_id FROM Teacher WHERE [f_name]+' '+[l_name]='" + teacherCb.SelectedItem.ToString() + "'";
-                int teacher_id = DbClient.getIdFromCombo(query, teacherCb.SelectedItem.ToString());
+                string teacher_id = DbClient.query_executeScaler(query);
 
                 query = "UPDATE Class SET teacher_id=" + teacher_id + " WHERE name='" + nameTb.Text + "'";
                 DbClient.query_execute(query);

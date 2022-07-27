@@ -30,17 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.menuPanel = new System.Windows.Forms.Panel();
-            this.payroll_pic = new System.Windows.Forms.PictureBox();
-            this.subject_pic = new System.Windows.Forms.PictureBox();
-            this.stu_pic = new System.Windows.Forms.PictureBox();
-            this.teach_pic = new System.Windows.Forms.PictureBox();
-            this.parent_pic = new System.Windows.Forms.PictureBox();
-            this.class_pic = new System.Windows.Forms.PictureBox();
-            this.att_pic = new System.Windows.Forms.PictureBox();
-            this.acc_pic = new System.Windows.Forms.PictureBox();
-            this.feees_pic = new System.Windows.Forms.PictureBox();
-            this.report_pic = new System.Windows.Forms.PictureBox();
-            this.dash_pic = new System.Windows.Forms.PictureBox();
             this.subjectBtn = new System.Windows.Forms.Button();
             this.payrollBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
@@ -70,17 +59,6 @@
             this.line3 = new System.Windows.Forms.Panel();
             this.panelView = new System.Windows.Forms.Panel();
             this.menuPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.payroll_pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subject_pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stu_pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teach_pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parent_pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.class_pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.att_pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.acc_pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.feees_pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_pic)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dash_pic)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxBtn)).BeginInit();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.minBtn)).BeginInit();
@@ -94,17 +72,6 @@
             this.menuPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.menuPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.menuPanel.Controls.Add(this.payroll_pic);
-            this.menuPanel.Controls.Add(this.subject_pic);
-            this.menuPanel.Controls.Add(this.stu_pic);
-            this.menuPanel.Controls.Add(this.teach_pic);
-            this.menuPanel.Controls.Add(this.parent_pic);
-            this.menuPanel.Controls.Add(this.class_pic);
-            this.menuPanel.Controls.Add(this.att_pic);
-            this.menuPanel.Controls.Add(this.acc_pic);
-            this.menuPanel.Controls.Add(this.feees_pic);
-            this.menuPanel.Controls.Add(this.report_pic);
-            this.menuPanel.Controls.Add(this.dash_pic);
             this.menuPanel.Controls.Add(this.subjectBtn);
             this.menuPanel.Controls.Add(this.payrollBtn);
             this.menuPanel.Controls.Add(this.reportBtn);
@@ -122,128 +89,6 @@
             this.menuPanel.Size = new System.Drawing.Size(154, 670);
             this.menuPanel.TabIndex = 0;
             // 
-            // payroll_pic
-            // 
-            this.payroll_pic.Image = global::Perfect_Peace_System.Properties.Resources.payroll_salary;
-            this.payroll_pic.Location = new System.Drawing.Point(23, 554);
-            this.payroll_pic.Name = "payroll_pic";
-            this.payroll_pic.Size = new System.Drawing.Size(30, 30);
-            this.payroll_pic.TabIndex = 20;
-            this.payroll_pic.TabStop = false;
-            this.payroll_pic.Tag = "8";
-            this.payroll_pic.Click += new System.EventHandler(this.payrollBtn_Click);
-            // 
-            // subject_pic
-            // 
-            this.subject_pic.BackColor = System.Drawing.Color.Transparent;
-            this.subject_pic.Image = ((System.Drawing.Image)(resources.GetObject("subject_pic.Image")));
-            this.subject_pic.Location = new System.Drawing.Point(23, 617);
-            this.subject_pic.Name = "subject_pic";
-            this.subject_pic.Size = new System.Drawing.Size(30, 30);
-            this.subject_pic.TabIndex = 19;
-            this.subject_pic.TabStop = false;
-            this.subject_pic.Tag = "9";
-            this.subject_pic.Click += new System.EventHandler(this.subjectBtn_Click);
-            // 
-            // stu_pic
-            // 
-            this.stu_pic.Image = ((System.Drawing.Image)(resources.GetObject("stu_pic.Image")));
-            this.stu_pic.Location = new System.Drawing.Point(23, 77);
-            this.stu_pic.Name = "stu_pic";
-            this.stu_pic.Size = new System.Drawing.Size(30, 30);
-            this.stu_pic.TabIndex = 18;
-            this.stu_pic.TabStop = false;
-            this.stu_pic.Tag = "1";
-            this.stu_pic.Click += new System.EventHandler(this.studentBtn_Click);
-            // 
-            // teach_pic
-            // 
-            this.teach_pic.Image = ((System.Drawing.Image)(resources.GetObject("teach_pic.Image")));
-            this.teach_pic.Location = new System.Drawing.Point(23, 141);
-            this.teach_pic.Name = "teach_pic";
-            this.teach_pic.Size = new System.Drawing.Size(30, 30);
-            this.teach_pic.TabIndex = 17;
-            this.teach_pic.TabStop = false;
-            this.teach_pic.Tag = "2";
-            this.teach_pic.Click += new System.EventHandler(this.teachersBtn_Click);
-            // 
-            // parent_pic
-            // 
-            this.parent_pic.Image = ((System.Drawing.Image)(resources.GetObject("parent_pic.Image")));
-            this.parent_pic.Location = new System.Drawing.Point(23, 203);
-            this.parent_pic.Name = "parent_pic";
-            this.parent_pic.Size = new System.Drawing.Size(30, 30);
-            this.parent_pic.TabIndex = 16;
-            this.parent_pic.TabStop = false;
-            this.parent_pic.Tag = "3";
-            this.parent_pic.Click += new System.EventHandler(this.parentsBtn_Click);
-            // 
-            // class_pic
-            // 
-            this.class_pic.Image = ((System.Drawing.Image)(resources.GetObject("class_pic.Image")));
-            this.class_pic.Location = new System.Drawing.Point(23, 263);
-            this.class_pic.Name = "class_pic";
-            this.class_pic.Size = new System.Drawing.Size(30, 30);
-            this.class_pic.TabIndex = 15;
-            this.class_pic.TabStop = false;
-            this.class_pic.Tag = "4";
-            this.class_pic.Click += new System.EventHandler(this.classesBtn_Click);
-            // 
-            // att_pic
-            // 
-            this.att_pic.Image = ((System.Drawing.Image)(resources.GetObject("att_pic.Image")));
-            this.att_pic.Location = new System.Drawing.Point(23, 327);
-            this.att_pic.Name = "att_pic";
-            this.att_pic.Size = new System.Drawing.Size(30, 30);
-            this.att_pic.TabIndex = 14;
-            this.att_pic.TabStop = false;
-            this.att_pic.Tag = "5";
-            this.att_pic.Click += new System.EventHandler(this.attendanceBtn_Click);
-            // 
-            // acc_pic
-            // 
-            this.acc_pic.Image = ((System.Drawing.Image)(resources.GetObject("acc_pic.Image")));
-            this.acc_pic.Location = new System.Drawing.Point(23, 443);
-            this.acc_pic.Name = "acc_pic";
-            this.acc_pic.Size = new System.Drawing.Size(30, 30);
-            this.acc_pic.TabIndex = 13;
-            this.acc_pic.TabStop = false;
-            this.acc_pic.Tag = "10";
-            this.acc_pic.Click += new System.EventHandler(this.accBtn_Click);
-            // 
-            // feees_pic
-            // 
-            this.feees_pic.Image = ((System.Drawing.Image)(resources.GetObject("feees_pic.Image")));
-            this.feees_pic.Location = new System.Drawing.Point(23, 387);
-            this.feees_pic.Name = "feees_pic";
-            this.feees_pic.Size = new System.Drawing.Size(30, 30);
-            this.feees_pic.TabIndex = 13;
-            this.feees_pic.TabStop = false;
-            this.feees_pic.Tag = "6";
-            this.feees_pic.Click += new System.EventHandler(this.feesBtn_Click);
-            // 
-            // report_pic
-            // 
-            this.report_pic.Image = ((System.Drawing.Image)(resources.GetObject("report_pic.Image")));
-            this.report_pic.Location = new System.Drawing.Point(23, 494);
-            this.report_pic.Name = "report_pic";
-            this.report_pic.Size = new System.Drawing.Size(30, 30);
-            this.report_pic.TabIndex = 12;
-            this.report_pic.TabStop = false;
-            this.report_pic.Tag = "7";
-            this.report_pic.Click += new System.EventHandler(this.reportBtn_Click);
-            // 
-            // dash_pic
-            // 
-            this.dash_pic.Image = ((System.Drawing.Image)(resources.GetObject("dash_pic.Image")));
-            this.dash_pic.Location = new System.Drawing.Point(23, 24);
-            this.dash_pic.Name = "dash_pic";
-            this.dash_pic.Size = new System.Drawing.Size(30, 30);
-            this.dash_pic.TabIndex = 11;
-            this.dash_pic.TabStop = false;
-            this.dash_pic.Tag = "0";
-            this.dash_pic.Click += new System.EventHandler(this.dashboardBtn_Click);
-            // 
             // subjectBtn
             // 
             this.subjectBtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -254,13 +99,12 @@
             this.subjectBtn.ForeColor = System.Drawing.Color.White;
             this.subjectBtn.Location = new System.Drawing.Point(0, 606);
             this.subjectBtn.Name = "subjectBtn";
-            this.subjectBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.subjectBtn.Size = new System.Drawing.Size(155, 62);
             this.subjectBtn.TabIndex = 1;
             this.subjectBtn.TabStop = false;
             this.subjectBtn.Tag = "9";
             this.subjectBtn.Text = "Subjects";
-            this.subjectBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.subjectBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.subjectBtn.UseVisualStyleBackColor = true;
             this.subjectBtn.Click += new System.EventHandler(this.subjectBtn_Click);
             // 
@@ -272,14 +116,14 @@
             this.payrollBtn.FlatAppearance.BorderSize = 0;
             this.payrollBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.payrollBtn.ForeColor = System.Drawing.Color.White;
+            this.payrollBtn.Image = global::Perfect_Peace_System.Properties.Resources.payroll_salary;
             this.payrollBtn.Location = new System.Drawing.Point(0, 544);
             this.payrollBtn.Name = "payrollBtn";
-            this.payrollBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.payrollBtn.Size = new System.Drawing.Size(154, 62);
             this.payrollBtn.TabIndex = 10;
             this.payrollBtn.Tag = "8";
             this.payrollBtn.Text = "Payroll";
-            this.payrollBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.payrollBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.payrollBtn.UseVisualStyleBackColor = true;
             this.payrollBtn.Click += new System.EventHandler(this.payrollBtn_Click);
             // 
@@ -291,14 +135,14 @@
             this.reportBtn.FlatAppearance.BorderSize = 0;
             this.reportBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reportBtn.ForeColor = System.Drawing.Color.White;
+            this.reportBtn.Image = global::Perfect_Peace_System.Properties.Resources.report;
             this.reportBtn.Location = new System.Drawing.Point(0, 482);
             this.reportBtn.Name = "reportBtn";
-            this.reportBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.reportBtn.Size = new System.Drawing.Size(154, 62);
             this.reportBtn.TabIndex = 7;
             this.reportBtn.Tag = "7";
             this.reportBtn.Text = "Student Report";
-            this.reportBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reportBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.reportBtn.UseVisualStyleBackColor = true;
             this.reportBtn.Click += new System.EventHandler(this.reportBtn_Click);
             // 
@@ -310,14 +154,14 @@
             this.accountBtn.FlatAppearance.BorderSize = 0;
             this.accountBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.accountBtn.ForeColor = System.Drawing.Color.White;
+            this.accountBtn.Image = global::Perfect_Peace_System.Properties.Resources.fees_receipt;
             this.accountBtn.Location = new System.Drawing.Point(0, 426);
             this.accountBtn.Name = "accountBtn";
-            this.accountBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.accountBtn.Size = new System.Drawing.Size(154, 62);
             this.accountBtn.TabIndex = 8;
             this.accountBtn.Tag = "10";
             this.accountBtn.Text = "Account";
-            this.accountBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.accountBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.accountBtn.UseVisualStyleBackColor = true;
             this.accountBtn.Click += new System.EventHandler(this.accBtn_Click);
             // 
@@ -329,14 +173,14 @@
             this.feesBtn.FlatAppearance.BorderSize = 0;
             this.feesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.feesBtn.ForeColor = System.Drawing.Color.White;
+            this.feesBtn.Image = global::Perfect_Peace_System.Properties.Resources.fees_receipt;
             this.feesBtn.Location = new System.Drawing.Point(0, 375);
             this.feesBtn.Name = "feesBtn";
-            this.feesBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.feesBtn.Size = new System.Drawing.Size(154, 62);
             this.feesBtn.TabIndex = 8;
             this.feesBtn.Tag = "6";
             this.feesBtn.Text = "Fees";
-            this.feesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.feesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.feesBtn.UseVisualStyleBackColor = true;
             this.feesBtn.Click += new System.EventHandler(this.feesBtn_Click);
             // 
@@ -348,14 +192,14 @@
             this.attendanceBtn.FlatAppearance.BorderSize = 0;
             this.attendanceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.attendanceBtn.ForeColor = System.Drawing.Color.White;
+            this.attendanceBtn.Image = global::Perfect_Peace_System.Properties.Resources.work_schedule;
             this.attendanceBtn.Location = new System.Drawing.Point(0, 313);
             this.attendanceBtn.Name = "attendanceBtn";
-            this.attendanceBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.attendanceBtn.Size = new System.Drawing.Size(154, 62);
             this.attendanceBtn.TabIndex = 6;
             this.attendanceBtn.Tag = "5";
             this.attendanceBtn.Text = "Attendance";
-            this.attendanceBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.attendanceBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.attendanceBtn.UseVisualStyleBackColor = true;
             this.attendanceBtn.Click += new System.EventHandler(this.attendanceBtn_Click);
             // 
@@ -367,14 +211,14 @@
             this.classesBtn.FlatAppearance.BorderSize = 0;
             this.classesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.classesBtn.ForeColor = System.Drawing.Color.White;
+            this.classesBtn.Image = global::Perfect_Peace_System.Properties.Resources.classroom;
             this.classesBtn.Location = new System.Drawing.Point(0, 251);
             this.classesBtn.Name = "classesBtn";
-            this.classesBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.classesBtn.Size = new System.Drawing.Size(154, 62);
             this.classesBtn.TabIndex = 5;
             this.classesBtn.Tag = "4";
             this.classesBtn.Text = "Classes";
-            this.classesBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.classesBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.classesBtn.UseVisualStyleBackColor = true;
             this.classesBtn.Click += new System.EventHandler(this.classesBtn_Click);
             // 
@@ -386,14 +230,14 @@
             this.parentsBtn.FlatAppearance.BorderSize = 0;
             this.parentsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.parentsBtn.ForeColor = System.Drawing.Color.White;
+            this.parentsBtn.Image = global::Perfect_Peace_System.Properties.Resources.elderly_male;
             this.parentsBtn.Location = new System.Drawing.Point(0, 189);
             this.parentsBtn.Name = "parentsBtn";
-            this.parentsBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.parentsBtn.Size = new System.Drawing.Size(154, 62);
             this.parentsBtn.TabIndex = 4;
             this.parentsBtn.Tag = "3";
             this.parentsBtn.Text = "Parents";
-            this.parentsBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.parentsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.parentsBtn.UseVisualStyleBackColor = true;
             this.parentsBtn.Click += new System.EventHandler(this.parentsBtn_Click);
             // 
@@ -405,14 +249,14 @@
             this.teachersBtn.FlatAppearance.BorderSize = 0;
             this.teachersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.teachersBtn.ForeColor = System.Drawing.Color.White;
+            this.teachersBtn.Image = global::Perfect_Peace_System.Properties.Resources.teacher;
             this.teachersBtn.Location = new System.Drawing.Point(0, 127);
             this.teachersBtn.Name = "teachersBtn";
-            this.teachersBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.teachersBtn.Size = new System.Drawing.Size(154, 62);
             this.teachersBtn.TabIndex = 3;
             this.teachersBtn.Tag = "2";
             this.teachersBtn.Text = "Staff";
-            this.teachersBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.teachersBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.teachersBtn.UseVisualStyleBackColor = true;
             this.teachersBtn.Click += new System.EventHandler(this.teachersBtn_Click);
             // 
@@ -424,14 +268,14 @@
             this.studentBtn.FlatAppearance.BorderSize = 0;
             this.studentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.studentBtn.ForeColor = System.Drawing.Color.White;
+            this.studentBtn.Image = global::Perfect_Peace_System.Properties.Resources.student_boy;
             this.studentBtn.Location = new System.Drawing.Point(0, 65);
             this.studentBtn.Name = "studentBtn";
-            this.studentBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.studentBtn.Size = new System.Drawing.Size(154, 62);
             this.studentBtn.TabIndex = 2;
             this.studentBtn.Tag = "1";
             this.studentBtn.Text = "Students";
-            this.studentBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.studentBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.studentBtn.UseVisualStyleBackColor = true;
             this.studentBtn.Click += new System.EventHandler(this.studentBtn_Click);
             // 
@@ -443,14 +287,14 @@
             this.dashboardBtn.FlatAppearance.BorderSize = 0;
             this.dashboardBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.dashboardBtn.ForeColor = System.Drawing.Color.White;
+            this.dashboardBtn.Image = global::Perfect_Peace_System.Properties.Resources.dashboard;
             this.dashboardBtn.Location = new System.Drawing.Point(0, 3);
             this.dashboardBtn.Name = "dashboardBtn";
-            this.dashboardBtn.Padding = new System.Windows.Forms.Padding(60, 0, 0, 0);
             this.dashboardBtn.Size = new System.Drawing.Size(154, 62);
             this.dashboardBtn.TabIndex = 0;
             this.dashboardBtn.Tag = "0";
             this.dashboardBtn.Text = "Dashboard";
-            this.dashboardBtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.dashboardBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.dashboardBtn.UseVisualStyleBackColor = true;
             this.dashboardBtn.Click += new System.EventHandler(this.dashboardBtn_Click);
             // 
@@ -668,17 +512,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.payroll_pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subject_pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stu_pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teach_pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.parent_pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.class_pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.att_pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.acc_pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.feees_pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.report_pic)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dash_pic)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.maxBtn)).EndInit();
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
@@ -695,17 +528,6 @@
         #endregion
 
         private System.Windows.Forms.Panel menuPanel;
-        private System.Windows.Forms.PictureBox payroll_pic;
-        private System.Windows.Forms.PictureBox subject_pic;
-        private System.Windows.Forms.PictureBox stu_pic;
-        private System.Windows.Forms.PictureBox teach_pic;
-        private System.Windows.Forms.PictureBox parent_pic;
-        private System.Windows.Forms.PictureBox class_pic;
-        private System.Windows.Forms.PictureBox att_pic;
-        private System.Windows.Forms.PictureBox acc_pic;
-        private System.Windows.Forms.PictureBox feees_pic;
-        private System.Windows.Forms.PictureBox report_pic;
-        private System.Windows.Forms.PictureBox dash_pic;
         private System.Windows.Forms.Button subjectBtn;
         private System.Windows.Forms.Button payrollBtn;
         private System.Windows.Forms.Button reportBtn;

@@ -206,7 +206,7 @@ namespace Perfect_Peace_System.Pages
             if (salaryBaseCb.SelectedIndex != -1)
             {
                 query = "SELECT salary_id FROM Salary WHERE [title]+'('+[rank]+')'='" + salaryBaseCb.SelectedItem.ToString() + "'";
-                string salaryId = DbClient.getIdFromCombo(query, salaryBaseCb.SelectedItem.ToString()).ToString();
+                string salaryId = DbClient.query_executeScaler(query);
 
                 if (!String.IsNullOrEmpty(empNameTb.Text))
                 {
@@ -229,7 +229,7 @@ namespace Perfect_Peace_System.Pages
                 try
                 {
                     query = "SELECT teacher_id FROM Teacher WHERE [f_name]+' '+[l_name]='" + paymentNameCb.Text + "'";
-                    id = DbClient.getIdFromCombo(query, paymentNameCb.Text).ToString();
+                    id = DbClient.query_executeScaler(query);
                     openNewPage.OpenChildForm(new Pages.PaySlip(), paymentPanel);
                 }catch(Exception ex)
                 {

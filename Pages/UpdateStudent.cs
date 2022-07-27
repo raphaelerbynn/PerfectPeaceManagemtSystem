@@ -82,14 +82,17 @@ namespace Perfect_Peace_System.Pages
 
         private void updateStntBnt_Click(object sender, EventArgs e)
         {
-            
             if (classCb.SelectedIndex > -1)
             {
+                string class_id = DbClient.query_executeScaler("SELECT class_id FROM Class WHERE name='" + classCb.SelectedItem.ToString() + "'");
                 if (classroom.maxCapacity(classCb.Text) > classroom.curCapacity(classCb.Text))
                 {
                     Student student = new Student(DateTime.Parse(dobPicker.Text), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
                     student.update(id);
+                    query = "UPDATE Student SET class_id='"+class_id+"', class='"+classCb.SelectedItem.ToString()+"' WHERE student_id='"+id+"'";
+                    DbClient.query_execute(query);
                     MessageBox.Show("Student updated successfully");
+
                 }
                 else
                 {
@@ -100,14 +103,15 @@ namespace Perfect_Peace_System.Pages
             {
                 Student student = new Student(DateTime.Parse(dobPicker.Text), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
                 student.update(id);
+                query = "UPDATE Student SET class_id=NULL, class=NULL WHERE student_id='"+id+"'";
+                DbClient.query_execute(query);
                 MessageBox.Show("Student updated successfully");
-
             }
         }
 
-        private void mnameTb_TextChanged(object sender, EventArgs e)
+        private void assignNoClassLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            classCb.SelectedIndex = -1;
         }
     }
 }

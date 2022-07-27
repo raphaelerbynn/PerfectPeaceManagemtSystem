@@ -66,7 +66,7 @@ namespace Perfect_Peace_System
             return dr.ToString();
         }
         
-        public static int getIdFromCombo(string query,string selectedItem)
+        /*public static int getIdFromCombo(string query,string selectedItem)
         {
             dataAdapter = new SqlDataAdapter(query, connection);
             DataSet ds = new DataSet();
@@ -74,7 +74,7 @@ namespace Perfect_Peace_System
             int id = Convert.ToInt32(ds.Tables[0].Rows[0][0]);
 
             return id;
-        }
+        }*/
 
         public static void dataGridFill(DataGridView dataGrid, string query)
         {
