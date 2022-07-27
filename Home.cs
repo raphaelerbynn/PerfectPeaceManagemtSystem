@@ -53,6 +53,7 @@ namespace Perfect_Peace_System
                 accountBtn.Enabled = false;
                 payrollBtn.Enabled = false;
                 subjectBtn.Enabled = false;
+                addStntBtn.Enabled = false;
 
                 teach_pic.Enabled = false;
                 class_pic.Enabled = false;

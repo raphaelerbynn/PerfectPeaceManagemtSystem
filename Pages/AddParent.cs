@@ -19,6 +19,7 @@ namespace Perfect_Peace_System.Pages
             InitializeComponent();
             get_child_name();
             classDetailsOnStudent();
+            bpPanel.BackColor = Home.foreColor;
         }
 
         private void get_child_name()
@@ -67,11 +68,6 @@ namespace Perfect_Peace_System.Pages
 
             this.Close();
             this.Hide();
-        }
-
-        private void femaleRadioBtn_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

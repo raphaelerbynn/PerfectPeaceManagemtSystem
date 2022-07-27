@@ -23,6 +23,7 @@ namespace Perfect_Peace_System.Pages
             InitializeComponent();
             query = "SELECT name FROM Class";
             DbClient.query_reader(classCb, query);
+            registerPanel.BackColor = Home.foreColor;
         } 
 
         private string getRadioBtnValue()
