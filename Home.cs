@@ -55,6 +55,7 @@ namespace Perfect_Peace_System
                 payrollBtn.Enabled = false;
                 subjectBtn.Enabled = false;
                 addStntBtn.Enabled = false;
+                parentsBtn.Enabled = false;
 
             }
 

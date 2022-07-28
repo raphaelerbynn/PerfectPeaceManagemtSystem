@@ -14,18 +14,21 @@ namespace Perfect_Peace_System.Pages
     public partial class ParentsData : Form
     {
         private string query;
+        private string parent_id;
+        Person parent;
 
         public ParentsData()
         {
-            Person parent = new Parent();
+            parent = new Parent();
             InitializeComponent();
 
             showParentDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
             showParentDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
             showParentDataView.BackgroundColor = Home.foreColor;
+            topPanel.BackColor = Home.foreColor;
             
             columnArrangement();
-            
+
             parent.show_data(showParentDataView);
             getChild();
         }
@@ -51,25 +54,6 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
-                //List<string> children = new List<string>();
-                //List<string> parent_ids = new List<string>();
-                /*foreach (DataGridViewRow item in showParentDataView.Rows)
-                {
-                    parent_ids.Add(item.Cells["id"].Value.ToString());
-                }
-
-                foreach (string id_ in parent_ids)
-                {
-                    query = "SELECT [f_name]+' '+[l_name] AS name FROM Student WHERE parent_id='" + id_ + "'";
-                    SqlDataReader reader = DbClient.query_reader(query);
-                    while (reader.Read())
-                    {   
-                        if (reader.IsDBNull(0)) { continue; }
-                        children.Add(reader["name"].ToString());
-                    }
-                    reader.Close();
-                } */
-
                 foreach (DataGridViewRow item in showParentDataView.Rows)
                 {
                     
@@ -96,7 +80,34 @@ namespace Perfect_Peace_System.Pages
 
         private void showParentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                DataGridViewRow row = showParentDataView.Rows[e.RowIndex];
+                parent_id = row.Cells["id"].Value.ToString();
+                string name = row.Cells["name"].Value.ToString();
 
+
+                if (showParentDataView.Columns[e.ColumnIndex].Name == "delete" && e.RowIndex >= 0)
+                {
+                    string message = "Do you want to delete " + name + "?";
+                    MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, "", deleteAction);
+                    if (result == DialogResult.Yes)
+                    {
+                        query = "UPDATE Student SET parent_id=NULL WHERE parent_id='"+parent_id+"'";
+                        DbClient.query_execute(query);
+
+                        showParentDataView.Rows.RemoveAt(e.RowIndex);
+                        parent.delete(parent_id);
+
+                        MessageBox.Show(name + " deleted from system");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -112,7 +123,6 @@ namespace Perfect_Peace_System.Pages
                     MessageBox.Show("Search Again");
                     Console.WriteLine(ex.Message);
                 }
-
             }
             else
             {
