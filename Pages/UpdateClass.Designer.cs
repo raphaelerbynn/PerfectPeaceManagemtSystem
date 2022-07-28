@@ -42,12 +42,14 @@
             this.nameTb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.noTeacherLink = new System.Windows.Forms.LinkLabel();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.feesBox)).BeginInit();
             this.SuspendLayout();
             // 
             // bgPanel
             // 
+            this.bgPanel.Controls.Add(this.noTeacherLink);
             this.bgPanel.Controls.Add(this.label6);
             this.bgPanel.Controls.Add(this.feesBox);
             this.bgPanel.Controls.Add(this.label2);
@@ -222,6 +224,18 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Class Name: ";
             // 
+            // noTeacherLink
+            // 
+            this.noTeacherLink.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.noTeacherLink.AutoSize = true;
+            this.noTeacherLink.Location = new System.Drawing.Point(557, 330);
+            this.noTeacherLink.Name = "noTeacherLink";
+            this.noTeacherLink.Size = new System.Drawing.Size(98, 13);
+            this.noTeacherLink.TabIndex = 27;
+            this.noTeacherLink.TabStop = true;
+            this.noTeacherLink.Text = "Assign No Teacher";
+            this.noTeacherLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.noTeacherLink_LinkClicked);
+            // 
             // UpdateClass
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,5 +267,6 @@
         private System.Windows.Forms.TextBox nameTb;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel noTeacherLink;
     }
 }

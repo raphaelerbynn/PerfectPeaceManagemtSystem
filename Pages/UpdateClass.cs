@@ -42,6 +42,16 @@ namespace Perfect_Peace_System.Pages
                 DbClient.query_execute(query);
 
             }
+            else
+            {
+                query = "UPDATE Class SET name='" + nameTb.Text + "', section='" + sectionCb.SelectedItem.ToString() + "', capacity='" + capacityTb.Text + "', fees='" + feesBox.Value.ToString() + "', teacher_id=NULL  WHERE class_id='" + id + "'";
+                DbClient.query_execute(query);
+
+                query = "UPDATE Teacher SET class_id=NULL WHERE class_id='" + id + "'";
+                DbClient.query_execute(query);
+
+            }
+
             MessageBox.Show("Class Updated");
         }
 
@@ -78,6 +88,11 @@ namespace Perfect_Peace_System.Pages
                     break;
                 }
             }
+        }
+
+        private void noTeacherLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            teacherCb.SelectedIndex = -1;
         }
     }
 }

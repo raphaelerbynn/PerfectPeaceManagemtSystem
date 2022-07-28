@@ -28,7 +28,7 @@ namespace Perfect_Peace_System.Pages
 
             adjustColumnOrder();
             teacher.show_data(teacherDataGridView);
-
+            getClassName();
         }
 
         private void adjustColumnOrder()
@@ -119,6 +119,20 @@ namespace Perfect_Peace_System.Pages
             else
             {
                 (teacherDataGridView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+            }
+        }
+
+        private void getClassName()
+        {
+            foreach(DataGridViewRow row in teacherDataGridView.Rows)
+            {
+                string query = "SELECT name FROM Class WHERE class_id='" + row.Cells["_class"].Value.ToString() + "'";
+                System.Data.SqlClient.SqlDataReader reader = DbClient.query_reader(query);
+                while (reader.Read())
+                {
+                    row.Cells["_class"].Value = reader["name"].ToString();
+                }
+                reader.Close();
             }
         }
     }
