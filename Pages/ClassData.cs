@@ -13,12 +13,14 @@ namespace Perfect_Peace_System.Pages
 {
     public partial class ClassData : Form
     {
-        string query;
+        ClassRoom classRoom;
+        private string query;
+        public static string class_id;
 
         public ClassData()
         {
             InitializeComponent();
-            ClassRoom classRoom = new ClassRoom();
+            classRoom = new ClassRoom();
 
             classDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
             classDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
@@ -37,7 +39,7 @@ namespace Perfect_Peace_System.Pages
             classDataView.Columns["section"].DisplayIndex = 1;
             classDataView.Columns["capacity"].DisplayIndex = 2;
             classDataView.Columns["teacher"].DisplayIndex = 3;
-            classDataView.Columns["view"].DisplayIndex = 4;
+            classDataView.Columns["fees"].DisplayIndex = 4;
             classDataView.Columns["edit"].DisplayIndex = 5;
             classDataView.Columns["delete"].DisplayIndex = 6;
 
@@ -84,7 +86,42 @@ namespace Perfect_Peace_System.Pages
 
         private void classDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                DataGridViewRow row = classDataView.Rows[e.RowIndex];
+                class_id = row.Cells["id"].Value.ToString();
+                string name = row.Cells["name"].Value.ToString();
 
+                if (classDataView.Columns[e.ColumnIndex].Name == "delete" && e.RowIndex >= 0)
+                {
+                    string message = "Do you want to delete " + name + "?";
+                    MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, "", deleteAction);
+                    if (result == DialogResult.Yes)
+                    {
+                        query = "UPDATE Teacher SET class_id=NULL WHERE class_id='" + class_id + "'";
+                        DbClient.query_execute(query);
+
+                        query = "UPDATE Student SET class_id=NULL WHERE class_id='" + class_id + "'";
+                        DbClient.query_execute(query);
+                        
+                        query = "DELETE FROM Class WHERE class_id='" + class_id + "'";
+                        DbClient.query_execute(query);
+
+                        classDataView.Rows.RemoveAt(e.RowIndex);
+                        MessageBox.Show(name + " deleted from system");
+                    }
+                }
+                else if(classDataView.Columns[e.ColumnIndex].Name == "edit" && e.RowIndex >= 0)
+                {
+                    OpenNewPage openNewPage = new OpenNewPage();
+                    openNewPage.OpenChildForm(new Pages.UpdateClass(), showDataPanel);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 

@@ -17,14 +17,13 @@ namespace Perfect_Peace_System.Pages
         public AddClass()
         {
             InitializeComponent();
-
-            query = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher";
+            bgPanel.BackColor = Home.foreColor;
+            query = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher EXCEPT SELECT [f_name]+' '+[l_name] FROM Teacher WHERE class_id IS NOT NULL";
             DbClient.query_reader(teacherCb, query);
         }
 
         private void addClassBtn_Click(object sender, EventArgs e)
         {
-
             ClassRoom classRoom = new ClassRoom(nameTb.Text, int.Parse(capacityTb.Text), sectionCb.SelectedItem.ToString(), double.Parse(feesBox.Value.ToString()));
             classRoom.insert_class();
 
@@ -36,12 +35,24 @@ namespace Perfect_Peace_System.Pages
                 query = "UPDATE Class SET teacher_id=" + teacher_id + " WHERE name='" + nameTb.Text + "'";
                 DbClient.query_execute(query);
 
-                query = "UPDATE Teacher SET class='" + nameTb.Text + "' WHERE teacher_id='" + teacher_id + "'";
+                query = "UPDATE Teacher SET class_id='" + DbClient.GetLastId("Class") + "' WHERE teacher_id='" + teacher_id + "'";
                 DbClient.query_execute(query);
             }
-
-
             MessageBox.Show("Class Added");
-            }
+        }
+
+        private void clearBtn_Click(object sender, EventArgs e)
+        {
+            clearFeild();
+        }
+
+        private void clearFeild()
+        {
+            nameTb.Text = null;
+            capacityTb.Text = null;
+            feesBox.Value = 0;
+            sectionCb.SelectedIndex = -1;
+            teacherCb.SelectedIndex = -1;
+        }
     }
 }

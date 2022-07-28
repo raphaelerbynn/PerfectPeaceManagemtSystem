@@ -66,7 +66,6 @@ namespace Perfect_Peace_System.Pages
                 if (_class.Equals(classCb.Items[i].ToString()))
                 {
                     classCb.SelectedIndex = i;
-                    Console.WriteLine("Class: "+i);
                     break;
                 }
             }
@@ -101,10 +100,10 @@ namespace Perfect_Peace_System.Pages
                     query = "UPDATE Class SET teacher_id='" + id + "' WHERE class_id='" + class_id + "'";
                     DbClient.query_execute(query);
 
-                    
 
                     MessageBox.Show("Teacher Info Updated");
                 }
+
                 else
                 {
                     //Teacher teacher = new Teacher(bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, null, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);

@@ -32,7 +32,7 @@ namespace Perfect_Peace_System
 
         public void show_data(DataGridView dataGridView)
         {
-            string query = "SELECT class_id, name, section, capacity, teacher_id, CAST(teacher_id AS VARCHAR(50)) AS teacher FROM Class";
+            string query = "SELECT class_id, name, section, capacity, fees, teacher_id, CAST(teacher_id AS VARCHAR(50)) AS teacher FROM Class";
             DbClient.dataGridFill(dataGridView, query);
         }
 
