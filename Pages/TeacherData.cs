@@ -72,7 +72,10 @@ namespace Perfect_Peace_System.Pages
 
                 if (teacherDataGridView.Columns[e.ColumnIndex].Name == "view" && e.RowIndex >= 0)
                 {
-                    //studentDetail.Show();
+                    TeacherDetails details = new TeacherDetails();
+                    details.Show();
+                    Home home = (Home)Application.OpenForms["Home"];
+                    home.Hide();
                 }
 
                 if (teacherDataGridView.Columns[e.ColumnIndex].Name == "edit" && e.RowIndex >= 0)

@@ -236,7 +236,7 @@
             // 
             // view
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
             this.view.DefaultCellStyle = dataGridViewCellStyle2;
             this.view.HeaderText = "";
@@ -244,11 +244,11 @@
             this.view.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.view.Name = "view";
             this.view.ReadOnly = true;
-            this.view.Width = 30;
+            this.view.Width = 44;
             // 
             // edit
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
             this.edit.DefaultCellStyle = dataGridViewCellStyle3;
             this.edit.HeaderText = "";
@@ -256,11 +256,11 @@
             this.edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.edit.Name = "edit";
             this.edit.ReadOnly = true;
-            this.edit.Width = 30;
+            this.edit.Width = 44;
             // 
             // delete
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
             this.delete.DefaultCellStyle = dataGridViewCellStyle4;
             this.delete.HeaderText = "";
@@ -268,7 +268,7 @@
             this.delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.delete.Name = "delete";
             this.delete.ReadOnly = true;
-            this.delete.Width = 30;
+            this.delete.Width = 44;
             // 
             // TeacherData
             // 
