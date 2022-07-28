@@ -21,7 +21,7 @@ namespace Perfect_Peace_System.Pages
         {
             teacher = new Teacher();
             InitializeComponent();
-
+            topPanel.BackColor = Home.foreColor;
             teacherDataGridView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
             teacherDataGridView.RowsDefaultCellStyle.BackColor = Home.cellColor;
             teacherDataGridView.BackgroundColor = Home.foreColor;
@@ -78,7 +78,6 @@ namespace Perfect_Peace_System.Pages
                 if (teacherDataGridView.Columns[e.ColumnIndex].Name == "edit" && e.RowIndex >= 0)
                 {
                     //update data
-                    Console.WriteLine("Test");
                     teacherDataGridView.Visible = false;
                     openNewPage.OpenChildForm(new Pages.UpdateTeacher(), showDataPanel);
                 }

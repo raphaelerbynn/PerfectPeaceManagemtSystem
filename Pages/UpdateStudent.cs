@@ -21,7 +21,7 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
             fillFields();
-            Console.WriteLine("Current: " + classroom.curCapacity("!A"));
+            registerPanel.BackColor = Home.foreColor;
         }
 
         private void fillFields()

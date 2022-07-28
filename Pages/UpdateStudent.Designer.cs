@@ -237,10 +237,10 @@
             this.maleRadio.AutoSize = true;
             this.maleRadio.Checked = true;
             this.maleRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maleRadio.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maleRadio.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.maleRadio.Location = new System.Drawing.Point(145, 269);
             this.maleRadio.Name = "maleRadio";
-            this.maleRadio.Size = new System.Drawing.Size(65, 30);
+            this.maleRadio.Size = new System.Drawing.Size(57, 26);
             this.maleRadio.TabIndex = 13;
             this.maleRadio.TabStop = true;
             this.maleRadio.Text = "Male";

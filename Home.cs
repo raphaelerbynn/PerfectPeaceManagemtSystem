@@ -230,7 +230,7 @@ namespace Perfect_Peace_System
             addStntBtn.Visible = true;
             addStntBtn.Text = "Add Teacher";
             titleLbl.Text = "TEACHERS";
-
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
             openNewPage.OpenChildForm(new Pages.TeacherData(), panelView);
         }
 

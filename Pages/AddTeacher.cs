@@ -15,6 +15,7 @@ namespace Perfect_Peace_System.Pages
         public AddTeacher()
         {
             InitializeComponent();
+            bgPanel.BackColor = Home.foreColor;
         }
 
         private string getRadioBtnValue()
@@ -33,6 +34,11 @@ namespace Perfect_Peace_System.Pages
             phoneTB.Text = null;
             addressTb.Text = null;
             emailTb.Text = null;
+
+            bankTb.Text = null;
+            accountNumTb.Text = null;
+            ssnitTb.Text = null;
+            tinTb.Text = null;
         }
 
         private void registerTeacherBnt_Click(object sender, EventArgs e)
@@ -40,7 +46,7 @@ namespace Perfect_Peace_System.Pages
             try
             {
                 Teacher teacher = new Teacher (
-                    phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text,
+                    bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text,
                     getRadioBtnValue(), DateTime.Parse(DateTime.Now.ToString())
                     );
 

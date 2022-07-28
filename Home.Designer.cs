@@ -41,7 +41,6 @@
             this.teachersBtn = new System.Windows.Forms.Button();
             this.studentBtn = new System.Windows.Forms.Button();
             this.dashboardBtn = new System.Windows.Forms.Button();
-            this.addStntBtn = new System.Windows.Forms.Button();
             this.maxBtn = new System.Windows.Forms.PictureBox();
             this.topPanel = new System.Windows.Forms.Panel();
             this.logoutLink = new System.Windows.Forms.LinkLabel();
@@ -58,6 +57,7 @@
             this.line2 = new System.Windows.Forms.Panel();
             this.line3 = new System.Windows.Forms.Panel();
             this.panelView = new System.Windows.Forms.Panel();
+            this.addStntBtn = new System.Windows.Forms.LinkLabel();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maxBtn)).BeginInit();
             this.topPanel.SuspendLayout();
@@ -298,19 +298,6 @@
             this.dashboardBtn.UseVisualStyleBackColor = true;
             this.dashboardBtn.Click += new System.EventHandler(this.dashboardBtn_Click);
             // 
-            // addStntBtn
-            // 
-            this.addStntBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addStntBtn.AutoSize = true;
-            this.addStntBtn.Location = new System.Drawing.Point(999, 77);
-            this.addStntBtn.Name = "addStntBtn";
-            this.addStntBtn.Size = new System.Drawing.Size(76, 23);
-            this.addStntBtn.TabIndex = 0;
-            this.addStntBtn.Text = "Add Student";
-            this.addStntBtn.UseVisualStyleBackColor = true;
-            this.addStntBtn.Visible = false;
-            this.addStntBtn.Click += new System.EventHandler(this.addStntBtn_Click);
-            // 
             // maxBtn
             // 
             this.maxBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -496,15 +483,28 @@
             this.panelView.Size = new System.Drawing.Size(966, 638);
             this.panelView.TabIndex = 4;
             // 
+            // addStntBtn
+            // 
+            this.addStntBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addStntBtn.AutoSize = true;
+            this.addStntBtn.Location = new System.Drawing.Point(997, 88);
+            this.addStntBtn.Name = "addStntBtn";
+            this.addStntBtn.Size = new System.Drawing.Size(66, 13);
+            this.addStntBtn.TabIndex = 5;
+            this.addStntBtn.TabStop = true;
+            this.addStntBtn.Text = "Add Student";
+            this.addStntBtn.Visible = false;
+            this.addStntBtn.Click += new System.EventHandler(this.addStntBtn_Click);
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 744);
+            this.Controls.Add(this.addStntBtn);
             this.Controls.Add(this.panelView);
             this.Controls.Add(this.menuPanel);
             this.Controls.Add(this.topPanel);
-            this.Controls.Add(this.addStntBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.Name = "Home";
@@ -539,7 +539,6 @@
         private System.Windows.Forms.Button teachersBtn;
         private System.Windows.Forms.Button studentBtn;
         private System.Windows.Forms.Button dashboardBtn;
-        private System.Windows.Forms.Button addStntBtn;
         private System.Windows.Forms.PictureBox maxBtn;
         private System.Windows.Forms.Panel topPanel;
         private System.Windows.Forms.LinkLabel logoutLink;
@@ -556,6 +555,7 @@
         private System.Windows.Forms.Panel line2;
         private System.Windows.Forms.Panel line3;
         private System.Windows.Forms.Panel panelView;
+        private System.Windows.Forms.LinkLabel addStntBtn;
     }
 }
 

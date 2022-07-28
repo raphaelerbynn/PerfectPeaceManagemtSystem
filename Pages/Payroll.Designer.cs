@@ -32,6 +32,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -51,13 +58,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.payrollPanel = new System.Windows.Forms.Panel();
             this.paymentPanel = new System.Windows.Forms.Panel();
             this.paymentNameCb = new System.Windows.Forms.ComboBox();
@@ -67,6 +67,14 @@
             this.searchPaidEmpBtn = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.paymentDataView = new System.Windows.Forms.DataGridView();
+            this.payment_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payment_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.paymentNetAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.amountPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mode_of_payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salary_month = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deletePayment = new System.Windows.Forms.DataGridViewImageColumn();
             this.label9 = new System.Windows.Forms.Label();
             this.empSalaryPanel = new System.Windows.Forms.Panel();
             this.salaryBaseCb = new System.Windows.Forms.ComboBox();
@@ -105,14 +113,6 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.payment_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.payment_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paymentNetAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.amountPaid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mode_of_payment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salary_month = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_paid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deletePayment = new System.Windows.Forms.DataGridViewImageColumn();
             this.payrollPanel.SuspendLayout();
             this.paymentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.paymentDataView)).BeginInit();
@@ -282,6 +282,96 @@
             this.paymentDataView.Size = new System.Drawing.Size(917, 365);
             this.paymentDataView.TabIndex = 34;
             this.paymentDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.paymentDataView_CellContentClick);
+            // 
+            // payment_id
+            // 
+            this.payment_id.DataPropertyName = "salary_payment_id";
+            this.payment_id.HeaderText = "ID";
+            this.payment_id.Name = "payment_id";
+            this.payment_id.ReadOnly = true;
+            this.payment_id.Visible = false;
+            // 
+            // payment_name
+            // 
+            this.payment_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.payment_name.DataPropertyName = "name";
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.payment_name.DefaultCellStyle = dataGridViewCellStyle2;
+            this.payment_name.HeaderText = "NAME";
+            this.payment_name.Name = "payment_name";
+            this.payment_name.ReadOnly = true;
+            this.payment_name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // paymentNetAmount
+            // 
+            this.paymentNetAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.paymentNetAmount.DataPropertyName = "net";
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.paymentNetAmount.DefaultCellStyle = dataGridViewCellStyle3;
+            this.paymentNetAmount.HeaderText = "NET SALARY";
+            this.paymentNetAmount.Name = "paymentNetAmount";
+            this.paymentNetAmount.ReadOnly = true;
+            this.paymentNetAmount.Width = 141;
+            // 
+            // amountPaid
+            // 
+            this.amountPaid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.amountPaid.DataPropertyName = "amount";
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.amountPaid.DefaultCellStyle = dataGridViewCellStyle4;
+            this.amountPaid.HeaderText = "AMOUNT PAID";
+            this.amountPaid.Name = "amountPaid";
+            this.amountPaid.ReadOnly = true;
+            this.amountPaid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.amountPaid.Width = 154;
+            // 
+            // mode_of_payment
+            // 
+            this.mode_of_payment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.mode_of_payment.DataPropertyName = "payment_method";
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.mode_of_payment.DefaultCellStyle = dataGridViewCellStyle5;
+            this.mode_of_payment.HeaderText = "PAYMENT MODE";
+            this.mode_of_payment.Name = "mode_of_payment";
+            this.mode_of_payment.ReadOnly = true;
+            this.mode_of_payment.Width = 174;
+            // 
+            // salary_month
+            // 
+            this.salary_month.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.salary_month.DataPropertyName = "salary_date";
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.salary_month.DefaultCellStyle = dataGridViewCellStyle6;
+            this.salary_month.HeaderText = "SALARY MONTH";
+            this.salary_month.Name = "salary_month";
+            this.salary_month.ReadOnly = true;
+            this.salary_month.Width = 169;
+            // 
+            // date_paid
+            // 
+            this.date_paid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.date_paid.DataPropertyName = "date_paid";
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.date_paid.DefaultCellStyle = dataGridViewCellStyle7;
+            this.date_paid.HeaderText = "DATE PAID";
+            this.date_paid.Name = "date_paid";
+            this.date_paid.ReadOnly = true;
+            this.date_paid.Width = 126;
+            // 
+            // deletePayment
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = null;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.deletePayment.DefaultCellStyle = dataGridViewCellStyle8;
+            this.deletePayment.FillWeight = 30F;
+            this.deletePayment.HeaderText = "";
+            this.deletePayment.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.deletePayment.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.deletePayment.Name = "deletePayment";
+            this.deletePayment.ReadOnly = true;
+            this.deletePayment.Width = 50;
             // 
             // label9
             // 
@@ -814,96 +904,6 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.ReadOnly = true;
             this.dataGridViewImageColumn3.Width = 50;
-            // 
-            // payment_id
-            // 
-            this.payment_id.DataPropertyName = "salary_payment_id";
-            this.payment_id.HeaderText = "ID";
-            this.payment_id.Name = "payment_id";
-            this.payment_id.ReadOnly = true;
-            this.payment_id.Visible = false;
-            // 
-            // payment_name
-            // 
-            this.payment_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.payment_name.DataPropertyName = "name";
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.payment_name.DefaultCellStyle = dataGridViewCellStyle2;
-            this.payment_name.HeaderText = "NAME";
-            this.payment_name.Name = "payment_name";
-            this.payment_name.ReadOnly = true;
-            this.payment_name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // paymentNetAmount
-            // 
-            this.paymentNetAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.paymentNetAmount.DataPropertyName = "net";
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.paymentNetAmount.DefaultCellStyle = dataGridViewCellStyle3;
-            this.paymentNetAmount.HeaderText = "NET SALARY";
-            this.paymentNetAmount.Name = "paymentNetAmount";
-            this.paymentNetAmount.ReadOnly = true;
-            this.paymentNetAmount.Width = 141;
-            // 
-            // amountPaid
-            // 
-            this.amountPaid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.amountPaid.DataPropertyName = "amount";
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.amountPaid.DefaultCellStyle = dataGridViewCellStyle4;
-            this.amountPaid.HeaderText = "AMOUNT PAID";
-            this.amountPaid.Name = "amountPaid";
-            this.amountPaid.ReadOnly = true;
-            this.amountPaid.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.amountPaid.Width = 154;
-            // 
-            // mode_of_payment
-            // 
-            this.mode_of_payment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.mode_of_payment.DataPropertyName = "payment_method";
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.mode_of_payment.DefaultCellStyle = dataGridViewCellStyle5;
-            this.mode_of_payment.HeaderText = "PAYMENT MODE";
-            this.mode_of_payment.Name = "mode_of_payment";
-            this.mode_of_payment.ReadOnly = true;
-            this.mode_of_payment.Width = 174;
-            // 
-            // salary_month
-            // 
-            this.salary_month.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.salary_month.DataPropertyName = "salary_date";
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.salary_month.DefaultCellStyle = dataGridViewCellStyle6;
-            this.salary_month.HeaderText = "SALARY MONTH";
-            this.salary_month.Name = "salary_month";
-            this.salary_month.ReadOnly = true;
-            this.salary_month.Width = 169;
-            // 
-            // date_paid
-            // 
-            this.date_paid.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.date_paid.DataPropertyName = "date_paid";
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.date_paid.DefaultCellStyle = dataGridViewCellStyle7;
-            this.date_paid.HeaderText = "DATE PAID";
-            this.date_paid.Name = "date_paid";
-            this.date_paid.ReadOnly = true;
-            this.date_paid.Width = 126;
-            // 
-            // deletePayment
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.NullValue = null;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.deletePayment.DefaultCellStyle = dataGridViewCellStyle8;
-            this.deletePayment.FillWeight = 30F;
-            this.deletePayment.HeaderText = "";
-            this.deletePayment.Image = global::Perfect_Peace_System.Properties.Resources.delete;
-            this.deletePayment.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.deletePayment.Name = "deletePayment";
-            this.deletePayment.ReadOnly = true;
-            this.deletePayment.Width = 50;
             // 
             // Payroll
             // 
