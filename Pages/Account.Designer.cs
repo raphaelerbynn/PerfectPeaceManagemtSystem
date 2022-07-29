@@ -41,6 +41,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -49,13 +54,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bgPanel = new System.Windows.Forms.Panel();
             this.feedingPanel = new System.Windows.Forms.Panel();
+            this.addMonthCheckBF = new System.Windows.Forms.CheckBox();
+            this.addDayCheckBF = new System.Windows.Forms.CheckBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.feedingClassCb = new System.Windows.Forms.ComboBox();
             this.feedingTeacherCb = new System.Windows.Forms.ComboBox();
@@ -86,6 +89,9 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.classesPanel = new System.Windows.Forms.Panel();
+            this.addMonthBC = new System.Windows.Forms.CheckBox();
+            this.addDayCheckBC = new System.Windows.Forms.CheckBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.extraClassesClassCb = new System.Windows.Forms.ComboBox();
             this.teacherCb = new System.Windows.Forms.ComboBox();
@@ -95,6 +101,12 @@
             this.extraClassesTotalLbl = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.extraClassesDataView = new System.Windows.Forms.DataGridView();
+            this.extra_classes_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classes_teacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ex_cl_class = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.extraClassesAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ex_cl_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ex_cl_delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.addExtraClassesBtn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.extraClassesAmntTb = new System.Windows.Forms.TextBox();
@@ -110,6 +122,8 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.expensePanel = new System.Windows.Forms.Panel();
+            this.addMonthCheckBE = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.totalExpLbl = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.expensesDataView = new System.Windows.Forms.DataGridView();
@@ -136,20 +150,6 @@
             this.loadInfoBtn = new System.Windows.Forms.Button();
             this.categoryCb = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.addDayCheckBF = new System.Windows.Forms.CheckBox();
-            this.addMonthCheckBF = new System.Windows.Forms.CheckBox();
-            this.addMonthBC = new System.Windows.Forms.CheckBox();
-            this.addDayCheckBC = new System.Windows.Forms.CheckBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.addMonthCheckBE = new System.Windows.Forms.CheckBox();
-            this.extra_classes_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.classes_teacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ex_cl_class = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.extraClassesAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ex_cl_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ex_cl_delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.bgPanel.SuspendLayout();
             this.feedingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.feedingDataView)).BeginInit();
@@ -204,18 +204,56 @@
             this.feedingPanel.Controls.Add(this.label29);
             this.feedingPanel.Controls.Add(this.label30);
             this.feedingPanel.Controls.Add(this.label31);
-            this.feedingPanel.Location = new System.Drawing.Point(31, 39);
+            this.feedingPanel.Location = new System.Drawing.Point(36, 25);
             this.feedingPanel.Name = "feedingPanel";
             this.feedingPanel.Size = new System.Drawing.Size(873, 612);
             this.feedingPanel.TabIndex = 42;
             this.feedingPanel.Visible = false;
+            // 
+            // addMonthCheckBF
+            // 
+            this.addMonthCheckBF.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.addMonthCheckBF.AutoSize = true;
+            this.addMonthCheckBF.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addMonthCheckBF.Location = new System.Drawing.Point(509, 141);
+            this.addMonthCheckBF.Name = "addMonthCheckBF";
+            this.addMonthCheckBF.Size = new System.Drawing.Size(90, 21);
+            this.addMonthCheckBF.TabIndex = 44;
+            this.addMonthCheckBF.Text = "Add Month";
+            this.addMonthCheckBF.UseVisualStyleBackColor = true;
+            this.addMonthCheckBF.CheckedChanged += new System.EventHandler(this.addMonthCheckBF_CheckedChanged);
+            // 
+            // addDayCheckBF
+            // 
+            this.addDayCheckBF.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.addDayCheckBF.AutoSize = true;
+            this.addDayCheckBF.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addDayCheckBF.Location = new System.Drawing.Point(605, 140);
+            this.addDayCheckBF.Name = "addDayCheckBF";
+            this.addDayCheckBF.Size = new System.Drawing.Size(74, 21);
+            this.addDayCheckBF.TabIndex = 43;
+            this.addDayCheckBF.Text = "Add Day";
+            this.addDayCheckBF.UseVisualStyleBackColor = true;
+            this.addDayCheckBF.Visible = false;
+            this.addDayCheckBF.CheckedChanged += new System.EventHandler(this.addDayCheckBF_CheckedChanged);
+            // 
+            // label23
+            // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(410, 140);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(79, 19);
+            this.label23.TabIndex = 42;
+            this.label23.Text = "Load Date:";
             // 
             // label20
             // 
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(737, 224);
+            this.label20.Location = new System.Drawing.Point(741, 227);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(34, 19);
             this.label20.TabIndex = 41;
@@ -284,7 +322,7 @@
             this.feedinTotalLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.feedinTotalLbl.AutoSize = true;
             this.feedinTotalLbl.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feedinTotalLbl.Location = new System.Drawing.Point(777, 219);
+            this.feedinTotalLbl.Location = new System.Drawing.Point(771, 222);
             this.feedinTotalLbl.Name = "feedinTotalLbl";
             this.feedinTotalLbl.Size = new System.Drawing.Size(23, 27);
             this.feedinTotalLbl.TabIndex = 35;
@@ -295,7 +333,7 @@
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(621, 224);
+            this.label24.Location = new System.Drawing.Point(631, 226);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(100, 19);
             this.label24.TabIndex = 34;
@@ -431,12 +469,16 @@
             // 
             this.addFeedingBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.addFeedingBtn.AutoSize = true;
+            this.addFeedingBtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.addFeedingBtn.FlatAppearance.BorderSize = 0;
+            this.addFeedingBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addFeedingBtn.ForeColor = System.Drawing.Color.White;
             this.addFeedingBtn.Location = new System.Drawing.Point(439, 88);
             this.addFeedingBtn.Name = "addFeedingBtn";
             this.addFeedingBtn.Size = new System.Drawing.Size(50, 23);
             this.addFeedingBtn.TabIndex = 32;
             this.addFeedingBtn.Text = "Add";
-            this.addFeedingBtn.UseVisualStyleBackColor = true;
+            this.addFeedingBtn.UseVisualStyleBackColor = false;
             this.addFeedingBtn.Click += new System.EventHandler(this.addFeedingBtn_Click);
             // 
             // label25
@@ -486,12 +528,16 @@
             // 
             this.feedingLoadBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.feedingLoadBtn.AutoSize = true;
+            this.feedingLoadBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.feedingLoadBtn.FlatAppearance.BorderSize = 0;
+            this.feedingLoadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.feedingLoadBtn.ForeColor = System.Drawing.Color.White;
             this.feedingLoadBtn.Location = new System.Drawing.Point(755, 187);
             this.feedingLoadBtn.Name = "feedingLoadBtn";
             this.feedingLoadBtn.Size = new System.Drawing.Size(90, 23);
             this.feedingLoadBtn.TabIndex = 26;
             this.feedingLoadBtn.Text = "Load List";
-            this.feedingLoadBtn.UseVisualStyleBackColor = true;
+            this.feedingLoadBtn.UseVisualStyleBackColor = false;
             this.feedingLoadBtn.Click += new System.EventHandler(this.feedingLoadBtn_Click);
             // 
             // monthFeedingPk
@@ -526,18 +572,22 @@
             // feedingSearchBtn
             // 
             this.feedingSearchBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.feedingSearchBtn.Location = new System.Drawing.Point(329, 187);
+            this.feedingSearchBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.feedingSearchBtn.FlatAppearance.BorderSize = 0;
+            this.feedingSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.feedingSearchBtn.ForeColor = System.Drawing.Color.White;
+            this.feedingSearchBtn.Location = new System.Drawing.Point(294, 226);
             this.feedingSearchBtn.Name = "feedingSearchBtn";
             this.feedingSearchBtn.Size = new System.Drawing.Size(56, 23);
             this.feedingSearchBtn.TabIndex = 23;
             this.feedingSearchBtn.Text = "Search";
-            this.feedingSearchBtn.UseVisualStyleBackColor = true;
+            this.feedingSearchBtn.UseVisualStyleBackColor = false;
             this.feedingSearchBtn.Click += new System.EventHandler(this.feedingSearchBtn_Click);
             // 
             // feedingSearchTb
             // 
             this.feedingSearchTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.feedingSearchTb.Location = new System.Drawing.Point(109, 187);
+            this.feedingSearchTb.Location = new System.Drawing.Point(74, 227);
             this.feedingSearchTb.Name = "feedingSearchTb";
             this.feedingSearchTb.Size = new System.Drawing.Size(214, 20);
             this.feedingSearchTb.TabIndex = 22;
@@ -569,7 +619,7 @@
             this.label30.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(46, 189);
+            this.label30.Location = new System.Drawing.Point(12, 230);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(56, 19);
             this.label30.TabIndex = 19;
@@ -622,6 +672,44 @@
             this.classesPanel.Size = new System.Drawing.Size(873, 612);
             this.classesPanel.TabIndex = 36;
             this.classesPanel.Visible = false;
+            // 
+            // addMonthBC
+            // 
+            this.addMonthBC.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.addMonthBC.AutoSize = true;
+            this.addMonthBC.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addMonthBC.Location = new System.Drawing.Point(507, 140);
+            this.addMonthBC.Name = "addMonthBC";
+            this.addMonthBC.Size = new System.Drawing.Size(90, 21);
+            this.addMonthBC.TabIndex = 47;
+            this.addMonthBC.Text = "Add Month";
+            this.addMonthBC.UseVisualStyleBackColor = true;
+            this.addMonthBC.CheckedChanged += new System.EventHandler(this.addMonthCheckBC_CheckedChanged);
+            // 
+            // addDayCheckBC
+            // 
+            this.addDayCheckBC.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.addDayCheckBC.AutoSize = true;
+            this.addDayCheckBC.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addDayCheckBC.Location = new System.Drawing.Point(603, 140);
+            this.addDayCheckBC.Name = "addDayCheckBC";
+            this.addDayCheckBC.Size = new System.Drawing.Size(74, 21);
+            this.addDayCheckBC.TabIndex = 46;
+            this.addDayCheckBC.Text = "Add Day";
+            this.addDayCheckBC.UseVisualStyleBackColor = true;
+            this.addDayCheckBC.Visible = false;
+            this.addDayCheckBC.CheckedChanged += new System.EventHandler(this.addDayCheckBC_CheckedChanged);
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(412, 139);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(79, 19);
+            this.label22.TabIndex = 45;
+            this.label22.Text = "Load Date:";
             // 
             // label9
             // 
@@ -775,16 +863,85 @@
             this.extraClassesDataView.TabIndex = 33;
             this.extraClassesDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.extraClassesDataView_CellContentClick);
             // 
+            // extra_classes_id
+            // 
+            this.extra_classes_id.DataPropertyName = "extra_classes_id";
+            this.extra_classes_id.HeaderText = "ID";
+            this.extra_classes_id.Name = "extra_classes_id";
+            this.extra_classes_id.ReadOnly = true;
+            this.extra_classes_id.Visible = false;
+            // 
+            // classes_teacher
+            // 
+            this.classes_teacher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.classes_teacher.DataPropertyName = "teacher";
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.classes_teacher.DefaultCellStyle = dataGridViewCellStyle11;
+            this.classes_teacher.HeaderText = "TEACHER";
+            this.classes_teacher.Name = "classes_teacher";
+            this.classes_teacher.ReadOnly = true;
+            this.classes_teacher.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // ex_cl_class
+            // 
+            this.ex_cl_class.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ex_cl_class.DataPropertyName = "class";
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ex_cl_class.DefaultCellStyle = dataGridViewCellStyle12;
+            this.ex_cl_class.HeaderText = "CLASS";
+            this.ex_cl_class.Name = "ex_cl_class";
+            this.ex_cl_class.ReadOnly = true;
+            // 
+            // extraClassesAmount
+            // 
+            this.extraClassesAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.extraClassesAmount.DataPropertyName = "amount";
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.extraClassesAmount.DefaultCellStyle = dataGridViewCellStyle13;
+            this.extraClassesAmount.HeaderText = "AMOUNT";
+            this.extraClassesAmount.Name = "extraClassesAmount";
+            this.extraClassesAmount.ReadOnly = true;
+            // 
+            // ex_cl_date
+            // 
+            this.ex_cl_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ex_cl_date.DataPropertyName = "date";
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.ex_cl_date.DefaultCellStyle = dataGridViewCellStyle14;
+            this.ex_cl_date.HeaderText = "DATE";
+            this.ex_cl_date.Name = "ex_cl_date";
+            this.ex_cl_date.ReadOnly = true;
+            this.ex_cl_date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ex_cl_delete
+            // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.NullValue = null;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.ex_cl_delete.DefaultCellStyle = dataGridViewCellStyle15;
+            this.ex_cl_delete.FillWeight = 30F;
+            this.ex_cl_delete.HeaderText = "";
+            this.ex_cl_delete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.ex_cl_delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ex_cl_delete.Name = "ex_cl_delete";
+            this.ex_cl_delete.ReadOnly = true;
+            this.ex_cl_delete.Width = 50;
+            // 
             // addExtraClassesBtn
             // 
             this.addExtraClassesBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.addExtraClassesBtn.AutoSize = true;
+            this.addExtraClassesBtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.addExtraClassesBtn.FlatAppearance.BorderSize = 0;
+            this.addExtraClassesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addExtraClassesBtn.ForeColor = System.Drawing.Color.White;
             this.addExtraClassesBtn.Location = new System.Drawing.Point(439, 88);
             this.addExtraClassesBtn.Name = "addExtraClassesBtn";
-            this.addExtraClassesBtn.Size = new System.Drawing.Size(50, 23);
+            this.addExtraClassesBtn.Size = new System.Drawing.Size(50, 25);
             this.addExtraClassesBtn.TabIndex = 32;
             this.addExtraClassesBtn.Text = "Add";
-            this.addExtraClassesBtn.UseVisualStyleBackColor = true;
+            this.addExtraClassesBtn.UseVisualStyleBackColor = false;
             this.addExtraClassesBtn.Click += new System.EventHandler(this.addExtraClassesBtn_Click);
             // 
             // label11
@@ -834,12 +991,16 @@
             // 
             this.loadExtraClassesBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.loadExtraClassesBtn.AutoSize = true;
+            this.loadExtraClassesBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.loadExtraClassesBtn.FlatAppearance.BorderSize = 0;
+            this.loadExtraClassesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadExtraClassesBtn.ForeColor = System.Drawing.Color.White;
             this.loadExtraClassesBtn.Location = new System.Drawing.Point(755, 182);
             this.loadExtraClassesBtn.Name = "loadExtraClassesBtn";
-            this.loadExtraClassesBtn.Size = new System.Drawing.Size(90, 23);
+            this.loadExtraClassesBtn.Size = new System.Drawing.Size(90, 25);
             this.loadExtraClassesBtn.TabIndex = 26;
             this.loadExtraClassesBtn.Text = "Load List";
-            this.loadExtraClassesBtn.UseVisualStyleBackColor = true;
+            this.loadExtraClassesBtn.UseVisualStyleBackColor = false;
             this.loadExtraClassesBtn.Click += new System.EventHandler(this.loadExtraClassesBtn_Click);
             // 
             // monthExtraClassesPk
@@ -874,18 +1035,22 @@
             // extraClassesSearchBtn
             // 
             this.extraClassesSearchBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.extraClassesSearchBtn.Location = new System.Drawing.Point(329, 182);
+            this.extraClassesSearchBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.extraClassesSearchBtn.FlatAppearance.BorderSize = 0;
+            this.extraClassesSearchBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.extraClassesSearchBtn.ForeColor = System.Drawing.Color.White;
+            this.extraClassesSearchBtn.Location = new System.Drawing.Point(302, 222);
             this.extraClassesSearchBtn.Name = "extraClassesSearchBtn";
             this.extraClassesSearchBtn.Size = new System.Drawing.Size(56, 23);
             this.extraClassesSearchBtn.TabIndex = 23;
             this.extraClassesSearchBtn.Text = "Search";
-            this.extraClassesSearchBtn.UseVisualStyleBackColor = true;
+            this.extraClassesSearchBtn.UseVisualStyleBackColor = false;
             this.extraClassesSearchBtn.Click += new System.EventHandler(this.extraClassesSearchBtn_Click);
             // 
             // searchExtraClassesTb
             // 
             this.searchExtraClassesTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.searchExtraClassesTb.Location = new System.Drawing.Point(109, 182);
+            this.searchExtraClassesTb.Location = new System.Drawing.Point(82, 222);
             this.searchExtraClassesTb.Name = "searchExtraClassesTb";
             this.searchExtraClassesTb.Size = new System.Drawing.Size(214, 20);
             this.searchExtraClassesTb.TabIndex = 22;
@@ -917,7 +1082,7 @@
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(46, 184);
+            this.label16.Location = new System.Drawing.Point(20, 221);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(56, 19);
             this.label16.TabIndex = 19;
@@ -965,12 +1130,36 @@
             this.expensePanel.TabIndex = 7;
             this.expensePanel.Visible = false;
             // 
+            // addMonthCheckBE
+            // 
+            this.addMonthCheckBE.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.addMonthCheckBE.AutoSize = true;
+            this.addMonthCheckBE.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addMonthCheckBE.Location = new System.Drawing.Point(603, 132);
+            this.addMonthCheckBE.Name = "addMonthCheckBE";
+            this.addMonthCheckBE.Size = new System.Drawing.Size(90, 21);
+            this.addMonthCheckBE.TabIndex = 47;
+            this.addMonthCheckBE.Text = "Add Month";
+            this.addMonthCheckBE.UseVisualStyleBackColor = true;
+            this.addMonthCheckBE.CheckedChanged += new System.EventHandler(this.addMonthCheckBE_CheckedChanged);
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(503, 134);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(79, 19);
+            this.label12.TabIndex = 45;
+            this.label12.Text = "Load Date:";
+            // 
             // totalExpLbl
             // 
             this.totalExpLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.totalExpLbl.AutoSize = true;
             this.totalExpLbl.Font = new System.Drawing.Font("Calibri", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalExpLbl.Location = new System.Drawing.Point(754, 211);
+            this.totalExpLbl.Location = new System.Drawing.Point(788, 214);
             this.totalExpLbl.Name = "totalExpLbl";
             this.totalExpLbl.Size = new System.Drawing.Size(23, 27);
             this.totalExpLbl.TabIndex = 35;
@@ -981,7 +1170,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(703, 216);
+            this.label8.Location = new System.Drawing.Point(737, 219);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 19);
             this.label8.TabIndex = 34;
@@ -1106,12 +1295,16 @@
             // 
             this.addExpBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.addExpBtn.AutoSize = true;
-            this.addExpBtn.Location = new System.Drawing.Point(402, 88);
+            this.addExpBtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.addExpBtn.FlatAppearance.BorderSize = 0;
+            this.addExpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addExpBtn.ForeColor = System.Drawing.Color.White;
+            this.addExpBtn.Location = new System.Drawing.Point(401, 91);
             this.addExpBtn.Name = "addExpBtn";
             this.addExpBtn.Size = new System.Drawing.Size(80, 23);
             this.addExpBtn.TabIndex = 32;
             this.addExpBtn.Text = "Add Expense";
-            this.addExpBtn.UseVisualStyleBackColor = true;
+            this.addExpBtn.UseVisualStyleBackColor = false;
             this.addExpBtn.Click += new System.EventHandler(this.addExpBtn_Click);
             // 
             // label7
@@ -1128,17 +1321,19 @@
             // expenseTb
             // 
             this.expenseTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.expenseTb.Location = new System.Drawing.Point(119, 48);
+            this.expenseTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expenseTb.Location = new System.Drawing.Point(119, 47);
             this.expenseTb.Name = "expenseTb";
-            this.expenseTb.Size = new System.Drawing.Size(352, 20);
+            this.expenseTb.Size = new System.Drawing.Size(352, 27);
             this.expenseTb.TabIndex = 30;
             // 
             // expAmountTb
             // 
             this.expAmountTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.expAmountTb.Location = new System.Drawing.Point(625, 49);
+            this.expAmountTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expAmountTb.Location = new System.Drawing.Point(625, 47);
             this.expAmountTb.Name = "expAmountTb";
-            this.expAmountTb.Size = new System.Drawing.Size(175, 20);
+            this.expAmountTb.Size = new System.Drawing.Size(175, 27);
             this.expAmountTb.TabIndex = 29;
             this.expAmountTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB_KeyPress);
             // 
@@ -1169,12 +1364,16 @@
             // 
             this.loadExpBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.loadExpBtn.AutoSize = true;
+            this.loadExpBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.loadExpBtn.FlatAppearance.BorderSize = 0;
+            this.loadExpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.loadExpBtn.ForeColor = System.Drawing.Color.White;
             this.loadExpBtn.Location = new System.Drawing.Point(755, 179);
             this.loadExpBtn.Name = "loadExpBtn";
             this.loadExpBtn.Size = new System.Drawing.Size(90, 23);
             this.loadExpBtn.TabIndex = 26;
             this.loadExpBtn.Text = "Load Expenses";
-            this.loadExpBtn.UseVisualStyleBackColor = true;
+            this.loadExpBtn.UseVisualStyleBackColor = false;
             this.loadExpBtn.Click += new System.EventHandler(this.loadExpBtn_Click);
             // 
             // expMonthPk
@@ -1209,18 +1408,22 @@
             // searchExpBtn
             // 
             this.searchExpBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.searchExpBtn.Location = new System.Drawing.Point(329, 179);
+            this.searchExpBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.searchExpBtn.FlatAppearance.BorderSize = 0;
+            this.searchExpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchExpBtn.ForeColor = System.Drawing.Color.White;
+            this.searchExpBtn.Location = new System.Drawing.Point(290, 216);
             this.searchExpBtn.Name = "searchExpBtn";
             this.searchExpBtn.Size = new System.Drawing.Size(56, 23);
             this.searchExpBtn.TabIndex = 23;
             this.searchExpBtn.Text = "Search";
-            this.searchExpBtn.UseVisualStyleBackColor = true;
+            this.searchExpBtn.UseVisualStyleBackColor = false;
             this.searchExpBtn.Click += new System.EventHandler(this.searchExpBtn_Click);
             // 
             // expSearchTb
             // 
             this.expSearchTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.expSearchTb.Location = new System.Drawing.Point(109, 179);
+            this.expSearchTb.Location = new System.Drawing.Point(70, 218);
             this.expSearchTb.Name = "expSearchTb";
             this.expSearchTb.Size = new System.Drawing.Size(214, 20);
             this.expSearchTb.TabIndex = 22;
@@ -1230,7 +1433,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(46, 48);
+            this.label4.Location = new System.Drawing.Point(46, 50);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(67, 19);
             this.label4.TabIndex = 21;
@@ -1241,7 +1444,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(556, 50);
+            this.label3.Location = new System.Drawing.Point(556, 51);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(63, 19);
             this.label3.TabIndex = 20;
@@ -1252,7 +1455,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(46, 181);
+            this.label2.Location = new System.Drawing.Point(8, 220);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 19);
             this.label2.TabIndex = 19;
@@ -1272,12 +1475,15 @@
             // loadInfoBtn
             // 
             this.loadInfoBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.loadInfoBtn.BackColor = System.Drawing.Color.LightGreen;
+            this.loadInfoBtn.FlatAppearance.BorderSize = 0;
+            this.loadInfoBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.loadInfoBtn.Location = new System.Drawing.Point(632, 21);
             this.loadInfoBtn.Name = "loadInfoBtn";
             this.loadInfoBtn.Size = new System.Drawing.Size(75, 23);
             this.loadInfoBtn.TabIndex = 6;
             this.loadInfoBtn.Text = ">>>";
-            this.loadInfoBtn.UseVisualStyleBackColor = true;
+            this.loadInfoBtn.UseVisualStyleBackColor = false;
             this.loadInfoBtn.Click += new System.EventHandler(this.loadInfoBtn_Click);
             // 
             // categoryCb
@@ -1300,176 +1506,12 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(226, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(127, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "Choose Category: ";
-            // 
-            // label23
-            // 
-            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(410, 140);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(79, 19);
-            this.label23.TabIndex = 42;
-            this.label23.Text = "Load Date:";
-            // 
-            // addDayCheckBF
-            // 
-            this.addDayCheckBF.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.addDayCheckBF.AutoSize = true;
-            this.addDayCheckBF.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addDayCheckBF.Location = new System.Drawing.Point(605, 140);
-            this.addDayCheckBF.Name = "addDayCheckBF";
-            this.addDayCheckBF.Size = new System.Drawing.Size(74, 21);
-            this.addDayCheckBF.TabIndex = 43;
-            this.addDayCheckBF.Text = "Add Day";
-            this.addDayCheckBF.UseVisualStyleBackColor = true;
-            this.addDayCheckBF.Visible = false;
-            this.addDayCheckBF.CheckedChanged += new System.EventHandler(this.addDayCheckBF_CheckedChanged);
-            // 
-            // addMonthCheckBF
-            // 
-            this.addMonthCheckBF.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.addMonthCheckBF.AutoSize = true;
-            this.addMonthCheckBF.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addMonthCheckBF.Location = new System.Drawing.Point(509, 141);
-            this.addMonthCheckBF.Name = "addMonthCheckBF";
-            this.addMonthCheckBF.Size = new System.Drawing.Size(90, 21);
-            this.addMonthCheckBF.TabIndex = 44;
-            this.addMonthCheckBF.Text = "Add Month";
-            this.addMonthCheckBF.UseVisualStyleBackColor = true;
-            this.addMonthCheckBF.CheckedChanged += new System.EventHandler(this.addMonthCheckBF_CheckedChanged);
-            // 
-            // addMonthBC
-            // 
-            this.addMonthBC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.addMonthBC.AutoSize = true;
-            this.addMonthBC.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addMonthBC.Location = new System.Drawing.Point(507, 140);
-            this.addMonthBC.Name = "addMonthBC";
-            this.addMonthBC.Size = new System.Drawing.Size(90, 21);
-            this.addMonthBC.TabIndex = 47;
-            this.addMonthBC.Text = "Add Month";
-            this.addMonthBC.UseVisualStyleBackColor = true;
-            this.addMonthBC.CheckedChanged += new System.EventHandler(this.addMonthCheckBC_CheckedChanged);
-            // 
-            // addDayCheckBC
-            // 
-            this.addDayCheckBC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.addDayCheckBC.AutoSize = true;
-            this.addDayCheckBC.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addDayCheckBC.Location = new System.Drawing.Point(603, 140);
-            this.addDayCheckBC.Name = "addDayCheckBC";
-            this.addDayCheckBC.Size = new System.Drawing.Size(74, 21);
-            this.addDayCheckBC.TabIndex = 46;
-            this.addDayCheckBC.Text = "Add Day";
-            this.addDayCheckBC.UseVisualStyleBackColor = true;
-            this.addDayCheckBC.Visible = false;
-            this.addDayCheckBC.CheckedChanged += new System.EventHandler(this.addDayCheckBC_CheckedChanged);
-            // 
-            // label22
-            // 
-            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(412, 139);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(79, 19);
-            this.label22.TabIndex = 45;
-            this.label22.Text = "Load Date:";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(503, 134);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(79, 19);
-            this.label12.TabIndex = 45;
-            this.label12.Text = "Load Date:";
-            // 
-            // addMonthCheckBE
-            // 
-            this.addMonthCheckBE.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.addMonthCheckBE.AutoSize = true;
-            this.addMonthCheckBE.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addMonthCheckBE.Location = new System.Drawing.Point(603, 132);
-            this.addMonthCheckBE.Name = "addMonthCheckBE";
-            this.addMonthCheckBE.Size = new System.Drawing.Size(90, 21);
-            this.addMonthCheckBE.TabIndex = 47;
-            this.addMonthCheckBE.Text = "Add Month";
-            this.addMonthCheckBE.UseVisualStyleBackColor = true;
-            this.addMonthCheckBE.CheckedChanged += new System.EventHandler(this.addMonthCheckBE_CheckedChanged);
-            // 
-            // extra_classes_id
-            // 
-            this.extra_classes_id.DataPropertyName = "extra_classes_id";
-            this.extra_classes_id.HeaderText = "ID";
-            this.extra_classes_id.Name = "extra_classes_id";
-            this.extra_classes_id.ReadOnly = true;
-            this.extra_classes_id.Visible = false;
-            // 
-            // classes_teacher
-            // 
-            this.classes_teacher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.classes_teacher.DataPropertyName = "teacher";
-            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.classes_teacher.DefaultCellStyle = dataGridViewCellStyle11;
-            this.classes_teacher.HeaderText = "TEACHER";
-            this.classes_teacher.Name = "classes_teacher";
-            this.classes_teacher.ReadOnly = true;
-            this.classes_teacher.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // ex_cl_class
-            // 
-            this.ex_cl_class.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ex_cl_class.DataPropertyName = "class";
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ex_cl_class.DefaultCellStyle = dataGridViewCellStyle12;
-            this.ex_cl_class.HeaderText = "CLASS";
-            this.ex_cl_class.Name = "ex_cl_class";
-            this.ex_cl_class.ReadOnly = true;
-            // 
-            // extraClassesAmount
-            // 
-            this.extraClassesAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.extraClassesAmount.DataPropertyName = "amount";
-            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.extraClassesAmount.DefaultCellStyle = dataGridViewCellStyle13;
-            this.extraClassesAmount.HeaderText = "AMOUNT";
-            this.extraClassesAmount.Name = "extraClassesAmount";
-            this.extraClassesAmount.ReadOnly = true;
-            // 
-            // ex_cl_date
-            // 
-            this.ex_cl_date.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ex_cl_date.DataPropertyName = "date";
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.ex_cl_date.DefaultCellStyle = dataGridViewCellStyle14;
-            this.ex_cl_date.HeaderText = "DATE";
-            this.ex_cl_date.Name = "ex_cl_date";
-            this.ex_cl_date.ReadOnly = true;
-            this.ex_cl_date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ex_cl_delete
-            // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.NullValue = null;
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.ex_cl_delete.DefaultCellStyle = dataGridViewCellStyle15;
-            this.ex_cl_delete.FillWeight = 30F;
-            this.ex_cl_delete.HeaderText = "";
-            this.ex_cl_delete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
-            this.ex_cl_delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ex_cl_delete.Name = "ex_cl_delete";
-            this.ex_cl_delete.ReadOnly = true;
-            this.ex_cl_delete.Width = 50;
             // 
             // Account
             // 

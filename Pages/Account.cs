@@ -21,6 +21,11 @@ namespace Perfect_Peace_System.Pages
             showFeeding();
             showExtraClasses();
 
+            bgPanel.BackColor = Home.themeColor;
+            feedingPanel.BackColor = Home.foreColor;
+            expensePanel.BackColor = Home.foreColor;
+            classesPanel.BackColor = Home.foreColor;
+
         }
 
         private void loadInfoBtn_Click(object sender, EventArgs e)
@@ -61,6 +66,9 @@ namespace Perfect_Peace_System.Pages
 
         private void showExpenses()
         {
+            expensesDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            expensesDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            expensesDataView.BackgroundColor = Home.foreColor;
             //load data
             query = "SELECT expense_id, expense, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Expense";
             DbClient.dataGridFill(expensesDataView, query);
@@ -70,6 +78,9 @@ namespace Perfect_Peace_System.Pages
 
         private void showExtraClasses()
         {
+            extraClassesDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            extraClassesDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            extraClassesDataView.BackgroundColor = Home.foreColor;
             query = "SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes";
             DbClient.dataGridFill(extraClassesDataView, query);
             extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
@@ -77,6 +88,9 @@ namespace Perfect_Peace_System.Pages
 
         private void showFeeding()
         {
+            feedingDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            feedingDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            feedingDataView.BackgroundColor = Home.foreColor;
             query = "SELECT feeding_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Feeding_fee";
             DbClient.dataGridFill(feedingDataView, query);
             feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
