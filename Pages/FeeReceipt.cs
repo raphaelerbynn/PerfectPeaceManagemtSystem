@@ -30,7 +30,14 @@ namespace Perfect_Peace_System.Pages
             try
             {
                 string student_id = GetData.getStudentIdReceipt();
-                query = "SELECT *, FORMAT(date_paid, 'ddd, dd-MMM-yyyy') AS date FROM Fee WHERE student_id='" + student_id + "'";
+                if (GetData.getFromTableReceiptQuery())
+                {
+                    query = "SELECT *, FORMAT(date_paid, 'dd-MMM-yyyy') AS date FROM Fee WHERE student_id='" + student_id + "' AND fee_id='" + GetData.getFeeId() + "'";
+                }
+                else
+                {
+                    query = "SELECT *, FORMAT(date_paid, 'dd-MMM-yyyy') AS date FROM Fee WHERE student_id='" + student_id + "'";
+                }
                 SqlDataReader reader = DbClient.query_reader(query);
                 while (reader.Read())
                 {

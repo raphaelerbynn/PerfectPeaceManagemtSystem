@@ -183,6 +183,16 @@ namespace Perfect_Peace_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap printer {
+            get {
+                object obj = ResourceManager.GetObject("printer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap report {
             get {
                 object obj = ResourceManager.GetObject("report", resourceCulture);
@@ -236,6 +246,16 @@ namespace Perfect_Peace_System.Properties {
         public static System.Drawing.Bitmap student_dash_bg {
             get {
                 object obj = ResourceManager.GetObject("student_dash_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap subject {
+            get {
+                object obj = ResourceManager.GetObject("subject", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

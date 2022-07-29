@@ -97,6 +97,7 @@
             this.subjectBtn.FlatAppearance.BorderSize = 0;
             this.subjectBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.subjectBtn.ForeColor = System.Drawing.Color.White;
+            this.subjectBtn.Image = global::Perfect_Peace_System.Properties.Resources.subject;
             this.subjectBtn.Location = new System.Drawing.Point(0, 606);
             this.subjectBtn.Name = "subjectBtn";
             this.subjectBtn.Size = new System.Drawing.Size(155, 62);

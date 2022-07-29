@@ -9,6 +9,8 @@ namespace Perfect_Peace_System
     internal class GetData
     {
         private static string student_id_receipt;
+        private static string fee_id;
+        private static bool printFromData;
 
         public static void setStudentIdReceipt(string student_id)
         {
@@ -18,6 +20,26 @@ namespace Perfect_Peace_System
         public static string getStudentIdReceipt()
         {
             return student_id_receipt;
+        }
+
+        public static void setFeeId(string feeId)
+        {
+            fee_id = feeId;
+        }
+
+        public static string getFeeId()
+        {
+            return fee_id;
+        }
+
+        public static void setFromTableReceiptQuery(bool printFromFormValue)
+        {
+            printFromData = printFromFormValue;
+        }
+
+        public static bool getFromTableReceiptQuery()
+        {
+            return printFromData;
         }
     }
 }

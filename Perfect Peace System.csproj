@@ -431,6 +431,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\subject.png" />
     <None Include="Resources\controls_white.png" />
     <None Include="Resources\schoolLogo.png" />
     <None Include="Resources\normal.png" />

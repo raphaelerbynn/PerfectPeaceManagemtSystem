@@ -154,6 +154,9 @@
   <data name="perfectpeacelogoSmall" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\perfectpeacelogoSmall.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="report" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\report.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -171,6 +174,9 @@
   </data>
   <data name="student_dash_bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\student_dash_bg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="subject" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\subject.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="teacher" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\icons\teacher.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

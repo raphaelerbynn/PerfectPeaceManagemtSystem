@@ -19,6 +19,8 @@ namespace Perfect_Peace_System.Pages
         public FeesData()
         {
             InitializeComponent();
+            topPanel.BackColor = Home.foreColor;
+            bgPanel.BackColor = Home.foreColor;
 
             feesDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
             feesDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
@@ -41,7 +43,10 @@ namespace Perfect_Peace_System.Pages
             feesDataView.Columns["amount"].DisplayIndex = 3;
             feesDataView.Columns["payment_mode"].DisplayIndex = 4;
             feesDataView.Columns["remaining"].DisplayIndex = 5;
-            feesDataView.Columns["date_paid"].DisplayIndex = 6;
+            feesDataView.Columns["date_paid"].DisplayIndex = 7;
+            feesDataView.Columns["term"].DisplayIndex = 6;
+            feesDataView.Columns["print"].DisplayIndex = 8;
+            feesDataView.Columns["delete"].DisplayIndex = 9;
             
             feesDataView.Columns["student_id"].Visible = false;
 
@@ -124,7 +129,6 @@ namespace Perfect_Peace_System.Pages
                     MessageBox.Show("Search Again");
                     Console.WriteLine(ex.Message);
                 }
-
             }
             else
             {
@@ -132,5 +136,45 @@ namespace Perfect_Peace_System.Pages
                 getStudent();
             }
         }
+
+        private void feesDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = feesDataView.Rows[e.RowIndex];
+                string id = row.Cells["fee_id"].Value.ToString();
+
+                if (feesDataView.Columns[e.ColumnIndex].Name == "delete" && e.RowIndex >= 0)
+                {
+                    string message = "Do you want to delete this fee data?";
+                    MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, "", deleteAction);
+                    if (result == DialogResult.Yes)
+                    {
+                        feesDataView.Rows.RemoveAt(e.RowIndex);
+                        //reverse payment
+                        query = "DELETE FROM Fee WHERE fee_id='"+id+"'";
+                        DbClient.query_execute(query);
+                        MessageBox.Show(" Fee data deleted from system");
+                    }
+                }
+                
+                if (feesDataView.Columns[e.ColumnIndex].Name == "print" && e.RowIndex >= 0)
+                {
+                    string student_id = DbClient.query_executeScaler("SELECT student_id FROM Fee WHERE fee_id='" + id + "'");
+                    GetData.setStudentIdReceipt(student_id);
+                    GetData.setFeeId(id);
+                    GetData.setFromTableReceiptQuery(true);
+
+                    OpenNewPage openNewPage = new OpenNewPage();
+                    openNewPage.OpenChildForm(new Pages.FeeReceipt(), bgPanel);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }

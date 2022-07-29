@@ -96,15 +96,21 @@ namespace Perfect_Peace_System.Pages
                     return;
                 }
 
-                fees = new Fees(student_id, class_id, double.Parse(totalAmnt), double.Parse(paidAmnt), double.Parse(remainingAmnt), mode, amntWords, term, DateTime.Today);
-                fees.insert_data();
-                query = "UPDATE Student SET fees_paid='"+paidAmntLbl.Text+"', fees_owing='"+remainAmntLbl.Text+"' WHERE student_id='"+student_id+"'";
-                DbClient.query_execute(query);
+                string message = "Confirm Payment of fees";
+                MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, "", deleteAction);
+                if (result == DialogResult.Yes)
+                {
+                    fees = new Fees(student_id, class_id, double.Parse(totalAmnt), double.Parse(paidAmnt), double.Parse(remainingAmnt), mode, amntWords, term, DateTime.Today);
+                    fees.insert_data();
+                    query = "UPDATE Student SET fees_paid='" + paidAmntLbl.Text + "', fees_owing='" + remainAmntLbl.Text + "' WHERE student_id='" + student_id + "'";
+                    DbClient.query_execute(query);
 
-                GetData.setStudentIdReceipt(student_id);
+                    GetData.setStudentIdReceipt(student_id);
+                    GetData.setFromTableReceiptQuery(false);
 
-
-                openNewPage.OpenChildForm(new Pages.FeeReceipt(), feePanel);
+                    openNewPage.OpenChildForm(new Pages.FeeReceipt(), feePanel);
+                }
 
             }
             catch(Exception ex) 
