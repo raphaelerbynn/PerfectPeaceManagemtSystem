@@ -78,6 +78,7 @@
     <Compile Include="ControlPrinter.cs" />
     <Compile Include="Converter.cs" />
     <Compile Include="DbClient.cs" />
+    <Compile Include="GetData.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

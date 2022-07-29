@@ -15,16 +15,7 @@ namespace Perfect_Peace_System.Pages
     {
         OpenNewPage openNewPage = new OpenNewPage();
         Fees fees;
-        public static string totalAmnt;
-        public static string remainingAmnt;
-        public static string paidAmnt;
-        public static string name;
-        public static string _class;
-        public static string mode;
-        public static string term;
-        public static string amntWords;
-
-        private string student_id = "";
+        private string student_id;
         private string class_id = "";
         private string alreadyPaidAmt = "0";
 
@@ -34,7 +25,7 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
             fillCombos();
-            
+            feePanel.BackColor = Home.foreColor;
             
         }
 
@@ -83,12 +74,12 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
-                totalAmnt = totalAmntLbl.Text.ToString();
-                paidAmnt = amntTb.Text.ToString();
-                remainingAmnt = remainAmntLbl.Text.ToString();
-                name = student_nameCb.Text.ToString();
-                term = termCb.Text.ToString();
-                mode = modeOfPaymentCb.Text.ToString();
+                string totalAmnt = totalAmntLbl.Text.ToString();
+                string paidAmnt = amntTb.Text.ToString();
+                string remainingAmnt = remainAmntLbl.Text.ToString();
+                string term = termCb.Text.ToString();
+                string mode = modeOfPaymentCb.Text.ToString();
+                string amntWords;
 
                 if (paidAmnt.Contains("."))
                 {
@@ -105,10 +96,12 @@ namespace Perfect_Peace_System.Pages
                     return;
                 }
 
-                fees = new Fees(student_id, class_id, double.Parse(totalAmnt), double.Parse(paidAmnt), double.Parse(remainingAmnt), mode, DateTime.Today);
+                fees = new Fees(student_id, class_id, double.Parse(totalAmnt), double.Parse(paidAmnt), double.Parse(remainingAmnt), mode, amntWords, term, DateTime.Today);
                 fees.insert_data();
                 query = "UPDATE Student SET fees_paid='"+paidAmntLbl.Text+"', fees_owing='"+remainAmntLbl.Text+"' WHERE student_id='"+student_id+"'";
                 DbClient.query_execute(query);
+
+                GetData.setStudentIdReceipt(student_id);
 
 
                 openNewPage.OpenChildForm(new Pages.FeeReceipt(), feePanel);
@@ -116,7 +109,8 @@ namespace Perfect_Peace_System.Pages
             }
             catch(Exception ex) 
             { 
-                MessageBox.Show(ex.ToString()); 
+                Console.WriteLine(ex);
+                MessageBox.Show(ex.Message); 
             }
         }
 
@@ -128,34 +122,36 @@ namespace Perfect_Peace_System.Pages
         }
 
         private void getStudentDetailsBtn_Click(object sender, EventArgs e)
-        { 
-            query = "SELECT * FROM Student WHERE CONCAT(f_name,' ',m_name,' ',l_name)='"+student_nameCb.Text+"'";
-            System.Data.SqlClient.SqlDataReader reader = DbClient.query_reader(query);
-            while (reader.Read())
-            {
-                student_id = reader["student_id"].ToString();
-                class_id = reader["class_id"].ToString();
-                classLbl.Text = reader["class"].ToString();
-                _class = reader["class"].ToString();
-                alreadyPaidAmt = reader["fees_paid"].ToString();
-            }
-            reader.Close();
-
-            query = "SELECT * FROM Class WHERE name='"+_class+"'";
-            reader = DbClient.query_reader(query);
-            while (reader.Read())
-            {
-               totalAmntLbl.Text  = reader["fees"].ToString();
-            }
-            reader.Close();
-
-            remainAmntLbl.Text = (double.Parse(totalAmntLbl.Text) - double.Parse(alreadyPaidAmt)).ToString();
-            paidAmntLbl.Text = alreadyPaidAmt;
-        }
-
-        private void student_nameCb_TextUpdate(object sender, EventArgs e)
         {
+            try
+            {
+                payFeesBtn.Enabled = true;
 
+                query = "SELECT * FROM Student WHERE CONCAT(f_name,' ',m_name,' ',l_name)='" + student_nameCb.Text + "'";
+                System.Data.SqlClient.SqlDataReader reader = DbClient.query_reader(query);
+                while (reader.Read())
+                {
+                    student_id = reader["student_id"].ToString();
+                    class_id = reader["class_id"].ToString();
+                    classLbl.Text = reader["class"].ToString();
+                    alreadyPaidAmt = reader["fees_paid"].ToString();
+                }
+                reader.Close();
+
+                query = "SELECT * FROM Class WHERE class_id='" + class_id + "'";
+                reader = DbClient.query_reader(query);
+                while (reader.Read())
+                {
+                    totalAmntLbl.Text = reader["fees"].ToString();
+                }
+                reader.Close();
+
+                remainAmntLbl.Text = (double.Parse(totalAmntLbl.Text) - double.Parse(alreadyPaidAmt)).ToString();
+                paidAmntLbl.Text = alreadyPaidAmt;
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void student_nameCb_TextChanged(object sender, EventArgs e)
@@ -171,13 +167,16 @@ namespace Perfect_Peace_System.Pages
                 else
                 {
                     getStudentDetailsBtn.Enabled = false;
+                    payFeesBtn.Enabled = false;
                 }
             }
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void clearBtn_Click(object sender, EventArgs e)
         {
-
+            amntTb.Text = null;
+            modeOfPaymentCb.SelectedIndex = -1;
+            termCb.SelectedIndex = -1;
         }
     }
 }

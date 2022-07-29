@@ -270,6 +270,7 @@ namespace Perfect_Peace_System
             addStntBtn.Visible = true;
             addStntBtn.Text = "Pay Fees";
             titleLbl.Text = "FEES";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
             openNewPage.OpenChildForm(new Pages.FeesData(), panelView);
         }
         

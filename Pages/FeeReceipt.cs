@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
@@ -13,30 +14,51 @@ namespace Perfect_Peace_System.Pages
 {
     public partial class FeeReceipt : Form
     {
+        private string query;
         PrintDocument printdoc = new PrintDocument();
         PrintPreviewDialog printPreview = new PrintPreviewDialog();
 
         public FeeReceipt()
         {
             InitializeComponent();
-            Console.WriteLine(FeePaying.paidAmnt);
             updateLabels();
+            bgPanel.BackColor = Home.foreColor;
         }
 
         private void updateLabels()
         {
-            amntLbl_0.Text = FeePaying.paidAmnt;
-            totalAmntLbl.Text = FeePaying.totalAmnt;
-            remainingLbl.Text = FeePaying.remainingAmnt;
-            amntWordsLbl.Text = FeePaying.amntWords;
+            try
+            {
+                string student_id = GetData.getStudentIdReceipt();
+                query = "SELECT *, FORMAT(date_paid, 'ddd, dd-MMM-yyyy') AS date FROM Fee WHERE student_id='" + student_id + "'";
+                SqlDataReader reader = DbClient.query_reader(query);
+                while (reader.Read())
+                {
+                    idLbl.Text = reader["fee_id"].ToString();
+                    amntLbl_0.Text = "GHc " + reader["paid"].ToString();
+                    remainingLbl.Text = "GHc " + reader["remaining"].ToString();
+                    amntWordsLbl.Text = reader["amount_in_words"].ToString();
+                    modeLbl.Text = reader["payment_mode"].ToString();
+                    termLbl.Text = reader["term"].ToString();
+                    totalAmntLbl.Text = "GHc " + reader["total"].ToString();
+                    amntLbl_0.Text = reader["paid"].ToString();
+                    dateLbl.Text = reader["date"].ToString();
+                }
+                reader.Close();
 
-            idLbl.Text = DbClient.GetLastId("Fee");
-            dateLbl.Text = DateTime.Today.ToString();
-            nameLbl.Text = FeePaying.name;
-            classLbl.Text = FeePaying._class;
-            termLbl.Text = FeePaying.term;
-            modeLbl.Text = FeePaying.mode;
-            amntLbl_1.Text = amntLbl_0.Text;
+                query = "SELECT [f_name]+' '+[m_name]+' '+[l_name] AS name, class FROM Student WHERE student_id='" + student_id + "'";
+                reader = DbClient.query_reader(query);
+                while (reader.Read())
+                {
+                    nameLbl.Text = reader["name"].ToString();
+                    classLbl.Text = reader["class"].ToString();
+                }
+                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void printBtn_Click(object sender, EventArgs e)
