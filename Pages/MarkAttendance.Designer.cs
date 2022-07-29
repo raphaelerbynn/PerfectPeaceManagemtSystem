@@ -52,9 +52,6 @@
             // 
             // attendancePanel
             // 
-            this.attendancePanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.attendancePanel.AutoScroll = true;
             this.attendancePanel.Controls.Add(this.saveAttendanceBtn);
             this.attendancePanel.Controls.Add(this.label1);
@@ -62,22 +59,27 @@
             this.attendancePanel.Controls.Add(this.checkAttendanceDataView);
             this.attendancePanel.Controls.Add(this.todayDateLbl);
             this.attendancePanel.Controls.Add(this.label32);
+            this.attendancePanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.attendancePanel.Location = new System.Drawing.Point(0, 0);
             this.attendancePanel.Name = "attendancePanel";
             this.attendancePanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.attendancePanel.Size = new System.Drawing.Size(824, 707);
+            this.attendancePanel.Size = new System.Drawing.Size(823, 584);
             this.attendancePanel.TabIndex = 2;
             // 
             // saveAttendanceBtn
             // 
             this.saveAttendanceBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.saveAttendanceBtn.AutoSize = true;
-            this.saveAttendanceBtn.Location = new System.Drawing.Point(350, 671);
+            this.saveAttendanceBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.saveAttendanceBtn.FlatAppearance.BorderSize = 0;
+            this.saveAttendanceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveAttendanceBtn.ForeColor = System.Drawing.Color.White;
+            this.saveAttendanceBtn.Location = new System.Drawing.Point(364, 548);
             this.saveAttendanceBtn.Name = "saveAttendanceBtn";
             this.saveAttendanceBtn.Size = new System.Drawing.Size(100, 23);
             this.saveAttendanceBtn.TabIndex = 49;
             this.saveAttendanceBtn.Text = "Save Attendance";
-            this.saveAttendanceBtn.UseVisualStyleBackColor = true;
+            this.saveAttendanceBtn.UseVisualStyleBackColor = false;
             this.saveAttendanceBtn.Click += new System.EventHandler(this.saveAttendanceBtn_Click);
             // 
             // label1
@@ -133,7 +135,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.checkAttendanceDataView.DefaultCellStyle = dataGridViewCellStyle4;
@@ -156,7 +158,7 @@
             this.checkAttendanceDataView.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.checkAttendanceDataView.RowTemplate.Height = 30;
             this.checkAttendanceDataView.ShowEditingIcon = false;
-            this.checkAttendanceDataView.Size = new System.Drawing.Size(815, 533);
+            this.checkAttendanceDataView.Size = new System.Drawing.Size(814, 423);
             this.checkAttendanceDataView.TabIndex = 46;
             this.checkAttendanceDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.checkAttendanceDataView_CellContentClick);
             // 
@@ -215,10 +217,10 @@
             // 
             this.todayDateLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.todayDateLbl.AutoSize = true;
-            this.todayDateLbl.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.todayDateLbl.Location = new System.Drawing.Point(457, 34);
+            this.todayDateLbl.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.todayDateLbl.Location = new System.Drawing.Point(442, 39);
             this.todayDateLbl.Name = "todayDateLbl";
-            this.todayDateLbl.Size = new System.Drawing.Size(60, 24);
+            this.todayDateLbl.Size = new System.Drawing.Size(56, 22);
             this.todayDateLbl.TabIndex = 45;
             this.todayDateLbl.Text = "(date)";
             this.todayDateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -227,10 +229,10 @@
             // 
             this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(270, 34);
+            this.label32.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(274, 39);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(192, 24);
+            this.label32.Size = new System.Drawing.Size(175, 22);
             this.label32.TabIndex = 45;
             this.label32.Text = "Attendance for today ";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -239,7 +241,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(823, 732);
+            this.ClientSize = new System.Drawing.Size(823, 584);
             this.Controls.Add(this.attendancePanel);
             this.Name = "MarkAttendance";
             this.Text = "Attendance";

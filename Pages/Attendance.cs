@@ -17,8 +17,29 @@ namespace Perfect_Peace_System.Pages
         public Attendance()
         {
             InitializeComponent();
-            query = "SELECT name FROM Class";
-            DbClient.query_reader(classCb, query);
+            if (Pages.LoginInput.category.Equals("Administratur"))
+            {
+                query = "SELECT name FROM Class";
+                DbClient.query_reader(classCb, query);
+            }
+            attendanceDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            attendanceDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            attendanceDataView.BackgroundColor = Home.foreColor;
+
+            attendancePanel.BackColor = Home.foreColor;
+
+            if(Pages.LoginInput.category.Equals("Class Teacher"))
+            {
+                query = "SELECT name FROM Class WHERE teacher_id='"+Pages.LoginInput.teacher_id+"' AND teacher_id IS NOT NULL";
+                DbClient.query_reader(classCb, query);
+
+                if(classCb.Items.Count > 0) 
+                {
+                    classCb.SelectedIndex = 0;
+                }
+               
+                classCb.Enabled = false;
+            }
         }
 
         private void loadAttendanceBtn_Click(object sender, EventArgs e)

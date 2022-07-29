@@ -17,10 +17,32 @@ namespace Perfect_Peace_System.Pages
         public MarkAttendance()
         {
             InitializeComponent();
-            query = "SELECT name FROM Class";
-            DbClient.query_reader(classCb, query);
             populateData();
             todayDateLbl.Text = "("+DateTime.Now.ToString("ddd, dd MMMM, yyyy")+")";
+
+            attendancePanel.BackColor = Home.foreColor;
+            checkAttendanceDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            checkAttendanceDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            checkAttendanceDataView.BackgroundColor = Home.foreColor;
+
+            if (Pages.LoginInput.category.Equals("Administrator"))
+            {
+                query = "SELECT name FROM Class";
+                DbClient.query_reader(classCb, query);
+            }
+
+            if (Pages.LoginInput.category.Equals("Class Teacher"))
+            {
+                query = "SELECT name FROM Class WHERE teacher_id='" + Pages.LoginInput.teacher_id + "' AND teacher_id IS NOT NULL";
+                DbClient.query_reader(classCb, query);
+
+                if (classCb.Items.Count > 0)
+                {
+                    classCb.SelectedIndex = 0;
+                }
+
+                classCb.Enabled = false;
+            }
         }
 
         private void populateData()
@@ -73,6 +95,9 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
+                query = "DELETE FROM Attendance WHERE class='" + classCb.Text + "' AND date_marked='" + DateTime.Today + "'";
+                DbClient.query_execute(query);
+
                 string message = "Save today's attendance?";
                 MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, "", deleteAction);
@@ -86,9 +111,14 @@ namespace Perfect_Peace_System.Pages
                         {
                             status = "Present";
                         }
-                        else
+                        else if(Convert.ToBoolean(row.Cells["absent_check"].Value) == true)
                         {
                             status = "Absent";
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please mark all attendance", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
                         }
 
                         query = "INSERT INTO Attendance(student_id, class, status, date_marked)" +
