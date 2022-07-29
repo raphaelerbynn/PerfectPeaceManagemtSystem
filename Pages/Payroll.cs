@@ -19,10 +19,21 @@ namespace Perfect_Peace_System.Pages
         public Payroll()
         {
             InitializeComponent();
+
+            topPanel.BackColor = Home.themeColor;
+            empSalaryPanel.BackColor = Home.foreColor;
+            paymentPanel.BackColor = Home.foreColor;
+            salaryBasedPanel.BackColor = Home.foreColor;
+            payrollPanel.BackColor = Home.foreColor;
+
+            empSalaryBtn.BackColor = Color.Gray;
+            paymentBtn.BackColor = Color.Gray;
+            salaryBaseBtn.BackColor = Home.foreColor;
+
             salaryBasedPanel.Location = new Point(salaryBasedPanel.Location.X, paymentPanel.Location.Y);
-            populateSalaryData();
             adjustColumns();
-            
+            populateSalaryData();
+
             query = "SELECT [title]+'('+[rank]+')' AS position FROM Salary";
             DbClient.query_reader(salaryBaseCb, query);
 
@@ -71,18 +82,27 @@ namespace Perfect_Peace_System.Pages
 
         private void salaryBaseBtn_Click(object sender, EventArgs e)
         {
+            empSalaryBtn.BackColor = Color.Gray;
+            paymentBtn.BackColor = Color.Gray;
+            salaryBaseBtn.BackColor = Home.foreColor;
+
             salaryBasedPanel.Visible = true;
             addSalaryBtn.Visible = true;
             empSalaryPanel.Visible = false;
             paymentPanel.Visible = false;
             salaryBasedPanel.Location = new Point(salaryBasedPanel.Location.X, paymentPanel.Location.Y);
+            populateSalaryData();
         }
 
         private void populateSalaryData()
         {
-            
+            salaryBaseDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            salaryBaseDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            salaryBaseDataView.BackgroundColor = Home.foreColor;
+
             query = "SELECT *, amount AS net_amount, amount AS gross_amount FROM Salary";
             DbClient.dataGridFill(salaryBaseDataView, query);
+
             foreach (DataGridViewRow item in salaryBaseDataView.Rows)
             {
                 double totalAllowance = 0;
@@ -127,6 +147,10 @@ namespace Perfect_Peace_System.Pages
         //employee salary
         private void empSalaryBtn_Click(object sender, EventArgs e)
         {
+            empSalaryBtn.BackColor = Home.foreColor;
+            paymentBtn.BackColor = Color.Gray;
+            salaryBaseBtn.BackColor = Color.Gray;
+
             salaryBasedPanel.Visible = false;
             addSalaryBtn.Visible = false;
             paymentPanel.Visible = false;
@@ -141,6 +165,10 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
+                empSalaryDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+                empSalaryDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+                empSalaryDataView.BackgroundColor = Home.foreColor;
+
                 query = "SELECT teacher_id, [f_name]+' '+[l_name] AS name, email, CAST(teacher_id AS VARCHAR(100)) AS salary_base FROM Teacher";
                 DbClient.dataGridFill(empSalaryDataView, query);
 
@@ -229,12 +257,20 @@ namespace Perfect_Peace_System.Pages
                 try
                 {
                     query = "SELECT teacher_id FROM Teacher WHERE [f_name]+' '+[l_name]='" + paymentNameCb.Text + "'";
-                    id = DbClient.query_executeScaler(query);
-                    openNewPage.OpenChildForm(new Pages.PaySlip(), paymentPanel);
+                    SqlDataReader reader = DbClient.query_reader(query);
+                    while (reader.Read())
+                    {
+                        id = reader["teacher_id"].ToString();
+                    }
+                    reader.Close();
+
+                    if (!String.IsNullOrEmpty(id))
+                    {
+                        openNewPage.OpenChildForm(new Pages.PaySlip(), paymentPanel);
+                    }
                 }catch(Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
-                    MessageBox.Show("Can't find name in staff");
+                    MessageBox.Show(ex.Message);
                 }
             }
         }
@@ -246,6 +282,10 @@ namespace Perfect_Peace_System.Pages
 
         private void paymentBtn_Click(object sender, EventArgs e)
         {
+            empSalaryBtn.BackColor = Color.Gray;
+            paymentBtn.BackColor = Home.foreColor;
+            salaryBaseBtn.BackColor = Color.Gray;
+
             salaryBasedPanel.Visible = false;
             addSalaryBtn.Visible = false;
             paymentPanel.Visible = true;
@@ -259,7 +299,11 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
-                query = "SELECT * FROM Salary_payment";
+                paymentDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+                paymentDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+                paymentDataView.BackgroundColor = Home.foreColor;
+
+                query = "SELECT salary_payment_id, name, amount, net, salary_date, payment_method, FORMAT(date_paid, 'dd-MMM-yyyy') AS date_paid FROM Salary_payment";
                 DbClient.dataGridFill(paymentDataView, query);
 
                 adjustPaymentColumns();
@@ -309,5 +353,6 @@ namespace Perfect_Peace_System.Pages
             paymentDataView.Columns["date_paid"].DisplayIndex = 5;
             paymentDataView.Columns["deletePayment"].DisplayIndex = 6;
         }
+
     }
 }

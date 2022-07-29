@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.bgPanel = new System.Windows.Forms.Panel();
             this.salaryMonthPk = new System.Windows.Forms.DateTimePicker();
             this.modeOfPaymentCb = new System.Windows.Forms.ComboBox();
             this.addToPaymentBtn = new System.Windows.Forms.Button();
@@ -40,6 +40,8 @@
             this.savePaymentBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
             this.payslipPanel = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -99,34 +101,36 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.label18 = new System.Windows.Forms.Label();
+            this.bgPanel.SuspendLayout();
             this.payslipPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // bgPanel
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.salaryMonthPk);
-            this.panel1.Controls.Add(this.modeOfPaymentCb);
-            this.panel1.Controls.Add(this.addToPaymentBtn);
-            this.panel1.Controls.Add(this.amountPaidTb);
-            this.panel1.Controls.Add(this.label32);
-            this.panel1.Controls.Add(this.label31);
-            this.panel1.Controls.Add(this.label30);
-            this.panel1.Controls.Add(this.label26);
-            this.panel1.Controls.Add(this.savePaymentBtn);
-            this.panel1.Controls.Add(this.backBtn);
-            this.panel1.Controls.Add(this.payslipPanel);
-            this.panel1.Location = new System.Drawing.Point(2, 1);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.panel1.Size = new System.Drawing.Size(832, 654);
-            this.panel1.TabIndex = 1;
+            this.bgPanel.AutoScroll = true;
+            this.bgPanel.Controls.Add(this.label18);
+            this.bgPanel.Controls.Add(this.salaryMonthPk);
+            this.bgPanel.Controls.Add(this.modeOfPaymentCb);
+            this.bgPanel.Controls.Add(this.addToPaymentBtn);
+            this.bgPanel.Controls.Add(this.amountPaidTb);
+            this.bgPanel.Controls.Add(this.label32);
+            this.bgPanel.Controls.Add(this.label31);
+            this.bgPanel.Controls.Add(this.label30);
+            this.bgPanel.Controls.Add(this.label26);
+            this.bgPanel.Controls.Add(this.savePaymentBtn);
+            this.bgPanel.Controls.Add(this.backBtn);
+            this.bgPanel.Controls.Add(this.payslipPanel);
+            this.bgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bgPanel.Location = new System.Drawing.Point(0, 0);
+            this.bgPanel.Name = "bgPanel";
+            this.bgPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.bgPanel.Size = new System.Drawing.Size(834, 682);
+            this.bgPanel.TabIndex = 1;
             // 
             // salaryMonthPk
             // 
@@ -134,7 +138,7 @@
             this.salaryMonthPk.CustomFormat = "MMMM, yyyy";
             this.salaryMonthPk.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.salaryMonthPk.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.salaryMonthPk.Location = new System.Drawing.Point(578, 58);
+            this.salaryMonthPk.Location = new System.Drawing.Point(579, 58);
             this.salaryMonthPk.MaxDate = new System.DateTime(7060, 12, 28, 0, 0, 0, 0);
             this.salaryMonthPk.MinDate = new System.DateTime(2010, 12, 25, 0, 0, 0, 0);
             this.salaryMonthPk.Name = "salaryMonthPk";
@@ -152,7 +156,7 @@
             "Check",
             "Bank",
             "Mobile Money"});
-            this.modeOfPaymentCb.Location = new System.Drawing.Point(147, 84);
+            this.modeOfPaymentCb.Location = new System.Drawing.Point(148, 84);
             this.modeOfPaymentCb.Name = "modeOfPaymentCb";
             this.modeOfPaymentCb.Size = new System.Drawing.Size(228, 22);
             this.modeOfPaymentCb.TabIndex = 53;
@@ -161,18 +165,22 @@
             // 
             this.addToPaymentBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.addToPaymentBtn.AutoSize = true;
-            this.addToPaymentBtn.Location = new System.Drawing.Point(339, 111);
+            this.addToPaymentBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.addToPaymentBtn.FlatAppearance.BorderSize = 0;
+            this.addToPaymentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addToPaymentBtn.ForeColor = System.Drawing.Color.White;
+            this.addToPaymentBtn.Location = new System.Drawing.Point(340, 111);
             this.addToPaymentBtn.Name = "addToPaymentBtn";
             this.addToPaymentBtn.Size = new System.Drawing.Size(108, 23);
             this.addToPaymentBtn.TabIndex = 52;
             this.addToPaymentBtn.Text = "Add to Payslip";
-            this.addToPaymentBtn.UseVisualStyleBackColor = true;
+            this.addToPaymentBtn.UseVisualStyleBackColor = false;
             this.addToPaymentBtn.Click += new System.EventHandler(this.addToPaymentBtn_Click);
             // 
             // amountPaidTb
             // 
             this.amountPaidTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.amountPaidTb.Location = new System.Drawing.Point(128, 58);
+            this.amountPaidTb.Location = new System.Drawing.Point(129, 58);
             this.amountPaidTb.Name = "amountPaidTb";
             this.amountPaidTb.Size = new System.Drawing.Size(247, 20);
             this.amountPaidTb.TabIndex = 47;
@@ -182,7 +190,7 @@
             this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(38, 62);
+            this.label32.Location = new System.Drawing.Point(39, 62);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(84, 14);
             this.label32.TabIndex = 45;
@@ -194,7 +202,7 @@
             this.label31.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(39, 88);
+            this.label31.Location = new System.Drawing.Point(40, 88);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(106, 14);
             this.label31.TabIndex = 44;
@@ -206,7 +214,7 @@
             this.label30.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(481, 65);
+            this.label30.Location = new System.Drawing.Point(482, 65);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(91, 14);
             this.label30.TabIndex = 43;
@@ -218,7 +226,7 @@
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(313, 17);
+            this.label26.Location = new System.Drawing.Point(314, 17);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(169, 18);
             this.label26.TabIndex = 4;
@@ -227,23 +235,31 @@
             // savePaymentBtn
             // 
             this.savePaymentBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.savePaymentBtn.Location = new System.Drawing.Point(415, 1042);
+            this.savePaymentBtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.savePaymentBtn.FlatAppearance.BorderSize = 0;
+            this.savePaymentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.savePaymentBtn.ForeColor = System.Drawing.Color.White;
+            this.savePaymentBtn.Location = new System.Drawing.Point(416, 1042);
             this.savePaymentBtn.Name = "savePaymentBtn";
             this.savePaymentBtn.Size = new System.Drawing.Size(99, 23);
             this.savePaymentBtn.TabIndex = 3;
             this.savePaymentBtn.Text = "Save Payment";
-            this.savePaymentBtn.UseVisualStyleBackColor = true;
+            this.savePaymentBtn.UseVisualStyleBackColor = false;
             this.savePaymentBtn.Click += new System.EventHandler(this.savePaymentBtn_Click);
             // 
             // backBtn
             // 
             this.backBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.backBtn.Location = new System.Drawing.Point(280, 1042);
+            this.backBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.backBtn.FlatAppearance.BorderSize = 0;
+            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backBtn.ForeColor = System.Drawing.Color.White;
+            this.backBtn.Location = new System.Drawing.Point(281, 1042);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(66, 23);
             this.backBtn.TabIndex = 3;
             this.backBtn.Text = "Back";
-            this.backBtn.UseVisualStyleBackColor = true;
+            this.backBtn.UseVisualStyleBackColor = false;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
             // payslipPanel
@@ -251,7 +267,10 @@
             this.payslipPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.payslipPanel.AutoSize = true;
             this.payslipPanel.BackColor = System.Drawing.Color.White;
+            this.payslipPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.payslipPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.payslipPanel.Controls.Add(this.pictureBox2);
+            this.payslipPanel.Controls.Add(this.pictureBox1);
             this.payslipPanel.Controls.Add(this.label41);
             this.payslipPanel.Controls.Add(this.label40);
             this.payslipPanel.Controls.Add(this.label19);
@@ -273,10 +292,30 @@
             this.payslipPanel.Controls.Add(this.label3);
             this.payslipPanel.Controls.Add(this.label2);
             this.payslipPanel.Controls.Add(this.label1);
-            this.payslipPanel.Location = new System.Drawing.Point(38, 152);
+            this.payslipPanel.Location = new System.Drawing.Point(39, 152);
             this.payslipPanel.Name = "payslipPanel";
             this.payslipPanel.Size = new System.Drawing.Size(720, 859);
             this.payslipPanel.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
+            this.pictureBox2.Location = new System.Drawing.Point(555, 31);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(130, 94);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 9;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(35, 31);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(130, 94);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // label41
             // 
@@ -961,18 +1000,28 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "PERFECT PEACE  PREPARATORY SCHOOL";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(516, 1098);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(0, 13);
+            this.label18.TabIndex = 55;
+            // 
             // PaySlip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 682);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.bgPanel);
             this.Name = "PaySlip";
             this.Text = "PaySlip";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.bgPanel.ResumeLayout(false);
+            this.bgPanel.PerformLayout();
             this.payslipPanel.ResumeLayout(false);
             this.payslipPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -983,7 +1032,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel bgPanel;
         private System.Windows.Forms.Button addToPaymentBtn;
         private System.Windows.Forms.TextBox amountPaidTb;
         private System.Windows.Forms.Label label32;
@@ -1054,5 +1103,8 @@
         private System.Windows.Forms.Label positionLbl;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label actualSalaryLbl;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label18;
     }
 }

@@ -18,6 +18,7 @@ namespace Perfect_Peace_System.Pages
         public AddSalary()
         {
             InitializeComponent();
+            addSalaryPanel.BackColor = Home.foreColor;
         }
 
         private void addSalaryBtn_Click(object sender, EventArgs e)

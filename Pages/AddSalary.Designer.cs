@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.addSalaryPanel = new System.Windows.Forms.Panel();
+            this.backBtn = new System.Windows.Forms.Button();
             this.addSalaryBtn = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -88,7 +89,6 @@
             this.titleTb = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.empSalaryLbl = new System.Windows.Forms.Label();
-            this.backBtn = new System.Windows.Forms.Button();
             this.addSalaryPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,15 +161,34 @@
             this.addSalaryPanel.Size = new System.Drawing.Size(987, 666);
             this.addSalaryPanel.TabIndex = 0;
             // 
+            // backBtn
+            // 
+            this.backBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.backBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.backBtn.FlatAppearance.BorderSize = 0;
+            this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.backBtn.ForeColor = System.Drawing.Color.White;
+            this.backBtn.Location = new System.Drawing.Point(424, 589);
+            this.backBtn.Name = "backBtn";
+            this.backBtn.Size = new System.Drawing.Size(75, 23);
+            this.backBtn.TabIndex = 9;
+            this.backBtn.Text = "Back";
+            this.backBtn.UseVisualStyleBackColor = false;
+            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            // 
             // addSalaryBtn
             // 
             this.addSalaryBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.addSalaryBtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.addSalaryBtn.FlatAppearance.BorderSize = 0;
+            this.addSalaryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addSalaryBtn.ForeColor = System.Drawing.Color.White;
             this.addSalaryBtn.Location = new System.Drawing.Point(528, 589);
             this.addSalaryBtn.Name = "addSalaryBtn";
             this.addSalaryBtn.Size = new System.Drawing.Size(75, 23);
             this.addSalaryBtn.TabIndex = 9;
             this.addSalaryBtn.Text = "Add Salary";
-            this.addSalaryBtn.UseVisualStyleBackColor = true;
+            this.addSalaryBtn.UseVisualStyleBackColor = false;
             this.addSalaryBtn.Click += new System.EventHandler(this.addSalaryBtn_Click);
             // 
             // label30
@@ -761,23 +780,12 @@
             // 
             this.empSalaryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.empSalaryLbl.AutoSize = true;
-            this.empSalaryLbl.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.empSalaryLbl.Font = new System.Drawing.Font("Calibri", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.empSalaryLbl.Location = new System.Drawing.Point(402, 32);
             this.empSalaryLbl.Name = "empSalaryLbl";
-            this.empSalaryLbl.Size = new System.Drawing.Size(136, 23);
+            this.empSalaryLbl.Size = new System.Drawing.Size(205, 23);
             this.empSalaryLbl.TabIndex = 1;
-            this.empSalaryLbl.Text = "Employee Salary";
-            // 
-            // backBtn
-            // 
-            this.backBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.backBtn.Location = new System.Drawing.Point(424, 589);
-            this.backBtn.Name = "backBtn";
-            this.backBtn.Size = new System.Drawing.Size(75, 23);
-            this.backBtn.TabIndex = 9;
-            this.backBtn.Text = "Back";
-            this.backBtn.UseVisualStyleBackColor = true;
-            this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
+            this.empSalaryLbl.Text = "EMPLOYEE SALARY BASE";
             // 
             // AddSalary
             // 

@@ -23,7 +23,7 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
             fillLabels();
-            Console.WriteLine(employeeId);
+            bgPanel.BackColor = Home.foreColor;
         }
 
         private void fillLabels()
@@ -42,9 +42,9 @@ namespace Perfect_Peace_System.Pages
                     empNameLbl.Text = reader["f_name"].ToString() + " " + reader["l_name"].ToString();
                     emailLbl.Text = reader["email"].ToString();
                     contactLbl.Text = reader["phone"].ToString();
-                    staffIdLbl.Text = reader["staff_id"].ToString();
-                    ssnitLbl.Text = reader["ssnit"].ToString();
-                    tinLbl.Text = reader["tin"].ToString();
+                    staffIdLbl.Text = "PPS"+reader["teacher_id"].ToString();
+                    ssnitLbl.Text = reader["ssnit_number"].ToString();
+                    tinLbl.Text = reader["tin_number"].ToString();
                     bankLbl.Text = reader["bank"].ToString();
                     accountNumLbl.Text = reader["account_number"].ToString();
                 }

@@ -336,6 +336,7 @@ namespace Perfect_Peace_System
             ActivateBtn(sender);
             addStntBtn.Visible = false;
             titleLbl.Text = "STUDENT REPORT";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
             openNewPage.OpenChildForm(new Pages.StudentReport(), panelView);
         }
 
@@ -344,6 +345,7 @@ namespace Perfect_Peace_System
             ActivateBtn(sender);
             addStntBtn.Visible = false;
             titleLbl.Text = "SUBJECT INFORMATION";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
             openNewPage.OpenChildForm(new Pages.AddSubject(), panelView);
         }
 
@@ -352,6 +354,7 @@ namespace Perfect_Peace_System
             ActivateBtn(sender);
             addStntBtn.Visible = false;
             titleLbl.Text = "PAYROLL";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
             openNewPage.OpenChildForm(new Pages.Payroll(), panelView);
         }
 
@@ -360,6 +363,7 @@ namespace Perfect_Peace_System
             ActivateBtn(sender);
             addStntBtn.Visible = false;
             titleLbl.Text = "STUDENT ATTENDANCE";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
             openNewPage.OpenChildForm(new Pages.Attendance(), panelView);
         }
 
