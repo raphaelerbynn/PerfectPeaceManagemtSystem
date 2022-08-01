@@ -39,6 +39,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.bgPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +54,7 @@
             this.bgPanel.Controls.Add(this.label4);
             this.bgPanel.Controls.Add(this.label3);
             this.bgPanel.Controls.Add(this.label2);
+            this.bgPanel.Controls.Add(this.label5);
             this.bgPanel.Controls.Add(this.label1);
             this.bgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bgPanel.Location = new System.Drawing.Point(0, 0);
@@ -63,23 +65,31 @@
             // clearBtn
             // 
             this.clearBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.clearBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.clearBtn.FlatAppearance.BorderSize = 0;
+            this.clearBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearBtn.ForeColor = System.Drawing.Color.White;
             this.clearBtn.Location = new System.Drawing.Point(418, 409);
             this.clearBtn.Name = "clearBtn";
             this.clearBtn.Size = new System.Drawing.Size(75, 23);
             this.clearBtn.TabIndex = 9;
             this.clearBtn.Text = "Clear";
-            this.clearBtn.UseVisualStyleBackColor = true;
+            this.clearBtn.UseVisualStyleBackColor = false;
             this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // addEventBtn
             // 
             this.addEventBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.addEventBtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.addEventBtn.FlatAppearance.BorderSize = 0;
+            this.addEventBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addEventBtn.ForeColor = System.Drawing.Color.White;
             this.addEventBtn.Location = new System.Drawing.Point(311, 409);
             this.addEventBtn.Name = "addEventBtn";
             this.addEventBtn.Size = new System.Drawing.Size(75, 23);
             this.addEventBtn.TabIndex = 8;
             this.addEventBtn.Text = "Add Event";
-            this.addEventBtn.UseVisualStyleBackColor = true;
+            this.addEventBtn.UseVisualStyleBackColor = false;
             this.addEventBtn.Click += new System.EventHandler(this.addEventBtn_Click);
             // 
             // timePicker
@@ -168,6 +178,17 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Event Name: ";
             // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(369, 80);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(91, 21);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "ADD EVENT";
+            // 
             // AddEvent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -195,5 +216,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
     }
 }

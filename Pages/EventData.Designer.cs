@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventData));
             this.bgPanel = new System.Windows.Forms.Panel();
+            this.addEventLink = new System.Windows.Forms.LinkLabel();
             this.eventDataView = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.event_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,7 +43,6 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.addEventLink = new System.Windows.Forms.LinkLabel();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventDataView)).BeginInit();
             this.SuspendLayout();
@@ -56,6 +56,19 @@
             this.bgPanel.Name = "bgPanel";
             this.bgPanel.Size = new System.Drawing.Size(811, 508);
             this.bgPanel.TabIndex = 0;
+            // 
+            // addEventLink
+            // 
+            this.addEventLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addEventLink.AutoSize = true;
+            this.addEventLink.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addEventLink.Location = new System.Drawing.Point(730, 9);
+            this.addEventLink.Name = "addEventLink";
+            this.addEventLink.Size = new System.Drawing.Size(69, 17);
+            this.addEventLink.TabIndex = 2;
+            this.addEventLink.TabStop = true;
+            this.addEventLink.Text = "Add Event";
+            this.addEventLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.addEventLink_LinkClicked);
             // 
             // eventDataView
             // 
@@ -89,7 +102,7 @@
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.eventDataView.DefaultCellStyle = dataGridViewCellStyle3;
@@ -169,19 +182,6 @@
             this.delete.Name = "delete";
             this.delete.ReadOnly = true;
             this.delete.Width = 50;
-            // 
-            // addEventLink
-            // 
-            this.addEventLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addEventLink.AutoSize = true;
-            this.addEventLink.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addEventLink.Location = new System.Drawing.Point(730, 9);
-            this.addEventLink.Name = "addEventLink";
-            this.addEventLink.Size = new System.Drawing.Size(69, 17);
-            this.addEventLink.TabIndex = 2;
-            this.addEventLink.TabStop = true;
-            this.addEventLink.Text = "Add Event";
-            this.addEventLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.addEventLink_LinkClicked);
             // 
             // EventData
             // 
