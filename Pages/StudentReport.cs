@@ -26,6 +26,26 @@ namespace Perfect_Peace_System.Pages
             InitializeComponent();
             openNewpage = new OpenNewPage();
 
+            resultsDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            resultsDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            resultsDataView.BackgroundColor = Home.foreColor;
+
+            studentDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            studentDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            studentDataView.BackgroundColor = Home.foreColor;
+
+            topPanel.BackColor = Home.themeColor;
+            middlePanel.BackColor = Home.foreColor;
+            bgPanel.BackColor = Home.foreColor;
+
+            foreach (Control c in topPanel.Controls)
+            {
+                if (c.Tag?.ToString() == "top" && c.Tag.ToString() != null)
+                {
+                    c.ForeColor = Home.foreColor;
+                }
+            }
+
             query = "SELECT name FROM Class";
             DbClient.query_reader(classCb, query);
             classCb.SelectedIndex = 0;
@@ -34,6 +54,9 @@ namespace Perfect_Peace_System.Pages
 
         private void loadListBtn_Click(object sender, EventArgs e)
         {
+            titleLbl.Visible = true;
+            titleLbl.Text = "CLASS LIST";
+            explainTb.Visible = false;
             resultsDataView.Visible = false;
             studentDataView.Visible = true;
 
@@ -126,6 +149,9 @@ namespace Perfect_Peace_System.Pages
 
         private void viewResultBtn_Click(object sender, EventArgs e)
         {
+            titleLbl.Visible = true;
+            titleLbl.Text = "RESULTS";
+            explainTb.Visible = true;
             date = datePicker.Text;
             if(resultsDataView.Visible == true)
             searchBtn.Enabled = true;
