@@ -33,6 +33,12 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panelBg = new System.Windows.Forms.Panel();
+            this.feesPanel = new System.Windows.Forms.Panel();
+            this.feesListView = new System.Windows.Forms.ListView();
+            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.student_class = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.fees = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.feesLbl = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.classChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.eventPanel = new System.Windows.Forms.Panel();
@@ -41,11 +47,6 @@
             this.eventDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.eventTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.eventLink = new System.Windows.Forms.LinkLabel();
-            this.feesPanel = new System.Windows.Forms.Panel();
-            this.feesListView = new System.Windows.Forms.ListView();
-            this.name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.student_class = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.fees = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.classPanel = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.lblTotoalRooms = new System.Windows.Forms.Label();
@@ -58,12 +59,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTotalStnt = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.feesLbl = new System.Windows.Forms.Label();
             this.panelBg.SuspendLayout();
+            this.feesPanel.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.classChart)).BeginInit();
             this.eventPanel.SuspendLayout();
-            this.feesPanel.SuspendLayout();
             this.classPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.teacherPanel.SuspendLayout();
@@ -86,6 +86,64 @@
             this.panelBg.Name = "panelBg";
             this.panelBg.Size = new System.Drawing.Size(941, 588);
             this.panelBg.TabIndex = 0;
+            // 
+            // feesPanel
+            // 
+            this.feesPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.feesPanel.BackColor = System.Drawing.Color.DimGray;
+            this.feesPanel.Controls.Add(this.feesListView);
+            this.feesPanel.Controls.Add(this.feesLbl);
+            this.feesPanel.Location = new System.Drawing.Point(510, 97);
+            this.feesPanel.Name = "feesPanel";
+            this.feesPanel.Size = new System.Drawing.Size(414, 478);
+            this.feesPanel.TabIndex = 2;
+            // 
+            // feesListView
+            // 
+            this.feesListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.feesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.name,
+            this.student_class,
+            this.fees});
+            this.feesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesListView.HideSelection = false;
+            this.feesListView.Location = new System.Drawing.Point(4, 23);
+            this.feesListView.Name = "feesListView";
+            this.feesListView.Size = new System.Drawing.Size(406, 452);
+            this.feesListView.TabIndex = 3;
+            this.feesListView.TileSize = new System.Drawing.Size(170, 30);
+            this.feesListView.UseCompatibleStateImageBehavior = false;
+            this.feesListView.View = System.Windows.Forms.View.Details;
+            // 
+            // name
+            // 
+            this.name.Text = "Name";
+            this.name.Width = 220;
+            // 
+            // student_class
+            // 
+            this.student_class.Text = "Class";
+            this.student_class.Width = 120;
+            // 
+            // fees
+            // 
+            this.fees.Text = "Fees (Ghc)";
+            this.fees.Width = 112;
+            // 
+            // feesLbl
+            // 
+            this.feesLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.feesLbl.AutoSize = true;
+            this.feesLbl.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesLbl.Location = new System.Drawing.Point(156, 2);
+            this.feesLbl.Name = "feesLbl";
+            this.feesLbl.Size = new System.Drawing.Size(120, 18);
+            this.feesLbl.TabIndex = 1;
+            this.feesLbl.Text = "Those Owing Fees";
+            this.feesLbl.Click += new System.EventHandler(this.classPanel_Click);
             // 
             // panel3
             // 
@@ -221,52 +279,6 @@
             this.eventLink.TabStop = true;
             this.eventLink.Text = "Events";
             this.eventLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.eventLink_LinkClicked);
-            // 
-            // feesPanel
-            // 
-            this.feesPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.feesPanel.BackColor = System.Drawing.Color.DimGray;
-            this.feesPanel.Controls.Add(this.feesListView);
-            this.feesPanel.Controls.Add(this.feesLbl);
-            this.feesPanel.Location = new System.Drawing.Point(510, 97);
-            this.feesPanel.Name = "feesPanel";
-            this.feesPanel.Size = new System.Drawing.Size(414, 478);
-            this.feesPanel.TabIndex = 2;
-            // 
-            // feesListView
-            // 
-            this.feesListView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.feesListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.name,
-            this.student_class,
-            this.fees});
-            this.feesListView.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feesListView.HideSelection = false;
-            this.feesListView.Location = new System.Drawing.Point(4, 23);
-            this.feesListView.Name = "feesListView";
-            this.feesListView.Size = new System.Drawing.Size(406, 454);
-            this.feesListView.TabIndex = 3;
-            this.feesListView.TileSize = new System.Drawing.Size(170, 30);
-            this.feesListView.UseCompatibleStateImageBehavior = false;
-            this.feesListView.View = System.Windows.Forms.View.Details;
-            // 
-            // name
-            // 
-            this.name.Text = "Name";
-            this.name.Width = 220;
-            // 
-            // student_class
-            // 
-            this.student_class.Text = "Class";
-            this.student_class.Width = 120;
-            // 
-            // fees
-            // 
-            this.fees.Text = "Fees (Ghc)";
-            this.fees.Width = 112;
             // 
             // classPanel
             // 
@@ -417,18 +429,6 @@
             this.label1.Text = "Total Students";
             this.label1.Click += new System.EventHandler(this.studentPanel_Click);
             // 
-            // feesLbl
-            // 
-            this.feesLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.feesLbl.AutoSize = true;
-            this.feesLbl.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feesLbl.Location = new System.Drawing.Point(156, 2);
-            this.feesLbl.Name = "feesLbl";
-            this.feesLbl.Size = new System.Drawing.Size(120, 18);
-            this.feesLbl.TabIndex = 1;
-            this.feesLbl.Text = "Those Owing Fees";
-            this.feesLbl.Click += new System.EventHandler(this.classPanel_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -438,12 +438,12 @@
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.panelBg.ResumeLayout(false);
+            this.feesPanel.ResumeLayout(false);
+            this.feesPanel.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.classChart)).EndInit();
             this.eventPanel.ResumeLayout(false);
             this.eventPanel.PerformLayout();
-            this.feesPanel.ResumeLayout(false);
-            this.feesPanel.PerformLayout();
             this.classPanel.ResumeLayout(false);
             this.classPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

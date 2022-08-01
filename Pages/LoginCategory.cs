@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace Perfect_Peace_System.Pages
 {
-    public partial class LoginAs : Form
+    public partial class LoginCategory : Form
     {
         OpenNewPage openNewPage;
         public static string loginAsText;
-        public LoginAs()
+        public LoginCategory()
         {
             InitializeComponent();
             loginAsPanel.BackColor = Login.themeColor;

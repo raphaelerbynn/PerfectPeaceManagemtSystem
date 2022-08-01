@@ -26,7 +26,7 @@ namespace Perfect_Peace_System.Pages
         {
             if (!String.IsNullOrEmpty(teacherCb.Text))
             {
-                query = "UPDATE Class SET name='"+nameTb.Text+"', section='"+sectionCb.SelectedItem.ToString()+"', capacity='"+capacityTb.Text+"', fees='"+feesBox.Value.ToString()+"' WHERE classs_id='"+id+"'";
+                query = "UPDATE Class SET name='"+nameTb.Text+"', section='"+sectionCb.SelectedItem.ToString()+"', capacity='"+capacityTb.Text+"', fees='"+totalFeesLbl.Text+"', tuition='"+tuition.Value.ToString()+ "', tuition='" + tuition.Value.ToString() + "', firstAid='" + firstAid.Value.ToString() + "', PTA='" + PTA.Value.ToString() + "', water='" + water.Value.ToString() + "', maintenance='" + maintenance.Value.ToString() + "', stationary='"+stationary.Value.ToString()+ "', cocurricular='" + cocurricular.Value.ToString() + "' WHERE classs_id='" + id+"'";
                 DbClient.query_execute(query);
 
                 query = "SELECT teacher_id FROM Teacher WHERE [f_name]+' '+[l_name]='" + teacherCb.SelectedItem.ToString() + "'";
@@ -44,7 +44,7 @@ namespace Perfect_Peace_System.Pages
             }
             else
             {
-                query = "UPDATE Class SET name='" + nameTb.Text + "', section='" + sectionCb.SelectedItem.ToString() + "', capacity='" + capacityTb.Text + "', fees='" + feesBox.Value.ToString() + "', teacher_id=NULL  WHERE class_id='" + id + "'";
+                query = "UPDATE Class SET name='" + nameTb.Text + "', section='" + sectionCb.SelectedItem.ToString() + "', capacity='" + capacityTb.Text + "', fees='" + totalFeesLbl.Text + "', tuition='" + tuition.Value.ToString() + "', tuition='" + tuition.Value.ToString() + "', firstAid='" + firstAid.Value.ToString() + "', PTA='" + PTA.Value.ToString() + "', water='" + water.Value.ToString() + "', maintenance='" + maintenance.Value.ToString() + "', stationary='" + stationary.Value.ToString() + "', cocurricular='" + cocurricular.Value.ToString() + "' teacher_id=NULL  WHERE class_id='" + id + "'";
                 DbClient.query_execute(query);
 
                 query = "UPDATE Teacher SET class_id=NULL WHERE class_id='" + id + "'";
@@ -64,7 +64,14 @@ namespace Perfect_Peace_System.Pages
             {
                 nameTb.Text = reader["name"].ToString();
                 capacityTb.Text = reader["capacity"].ToString();
-                feesBox.Value = decimal.Parse(reader["fees"].ToString());
+                totalFeesLbl.Text = reader["fees"].ToString();
+                tuition.Text = reader["tuition"].ToString();
+                firstAid.Text = reader["firstAid"].ToString();
+                PTA.Text = reader["PTA"].ToString();
+                water.Text = reader["water"].ToString();
+                maintenance.Text = reader["maintenance"].ToString();
+                stationary.Text = reader["stationary"].ToString();
+                cocurricular.Text = reader["cocurricular"].ToString();
                 sectionCb.SelectedItem = reader["section"].ToString();
                 teacher = reader["teacher_id"].ToString();
             }
@@ -93,6 +100,20 @@ namespace Perfect_Peace_System.Pages
         private void noTeacherLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             teacherCb.SelectedIndex = -1;
+        }
+
+        private void tuition_ValueChanged(object sender, EventArgs e)
+        {
+            decimal totalFees = 0;
+            totalFees += tuition.Value;
+            totalFees += firstAid.Value;
+            totalFees += PTA.Value;
+            totalFees += water.Value;
+            totalFees += maintenance.Value;
+            totalFees += stationary.Value;
+            totalFees += cocurricular.Value;
+
+            totalFeesLbl.Text = totalFees.ToString();
         }
     }
 }

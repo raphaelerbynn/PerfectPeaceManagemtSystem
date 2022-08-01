@@ -41,7 +41,12 @@ namespace Perfect_Peace_System.Pages
             InitializeComponent();
             showSubjectsWithFeilds();
             getStudentInfo();
-            
+
+            topPanel.BackColor = Home.themeColor;
+            topPanel.ForeColor = Home.foreColor;
+            bgPanel.BackColor = Home.foreColor;
+            inputPanel.BackColor = Home.foreColor;
+            teacherRemarksPanel.BackColor = Home.foreColor;
         }
 
         private void getStudentInfo()
@@ -168,7 +173,7 @@ namespace Perfect_Peace_System.Pages
                 remarksLabel.Location = new Point(remarksLocationX, subLocationY);
                 remarksLabel.Anchor = AnchorStyles.Top;
                 remarksLabel.AutoSize = true;
-                remarksLabel.Font = new Font("Calibri", 14);
+                remarksLabel.Font = new Font("Calibri", 14, FontStyle.Bold);
                 remarkLbls.Add(remarksLabel);
 
                 subLocationY += 50;
@@ -198,6 +203,10 @@ namespace Perfect_Peace_System.Pages
             Button nextPageBtn = new Button();
             nextPageBtn.Text = "Next Page";
             nextPageBtn.Location = new Point(getLastRemarkLbl.Location.X, getLastRemarkLbl.Location.Y + 40);
+            nextPageBtn.FlatStyle = FlatStyle.Flat;
+            nextPageBtn.FlatAppearance.BorderSize = 0;
+            nextPageBtn.ForeColor = Color.White;
+            nextPageBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
             inputPanel.Controls.Add(nextPageBtn);
             nextPageBtn.Click += nextPageBtn_Click;
 
@@ -421,7 +430,5 @@ namespace Perfect_Peace_System.Pages
                 classCb.SelectedIndex = -1;
             }
         }
-
-        
     }
 }

@@ -58,6 +58,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System">
       <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
@@ -109,6 +110,12 @@
     <Compile Include="Pages\AddSubject.Designer.cs">
       <DependentUpon>AddSubject.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ConfirmPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\ConfirmPassword.Designer.cs">
+      <DependentUpon>ConfirmPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CreatAccount.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,11 +134,11 @@
     <Compile Include="Pages\LoginInput.Designer.cs">
       <DependentUpon>LoginInput.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\LoginAs.cs">
+    <Compile Include="Pages\LoginCategory.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pages\LoginAs.Designer.cs">
-      <DependentUpon>LoginAs.cs</DependentUpon>
+    <Compile Include="Pages\LoginCategory.Designer.cs">
+      <DependentUpon>LoginCategory.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\MarkAttendance.cs">
       <SubType>Form</SubType>
@@ -199,6 +206,12 @@
     </Compile>
     <Compile Include="Pages\TeacherDetails.Designer.cs">
       <DependentUpon>TeacherDetails.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Term.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Term.Designer.cs">
+      <DependentUpon>Term.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\UpdateClass.cs">
       <SubType>Form</SubType>
@@ -334,6 +347,9 @@
     <EmbeddedResource Include="Pages\AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\ConfirmPassword.resx">
+      <DependentUpon>ConfirmPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\CreatAccount.resx">
       <DependentUpon>CreatAccount.cs</DependentUpon>
     </EmbeddedResource>
@@ -343,8 +359,8 @@
     <EmbeddedResource Include="Pages\LoginInput.resx">
       <DependentUpon>LoginInput.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\LoginAs.resx">
-      <DependentUpon>LoginAs.cs</DependentUpon>
+    <EmbeddedResource Include="Pages\LoginCategory.resx">
+      <DependentUpon>LoginCategory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\MarkAttendance.resx">
       <DependentUpon>MarkAttendance.cs</DependentUpon>
@@ -396,6 +412,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\TeacherDetails.resx">
       <DependentUpon>TeacherDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Term.resx">
+      <DependentUpon>Term.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\UpdateClass.resx">
       <DependentUpon>UpdateClass.cs</DependentUpon>

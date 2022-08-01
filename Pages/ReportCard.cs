@@ -31,6 +31,8 @@ namespace Perfect_Peace_System.Pages
             
             fillLabels();
             populateResults();
+            MessageBox.Show("Before printing result, Admin must save term attendance to get total student attendance", "Hint", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            bgPanel.BackColor = Home.foreColor;
 
         }
 
@@ -71,12 +73,15 @@ namespace Perfect_Peace_System.Pages
                     }
                     reader.Close();
 
-                    query = "SELECT RANK() OVER(ORDER BY total_score DESC) AS subject_position FROM Student_marks " +
+                    query = "SELECT student_id, RANK() OVER(ORDER BY total_score DESC) AS subject_position FROM Student_marks " +
                         "WHERE class='"+classLbl.Text+"' AND term='"+term+"' AND date LIKE '%"+date+"%' AND subject_id='"+id+"'";
                     reader = DbClient.query_reader(query);
                     while (reader.Read())
                     {
-                        item.Cells["position_in_subject"].Value = getSubjectPosition(reader["subject_position"].ToString());
+                        if (student_id.Equals(reader["student_id"].ToString()))
+                        {
+                            item.Cells["position_in_subject"].Value = getSubjectPosition(reader["subject_position"].ToString());
+                        }
                     }
                     reader.Close();
                     
@@ -153,6 +158,14 @@ namespace Perfect_Peace_System.Pages
             total_fees += double.Parse(DbClient.query_executeScaler(query));
             feesLbl.Text = "Ghc "+DbClient.query_executeScaler(query);
             totalFeesLbl.Text = "Ghc " + total_fees.ToString();
+
+            query = "SELECT FORMAT(term_end_date, 'MMM-yyyy') FROM Total_attendance";
+            DbClient.query_reader(termEndCb, query);
+            
+            if(termEndCb.Items.Count > 0)
+            {
+                termEndCb.SelectedIndex = termEndCb.Items.Count - 1;
+            }
         }
 
         private void printBtn_Click(object sender, EventArgs e)
@@ -174,7 +187,7 @@ namespace Perfect_Peace_System.Pages
         private void printdoc_printPage(object sender, PrintPageEventArgs e)
         {
             var bitMap = ControlPrinter.ScrollableControlToBitmap(this.reportCardPanel, true, true);
-            e.Graphics.DrawImage(bitMap, new Rectangle(0, 0, reportCardPanel.Width, reportCardPanel.Height));
+            e.Graphics.DrawImage(bitMap, new Rectangle(5, 5, reportCardPanel.Width, reportCardPanel.Height));
         }
 
         private void tB_KeyPress(object sender, KeyPressEventArgs e)
@@ -192,49 +205,66 @@ namespace Perfect_Peace_System.Pages
 
         private void resultInputBtn_Click(object sender, EventArgs e)
         {
-            
-            if (!String.IsNullOrEmpty(ptaDuesTb.Text))
+            try
             {
-                PtaLbl.Text = "Ghc " + ptaDuesTb.Text;
-                total_fees += double.Parse(ptaDuesTb.Text);
-            }
-            else
-            {
-                PtaLbl.Text = "---";
-            }
+                if (!String.IsNullOrEmpty(ptaDuesTb.Text))
+                {
+                    PtaLbl.Text = "Ghc " + ptaDuesTb.Text;
+                    total_fees += double.Parse(ptaDuesTb.Text);
+                }
+                else
+                {
+                    PtaLbl.Text = "---";
+                }
 
-            if (!String.IsNullOrEmpty(ptaDuesTb.Text))
-            {
-                PtaLbl.Text = "Ghc " + ptaDuesTb.Text;
-                total_fees += double.Parse(ptaDuesTb.Text);
-            }
-            else
-            {
-                PtaLbl.Text = "---";
-            }
-            
-            if (!String.IsNullOrEmpty(examFeesTb.Text))
-            {
-                examsFeesLbl.Text = "Ghc " + examFeesTb.Text;
-                total_fees += double.Parse(examFeesTb.Text);
-            }
-            else
-            {
-                extraClassesLbl.Text = "---";
-            }
+                if (!String.IsNullOrEmpty(ptaDuesTb.Text))
+                {
+                    PtaLbl.Text = "Ghc " + ptaDuesTb.Text;
+                    total_fees += double.Parse(ptaDuesTb.Text);
+                }
+                else
+                {
+                    PtaLbl.Text = "---";
+                }
 
-            if (!String.IsNullOrEmpty(extraClassesTb.Text))
-            {
-                extraClassesLbl.Text = "Ghc " + extraClassesTb.Text;
-                total_fees += double.Parse(extraClassesTb.Text);
-            }
-            else
-            {
-                extraClassesLbl.Text = "---";
-            }
-            totalFeesLbl.Text = "Ghc "+total_fees.ToString();
+                if (!String.IsNullOrEmpty(examFeesTb.Text))
+                {
+                    examsFeesLbl.Text = "Ghc " + examFeesTb.Text;
+                    total_fees += double.Parse(examFeesTb.Text);
+                }
+                else
+                {
+                    extraClassesLbl.Text = "---";
+                }
 
-            nextTermDateLbl.Text = termDate.Text;
+                if (!String.IsNullOrEmpty(extraClassesTb.Text))
+                {
+                    extraClassesLbl.Text = "Ghc " + extraClassesTb.Text;
+                    total_fees += double.Parse(extraClassesTb.Text);
+                }
+                else
+                {
+                    extraClassesLbl.Text = "---";
+                }
+                totalFeesLbl.Text = "Ghc " + total_fees.ToString();
+
+                nextTermDateLbl.Text = termDate.Text;
+
+                if (termEndCb.SelectedIndex > -1)
+                {
+                    query = "SELECT present, attendance FROM Total_attendance WHERE student_id='" + student_id + "' AND FORMAT(term_end_date, 'MMM-yyyy')='" + termEndCb.SelectedItem + "'";
+                    SqlDataReader reader = DbClient.query_reader(query);
+                    while (reader.Read())
+                    {
+                        attendanceLbl.Text = reader["present"].ToString();
+                        attendanceTotalLbl.Text = reader["attendance"].ToString();
+                    }
+                    reader.Close();
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public string getSubjectPosition(string pos)

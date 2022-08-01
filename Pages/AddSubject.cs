@@ -16,6 +16,12 @@ namespace Perfect_Peace_System.Pages
         public AddSubject()
         {
             InitializeComponent();
+            subjectDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            subjectDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            subjectDataView.BackgroundColor = Home.foreColor;
+            topPanel.BackColor = Home.foreColor;
+            bgPanel.BackColor = Home.foreColor;
+
             subject = new Subject();
             subject.show_data(subjectDataView);
             columnArrangement();

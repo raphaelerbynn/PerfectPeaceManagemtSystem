@@ -13,20 +13,35 @@ namespace Perfect_Peace_System
         private int capacity;
         private string section;
         private double fees;
+        private double tuition;
+        private double firstAid;
+        private double PTA;
+        private double water;
+        private double maintenace;
+        private double stationary;
+        private double cocurricular;
 
         public ClassRoom() { }
 
-        public ClassRoom(string name, int capacity, string section, double fees)
+        public ClassRoom(string name, int capacity, string section, double tuition, double firstAid, double PTA, double water, double maintenance, double stationary, double cocurricula, double fees)
         {
             this.name = name;
             this.capacity = capacity;
             this.section = section;
+            this.tuition = tuition;
+            this.firstAid = firstAid;
+            this.PTA = PTA;
+            this.water = water;
+            this.maintenace = maintenance;
+            this.stationary = stationary;
+            this.cocurricular = cocurricula;
             this.fees = fees;
         }
 
         public void insert_class()
         {
-            string query = "INSERT INTO Class(name, section, capacity, fees) VALUES('"+name+"','"+section+"','"+capacity+"','"+fees+"')";
+            string query = "INSERT INTO Class(name, section, capacity, tuition, firstAid, PTA, water, maintenance, stationary, cocurricular, fees) " +
+                "VALUES('" + name + "','" + section + "','" + capacity + "','" + tuition + "','" + firstAid + "','" + PTA + "','" + water + "','" + maintenace + "','" + stationary + "','" + cocurricular + "','" + fees + "')";
             DbClient.query_execute(query);
         }
 

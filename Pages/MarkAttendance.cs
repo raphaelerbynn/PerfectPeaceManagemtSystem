@@ -95,6 +95,15 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
+                string date_end = "";
+                query = "SELECT end_date FROM Term";
+                SqlDataReader reader = DbClient.query_reader(query);
+                while (reader.Read())
+                {
+                    date_end = reader["end_date"].ToString();
+                }
+                reader.Close();
+
                 query = "DELETE FROM Attendance WHERE class='" + classCb.Text + "' AND date_marked='" + DateTime.Today + "'";
                 DbClient.query_execute(query);
 
@@ -121,8 +130,8 @@ namespace Perfect_Peace_System.Pages
                             return;
                         }
 
-                        query = "INSERT INTO Attendance(student_id, class, status, date_marked)" +
-                        "VALUES('" + id + "', '" + classCb.Text + "', '" + status + "', '" + DateTime.Today + "')";
+                        query = "INSERT INTO Attendance(student_id, class, status, date_marked, date_end)" +
+                        "VALUES('" + id + "', '" + classCb.Text + "', '" + status + "', '" + DateTime.Today + "', '"+date_end+"')";
                         DbClient.query_execute(query);
                     }
                     this.Close();

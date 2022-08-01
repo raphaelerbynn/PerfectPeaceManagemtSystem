@@ -22,7 +22,7 @@ namespace Perfect_Peace_System.Pages
         public LoginInput()
         {
             InitializeComponent();
-            loginAsLbl.Text = LoginAs.loginAsText;
+            loginAsLbl.Text = LoginCategory.loginAsText;
             bgPanel.BackColor = Login.themeColor;
             bgPanel.ForeColor = Login.foreColor;
             loginBtn.ForeColor = Login.themeColor;

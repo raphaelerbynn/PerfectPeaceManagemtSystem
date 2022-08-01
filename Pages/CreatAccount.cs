@@ -24,7 +24,7 @@ namespace Perfect_Peace_System.Pages
         public CreateAccount()
         {
             InitializeComponent();
-            loginAsLbl.Text = LoginAs.loginAsText;
+            loginAsLbl.Text = LoginCategory.loginAsText;
             bgPanel.BackColor = Login.themeColor;
             bgPanel.ForeColor = Login.foreColor;
             createAccBtn.ForeColor = Login.themeColor;

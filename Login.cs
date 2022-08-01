@@ -52,7 +52,7 @@ namespace Perfect_Peace_System
             {
                 timer1.Stop();
                 OpenNewPage openNewPage = new OpenNewPage();
-                openNewPage.OpenChildForm(new Pages.LoginAs(), loginPanel);
+                openNewPage.OpenChildForm(new Pages.LoginCategory(), loginPanel);
             }
         }
 

@@ -43,6 +43,7 @@
             this.line3 = new System.Windows.Forms.Panel();
             this.panelView = new System.Windows.Forms.Panel();
             this.addStntBtn = new System.Windows.Forms.LinkLabel();
+            this.termBtn = new System.Windows.Forms.Button();
             this.subjectBtn = new System.Windows.Forms.Button();
             this.payrollBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
@@ -108,7 +109,6 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(1120, 74);
             this.topPanel.TabIndex = 2;
-            this.topPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.topPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.topPanel_MouseMove);
             // 
             // logoutLink
@@ -159,11 +159,12 @@
             this.titleLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.titleLbl.AutoSize = true;
             this.titleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLbl.Location = new System.Drawing.Point(585, 37);
+            this.titleLbl.Location = new System.Drawing.Point(579, 37);
             this.titleLbl.Name = "titleLbl";
             this.titleLbl.Size = new System.Drawing.Size(122, 20);
             this.titleLbl.TabIndex = 5;
             this.titleLbl.Text = "DASHBOARD";
+            this.titleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // logoPanel
             // 
@@ -201,7 +202,6 @@
             this.line2.Name = "line2";
             this.line2.Size = new System.Drawing.Size(307, 3);
             this.line2.TabIndex = 2;
-            this.line2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // line3
             // 
@@ -229,14 +229,30 @@
             // 
             this.addStntBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.addStntBtn.AutoSize = true;
-            this.addStntBtn.Location = new System.Drawing.Point(997, 88);
+            this.addStntBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addStntBtn.Location = new System.Drawing.Point(997, 86);
             this.addStntBtn.Name = "addStntBtn";
-            this.addStntBtn.Size = new System.Drawing.Size(66, 13);
+            this.addStntBtn.Size = new System.Drawing.Size(87, 19);
             this.addStntBtn.TabIndex = 5;
             this.addStntBtn.TabStop = true;
             this.addStntBtn.Text = "Add Student";
             this.addStntBtn.Visible = false;
             this.addStntBtn.Click += new System.EventHandler(this.addStntBtn_Click);
+            // 
+            // termBtn
+            // 
+            this.termBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.termBtn.FlatAppearance.BorderSize = 0;
+            this.termBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.termBtn.ForeColor = System.Drawing.Color.White;
+            this.termBtn.Location = new System.Drawing.Point(160, 77);
+            this.termBtn.Name = "termBtn";
+            this.termBtn.Size = new System.Drawing.Size(75, 23);
+            this.termBtn.TabIndex = 6;
+            this.termBtn.Text = "Term Details";
+            this.termBtn.UseVisualStyleBackColor = false;
+            this.termBtn.Visible = false;
+            this.termBtn.Click += new System.EventHandler(this.termBtn_Click);
             // 
             // subjectBtn
             // 
@@ -502,6 +518,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1120, 744);
+            this.Controls.Add(this.termBtn);
             this.Controls.Add(this.addStntBtn);
             this.Controls.Add(this.panelView);
             this.Controls.Add(this.menuPanel);
@@ -510,7 +527,6 @@
             this.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
             this.topPanel.ResumeLayout(false);
@@ -557,6 +573,7 @@
         private System.Windows.Forms.Panel line3;
         private System.Windows.Forms.Panel panelView;
         private System.Windows.Forms.LinkLabel addStntBtn;
+        private System.Windows.Forms.Button termBtn;
     }
 }
 

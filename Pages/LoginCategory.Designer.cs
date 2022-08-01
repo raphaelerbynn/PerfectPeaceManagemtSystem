@@ -1,6 +1,6 @@
 ﻿namespace Perfect_Peace_System.Pages
 {
-    partial class LoginAs
+    partial class LoginCategory
     {
         /// <summary>
         /// Required designer variable.

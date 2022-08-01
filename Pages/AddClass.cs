@@ -20,25 +20,44 @@ namespace Perfect_Peace_System.Pages
             bgPanel.BackColor = Home.foreColor;
             query = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher EXCEPT SELECT [f_name]+' '+[l_name] FROM Teacher WHERE class_id IS NOT NULL";
             DbClient.query_reader(teacherCb, query);
+            totalFeesLbl.Text = "0.00";
         }
 
         private void addClassBtn_Click(object sender, EventArgs e)
         {
-            ClassRoom classRoom = new ClassRoom(nameTb.Text, int.Parse(capacityTb.Text), sectionCb.SelectedItem.ToString(), double.Parse(feesBox.Value.ToString()));
-            classRoom.insert_class();
-
-            if (!String.IsNullOrEmpty(teacherCb.Text))
+            if (!(String.IsNullOrEmpty(nameTb.Text) || String.IsNullOrEmpty(capacityTb.Text)) && sectionCb.SelectedIndex > -1)
             {
-                query = "SELECT teacher_id FROM Teacher WHERE [f_name]+' '+[l_name]='" + teacherCb.SelectedItem.ToString() + "'";
-                string teacher_id = DbClient.query_executeScaler(query);
+                ClassRoom classRoom = new ClassRoom(
+                    nameTb.Text, int.Parse(capacityTb.Text), 
+                    sectionCb.SelectedItem.ToString(), 
+                    double.Parse(tuition.Value.ToString()), 
+                    double.Parse(firstAid.Value.ToString()), 
+                    double.Parse(PTA.Value.ToString()), 
+                    double.Parse(water.Value.ToString()), 
+                    double.Parse(maintenance.Value.ToString()), 
+                    double.Parse(stationary.Value.ToString()), 
+                    double.Parse(cocurricular.Value.ToString()), 
+                    double.Parse(totalFeesLbl.Text.ToString())
+                    );
+                classRoom.insert_class();
 
-                query = "UPDATE Class SET teacher_id=" + teacher_id + " WHERE name='" + nameTb.Text + "'";
-                DbClient.query_execute(query);
+                if (!String.IsNullOrEmpty(teacherCb.Text))
+                {
+                    query = "SELECT teacher_id FROM Teacher WHERE [f_name]+' '+[l_name]='" + teacherCb.SelectedItem.ToString() + "'";
+                    string teacher_id = DbClient.query_executeScaler(query);
 
-                query = "UPDATE Teacher SET class_id='" + DbClient.GetLastId("Class") + "' WHERE teacher_id='" + teacher_id + "'";
-                DbClient.query_execute(query);
+                    query = "UPDATE Class SET teacher_id=" + teacher_id + " WHERE name='" + nameTb.Text + "'";
+                    DbClient.query_execute(query);
+
+                    query = "UPDATE Teacher SET class_id='" + DbClient.GetLastId("Class") + "' WHERE teacher_id='" + teacher_id + "'";
+                    DbClient.query_execute(query);
+                }
+                MessageBox.Show("Class Added");
             }
-            MessageBox.Show("Class Added");
+            else
+            {
+                MessageBox.Show("Fill class name and capacity!!!");
+            }
         }
 
         private void clearBtn_Click(object sender, EventArgs e)
@@ -50,9 +69,40 @@ namespace Perfect_Peace_System.Pages
         {
             nameTb.Text = null;
             capacityTb.Text = null;
-            feesBox.Value = 0;
+            foreach(NumericUpDown box in bgPanel.Controls)
+            {
+                box.Value = 0;
+            }
             sectionCb.SelectedIndex = -1;
             teacherCb.SelectedIndex = -1;
+            totalFeesLbl.Text = "0.00";
+        }
+
+        private void tuition_ValueChanged(object sender, EventArgs e)
+        {
+            decimal totalFees = 0;
+            totalFees += tuition.Value;
+            totalFees += firstAid.Value;
+            totalFees += PTA.Value;
+            totalFees += water.Value;
+            totalFees += maintenance.Value;
+            totalFees += stationary.Value;
+            totalFees += cocurricular.Value;
+
+            totalFeesLbl.Text = totalFees.ToString();
+        }
+
+        private void tB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

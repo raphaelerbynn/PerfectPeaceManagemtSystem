@@ -11,6 +11,7 @@ namespace Perfect_Peace_System
         private static string student_id_receipt;
         private static string fee_id;
         private static bool printFromData;
+        private static bool confirmPassword;
 
         public static void setStudentIdReceipt(string student_id)
         {
@@ -40,6 +41,16 @@ namespace Perfect_Peace_System
         public static bool getFromTableReceiptQuery()
         {
             return printFromData;
+        }
+
+        public static void setConfirmPassword(bool confirmation)
+        {
+            confirmPassword = confirmation;
+        }
+
+        public static bool getConfirmedPassword()
+        {
+            return confirmPassword;
         }
     }
 }

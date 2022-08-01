@@ -17,7 +17,7 @@ namespace Perfect_Peace_System.Pages
         public Attendance()
         {
             InitializeComponent();
-            if (Pages.LoginInput.category.Equals("Administratur"))
+            if (Pages.LoginInput.category.Equals("Administrator"))
             {
                 query = "SELECT name FROM Class";
                 DbClient.query_reader(classCb, query);
