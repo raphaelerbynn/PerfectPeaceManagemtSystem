@@ -184,7 +184,7 @@
             dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.studentDataView.DefaultCellStyle = dataGridViewCellStyle11;
@@ -289,7 +289,7 @@
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle8.NullValue")));
             dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Control;
             this.view.DefaultCellStyle = dataGridViewCellStyle8;
             this.view.FillWeight = 30F;
             this.view.HeaderText = "";
@@ -304,7 +304,7 @@
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle9.NullValue")));
             dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Control;
             this.edit.DefaultCellStyle = dataGridViewCellStyle9;
             this.edit.FillWeight = 30F;
             this.edit.HeaderText = "";
@@ -319,7 +319,7 @@
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle10.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle10.NullValue")));
             dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Control;
             this.delete.DefaultCellStyle = dataGridViewCellStyle10;
             this.delete.FillWeight = 30F;
             this.delete.HeaderText = "";

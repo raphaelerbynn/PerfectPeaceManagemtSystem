@@ -34,7 +34,6 @@
             this.classCb = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.femaleRadio = new System.Windows.Forms.RadioButton();
-            this.maleRadio = new System.Windows.Forms.RadioButton();
             this.dobPicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.mnameTb = new System.Windows.Forms.TextBox();
@@ -47,6 +46,7 @@
             this.fnameTb = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.maleRadio = new System.Windows.Forms.RadioButton();
             this.registerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,8 +57,8 @@
             this.registerPanel.Controls.Add(this.registerStntBnt);
             this.registerPanel.Controls.Add(this.classCb);
             this.registerPanel.Controls.Add(this.label7);
-            this.registerPanel.Controls.Add(this.femaleRadio);
             this.registerPanel.Controls.Add(this.maleRadio);
+            this.registerPanel.Controls.Add(this.femaleRadio);
             this.registerPanel.Controls.Add(this.dobPicker);
             this.registerPanel.Controls.Add(this.label6);
             this.registerPanel.Controls.Add(this.mnameTb);
@@ -80,24 +80,32 @@
             // clearFeildBtn
             // 
             this.clearFeildBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.clearFeildBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.clearFeildBtn.FlatAppearance.BorderSize = 0;
+            this.clearFeildBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearFeildBtn.ForeColor = System.Drawing.Color.White;
             this.clearFeildBtn.Location = new System.Drawing.Point(531, 504);
             this.clearFeildBtn.Name = "clearFeildBtn";
             this.clearFeildBtn.Size = new System.Drawing.Size(75, 23);
             this.clearFeildBtn.TabIndex = 18;
             this.clearFeildBtn.Text = "Clear";
-            this.clearFeildBtn.UseVisualStyleBackColor = true;
+            this.clearFeildBtn.UseVisualStyleBackColor = false;
             this.clearFeildBtn.Click += new System.EventHandler(this.clearFeildBtn_Click);
             // 
             // registerStntBnt
             // 
             this.registerStntBnt.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.registerStntBnt.BackColor = System.Drawing.Color.DarkGreen;
+            this.registerStntBnt.FlatAppearance.BorderSize = 0;
+            this.registerStntBnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerStntBnt.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerStntBnt.ForeColor = System.Drawing.Color.White;
             this.registerStntBnt.Location = new System.Drawing.Point(354, 504);
             this.registerStntBnt.Name = "registerStntBnt";
             this.registerStntBnt.Size = new System.Drawing.Size(75, 23);
             this.registerStntBnt.TabIndex = 17;
             this.registerStntBnt.Text = "Register";
-            this.registerStntBnt.UseVisualStyleBackColor = true;
+            this.registerStntBnt.UseVisualStyleBackColor = false;
             this.registerStntBnt.Click += new System.EventHandler(this.registerStntBnt_Click);
             // 
             // classCb
@@ -129,7 +137,7 @@
             this.femaleRadio.AutoSize = true;
             this.femaleRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.femaleRadio.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.femaleRadio.Location = new System.Drawing.Point(225, 267);
+            this.femaleRadio.Location = new System.Drawing.Point(217, 267);
             this.femaleRadio.Name = "femaleRadio";
             this.femaleRadio.Size = new System.Drawing.Size(72, 26);
             this.femaleRadio.TabIndex = 14;
@@ -137,24 +145,6 @@
             this.femaleRadio.UseCompatibleTextRendering = true;
             this.femaleRadio.UseVisualStyleBackColor = true;
             this.femaleRadio.CheckedChanged += new System.EventHandler(this.femaleRadio_CheckedChanged);
-            // 
-            // maleRadio
-            // 
-            this.maleRadio.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.maleRadio.AutoSize = true;
-            this.maleRadio.BackColor = System.Drawing.SystemColors.Control;
-            this.maleRadio.Checked = true;
-            this.maleRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maleRadio.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maleRadio.Location = new System.Drawing.Point(154, 267);
-            this.maleRadio.Name = "maleRadio";
-            this.maleRadio.Size = new System.Drawing.Size(57, 26);
-            this.maleRadio.TabIndex = 13;
-            this.maleRadio.TabStop = true;
-            this.maleRadio.Text = "Male";
-            this.maleRadio.UseCompatibleTextRendering = true;
-            this.maleRadio.UseVisualStyleBackColor = false;
-            this.maleRadio.CheckedChanged += new System.EventHandler(this.maleRadio_CheckedChanged);
             // 
             // dobPicker
             // 
@@ -286,6 +276,23 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "First Name: *";
             // 
+            // maleRadio
+            // 
+            this.maleRadio.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.maleRadio.AutoSize = true;
+            this.maleRadio.Checked = true;
+            this.maleRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.maleRadio.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maleRadio.Location = new System.Drawing.Point(154, 267);
+            this.maleRadio.Name = "maleRadio";
+            this.maleRadio.Size = new System.Drawing.Size(57, 26);
+            this.maleRadio.TabIndex = 14;
+            this.maleRadio.TabStop = true;
+            this.maleRadio.Text = "Male";
+            this.maleRadio.UseCompatibleTextRendering = true;
+            this.maleRadio.UseVisualStyleBackColor = true;
+            this.maleRadio.CheckedChanged += new System.EventHandler(this.femaleRadio_CheckedChanged);
+            // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -308,7 +315,6 @@
         private System.Windows.Forms.ComboBox classCb;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RadioButton femaleRadio;
-        private System.Windows.Forms.RadioButton maleRadio;
         private System.Windows.Forms.DateTimePicker dobPicker;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox mnameTb;
@@ -321,5 +327,6 @@
         private System.Windows.Forms.TextBox fnameTb;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.RadioButton maleRadio;
     }
 }
