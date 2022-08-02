@@ -33,29 +33,40 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
-                int totalPresent = 0;
-                int totalAttendance = 0;
-                string student_id;
-                
-                query = "INSERT INTO Total_Attendance (student_id, present, attendance, term_end_date) " +
-                    "SELECT " +
-                    "student_id, " +
-                    "SUM(CASE WHEN status='Present' THEN 1 ELSE 0 END) AS present, " +
-                    "COUNT(status) AS attendance, " +
-                    "MAX(date_end) AS term_end_date " +
-                    "FROM Attendance " +
-                    "GROUP BY student_id";
-                //query = "SELECT status INTO Total_attendance FROM Attendance";
-                DbClient.query_execute(query);
-                /*SqlDataReader reader = DbClient.query_reader(query);
-                while (reader.Read())
+                string message = "Are you sure you want to save all attendance for the term?";
+                MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, "", deleteAction);
+                if (result == DialogResult.Yes)
                 {
-                    Console.WriteLine(reader["test"].ToString() + ":" + reader["student_id"].ToString() +":"+ reader["present"].ToString());
+                    Pages.ConfirmPassword confirmPassword = new Pages.ConfirmPassword();
+                    confirmPassword.ShowDialog();
+                    if (GetData.getConfirmedPassword() == true)
+                    {
+                        query = "INSERT INTO Total_Attendance (student_id, present, attendance, term_end_date) " +
+                        "SELECT " +
+                        "student_id, " +
+                        "SUM(CASE WHEN status='Present' THEN 1 ELSE 0 END) AS present, " +
+                        "COUNT(status) AS attendance, " +
+                        "MAX(date_end) AS term_end_date " +
+                        "FROM Attendance " +
+                        "GROUP BY student_id";
+                        DbClient.query_execute(query);
+
+                        query = "DELETE FROM Attendace";
+                        DbClient.query_execute(query);
+                        /*SqlDataReader reader = DbClient.query_reader(query);
+                        while (reader.Read())
+                        {
+                            Console.WriteLine(reader["test"].ToString() + ":" + reader["student_id"].ToString() +":"+ reader["present"].ToString());
+                        }
+                        reader.Close();*/
+
+                        //query = "SELECT "
+
+
+                        GetData.setConfirmPassword(false);
+                    }
                 }
-                reader.Close();*/
-
-                //query = "SELECT "
-
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -93,6 +104,60 @@ namespace Perfect_Peace_System.Pages
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void feesBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string message = "Are you sure you want to reset student fees for next term?";
+                MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, "", deleteAction);
+                if (result == DialogResult.Yes)
+                {
+                    Pages.ConfirmPassword confirmPassword = new Pages.ConfirmPassword();
+                    confirmPassword.ShowDialog();
+                    if (GetData.getConfirmedPassword() == true)
+                    {
+                        query = "DELETE FROM EVENT";
+                        DbClient.query_execute(query);
+
+                        GetData.setConfirmPassword(false);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string message = "Are you sure you want to end this term?";
+                MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, "", deleteAction);
+                if (result == DialogResult.Yes)
+                {
+                    Pages.ConfirmPassword confirmPassword = new Pages.ConfirmPassword();
+                    confirmPassword.ShowDialog();
+                    if (GetData.getConfirmedPassword() == true)
+                    {
+                        query = "UPDATE Student SET fees_owing=fees_owing+(SELECT fees FROM Class WHERE Class.class_id=Student.class_id) WHERE class_id IS NOT NULL";
+                        DbClient.query_execute(query);
+
+                        GetData.setConfirmPassword(false);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
             }
         }
     }

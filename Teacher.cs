@@ -16,6 +16,8 @@ namespace Perfect_Peace_System
         private string account_number;
         private string ssnit_number;
         private string tin_number;
+        private string category;
+        private string staff_position;
 
         private string query;
 
@@ -27,9 +29,11 @@ namespace Perfect_Peace_System
             this.email = email;
         }
 
-        public Teacher(string bank, string account_number, string ssnit_number, string tin_number, string phone, string email, string f_name, string l_name, string address, string gender, DateTime _date_registered):
+        public Teacher(string category, string staff_position, string bank, string account_number, string ssnit_number, string tin_number, string phone, string email, string f_name, string l_name, string address, string gender, DateTime _date_registered):
             base(f_name, l_name, address, gender, _date_registered)
         {
+            this.category = category;
+            this.staff_position = staff_position;
             this.phone = phone;
             this.email = email;
             this.bank = bank;
@@ -37,7 +41,7 @@ namespace Perfect_Peace_System
             this.ssnit_number = ssnit_number;
             this.tin_number = tin_number;
         }
-        
+
         public Teacher(string bank, string account_number, string ssnit_number, string tin_number, string _class, string phone, string email, string f_name, string l_name, string address, string gender, DateTime _date_registered):
             base(f_name, l_name, address, gender, _date_registered)
         {
@@ -58,15 +62,21 @@ namespace Perfect_Peace_System
 
         public override void save()
         {
-            query = "INSERT INTO Teacher (f_name, l_name, gender, phone, address, email, bank, account_number, ssnit_number, tin_number,date_registered)" +
-                "VALUES('" + f_name + "','" + l_name + "','" + gender + "','" + phone + "','" + address + "','" + email + "', '"+bank+"', '"+account_number+"', '"+ssnit_number+"' , '"+tin_number+"', '"+ _date_registered + "')";
+            query = "INSERT INTO Teacher (category, staff_position, f_name, l_name, gender, phone, address, email, bank, account_number, ssnit_number, tin_number,date_registered)" +
+                "VALUES('"+category+"', '"+staff_position+"', '" + f_name + "','" + l_name + "','" + gender + "','" + phone + "','" + address + "','" + email + "', '"+bank+"', '"+account_number+"', '"+ssnit_number+"' , '"+tin_number+"', '"+ _date_registered + "')";
             DbClient.query_execute(query);
         }
 
         public override void show_data(DataGridView dataGrid)
         {
-            query = "SELECT teacher_id,phone,email,gender,CAST(class_id AS VARCHAR(10)) AS class, [f_name]+' '+[l_name] AS name FROM Teacher";
+            query = "SELECT teacher_id,phone,email, CAST(class_id AS VARCHAR(10)) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'";
             DbClient.dataGridFill(dataGrid, query);
+        }
+
+        public void show_non_teaching(DataGridView nonTeachingDataView)
+        {
+            query = "SELECT teacher_id,phone,email, staff_position, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Non-Teaching'";
+            DbClient.dataGridFill(nonTeachingDataView, query);
         }
 
         public override void update(string id)

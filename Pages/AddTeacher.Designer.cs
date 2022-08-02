@@ -55,6 +55,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.categoryCb = new System.Windows.Forms.ComboBox();
+            this.positionCb = new System.Windows.Forms.ComboBox();
+            this.positionLbl = new System.Windows.Forms.Label();
+            this.specificLbl = new System.Windows.Forms.Label();
+            this.specificTb = new System.Windows.Forms.TextBox();
             this.bgPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,23 +107,33 @@
             // clearFeildBtn
             // 
             this.clearFeildBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.clearFeildBtn.Location = new System.Drawing.Point(522, 644);
+            this.clearFeildBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.clearFeildBtn.FlatAppearance.BorderSize = 0;
+            this.clearFeildBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearFeildBtn.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearFeildBtn.ForeColor = System.Drawing.Color.White;
+            this.clearFeildBtn.Location = new System.Drawing.Point(522, 813);
             this.clearFeildBtn.Name = "clearFeildBtn";
             this.clearFeildBtn.Size = new System.Drawing.Size(75, 23);
             this.clearFeildBtn.TabIndex = 34;
             this.clearFeildBtn.Text = "Clear";
-            this.clearFeildBtn.UseVisualStyleBackColor = true;
+            this.clearFeildBtn.UseVisualStyleBackColor = false;
             this.clearFeildBtn.Click += new System.EventHandler(this.clearFeildBtn_Click);
             // 
             // registerTeacherBnt
             // 
             this.registerTeacherBnt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.registerTeacherBnt.Location = new System.Drawing.Point(346, 644);
+            this.registerTeacherBnt.BackColor = System.Drawing.Color.DarkGreen;
+            this.registerTeacherBnt.FlatAppearance.BorderSize = 0;
+            this.registerTeacherBnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.registerTeacherBnt.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerTeacherBnt.ForeColor = System.Drawing.Color.White;
+            this.registerTeacherBnt.Location = new System.Drawing.Point(346, 813);
             this.registerTeacherBnt.Name = "registerTeacherBnt";
             this.registerTeacherBnt.Size = new System.Drawing.Size(75, 23);
             this.registerTeacherBnt.TabIndex = 33;
             this.registerTeacherBnt.Text = "Register";
-            this.registerTeacherBnt.UseVisualStyleBackColor = true;
+            this.registerTeacherBnt.UseVisualStyleBackColor = false;
             this.registerTeacherBnt.Click += new System.EventHandler(this.registerTeacherBnt_Click);
             // 
             // femaleRadio
@@ -237,6 +253,8 @@
             // bgPanel
             // 
             this.bgPanel.AutoScroll = true;
+            this.bgPanel.Controls.Add(this.positionCb);
+            this.bgPanel.Controls.Add(this.categoryCb);
             this.bgPanel.Controls.Add(this.label12);
             this.bgPanel.Controls.Add(this.fnameTb);
             this.bgPanel.Controls.Add(this.clearFeildBtn);
@@ -246,6 +264,7 @@
             this.bgPanel.Controls.Add(this.label8);
             this.bgPanel.Controls.Add(this.label7);
             this.bgPanel.Controls.Add(this.accountNumTb);
+            this.bgPanel.Controls.Add(this.specificTb);
             this.bgPanel.Controls.Add(this.tinTb);
             this.bgPanel.Controls.Add(this.ssnitTb);
             this.bgPanel.Controls.Add(this.bankTb);
@@ -255,6 +274,9 @@
             this.bgPanel.Controls.Add(this.label3);
             this.bgPanel.Controls.Add(this.label2);
             this.bgPanel.Controls.Add(this.label4);
+            this.bgPanel.Controls.Add(this.specificLbl);
+            this.bgPanel.Controls.Add(this.positionLbl);
+            this.bgPanel.Controls.Add(this.label14);
             this.bgPanel.Controls.Add(this.label13);
             this.bgPanel.Controls.Add(this.label10);
             this.bgPanel.Controls.Add(this.label11);
@@ -273,7 +295,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(454, 686);
+            this.label12.Location = new System.Drawing.Point(454, 871);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(0, 13);
             this.label12.TabIndex = 39;
@@ -369,6 +391,82 @@
             this.label9.TabIndex = 30;
             this.label9.Text = "Bank Name:";
             // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(82, 667);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(71, 19);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "Category:";
+            // 
+            // categoryCb
+            // 
+            this.categoryCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.categoryCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoryCb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryCb.FormattingEnabled = true;
+            this.categoryCb.Items.AddRange(new object[] {
+            "Teaching",
+            "Non-Teaching"});
+            this.categoryCb.Location = new System.Drawing.Point(159, 659);
+            this.categoryCb.Name = "categoryCb";
+            this.categoryCb.Size = new System.Drawing.Size(697, 27);
+            this.categoryCb.TabIndex = 40;
+            this.categoryCb.SelectedIndexChanged += new System.EventHandler(this.categoryCb_SelectedIndexChanged);
+            // 
+            // positionCb
+            // 
+            this.positionCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.positionCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.positionCb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.positionCb.FormattingEnabled = true;
+            this.positionCb.Items.AddRange(new object[] {
+            "Accountant",
+            "Other"});
+            this.positionCb.Location = new System.Drawing.Point(159, 705);
+            this.positionCb.Name = "positionCb";
+            this.positionCb.Size = new System.Drawing.Size(697, 27);
+            this.positionCb.TabIndex = 40;
+            this.positionCb.Visible = false;
+            this.positionCb.SelectedIndexChanged += new System.EventHandler(this.positionCb_SelectedIndexChanged);
+            // 
+            // positionLbl
+            // 
+            this.positionLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.positionLbl.AutoSize = true;
+            this.positionLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.positionLbl.Location = new System.Drawing.Point(88, 713);
+            this.positionLbl.Name = "positionLbl";
+            this.positionLbl.Size = new System.Drawing.Size(65, 19);
+            this.positionLbl.TabIndex = 30;
+            this.positionLbl.Text = "Position:";
+            this.positionLbl.Visible = false;
+            // 
+            // specificLbl
+            // 
+            this.specificLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.specificLbl.AutoSize = true;
+            this.specificLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.specificLbl.Location = new System.Drawing.Point(88, 755);
+            this.specificLbl.Name = "specificLbl";
+            this.specificLbl.Size = new System.Drawing.Size(62, 19);
+            this.specificLbl.TabIndex = 30;
+            this.specificLbl.Text = "Specific:";
+            this.specificLbl.Visible = false;
+            // 
+            // specificTb
+            // 
+            this.specificTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.specificTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.specificTb.Location = new System.Drawing.Point(159, 747);
+            this.specificTb.Name = "specificTb";
+            this.specificTb.Size = new System.Drawing.Size(697, 27);
+            this.specificTb.TabIndex = 37;
+            this.specificTb.Visible = false;
+            // 
             // AddTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,5 +510,11 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tinTb;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox positionCb;
+        private System.Windows.Forms.ComboBox categoryCb;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox specificTb;
+        private System.Windows.Forms.Label specificLbl;
+        private System.Windows.Forms.Label positionLbl;
     }
 }

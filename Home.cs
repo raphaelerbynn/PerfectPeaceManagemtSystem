@@ -164,7 +164,6 @@ namespace Perfect_Peace_System
             addStntBtn.Text = "Add Student";
             titleLbl.Text = "STUDENTS";
             panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
-            termBtn.Visible = false;
         }
 
         private void addStntBtn_Click(object sender, EventArgs e)
@@ -181,21 +180,16 @@ namespace Perfect_Peace_System
                 addStntBtn.Text = "Cancel add student";
             }
 
-            if(addStntBtn.Text == "Add Teacher")
+            if(addStntBtn.Text == "Add To Staff")
             {
                 openNewPage.OpenChildForm(new Pages.AddTeacher(), panelView);
-                addStntBtn.Text = "Cancel add teacher";
+                addStntBtn.Text = "Cancel add add to staff";
             }
-            else if (addStntBtn.Text == "Cancel add teacher")
+            else if (addStntBtn.Text == "Cancel add to staff")
             {
                 new Pages.AddTeacher().Close();
                 openNewPage.OpenChildForm(new Pages.TeacherData(), panelView);
-                addStntBtn.Text = "Add Teacher";
-            }
-
-            if (addStntBtn.Text == "Send Message")
-            {
-               
+                addStntBtn.Text = "Add To Staff";
             }
 
             if (addStntBtn.Text == "Add Class")
@@ -229,11 +223,10 @@ namespace Perfect_Peace_System
         {
             ActivateBtn(sender);
             addStntBtn.Visible = true;
-            addStntBtn.Text = "Add Teacher";
-            titleLbl.Text = "TEACHERS";
+            addStntBtn.Text = "Add To Staff";
+            titleLbl.Text = "STAFF";
             panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
             openNewPage.OpenChildForm(new Pages.TeacherData(), panelView);
-            termBtn.Visible = false;
         }
 
         private void parentsBtn_Click(object sender, EventArgs e)
@@ -244,7 +237,6 @@ namespace Perfect_Peace_System
             titleLbl.Text = "PARENTS";
             //addStntBtn.Text = "Send Message";
             panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
-            termBtn.Visible = false;
         }
 
         private void classesBtn_Click(object sender, EventArgs e)
@@ -255,7 +247,6 @@ namespace Perfect_Peace_System
             titleLbl.Text = "CLASSROOMS";
             panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
             openNewPage.OpenChildForm(new Pages.ClassData(), panelView);
-            termBtn.Visible = false;
         }
 
         private void dashboardBtn_Click(object sender, EventArgs e)
@@ -265,10 +256,6 @@ namespace Perfect_Peace_System
             panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
             titleLbl.Text = "DASHBOARD";
             openNewPage.OpenChildForm(new Pages.Dashboard(), panelView);
-            if (Pages.LoginInput.category.Equals("Administrator"))
-            {
-                termBtn.Visible = true;
-            }
         }
 
         private void feesBtn_Click(object sender, EventArgs e)
@@ -279,7 +266,6 @@ namespace Perfect_Peace_System
             titleLbl.Text = "FEES";
             panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
             openNewPage.OpenChildForm(new Pages.FeesData(), panelView);
-            termBtn.Visible = false;
         }
         
         private void accBtn_Click(object sender, EventArgs e)
@@ -288,7 +274,6 @@ namespace Perfect_Peace_System
             addStntBtn.Visible = false;
             titleLbl.Text = "ACCOUNT";
             openNewPage.OpenChildForm(new Pages.Account(), panelView);
-            termBtn.Visible = false;
         }
         private void closeBtn_Click(object sender, EventArgs e)
         {
@@ -321,7 +306,6 @@ namespace Perfect_Peace_System
             titleLbl.Text = "STUDENT REPORT";
             panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
             openNewPage.OpenChildForm(new Pages.StudentReport(), panelView);
-            termBtn.Visible = false;
         }
 
         private void subjectBtn_Click(object sender, EventArgs e)
@@ -331,7 +315,6 @@ namespace Perfect_Peace_System
             titleLbl.Text = "SUBJECT INFORMATION";
             panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
             openNewPage.OpenChildForm(new Pages.AddSubject(), panelView);
-            termBtn.Visible = false;
         }
 
         private void payrollBtn_Click(object sender, EventArgs e)
@@ -341,7 +324,6 @@ namespace Perfect_Peace_System
             titleLbl.Text = "PAYROLL";
             panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
             openNewPage.OpenChildForm(new Pages.Payroll(), panelView);
-            termBtn.Visible = false;
         }
 
         private void attendanceBtn_Click(object sender, EventArgs e)
@@ -351,7 +333,6 @@ namespace Perfect_Peace_System
             titleLbl.Text = "STUDENT ATTENDANCE";
             panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
             openNewPage.OpenChildForm(new Pages.Attendance(), panelView);
-            termBtn.Visible = false;
         }
 
         private void topPanel_MouseMove(object sender, MouseEventArgs e)
@@ -373,19 +354,6 @@ namespace Perfect_Peace_System
                 Login login = (Login)Application.OpenForms["Login"];
                 login.Show();
             }
-        }
-
-        private void termBtn_Click(object sender, EventArgs e)
-        {
-            Pages.ConfirmPassword confirmPassword = new Pages.ConfirmPassword();
-            confirmPassword.ShowDialog();
-            if(GetData.getConfirmedPassword() == true)
-            {
-                this.Hide();
-                Pages.Term term = new Pages.Term();
-                term.Show();
-            }
-            
         }
 
         private void minBtn_Click(object sender, EventArgs e)

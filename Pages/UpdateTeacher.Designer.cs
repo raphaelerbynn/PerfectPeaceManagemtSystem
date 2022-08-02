@@ -29,13 +29,14 @@
         private void InitializeComponent()
         {
             this.bgPanel = new System.Windows.Forms.Panel();
+            this.removeClassLink = new System.Windows.Forms.LinkLabel();
             this.classCb = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.fnameTb = new System.Windows.Forms.TextBox();
             this.emailTb = new System.Windows.Forms.TextBox();
             this.updateTeacherBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.asLbl = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.accountNumTb = new System.Windows.Forms.TextBox();
@@ -48,7 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.cLbl = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -57,7 +58,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.femaleRadio = new System.Windows.Forms.RadioButton();
             this.maleRadio = new System.Windows.Forms.RadioButton();
-            this.removeClassLink = new System.Windows.Forms.LinkLabel();
             this.bgPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +71,7 @@
             this.bgPanel.Controls.Add(this.emailTb);
             this.bgPanel.Controls.Add(this.updateTeacherBtn);
             this.bgPanel.Controls.Add(this.label1);
-            this.bgPanel.Controls.Add(this.label14);
+            this.bgPanel.Controls.Add(this.asLbl);
             this.bgPanel.Controls.Add(this.label8);
             this.bgPanel.Controls.Add(this.label7);
             this.bgPanel.Controls.Add(this.accountNumTb);
@@ -84,7 +84,7 @@
             this.bgPanel.Controls.Add(this.label3);
             this.bgPanel.Controls.Add(this.label2);
             this.bgPanel.Controls.Add(this.label4);
-            this.bgPanel.Controls.Add(this.label15);
+            this.bgPanel.Controls.Add(this.cLbl);
             this.bgPanel.Controls.Add(this.label13);
             this.bgPanel.Controls.Add(this.label10);
             this.bgPanel.Controls.Add(this.label11);
@@ -100,6 +100,17 @@
             this.bgPanel.Size = new System.Drawing.Size(950, 539);
             this.bgPanel.TabIndex = 40;
             // 
+            // removeClassLink
+            // 
+            this.removeClassLink.AutoSize = true;
+            this.removeClassLink.Location = new System.Drawing.Point(773, 733);
+            this.removeClassLink.Name = "removeClassLink";
+            this.removeClassLink.Size = new System.Drawing.Size(75, 13);
+            this.removeClassLink.TabIndex = 41;
+            this.removeClassLink.TabStop = true;
+            this.removeClassLink.Text = "Remove Class";
+            this.removeClassLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.removeClassLink_LinkClicked);
+            // 
             // classCb
             // 
             this.classCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -114,7 +125,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(454, 849);
+            this.label12.Location = new System.Drawing.Point(454, 850);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(0, 13);
             this.label12.TabIndex = 39;
@@ -140,12 +151,16 @@
             // updateTeacherBtn
             // 
             this.updateTeacherBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.updateTeacherBtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.updateTeacherBtn.FlatAppearance.BorderSize = 0;
+            this.updateTeacherBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.updateTeacherBtn.ForeColor = System.Drawing.Color.White;
             this.updateTeacherBtn.Location = new System.Drawing.Point(444, 786);
             this.updateTeacherBtn.Name = "updateTeacherBtn";
             this.updateTeacherBtn.Size = new System.Drawing.Size(75, 23);
             this.updateTeacherBtn.TabIndex = 33;
             this.updateTeacherBtn.Text = "Update\r\n";
-            this.updateTeacherBtn.UseVisualStyleBackColor = true;
+            this.updateTeacherBtn.UseVisualStyleBackColor = false;
             this.updateTeacherBtn.Click += new System.EventHandler(this.updateTeacherBnt_Click);
             // 
             // label1
@@ -159,16 +174,16 @@
             this.label1.TabIndex = 24;
             this.label1.Text = "First Name: *";
             // 
-            // label14
+            // asLbl
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(318, 656);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(270, 19);
-            this.label14.TabIndex = 23;
-            this.label14.Text = "ASSIGN CLASS (MAKE CLASS TEACHER)";
+            this.asLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.asLbl.AutoSize = true;
+            this.asLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.asLbl.Location = new System.Drawing.Point(318, 656);
+            this.asLbl.Name = "asLbl";
+            this.asLbl.Size = new System.Drawing.Size(270, 19);
+            this.asLbl.TabIndex = 23;
+            this.asLbl.Text = "ASSIGN CLASS (MAKE CLASS TEACHER)";
             // 
             // label8
             // 
@@ -292,16 +307,16 @@
             this.label4.TabIndex = 28;
             this.label4.Text = "Last Name: *";
             // 
-            // label15
+            // cLbl
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(96, 699);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(48, 19);
-            this.label15.TabIndex = 30;
-            this.label15.Text = "Class:";
+            this.cLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cLbl.AutoSize = true;
+            this.cLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cLbl.Location = new System.Drawing.Point(96, 699);
+            this.cLbl.Name = "cLbl";
+            this.cLbl.Size = new System.Drawing.Size(48, 19);
+            this.cLbl.TabIndex = 30;
+            this.cLbl.Text = "Class:";
             // 
             // label13
             // 
@@ -397,17 +412,6 @@
             this.maleRadio.UseCompatibleTextRendering = true;
             this.maleRadio.UseVisualStyleBackColor = true;
             // 
-            // removeClassLink
-            // 
-            this.removeClassLink.AutoSize = true;
-            this.removeClassLink.Location = new System.Drawing.Point(773, 733);
-            this.removeClassLink.Name = "removeClassLink";
-            this.removeClassLink.Size = new System.Drawing.Size(75, 13);
-            this.removeClassLink.TabIndex = 41;
-            this.removeClassLink.TabStop = true;
-            this.removeClassLink.Text = "Remove Class";
-            this.removeClassLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.removeClassLink_LinkClicked);
-            // 
             // UpdateTeacher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,8 +455,8 @@
         private System.Windows.Forms.RadioButton femaleRadio;
         private System.Windows.Forms.RadioButton maleRadio;
         private System.Windows.Forms.ComboBox classCb;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label asLbl;
+        private System.Windows.Forms.Label cLbl;
         private System.Windows.Forms.LinkLabel removeClassLink;
     }
 }

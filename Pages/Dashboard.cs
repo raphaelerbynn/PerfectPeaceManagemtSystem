@@ -51,6 +51,13 @@ namespace Perfect_Peace_System.Pages
                 teacherPanel.Enabled = false;
                 classPanel.Enabled = false;
             }
+
+
+            if (Pages.LoginInput.category.Equals("Administrator"))
+            {
+                termBtn.Visible = true;
+                usersBtn.Visible = true;
+            }
         }
 
         private void getTotals()
@@ -205,6 +212,36 @@ namespace Perfect_Peace_System.Pages
         {
             this.Close();
             openNewPage.OpenChildForm(new Pages.EventData(), Home.displayPanel);
+        }
+
+        private void termBtn_Click(object sender, EventArgs e)
+        {
+            Pages.ConfirmPassword confirmPassword = new Pages.ConfirmPassword();
+            confirmPassword.ShowDialog();
+            if (GetData.getConfirmedPassword() == true)
+            {
+                Home home = (Home)Application.OpenForms["Home"];
+                home.Hide();
+                Pages.Term term = new Pages.Term();
+                term.Show();
+                GetData.setConfirmPassword(false);
+            }
+
+        }
+
+        private void usersBtn_Click(object sender, EventArgs e)
+        {
+            Pages.ConfirmPassword confirmPassword = new Pages.ConfirmPassword();
+            confirmPassword.ShowDialog();
+            if (GetData.getConfirmedPassword() == true)
+            {
+                Home home = (Home)Application.OpenForms["Home"];
+                home.Hide();
+                Pages.UsersDetails users = new Pages.UsersDetails();
+                users.Show();
+
+                GetData.setConfirmPassword(false);
+            }
         }
     }
 }

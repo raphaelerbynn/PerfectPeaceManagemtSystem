@@ -30,12 +30,13 @@
         {
             this.bgPanel = new System.Windows.Forms.Panel();
             this.saveDateBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.endDatePk = new System.Windows.Forms.DateTimePicker();
             this.feesBtn = new System.Windows.Forms.Button();
             this.saveAttenceBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             this.bgPanel.Controls.Add(this.label2);
             this.bgPanel.Controls.Add(this.label1);
             this.bgPanel.Controls.Add(this.endDatePk);
+            this.bgPanel.Controls.Add(this.button1);
             this.bgPanel.Controls.Add(this.feesBtn);
             this.bgPanel.Controls.Add(this.saveAttenceBtn);
             this.bgPanel.Controls.Add(this.closeBtn);
@@ -61,7 +63,7 @@
             this.saveDateBtn.BackColor = System.Drawing.Color.PaleGreen;
             this.saveDateBtn.FlatAppearance.BorderSize = 0;
             this.saveDateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveDateBtn.Location = new System.Drawing.Point(577, 141);
+            this.saveDateBtn.Location = new System.Drawing.Point(585, 90);
             this.saveDateBtn.Name = "saveDateBtn";
             this.saveDateBtn.Size = new System.Drawing.Size(75, 23);
             this.saveDateBtn.TabIndex = 11;
@@ -69,13 +71,25 @@
             this.saveDateBtn.UseVisualStyleBackColor = false;
             this.saveDateBtn.Click += new System.EventHandler(this.saveDateBtn_Click);
             // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(342, 34);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(120, 23);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "END OF TERM";
+            // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(73, 144);
+            this.label1.Location = new System.Drawing.Point(81, 93);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 18);
             this.label1.TabIndex = 10;
@@ -87,7 +101,7 @@
             this.endDatePk.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.endDatePk.Enabled = false;
             this.endDatePk.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.endDatePk.Location = new System.Drawing.Point(203, 137);
+            this.endDatePk.Location = new System.Drawing.Point(211, 86);
             this.endDatePk.Name = "endDatePk";
             this.endDatePk.Size = new System.Drawing.Size(368, 27);
             this.endDatePk.TabIndex = 9;
@@ -101,7 +115,7 @@
             this.feesBtn.FlatAppearance.BorderSize = 0;
             this.feesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.feesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feesBtn.Location = new System.Drawing.Point(170, 296);
+            this.feesBtn.Location = new System.Drawing.Point(178, 245);
             this.feesBtn.Name = "feesBtn";
             this.feesBtn.Size = new System.Drawing.Size(458, 98);
             this.feesBtn.TabIndex = 8;
@@ -116,13 +130,31 @@
             this.saveAttenceBtn.FlatAppearance.BorderSize = 0;
             this.saveAttenceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveAttenceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveAttenceBtn.Location = new System.Drawing.Point(170, 188);
+            this.saveAttenceBtn.Location = new System.Drawing.Point(178, 137);
             this.saveAttenceBtn.Name = "saveAttenceBtn";
             this.saveAttenceBtn.Size = new System.Drawing.Size(458, 91);
             this.saveAttenceBtn.TabIndex = 8;
             this.saveAttenceBtn.Text = "SAVE ATTENDANCE FOR REPORT";
             this.saveAttenceBtn.UseVisualStyleBackColor = false;
             this.saveAttenceBtn.Click += new System.EventHandler(this.saveAttenceBtn_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button1.AutoSize = true;
+            this.button1.BackColor = System.Drawing.Color.DarkRed;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(313, 364);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(168, 59);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "END TERM";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // closeBtn
             // 
@@ -136,19 +168,6 @@
             this.closeBtn.TabIndex = 7;
             this.closeBtn.TabStop = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(342, 68);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 23);
-            this.label2.TabIndex = 10;
-            this.label2.Text = "END OF TERM";
-            this.label2.Click += new System.EventHandler(this.label1_Click);
             // 
             // Term
             // 
@@ -169,12 +188,13 @@
 
         #endregion
         private System.Windows.Forms.Panel bgPanel;
-        private System.Windows.Forms.PictureBox closeBtn;
         private System.Windows.Forms.Button feesBtn;
         private System.Windows.Forms.Button saveAttenceBtn;
         private System.Windows.Forms.Button saveDateBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker endDatePk;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox closeBtn;
     }
 }

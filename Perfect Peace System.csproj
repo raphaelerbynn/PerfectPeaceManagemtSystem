@@ -122,6 +122,12 @@
     <Compile Include="Pages\CreatAccount.Designer.cs">
       <DependentUpon>CreatAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\EditUserDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\EditUserDetails.Designer.cs">
+      <DependentUpon>EditUserDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EventData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,12 +157,6 @@
     </Compile>
     <Compile Include="Pages\Attendance.Designer.cs">
       <DependentUpon>Attendance.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\Create.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pages\Create.Designer.cs">
-      <DependentUpon>Create.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\FeePaying.cs">
       <SubType>Form</SubType>
@@ -224,6 +224,12 @@
     </Compile>
     <Compile Include="Pages\UpdateTeacher.Designer.cs">
       <DependentUpon>UpdateTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UsersDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\UsersDetails.Designer.cs">
+      <DependentUpon>UsersDetails.cs</DependentUpon>
     </Compile>
     <Compile Include="Resolution.cs" />
     <Compile Include="School_Event.cs" />
@@ -353,6 +359,9 @@
     <EmbeddedResource Include="Pages\CreatAccount.resx">
       <DependentUpon>CreatAccount.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\EditUserDetails.resx">
+      <DependentUpon>EditUserDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Pages\EventData.resx">
       <DependentUpon>EventData.cs</DependentUpon>
     </EmbeddedResource>
@@ -370,9 +379,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\ClassData.resx">
       <DependentUpon>ClassData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\Create.resx">
-      <DependentUpon>Create.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -425,6 +431,9 @@
     <EmbeddedResource Include="Pages\UpdateTeacher.resx">
       <DependentUpon>UpdateTeacher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\UsersDetails.resx">
+      <DependentUpon>UsersDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -450,6 +459,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\input.jpg" />
     <None Include="Resources\printer.png" />
     <None Include="Resources\subject.png" />
     <None Include="Resources\controls_white.png" />

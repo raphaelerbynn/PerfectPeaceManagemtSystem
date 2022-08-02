@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.bgPanel = new System.Windows.Forms.Panel();
+            this.label18 = new System.Windows.Forms.Label();
             this.salaryMonthPk = new System.Windows.Forms.DateTimePicker();
             this.modeOfPaymentCb = new System.Windows.Forms.ComboBox();
             this.addToPaymentBtn = new System.Windows.Forms.Button();
@@ -101,7 +102,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.bgPanel.SuspendLayout();
             this.payslipPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -131,6 +131,14 @@
             this.bgPanel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.bgPanel.Size = new System.Drawing.Size(834, 682);
             this.bgPanel.TabIndex = 1;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(516, 1098);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(0, 13);
+            this.label18.TabIndex = 55;
             // 
             // salaryMonthPk
             // 
@@ -321,10 +329,10 @@
             // 
             this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.Location = new System.Drawing.Point(371, 827);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(108, 19);
+            this.label41.Size = new System.Drawing.Size(113, 19);
             this.label41.TabIndex = 8;
             this.label41.Text = "AMOUNT PAID:";
             // 
@@ -582,7 +590,7 @@
             // 
             this.totalDeductionsLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.totalDeductionsLbl.AutoSize = true;
-            this.totalDeductionsLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalDeductionsLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalDeductionsLbl.Location = new System.Drawing.Point(469, 290);
             this.totalDeductionsLbl.Name = "totalDeductionsLbl";
             this.totalDeductionsLbl.Size = new System.Drawing.Size(84, 19);
@@ -593,7 +601,7 @@
             // 
             this.totalAllowanceLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.totalAllowanceLbl.AutoSize = true;
-            this.totalAllowanceLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalAllowanceLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalAllowanceLbl.Location = new System.Drawing.Point(148, 292);
             this.totalAllowanceLbl.Name = "totalAllowanceLbl";
             this.totalAllowanceLbl.Size = new System.Drawing.Size(84, 19);
@@ -705,7 +713,7 @@
             // 
             this.amountPaidLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.amountPaidLbl.AutoSize = true;
-            this.amountPaidLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountPaidLbl.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amountPaidLbl.Location = new System.Drawing.Point(483, 827);
             this.amountPaidLbl.Name = "amountPaidLbl";
             this.amountPaidLbl.Size = new System.Drawing.Size(84, 19);
@@ -716,7 +724,7 @@
             // 
             this.netSalaryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.netSalaryLbl.AutoSize = true;
-            this.netSalaryLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.netSalaryLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.netSalaryLbl.Location = new System.Drawing.Point(467, 798);
             this.netSalaryLbl.Name = "netSalaryLbl";
             this.netSalaryLbl.Size = new System.Drawing.Size(84, 19);
@@ -999,14 +1007,6 @@
             this.label1.Size = new System.Drawing.Size(278, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "PERFECT PEACE  PREPARATORY SCHOOL";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(516, 1098);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(0, 13);
-            this.label18.TabIndex = 55;
             // 
             // PaySlip
             // 

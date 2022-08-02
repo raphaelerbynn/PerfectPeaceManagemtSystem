@@ -30,8 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FeeReceipt));
             this.bgPanel = new System.Windows.Forms.Panel();
-            this.receiptPanel = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.printBtn = new System.Windows.Forms.Button();
+            this.receiptPanel = new System.Windows.Forms.Panel();
             this.termLbl = new System.Windows.Forms.Label();
             this.modeLbl = new System.Windows.Forms.Label();
             this.dateLbl = new System.Windows.Forms.Label();
@@ -59,11 +61,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.bgPanel.SuspendLayout();
             this.receiptPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -84,10 +84,44 @@
             this.bgPanel.Size = new System.Drawing.Size(952, 681);
             this.bgPanel.TabIndex = 0;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(425, 668);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(0, 13);
+            this.label17.TabIndex = 4;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri Light", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(401, 31);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(116, 23);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Fees Receipt";
+            // 
+            // printBtn
+            // 
+            this.printBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.printBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.printBtn.FlatAppearance.BorderSize = 0;
+            this.printBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.printBtn.ForeColor = System.Drawing.Color.White;
+            this.printBtn.Location = new System.Drawing.Point(405, 612);
+            this.printBtn.Name = "printBtn";
+            this.printBtn.Size = new System.Drawing.Size(95, 32);
+            this.printBtn.TabIndex = 2;
+            this.printBtn.Text = "Print Receipt";
+            this.printBtn.UseVisualStyleBackColor = false;
+            this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
+            // 
             // receiptPanel
             // 
             this.receiptPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.receiptPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.receiptPanel.Controls.Add(this.label2);
             this.receiptPanel.Controls.Add(this.termLbl);
             this.receiptPanel.Controls.Add(this.modeLbl);
             this.receiptPanel.Controls.Add(this.dateLbl);
@@ -113,28 +147,12 @@
             this.receiptPanel.Controls.Add(this.label5);
             this.receiptPanel.Controls.Add(this.label4);
             this.receiptPanel.Controls.Add(this.label3);
-            this.receiptPanel.Controls.Add(this.label2);
             this.receiptPanel.Controls.Add(this.panel3);
             this.receiptPanel.Controls.Add(this.label1);
             this.receiptPanel.Location = new System.Drawing.Point(50, 67);
             this.receiptPanel.Name = "receiptPanel";
             this.receiptPanel.Size = new System.Drawing.Size(825, 504);
             this.receiptPanel.TabIndex = 2;
-            // 
-            // printBtn
-            // 
-            this.printBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.printBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.printBtn.FlatAppearance.BorderSize = 0;
-            this.printBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.printBtn.ForeColor = System.Drawing.Color.White;
-            this.printBtn.Location = new System.Drawing.Point(405, 612);
-            this.printBtn.Name = "printBtn";
-            this.printBtn.Size = new System.Drawing.Size(95, 32);
-            this.printBtn.TabIndex = 2;
-            this.printBtn.Text = "Print Receipt";
-            this.printBtn.UseVisualStyleBackColor = false;
-            this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
             // 
             // termLbl
             // 
@@ -285,6 +303,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox3.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox3.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
             this.pictureBox3.Location = new System.Drawing.Point(666, 23);
             this.pictureBox3.Name = "pictureBox3";
@@ -296,6 +315,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.pictureBox1.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
             this.pictureBox1.Location = new System.Drawing.Point(22, 23);
             this.pictureBox1.Name = "pictureBox1";
@@ -330,6 +350,7 @@
             // amntLbl_1
             // 
             this.amntLbl_1.AutoSize = true;
+            this.amntLbl_1.BackColor = System.Drawing.SystemColors.Control;
             this.amntLbl_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amntLbl_1.Location = new System.Drawing.Point(84, 11);
             this.amntLbl_1.Name = "amntLbl_1";
@@ -477,18 +498,6 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Perfect Peace Prep. School";
             // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(163, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(483, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Atabaadze, Central Region   |   Contact: 000 000 000   |   Email: perfectpeacesch" +
-    "ool.com";
-            // 
             // panel3
             // 
             this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -509,23 +518,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Fees Receipt";
             // 
-            // label14
+            // label2
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Calibri Light", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(401, 31);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(116, 23);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Fees Receipt";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(425, 668);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(0, 13);
-            this.label17.TabIndex = 4;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.Control;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(131, 115);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(542, 15);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Atabaadze, Central Region   |   Contact: 024 233 2420   |   Email: perfectpeacesc" +
+    "hool@outlook.com";
             // 
             // FeeReceipt
             // 
@@ -580,9 +584,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label2;
     }
 }

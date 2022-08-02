@@ -181,7 +181,7 @@
             this.delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.delete.Name = "delete";
             this.delete.ReadOnly = true;
-            this.delete.Width = 50;
+            this.delete.Width = 38;
             // 
             // EventData
             // 
@@ -202,12 +202,12 @@
 
         private System.Windows.Forms.Panel bgPanel;
         private System.Windows.Forms.DataGridView eventDataView;
+        private System.Windows.Forms.LinkLabel addEventLink;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn event_name;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
         private System.Windows.Forms.DataGridViewImageColumn delete;
-        private System.Windows.Forms.LinkLabel addEventLink;
     }
 }

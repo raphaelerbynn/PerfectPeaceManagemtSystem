@@ -48,7 +48,11 @@ namespace Perfect_Peace_System.Pages
 
             query = "SELECT name FROM Class";
             DbClient.query_reader(classCb, query);
-            classCb.SelectedIndex = 0;
+            if(classCb.Items.Count > 0)
+            {
+                classCb.SelectedIndex = 0;
+            }
+            
             
         }
 

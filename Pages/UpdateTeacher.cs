@@ -14,12 +14,20 @@ namespace Perfect_Peace_System.Pages
     {
         string query;
         private string id = TeacherData.getIdFromSelectedRow();
+        private string staffCategory = "";
 
         public UpdateTeacher()
         {
             InitializeComponent();
             fillFields();
             bgPanel.BackColor = Home.foreColor;
+
+            if (!staffCategory.Equals("Teaching"))
+            {
+                cLbl.Visible = false;
+                asLbl.Visible = false;
+                removeClassLink.Visible = false;
+            }
         }
 
         private void fillFields()
@@ -47,29 +55,32 @@ namespace Perfect_Peace_System.Pages
                     femaleRadio.Checked = true;
                 }
                 maleRadio.Checked = true;
+
+                staffCategory = reader["category"].ToString();
             }
             reader.Close();
 
-           
-            query = "SELECT name FROM Class WHERE class_id='" + _class + "'";
-            reader = DbClient.query_reader(query);
-            while (reader.Read())
+            if (staffCategory.Equals("Teaching"))
             {
-                _class = reader["name"].ToString();
-            }
-            reader.Close();
-
-            query = "SELECT name FROM Class EXCEPT SELECT name FROM Class WHERE teacher_id IS NOT NULL AND teacher_id != '"+id+"'";
-            DbClient.query_reader(classCb, query);
-            for (int i = 0; i < classCb.Items.Count; i++)
-            {
-                if (_class.Equals(classCb.Items[i].ToString()))
+                query = "SELECT name FROM Class WHERE class_id='" + _class + "'";
+                reader = DbClient.query_reader(query);
+                while (reader.Read())
                 {
-                    classCb.SelectedIndex = i;
-                    break;
+                    _class = reader["name"].ToString();
+                }
+                reader.Close();
+
+                query = "SELECT name FROM Class EXCEPT SELECT name FROM Class WHERE teacher_id IS NOT NULL AND teacher_id != '" + id + "'";
+                DbClient.query_reader(classCb, query);
+                for (int i = 0; i < classCb.Items.Count; i++)
+                {
+                    if (_class.Equals(classCb.Items[i].ToString()))
+                    {
+                        classCb.SelectedIndex = i;
+                        break;
+                    }
                 }
             }
-
         }
 
         private string getRadioBtnValue()
@@ -85,36 +96,44 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
-                if (classCb.SelectedIndex != -1)
+                if (staffCategory.Equals("Teaching"))
                 {
+                    if (classCb.SelectedIndex != -1)
+                    {
 
-                    query = "SELECT class_id FROM Class WHERE name='" + classCb.SelectedItem.ToString() + "'";
-                    string class_id = DbClient.query_executeScaler(query).ToString();
+                        query = "SELECT class_id FROM Class WHERE name='" + classCb.SelectedItem.ToString() + "'";
+                        string class_id = DbClient.query_executeScaler(query).ToString();
 
-                    Teacher teacher = new Teacher(bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, class_id, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
-                    teacher.update(id);
+                        Teacher teacher = new Teacher(bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, class_id, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
+                        teacher.update(id);
 
-                    query = "UPDATE Class SET teacher_id=NULL WHERE teacher_id='" + id + "'";
-                    DbClient.query_execute(query);
+                        query = "UPDATE Class SET teacher_id=NULL WHERE teacher_id='" + id + "'";
+                        DbClient.query_execute(query);
 
-                    query = "UPDATE Class SET teacher_id='" + id + "' WHERE class_id='" + class_id + "'";
-                    DbClient.query_execute(query);
+                        query = "UPDATE Class SET teacher_id='" + id + "' WHERE class_id='" + class_id + "'";
+                        DbClient.query_execute(query);
 
 
-                    MessageBox.Show("Teacher Info Updated");
+                        MessageBox.Show("Teacher Info Updated");
+                    }
+
+                    else
+                    {
+                        //Teacher teacher = new Teacher(bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, null, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
+                        //teacher.update(id);
+                        query = "UPDATE Teacher SET class_id=NULL, f_name='" + fnameTb.Text + "', l_name='" + lnameTb.Text + "', gender='" + getRadioBtnValue() + "', phone='" + phoneTB.Text + "', address='" + addressTb.Text + "', email='" + emailTb.Text + "', bank='" + bankTb.Text + "', account_number='" + accountNumTb.Text + "', ssnit_number='" + ssnitTb.Text + "', tin_number='" + tinTb.Text + "', date_updated='" + DateTime.Now + "' WHERE teacher_id='" + id + "'";
+                        DbClient.query_execute(query);
+
+                        query = "UPDATE Class SET teacher_id=NULL WHERE teacher_id='" + id + "'";
+                        DbClient.query_execute(query);
+
+                        MessageBox.Show("Teacher Info Updated");
+                    }
                 }
-
                 else
                 {
-                    //Teacher teacher = new Teacher(bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, null, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
-                    //teacher.update(id);
                     query = "UPDATE Teacher SET class_id=NULL, f_name='" + fnameTb.Text + "', l_name='" + lnameTb.Text + "', gender='" + getRadioBtnValue() + "', phone='" + phoneTB.Text + "', address='" + addressTb.Text + "', email='" + emailTb.Text + "', bank='" + bankTb.Text + "', account_number='" + accountNumTb.Text + "', ssnit_number='" + ssnitTb.Text + "', tin_number='" + tinTb.Text + "', date_updated='" + DateTime.Now + "' WHERE teacher_id='" + id + "'";
                     DbClient.query_execute(query);
-
-                    query = "UPDATE Class SET teacher_id=NULL WHERE teacher_id='" + id + "'";
-                    DbClient.query_execute(query);
-
-                    MessageBox.Show("Teacher Info Updated");
                 }
              }
             catch (Exception ex)

@@ -69,6 +69,7 @@
             // cancelBtn
             // 
             this.cancelBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.cancelBtn.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.cancelBtn.FlatAppearance.BorderSize = 0;
             this.cancelBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelBtn.ForeColor = System.Drawing.Color.White;
@@ -84,6 +85,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(373, 146);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.confirmBtn);

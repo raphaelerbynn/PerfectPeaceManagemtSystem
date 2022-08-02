@@ -54,13 +54,17 @@
             // 
             this.registerStntBnt.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.registerStntBnt.AutoSize = true;
+            this.registerStntBnt.BackColor = System.Drawing.Color.DarkGreen;
+            this.registerStntBnt.FlatAppearance.BorderSize = 0;
+            this.registerStntBnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerStntBnt.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerStntBnt.ForeColor = System.Drawing.Color.White;
             this.registerStntBnt.Location = new System.Drawing.Point(408, 515);
             this.registerStntBnt.Name = "registerStntBnt";
-            this.registerStntBnt.Size = new System.Drawing.Size(75, 29);
+            this.registerStntBnt.Size = new System.Drawing.Size(75, 31);
             this.registerStntBnt.TabIndex = 17;
             this.registerStntBnt.Text = "Update";
-            this.registerStntBnt.UseVisualStyleBackColor = true;
+            this.registerStntBnt.UseVisualStyleBackColor = false;
             this.registerStntBnt.Click += new System.EventHandler(this.updateStntBnt_Click);
             // 
             // classCb

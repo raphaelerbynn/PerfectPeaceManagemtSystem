@@ -50,6 +50,8 @@ namespace Perfect_Peace_System.Pages
                     totalAmntLbl.Text = "GHc " + reader["total"].ToString();
                     amntLbl_0.Text = reader["paid"].ToString();
                     dateLbl.Text = reader["date"].ToString();
+
+                    amntLbl_1.Text = amntLbl_0.Text;
                 }
                 reader.Close();
 

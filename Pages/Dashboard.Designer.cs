@@ -59,6 +59,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblTotalStnt = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.termBtn = new System.Windows.Forms.Button();
+            this.usersBtn = new System.Windows.Forms.Button();
             this.panelBg.SuspendLayout();
             this.feesPanel.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -75,6 +77,8 @@
             // panelBg
             // 
             this.panelBg.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(21)))), ((int)(((byte)(38)))));
+            this.panelBg.Controls.Add(this.usersBtn);
+            this.panelBg.Controls.Add(this.termBtn);
             this.panelBg.Controls.Add(this.feesPanel);
             this.panelBg.Controls.Add(this.panel3);
             this.panelBg.Controls.Add(this.eventPanel);
@@ -84,7 +88,7 @@
             this.panelBg.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBg.Location = new System.Drawing.Point(0, 0);
             this.panelBg.Name = "panelBg";
-            this.panelBg.Size = new System.Drawing.Size(941, 588);
+            this.panelBg.Size = new System.Drawing.Size(941, 642);
             this.panelBg.TabIndex = 0;
             // 
             // feesPanel
@@ -96,7 +100,7 @@
             this.feesPanel.Controls.Add(this.feesLbl);
             this.feesPanel.Location = new System.Drawing.Point(510, 97);
             this.feesPanel.Name = "feesPanel";
-            this.feesPanel.Size = new System.Drawing.Size(414, 478);
+            this.feesPanel.Size = new System.Drawing.Size(414, 487);
             this.feesPanel.TabIndex = 2;
             // 
             // feesListView
@@ -112,7 +116,7 @@
             this.feesListView.HideSelection = false;
             this.feesListView.Location = new System.Drawing.Point(4, 23);
             this.feesListView.Name = "feesListView";
-            this.feesListView.Size = new System.Drawing.Size(406, 452);
+            this.feesListView.Size = new System.Drawing.Size(406, 461);
             this.feesListView.TabIndex = 3;
             this.feesListView.TileSize = new System.Drawing.Size(170, 30);
             this.feesListView.UseCompatibleStateImageBehavior = false;
@@ -155,7 +159,7 @@
             this.panel3.Location = new System.Drawing.Point(12, 97);
             this.panel3.Margin = new System.Windows.Forms.Padding(20, 3, 3, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(482, 270);
+            this.panel3.Size = new System.Drawing.Size(482, 282);
             this.panel3.TabIndex = 1;
             // 
             // classChart
@@ -216,7 +220,7 @@
             series1.Name = "Class";
             series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
             this.classChart.Series.Add(series1);
-            this.classChart.Size = new System.Drawing.Size(482, 270);
+            this.classChart.Size = new System.Drawing.Size(482, 279);
             this.classChart.TabIndex = 0;
             this.classChart.Text = "chart1";
             this.classChart.Click += new System.EventHandler(this.chart1_Click);
@@ -228,7 +232,7 @@
             this.eventPanel.BackColor = System.Drawing.Color.Silver;
             this.eventPanel.Controls.Add(this.eventListView);
             this.eventPanel.Controls.Add(this.eventLink);
-            this.eventPanel.Location = new System.Drawing.Point(12, 373);
+            this.eventPanel.Location = new System.Drawing.Point(12, 385);
             this.eventPanel.Name = "eventPanel";
             this.eventPanel.Size = new System.Drawing.Size(482, 203);
             this.eventPanel.TabIndex = 1;
@@ -429,11 +433,43 @@
             this.label1.Text = "Total Students";
             this.label1.Click += new System.EventHandler(this.studentPanel_Click);
             // 
+            // termBtn
+            // 
+            this.termBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.termBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.termBtn.FlatAppearance.BorderSize = 0;
+            this.termBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.termBtn.ForeColor = System.Drawing.Color.White;
+            this.termBtn.Location = new System.Drawing.Point(401, 607);
+            this.termBtn.Name = "termBtn";
+            this.termBtn.Size = new System.Drawing.Size(75, 23);
+            this.termBtn.TabIndex = 7;
+            this.termBtn.Text = "Term Details";
+            this.termBtn.UseVisualStyleBackColor = false;
+            this.termBtn.Visible = false;
+            this.termBtn.Click += new System.EventHandler(this.termBtn_Click);
+            // 
+            // usersBtn
+            // 
+            this.usersBtn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.usersBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.usersBtn.FlatAppearance.BorderSize = 0;
+            this.usersBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.usersBtn.ForeColor = System.Drawing.Color.White;
+            this.usersBtn.Location = new System.Drawing.Point(514, 607);
+            this.usersBtn.Name = "usersBtn";
+            this.usersBtn.Size = new System.Drawing.Size(75, 23);
+            this.usersBtn.TabIndex = 7;
+            this.usersBtn.Text = "Users";
+            this.usersBtn.UseVisualStyleBackColor = false;
+            this.usersBtn.Visible = false;
+            this.usersBtn.Click += new System.EventHandler(this.usersBtn_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(941, 588);
+            this.ClientSize = new System.Drawing.Size(941, 642);
             this.Controls.Add(this.panelBg);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
@@ -486,5 +522,7 @@
         private System.Windows.Forms.ColumnHeader student_class;
         private System.Windows.Forms.ColumnHeader fees;
         private System.Windows.Forms.Label feesLbl;
+        private System.Windows.Forms.Button usersBtn;
+        private System.Windows.Forms.Button termBtn;
     }
 }
