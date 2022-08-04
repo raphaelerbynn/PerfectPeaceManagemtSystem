@@ -132,6 +132,28 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
+        private string getClassSection()
+        {
+            try
+            {
+                string section = "";
+                query = "SELECT section FROM Class WHERE name='" + classCb.SelectedItem.ToString() + "'";
+                SqlDataReader reader = DbClient.query_reader(query);
+                while (reader.Read())
+                {
+                    section = reader["section"].ToString();
+                }
+                reader.Close();
+
+                return section;
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return "";
+            }
+        }
+
         private void studentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -139,10 +161,19 @@ namespace Perfect_Peace_System.Pages
                 DataGridViewRow row = studentDataView.Rows[e.RowIndex];
                 id = row.Cells["student_Id"].Value.ToString();
 
-
                 if (studentDataView.Columns[e.ColumnIndex].Name == "input_results" && e.RowIndex >= 0)
                 {
-                    openNewpage.OpenChildForm(new Pages.AddResult(), bgPanel);
+                    if (getClassSection().Equals("Crech") || 
+                        getClassSection().Equals("Nursury") ||
+                        getClassSection().Equals("KG"))
+                    {
+                        openNewpage.OpenChildForm(new Pages.ReportForKG(), bgPanel);
+                    }
+                    else
+                    {
+                        openNewpage.OpenChildForm(new Pages.AddResult(), bgPanel);
+                    }
+                    
                 }
             }
             catch (Exception ex)

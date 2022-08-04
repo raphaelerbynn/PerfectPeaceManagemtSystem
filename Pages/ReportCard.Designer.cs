@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bgPanel = new System.Windows.Forms.Panel();
             this.inputPanel = new System.Windows.Forms.Panel();
             this.termEndCb = new System.Windows.Forms.ComboBox();
             this.resultInputBtn = new System.Windows.Forms.Button();
             this.termDate = new System.Windows.Forms.DateTimePicker();
+            this.transportTb = new System.Windows.Forms.TextBox();
             this.extraClassesTb = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
             this.examFeesTb = new System.Windows.Forms.TextBox();
@@ -56,16 +57,32 @@
             this.firstAidLbl = new System.Windows.Forms.Label();
             this.extraClassesLbl = new System.Windows.Forms.Label();
             this.maintenanceLbl = new System.Windows.Forms.Label();
+            this.transportLbl = new System.Windows.Forms.Label();
             this.examsFeesLbl = new System.Windows.Forms.Label();
             this.cocurricularLbl = new System.Windows.Forms.Label();
             this.totalFeesLbl = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.termLbl2 = new System.Windows.Forms.Label();
+            this.dateLbl = new System.Windows.Forms.Label();
+            this.stntNameLbl = new System.Windows.Forms.Label();
+            this.stntClassLbl = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
             this.tuitionLbl = new System.Windows.Forms.Label();
             this.feesLbl = new System.Windows.Forms.Label();
             this.owingLbl = new System.Windows.Forms.Label();
             this.waterLbl = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
@@ -77,88 +94,83 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
-            this.transportTb = new System.Windows.Forms.TextBox();
-            this.printBillBtn = new System.Windows.Forms.Button();
             this.printResultBtn = new System.Windows.Forms.Button();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.transportLbl = new System.Windows.Forms.Label();
-            this.stntClassLbl = new System.Windows.Forms.Label();
-            this.stntNameLbl = new System.Windows.Forms.Label();
-            this.dateLbl = new System.Windows.Forms.Label();
-            this.termLbl2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.remarksPanel = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.rawScoreLbl = new System.Windows.Forms.Label();
-            this.totalScoreLbl = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.conductLbl = new System.Windows.Forms.Label();
-            this.attitudeLbl = new System.Windows.Forms.Label();
-            this.interestLbl = new System.Windows.Forms.Label();
-            this.tRemarksLbl = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.attendanceLbl = new System.Windows.Forms.Label();
-            this.attendanceTotalLbl = new System.Windows.Forms.Label();
-            this.promotedClassLbl = new System.Windows.Forms.Label();
-            this.nameLbl = new System.Windows.Forms.Label();
-            this.termLbl = new System.Windows.Forms.Label();
-            this.positionLbl = new System.Windows.Forms.Label();
-            this.classLbl = new System.Windows.Forms.Label();
-            this.resultDataView = new System.Windows.Forms.DataGridView();
-            this.remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.position_in_subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.total_score = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.class_score = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exam_score = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subject_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.noInClassLbl = new System.Windows.Forms.Label();
-            this.nextTermDateLbl = new System.Windows.Forms.Label();
+            this.printBillBtn = new System.Windows.Forms.Button();
             this.reportCardPanel = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.nextTermDateLbl = new System.Windows.Forms.Label();
+            this.noInClassLbl = new System.Windows.Forms.Label();
+            this.resultDataView = new System.Windows.Forms.DataGridView();
+            this.subject_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exam_score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.class_score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total_score = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.position_in_subject = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.classLbl = new System.Windows.Forms.Label();
+            this.positionLbl = new System.Windows.Forms.Label();
+            this.termLbl = new System.Windows.Forms.Label();
+            this.nameLbl = new System.Windows.Forms.Label();
+            this.remarksPanel = new System.Windows.Forms.Panel();
+            this.promotedClassLbl = new System.Windows.Forms.Label();
+            this.attendanceTotalLbl = new System.Windows.Forms.Label();
+            this.attendanceLbl = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.tRemarksLbl = new System.Windows.Forms.Label();
+            this.interestLbl = new System.Windows.Forms.Label();
+            this.attitudeLbl = new System.Windows.Forms.Label();
+            this.conductLbl = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.totalScoreLbl = new System.Windows.Forms.Label();
+            this.rawScoreLbl = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.assessmentPanel = new System.Windows.Forms.Panel();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.printAssBtn = new System.Windows.Forms.Button();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
             this.bgPanel.SuspendLayout();
             this.inputPanel.SuspendLayout();
             this.testPanel.SuspendLayout();
-            this.remarksPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resultDataView)).BeginInit();
             this.reportCardPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resultDataView)).BeginInit();
+            this.remarksPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.assessmentPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // bgPanel
             // 
             this.bgPanel.AutoScroll = true;
+            this.bgPanel.Controls.Add(this.label57);
+            this.bgPanel.Controls.Add(this.label55);
+            this.bgPanel.Controls.Add(this.assessmentPanel);
             this.bgPanel.Controls.Add(this.inputPanel);
+            this.bgPanel.Controls.Add(this.printAssBtn);
             this.bgPanel.Controls.Add(this.testPanel);
             this.bgPanel.Controls.Add(this.label34);
             this.bgPanel.Controls.Add(this.printResultBtn);
@@ -186,7 +198,7 @@
             this.inputPanel.Controls.Add(this.label30);
             this.inputPanel.Controls.Add(this.label27);
             this.inputPanel.Controls.Add(this.label26);
-            this.inputPanel.Location = new System.Drawing.Point(33, 13);
+            this.inputPanel.Location = new System.Drawing.Point(33, 198);
             this.inputPanel.Name = "inputPanel";
             this.inputPanel.Size = new System.Drawing.Size(720, 200);
             this.inputPanel.TabIndex = 56;
@@ -224,6 +236,15 @@
             this.termDate.Name = "termDate";
             this.termDate.Size = new System.Drawing.Size(226, 20);
             this.termDate.TabIndex = 63;
+            // 
+            // transportTb
+            // 
+            this.transportTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.transportTb.Location = new System.Drawing.Point(81, 66);
+            this.transportTb.Name = "transportTb";
+            this.transportTb.Size = new System.Drawing.Size(236, 20);
+            this.transportTb.TabIndex = 48;
+            this.transportTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB_KeyPress);
             // 
             // extraClassesTb
             // 
@@ -372,7 +393,7 @@
             this.testPanel.Controls.Add(this.label24);
             this.testPanel.Controls.Add(this.label40);
             this.testPanel.Controls.Add(this.label41);
-            this.testPanel.Location = new System.Drawing.Point(33, 975);
+            this.testPanel.Location = new System.Drawing.Point(345, 1160);
             this.testPanel.Name = "testPanel";
             this.testPanel.Size = new System.Drawing.Size(720, 796);
             this.testPanel.TabIndex = 55;
@@ -437,6 +458,18 @@
             this.maintenanceLbl.Text = "READING\r\n";
             this.maintenanceLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // transportLbl
+            // 
+            this.transportLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.transportLbl.AutoSize = true;
+            this.transportLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transportLbl.Location = new System.Drawing.Point(535, 696);
+            this.transportLbl.Name = "transportLbl";
+            this.transportLbl.Size = new System.Drawing.Size(69, 19);
+            this.transportLbl.TabIndex = 44;
+            this.transportLbl.Text = "READING\r\n";
+            this.transportLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // examsFeesLbl
             // 
             this.examsFeesLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -483,6 +516,174 @@
             this.label18.Size = new System.Drawing.Size(185, 23);
             this.label18.TabIndex = 36;
             this.label18.Text = "STUDENT FEES && BILLS";
+            // 
+            // label51
+            // 
+            this.label51.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(388, 292);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(115, 19);
+            this.label51.TabIndex = 39;
+            this.label51.Text = "AMOUNT (GHC)";
+            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label50
+            // 
+            this.label50.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.Location = new System.Drawing.Point(40, 292);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(100, 19);
+            this.label50.TabIndex = 39;
+            this.label50.Text = "PARTICULARS";
+            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label49
+            // 
+            this.label49.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(340, 235);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(95, 19);
+            this.label49.TabIndex = 39;
+            this.label49.Text = "TELEPHONE: ";
+            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label48
+            // 
+            this.label48.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label48.Location = new System.Drawing.Point(338, 176);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(329, 19);
+            this.label48.TabIndex = 39;
+            this.label48.Text = "EMAIL: PERFECTPEACESCHOOL@OUTLOOK.COM";
+            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label47
+            // 
+            this.label47.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(388, 159);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(84, 19);
+            this.label47.TabIndex = 39;
+            this.label47.Text = "P O BOX 13";
+            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label46
+            // 
+            this.label46.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(388, 140);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(208, 19);
+            this.label46.TabIndex = 39;
+            this.label46.Text = "PERFECT PEACE PREP SCHOOL";
+            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label45
+            // 
+            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(40, 235);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(47, 19);
+            this.label45.TabIndex = 39;
+            this.label45.Text = "DATE:";
+            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label44
+            // 
+            this.label44.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(40, 203);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(51, 19);
+            this.label44.TabIndex = 39;
+            this.label44.Text = "TERM:";
+            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // termLbl2
+            // 
+            this.termLbl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.termLbl2.AutoSize = true;
+            this.termLbl2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.termLbl2.Location = new System.Drawing.Point(97, 203);
+            this.termLbl2.Name = "termLbl2";
+            this.termLbl2.Size = new System.Drawing.Size(39, 19);
+            this.termLbl2.TabIndex = 39;
+            this.termLbl2.Text = "term";
+            this.termLbl2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // dateLbl
+            // 
+            this.dateLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dateLbl.AutoSize = true;
+            this.dateLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLbl.Location = new System.Drawing.Point(93, 235);
+            this.dateLbl.Name = "dateLbl";
+            this.dateLbl.Size = new System.Drawing.Size(38, 19);
+            this.dateLbl.TabIndex = 39;
+            this.dateLbl.Text = "date";
+            this.dateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // stntNameLbl
+            // 
+            this.stntNameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.stntNameLbl.AutoSize = true;
+            this.stntNameLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stntNameLbl.Location = new System.Drawing.Point(164, 140);
+            this.stntNameLbl.Name = "stntNameLbl";
+            this.stntNameLbl.Size = new System.Drawing.Size(49, 19);
+            this.stntNameLbl.TabIndex = 39;
+            this.stntNameLbl.Text = "NAME";
+            this.stntNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // stntClassLbl
+            // 
+            this.stntClassLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.stntClassLbl.AutoSize = true;
+            this.stntClassLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stntClassLbl.Location = new System.Drawing.Point(98, 171);
+            this.stntClassLbl.Name = "stntClassLbl";
+            this.stntClassLbl.Size = new System.Drawing.Size(42, 19);
+            this.stntClassLbl.TabIndex = 39;
+            this.stntClassLbl.Text = "class";
+            this.stntClassLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label43
+            // 
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(40, 171);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(52, 19);
+            this.label43.TabIndex = 39;
+            this.label43.Text = "CLASS:";
+            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label42
+            // 
+            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(40, 140);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(118, 19);
+            this.label42.TabIndex = 39;
+            this.label42.Text = "STUDENT NAME:";
+            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tuitionLbl
             // 
@@ -553,6 +754,17 @@
             this.label23.Size = new System.Drawing.Size(267, 19);
             this.label23.TabIndex = 24;
             this.label23.Text = "FEES ARREARS:____________________";
+            // 
+            // label52
+            // 
+            this.label52.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(388, 701);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(254, 19);
+            this.label52.TabIndex = 25;
+            this.label52.Text = "TRANSPORT FEES:________________";
             // 
             // label19
             // 
@@ -668,34 +880,10 @@
             // 
             this.label34.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(487, 1832);
+            this.label34.Location = new System.Drawing.Point(799, 2809);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(0, 13);
             this.label34.TabIndex = 53;
-            // 
-            // transportTb
-            // 
-            this.transportTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.transportTb.Location = new System.Drawing.Point(81, 66);
-            this.transportTb.Name = "transportTb";
-            this.transportTb.Size = new System.Drawing.Size(236, 20);
-            this.transportTb.TabIndex = 48;
-            this.transportTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB_KeyPress);
-            // 
-            // printBillBtn
-            // 
-            this.printBillBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.printBillBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.printBillBtn.FlatAppearance.BorderSize = 0;
-            this.printBillBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.printBillBtn.ForeColor = System.Drawing.Color.White;
-            this.printBillBtn.Location = new System.Drawing.Point(342, 1777);
-            this.printBillBtn.Name = "printBillBtn";
-            this.printBillBtn.Size = new System.Drawing.Size(99, 23);
-            this.printBillBtn.TabIndex = 3;
-            this.printBillBtn.Text = "Print Student Bill";
-            this.printBillBtn.UseVisualStyleBackColor = false;
-            this.printBillBtn.Click += new System.EventHandler(this.printBillBtn_Click);
             // 
             // printResultBtn
             // 
@@ -704,7 +892,7 @@
             this.printResultBtn.FlatAppearance.BorderSize = 0;
             this.printResultBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.printResultBtn.ForeColor = System.Drawing.Color.White;
-            this.printResultBtn.Location = new System.Drawing.Point(327, 899);
+            this.printResultBtn.Location = new System.Drawing.Point(639, 1084);
             this.printResultBtn.Name = "printResultBtn";
             this.printResultBtn.Size = new System.Drawing.Size(99, 23);
             this.printResultBtn.TabIndex = 3;
@@ -712,295 +900,239 @@
             this.printResultBtn.UseVisualStyleBackColor = false;
             this.printResultBtn.Click += new System.EventHandler(this.printBtn_Click);
             // 
-            // label42
+            // printBillBtn
             // 
-            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(40, 140);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(118, 19);
-            this.label42.TabIndex = 39;
-            this.label42.Text = "STUDENT NAME:";
-            this.label42.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.printBillBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.printBillBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.printBillBtn.FlatAppearance.BorderSize = 0;
+            this.printBillBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.printBillBtn.ForeColor = System.Drawing.Color.White;
+            this.printBillBtn.Location = new System.Drawing.Point(654, 1962);
+            this.printBillBtn.Name = "printBillBtn";
+            this.printBillBtn.Size = new System.Drawing.Size(99, 23);
+            this.printBillBtn.TabIndex = 3;
+            this.printBillBtn.Text = "Print Student Bill";
+            this.printBillBtn.UseVisualStyleBackColor = false;
+            this.printBillBtn.Click += new System.EventHandler(this.printBillBtn_Click);
             // 
-            // label43
+            // reportCardPanel
             // 
-            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(40, 171);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(52, 19);
-            this.label43.TabIndex = 39;
-            this.label43.Text = "CLASS:";
-            this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.reportCardPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.reportCardPanel.AutoSize = true;
+            this.reportCardPanel.BackColor = System.Drawing.Color.White;
+            this.reportCardPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.reportCardPanel.Controls.Add(this.pictureBox2);
+            this.reportCardPanel.Controls.Add(this.pictureBox1);
+            this.reportCardPanel.Controls.Add(this.nextTermDateLbl);
+            this.reportCardPanel.Controls.Add(this.noInClassLbl);
+            this.reportCardPanel.Controls.Add(this.resultDataView);
+            this.reportCardPanel.Controls.Add(this.classLbl);
+            this.reportCardPanel.Controls.Add(this.positionLbl);
+            this.reportCardPanel.Controls.Add(this.termLbl);
+            this.reportCardPanel.Controls.Add(this.nameLbl);
+            this.reportCardPanel.Controls.Add(this.remarksPanel);
+            this.reportCardPanel.Controls.Add(this.label9);
+            this.reportCardPanel.Controls.Add(this.label8);
+            this.reportCardPanel.Controls.Add(this.label7);
+            this.reportCardPanel.Controls.Add(this.label6);
+            this.reportCardPanel.Controls.Add(this.label5);
+            this.reportCardPanel.Controls.Add(this.label4);
+            this.reportCardPanel.Controls.Add(this.label3);
+            this.reportCardPanel.Controls.Add(this.label2);
+            this.reportCardPanel.Controls.Add(this.label1);
+            this.reportCardPanel.Location = new System.Drawing.Point(345, 426);
+            this.reportCardPanel.Name = "reportCardPanel";
+            this.reportCardPanel.Size = new System.Drawing.Size(720, 652);
+            this.reportCardPanel.TabIndex = 2;
             // 
-            // label44
+            // nextTermDateLbl
             // 
-            this.label44.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(40, 203);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(51, 19);
-            this.label44.TabIndex = 39;
-            this.label44.Text = "TERM:";
-            this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nextTermDateLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nextTermDateLbl.AutoSize = true;
+            this.nextTermDateLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextTermDateLbl.Location = new System.Drawing.Point(545, 157);
+            this.nextTermDateLbl.Name = "nextTermDateLbl";
+            this.nextTermDateLbl.Size = new System.Drawing.Size(51, 19);
+            this.nextTermDateLbl.TabIndex = 36;
+            this.nextTermDateLbl.Text = "GOOD";
+            this.nextTermDateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label45
+            // noInClassLbl
             // 
-            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(40, 235);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(47, 19);
-            this.label45.TabIndex = 39;
-            this.label45.Text = "DATE:";
-            this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.noInClassLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.noInClassLbl.AutoSize = true;
+            this.noInClassLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.noInClassLbl.Location = new System.Drawing.Point(175, 157);
+            this.noInClassLbl.Name = "noInClassLbl";
+            this.noInClassLbl.Size = new System.Drawing.Size(51, 19);
+            this.noInClassLbl.TabIndex = 37;
+            this.noInClassLbl.Text = "GOOD";
+            this.noInClassLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label46
+            // resultDataView
             // 
-            this.label46.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(388, 140);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(208, 19);
-            this.label46.TabIndex = 39;
-            this.label46.Text = "PERFECT PEACE PREP SCHOOL";
-            this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.resultDataView.AllowUserToAddRows = false;
+            this.resultDataView.AllowUserToDeleteRows = false;
+            this.resultDataView.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.resultDataView.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.resultDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            this.resultDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.resultDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.subject_id,
+            this.subject,
+            this.exam_score,
+            this.class_score,
+            this.total_score,
+            this.position_in_subject,
+            this.remarks});
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.resultDataView.DefaultCellStyle = dataGridViewCellStyle39;
+            this.resultDataView.Enabled = false;
+            this.resultDataView.Location = new System.Drawing.Point(15, 181);
+            this.resultDataView.Name = "resultDataView";
+            this.resultDataView.ReadOnly = true;
+            this.resultDataView.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.resultDataView.RowHeadersVisible = false;
+            this.resultDataView.RowHeadersWidth = 4;
+            this.resultDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle40.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.resultDataView.RowsDefaultCellStyle = dataGridViewCellStyle40;
+            this.resultDataView.RowTemplate.Height = 30;
+            this.resultDataView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.resultDataView.Size = new System.Drawing.Size(689, 68);
+            this.resultDataView.TabIndex = 17;
             // 
-            // label47
+            // subject_id
             // 
-            this.label47.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label47.AutoSize = true;
-            this.label47.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(388, 159);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(84, 19);
-            this.label47.TabIndex = 39;
-            this.label47.Text = "P O BOX 13";
-            this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.subject_id.DataPropertyName = "subject_id";
+            this.subject_id.HeaderText = "SUBJECT ID";
+            this.subject_id.Name = "subject_id";
+            this.subject_id.ReadOnly = true;
+            this.subject_id.Visible = false;
+            this.subject_id.Width = 5;
             // 
-            // label48
+            // subject
             // 
-            this.label48.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(338, 176);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(329, 19);
-            this.label48.TabIndex = 39;
-            this.label48.Text = "EMAIL: PERFECTPEACESCHOOL@OUTLOOK.COM";
-            this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.subject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.subject.DataPropertyName = "name";
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.subject.DefaultCellStyle = dataGridViewCellStyle34;
+            this.subject.HeaderText = "SUBJECT";
+            this.subject.Name = "subject";
+            this.subject.ReadOnly = true;
             // 
-            // label49
+            // exam_score
             // 
-            this.label49.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(340, 235);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(95, 19);
-            this.label49.TabIndex = 39;
-            this.label49.Text = "TELEPHONE: ";
-            this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.exam_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.exam_score.DataPropertyName = "exam_total_marks";
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.exam_score.DefaultCellStyle = dataGridViewCellStyle35;
+            this.exam_score.HeaderText = "EXAM SCORE 50%";
+            this.exam_score.Name = "exam_score";
+            this.exam_score.ReadOnly = true;
             // 
-            // label50
+            // class_score
             // 
-            this.label50.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(40, 292);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(100, 19);
-            this.label50.TabIndex = 39;
-            this.label50.Text = "PARTICULARS";
-            this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.class_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.class_score.DataPropertyName = "class_total_marks";
+            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.class_score.DefaultCellStyle = dataGridViewCellStyle36;
+            this.class_score.HeaderText = "CLASS SCORE 50%";
+            this.class_score.Name = "class_score";
+            this.class_score.ReadOnly = true;
             // 
-            // label51
+            // total_score
             // 
-            this.label51.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(388, 292);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(115, 19);
-            this.label51.TabIndex = 39;
-            this.label51.Text = "AMOUNT (GHC)";
-            this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.total_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.total_score.DataPropertyName = "pass_marks";
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.total_score.DefaultCellStyle = dataGridViewCellStyle37;
+            this.total_score.HeaderText = "TOTAL SCORE 100%";
+            this.total_score.Name = "total_score";
+            this.total_score.ReadOnly = true;
             // 
-            // label52
+            // position_in_subject
             // 
-            this.label52.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(388, 701);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(254, 19);
-            this.label52.TabIndex = 25;
-            this.label52.Text = "TRANSPORT FEES:________________";
+            this.position_in_subject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.position_in_subject.DataPropertyName = "position";
+            dataGridViewCellStyle38.NullValue = null;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.position_in_subject.DefaultCellStyle = dataGridViewCellStyle38;
+            this.position_in_subject.HeaderText = "POSITION IN SUBJECT";
+            this.position_in_subject.Name = "position_in_subject";
+            this.position_in_subject.ReadOnly = true;
             // 
-            // transportLbl
+            // remarks
             // 
-            this.transportLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.transportLbl.AutoSize = true;
-            this.transportLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transportLbl.Location = new System.Drawing.Point(535, 696);
-            this.transportLbl.Name = "transportLbl";
-            this.transportLbl.Size = new System.Drawing.Size(69, 19);
-            this.transportLbl.TabIndex = 44;
-            this.transportLbl.Text = "READING\r\n";
-            this.transportLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.remarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.remarks.DataPropertyName = "remarks";
+            this.remarks.HeaderText = "REMARKS";
+            this.remarks.Name = "remarks";
+            this.remarks.ReadOnly = true;
             // 
-            // stntClassLbl
+            // classLbl
             // 
-            this.stntClassLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.stntClassLbl.AutoSize = true;
-            this.stntClassLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stntClassLbl.Location = new System.Drawing.Point(98, 171);
-            this.stntClassLbl.Name = "stntClassLbl";
-            this.stntClassLbl.Size = new System.Drawing.Size(42, 19);
-            this.stntClassLbl.TabIndex = 39;
-            this.stntClassLbl.Text = "class";
-            this.stntClassLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.classLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.classLbl.AutoSize = true;
+            this.classLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classLbl.Location = new System.Drawing.Point(381, 126);
+            this.classLbl.Name = "classLbl";
+            this.classLbl.Size = new System.Drawing.Size(26, 19);
+            this.classLbl.TabIndex = 16;
+            this.classLbl.Text = "2A";
+            this.classLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // stntNameLbl
+            // positionLbl
             // 
-            this.stntNameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.stntNameLbl.AutoSize = true;
-            this.stntNameLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stntNameLbl.Location = new System.Drawing.Point(164, 140);
-            this.stntNameLbl.Name = "stntNameLbl";
-            this.stntNameLbl.Size = new System.Drawing.Size(49, 19);
-            this.stntNameLbl.TabIndex = 39;
-            this.stntNameLbl.Text = "NAME";
-            this.stntNameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.positionLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.positionLbl.AutoSize = true;
+            this.positionLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.positionLbl.Location = new System.Drawing.Point(535, 126);
+            this.positionLbl.Name = "positionLbl";
+            this.positionLbl.Size = new System.Drawing.Size(32, 19);
+            this.positionLbl.TabIndex = 15;
+            this.positionLbl.Text = "1ST";
+            this.positionLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dateLbl
+            // termLbl
             // 
-            this.dateLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dateLbl.AutoSize = true;
-            this.dateLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLbl.Location = new System.Drawing.Point(93, 235);
-            this.dateLbl.Name = "dateLbl";
-            this.dateLbl.Size = new System.Drawing.Size(38, 19);
-            this.dateLbl.TabIndex = 39;
-            this.dateLbl.Text = "date";
-            this.dateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.termLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.termLbl.AutoSize = true;
+            this.termLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.termLbl.Location = new System.Drawing.Point(641, 126);
+            this.termLbl.Name = "termLbl";
+            this.termLbl.Size = new System.Drawing.Size(17, 19);
+            this.termLbl.TabIndex = 14;
+            this.termLbl.Text = "1";
+            this.termLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // termLbl2
+            // nameLbl
             // 
-            this.termLbl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.termLbl2.AutoSize = true;
-            this.termLbl2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.termLbl2.Location = new System.Drawing.Point(97, 203);
-            this.termLbl2.Name = "termLbl2";
-            this.termLbl2.Size = new System.Drawing.Size(39, 19);
-            this.termLbl2.TabIndex = 39;
-            this.termLbl2.Text = "term";
-            this.termLbl2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(219, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(278, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "PERFECT PEACE  PREPARATORY SCHOOL";
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(304, 59);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "MEMPEASSEM";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(263, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(186, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "PUPIL\'S TERMINAL REPORT";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 128);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(305, 19);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "NAME: _______________________________";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 159);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(309, 19);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "NO. ON ROLL:__________________________";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(348, 159);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(341, 19);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "NEXT TERM BEGINS:_________________________";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(323, 128);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(124, 19);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "CLASS:_________";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(583, 128);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 19);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "TERM:_______";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(453, 128);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(124, 19);
-            this.label9.TabIndex = 8;
-            this.label9.Text = "POSITION:______";
+            this.nameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nameLbl.AutoSize = true;
+            this.nameLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLbl.Location = new System.Drawing.Point(120, 126);
+            this.nameLbl.Name = "nameLbl";
+            this.nameLbl.Size = new System.Drawing.Size(98, 19);
+            this.nameLbl.TabIndex = 10;
+            this.nameLbl.Text = "EMMA AMOA";
+            this.nameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // remarksPanel
             // 
@@ -1031,167 +1163,61 @@
             this.remarksPanel.Size = new System.Drawing.Size(689, 306);
             this.remarksPanel.TabIndex = 9;
             // 
-            // label11
+            // promotedClassLbl
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(2, 1);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(88, 17);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "TOTAL SCORE:";
+            this.promotedClassLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.promotedClassLbl.AutoSize = true;
+            this.promotedClassLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.promotedClassLbl.Location = new System.Drawing.Point(315, 56);
+            this.promotedClassLbl.Name = "promotedClassLbl";
+            this.promotedClassLbl.Size = new System.Drawing.Size(51, 19);
+            this.promotedClassLbl.TabIndex = 41;
+            this.promotedClassLbl.Text = "GOOD";
+            this.promotedClassLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label10
+            // attendanceTotalLbl
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(130, 1);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 17);
-            this.label10.TabIndex = 12;
-            this.label10.Text = "OUT OF";
+            this.attendanceTotalLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.attendanceTotalLbl.AutoSize = true;
+            this.attendanceTotalLbl.Font = new System.Drawing.Font("Calibri", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attendanceTotalLbl.Location = new System.Drawing.Point(187, 31);
+            this.attendanceTotalLbl.Name = "attendanceTotalLbl";
+            this.attendanceTotalLbl.Size = new System.Drawing.Size(28, 17);
+            this.attendanceTotalLbl.TabIndex = 40;
+            this.attendanceTotalLbl.Text = "-----";
             // 
-            // rawScoreLbl
+            // attendanceLbl
             // 
-            this.rawScoreLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rawScoreLbl.AutoSize = true;
-            this.rawScoreLbl.Font = new System.Drawing.Font("Calibri", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rawScoreLbl.Location = new System.Drawing.Point(96, 1);
-            this.rawScoreLbl.Name = "rawScoreLbl";
-            this.rawScoreLbl.Size = new System.Drawing.Size(28, 17);
-            this.rawScoreLbl.TabIndex = 14;
-            this.rawScoreLbl.Text = "-----";
+            this.attendanceLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.attendanceLbl.AutoSize = true;
+            this.attendanceLbl.Font = new System.Drawing.Font("Calibri", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attendanceLbl.Location = new System.Drawing.Point(96, 31);
+            this.attendanceLbl.Name = "attendanceLbl";
+            this.attendanceLbl.Size = new System.Drawing.Size(28, 17);
+            this.attendanceLbl.TabIndex = 39;
+            this.attendanceLbl.Text = "-----";
             // 
-            // totalScoreLbl
+            // label28
             // 
-            this.totalScoreLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.totalScoreLbl.AutoSize = true;
-            this.totalScoreLbl.Font = new System.Drawing.Font("Calibri", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalScoreLbl.Location = new System.Drawing.Point(187, 1);
-            this.totalScoreLbl.Name = "totalScoreLbl";
-            this.totalScoreLbl.Size = new System.Drawing.Size(28, 17);
-            this.totalScoreLbl.TabIndex = 15;
-            this.totalScoreLbl.Text = "-----";
+            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(130, 31);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(51, 17);
+            this.label28.TabIndex = 38;
+            this.label28.Text = "OUT OF";
             // 
-            // label12
+            // label29
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(1, 96);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(671, 19);
-            this.label12.TabIndex = 10;
-            this.label12.Text = "CONDUCT:_________________________________________________________________________" +
-    "_";
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(1, 132);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(671, 19);
-            this.label13.TabIndex = 16;
-            this.label13.Text = "ATTITIDE:________________________________________________________________________" +
-    "___";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(1, 174);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(666, 19);
-            this.label14.TabIndex = 17;
-            this.label14.Text = "INTEREST:________________________________________________________________________" +
-    "__";
-            // 
-            // label15
-            // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(1, 213);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(667, 19);
-            this.label15.TabIndex = 18;
-            this.label15.Text = "CLASS TEACHER\'S REMARKS:_________________________________________________________" +
-    "__";
-            // 
-            // label16
-            // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(1, 263);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(529, 19);
-            this.label16.TabIndex = 19;
-            this.label16.Text = "HEAD TEACHER\'S REMARKS:__________________________________________";
-            // 
-            // label17
-            // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(441, 263);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(231, 19);
-            this.label17.TabIndex = 10;
-            this.label17.Text = "SIGNATURE:__________________";
-            // 
-            // conductLbl
-            // 
-            this.conductLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.conductLbl.AutoSize = true;
-            this.conductLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.conductLbl.Location = new System.Drawing.Point(274, 94);
-            this.conductLbl.Name = "conductLbl";
-            this.conductLbl.Size = new System.Drawing.Size(51, 19);
-            this.conductLbl.TabIndex = 13;
-            this.conductLbl.Text = "GOOD";
-            this.conductLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // attitudeLbl
-            // 
-            this.attitudeLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.attitudeLbl.AutoSize = true;
-            this.attitudeLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attitudeLbl.Location = new System.Drawing.Point(259, 130);
-            this.attitudeLbl.Name = "attitudeLbl";
-            this.attitudeLbl.Size = new System.Drawing.Size(50, 19);
-            this.attitudeLbl.TabIndex = 12;
-            this.attitudeLbl.Text = "QUIET";
-            this.attitudeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // interestLbl
-            // 
-            this.interestLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.interestLbl.AutoSize = true;
-            this.interestLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.interestLbl.Location = new System.Drawing.Point(240, 171);
-            this.interestLbl.Name = "interestLbl";
-            this.interestLbl.Size = new System.Drawing.Size(69, 19);
-            this.interestLbl.TabIndex = 11;
-            this.interestLbl.Text = "READING\r\n";
-            this.interestLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // tRemarksLbl
-            // 
-            this.tRemarksLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tRemarksLbl.AutoSize = true;
-            this.tRemarksLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tRemarksLbl.Location = new System.Drawing.Point(300, 208);
-            this.tRemarksLbl.Name = "tRemarksLbl";
-            this.tRemarksLbl.Size = new System.Drawing.Size(69, 19);
-            this.tRemarksLbl.TabIndex = 31;
-            this.tRemarksLbl.Text = "READING\r\n";
-            this.tRemarksLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(2, 31);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(92, 17);
+            this.label29.TabIndex = 37;
+            this.label29.Text = "ATTENDANCE: ";
             // 
             // label25
             // 
@@ -1205,290 +1231,276 @@
             this.label25.Text = "PROMOTED TO:_____________________________________________________________________" +
     "_\r\n";
             // 
-            // label29
+            // tRemarksLbl
             // 
-            this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(2, 31);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(92, 17);
-            this.label29.TabIndex = 37;
-            this.label29.Text = "ATTENDANCE: ";
+            this.tRemarksLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tRemarksLbl.AutoSize = true;
+            this.tRemarksLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tRemarksLbl.Location = new System.Drawing.Point(300, 208);
+            this.tRemarksLbl.Name = "tRemarksLbl";
+            this.tRemarksLbl.Size = new System.Drawing.Size(69, 19);
+            this.tRemarksLbl.TabIndex = 31;
+            this.tRemarksLbl.Text = "READING\r\n";
+            this.tRemarksLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label28
+            // interestLbl
             // 
-            this.label28.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(130, 31);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(51, 17);
-            this.label28.TabIndex = 38;
-            this.label28.Text = "OUT OF";
+            this.interestLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.interestLbl.AutoSize = true;
+            this.interestLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.interestLbl.Location = new System.Drawing.Point(240, 171);
+            this.interestLbl.Name = "interestLbl";
+            this.interestLbl.Size = new System.Drawing.Size(69, 19);
+            this.interestLbl.TabIndex = 11;
+            this.interestLbl.Text = "READING\r\n";
+            this.interestLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // attendanceLbl
+            // attitudeLbl
             // 
-            this.attendanceLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.attendanceLbl.AutoSize = true;
-            this.attendanceLbl.Font = new System.Drawing.Font("Calibri", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attendanceLbl.Location = new System.Drawing.Point(96, 31);
-            this.attendanceLbl.Name = "attendanceLbl";
-            this.attendanceLbl.Size = new System.Drawing.Size(28, 17);
-            this.attendanceLbl.TabIndex = 39;
-            this.attendanceLbl.Text = "-----";
+            this.attitudeLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.attitudeLbl.AutoSize = true;
+            this.attitudeLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.attitudeLbl.Location = new System.Drawing.Point(259, 130);
+            this.attitudeLbl.Name = "attitudeLbl";
+            this.attitudeLbl.Size = new System.Drawing.Size(50, 19);
+            this.attitudeLbl.TabIndex = 12;
+            this.attitudeLbl.Text = "QUIET";
+            this.attitudeLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // attendanceTotalLbl
+            // conductLbl
             // 
-            this.attendanceTotalLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.attendanceTotalLbl.AutoSize = true;
-            this.attendanceTotalLbl.Font = new System.Drawing.Font("Calibri", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.attendanceTotalLbl.Location = new System.Drawing.Point(187, 31);
-            this.attendanceTotalLbl.Name = "attendanceTotalLbl";
-            this.attendanceTotalLbl.Size = new System.Drawing.Size(28, 17);
-            this.attendanceTotalLbl.TabIndex = 40;
-            this.attendanceTotalLbl.Text = "-----";
+            this.conductLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.conductLbl.AutoSize = true;
+            this.conductLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conductLbl.Location = new System.Drawing.Point(274, 94);
+            this.conductLbl.Name = "conductLbl";
+            this.conductLbl.Size = new System.Drawing.Size(51, 19);
+            this.conductLbl.TabIndex = 13;
+            this.conductLbl.Text = "GOOD";
+            this.conductLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // promotedClassLbl
+            // label17
             // 
-            this.promotedClassLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.promotedClassLbl.AutoSize = true;
-            this.promotedClassLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.promotedClassLbl.Location = new System.Drawing.Point(315, 56);
-            this.promotedClassLbl.Name = "promotedClassLbl";
-            this.promotedClassLbl.Size = new System.Drawing.Size(51, 19);
-            this.promotedClassLbl.TabIndex = 41;
-            this.promotedClassLbl.Text = "GOOD";
-            this.promotedClassLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(441, 263);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(231, 19);
+            this.label17.TabIndex = 10;
+            this.label17.Text = "SIGNATURE:__________________";
             // 
-            // nameLbl
+            // label16
             // 
-            this.nameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.nameLbl.AutoSize = true;
-            this.nameLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLbl.Location = new System.Drawing.Point(120, 126);
-            this.nameLbl.Name = "nameLbl";
-            this.nameLbl.Size = new System.Drawing.Size(98, 19);
-            this.nameLbl.TabIndex = 10;
-            this.nameLbl.Text = "EMMA AMOA";
-            this.nameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(1, 263);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(529, 19);
+            this.label16.TabIndex = 19;
+            this.label16.Text = "HEAD TEACHER\'S REMARKS:__________________________________________";
             // 
-            // termLbl
+            // label15
             // 
-            this.termLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.termLbl.AutoSize = true;
-            this.termLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.termLbl.Location = new System.Drawing.Point(641, 126);
-            this.termLbl.Name = "termLbl";
-            this.termLbl.Size = new System.Drawing.Size(17, 19);
-            this.termLbl.TabIndex = 14;
-            this.termLbl.Text = "1";
-            this.termLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(1, 213);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(667, 19);
+            this.label15.TabIndex = 18;
+            this.label15.Text = "CLASS TEACHER\'S REMARKS:_________________________________________________________" +
+    "__";
             // 
-            // positionLbl
+            // label14
             // 
-            this.positionLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.positionLbl.AutoSize = true;
-            this.positionLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.positionLbl.Location = new System.Drawing.Point(535, 126);
-            this.positionLbl.Name = "positionLbl";
-            this.positionLbl.Size = new System.Drawing.Size(32, 19);
-            this.positionLbl.TabIndex = 15;
-            this.positionLbl.Text = "1ST";
-            this.positionLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(1, 174);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(666, 19);
+            this.label14.TabIndex = 17;
+            this.label14.Text = "INTEREST:________________________________________________________________________" +
+    "__";
             // 
-            // classLbl
+            // label13
             // 
-            this.classLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.classLbl.AutoSize = true;
-            this.classLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classLbl.Location = new System.Drawing.Point(381, 126);
-            this.classLbl.Name = "classLbl";
-            this.classLbl.Size = new System.Drawing.Size(26, 19);
-            this.classLbl.TabIndex = 16;
-            this.classLbl.Text = "2A";
-            this.classLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(1, 132);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(671, 19);
+            this.label13.TabIndex = 16;
+            this.label13.Text = "ATTITIDE:________________________________________________________________________" +
+    "___";
             // 
-            // resultDataView
+            // label12
             // 
-            this.resultDataView.AllowUserToAddRows = false;
-            this.resultDataView.AllowUserToDeleteRows = false;
-            this.resultDataView.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.resultDataView.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.resultDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.resultDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.resultDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.subject_id,
-            this.subject,
-            this.exam_score,
-            this.class_score,
-            this.total_score,
-            this.position_in_subject,
-            this.remarks});
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.resultDataView.DefaultCellStyle = dataGridViewCellStyle7;
-            this.resultDataView.Enabled = false;
-            this.resultDataView.Location = new System.Drawing.Point(15, 181);
-            this.resultDataView.Name = "resultDataView";
-            this.resultDataView.ReadOnly = true;
-            this.resultDataView.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.resultDataView.RowHeadersVisible = false;
-            this.resultDataView.RowHeadersWidth = 4;
-            this.resultDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.resultDataView.RowsDefaultCellStyle = dataGridViewCellStyle8;
-            this.resultDataView.RowTemplate.Height = 30;
-            this.resultDataView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.resultDataView.Size = new System.Drawing.Size(689, 68);
-            this.resultDataView.TabIndex = 17;
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(1, 96);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(671, 19);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "CONDUCT:_________________________________________________________________________" +
+    "_";
             // 
-            // remarks
+            // totalScoreLbl
             // 
-            this.remarks.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.remarks.DataPropertyName = "remarks";
-            this.remarks.HeaderText = "REMARKS";
-            this.remarks.Name = "remarks";
-            this.remarks.ReadOnly = true;
+            this.totalScoreLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.totalScoreLbl.AutoSize = true;
+            this.totalScoreLbl.Font = new System.Drawing.Font("Calibri", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalScoreLbl.Location = new System.Drawing.Point(187, 1);
+            this.totalScoreLbl.Name = "totalScoreLbl";
+            this.totalScoreLbl.Size = new System.Drawing.Size(28, 17);
+            this.totalScoreLbl.TabIndex = 15;
+            this.totalScoreLbl.Text = "-----";
             // 
-            // position_in_subject
+            // rawScoreLbl
             // 
-            this.position_in_subject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.position_in_subject.DataPropertyName = "position";
-            dataGridViewCellStyle6.NullValue = null;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.position_in_subject.DefaultCellStyle = dataGridViewCellStyle6;
-            this.position_in_subject.HeaderText = "POSITION IN SUBJECT";
-            this.position_in_subject.Name = "position_in_subject";
-            this.position_in_subject.ReadOnly = true;
+            this.rawScoreLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rawScoreLbl.AutoSize = true;
+            this.rawScoreLbl.Font = new System.Drawing.Font("Calibri", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rawScoreLbl.Location = new System.Drawing.Point(96, 1);
+            this.rawScoreLbl.Name = "rawScoreLbl";
+            this.rawScoreLbl.Size = new System.Drawing.Size(28, 17);
+            this.rawScoreLbl.TabIndex = 14;
+            this.rawScoreLbl.Text = "-----";
             // 
-            // total_score
+            // label10
             // 
-            this.total_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.total_score.DataPropertyName = "pass_marks";
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.total_score.DefaultCellStyle = dataGridViewCellStyle5;
-            this.total_score.HeaderText = "TOTAL SCORE 100%";
-            this.total_score.Name = "total_score";
-            this.total_score.ReadOnly = true;
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(130, 1);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 17);
+            this.label10.TabIndex = 12;
+            this.label10.Text = "OUT OF";
             // 
-            // class_score
+            // label11
             // 
-            this.class_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.class_score.DataPropertyName = "class_total_marks";
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.class_score.DefaultCellStyle = dataGridViewCellStyle4;
-            this.class_score.HeaderText = "CLASS SCORE 50%";
-            this.class_score.Name = "class_score";
-            this.class_score.ReadOnly = true;
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(2, 1);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(88, 17);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "TOTAL SCORE:";
             // 
-            // exam_score
+            // label9
             // 
-            this.exam_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.exam_score.DataPropertyName = "exam_total_marks";
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.exam_score.DefaultCellStyle = dataGridViewCellStyle3;
-            this.exam_score.HeaderText = "EXAM SCORE 50%";
-            this.exam_score.Name = "exam_score";
-            this.exam_score.ReadOnly = true;
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(453, 128);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(124, 19);
+            this.label9.TabIndex = 8;
+            this.label9.Text = "POSITION:______";
             // 
-            // subject
+            // label8
             // 
-            this.subject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.subject.DataPropertyName = "name";
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.subject.DefaultCellStyle = dataGridViewCellStyle2;
-            this.subject.HeaderText = "SUBJECT";
-            this.subject.Name = "subject";
-            this.subject.ReadOnly = true;
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(583, 128);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(107, 19);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "TERM:_______";
             // 
-            // subject_id
+            // label7
             // 
-            this.subject_id.DataPropertyName = "subject_id";
-            this.subject_id.HeaderText = "SUBJECT ID";
-            this.subject_id.Name = "subject_id";
-            this.subject_id.ReadOnly = true;
-            this.subject_id.Visible = false;
-            this.subject_id.Width = 5;
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(323, 128);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(124, 19);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "CLASS:_________";
             // 
-            // noInClassLbl
+            // label6
             // 
-            this.noInClassLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.noInClassLbl.AutoSize = true;
-            this.noInClassLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noInClassLbl.Location = new System.Drawing.Point(175, 157);
-            this.noInClassLbl.Name = "noInClassLbl";
-            this.noInClassLbl.Size = new System.Drawing.Size(51, 19);
-            this.noInClassLbl.TabIndex = 37;
-            this.noInClassLbl.Text = "GOOD";
-            this.noInClassLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(348, 159);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(341, 19);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "NEXT TERM BEGINS:_________________________";
             // 
-            // nextTermDateLbl
+            // label5
             // 
-            this.nextTermDateLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.nextTermDateLbl.AutoSize = true;
-            this.nextTermDateLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextTermDateLbl.Location = new System.Drawing.Point(545, 157);
-            this.nextTermDateLbl.Name = "nextTermDateLbl";
-            this.nextTermDateLbl.Size = new System.Drawing.Size(51, 19);
-            this.nextTermDateLbl.TabIndex = 36;
-            this.nextTermDateLbl.Text = "GOOD";
-            this.nextTermDateLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(12, 159);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(309, 19);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "NO. ON ROLL:__________________________";
             // 
-            // reportCardPanel
+            // label4
             // 
-            this.reportCardPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.reportCardPanel.AutoSize = true;
-            this.reportCardPanel.BackColor = System.Drawing.Color.White;
-            this.reportCardPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.reportCardPanel.Controls.Add(this.pictureBox2);
-            this.reportCardPanel.Controls.Add(this.pictureBox1);
-            this.reportCardPanel.Controls.Add(this.nextTermDateLbl);
-            this.reportCardPanel.Controls.Add(this.noInClassLbl);
-            this.reportCardPanel.Controls.Add(this.resultDataView);
-            this.reportCardPanel.Controls.Add(this.classLbl);
-            this.reportCardPanel.Controls.Add(this.positionLbl);
-            this.reportCardPanel.Controls.Add(this.termLbl);
-            this.reportCardPanel.Controls.Add(this.nameLbl);
-            this.reportCardPanel.Controls.Add(this.remarksPanel);
-            this.reportCardPanel.Controls.Add(this.label9);
-            this.reportCardPanel.Controls.Add(this.label8);
-            this.reportCardPanel.Controls.Add(this.label7);
-            this.reportCardPanel.Controls.Add(this.label6);
-            this.reportCardPanel.Controls.Add(this.label5);
-            this.reportCardPanel.Controls.Add(this.label4);
-            this.reportCardPanel.Controls.Add(this.label3);
-            this.reportCardPanel.Controls.Add(this.label2);
-            this.reportCardPanel.Controls.Add(this.label1);
-            this.reportCardPanel.Location = new System.Drawing.Point(33, 241);
-            this.reportCardPanel.Name = "reportCardPanel";
-            this.reportCardPanel.Size = new System.Drawing.Size(720, 652);
-            this.reportCardPanel.TabIndex = 2;
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(12, 128);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(305, 19);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "NAME: _______________________________";
             // 
-            // pictureBox1
+            // label3
             // 
-            this.pictureBox1.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(581, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(263, 87);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(186, 19);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "PUPIL\'S TERMINAL REPORT";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(304, 59);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(103, 19);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "MEMPEASSEM";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(219, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(278, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "PERFECT PEACE  PREPARATORY SCHOOL";
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
+            this.pictureBox3.Location = new System.Drawing.Point(320, 10);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 82);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 49;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
@@ -1500,15 +1512,90 @@
             this.pictureBox2.TabIndex = 38;
             this.pictureBox2.TabStop = false;
             // 
-            // pictureBox3
+            // pictureBox1
             // 
-            this.pictureBox3.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
-            this.pictureBox3.Location = new System.Drawing.Point(320, 10);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 82);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 49;
-            this.pictureBox3.TabStop = false;
+            this.pictureBox1.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(581, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(123, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
+            // 
+            // assessmentPanel
+            // 
+            this.assessmentPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.assessmentPanel.BackColor = System.Drawing.Color.White;
+            this.assessmentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.assessmentPanel.Controls.Add(this.label56);
+            this.assessmentPanel.Controls.Add(this.label54);
+            this.assessmentPanel.Controls.Add(this.label53);
+            this.assessmentPanel.Location = new System.Drawing.Point(113, 2008);
+            this.assessmentPanel.Name = "assessmentPanel";
+            this.assessmentPanel.Size = new System.Drawing.Size(1138, 292);
+            this.assessmentPanel.TabIndex = 58;
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(84, 111);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(295, 31);
+            this.label53.TabIndex = 0;
+            this.label53.Text = "zbbcxnnnnnnnnnnnnnn";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(272, 638);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(57, 13);
+            this.label54.TabIndex = 1;
+            this.label54.Text = "dasbgdfhd";
+            // 
+            // printAssBtn
+            // 
+            this.printAssBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.printAssBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.printAssBtn.FlatAppearance.BorderSize = 0;
+            this.printAssBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.printAssBtn.ForeColor = System.Drawing.Color.White;
+            this.printAssBtn.Location = new System.Drawing.Point(654, 2355);
+            this.printAssBtn.Name = "printAssBtn";
+            this.printAssBtn.Size = new System.Drawing.Size(99, 23);
+            this.printAssBtn.TabIndex = 3;
+            this.printAssBtn.Text = "Print Assessment";
+            this.printAssBtn.UseVisualStyleBackColor = false;
+            this.printAssBtn.Click += new System.EventHandler(this.printAssBtn_Click);
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(1193, 2776);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(41, 13);
+            this.label55.TabIndex = 59;
+            this.label55.Text = "label55";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.Location = new System.Drawing.Point(850, 111);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(101, 31);
+            this.label56.TabIndex = 2;
+            this.label56.Text = "label56";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(1366, 2388);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(41, 13);
+            this.label57.TabIndex = 60;
+            this.label57.Text = "label57";
             // 
             // ReportCard
             // 
@@ -1524,14 +1611,16 @@
             this.inputPanel.PerformLayout();
             this.testPanel.ResumeLayout(false);
             this.testPanel.PerformLayout();
-            this.remarksPanel.ResumeLayout(false);
-            this.remarksPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resultDataView)).EndInit();
             this.reportCardPanel.ResumeLayout(false);
             this.reportCardPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resultDataView)).EndInit();
+            this.remarksPanel.ResumeLayout(false);
+            this.remarksPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.assessmentPanel.ResumeLayout(false);
+            this.assessmentPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1646,5 +1735,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel assessmentPanel;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Button printAssBtn;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label label57;
     }
 }

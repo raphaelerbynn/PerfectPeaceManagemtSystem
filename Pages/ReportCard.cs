@@ -51,7 +51,9 @@ namespace Perfect_Peace_System.Pages
                 printBillBtn.Location = new Point(printBillBtn.Location.X, printBillBtn.Location.Y + length_of_subject);
                 testPanel.Location = new Point(testPanel.Location.X, testPanel.Location.Y + length_of_subject);
                 printResultBtn.Location = new Point(printResultBtn.Location.X, printResultBtn.Location.Y + length_of_subject);
-
+                assessmentPanel.Location = new Point(assessmentPanel.Location.X, assessmentPanel.Location.Y + length_of_subject);
+                printAssBtn.Location = new Point(printAssBtn.Location.X, printAssBtn.Location.Y + length_of_subject);
+               
                 foreach (DataGridViewRow item in resultDataView.Rows)
                 {
                     resultDataView.ReadOnly = false;
@@ -238,6 +240,26 @@ namespace Perfect_Peace_System.Pages
             var bitMap = ControlPrinter.ScrollableControlToBitmap(this.testPanel, true, true);
             e.Graphics.DrawImage(bitMap, new Rectangle(5, 5, testPanel.Width, testPanel.Height));
         }
+        
+        private void assessmentPrint()
+        {
+            PrintDocument printdoc = new PrintDocument();
+            PrintPreviewDialog printPreview = new PrintPreviewDialog();
+
+            PrinterSettings ps = new PrinterSettings();
+            //reportCardPanel = panel;
+            //getPrintArea(panel);
+            printPreview.Document = printdoc;
+            printdoc.PrintPage += new PrintPageEventHandler(printAssessment_printPage);
+            ((Form)printPreview).Size = new Size(950, 539);
+            printPreview.ShowDialog();
+        }
+
+        private void printAssessment_printPage(object sender, PrintPageEventArgs e)
+        {
+            var bitMap = ControlPrinter.ScrollableControlToBitmap(this.assessmentPanel, true, true);
+            e.Graphics.DrawImage(bitMap, new Rectangle(5, 5, assessmentPanel.Width, assessmentPanel.Height));
+        }
 
         private void tB_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -342,6 +364,11 @@ namespace Perfect_Peace_System.Pages
         private void printBillBtn_Click(object sender, EventArgs e)
         {
             billsPrint();
+        }
+
+        private void printAssBtn_Click(object sender, EventArgs e)
+        {
+            assessmentPrint();
         }
     }
 }

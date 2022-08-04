@@ -52,7 +52,7 @@ namespace Perfect_Peace_System.Pages
                         "GROUP BY student_id";
                         DbClient.query_execute(query);
 
-                        query = "DELETE FROM Attendace";
+                        query = "DELETE FROM Attendance";
                         DbClient.query_execute(query);
                         /*SqlDataReader reader = DbClient.query_reader(query);
                         while (reader.Read())
@@ -120,7 +120,7 @@ namespace Perfect_Peace_System.Pages
                     confirmPassword.ShowDialog();
                     if (GetData.getConfirmedPassword() == true)
                     {
-                        query = "DELETE FROM EVENT";
+                        query = "UPDATE Student SET fees_owing=fees_owing+(SELECT fees FROM Class WHERE Class.class_id=Student.class_id) WHERE class_id IS NOT NULL";
                         DbClient.query_execute(query);
 
                         GetData.setConfirmPassword(false);
@@ -147,7 +147,7 @@ namespace Perfect_Peace_System.Pages
                     confirmPassword.ShowDialog();
                     if (GetData.getConfirmedPassword() == true)
                     {
-                        query = "UPDATE Student SET fees_owing=fees_owing+(SELECT fees FROM Class WHERE Class.class_id=Student.class_id) WHERE class_id IS NOT NULL";
+                        query = "DELETE FROM EVENT";
                         DbClient.query_execute(query);
 
                         GetData.setConfirmPassword(false);
