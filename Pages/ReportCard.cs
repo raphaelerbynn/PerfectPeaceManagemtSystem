@@ -30,9 +30,212 @@ namespace Perfect_Peace_System.Pages
             
             fillLabels();
             populateResults();
+            populateAssessment();
             MessageBox.Show("Before printing result, Admin must save term attendance to get total student attendance", "Hint", MessageBoxButtons.OK, MessageBoxIcon.Information);
             bgPanel.BackColor = Home.foreColor;
 
+        }
+
+        private void populateAssessment()
+        {
+            try
+            {
+                int lang_length = 22*10;
+                languageDataView.Size = new Size(languageDataView.Width, languageDataView.Height + lang_length);
+                emotioalDataVeiw.Location = new Point(emotioalDataVeiw.Location.X, emotioalDataVeiw.Location.Y + lang_length);
+                physicalDataView.Location = new Point(physicalDataView.Location.X, physicalDataView.Location.Y + lang_length);
+                cognitiveDataView.Location = new Point(cognitiveDataView.Location.X, cognitiveDataView.Location.Y + lang_length);
+                
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='4140' AND category LIKE '%LANGUAGE%'";
+                DbClient.dataGridFill(languageDataView, query);
+
+                foreach(DataGridViewRow row in languageDataView.Rows)
+                {
+                    if (row.Cells["satisfactoryR"].Value.ToString() == "1")
+                    {
+                        row.Cells["satisfactoryR"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["satisfactoryR"].Value = " ";
+                    }
+                    
+                    if (row.Cells["improvingR"].Value.ToString() == "1")
+                    {
+                        row.Cells["improvingR"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["improvingR"].Value = " ";
+                    }
+                    
+                    if (row.Cells["needs_improvementR"].Value.ToString() == "1")
+                    {
+                        row.Cells["needs_improvementR"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["needs_improvementR"].Value = " ";
+                    }
+                    
+                    if (row.Cells["unsatisfactoryR"].Value.ToString() == "1")
+                    {
+                        row.Cells["unsatisfactoryR"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["unsatisfactoryR"].Value = " ";
+                    }
+                    
+                }
+                
+                int emotional_length = 22*6;
+                emotioalDataVeiw.Size = new Size(emotioalDataVeiw.Width, emotioalDataVeiw.Height + emotional_length);
+                physicalDataView.Location = new Point(physicalDataView.Location.X, physicalDataView.Location.Y + emotional_length);
+                cognitiveDataView.Location = new Point(cognitiveDataView.Location.X, cognitiveDataView.Location.Y + emotional_length);
+
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='4140' AND category LIKE '%EMOTIONAL%'";
+                DbClient.dataGridFill(emotioalDataVeiw, query);
+
+                foreach(DataGridViewRow row in emotioalDataVeiw.Rows)
+                {
+                    if (row.Cells["satisfactoryE"].Value.ToString() == "1")
+                    {
+                        row.Cells["satisfactoryE"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["satisfactoryE"].Value = " ";
+                    }
+                    
+                    if (row.Cells["improvedE"].Value.ToString() == "1")
+                    {
+                        row.Cells["improvedE"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["improvedE"].Value = " ";
+                    }
+                    
+                    if (row.Cells["needs_improvementE"].Value.ToString() == "1")
+                    {
+                        row.Cells["needs_improvementE"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["needs_improvementE"].Value = " ";
+                    }
+                    
+                    if (row.Cells["unsatisfactoryE"].Value.ToString() == "1")
+                    {
+                        row.Cells["unsatisfactoryE"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["unsatisfactoryE"].Value = " ";
+                    }
+                    
+                }
+                
+                int physical_length = 22*5;
+                physicalDataView.Size = new Size(physicalDataView.Width, physicalDataView.Height + physical_length);
+                cognitiveDataView.Location = new Point(cognitiveDataView.Location.X, cognitiveDataView.Location.Y + physical_length);
+
+                //cognitiveDataView.Size = new Size(cognitiveDataView.Width, cognitiveDataView.Height + physical_length);
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='4140' AND category LIKE '%PHYSICAL%'";
+                DbClient.dataGridFill(physicalDataView, query);
+
+                foreach(DataGridViewRow row in physicalDataView.Rows)
+                {
+                    if (row.Cells["satisfactoryP"].Value.ToString() == "1")
+                    {
+                        row.Cells["satisfactoryP"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["satisfactoryP"].Value = " ";
+                    }
+                    
+                    if (row.Cells["improvedP"].Value.ToString() == "1")
+                    {
+                        row.Cells["improvedP"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["improvedP"].Value = " ";
+                    }
+                    
+                    if (row.Cells["needs_improvementP"].Value.ToString() == "1")
+                    {
+                        row.Cells["needs_improvementP"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["needs_improvementP"].Value = " ";
+                    }
+                    
+                    if (row.Cells["unsatisfactoryP"].Value.ToString() == "1")
+                    {
+                        row.Cells["unsatisfactoryP"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["unsatisfactoryP"].Value = " ";
+                    }
+                    
+                }
+                
+                int cognitive_length = 22*9;
+                cognitiveDataView.Size = new Size(cognitiveDataView.Width, cognitiveDataView.Height + cognitive_length);
+
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='4140' AND category LIKE '%COGNITIVE%'";
+                DbClient.dataGridFill(cognitiveDataView, query);
+
+                foreach(DataGridViewRow row in cognitiveDataView.Rows)
+                {
+                    if (row.Cells["satisfactoryC"].Value.ToString() == "1")
+                    {
+                        row.Cells["satisfactoryC"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["satisfactoryC"].Value = " ";
+                    }
+                    
+                    if (row.Cells["improvedC"].Value.ToString() == "1")
+                    {
+                        row.Cells["improvedC"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["improvedC"].Value = " ";
+                    }
+                    
+                    if (row.Cells["needs_improvementC"].Value.ToString() == "1")
+                    {
+                        row.Cells["needs_improvementC"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["needs_improvementC"].Value = " ";
+                    }
+                    
+                    if (row.Cells["unsatisfactoryC"].Value.ToString() == "1")
+                    {
+                        row.Cells["unsatisfactoryC"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["unsatisfactoryC"].Value = " ";
+                    }
+                    
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void populateResults()
@@ -369,6 +572,11 @@ namespace Perfect_Peace_System.Pages
         private void printAssBtn_Click(object sender, EventArgs e)
         {
             assessmentPrint();
+        }
+
+        private void languageDataView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }

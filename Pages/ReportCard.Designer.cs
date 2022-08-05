@@ -28,15 +28,76 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bgPanel = new System.Windows.Forms.Panel();
+            this.assessmentPanel = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.nextTermLbl = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.termKgLbl = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.teacherKgLbl = new System.Windows.Forms.Label();
+            this.classKgLbl = new System.Windows.Forms.Label();
+            this.label58 = new System.Windows.Forms.Label();
+            this.nameKgLbl = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.languageDataView = new System.Windows.Forms.DataGridView();
+            this.label56 = new System.Windows.Forms.Label();
             this.inputPanel = new System.Windows.Forms.Panel();
             this.termEndCb = new System.Windows.Forms.ComboBox();
             this.resultInputBtn = new System.Windows.Forms.Button();
@@ -51,7 +112,9 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
+            this.printAssBtn = new System.Windows.Forms.Button();
             this.testPanel = new System.Windows.Forms.Panel();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.stationaryLbl = new System.Windows.Forms.Label();
             this.PtaLbl = new System.Windows.Forms.Label();
             this.firstAidLbl = new System.Windows.Forms.Label();
@@ -97,6 +160,8 @@
             this.printResultBtn = new System.Windows.Forms.Button();
             this.printBillBtn = new System.Windows.Forms.Button();
             this.reportCardPanel = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nextTermDateLbl = new System.Windows.Forms.Label();
             this.noInClassLbl = new System.Windows.Forms.Label();
             this.resultDataView = new System.Windows.Forms.DataGridView();
@@ -141,33 +206,54 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.assessmentPanel = new System.Windows.Forms.Panel();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.printAssBtn = new System.Windows.Forms.Button();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
+            this.emotioalDataVeiw = new System.Windows.Forms.DataGridView();
+            this.physicalDataView = new System.Windows.Forms.DataGridView();
+            this.cognitiveDataView = new System.Windows.Forms.DataGridView();
+            this.label67 = new System.Windows.Forms.Label();
+            this.assessment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satisfactoryR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.improvingR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.needs_improvementR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unsatisfactoryR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assessmentE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satisfactoryE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.improvedE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.needs_improvementE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unsatisfactoryE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assessmentP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satisfactoryP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.improvedP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.needs_improvementP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unsatisfactoryP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assessmentC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satisfactoryC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.improvedC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.needs_improvementC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unsatisfactoryC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bgPanel.SuspendLayout();
+            this.assessmentPanel.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.languageDataView)).BeginInit();
             this.inputPanel.SuspendLayout();
             this.testPanel.SuspendLayout();
-            this.reportCardPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resultDataView)).BeginInit();
-            this.remarksPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.reportCardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.assessmentPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resultDataView)).BeginInit();
+            this.remarksPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.emotioalDataVeiw)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.physicalDataView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cognitiveDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // bgPanel
             // 
             this.bgPanel.AutoScroll = true;
-            this.bgPanel.Controls.Add(this.label57);
-            this.bgPanel.Controls.Add(this.label55);
+            this.bgPanel.Controls.Add(this.label67);
             this.bgPanel.Controls.Add(this.assessmentPanel);
             this.bgPanel.Controls.Add(this.inputPanel);
             this.bgPanel.Controls.Add(this.printAssBtn);
@@ -183,8 +269,351 @@
             this.bgPanel.Size = new System.Drawing.Size(800, 743);
             this.bgPanel.TabIndex = 0;
             // 
+            // assessmentPanel
+            // 
+            this.assessmentPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.assessmentPanel.BackColor = System.Drawing.Color.White;
+            this.assessmentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.assessmentPanel.Controls.Add(this.panel2);
+            this.assessmentPanel.Controls.Add(this.panel1);
+            this.assessmentPanel.Controls.Add(this.pictureBox5);
+            this.assessmentPanel.Controls.Add(this.pictureBox4);
+            this.assessmentPanel.Controls.Add(this.label53);
+            this.assessmentPanel.Controls.Add(this.label54);
+            this.assessmentPanel.Controls.Add(this.label55);
+            this.assessmentPanel.Controls.Add(this.cognitiveDataView);
+            this.assessmentPanel.Controls.Add(this.physicalDataView);
+            this.assessmentPanel.Controls.Add(this.emotioalDataVeiw);
+            this.assessmentPanel.Controls.Add(this.languageDataView);
+            this.assessmentPanel.Controls.Add(this.label56);
+            this.assessmentPanel.Location = new System.Drawing.Point(26, 1842);
+            this.assessmentPanel.Name = "assessmentPanel";
+            this.assessmentPanel.Size = new System.Drawing.Size(737, 1126);
+            this.assessmentPanel.TabIndex = 58;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.label62);
+            this.panel2.Controls.Add(this.label66);
+            this.panel2.Controls.Add(this.label65);
+            this.panel2.Controls.Add(this.label64);
+            this.panel2.Controls.Add(this.label63);
+            this.panel2.Location = new System.Drawing.Point(51, 163);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(639, 34);
+            this.panel2.TabIndex = 44;
+            // 
+            // label62
+            // 
+            this.label62.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.Location = new System.Drawing.Point(260, 0);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(88, 14);
+            this.label62.TabIndex = 40;
+            this.label62.Text = "GRADING CODE";
+            // 
+            // label66
+            // 
+            this.label66.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.Location = new System.Drawing.Point(492, 14);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(121, 17);
+            this.label66.TabIndex = 40;
+            this.label66.Text = "4. UNSATISFACTORY";
+            // 
+            // label65
+            // 
+            this.label65.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(295, 14);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(153, 17);
+            this.label65.TabIndex = 40;
+            this.label65.Text = "3. NEEDS IMPROVEMENT";
+            // 
+            // label64
+            // 
+            this.label64.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(165, 14);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(92, 17);
+            this.label64.TabIndex = 40;
+            this.label64.Text = "2. IMPROVING";
+            // 
+            // label63
+            // 
+            this.label63.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.Location = new System.Drawing.Point(16, 14);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(103, 17);
+            this.label63.TabIndex = 40;
+            this.label63.Text = "1. SATISFACTORY";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.nextTermLbl);
+            this.panel1.Controls.Add(this.label61);
+            this.panel1.Controls.Add(this.termKgLbl);
+            this.panel1.Controls.Add(this.label60);
+            this.panel1.Controls.Add(this.teacherKgLbl);
+            this.panel1.Controls.Add(this.classKgLbl);
+            this.panel1.Controls.Add(this.label58);
+            this.panel1.Controls.Add(this.nameKgLbl);
+            this.panel1.Controls.Add(this.label59);
+            this.panel1.Controls.Add(this.label57);
+            this.panel1.Location = new System.Drawing.Point(51, 86);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(639, 71);
+            this.panel1.TabIndex = 43;
+            // 
+            // nextTermLbl
+            // 
+            this.nextTermLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nextTermLbl.AutoSize = true;
+            this.nextTermLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextTermLbl.Location = new System.Drawing.Point(429, 47);
+            this.nextTermLbl.Name = "nextTermLbl";
+            this.nextTermLbl.Size = new System.Drawing.Size(146, 19);
+            this.nextTermLbl.TabIndex = 40;
+            this.nextTermLbl.Text = "NEXT TERM BEGINS:";
+            // 
+            // label61
+            // 
+            this.label61.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.Location = new System.Drawing.Point(315, 51);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(112, 15);
+            this.label61.TabIndex = 40;
+            this.label61.Text = "NEXT TERM BEGINS:";
+            // 
+            // termKgLbl
+            // 
+            this.termKgLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.termKgLbl.AutoSize = true;
+            this.termKgLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.termKgLbl.Location = new System.Drawing.Point(44, 48);
+            this.termKgLbl.Name = "termKgLbl";
+            this.termKgLbl.Size = new System.Drawing.Size(52, 19);
+            this.termKgLbl.TabIndex = 40;
+            this.termKgLbl.Text = "TERM:";
+            // 
+            // label60
+            // 
+            this.label60.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.Location = new System.Drawing.Point(9, 51);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(40, 15);
+            this.label60.TabIndex = 40;
+            this.label60.Text = "TERM:";
+            // 
+            // teacherKgLbl
+            // 
+            this.teacherKgLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.teacherKgLbl.AutoSize = true;
+            this.teacherKgLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teacherKgLbl.Location = new System.Drawing.Point(64, 26);
+            this.teacherKgLbl.Name = "teacherKgLbl";
+            this.teacherKgLbl.Size = new System.Drawing.Size(74, 19);
+            this.teacherKgLbl.TabIndex = 40;
+            this.teacherKgLbl.Text = "TEACHER:";
+            // 
+            // classKgLbl
+            // 
+            this.classKgLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.classKgLbl.AutoSize = true;
+            this.classKgLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classKgLbl.Location = new System.Drawing.Point(429, 2);
+            this.classKgLbl.Name = "classKgLbl";
+            this.classKgLbl.Size = new System.Drawing.Size(56, 19);
+            this.classKgLbl.TabIndex = 40;
+            this.classKgLbl.Text = "NAME:";
+            // 
+            // label58
+            // 
+            this.label58.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label58.AutoSize = true;
+            this.label58.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label58.Location = new System.Drawing.Point(7, 29);
+            this.label58.Name = "label58";
+            this.label58.Size = new System.Drawing.Size(57, 15);
+            this.label58.TabIndex = 40;
+            this.label58.Text = "TEACHER:";
+            // 
+            // nameKgLbl
+            // 
+            this.nameKgLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nameKgLbl.AutoSize = true;
+            this.nameKgLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameKgLbl.Location = new System.Drawing.Point(49, 2);
+            this.nameKgLbl.Name = "nameKgLbl";
+            this.nameKgLbl.Size = new System.Drawing.Size(54, 19);
+            this.nameKgLbl.TabIndex = 40;
+            this.nameKgLbl.Text = "Mensa";
+            // 
+            // label59
+            // 
+            this.label59.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label59.Location = new System.Drawing.Point(389, 5);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(41, 15);
+            this.label59.TabIndex = 40;
+            this.label59.Text = "CLASS:";
+            // 
+            // label57
+            // 
+            this.label57.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(6, 5);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(42, 15);
+            this.label57.TabIndex = 40;
+            this.label57.Text = "NAME:";
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
+            this.pictureBox5.Location = new System.Drawing.Point(585, 18);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(65, 68);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 42;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
+            this.pictureBox4.Location = new System.Drawing.Point(63, 18);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(70, 68);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 42;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label53
+            // 
+            this.label53.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(227, 52);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(242, 19);
+            this.label53.TabIndex = 41;
+            this.label53.Text = "KINDERGARTEN PROGRESS REPORT";
+            // 
+            // label54
+            // 
+            this.label54.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label54.Location = new System.Drawing.Point(303, 37);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(84, 15);
+            this.label54.TabIndex = 40;
+            this.label54.Text = "MEMPEASSEM";
+            // 
+            // label55
+            // 
+            this.label55.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label55.AutoSize = true;
+            this.label55.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label55.Location = new System.Drawing.Point(224, 18);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(278, 19);
+            this.label55.TabIndex = 39;
+            this.label55.Text = "PERFECT PEACE  PREPARATORY SCHOOL";
+            // 
+            // languageDataView
+            // 
+            this.languageDataView.AllowUserToAddRows = false;
+            this.languageDataView.AllowUserToDeleteRows = false;
+            this.languageDataView.AllowUserToOrderColumns = true;
+            this.languageDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.languageDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.languageDataView.BackgroundColor = System.Drawing.Color.White;
+            this.languageDataView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle28.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.languageDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            this.languageDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.languageDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.assessment,
+            this.satisfactoryR,
+            this.improvingR,
+            this.needs_improvementR,
+            this.unsatisfactoryR});
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle34.BackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle34.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle34.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.languageDataView.DefaultCellStyle = dataGridViewCellStyle34;
+            this.languageDataView.EnableHeadersVisualStyles = false;
+            this.languageDataView.Location = new System.Drawing.Point(42, 203);
+            this.languageDataView.Name = "languageDataView";
+            this.languageDataView.ReadOnly = true;
+            this.languageDataView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle35.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle35.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.languageDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle35;
+            this.languageDataView.RowHeadersVisible = false;
+            this.languageDataView.RowHeadersWidth = 18;
+            this.languageDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle36.BackColor = System.Drawing.Color.Snow;
+            this.languageDataView.RowsDefaultCellStyle = dataGridViewCellStyle36;
+            this.languageDataView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.languageDataView.ShowEditingIcon = false;
+            this.languageDataView.Size = new System.Drawing.Size(656, 31);
+            this.languageDataView.TabIndex = 7;
+            this.languageDataView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.languageDataView_DataError);
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.Location = new System.Drawing.Point(850, 111);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(101, 31);
+            this.label56.TabIndex = 2;
+            this.label56.Text = "label56";
+            // 
             // inputPanel
             // 
+            this.inputPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.inputPanel.Controls.Add(this.termEndCb);
             this.inputPanel.Controls.Add(this.resultInputBtn);
             this.inputPanel.Controls.Add(this.termDate);
@@ -198,7 +627,7 @@
             this.inputPanel.Controls.Add(this.label30);
             this.inputPanel.Controls.Add(this.label27);
             this.inputPanel.Controls.Add(this.label26);
-            this.inputPanel.Location = new System.Drawing.Point(33, 198);
+            this.inputPanel.Location = new System.Drawing.Point(35, 3);
             this.inputPanel.Name = "inputPanel";
             this.inputPanel.Size = new System.Drawing.Size(720, 200);
             this.inputPanel.TabIndex = 56;
@@ -345,6 +774,21 @@
             this.label26.TabIndex = 55;
             this.label26.Text = "PRINT STUDENT RESULT";
             // 
+            // printAssBtn
+            // 
+            this.printAssBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.printAssBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.printAssBtn.FlatAppearance.BorderSize = 0;
+            this.printAssBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.printAssBtn.ForeColor = System.Drawing.Color.White;
+            this.printAssBtn.Location = new System.Drawing.Point(343, 2997);
+            this.printAssBtn.Name = "printAssBtn";
+            this.printAssBtn.Size = new System.Drawing.Size(99, 23);
+            this.printAssBtn.TabIndex = 3;
+            this.printAssBtn.Text = "Print Assessment";
+            this.printAssBtn.UseVisualStyleBackColor = false;
+            this.printAssBtn.Click += new System.EventHandler(this.printAssBtn_Click);
+            // 
             // testPanel
             // 
             this.testPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -393,17 +837,27 @@
             this.testPanel.Controls.Add(this.label24);
             this.testPanel.Controls.Add(this.label40);
             this.testPanel.Controls.Add(this.label41);
-            this.testPanel.Location = new System.Drawing.Point(345, 1160);
+            this.testPanel.Location = new System.Drawing.Point(26, 954);
             this.testPanel.Name = "testPanel";
-            this.testPanel.Size = new System.Drawing.Size(720, 796);
+            this.testPanel.Size = new System.Drawing.Size(737, 796);
             this.testPanel.TabIndex = 55;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
+            this.pictureBox3.Location = new System.Drawing.Point(320, 10);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(100, 82);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 49;
+            this.pictureBox3.TabStop = false;
             // 
             // stationaryLbl
             // 
             this.stationaryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.stationaryLbl.AutoSize = true;
             this.stationaryLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stationaryLbl.Location = new System.Drawing.Point(388, 469);
+            this.stationaryLbl.Location = new System.Drawing.Point(396, 469);
             this.stationaryLbl.Name = "stationaryLbl";
             this.stationaryLbl.Size = new System.Drawing.Size(69, 19);
             this.stationaryLbl.TabIndex = 47;
@@ -415,7 +869,7 @@
             this.PtaLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PtaLbl.AutoSize = true;
             this.PtaLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PtaLbl.Location = new System.Drawing.Point(388, 504);
+            this.PtaLbl.Location = new System.Drawing.Point(396, 504);
             this.PtaLbl.Name = "PtaLbl";
             this.PtaLbl.Size = new System.Drawing.Size(69, 19);
             this.PtaLbl.TabIndex = 48;
@@ -427,7 +881,7 @@
             this.firstAidLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.firstAidLbl.AutoSize = true;
             this.firstAidLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstAidLbl.Location = new System.Drawing.Point(388, 430);
+            this.firstAidLbl.Location = new System.Drawing.Point(396, 430);
             this.firstAidLbl.Name = "firstAidLbl";
             this.firstAidLbl.Size = new System.Drawing.Size(69, 19);
             this.firstAidLbl.TabIndex = 45;
@@ -439,7 +893,7 @@
             this.extraClassesLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.extraClassesLbl.AutoSize = true;
             this.extraClassesLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.extraClassesLbl.Location = new System.Drawing.Point(203, 696);
+            this.extraClassesLbl.Location = new System.Drawing.Point(211, 696);
             this.extraClassesLbl.Name = "extraClassesLbl";
             this.extraClassesLbl.Size = new System.Drawing.Size(69, 19);
             this.extraClassesLbl.TabIndex = 46;
@@ -451,7 +905,7 @@
             this.maintenanceLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.maintenanceLbl.AutoSize = true;
             this.maintenanceLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maintenanceLbl.Location = new System.Drawing.Point(388, 361);
+            this.maintenanceLbl.Location = new System.Drawing.Point(396, 361);
             this.maintenanceLbl.Name = "maintenanceLbl";
             this.maintenanceLbl.Size = new System.Drawing.Size(69, 19);
             this.maintenanceLbl.TabIndex = 43;
@@ -463,7 +917,7 @@
             this.transportLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.transportLbl.AutoSize = true;
             this.transportLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.transportLbl.Location = new System.Drawing.Point(535, 696);
+            this.transportLbl.Location = new System.Drawing.Point(543, 696);
             this.transportLbl.Name = "transportLbl";
             this.transportLbl.Size = new System.Drawing.Size(69, 19);
             this.transportLbl.TabIndex = 44;
@@ -475,7 +929,7 @@
             this.examsFeesLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.examsFeesLbl.AutoSize = true;
             this.examsFeesLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.examsFeesLbl.Location = new System.Drawing.Point(519, 663);
+            this.examsFeesLbl.Location = new System.Drawing.Point(527, 663);
             this.examsFeesLbl.Name = "examsFeesLbl";
             this.examsFeesLbl.Size = new System.Drawing.Size(69, 19);
             this.examsFeesLbl.TabIndex = 44;
@@ -487,7 +941,7 @@
             this.cocurricularLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cocurricularLbl.AutoSize = true;
             this.cocurricularLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cocurricularLbl.Location = new System.Drawing.Point(389, 540);
+            this.cocurricularLbl.Location = new System.Drawing.Point(397, 540);
             this.cocurricularLbl.Name = "cocurricularLbl";
             this.cocurricularLbl.Size = new System.Drawing.Size(69, 19);
             this.cocurricularLbl.TabIndex = 41;
@@ -499,7 +953,7 @@
             this.totalFeesLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.totalFeesLbl.AutoSize = true;
             this.totalFeesLbl.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalFeesLbl.Location = new System.Drawing.Point(365, 761);
+            this.totalFeesLbl.Location = new System.Drawing.Point(373, 761);
             this.totalFeesLbl.Name = "totalFeesLbl";
             this.totalFeesLbl.Size = new System.Drawing.Size(84, 23);
             this.totalFeesLbl.TabIndex = 42;
@@ -511,7 +965,7 @@
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(279, 95);
+            this.label18.Location = new System.Drawing.Point(287, 95);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(185, 23);
             this.label18.TabIndex = 36;
@@ -522,7 +976,7 @@
             this.label51.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(388, 292);
+            this.label51.Location = new System.Drawing.Point(396, 292);
             this.label51.Name = "label51";
             this.label51.Size = new System.Drawing.Size(115, 19);
             this.label51.TabIndex = 39;
@@ -534,7 +988,7 @@
             this.label50.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(40, 292);
+            this.label50.Location = new System.Drawing.Point(48, 292);
             this.label50.Name = "label50";
             this.label50.Size = new System.Drawing.Size(100, 19);
             this.label50.TabIndex = 39;
@@ -546,7 +1000,7 @@
             this.label49.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(340, 235);
+            this.label49.Location = new System.Drawing.Point(348, 235);
             this.label49.Name = "label49";
             this.label49.Size = new System.Drawing.Size(95, 19);
             this.label49.TabIndex = 39;
@@ -558,7 +1012,7 @@
             this.label48.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(338, 176);
+            this.label48.Location = new System.Drawing.Point(346, 176);
             this.label48.Name = "label48";
             this.label48.Size = new System.Drawing.Size(329, 19);
             this.label48.TabIndex = 39;
@@ -570,7 +1024,7 @@
             this.label47.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(388, 159);
+            this.label47.Location = new System.Drawing.Point(396, 159);
             this.label47.Name = "label47";
             this.label47.Size = new System.Drawing.Size(84, 19);
             this.label47.TabIndex = 39;
@@ -582,7 +1036,7 @@
             this.label46.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(388, 140);
+            this.label46.Location = new System.Drawing.Point(396, 140);
             this.label46.Name = "label46";
             this.label46.Size = new System.Drawing.Size(208, 19);
             this.label46.TabIndex = 39;
@@ -594,7 +1048,7 @@
             this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(40, 235);
+            this.label45.Location = new System.Drawing.Point(48, 235);
             this.label45.Name = "label45";
             this.label45.Size = new System.Drawing.Size(47, 19);
             this.label45.TabIndex = 39;
@@ -606,7 +1060,7 @@
             this.label44.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(40, 203);
+            this.label44.Location = new System.Drawing.Point(48, 203);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(51, 19);
             this.label44.TabIndex = 39;
@@ -618,7 +1072,7 @@
             this.termLbl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.termLbl2.AutoSize = true;
             this.termLbl2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.termLbl2.Location = new System.Drawing.Point(97, 203);
+            this.termLbl2.Location = new System.Drawing.Point(105, 203);
             this.termLbl2.Name = "termLbl2";
             this.termLbl2.Size = new System.Drawing.Size(39, 19);
             this.termLbl2.TabIndex = 39;
@@ -630,7 +1084,7 @@
             this.dateLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateLbl.AutoSize = true;
             this.dateLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateLbl.Location = new System.Drawing.Point(93, 235);
+            this.dateLbl.Location = new System.Drawing.Point(101, 235);
             this.dateLbl.Name = "dateLbl";
             this.dateLbl.Size = new System.Drawing.Size(38, 19);
             this.dateLbl.TabIndex = 39;
@@ -642,7 +1096,7 @@
             this.stntNameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.stntNameLbl.AutoSize = true;
             this.stntNameLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stntNameLbl.Location = new System.Drawing.Point(164, 140);
+            this.stntNameLbl.Location = new System.Drawing.Point(172, 140);
             this.stntNameLbl.Name = "stntNameLbl";
             this.stntNameLbl.Size = new System.Drawing.Size(49, 19);
             this.stntNameLbl.TabIndex = 39;
@@ -654,7 +1108,7 @@
             this.stntClassLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.stntClassLbl.AutoSize = true;
             this.stntClassLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stntClassLbl.Location = new System.Drawing.Point(98, 171);
+            this.stntClassLbl.Location = new System.Drawing.Point(106, 171);
             this.stntClassLbl.Name = "stntClassLbl";
             this.stntClassLbl.Size = new System.Drawing.Size(42, 19);
             this.stntClassLbl.TabIndex = 39;
@@ -666,7 +1120,7 @@
             this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(40, 171);
+            this.label43.Location = new System.Drawing.Point(48, 171);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(52, 19);
             this.label43.TabIndex = 39;
@@ -678,7 +1132,7 @@
             this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(40, 140);
+            this.label42.Location = new System.Drawing.Point(48, 140);
             this.label42.Name = "label42";
             this.label42.Size = new System.Drawing.Size(118, 19);
             this.label42.TabIndex = 39;
@@ -690,7 +1144,7 @@
             this.tuitionLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tuitionLbl.AutoSize = true;
             this.tuitionLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tuitionLbl.Location = new System.Drawing.Point(388, 327);
+            this.tuitionLbl.Location = new System.Drawing.Point(396, 327);
             this.tuitionLbl.Name = "tuitionLbl";
             this.tuitionLbl.Size = new System.Drawing.Size(69, 19);
             this.tuitionLbl.TabIndex = 39;
@@ -702,7 +1156,7 @@
             this.feesLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.feesLbl.AutoSize = true;
             this.feesLbl.Font = new System.Drawing.Font("Calibri", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feesLbl.Location = new System.Drawing.Point(389, 579);
+            this.feesLbl.Location = new System.Drawing.Point(397, 579);
             this.feesLbl.Name = "feesLbl";
             this.feesLbl.Size = new System.Drawing.Size(79, 22);
             this.feesLbl.TabIndex = 37;
@@ -714,7 +1168,7 @@
             this.owingLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.owingLbl.AutoSize = true;
             this.owingLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.owingLbl.Location = new System.Drawing.Point(192, 663);
+            this.owingLbl.Location = new System.Drawing.Point(200, 663);
             this.owingLbl.Name = "owingLbl";
             this.owingLbl.Size = new System.Drawing.Size(69, 19);
             this.owingLbl.TabIndex = 40;
@@ -726,7 +1180,7 @@
             this.waterLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.waterLbl.AutoSize = true;
             this.waterLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.waterLbl.Location = new System.Drawing.Point(388, 396);
+            this.waterLbl.Location = new System.Drawing.Point(396, 396);
             this.waterLbl.Name = "waterLbl";
             this.waterLbl.Size = new System.Drawing.Size(69, 19);
             this.waterLbl.TabIndex = 38;
@@ -738,7 +1192,7 @@
             this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(40, 327);
+            this.label36.Location = new System.Drawing.Point(48, 327);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(87, 19);
             this.label36.TabIndex = 24;
@@ -749,7 +1203,7 @@
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(40, 668);
+            this.label23.Location = new System.Drawing.Point(48, 668);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(267, 19);
             this.label23.TabIndex = 24;
@@ -760,7 +1214,7 @@
             this.label52.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label52.AutoSize = true;
             this.label52.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(388, 701);
+            this.label52.Location = new System.Drawing.Point(396, 701);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(254, 19);
             this.label52.TabIndex = 25;
@@ -771,7 +1225,7 @@
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(389, 668);
+            this.label19.Location = new System.Drawing.Point(397, 668);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(252, 19);
             this.label19.TabIndex = 25;
@@ -782,7 +1236,7 @@
             this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(40, 701);
+            this.label21.Location = new System.Drawing.Point(48, 701);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(264, 19);
             this.label21.TabIndex = 24;
@@ -793,7 +1247,7 @@
             this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(40, 361);
+            this.label37.Location = new System.Drawing.Point(48, 361);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(107, 19);
             this.label37.TabIndex = 25;
@@ -804,7 +1258,7 @@
             this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(40, 430);
+            this.label38.Location = new System.Drawing.Point(48, 430);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(71, 19);
             this.label38.TabIndex = 24;
@@ -815,7 +1269,7 @@
             this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Calibri", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(40, 579);
+            this.label20.Location = new System.Drawing.Point(48, 579);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(96, 22);
             this.label20.TabIndex = 26;
@@ -826,7 +1280,7 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(223, 761);
+            this.label22.Location = new System.Drawing.Point(231, 761);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(148, 23);
             this.label22.TabIndex = 25;
@@ -837,7 +1291,7 @@
             this.label39.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(40, 396);
+            this.label39.Location = new System.Drawing.Point(48, 396);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(230, 19);
             this.label39.TabIndex = 26;
@@ -848,7 +1302,7 @@
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(40, 504);
+            this.label24.Location = new System.Drawing.Point(48, 504);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(72, 19);
             this.label24.TabIndex = 26;
@@ -859,7 +1313,7 @@
             this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(40, 540);
+            this.label40.Location = new System.Drawing.Point(48, 540);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(114, 19);
             this.label40.TabIndex = 25;
@@ -870,7 +1324,7 @@
             this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(40, 469);
+            this.label41.Location = new System.Drawing.Point(48, 469);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(90, 19);
             this.label41.TabIndex = 26;
@@ -880,7 +1334,7 @@
             // 
             this.label34.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(799, 2809);
+            this.label34.Location = new System.Drawing.Point(1349, 2809);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(0, 13);
             this.label34.TabIndex = 53;
@@ -892,7 +1346,7 @@
             this.printResultBtn.FlatAppearance.BorderSize = 0;
             this.printResultBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.printResultBtn.ForeColor = System.Drawing.Color.White;
-            this.printResultBtn.Location = new System.Drawing.Point(639, 1084);
+            this.printResultBtn.Location = new System.Drawing.Point(343, 867);
             this.printResultBtn.Name = "printResultBtn";
             this.printResultBtn.Size = new System.Drawing.Size(99, 23);
             this.printResultBtn.TabIndex = 3;
@@ -907,7 +1361,7 @@
             this.printBillBtn.FlatAppearance.BorderSize = 0;
             this.printBillBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.printBillBtn.ForeColor = System.Drawing.Color.White;
-            this.printBillBtn.Location = new System.Drawing.Point(654, 1962);
+            this.printBillBtn.Location = new System.Drawing.Point(320, 1765);
             this.printBillBtn.Name = "printBillBtn";
             this.printBillBtn.Size = new System.Drawing.Size(99, 23);
             this.printBillBtn.TabIndex = 3;
@@ -940,17 +1394,37 @@
             this.reportCardPanel.Controls.Add(this.label3);
             this.reportCardPanel.Controls.Add(this.label2);
             this.reportCardPanel.Controls.Add(this.label1);
-            this.reportCardPanel.Location = new System.Drawing.Point(345, 426);
+            this.reportCardPanel.Location = new System.Drawing.Point(26, 209);
             this.reportCardPanel.Name = "reportCardPanel";
-            this.reportCardPanel.Size = new System.Drawing.Size(720, 652);
+            this.reportCardPanel.Size = new System.Drawing.Size(737, 652);
             this.reportCardPanel.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
+            this.pictureBox2.Location = new System.Drawing.Point(16, 16);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(123, 90);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 38;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(581, 16);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(123, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
             // 
             // nextTermDateLbl
             // 
             this.nextTermDateLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nextTermDateLbl.AutoSize = true;
             this.nextTermDateLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nextTermDateLbl.Location = new System.Drawing.Point(545, 157);
+            this.nextTermDateLbl.Location = new System.Drawing.Point(553, 157);
             this.nextTermDateLbl.Name = "nextTermDateLbl";
             this.nextTermDateLbl.Size = new System.Drawing.Size(51, 19);
             this.nextTermDateLbl.TabIndex = 36;
@@ -962,7 +1436,7 @@
             this.noInClassLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.noInClassLbl.AutoSize = true;
             this.noInClassLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.noInClassLbl.Location = new System.Drawing.Point(175, 157);
+            this.noInClassLbl.Location = new System.Drawing.Point(183, 157);
             this.noInClassLbl.Name = "noInClassLbl";
             this.noInClassLbl.Size = new System.Drawing.Size(51, 19);
             this.noInClassLbl.TabIndex = 37;
@@ -975,14 +1449,14 @@
             this.resultDataView.AllowUserToDeleteRows = false;
             this.resultDataView.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.resultDataView.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle33.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle33.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle33.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle33.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle33.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.resultDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle37.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle37.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle37.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle37.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.resultDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle37;
             this.resultDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.resultDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.subject_id,
@@ -992,27 +1466,27 @@
             this.total_score,
             this.position_in_subject,
             this.remarks});
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle39.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle39.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle39.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.resultDataView.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle43.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle43.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle43.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle43.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle43.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.resultDataView.DefaultCellStyle = dataGridViewCellStyle43;
             this.resultDataView.Enabled = false;
-            this.resultDataView.Location = new System.Drawing.Point(15, 181);
+            this.resultDataView.Location = new System.Drawing.Point(23, 181);
             this.resultDataView.Name = "resultDataView";
             this.resultDataView.ReadOnly = true;
             this.resultDataView.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.resultDataView.RowHeadersVisible = false;
             this.resultDataView.RowHeadersWidth = 4;
             this.resultDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle40.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle40.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.resultDataView.RowsDefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle44.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle44.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            dataGridViewCellStyle44.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.resultDataView.RowsDefaultCellStyle = dataGridViewCellStyle44;
             this.resultDataView.RowTemplate.Height = 30;
             this.resultDataView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.resultDataView.Size = new System.Drawing.Size(689, 68);
@@ -1031,8 +1505,8 @@
             // 
             this.subject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.subject.DataPropertyName = "name";
-            dataGridViewCellStyle34.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.subject.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.subject.DefaultCellStyle = dataGridViewCellStyle38;
             this.subject.HeaderText = "SUBJECT";
             this.subject.Name = "subject";
             this.subject.ReadOnly = true;
@@ -1041,8 +1515,8 @@
             // 
             this.exam_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.exam_score.DataPropertyName = "exam_total_marks";
-            dataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.exam_score.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle39.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.exam_score.DefaultCellStyle = dataGridViewCellStyle39;
             this.exam_score.HeaderText = "EXAM SCORE 50%";
             this.exam_score.Name = "exam_score";
             this.exam_score.ReadOnly = true;
@@ -1051,8 +1525,8 @@
             // 
             this.class_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.class_score.DataPropertyName = "class_total_marks";
-            dataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.class_score.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.class_score.DefaultCellStyle = dataGridViewCellStyle40;
             this.class_score.HeaderText = "CLASS SCORE 50%";
             this.class_score.Name = "class_score";
             this.class_score.ReadOnly = true;
@@ -1061,8 +1535,8 @@
             // 
             this.total_score.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.total_score.DataPropertyName = "pass_marks";
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.total_score.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle41.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.total_score.DefaultCellStyle = dataGridViewCellStyle41;
             this.total_score.HeaderText = "TOTAL SCORE 100%";
             this.total_score.Name = "total_score";
             this.total_score.ReadOnly = true;
@@ -1071,9 +1545,9 @@
             // 
             this.position_in_subject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.position_in_subject.DataPropertyName = "position";
-            dataGridViewCellStyle38.NullValue = null;
-            dataGridViewCellStyle38.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.position_in_subject.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle42.NullValue = null;
+            dataGridViewCellStyle42.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.position_in_subject.DefaultCellStyle = dataGridViewCellStyle42;
             this.position_in_subject.HeaderText = "POSITION IN SUBJECT";
             this.position_in_subject.Name = "position_in_subject";
             this.position_in_subject.ReadOnly = true;
@@ -1091,7 +1565,7 @@
             this.classLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.classLbl.AutoSize = true;
             this.classLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classLbl.Location = new System.Drawing.Point(381, 126);
+            this.classLbl.Location = new System.Drawing.Point(389, 126);
             this.classLbl.Name = "classLbl";
             this.classLbl.Size = new System.Drawing.Size(26, 19);
             this.classLbl.TabIndex = 16;
@@ -1103,7 +1577,7 @@
             this.positionLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.positionLbl.AutoSize = true;
             this.positionLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.positionLbl.Location = new System.Drawing.Point(535, 126);
+            this.positionLbl.Location = new System.Drawing.Point(543, 126);
             this.positionLbl.Name = "positionLbl";
             this.positionLbl.Size = new System.Drawing.Size(32, 19);
             this.positionLbl.TabIndex = 15;
@@ -1115,7 +1589,7 @@
             this.termLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.termLbl.AutoSize = true;
             this.termLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.termLbl.Location = new System.Drawing.Point(641, 126);
+            this.termLbl.Location = new System.Drawing.Point(649, 126);
             this.termLbl.Name = "termLbl";
             this.termLbl.Size = new System.Drawing.Size(17, 19);
             this.termLbl.TabIndex = 14;
@@ -1127,7 +1601,7 @@
             this.nameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nameLbl.AutoSize = true;
             this.nameLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLbl.Location = new System.Drawing.Point(120, 126);
+            this.nameLbl.Location = new System.Drawing.Point(128, 126);
             this.nameLbl.Name = "nameLbl";
             this.nameLbl.Size = new System.Drawing.Size(98, 19);
             this.nameLbl.TabIndex = 10;
@@ -1158,7 +1632,7 @@
             this.remarksPanel.Controls.Add(this.rawScoreLbl);
             this.remarksPanel.Controls.Add(this.label10);
             this.remarksPanel.Controls.Add(this.label11);
-            this.remarksPanel.Location = new System.Drawing.Point(16, 264);
+            this.remarksPanel.Location = new System.Drawing.Point(24, 264);
             this.remarksPanel.Name = "remarksPanel";
             this.remarksPanel.Size = new System.Drawing.Size(689, 306);
             this.remarksPanel.TabIndex = 9;
@@ -1398,7 +1872,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(453, 128);
+            this.label9.Location = new System.Drawing.Point(461, 128);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(124, 19);
             this.label9.TabIndex = 8;
@@ -1409,7 +1883,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(583, 128);
+            this.label8.Location = new System.Drawing.Point(591, 128);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(107, 19);
             this.label8.TabIndex = 7;
@@ -1420,7 +1894,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(323, 128);
+            this.label7.Location = new System.Drawing.Point(331, 128);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(124, 19);
             this.label7.TabIndex = 6;
@@ -1431,7 +1905,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(348, 159);
+            this.label6.Location = new System.Drawing.Point(356, 159);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(341, 19);
             this.label6.TabIndex = 5;
@@ -1442,7 +1916,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 159);
+            this.label5.Location = new System.Drawing.Point(20, 159);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(309, 19);
             this.label5.TabIndex = 4;
@@ -1453,7 +1927,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(12, 128);
+            this.label4.Location = new System.Drawing.Point(20, 128);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(305, 19);
             this.label4.TabIndex = 3;
@@ -1464,7 +1938,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(263, 87);
+            this.label3.Location = new System.Drawing.Point(271, 87);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(186, 19);
             this.label3.TabIndex = 2;
@@ -1475,7 +1949,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(304, 59);
+            this.label2.Location = new System.Drawing.Point(312, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(103, 19);
             this.label2.TabIndex = 1;
@@ -1486,116 +1960,409 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(219, 31);
+            this.label1.Location = new System.Drawing.Point(227, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(278, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "PERFECT PEACE  PREPARATORY SCHOOL";
             // 
-            // pictureBox3
+            // emotioalDataVeiw
             // 
-            this.pictureBox3.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
-            this.pictureBox3.Location = new System.Drawing.Point(320, 10);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 82);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 49;
-            this.pictureBox3.TabStop = false;
+            this.emotioalDataVeiw.AllowUserToAddRows = false;
+            this.emotioalDataVeiw.AllowUserToDeleteRows = false;
+            this.emotioalDataVeiw.AllowUserToOrderColumns = true;
+            this.emotioalDataVeiw.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.emotioalDataVeiw.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.emotioalDataVeiw.BackgroundColor = System.Drawing.Color.White;
+            this.emotioalDataVeiw.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.emotioalDataVeiw.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            this.emotioalDataVeiw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.emotioalDataVeiw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.assessmentE,
+            this.satisfactoryE,
+            this.improvedE,
+            this.needs_improvementE,
+            this.unsatisfactoryE});
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle25.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.emotioalDataVeiw.DefaultCellStyle = dataGridViewCellStyle25;
+            this.emotioalDataVeiw.EnableHeadersVisualStyles = false;
+            this.emotioalDataVeiw.Location = new System.Drawing.Point(43, 240);
+            this.emotioalDataVeiw.Name = "emotioalDataVeiw";
+            this.emotioalDataVeiw.ReadOnly = true;
+            this.emotioalDataVeiw.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle26.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.emotioalDataVeiw.RowHeadersDefaultCellStyle = dataGridViewCellStyle26;
+            this.emotioalDataVeiw.RowHeadersVisible = false;
+            this.emotioalDataVeiw.RowHeadersWidth = 18;
+            this.emotioalDataVeiw.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle27.BackColor = System.Drawing.Color.Snow;
+            this.emotioalDataVeiw.RowsDefaultCellStyle = dataGridViewCellStyle27;
+            this.emotioalDataVeiw.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.emotioalDataVeiw.ShowEditingIcon = false;
+            this.emotioalDataVeiw.Size = new System.Drawing.Size(656, 31);
+            this.emotioalDataVeiw.TabIndex = 7;
+            this.emotioalDataVeiw.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.languageDataView_DataError);
             // 
-            // pictureBox2
+            // physicalDataView
             // 
-            this.pictureBox2.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
-            this.pictureBox2.Location = new System.Drawing.Point(16, 16);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(123, 90);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 38;
-            this.pictureBox2.TabStop = false;
+            this.physicalDataView.AllowUserToAddRows = false;
+            this.physicalDataView.AllowUserToDeleteRows = false;
+            this.physicalDataView.AllowUserToOrderColumns = true;
+            this.physicalDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.physicalDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.physicalDataView.BackgroundColor = System.Drawing.Color.White;
+            this.physicalDataView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.physicalDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.physicalDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.physicalDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.assessmentP,
+            this.satisfactoryP,
+            this.improvedP,
+            this.needs_improvementP,
+            this.unsatisfactoryP});
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.physicalDataView.DefaultCellStyle = dataGridViewCellStyle16;
+            this.physicalDataView.EnableHeadersVisualStyles = false;
+            this.physicalDataView.Location = new System.Drawing.Point(42, 277);
+            this.physicalDataView.Name = "physicalDataView";
+            this.physicalDataView.ReadOnly = true;
+            this.physicalDataView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.physicalDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            this.physicalDataView.RowHeadersVisible = false;
+            this.physicalDataView.RowHeadersWidth = 18;
+            this.physicalDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.Snow;
+            this.physicalDataView.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            this.physicalDataView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.physicalDataView.ShowEditingIcon = false;
+            this.physicalDataView.Size = new System.Drawing.Size(656, 31);
+            this.physicalDataView.TabIndex = 7;
+            this.physicalDataView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.languageDataView_DataError);
             // 
-            // pictureBox1
+            // cognitiveDataView
             // 
-            this.pictureBox1.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(581, 16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(123, 90);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 38;
-            this.pictureBox1.TabStop = false;
+            this.cognitiveDataView.AllowUserToAddRows = false;
+            this.cognitiveDataView.AllowUserToDeleteRows = false;
+            this.cognitiveDataView.AllowUserToOrderColumns = true;
+            this.cognitiveDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cognitiveDataView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.cognitiveDataView.BackgroundColor = System.Drawing.Color.White;
+            this.cognitiveDataView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cognitiveDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.cognitiveDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cognitiveDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.assessmentC,
+            this.satisfactoryC,
+            this.improvedC,
+            this.needs_improvementC,
+            this.unsatisfactoryC});
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.cognitiveDataView.DefaultCellStyle = dataGridViewCellStyle7;
+            this.cognitiveDataView.EnableHeadersVisualStyles = false;
+            this.cognitiveDataView.Location = new System.Drawing.Point(41, 314);
+            this.cognitiveDataView.Name = "cognitiveDataView";
+            this.cognitiveDataView.ReadOnly = true;
+            this.cognitiveDataView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cognitiveDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.cognitiveDataView.RowHeadersVisible = false;
+            this.cognitiveDataView.RowHeadersWidth = 18;
+            this.cognitiveDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.Snow;
+            this.cognitiveDataView.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.cognitiveDataView.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.cognitiveDataView.ShowEditingIcon = false;
+            this.cognitiveDataView.Size = new System.Drawing.Size(656, 31);
+            this.cognitiveDataView.TabIndex = 7;
+            this.cognitiveDataView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.languageDataView_DataError);
             // 
-            // assessmentPanel
+            // label67
             // 
-            this.assessmentPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.assessmentPanel.BackColor = System.Drawing.Color.White;
-            this.assessmentPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.assessmentPanel.Controls.Add(this.label56);
-            this.assessmentPanel.Controls.Add(this.label54);
-            this.assessmentPanel.Controls.Add(this.label53);
-            this.assessmentPanel.Location = new System.Drawing.Point(113, 2008);
-            this.assessmentPanel.Name = "assessmentPanel";
-            this.assessmentPanel.Size = new System.Drawing.Size(1138, 292);
-            this.assessmentPanel.TabIndex = 58;
+            this.label67.AutoSize = true;
+            this.label67.Location = new System.Drawing.Point(295, 3093);
+            this.label67.Name = "label67";
+            this.label67.Size = new System.Drawing.Size(41, 13);
+            this.label67.TabIndex = 59;
+            this.label67.Text = "label67";
             // 
-            // label53
+            // assessment
             // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(84, 111);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(295, 31);
-            this.label53.TabIndex = 0;
-            this.label53.Text = "zbbcxnnnnnnnnnnnnnn";
+            this.assessment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.assessment.DataPropertyName = "assessment";
+            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.assessment.DefaultCellStyle = dataGridViewCellStyle29;
+            this.assessment.HeaderText = "LANGUAGE DEVELOPMENT (READING, LISTENING AND ORAL SKILLS)";
+            this.assessment.Name = "assessment";
+            this.assessment.ReadOnly = true;
+            this.assessment.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.assessment.Width = 5;
             // 
-            // label54
+            // satisfactoryR
             // 
-            this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(272, 638);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(57, 13);
-            this.label54.TabIndex = 1;
-            this.label54.Text = "dasbgdfhd";
+            this.satisfactoryR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.satisfactoryR.DataPropertyName = "SATISFACTORY";
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.satisfactoryR.DefaultCellStyle = dataGridViewCellStyle30;
+            this.satisfactoryR.HeaderText = "1";
+            this.satisfactoryR.Name = "satisfactoryR";
+            this.satisfactoryR.ReadOnly = true;
             // 
-            // printAssBtn
+            // improvingR
             // 
-            this.printAssBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.printAssBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.printAssBtn.FlatAppearance.BorderSize = 0;
-            this.printAssBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.printAssBtn.ForeColor = System.Drawing.Color.White;
-            this.printAssBtn.Location = new System.Drawing.Point(654, 2355);
-            this.printAssBtn.Name = "printAssBtn";
-            this.printAssBtn.Size = new System.Drawing.Size(99, 23);
-            this.printAssBtn.TabIndex = 3;
-            this.printAssBtn.Text = "Print Assessment";
-            this.printAssBtn.UseVisualStyleBackColor = false;
-            this.printAssBtn.Click += new System.EventHandler(this.printAssBtn_Click);
+            this.improvingR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.improvingR.DataPropertyName = "IMPROVED";
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.improvingR.DefaultCellStyle = dataGridViewCellStyle31;
+            this.improvingR.HeaderText = "2";
+            this.improvingR.Name = "improvingR";
+            this.improvingR.ReadOnly = true;
             // 
-            // label55
+            // needs_improvementR
             // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(1193, 2776);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(41, 13);
-            this.label55.TabIndex = 59;
-            this.label55.Text = "label55";
+            this.needs_improvementR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.needs_improvementR.DataPropertyName = "NEEDS_IMPROVEMENT";
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.needs_improvementR.DefaultCellStyle = dataGridViewCellStyle32;
+            this.needs_improvementR.HeaderText = "3";
+            this.needs_improvementR.Name = "needs_improvementR";
+            this.needs_improvementR.ReadOnly = true;
             // 
-            // label56
+            // unsatisfactoryR
             // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(850, 111);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(101, 31);
-            this.label56.TabIndex = 2;
-            this.label56.Text = "label56";
+            this.unsatisfactoryR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unsatisfactoryR.DataPropertyName = "UNSATISFACTORY";
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.unsatisfactoryR.DefaultCellStyle = dataGridViewCellStyle33;
+            this.unsatisfactoryR.HeaderText = "4";
+            this.unsatisfactoryR.Name = "unsatisfactoryR";
+            this.unsatisfactoryR.ReadOnly = true;
             // 
-            // label57
+            // assessmentE
             // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(1366, 2388);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(41, 13);
-            this.label57.TabIndex = 60;
-            this.label57.Text = "label57";
+            this.assessmentE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.assessmentE.DataPropertyName = "assessment";
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.assessmentE.DefaultCellStyle = dataGridViewCellStyle20;
+            this.assessmentE.HeaderText = "PERSONAL / SOCIAL / EMOTIONAL DEVELOPMENT";
+            this.assessmentE.Name = "assessmentE";
+            this.assessmentE.ReadOnly = true;
+            this.assessmentE.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.assessmentE.Width = 5;
+            // 
+            // satisfactoryE
+            // 
+            this.satisfactoryE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.satisfactoryE.DataPropertyName = "SATISFACTORY";
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.satisfactoryE.DefaultCellStyle = dataGridViewCellStyle21;
+            this.satisfactoryE.HeaderText = "1";
+            this.satisfactoryE.Name = "satisfactoryE";
+            this.satisfactoryE.ReadOnly = true;
+            // 
+            // improvedE
+            // 
+            this.improvedE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.improvedE.DataPropertyName = "IMPROVED";
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.improvedE.DefaultCellStyle = dataGridViewCellStyle22;
+            this.improvedE.HeaderText = "2";
+            this.improvedE.Name = "improvedE";
+            this.improvedE.ReadOnly = true;
+            // 
+            // needs_improvementE
+            // 
+            this.needs_improvementE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.needs_improvementE.DataPropertyName = "NEEDS_IMPROVEMENT";
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.needs_improvementE.DefaultCellStyle = dataGridViewCellStyle23;
+            this.needs_improvementE.HeaderText = "3";
+            this.needs_improvementE.Name = "needs_improvementE";
+            this.needs_improvementE.ReadOnly = true;
+            // 
+            // unsatisfactoryE
+            // 
+            this.unsatisfactoryE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unsatisfactoryE.DataPropertyName = "UNSATISFACTORY";
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.unsatisfactoryE.DefaultCellStyle = dataGridViewCellStyle24;
+            this.unsatisfactoryE.HeaderText = "4";
+            this.unsatisfactoryE.Name = "unsatisfactoryE";
+            this.unsatisfactoryE.ReadOnly = true;
+            // 
+            // assessmentP
+            // 
+            this.assessmentP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.assessmentP.DataPropertyName = "assessment";
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.assessmentP.DefaultCellStyle = dataGridViewCellStyle11;
+            this.assessmentP.HeaderText = "PHYSICAL DEVELOPMENT";
+            this.assessmentP.Name = "assessmentP";
+            this.assessmentP.ReadOnly = true;
+            this.assessmentP.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.assessmentP.Width = 5;
+            // 
+            // satisfactoryP
+            // 
+            this.satisfactoryP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.satisfactoryP.DataPropertyName = "SATISFACTORY";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.satisfactoryP.DefaultCellStyle = dataGridViewCellStyle12;
+            this.satisfactoryP.HeaderText = "1";
+            this.satisfactoryP.Name = "satisfactoryP";
+            this.satisfactoryP.ReadOnly = true;
+            // 
+            // improvedP
+            // 
+            this.improvedP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.improvedP.DataPropertyName = "IMPROVED";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.improvedP.DefaultCellStyle = dataGridViewCellStyle13;
+            this.improvedP.HeaderText = "2";
+            this.improvedP.Name = "improvedP";
+            this.improvedP.ReadOnly = true;
+            // 
+            // needs_improvementP
+            // 
+            this.needs_improvementP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.needs_improvementP.DataPropertyName = "NEEDS_IMPROVEMENT";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.needs_improvementP.DefaultCellStyle = dataGridViewCellStyle14;
+            this.needs_improvementP.HeaderText = "3";
+            this.needs_improvementP.Name = "needs_improvementP";
+            this.needs_improvementP.ReadOnly = true;
+            // 
+            // unsatisfactoryP
+            // 
+            this.unsatisfactoryP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unsatisfactoryP.DataPropertyName = "UNSATISFACTORY";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.unsatisfactoryP.DefaultCellStyle = dataGridViewCellStyle15;
+            this.unsatisfactoryP.HeaderText = "4";
+            this.unsatisfactoryP.Name = "unsatisfactoryP";
+            this.unsatisfactoryP.ReadOnly = true;
+            // 
+            // assessmentC
+            // 
+            this.assessmentC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.assessmentC.DataPropertyName = "assessment";
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.assessmentC.DefaultCellStyle = dataGridViewCellStyle2;
+            this.assessmentC.HeaderText = "COGNITIVE DEVELOPMENT (POSITION, DIRECTION, THINKING)";
+            this.assessmentC.Name = "assessmentC";
+            this.assessmentC.ReadOnly = true;
+            this.assessmentC.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.assessmentC.Width = 5;
+            // 
+            // satisfactoryC
+            // 
+            this.satisfactoryC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.satisfactoryC.DataPropertyName = "SATISFACTORY";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.satisfactoryC.DefaultCellStyle = dataGridViewCellStyle3;
+            this.satisfactoryC.HeaderText = "1";
+            this.satisfactoryC.Name = "satisfactoryC";
+            this.satisfactoryC.ReadOnly = true;
+            // 
+            // improvedC
+            // 
+            this.improvedC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.improvedC.DataPropertyName = "IMPROVED";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.improvedC.DefaultCellStyle = dataGridViewCellStyle4;
+            this.improvedC.HeaderText = "2";
+            this.improvedC.Name = "improvedC";
+            this.improvedC.ReadOnly = true;
+            // 
+            // needs_improvementC
+            // 
+            this.needs_improvementC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.needs_improvementC.DataPropertyName = "NEEDS_IMPROVEMENT";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.needs_improvementC.DefaultCellStyle = dataGridViewCellStyle5;
+            this.needs_improvementC.HeaderText = "3";
+            this.needs_improvementC.Name = "needs_improvementC";
+            this.needs_improvementC.ReadOnly = true;
+            // 
+            // unsatisfactoryC
+            // 
+            this.unsatisfactoryC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unsatisfactoryC.DataPropertyName = "UNSATISFACTORY";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.unsatisfactoryC.DefaultCellStyle = dataGridViewCellStyle6;
+            this.unsatisfactoryC.HeaderText = "4";
+            this.unsatisfactoryC.Name = "unsatisfactoryC";
+            this.unsatisfactoryC.ReadOnly = true;
             // 
             // ReportCard
             // 
@@ -1607,20 +2374,30 @@
             this.Text = "ReportCard";
             this.bgPanel.ResumeLayout(false);
             this.bgPanel.PerformLayout();
+            this.assessmentPanel.ResumeLayout(false);
+            this.assessmentPanel.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.languageDataView)).EndInit();
             this.inputPanel.ResumeLayout(false);
             this.inputPanel.PerformLayout();
             this.testPanel.ResumeLayout(false);
             this.testPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.reportCardPanel.ResumeLayout(false);
             this.reportCardPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultDataView)).EndInit();
             this.remarksPanel.ResumeLayout(false);
             this.remarksPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.assessmentPanel.ResumeLayout(false);
-            this.assessmentPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.emotioalDataVeiw)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.physicalDataView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cognitiveDataView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1736,11 +2513,54 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel assessmentPanel;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Button printAssBtn;
-        private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.DataGridView languageDataView;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.Label label64;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label nextTermLbl;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label termKgLbl;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label teacherKgLbl;
+        private System.Windows.Forms.Label classKgLbl;
+        private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.Label nameKgLbl;
+        private System.Windows.Forms.Label label59;
         private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.DataGridView cognitiveDataView;
+        private System.Windows.Forms.DataGridView physicalDataView;
+        private System.Windows.Forms.DataGridView emotioalDataVeiw;
+        private System.Windows.Forms.Label label67;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assessment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn satisfactoryR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn improvingR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn needs_improvementR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unsatisfactoryR;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assessmentC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn satisfactoryC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn improvedC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn needs_improvementC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unsatisfactoryC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assessmentP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn satisfactoryP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn improvedP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn needs_improvementP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unsatisfactoryP;
+        private System.Windows.Forms.DataGridViewTextBoxColumn assessmentE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn satisfactoryE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn improvedE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn needs_improvementE;
+        private System.Windows.Forms.DataGridViewTextBoxColumn unsatisfactoryE;
     }
 }

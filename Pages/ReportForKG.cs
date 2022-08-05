@@ -246,6 +246,9 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
+                query = "DELETE FROM KG_assessment WHERE student_id='"+student_id+"' AND term='" + termCb.SelectedItem.ToString() + "' AND class='" + classLbl.Text + "' AND date LIKE '%" + DateTime.Now.Year + "%'";
+                DbClient.query_execute(query);
+
                 for(int i = 0; i < languageAssessment.Count; i++)
                 {
                     if (languageGrade[i].SelectedIndex > -1)
@@ -267,13 +270,13 @@ namespace Perfect_Peace_System.Pages
                     if (emotionalGrade[i].SelectedIndex > -1)
                     {
                         query = "INSERT INTO KG_assessment(assessment, category, " + emotionalGrade[i].SelectedItem.ToString() + ", term, class, date, student_id) " +
-                            "VALUES('" + emotionalAssessment[i].Text + "', 'LANGUAGE DEVELOPMENT (READING, LISTENING AND ORAL SKILLS)', '1', '"+termCb.SelectedItem.ToString()+"', '"+classLbl.Text+"', '"+DateTime.Today+"', '"+student_id+"')";
+                            "VALUES('" + emotionalAssessment[i].Text + "', 'PERSONAL / SOCIAL / EMOTIONAL DEVELOPMENT', '1', '" + termCb.SelectedItem.ToString()+"', '"+classLbl.Text+"', '"+DateTime.Today+"', '"+student_id+"')";
                         DbClient.query_execute(query);
                     }
                     else
                     {
                         query = "INSERT INTO KG_assessment(assessment, category, term, class, date, student_id) " +
-                           "VALUES('" + emotionalAssessment[i].Text + "', 'LANGUAGE DEVELOPMENT (READING, LISTENING AND ORAL SKILLS)', '" + termCb.SelectedItem.ToString() + "', '" + classLbl.Text + "', '" + DateTime.Today + "', '" + student_id + "')";
+                           "VALUES('" + emotionalAssessment[i].Text + "', 'PERSONAL / SOCIAL / EMOTIONAL DEVELOPMENT', '" + termCb.SelectedItem.ToString() + "', '" + classLbl.Text + "', '" + DateTime.Today + "', '" + student_id + "')";
                         DbClient.query_execute(query);
                     }
                 }
@@ -283,13 +286,13 @@ namespace Perfect_Peace_System.Pages
                     if (physicalGrade[i].SelectedIndex > -1)
                     {
                         query = "INSERT INTO KG_assessment(assessment, category, " + physicalGrade[i].SelectedItem.ToString() + ", term, class, date, student_id) " +
-                            "VALUES('" + physicalAssessment[i].Text + "', 'LANGUAGE DEVELOPMENT (READING, LISTENING AND ORAL SKILLS)', '1', '"+termCb.SelectedItem.ToString()+"', '"+classLbl.Text+"', '"+DateTime.Today+"', '"+student_id+"')";
+                            "VALUES('" + physicalAssessment[i].Text + "', 'PHYSICAL DEVELOPMENT', '1', '" + termCb.SelectedItem.ToString()+"', '"+classLbl.Text+"', '"+DateTime.Today+"', '"+student_id+"')";
                         DbClient.query_execute(query);
                     }
                     else
                     {
                         query = "INSERT INTO KG_assessment(assessment, category, term, class, date, student_id) " +
-                           "VALUES('" + physicalAssessment[i].Text + "', 'LANGUAGE DEVELOPMENT (READING, LISTENING AND ORAL SKILLS)', '" + termCb.SelectedItem.ToString() + "', '" + classLbl.Text + "', '" + DateTime.Today + "', '" + student_id + "')";
+                           "VALUES('" + physicalAssessment[i].Text + "', 'PHYSICAL DEVELOPMENT', '" + termCb.SelectedItem.ToString() + "', '" + classLbl.Text + "', '" + DateTime.Today + "', '" + student_id + "')";
                         DbClient.query_execute(query);
                     }
                 }
@@ -299,13 +302,13 @@ namespace Perfect_Peace_System.Pages
                     if (cognitiveGrade[i].SelectedIndex > -1)
                     {
                         query = "INSERT INTO KG_assessment(assessment, category, " + cognitiveGrade[i].SelectedItem.ToString() + ", term, class, date, student_id) " +
-                            "VALUES('" + cognitiveAssessment[i].Text + "', 'LANGUAGE DEVELOPMENT (READING, LISTENING AND ORAL SKILLS)', '1', '"+termCb.SelectedItem.ToString()+"', '"+classLbl.Text+"', '"+DateTime.Today+"', '"+student_id+"')";
+                            "VALUES('" + cognitiveAssessment[i].Text + "', 'COGNITIVE DEVELOPMENT (POSITION, DIRECTION, THINKING)', '1', '" + termCb.SelectedItem.ToString()+"', '"+classLbl.Text+"', '"+DateTime.Today+"', '"+student_id+"')";
                         DbClient.query_execute(query);
                     }
                     else
                     {
                         query = "INSERT INTO KG_assessment(assessment, category, term, class, date, student_id) " +
-                           "VALUES('" + cognitiveAssessment[i].Text + "', 'LANGUAGE DEVELOPMENT (READING, LISTENING AND ORAL SKILLS)', '" + termCb.SelectedItem.ToString() + "', '" + classLbl.Text + "', '" + DateTime.Today + "', '" + student_id + "')";
+                           "VALUES('" + cognitiveAssessment[i].Text + "', 'COGNITIVE DEVELOPMENT (POSITION, DIRECTION, THINKING)', '" + termCb.SelectedItem.ToString() + "', '" + classLbl.Text + "', '" + DateTime.Today + "', '" + student_id + "')";
                         DbClient.query_execute(query);
                     }
                 }
