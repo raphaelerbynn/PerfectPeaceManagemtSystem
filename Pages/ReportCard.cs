@@ -20,6 +20,7 @@ namespace Perfect_Peace_System.Pages
         private readonly string date = StudentReport.getDate();
         private readonly string result_id = StudentReport.getResultId();
         private readonly string class_position = StudentReport.getClassPosition();
+        private readonly string class_section = StudentReport.getClassCategory();
         private int no_subject;
         private double total_fees = 0;
         
@@ -29,24 +30,59 @@ namespace Perfect_Peace_System.Pages
             InitializeComponent();
             
             fillLabels();
+            fillLabelsKg();
             populateResults();
             populateAssessment();
             MessageBox.Show("Before printing result, Admin must save term attendance to get total student attendance", "Hint", MessageBoxButtons.OK, MessageBoxIcon.Information);
             bgPanel.BackColor = Home.foreColor;
 
+            showReport();
+        }
+
+        private void showReport()
+        {
+            if(class_section.Equals("Crech") ||
+                class_section.Equals("Nursury") ||
+                class_section.Equals("KG"))
+            {
+                reportCardPanel.Visible = false;
+                printResultBtn.Visible = false;
+
+                assessmentPanel.Visible = true;
+                assessmentPanel.Location = reportCardPanel.Location;
+                printAssBtn.Location = new Point(printAssBtn.Location.X, assessmentPanel.Location.Y + assessmentPanel.Height + 18);
+
+                testPanel.Location = new Point(assessmentPanel.Location.X, assessmentPanel.Location.Y + assessmentPanel.Height + 100);
+                printBillBtn.Location = new Point(printBillBtn.Location.X, testPanel.Location.Y + testPanel.Height + 18);
+                
+            }
+            else
+            {
+                reportCardPanel.Visible = true;
+                printResultBtn.Visible = true;
+                printResultBtn.Location = new Point(printResultBtn.Location.X, reportCardPanel.Location.Y + reportCardPanel.Height + 18);
+
+                testPanel.Location = new Point(reportCardPanel.Location.X, reportCardPanel.Location.Y + reportCardPanel.Height + 100);
+                printBillBtn.Location = new Point(printBillBtn.Location.X, testPanel.Location.Y + testPanel.Height + 18);
+
+                assessmentPanel.Visible = false;
+                printAssBtn.Visible = false;
+            }
         }
 
         private void populateAssessment()
         {
             try
             {
+                nextTermLbl.Text = "";
+                
                 int lang_length = 22*10;
                 languageDataView.Size = new Size(languageDataView.Width, languageDataView.Height + lang_length);
                 emotioalDataVeiw.Location = new Point(emotioalDataVeiw.Location.X, emotioalDataVeiw.Location.Y + lang_length);
                 physicalDataView.Location = new Point(physicalDataView.Location.X, physicalDataView.Location.Y + lang_length);
                 cognitiveDataView.Location = new Point(cognitiveDataView.Location.X, cognitiveDataView.Location.Y + lang_length);
                 
-                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='4140' AND category LIKE '%LANGUAGE%'";
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+"' AND category LIKE '%LANGUAGE%'";
                 DbClient.dataGridFill(languageDataView, query);
 
                 foreach(DataGridViewRow row in languageDataView.Rows)
@@ -94,7 +130,7 @@ namespace Perfect_Peace_System.Pages
                 physicalDataView.Location = new Point(physicalDataView.Location.X, physicalDataView.Location.Y + emotional_length);
                 cognitiveDataView.Location = new Point(cognitiveDataView.Location.X, cognitiveDataView.Location.Y + emotional_length);
 
-                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='4140' AND category LIKE '%EMOTIONAL%'";
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+"' AND category LIKE '%EMOTIONAL%'";
                 DbClient.dataGridFill(emotioalDataVeiw, query);
 
                 foreach(DataGridViewRow row in emotioalDataVeiw.Rows)
@@ -142,7 +178,7 @@ namespace Perfect_Peace_System.Pages
                 cognitiveDataView.Location = new Point(cognitiveDataView.Location.X, cognitiveDataView.Location.Y + physical_length);
 
                 //cognitiveDataView.Size = new Size(cognitiveDataView.Width, cognitiveDataView.Height + physical_length);
-                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='4140' AND category LIKE '%PHYSICAL%'";
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+"' AND category LIKE '%PHYSICAL%'";
                 DbClient.dataGridFill(physicalDataView, query);
 
                 foreach(DataGridViewRow row in physicalDataView.Rows)
@@ -188,7 +224,7 @@ namespace Perfect_Peace_System.Pages
                 int cognitive_length = 22*9;
                 cognitiveDataView.Size = new Size(cognitiveDataView.Width, cognitiveDataView.Height + cognitive_length);
 
-                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='4140' AND category LIKE '%COGNITIVE%'";
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+"' AND category LIKE '%COGNITIVE%'";
                 DbClient.dataGridFill(cognitiveDataView, query);
 
                 foreach(DataGridViewRow row in cognitiveDataView.Rows)
@@ -303,70 +339,31 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
-        private void fillLabels()
+        private void fillLabelsKg()
         {
-            termDate.Value = DateTime.Today;
-            nameLbl.Text = "--------";
-            classLbl.Text = "---";
-            positionLbl.Text = "---";
-            termLbl.Text = "---";
-            noInClassLbl.Text = "---";
-            nextTermDateLbl.Text = "-------";//
-            rawScoreLbl.Text = "---";
-            totalScoreLbl.Text = "---";
-            conductLbl.Text = "-------------------";
-            attitudeLbl.Text = "-------------------";
-            interestLbl.Text = "-------------------";
-            tRemarksLbl.Text = "-------------------";
-            owingLbl.Text = "---";
-            feesLbl.Text = "---";
-            examsFeesLbl.Text = "---";
-            transportLbl.Text = "---";
-            extraClassesLbl.Text = "---";
-            PtaLbl.Text = "---";//
-            totalFeesLbl.Text = "---";//
-            promotedClassLbl.Text = "";
-
+            teacherKgLbl.Text = "";
+            string _class = "";
             query = "SELECT * FROM Student WHERE student_id='" + student_id + "'";
             SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())
             {
-                nameLbl.Text = reader["f_name"].ToString() + " " + reader["m_name"].ToString() + " " + reader["l_name"].ToString();
-                stntNameLbl.Text = nameLbl.Text;
-                stntClassLbl.Text = nameLbl.Text;
-                termLbl.Text = term;
-                termLbl2.Text = term;
-                owingLbl.Text = "Ghc "+reader["fees_owing"].ToString();
-                total_fees += double.Parse(reader["fees_owing"].ToString());
+                nameKgLbl.Text = reader["f_name"].ToString() + " " + reader["m_name"].ToString() + " " + reader["l_name"].ToString();
+                termKgLbl.Text = term;
+                classKgLbl.Text = reader["class"].ToString();
+                classLbl.Text = classLbl.Text;
+                _class = reader["class_id"].ToString();
             }
             reader.Close();
 
-            query = "SELECT * FROM Student_result WHERE student_result_id='"+result_id+"'";
+            query = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE class_id='" + _class + "'"; ;
             reader = DbClient.query_reader(query);
             while (reader.Read())
             {
-                totalScoreLbl.Text = reader["total_raw_score"].ToString();
-                rawScoreLbl.Text = reader["raw_score"].ToString();
-                conductLbl.Text = reader["conduct"].ToString();
-                attitudeLbl.Text = reader["attitude"].ToString();
-                interestLbl.Text = reader["interest"].ToString();
-                tRemarksLbl.Text = reader["teacher_remarks"].ToString();
-                classLbl.Text = reader["class"].ToString();
-                stntClassLbl.Text = classLbl.Text;
-                promotedClassLbl.Text = reader["promoted_to"].ToString();
-                noInClassLbl.Text = reader["class_total"].ToString();
+                teacherKgLbl.Text = reader["name"].ToString();
             }
             reader.Close();
-            positionLbl.Text = class_position;
 
-            if(promotedClassLbl.Text == "")
-            {
-                query = "SELECT * FROM Class WHERE name='" + classLbl.Text + "'";
-            }
-            else
-            {
-                query = "SELECT * FROM Class WHERE name='" + promotedClassLbl.Text + "'";
-            }
+            query = "SELECT * FROM Class WHERE class_id='" + _class + "'";
             reader = DbClient.query_reader(query);
             while (reader.Read())
             {
@@ -381,22 +378,111 @@ namespace Perfect_Peace_System.Pages
 
             }
             reader.Close();
-            
+        }
 
-            query = "SELECT FORMAT(term_end_date, 'MMM-yyyy') FROM Total_attendance";
-            DbClient.query_reader(termEndCb, query);
-            
-            if(termEndCb.Items.Count > 0)
+        private void fillLabels()
+        {
+            try
             {
-                termEndCb.SelectedIndex = termEndCb.Items.Count - 1;
-            }
+                termDate.Value = DateTime.Today;
+                nameLbl.Text = "--------";
+                classLbl.Text = "---";
+                positionLbl.Text = "---";
+                termLbl.Text = "---";
+                noInClassLbl.Text = "---";
+                nextTermDateLbl.Text = "-------";//
+                rawScoreLbl.Text = "---";
+                totalScoreLbl.Text = "---";
+                conductLbl.Text = "-------------------";
+                attitudeLbl.Text = "-------------------";
+                interestLbl.Text = "-------------------";
+                tRemarksLbl.Text = "-------------------";
+                owingLbl.Text = "---";
+                feesLbl.Text = "---";
+                examsFeesLbl.Text = "---";
+                transportLbl.Text = "---";
+                extraClassesLbl.Text = "---";
+                PtaLbl.Text = "---";//
+                totalFeesLbl.Text = "---";//
+                promotedClassLbl.Text = "";
 
-            //for bill
-            if(term.Equals("3"))
-            {
-                total_fees += double.Parse(feesLbl.Text);
+                query = "SELECT * FROM Student WHERE student_id='" + student_id + "'";
+                SqlDataReader reader = DbClient.query_reader(query);
+                while (reader.Read())
+                {
+                    nameLbl.Text = reader["f_name"].ToString() + " " + reader["m_name"].ToString() + " " + reader["l_name"].ToString();
+                    stntNameLbl.Text = nameLbl.Text;
+                    stntClassLbl.Text = nameLbl.Text;
+                    termLbl.Text = term;
+                    termLbl2.Text = term;
+                    owingLbl.Text = "Ghc " + reader["fees_owing"].ToString();
+                    total_fees += double.Parse(reader["fees_owing"].ToString());
+                }
+                reader.Close();
+
+
+                query = "SELECT * FROM Student_result WHERE student_result_id='" + result_id + "'";
+                reader = DbClient.query_reader(query);
+                while (reader.Read())
+                {
+                    totalScoreLbl.Text = reader["total_raw_score"].ToString();
+                    rawScoreLbl.Text = reader["raw_score"].ToString();
+                    conductLbl.Text = reader["conduct"].ToString();
+                    attitudeLbl.Text = reader["attitude"].ToString();
+                    interestLbl.Text = reader["interest"].ToString();
+                    tRemarksLbl.Text = reader["teacher_remarks"].ToString();
+                    classLbl.Text = reader["class"].ToString();
+                    stntClassLbl.Text = classLbl.Text;
+                    promotedClassLbl.Text = reader["promoted_to"].ToString();
+                    noInClassLbl.Text = reader["class_total"].ToString();
+                }
+                reader.Close();
+                positionLbl.Text = class_position;
+
+                if (promotedClassLbl.Text == "")
+                {
+                    query = "SELECT * FROM Class WHERE name='" + classLbl.Text + "'";
+                }
+                else
+                {
+                    query = "SELECT * FROM Class WHERE name='" + promotedClassLbl.Text + "'";
+                }
+                reader = DbClient.query_reader(query);
+                while (reader.Read())
+                {
+                    tuitionLbl.Text = reader["tuition"].ToString();
+                    firstAidLbl.Text = reader["firstAid"].ToString();
+                    PtaLbl.Text = reader["PTA"].ToString();
+                    waterLbl.Text = reader["water"].ToString();
+                    maintenanceLbl.Text = reader["maintenance"].ToString();
+                    stationaryLbl.Text = reader["stationary"].ToString();
+                    cocurricularLbl.Text = reader["cocurricular"].ToString();
+                    feesLbl.Text = reader["fees"].ToString();
+
+                }
+                reader.Close();
+
+
+                query = "SELECT FORMAT(term_end_date, 'MMM-yyyy') FROM Total_attendance";
+                DbClient.query_reader(termEndCb, query);
+
+                if (termEndCb.Items.Count > 0)
+                {
+                    termEndCb.SelectedIndex = termEndCb.Items.Count - 1;
+                }
+
+                //for bill
+                if (term.Equals("3"))
+                {
+                    total_fees += double.Parse(feesLbl.Text);
+                }
+                totalFeesLbl.Text = "Ghc " + total_fees.ToString();
             }
-            totalFeesLbl.Text = "Ghc " + total_fees.ToString();
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void printBtn_Click(object sender, EventArgs e)
@@ -525,6 +611,7 @@ namespace Perfect_Peace_System.Pages
                 totalFeesLbl.Text = "Ghc " + total_fees_.ToString();
 
                 nextTermDateLbl.Text = termDate.Text;
+                nextTermLbl.Text = termDate.Text;
 
                 if (termEndCb.SelectedIndex > -1)
                 {

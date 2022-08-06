@@ -15,10 +15,11 @@ namespace Perfect_Peace_System.Pages
     {
         private string query;
         private static string id;
-        private static string termVal;
-        private static string date;
-        private static string result_id;
-        private static string class_position;
+        private static string termVal = "";
+        private static string date = "";
+        private static string result_id = "";
+        private static string class_position = "";
+        private static string section;
         OpenNewPage openNewpage;
 
         public StudentReport()
@@ -33,6 +34,10 @@ namespace Perfect_Peace_System.Pages
             studentDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
             studentDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
             studentDataView.BackgroundColor = Home.foreColor;
+
+            kgDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            kgDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            kgDataView.BackgroundColor = Home.foreColor;
 
             topPanel.BackColor = Home.themeColor;
             middlePanel.BackColor = Home.foreColor;
@@ -62,6 +67,7 @@ namespace Perfect_Peace_System.Pages
             titleLbl.Text = "CLASS LIST";
             explainTb.Visible = false;
             resultsDataView.Visible = false;
+            kgDataView.Visible = false;
             studentDataView.Visible = true;
 
             query = "SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student WHERE class='"+classCb.Text+"'";
@@ -107,9 +113,13 @@ namespace Perfect_Peace_System.Pages
                     {
                         (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name LIKE '%{0}%'", searchTextBox.Text);
                     }
-                    else
+                    else if(resultsDataView.Visible == true)
                     {
                         (resultsDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name LIKE '%{0}%'", searchTextBox.Text); ;
+                    }
+                    else
+                    {
+                        (kgDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("Name LIKE '%{0}%'", searchTextBox.Text); ;
                     }
                 }
                 catch (Exception ex)
@@ -125,9 +135,13 @@ namespace Perfect_Peace_System.Pages
                 {
                     (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
                 }
-                else
+                else if(resultsDataView.Visible == true)
                 {
                     (resultsDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                }
+                else
+                {
+                    (kgDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
                 }
             }
         }
@@ -136,7 +150,6 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
-                string section = "";
                 query = "SELECT section FROM Class WHERE name='" + classCb.SelectedItem.ToString() + "'";
                 SqlDataReader reader = DbClient.query_reader(query);
                 while (reader.Read())
@@ -191,14 +204,30 @@ namespace Perfect_Peace_System.Pages
             if(resultsDataView.Visible == true)
             searchBtn.Enabled = true;
             studentDataView.Visible = false;
-            resultsDataView.Visible = true;
+
+            if (getClassSection().Equals("Crech") ||
+                        getClassSection().Equals("Nursury") ||
+                        getClassSection().Equals("KG"))
             {
-                adjustColumnOrder();
+                resultsDataView.Visible = false;
+                kgDataView.Visible = true;
+                query = "SELECT student_id, CAST(student_id AS VARCHAR(100)) AS name, class, term, date FROM KG_assessment WHERE class='" + classCb.Text + "' AND date LIKE '%" + datePicker.Text + "%' AND term='" + getSelectedTerm() + "' GROUP BY student_id, term, date, class";
+                DbClient.dataGridFill(kgDataView, query);
+                getStudentNameKg();
             }
-            query = "SELECT student_result_id, student_id, raw_score, pass_raw_score, total_raw_score, result_status, class, term, date, RANK() OVER(ORDER BY raw_score DESC) AS position FROM Student_result WHERE class='"+classCb.Text+ "' AND date LIKE '%"+datePicker.Text+"%' AND term='"+getSelectedTerm()+"'";
-            DbClient.dataGridFill(resultsDataView, query);
-            getStudentName();
+            else
+            {
+                kgDataView.Visible=false;
+                resultsDataView.Visible = true;
+                {
+                    adjustColumnOrder();
+                }
+                query = "SELECT student_result_id, student_id, raw_score, pass_raw_score, total_raw_score, result_status, class, term, date, RANK() OVER(ORDER BY raw_score DESC) AS position FROM Student_result WHERE class='" + classCb.Text + "' AND date LIKE '%" + datePicker.Text + "%' AND term='" + getSelectedTerm() + "'";
+                DbClient.dataGridFill(resultsDataView, query);
+                getStudentName();
+            }
         }
+        
 
         private void getStudentName()
         {
@@ -216,6 +245,30 @@ namespace Perfect_Peace_System.Pages
                     }
                     reader.Close();
                     resultsDataView.ReadOnly = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+        
+        private void getStudentNameKg()
+        {
+            try
+            {
+                foreach (DataGridViewRow item in kgDataView.Rows)
+                {
+                    string id = item.Cells["student_id_kg"].Value.ToString();
+                    query = "SELECT [f_name]+' '+[l_name] AS name FROM Student WHERE student_id='" + id + "'";
+                    SqlDataReader reader = DbClient.query_reader(query);
+                    kgDataView.ReadOnly = false;
+                    while (reader.Read())
+                    {
+                        item.Cells["student_name_kg"].Value = reader["name"].ToString();
+                    }
+                    reader.Close();
+                    kgDataView.ReadOnly = true;
                 }
             }
             catch (Exception ex)
@@ -246,6 +299,10 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
+        public static string getClassCategory()
+        {
+            return section;
+        }
 
         public static string getIdFromSelectedRow()
         {
@@ -297,6 +354,26 @@ namespace Perfect_Peace_System.Pages
                 return "2";
             }
             return "3";
+        }
+
+        private void kgDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = kgDataView.Rows[e.RowIndex];
+                id = row.Cells["student_id_kg"].Value.ToString();
+                termVal = row.Cells["term_kg"].Value.ToString(); 
+
+                if (kgDataView.Columns[e.ColumnIndex].Name == "show_result_kg" && e.RowIndex >= 0)
+                {
+                    openNewpage.OpenChildForm(new Pages.ReportCard(), bgPanel);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
+            }
         }
     }
 }
