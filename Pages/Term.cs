@@ -63,7 +63,7 @@ namespace Perfect_Peace_System.Pages
 
                         //query = "SELECT "
 
-
+                        MessageBox.Show("Total Attendance saved... can print report with total attendance now");
                         GetData.setConfirmPassword(false);
                     }
                 }
@@ -76,12 +76,28 @@ namespace Perfect_Peace_System.Pages
 
         private void saveDateBtn_Click(object sender, EventArgs e)
         {
-            query = "DELETE FROM Term";
-            DbClient.query_execute(query);
+            string message = "Are you sure you want to set next term end date?";
+            MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, "", deleteAction);
+            if (result == DialogResult.Yes)
+            {
+                Pages.ConfirmPassword confirmPassword = new Pages.ConfirmPassword();
+                confirmPassword.ShowDialog();
+                if (GetData.getConfirmedPassword() == true)
+                {
 
-            query = "INSERT INTO Term (end_date) VALUES('"+endDatePk.Value+"')";
-            DbClient.query_execute(query);
-            endDatePk.Enabled = false;
+                    query = "DELETE FROM Term";
+                    DbClient.query_execute(query);
+
+                    query = "INSERT INTO Term (end_date) VALUES('" + endDatePk.Value + "')";
+                    DbClient.query_execute(query);
+                    endDatePk.Enabled = false;
+
+                    MessageBox.Show("Term end date resetted...");
+                    
+                }
+            }
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -123,6 +139,7 @@ namespace Perfect_Peace_System.Pages
                         query = "UPDATE Student SET fees_owing=fees_owing+(SELECT fees FROM Class WHERE Class.class_id=Student.class_id) WHERE class_id IS NOT NULL";
                         DbClient.query_execute(query);
 
+                        MessageBox.Show("Fees resetted...");
                         GetData.setConfirmPassword(false);
                     }
                 }
@@ -150,6 +167,7 @@ namespace Perfect_Peace_System.Pages
                         query = "DELETE FROM EVENT";
                         DbClient.query_execute(query);
 
+                        MessageBox.Show("Term Ended... Set end of next term date");
                         GetData.setConfirmPassword(false);
                     }
                 }

@@ -36,7 +36,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -45,7 +44,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -53,6 +51,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bgPanel = new System.Windows.Forms.Panel();
             this.feedingPanel = new System.Windows.Forms.Panel();
@@ -73,7 +76,6 @@
             this.feedingClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feedingAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feedingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.deleteFeeding = new System.Windows.Forms.DataGridViewImageColumn();
             this.addFeedingBtn = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.feedingAmntTb = new System.Windows.Forms.TextBox();
@@ -106,7 +108,6 @@
             this.ex_cl_class = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.extraClassesAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ex_cl_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ex_cl_delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.addExtraClassesBtn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.extraClassesAmntTb = new System.Windows.Forms.TextBox();
@@ -131,7 +132,6 @@
             this.expense = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exp_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exp_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exp_delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.addExpBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.expenseTb = new System.Windows.Forms.TextBox();
@@ -150,6 +150,13 @@
             this.loadInfoBtn = new System.Windows.Forms.Button();
             this.categoryCb = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.deleteFeeding = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ex_cl_delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.exp_delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.label6 = new System.Windows.Forms.Label();
             this.bgPanel.SuspendLayout();
             this.feedingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.feedingDataView)).BeginInit();
@@ -204,7 +211,7 @@
             this.feedingPanel.Controls.Add(this.label29);
             this.feedingPanel.Controls.Add(this.label30);
             this.feedingPanel.Controls.Add(this.label31);
-            this.feedingPanel.Location = new System.Drawing.Point(36, 25);
+            this.feedingPanel.Location = new System.Drawing.Point(25, 45);
             this.feedingPanel.Name = "feedingPanel";
             this.feedingPanel.Size = new System.Drawing.Size(873, 612);
             this.feedingPanel.TabIndex = 42;
@@ -372,7 +379,7 @@
             dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.feedingDataView.DefaultCellStyle = dataGridViewCellStyle7;
@@ -449,21 +456,6 @@
             this.feedingDate.Name = "feedingDate";
             this.feedingDate.ReadOnly = true;
             this.feedingDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // deleteFeeding
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.NullValue = null;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.deleteFeeding.DefaultCellStyle = dataGridViewCellStyle6;
-            this.deleteFeeding.FillWeight = 30F;
-            this.deleteFeeding.HeaderText = "";
-            this.deleteFeeding.Image = global::Perfect_Peace_System.Properties.Resources.delete;
-            this.deleteFeeding.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.deleteFeeding.Name = "deleteFeeding";
-            this.deleteFeeding.ReadOnly = true;
-            this.deleteFeeding.Width = 50;
             // 
             // addFeedingBtn
             // 
@@ -667,7 +659,7 @@
             this.classesPanel.Controls.Add(this.label15);
             this.classesPanel.Controls.Add(this.label16);
             this.classesPanel.Controls.Add(this.label17);
-            this.classesPanel.Location = new System.Drawing.Point(12, 47);
+            this.classesPanel.Location = new System.Drawing.Point(12, 48);
             this.classesPanel.Name = "classesPanel";
             this.classesPanel.Size = new System.Drawing.Size(873, 612);
             this.classesPanel.TabIndex = 36;
@@ -835,7 +827,7 @@
             dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.extraClassesDataView.DefaultCellStyle = dataGridViewCellStyle16;
@@ -912,21 +904,6 @@
             this.ex_cl_date.Name = "ex_cl_date";
             this.ex_cl_date.ReadOnly = true;
             this.ex_cl_date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // ex_cl_delete
-            // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.NullValue = null;
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.ex_cl_delete.DefaultCellStyle = dataGridViewCellStyle15;
-            this.ex_cl_delete.FillWeight = 30F;
-            this.ex_cl_delete.HeaderText = "";
-            this.ex_cl_delete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
-            this.ex_cl_delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ex_cl_delete.Name = "ex_cl_delete";
-            this.ex_cl_delete.ReadOnly = true;
-            this.ex_cl_delete.Width = 50;
             // 
             // addExtraClassesBtn
             // 
@@ -1121,6 +1098,7 @@
             this.expensePanel.Controls.Add(this.searchExpBtn);
             this.expensePanel.Controls.Add(this.expSearchTb);
             this.expensePanel.Controls.Add(this.label4);
+            this.expensePanel.Controls.Add(this.label6);
             this.expensePanel.Controls.Add(this.label3);
             this.expensePanel.Controls.Add(this.label2);
             this.expensePanel.Controls.Add(this.titleLbl);
@@ -1170,7 +1148,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(737, 219);
+            this.label8.Location = new System.Drawing.Point(704, 219);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(45, 19);
             this.label8.TabIndex = 34;
@@ -1208,7 +1186,7 @@
             dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.expensesDataView.DefaultCellStyle = dataGridViewCellStyle24;
@@ -1275,21 +1253,6 @@
             this.exp_date.Name = "exp_date";
             this.exp_date.ReadOnly = true;
             this.exp_date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // exp_delete
-            // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.NullValue = null;
-            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.exp_delete.DefaultCellStyle = dataGridViewCellStyle23;
-            this.exp_delete.FillWeight = 30F;
-            this.exp_delete.HeaderText = "";
-            this.exp_delete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
-            this.exp_delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.exp_delete.Name = "exp_delete";
-            this.exp_delete.ReadOnly = true;
-            this.exp_delete.Width = 50;
             // 
             // addExpBtn
             // 
@@ -1513,6 +1476,107 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Choose Category: ";
             // 
+            // dataGridViewImageColumn1
+            // 
+            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle27.NullValue = null;
+            dataGridViewCellStyle27.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.dataGridViewImageColumn1.DefaultCellStyle = dataGridViewCellStyle27;
+            this.dataGridViewImageColumn1.FillWeight = 30F;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.dataGridViewImageColumn1.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.ReadOnly = true;
+            this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle28.NullValue = null;
+            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.dataGridViewImageColumn2.DefaultCellStyle = dataGridViewCellStyle28;
+            this.dataGridViewImageColumn2.FillWeight = 30F;
+            this.dataGridViewImageColumn2.HeaderText = "";
+            this.dataGridViewImageColumn2.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.dataGridViewImageColumn2.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.ReadOnly = true;
+            this.dataGridViewImageColumn2.Width = 50;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle29.NullValue = null;
+            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle29.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.dataGridViewImageColumn3.DefaultCellStyle = dataGridViewCellStyle29;
+            this.dataGridViewImageColumn3.FillWeight = 30F;
+            this.dataGridViewImageColumn3.HeaderText = "";
+            this.dataGridViewImageColumn3.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.dataGridViewImageColumn3.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            this.dataGridViewImageColumn3.ReadOnly = true;
+            this.dataGridViewImageColumn3.Width = 50;
+            // 
+            // deleteFeeding
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = null;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.deleteFeeding.DefaultCellStyle = dataGridViewCellStyle6;
+            this.deleteFeeding.FillWeight = 30F;
+            this.deleteFeeding.HeaderText = "";
+            this.deleteFeeding.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.deleteFeeding.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.deleteFeeding.Name = "deleteFeeding";
+            this.deleteFeeding.ReadOnly = true;
+            this.deleteFeeding.Width = 50;
+            // 
+            // ex_cl_delete
+            // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.NullValue = null;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.ex_cl_delete.DefaultCellStyle = dataGridViewCellStyle15;
+            this.ex_cl_delete.FillWeight = 30F;
+            this.ex_cl_delete.HeaderText = "";
+            this.ex_cl_delete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.ex_cl_delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ex_cl_delete.Name = "ex_cl_delete";
+            this.ex_cl_delete.ReadOnly = true;
+            this.ex_cl_delete.Width = 50;
+            // 
+            // exp_delete
+            // 
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.NullValue = null;
+            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.exp_delete.DefaultCellStyle = dataGridViewCellStyle23;
+            this.exp_delete.FillWeight = 30F;
+            this.exp_delete.HeaderText = "";
+            this.exp_delete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.exp_delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.exp_delete.Name = "exp_delete";
+            this.exp_delete.ReadOnly = true;
+            this.exp_delete.Width = 50;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(755, 219);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 19);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "GHc";
+            // 
             // Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1634,5 +1698,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn extraClassesAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn ex_cl_date;
         private System.Windows.Forms.DataGridViewImageColumn ex_cl_delete;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
+        private System.Windows.Forms.Label label6;
     }
 }

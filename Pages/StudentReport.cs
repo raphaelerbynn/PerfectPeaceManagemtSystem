@@ -20,6 +20,7 @@ namespace Perfect_Peace_System.Pages
         private static string result_id = "";
         private static string class_position = "";
         private static string section;
+        private static string className;
         OpenNewPage openNewpage;
 
         public StudentReport()
@@ -51,14 +52,27 @@ namespace Perfect_Peace_System.Pages
                 }
             }
 
-            query = "SELECT name FROM Class";
-            DbClient.query_reader(classCb, query);
-            if(classCb.Items.Count > 0)
+            if (Pages.LoginInput.category.Equals("Administrator"))
             {
-                classCb.SelectedIndex = 0;
+                query = "SELECT name FROM Class";
+                DbClient.query_reader(classCb, query);
+                if (classCb.Items.Count > 0)
+                {
+                    classCb.SelectedIndex = 0;
+                }
             }
-            
-            
+
+            if (Pages.LoginInput.category.Equals("Class Teacher"))
+            {
+                query = "SELECT name FROM Class WHERE teacher_id='" + Pages.LoginInput.teacher_id + "' AND teacher_id IS NOT NULL";
+                DbClient.query_reader(classCb, query);
+
+                if (classCb.Items.Count > 0)
+                {
+                    classCb.SelectedIndex = 0;
+                }
+                classCb.Enabled = false;
+            }
         }
 
         private void loadListBtn_Click(object sender, EventArgs e)
@@ -323,6 +337,11 @@ namespace Perfect_Peace_System.Pages
         {
             return result_id;
         }
+        
+        public static string getClassName()
+        {
+            return className;
+        }
 
         public static string getClassPosition()
         {
@@ -362,7 +381,8 @@ namespace Perfect_Peace_System.Pages
             {
                 DataGridViewRow row = kgDataView.Rows[e.RowIndex];
                 id = row.Cells["student_id_kg"].Value.ToString();
-                termVal = row.Cells["term_kg"].Value.ToString(); 
+                termVal = row.Cells["term_kg"].Value.ToString();
+                className = row.Cells["student_class_kg"].ToString();
 
                 if (kgDataView.Columns[e.ColumnIndex].Name == "show_result_kg" && e.RowIndex >= 0)
                 {

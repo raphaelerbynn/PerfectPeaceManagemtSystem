@@ -28,6 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentReport));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -46,6 +57,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -53,20 +66,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentReport));
             this.bgPanel = new System.Windows.Forms.Panel();
+            this.kgDataView = new System.Windows.Forms.DataGridView();
+            this.student_id_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.student_name_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.student_class_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.term_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.date_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.show_result_kg = new System.Windows.Forms.DataGridViewImageColumn();
             this.titleLbl = new System.Windows.Forms.Label();
             this.explainTb = new System.Windows.Forms.Label();
             this.resultsDataView = new System.Windows.Forms.DataGridView();
@@ -82,13 +89,6 @@
             this.term = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.show_result = new System.Windows.Forms.DataGridViewImageColumn();
             this.studentDataView = new System.Windows.Forms.DataGridView();
-            this.student_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this._class = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fees_details = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.input_results = new System.Windows.Forms.DataGridViewImageColumn();
             this.middlePanel = new System.Windows.Forms.Panel();
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchBtn = new System.Windows.Forms.Button();
@@ -105,19 +105,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.kgDataView = new System.Windows.Forms.DataGridView();
-            this.student_id_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.student_name_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.student_class_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.term_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.date_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.show_result_kg = new System.Windows.Forms.DataGridViewImageColumn();
+            this.student_Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.full_name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._class = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fees_details = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.input_results = new System.Windows.Forms.DataGridViewImageColumn();
             this.bgPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kgDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultsDataView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataView)).BeginInit();
             this.middlePanel.SuspendLayout();
             this.topPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kgDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // bgPanel
@@ -134,6 +134,141 @@
             this.bgPanel.Name = "bgPanel";
             this.bgPanel.Size = new System.Drawing.Size(880, 672);
             this.bgPanel.TabIndex = 0;
+            // 
+            // kgDataView
+            // 
+            this.kgDataView.AllowUserToAddRows = false;
+            this.kgDataView.AllowUserToDeleteRows = false;
+            this.kgDataView.AllowUserToOrderColumns = true;
+            this.kgDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.kgDataView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.kgDataView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.kgDataView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.kgDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.kgDataView.ColumnHeadersHeight = 30;
+            this.kgDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.kgDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.student_id_kg,
+            this.student_name_kg,
+            this.student_class_kg,
+            this.term_kg,
+            this.date_kg,
+            this.show_result_kg});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.kgDataView.DefaultCellStyle = dataGridViewCellStyle8;
+            this.kgDataView.EnableHeadersVisualStyles = false;
+            this.kgDataView.Location = new System.Drawing.Point(0, 189);
+            this.kgDataView.Name = "kgDataView";
+            this.kgDataView.ReadOnly = true;
+            this.kgDataView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.kgDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.kgDataView.RowHeadersWidth = 18;
+            this.kgDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Snow;
+            this.kgDataView.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.kgDataView.RowTemplate.Height = 30;
+            this.kgDataView.ShowEditingIcon = false;
+            this.kgDataView.Size = new System.Drawing.Size(880, 480);
+            this.kgDataView.TabIndex = 10;
+            this.kgDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kgDataView_CellContentClick);
+            // 
+            // student_id_kg
+            // 
+            this.student_id_kg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.student_id_kg.DataPropertyName = "student_id";
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.student_id_kg.DefaultCellStyle = dataGridViewCellStyle2;
+            this.student_id_kg.HeaderText = "ID";
+            this.student_id_kg.Name = "student_id_kg";
+            this.student_id_kg.ReadOnly = true;
+            this.student_id_kg.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.student_id_kg.Visible = false;
+            this.student_id_kg.Width = 59;
+            // 
+            // student_name_kg
+            // 
+            this.student_name_kg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.student_name_kg.DataPropertyName = "name";
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.student_name_kg.DefaultCellStyle = dataGridViewCellStyle3;
+            this.student_name_kg.HeaderText = "NAME";
+            this.student_name_kg.Name = "student_name_kg";
+            this.student_name_kg.ReadOnly = true;
+            this.student_name_kg.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // student_class_kg
+            // 
+            this.student_class_kg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.student_class_kg.DataPropertyName = "class";
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.student_class_kg.DefaultCellStyle = dataGridViewCellStyle4;
+            this.student_class_kg.HeaderText = "CLASS";
+            this.student_class_kg.Name = "student_class_kg";
+            this.student_class_kg.ReadOnly = true;
+            this.student_class_kg.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.student_class_kg.Width = 94;
+            // 
+            // term_kg
+            // 
+            this.term_kg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.term_kg.DataPropertyName = "term";
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.term_kg.DefaultCellStyle = dataGridViewCellStyle5;
+            this.term_kg.HeaderText = "TERM";
+            this.term_kg.Name = "term_kg";
+            this.term_kg.ReadOnly = true;
+            this.term_kg.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.term_kg.Width = 88;
+            // 
+            // date_kg
+            // 
+            this.date_kg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.date_kg.DataPropertyName = "date";
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.date_kg.DefaultCellStyle = dataGridViewCellStyle6;
+            this.date_kg.HeaderText = "DATE";
+            this.date_kg.Name = "date_kg";
+            this.date_kg.ReadOnly = true;
+            this.date_kg.Width = 84;
+            // 
+            // show_result_kg
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle7.NullValue")));
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.show_result_kg.DefaultCellStyle = dataGridViewCellStyle7;
+            this.show_result_kg.FillWeight = 30F;
+            this.show_result_kg.HeaderText = "";
+            this.show_result_kg.Image = global::Perfect_Peace_System.Properties.Resources.printer;
+            this.show_result_kg.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.show_result_kg.Name = "show_result_kg";
+            this.show_result_kg.ReadOnly = true;
+            this.show_result_kg.Width = 38;
             // 
             // titleLbl
             // 
@@ -418,92 +553,6 @@
             this.studentDataView.Visible = false;
             this.studentDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentDataView_CellContentClick);
             // 
-            // student_Id
-            // 
-            this.student_Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.student_Id.DataPropertyName = "student_id";
-            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.student_Id.DefaultCellStyle = dataGridViewCellStyle26;
-            this.student_Id.HeaderText = "ID";
-            this.student_Id.Name = "student_Id";
-            this.student_Id.ReadOnly = true;
-            this.student_Id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.student_Id.Width = 57;
-            // 
-            // full_name
-            // 
-            this.full_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.full_name.DataPropertyName = "name";
-            dataGridViewCellStyle27.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.full_name.DefaultCellStyle = dataGridViewCellStyle27;
-            this.full_name.HeaderText = "NAME";
-            this.full_name.Name = "full_name";
-            this.full_name.ReadOnly = true;
-            this.full_name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // age
-            // 
-            this.age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.age.DataPropertyName = "age";
-            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.age.DefaultCellStyle = dataGridViewCellStyle28;
-            this.age.HeaderText = "AGE";
-            this.age.Name = "age";
-            this.age.ReadOnly = true;
-            this.age.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.age.Width = 75;
-            // 
-            // _class
-            // 
-            this._class.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this._class.DataPropertyName = "class";
-            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this._class.DefaultCellStyle = dataGridViewCellStyle29;
-            this._class.HeaderText = "CLASS";
-            this._class.Name = "_class";
-            this._class.ReadOnly = true;
-            this._class.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this._class.Width = 94;
-            // 
-            // gender
-            // 
-            this.gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.gender.DataPropertyName = "gender";
-            dataGridViewCellStyle30.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.gender.DefaultCellStyle = dataGridViewCellStyle30;
-            this.gender.HeaderText = "GENDER";
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
-            this.gender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.gender.Width = 112;
-            // 
-            // fees_details
-            // 
-            this.fees_details.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.fees_details.DataPropertyName = "fees_owing";
-            dataGridViewCellStyle31.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.fees_details.DefaultCellStyle = dataGridViewCellStyle31;
-            this.fees_details.HeaderText = "FEES";
-            this.fees_details.Name = "fees_details";
-            this.fees_details.ReadOnly = true;
-            this.fees_details.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.fees_details.Width = 84;
-            // 
-            // input_results
-            // 
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle32.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle32.NullValue")));
-            dataGridViewCellStyle32.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.input_results.DefaultCellStyle = dataGridViewCellStyle32;
-            this.input_results.FillWeight = 30F;
-            this.input_results.HeaderText = "";
-            this.input_results.Image = global::Perfect_Peace_System.Properties.Resources.input;
-            this.input_results.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.input_results.Name = "input_results";
-            this.input_results.ReadOnly = true;
-            this.input_results.Width = 50;
-            // 
             // middlePanel
             // 
             this.middlePanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -719,140 +768,91 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 50;
             // 
-            // kgDataView
+            // student_Id
             // 
-            this.kgDataView.AllowUserToAddRows = false;
-            this.kgDataView.AllowUserToDeleteRows = false;
-            this.kgDataView.AllowUserToOrderColumns = true;
-            this.kgDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.kgDataView.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.kgDataView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.kgDataView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.kgDataView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.kgDataView.ColumnHeadersHeight = 30;
-            this.kgDataView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.kgDataView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.student_id_kg,
-            this.student_name_kg,
-            this.student_class_kg,
-            this.term_kg,
-            this.date_kg,
-            this.show_result_kg});
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.kgDataView.DefaultCellStyle = dataGridViewCellStyle8;
-            this.kgDataView.EnableHeadersVisualStyles = false;
-            this.kgDataView.Location = new System.Drawing.Point(0, 189);
-            this.kgDataView.Name = "kgDataView";
-            this.kgDataView.ReadOnly = true;
-            this.kgDataView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.kgDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
-            this.kgDataView.RowHeadersWidth = 18;
-            this.kgDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.Snow;
-            this.kgDataView.RowsDefaultCellStyle = dataGridViewCellStyle10;
-            this.kgDataView.RowTemplate.Height = 30;
-            this.kgDataView.ShowEditingIcon = false;
-            this.kgDataView.Size = new System.Drawing.Size(880, 480);
-            this.kgDataView.TabIndex = 10;
-            this.kgDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.kgDataView_CellContentClick);
+            this.student_Id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.student_Id.DataPropertyName = "student_id";
+            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.student_Id.DefaultCellStyle = dataGridViewCellStyle26;
+            this.student_Id.HeaderText = "ID";
+            this.student_Id.Name = "student_Id";
+            this.student_Id.ReadOnly = true;
+            this.student_Id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.student_Id.Width = 57;
             // 
-            // student_id_kg
+            // full_name
             // 
-            this.student_id_kg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.student_id_kg.DataPropertyName = "student_id";
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.student_id_kg.DefaultCellStyle = dataGridViewCellStyle2;
-            this.student_id_kg.HeaderText = "ID";
-            this.student_id_kg.Name = "student_id_kg";
-            this.student_id_kg.ReadOnly = true;
-            this.student_id_kg.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.student_id_kg.Visible = false;
-            this.student_id_kg.Width = 57;
+            this.full_name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.full_name.DataPropertyName = "name";
+            dataGridViewCellStyle27.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.full_name.DefaultCellStyle = dataGridViewCellStyle27;
+            this.full_name.HeaderText = "NAME";
+            this.full_name.Name = "full_name";
+            this.full_name.ReadOnly = true;
+            this.full_name.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // student_name_kg
+            // age
             // 
-            this.student_name_kg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.student_name_kg.DataPropertyName = "name";
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.student_name_kg.DefaultCellStyle = dataGridViewCellStyle3;
-            this.student_name_kg.HeaderText = "NAME";
-            this.student_name_kg.Name = "student_name_kg";
-            this.student_name_kg.ReadOnly = true;
-            this.student_name_kg.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.age.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.age.DataPropertyName = "age";
+            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.age.DefaultCellStyle = dataGridViewCellStyle28;
+            this.age.HeaderText = "AGE";
+            this.age.Name = "age";
+            this.age.ReadOnly = true;
+            this.age.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.age.Width = 75;
             // 
-            // student_class_kg
+            // _class
             // 
-            this.student_class_kg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.student_class_kg.DataPropertyName = "class";
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.student_class_kg.DefaultCellStyle = dataGridViewCellStyle4;
-            this.student_class_kg.HeaderText = "CLASS";
-            this.student_class_kg.Name = "student_class_kg";
-            this.student_class_kg.ReadOnly = true;
-            this.student_class_kg.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.student_class_kg.Width = 94;
+            this._class.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this._class.DataPropertyName = "class";
+            dataGridViewCellStyle29.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this._class.DefaultCellStyle = dataGridViewCellStyle29;
+            this._class.HeaderText = "CLASS";
+            this._class.Name = "_class";
+            this._class.ReadOnly = true;
+            this._class.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this._class.Width = 94;
             // 
-            // term_kg
+            // gender
             // 
-            this.term_kg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.term_kg.DataPropertyName = "term";
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.term_kg.DefaultCellStyle = dataGridViewCellStyle5;
-            this.term_kg.HeaderText = "TERM";
-            this.term_kg.Name = "term_kg";
-            this.term_kg.ReadOnly = true;
-            this.term_kg.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.term_kg.Width = 88;
+            this.gender.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.gender.DataPropertyName = "gender";
+            dataGridViewCellStyle30.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.gender.DefaultCellStyle = dataGridViewCellStyle30;
+            this.gender.HeaderText = "GENDER";
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            this.gender.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.gender.Width = 112;
             // 
-            // date_kg
+            // fees_details
             // 
-            this.date_kg.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.date_kg.DataPropertyName = "date";
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.date_kg.DefaultCellStyle = dataGridViewCellStyle6;
-            this.date_kg.HeaderText = "DATE";
-            this.date_kg.Name = "date_kg";
-            this.date_kg.ReadOnly = true;
-            this.date_kg.Width = 84;
+            this.fees_details.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fees_details.DataPropertyName = "fees_owing";
+            dataGridViewCellStyle31.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.fees_details.DefaultCellStyle = dataGridViewCellStyle31;
+            this.fees_details.HeaderText = "FEES";
+            this.fees_details.Name = "fees_details";
+            this.fees_details.ReadOnly = true;
+            this.fees_details.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.fees_details.Width = 84;
             // 
-            // show_result_kg
+            // input_results
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle7.NullValue")));
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.show_result_kg.DefaultCellStyle = dataGridViewCellStyle7;
-            this.show_result_kg.FillWeight = 30F;
-            this.show_result_kg.HeaderText = "";
-            this.show_result_kg.Image = global::Perfect_Peace_System.Properties.Resources.printer;
-            this.show_result_kg.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.show_result_kg.Name = "show_result_kg";
-            this.show_result_kg.ReadOnly = true;
-            this.show_result_kg.Width = 38;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle32.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle32.NullValue")));
+            dataGridViewCellStyle32.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.input_results.DefaultCellStyle = dataGridViewCellStyle32;
+            this.input_results.FillWeight = 30F;
+            this.input_results.HeaderText = "";
+            this.input_results.Image = global::Perfect_Peace_System.Properties.Resources.input;
+            this.input_results.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.input_results.Name = "input_results";
+            this.input_results.ReadOnly = true;
+            this.input_results.Width = 38;
             // 
             // StudentReport
             // 
@@ -864,13 +864,13 @@
             this.Text = "StudentReport";
             this.bgPanel.ResumeLayout(false);
             this.bgPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kgDataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultsDataView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataView)).EndInit();
             this.middlePanel.ResumeLayout(false);
             this.middlePanel.PerformLayout();
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.kgDataView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -908,13 +908,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn term;
         private System.Windows.Forms.DataGridViewImageColumn show_result;
-        private System.Windows.Forms.DataGridViewTextBoxColumn student_Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn full_name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn age;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _class;
-        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fees_details;
-        private System.Windows.Forms.DataGridViewImageColumn input_results;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridView kgDataView;
         private System.Windows.Forms.DataGridViewTextBoxColumn student_id_kg;
@@ -923,5 +916,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn term_kg;
         private System.Windows.Forms.DataGridViewTextBoxColumn date_kg;
         private System.Windows.Forms.DataGridViewImageColumn show_result_kg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn student_Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn full_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn age;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _class;
+        private System.Windows.Forms.DataGridViewTextBoxColumn gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fees_details;
+        private System.Windows.Forms.DataGridViewImageColumn input_results;
     }
 }

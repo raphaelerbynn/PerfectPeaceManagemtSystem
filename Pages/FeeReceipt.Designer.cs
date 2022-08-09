@@ -34,11 +34,12 @@
             this.label14 = new System.Windows.Forms.Label();
             this.printBtn = new System.Windows.Forms.Button();
             this.receiptPanel = new System.Windows.Forms.Panel();
+            this.nameLbl = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.termLbl = new System.Windows.Forms.Label();
             this.modeLbl = new System.Windows.Forms.Label();
             this.dateLbl = new System.Windows.Forms.Label();
             this.idLbl = new System.Windows.Forms.Label();
-            this.nameLbl = new System.Windows.Forms.Label();
             this.classLbl = new System.Windows.Forms.Label();
             this.amntWordsLbl = new System.Windows.Forms.Label();
             this.remainingLbl = new System.Windows.Forms.Label();
@@ -63,7 +64,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.bgPanel.SuspendLayout();
             this.receiptPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -121,12 +121,12 @@
             // 
             this.receiptPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.receiptPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.receiptPanel.Controls.Add(this.nameLbl);
             this.receiptPanel.Controls.Add(this.label2);
             this.receiptPanel.Controls.Add(this.termLbl);
             this.receiptPanel.Controls.Add(this.modeLbl);
             this.receiptPanel.Controls.Add(this.dateLbl);
             this.receiptPanel.Controls.Add(this.idLbl);
-            this.receiptPanel.Controls.Add(this.nameLbl);
             this.receiptPanel.Controls.Add(this.classLbl);
             this.receiptPanel.Controls.Add(this.amntWordsLbl);
             this.receiptPanel.Controls.Add(this.remainingLbl);
@@ -154,11 +154,37 @@
             this.receiptPanel.Size = new System.Drawing.Size(825, 504);
             this.receiptPanel.TabIndex = 2;
             // 
+            // nameLbl
+            // 
+            this.nameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nameLbl.AutoSize = true;
+            this.nameLbl.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.nameLbl.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLbl.Location = new System.Drawing.Point(379, 194);
+            this.nameLbl.Name = "nameLbl";
+            this.nameLbl.Size = new System.Drawing.Size(70, 23);
+            this.nameLbl.TabIndex = 30;
+            this.nameLbl.Text = "----------";
+            this.nameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(131, 115);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(542, 15);
+            this.label2.TabIndex = 29;
+            this.label2.Text = "Atabaadze, Central Region   |   Contact: 024 233 2420   |   Email: perfectpeacesc" +
+    "hool@outlook.com";
+            // 
             // termLbl
             // 
             this.termLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.termLbl.AutoSize = true;
-            this.termLbl.BackColor = System.Drawing.SystemColors.Control;
+            this.termLbl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.termLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.termLbl.Location = new System.Drawing.Point(628, 245);
             this.termLbl.Name = "termLbl";
@@ -171,7 +197,7 @@
             // 
             this.modeLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.modeLbl.AutoSize = true;
-            this.modeLbl.BackColor = System.Drawing.SystemColors.Control;
+            this.modeLbl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.modeLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modeLbl.Location = new System.Drawing.Point(386, 382);
             this.modeLbl.Name = "modeLbl";
@@ -184,7 +210,7 @@
             // 
             this.dateLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateLbl.AutoSize = true;
-            this.dateLbl.BackColor = System.Drawing.SystemColors.Control;
+            this.dateLbl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.dateLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateLbl.Location = new System.Drawing.Point(679, 159);
             this.dateLbl.Name = "dateLbl";
@@ -197,7 +223,7 @@
             // 
             this.idLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.idLbl.AutoSize = true;
-            this.idLbl.BackColor = System.Drawing.SystemColors.Control;
+            this.idLbl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.idLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idLbl.Location = new System.Drawing.Point(105, 159);
             this.idLbl.Name = "idLbl";
@@ -206,24 +232,11 @@
             this.idLbl.Text = "----------";
             this.idLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // nameLbl
-            // 
-            this.nameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.nameLbl.AutoSize = true;
-            this.nameLbl.BackColor = System.Drawing.SystemColors.Control;
-            this.nameLbl.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLbl.Location = new System.Drawing.Point(354, 196);
-            this.nameLbl.Name = "nameLbl";
-            this.nameLbl.Size = new System.Drawing.Size(70, 23);
-            this.nameLbl.TabIndex = 24;
-            this.nameLbl.Text = "----------";
-            this.nameLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // classLbl
             // 
             this.classLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.classLbl.AutoSize = true;
-            this.classLbl.BackColor = System.Drawing.SystemColors.Control;
+            this.classLbl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.classLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classLbl.Location = new System.Drawing.Point(160, 245);
             this.classLbl.Name = "classLbl";
@@ -236,7 +249,7 @@
             // 
             this.amntWordsLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.amntWordsLbl.AutoSize = true;
-            this.amntWordsLbl.BackColor = System.Drawing.SystemColors.Control;
+            this.amntWordsLbl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.amntWordsLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amntWordsLbl.Location = new System.Drawing.Point(393, 338);
             this.amntWordsLbl.Name = "amntWordsLbl";
@@ -249,7 +262,7 @@
             // 
             this.remainingLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.remainingLbl.AutoSize = true;
-            this.remainingLbl.BackColor = System.Drawing.SystemColors.Control;
+            this.remainingLbl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.remainingLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.remainingLbl.ForeColor = System.Drawing.Color.DarkRed;
             this.remainingLbl.Location = new System.Drawing.Point(679, 294);
@@ -263,7 +276,7 @@
             // 
             this.totalAmntLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.totalAmntLbl.AutoSize = true;
-            this.totalAmntLbl.BackColor = System.Drawing.SystemColors.Control;
+            this.totalAmntLbl.BackColor = System.Drawing.Color.WhiteSmoke;
             this.totalAmntLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalAmntLbl.Location = new System.Drawing.Point(393, 294);
             this.totalAmntLbl.Name = "totalAmntLbl";
@@ -276,7 +289,7 @@
             // 
             this.amntLbl_0.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.amntLbl_0.AutoSize = true;
-            this.amntLbl_0.BackColor = System.Drawing.SystemColors.Control;
+            this.amntLbl_0.BackColor = System.Drawing.Color.WhiteSmoke;
             this.amntLbl_0.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amntLbl_0.ForeColor = System.Drawing.Color.DarkGreen;
             this.amntLbl_0.Location = new System.Drawing.Point(130, 294);
@@ -295,15 +308,15 @@
             this.label16.ForeColor = System.Drawing.Color.Black;
             this.label16.Location = new System.Drawing.Point(19, 385);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(1031, 19);
+            this.label16.Size = new System.Drawing.Size(751, 19);
             this.label16.TabIndex = 18;
             this.label16.Text = "Mode of Payment:_________________________________________________________________" +
-    "________________________________________________";
+    "_____________\r\n";
             // 
             // pictureBox3
             // 
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox3.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox3.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pictureBox3.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
             this.pictureBox3.Location = new System.Drawing.Point(666, 23);
             this.pictureBox3.Name = "pictureBox3";
@@ -315,7 +328,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.Control;
+            this.pictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.pictureBox1.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
             this.pictureBox1.Location = new System.Drawing.Point(22, 23);
             this.pictureBox1.Name = "pictureBox1";
@@ -350,7 +363,7 @@
             // amntLbl_1
             // 
             this.amntLbl_1.AutoSize = true;
-            this.amntLbl_1.BackColor = System.Drawing.SystemColors.Control;
+            this.amntLbl_1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.amntLbl_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.amntLbl_1.Location = new System.Drawing.Point(84, 11);
             this.amntLbl_1.Name = "amntLbl_1";
@@ -424,7 +437,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
             this.label8.Location = new System.Drawing.Point(19, 202);
@@ -443,10 +456,10 @@
             this.label7.ForeColor = System.Drawing.Color.Black;
             this.label7.Location = new System.Drawing.Point(19, 340);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(1034, 19);
+            this.label7.Size = new System.Drawing.Size(754, 38);
             this.label7.TabIndex = 7;
             this.label7.Text = "Amount paid in words:____________________________________________________________" +
-    "__________________________________________________";
+    "_______________\r\n_";
             // 
             // label6
             // 
@@ -518,19 +531,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Fees Receipt";
             // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.Control;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(131, 115);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(542, 15);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Atabaadze, Central Region   |   Contact: 024 233 2420   |   Email: perfectpeacesc" +
-    "hool@outlook.com";
-            // 
             // FeeReceipt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -561,7 +561,6 @@
         private System.Windows.Forms.Label modeLbl;
         private System.Windows.Forms.Label dateLbl;
         private System.Windows.Forms.Label idLbl;
-        private System.Windows.Forms.Label nameLbl;
         private System.Windows.Forms.Label classLbl;
         private System.Windows.Forms.Label amntWordsLbl;
         private System.Windows.Forms.Label remainingLbl;
@@ -578,7 +577,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -588,5 +586,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label nameLbl;
+        private System.Windows.Forms.Label label8;
     }
 }

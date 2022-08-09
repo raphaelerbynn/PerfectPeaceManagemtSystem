@@ -86,7 +86,7 @@ namespace Perfect_Peace_System.Pages
                 else
                 {
                     teacher.save();
-                    MessageBox.Show("Teacher Saved");
+                    MessageBox.Show("Staff Personnel Saved");
                     clearFeilds();
                 }
             }

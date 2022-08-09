@@ -354,5 +354,47 @@ namespace Perfect_Peace_System.Pages
             paymentDataView.Columns["deletePayment"].DisplayIndex = 6;
         }
 
+        private void searchEmpBtn_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(searchEmpTb.Text))
+            {
+                try
+                {
+                    (empSalaryDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("name LIKE '%{0}%'", searchEmpTb.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
+
+            }
+            else
+            {
+                (empSalaryDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                
+            }
+        }
+
+        private void searchPaidEmpBtn_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(searchPaidEmpTb.Text))
+            {
+                try
+                {
+                    (paymentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("name LIKE '%{0}%'", searchPaidEmpTb.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
+
+            }
+            else
+            {
+                (paymentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+            }
+        }
     }
 }

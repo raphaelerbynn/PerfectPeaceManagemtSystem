@@ -14,11 +14,13 @@ namespace Perfect_Peace_System.Pages
     public partial class MarkAttendance : Form
     {
         private string query;
+        private DateTime _date = Attendance.getDate();
         public MarkAttendance()
         {
             InitializeComponent();
             populateData();
-            todayDateLbl.Text = "("+DateTime.Now.ToString("ddd, dd MMMM, yyyy")+")";
+            //todayDateLbl.Text = "("+DateTime.Now.ToString("ddd, dd MMMM, yyyy")+")";
+            todayDateLbl.Text = "("+_date.ToString("ddd, dd MMMM, yyyy")+")";
 
             attendancePanel.BackColor = Home.foreColor;
             checkAttendanceDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
@@ -104,7 +106,7 @@ namespace Perfect_Peace_System.Pages
                 }
                 reader.Close();
 
-                query = "DELETE FROM Attendance WHERE class='" + classCb.Text + "' AND date_marked='" + DateTime.Today + "'";
+                query = "DELETE FROM Attendance WHERE class='" + classCb.Text + "' AND date_marked='" + _date.ToString() + "'";
                 DbClient.query_execute(query);
 
                 string message = "Save today's attendance?";
@@ -131,7 +133,7 @@ namespace Perfect_Peace_System.Pages
                         }
 
                         query = "INSERT INTO Attendance(student_id, class, status, date_marked, date_end)" +
-                        "VALUES('" + id + "', '" + classCb.Text + "', '" + status + "', '" + DateTime.Today + "', '"+date_end+"')";
+                        "VALUES('" + id + "', '" + classCb.Text + "', '" + status + "', '" + _date + "', '"+date_end+"')";
                         DbClient.query_execute(query);
                     }
                     this.Close();

@@ -101,8 +101,11 @@ namespace Perfect_Peace_System.Pages
                     {
                         query = "UPDATE Teacher SET class_id=NULL WHERE class_id='" + class_id + "'";
                         DbClient.query_execute(query);
+                        
+                        query = "UPDATE Fee SET class_id=NULL WHERE class_id='" + class_id + "'";
+                        DbClient.query_execute(query);
 
-                        query = "UPDATE Student SET class_id=NULL WHERE class_id='" + class_id + "'";
+                        query = "UPDATE Student SET class_id=NULL, class=NULL WHERE class_id='" + class_id + "'";
                         DbClient.query_execute(query);
                         
                         query = "DELETE FROM Class WHERE class_id='" + class_id + "'";

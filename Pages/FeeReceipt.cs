@@ -48,7 +48,6 @@ namespace Perfect_Peace_System.Pages
                     modeLbl.Text = reader["payment_mode"].ToString();
                     termLbl.Text = reader["term"].ToString();
                     totalAmntLbl.Text = "GHc " + reader["total"].ToString();
-                    amntLbl_0.Text = reader["paid"].ToString();
                     dateLbl.Text = reader["date"].ToString();
 
                     amntLbl_1.Text = amntLbl_0.Text;
@@ -72,10 +71,30 @@ namespace Perfect_Peace_System.Pages
 
         private void printBtn_Click(object sender, EventArgs e)
         {
-            Print(this.receiptPanel);
+            receiptPrint();
         }
 
-        private void Print(Panel panel)
+        private void receiptPrint()
+        {
+            PrintDocument printdoc = new PrintDocument();
+            PrintPreviewDialog printPreview = new PrintPreviewDialog();
+
+            PrinterSettings ps = new PrinterSettings();
+            //reportCardPanel = panel;
+            //getPrintArea(panel);
+            printPreview.Document = printdoc;
+            printdoc.PrintPage += new PrintPageEventHandler(printResult_printPage);
+            ((Form)printPreview).Size = new Size(950, 539);
+            printPreview.ShowDialog();
+        }
+
+        private void printResult_printPage(object sender, PrintPageEventArgs e)
+        {
+            var bitMap = ControlPrinter.ScrollableControlToBitmap(this.receiptPanel, true, true);
+            e.Graphics.DrawImage(bitMap, new Rectangle(5, 5, receiptPanel.Width, receiptPanel.Height));
+        }
+
+        /*private void Print(Panel panel)
         {
             PrinterSettings ps = new PrinterSettings();
             receiptPanel = panel;
@@ -98,7 +117,7 @@ namespace Perfect_Peace_System.Pages
             memoryImg = new Bitmap(panel.Width, panel.Height);
             panel.DrawToBitmap(memoryImg, new Rectangle(0, 0, panel.Width, panel.Height));
         }
-
+*/
         private void feePanel_Paint(object sender, PaintEventArgs e)
         {
 

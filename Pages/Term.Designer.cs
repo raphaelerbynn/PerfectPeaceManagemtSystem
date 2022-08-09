@@ -33,9 +33,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.endDatePk = new System.Windows.Forms.DateTimePicker();
+            this.button1 = new System.Windows.Forms.Button();
             this.feesBtn = new System.Windows.Forms.Button();
             this.saveAttenceBtn = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.closeBtn = new System.Windows.Forms.PictureBox();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
@@ -106,38 +106,6 @@
             this.endDatePk.Size = new System.Drawing.Size(368, 27);
             this.endDatePk.TabIndex = 9;
             // 
-            // feesBtn
-            // 
-            this.feesBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.feesBtn.AutoSize = true;
-            this.feesBtn.BackColor = System.Drawing.Color.LightCoral;
-            this.feesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.feesBtn.FlatAppearance.BorderSize = 0;
-            this.feesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.feesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.feesBtn.Location = new System.Drawing.Point(178, 245);
-            this.feesBtn.Name = "feesBtn";
-            this.feesBtn.Size = new System.Drawing.Size(458, 98);
-            this.feesBtn.TabIndex = 8;
-            this.feesBtn.Text = "RESET FEES FOR REPORT AND SYSTEM";
-            this.feesBtn.UseVisualStyleBackColor = false;
-            // 
-            // saveAttenceBtn
-            // 
-            this.saveAttenceBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.saveAttenceBtn.AutoSize = true;
-            this.saveAttenceBtn.BackColor = System.Drawing.Color.LightGreen;
-            this.saveAttenceBtn.FlatAppearance.BorderSize = 0;
-            this.saveAttenceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.saveAttenceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.saveAttenceBtn.Location = new System.Drawing.Point(178, 137);
-            this.saveAttenceBtn.Name = "saveAttenceBtn";
-            this.saveAttenceBtn.Size = new System.Drawing.Size(458, 91);
-            this.saveAttenceBtn.TabIndex = 8;
-            this.saveAttenceBtn.Text = "SAVE ATTENDANCE FOR REPORT";
-            this.saveAttenceBtn.UseVisualStyleBackColor = false;
-            this.saveAttenceBtn.Click += new System.EventHandler(this.saveAttenceBtn_Click);
-            // 
             // button1
             // 
             this.button1.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -155,6 +123,39 @@
             this.button1.Text = "END TERM";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // feesBtn
+            // 
+            this.feesBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.feesBtn.AutoSize = true;
+            this.feesBtn.BackColor = System.Drawing.Color.LightCoral;
+            this.feesBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.feesBtn.FlatAppearance.BorderSize = 0;
+            this.feesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.feesBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesBtn.Location = new System.Drawing.Point(178, 245);
+            this.feesBtn.Name = "feesBtn";
+            this.feesBtn.Size = new System.Drawing.Size(458, 98);
+            this.feesBtn.TabIndex = 8;
+            this.feesBtn.Text = "RESET FEES FOR REPORT AND SYSTEM";
+            this.feesBtn.UseVisualStyleBackColor = false;
+            this.feesBtn.Click += new System.EventHandler(this.feesBtn_Click);
+            // 
+            // saveAttenceBtn
+            // 
+            this.saveAttenceBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.saveAttenceBtn.AutoSize = true;
+            this.saveAttenceBtn.BackColor = System.Drawing.Color.LightGreen;
+            this.saveAttenceBtn.FlatAppearance.BorderSize = 0;
+            this.saveAttenceBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveAttenceBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveAttenceBtn.Location = new System.Drawing.Point(178, 137);
+            this.saveAttenceBtn.Name = "saveAttenceBtn";
+            this.saveAttenceBtn.Size = new System.Drawing.Size(458, 91);
+            this.saveAttenceBtn.TabIndex = 8;
+            this.saveAttenceBtn.Text = "SAVE ATTENDANCE FOR REPORT";
+            this.saveAttenceBtn.UseVisualStyleBackColor = false;
+            this.saveAttenceBtn.Click += new System.EventHandler(this.saveAttenceBtn_Click);
             // 
             // closeBtn
             // 

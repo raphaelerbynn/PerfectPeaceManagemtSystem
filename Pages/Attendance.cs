@@ -14,6 +14,8 @@ namespace Perfect_Peace_System.Pages
     public partial class Attendance : Form
     {
         private string query;
+        private static DateTime _date;
+
         public Attendance()
         {
             InitializeComponent();
@@ -42,6 +44,11 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
+        public static DateTime getDate()
+        {
+            return _date;
+        }
+
         private void loadAttendanceBtn_Click(object sender, EventArgs e)
         {
             try
@@ -62,10 +69,12 @@ namespace Perfect_Peace_System.Pages
                         if (statusValue.Contains("Present"))
                         {
                             totalPresent++;
+                            row.Cells["status"].Style.ForeColor = Color.Green;
                         }
                         if (statusValue.Contains("Absent"))
                         {
                             totalAbsent++;
+                            row.Cells["status"].Style.ForeColor = Color.Red;
                         }
                         query = "SELECT [f_name]+' '+[m_name]+' '+[l_name] AS name FROM Student WHERE student_id='"+student_id+"'";
                         SqlDataReader reader = DbClient.query_reader(query);
@@ -94,6 +103,7 @@ namespace Perfect_Peace_System.Pages
 
         private void checkAttendanceBtn_Click(object sender, EventArgs e)
         {
+            _date = attendanceDatePk.Value;
             OpenNewPage openNewPage = new OpenNewPage();
             openNewPage.OpenChildForm(new Pages.MarkAttendance(), attendancePanel);
         }

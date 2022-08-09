@@ -103,7 +103,7 @@ namespace Perfect_Peace_System.Pages
                         }
                         reader.Close();
 
-                        query = "SELECT fee_id, student_id, paid, remaining, payment_mode, date_paid, " +
+                        query = "SELECT fee_id, student_id, paid, remaining, payment_mode, FORMAT(date_paid, 'dd-MMM-yyyy') AS date_paid, " +
                             "CAST(student_id AS VARCHAR(50)) AS student, CAST(class_id AS VARCHAR(50)) AS class FROM Fee" +
                             " WHERE student_id='" + student_id + "'";
                         DbClient.dataGridFill(feesDataView, query);

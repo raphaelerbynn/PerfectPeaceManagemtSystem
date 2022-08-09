@@ -90,7 +90,7 @@ namespace Perfect_Peace_System.Pages
             }
             reader.Close();
 
-            query = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher EXCEPT SELECT [f_name]+' '+[l_name] FROM Teacher WHERE class_id IS NOT NULL AND class_id != '" + id + "'";
+            query = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching' EXCEPT SELECT [f_name]+' '+[l_name] FROM Teacher WHERE class_id IS NOT NULL AND class_id != '" + id + "'";
             DbClient.query_reader(teacherCb, query);
             for (int i = 0; i < teacherCb.Items.Count; i++)
             {

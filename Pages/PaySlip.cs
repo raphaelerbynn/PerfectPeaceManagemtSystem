@@ -47,6 +47,8 @@ namespace Perfect_Peace_System.Pages
                     tinLbl.Text = reader["tin_number"].ToString();
                     bankLbl.Text = reader["bank"].ToString();
                     accountNumLbl.Text = reader["account_number"].ToString();
+                    categoryLbl.Text = reader["category"].ToString();
+
                 }
                 reader.Close();
 
@@ -215,6 +217,19 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
-        
+        private void tB_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+
     }
 }

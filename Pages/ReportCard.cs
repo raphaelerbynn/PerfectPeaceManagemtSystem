@@ -21,6 +21,7 @@ namespace Perfect_Peace_System.Pages
         private readonly string result_id = StudentReport.getResultId();
         private readonly string class_position = StudentReport.getClassPosition();
         private readonly string class_section = StudentReport.getClassCategory();
+        private readonly string class_name = StudentReport.getClassName();
         private int no_subject;
         private double total_fees = 0;
         
@@ -343,25 +344,37 @@ namespace Perfect_Peace_System.Pages
         {
             teacherKgLbl.Text = "";
             string _class = "";
+            string _class_for_teacher = "";
             query = "SELECT * FROM Student WHERE student_id='" + student_id + "'";
             SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())
             {
                 nameKgLbl.Text = reader["f_name"].ToString() + " " + reader["m_name"].ToString() + " " + reader["l_name"].ToString();
                 termKgLbl.Text = term;
-                classKgLbl.Text = reader["class"].ToString();
-                classLbl.Text = classLbl.Text;
+                classKgLbl.Text = class_name;
+                classLbl.Text = reader["class"].ToString();
                 _class = reader["class_id"].ToString();
             }
             reader.Close();
 
-            query = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE class_id='" + _class + "'"; ;
+            query = "SELECT class_id FROM Class WHERE name='" + class_name + "'"; ;
+            reader = DbClient.query_reader(query);
+            while (reader.Read())
+            {
+                _class_for_teacher = reader["class_id"].ToString();
+            }
+            reader.Close();
+
+
+            query = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE class_id='" + _class_for_teacher + "'"; ;
             reader = DbClient.query_reader(query);
             while (reader.Read())
             {
                 teacherKgLbl.Text = reader["name"].ToString();
             }
             reader.Close();
+
+            
 
             query = "SELECT * FROM Class WHERE class_id='" + _class + "'";
             reader = DbClient.query_reader(query);
@@ -384,6 +397,7 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
+                dateLbl.Text = DateTime.Now.ToString("dd-MMM-yyyy");
                 termDate.Value = DateTime.Today;
                 nameLbl.Text = "--------";
                 classLbl.Text = "---";
@@ -463,7 +477,7 @@ namespace Perfect_Peace_System.Pages
                 reader.Close();
 
 
-                query = "SELECT FORMAT(term_end_date, 'MMM-yyyy') FROM Total_attendance";
+                query = "SELECT FORMAT(term_end_date, 'MMM-yyyy') FROM Total_attendance GROUP BY term_end_date";
                 DbClient.query_reader(termEndCb, query);
 
                 if (termEndCb.Items.Count > 0)
@@ -621,6 +635,7 @@ namespace Perfect_Peace_System.Pages
                     {
                         attendanceLbl.Text = reader["present"].ToString();
                         attendanceTotalLbl.Text = reader["attendance"].ToString();
+                        Console.WriteLine(reader["attendance"].ToString());
                     }
                     reader.Close();
                 }

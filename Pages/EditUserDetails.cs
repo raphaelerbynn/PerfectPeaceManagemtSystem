@@ -51,25 +51,32 @@ namespace Perfect_Peace_System.Pages
 
         private void createAccBtn_Click(object sender, EventArgs e)
         {
-            string message = "Are you sure you want to change user details?";
-            MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show(message, "", deleteAction);
-            if (result == DialogResult.Yes)
+            try
             {
-                Pages.ConfirmPassword confirmPassword = new Pages.ConfirmPassword();
-                confirmPassword.ShowDialog();
-                if (GetData.getConfirmedPassword() == true)
+                string message = "Are you sure you want to change user details?";
+                MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                DialogResult result = MessageBox.Show(message, "", deleteAction);
+                if (result == DialogResult.Yes)
                 {
-                    string query = "UPDATE User_account SET name='" + nameCb.Text + "', email='" + emailTb.Text + "', password='" + passwordTb.Text + "'";
-                    DbClient.query_execute(query);
+                    Pages.ConfirmPassword confirmPassword = new Pages.ConfirmPassword();
+                    confirmPassword.ShowDialog();
+                    if (GetData.getConfirmedPassword() == true)
+                    {
+                        string query = "UPDATE User_account SET name='" + nameCb.Text + "', email='" + emailTb.Text + "', password='" + passwordTb.Text + "' WHERE username='" + UsersDetails.user + "'";
+                        DbClient.query_execute(query);
 
-                    MessageBox.Show("Account Updated");
-                    this.Close();
-                    UsersDetails details = (UsersDetails)Application.OpenForms["UsersDetails"];
-                    details.Show();
+                        MessageBox.Show("Account Updated");
+                        this.Close();
+                        UsersDetails details = (UsersDetails)Application.OpenForms["UsersDetails"];
+                        details.Show();
 
-                    GetData.setConfirmPassword(false);
+                        GetData.setConfirmPassword(false);
+                    }
                 }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Check details, maybe it may exist already");
+                Console.WriteLine(ex);
             }
         }
     }

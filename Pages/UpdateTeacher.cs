@@ -27,6 +27,7 @@ namespace Perfect_Peace_System.Pages
                 cLbl.Visible = false;
                 asLbl.Visible = false;
                 removeClassLink.Visible = false;
+                classCb.Visible = false;
             }
         }
 
@@ -114,7 +115,7 @@ namespace Perfect_Peace_System.Pages
                         DbClient.query_execute(query);
 
 
-                        MessageBox.Show("Teacher Info Updated");
+                        MessageBox.Show("Staff Info Updated");
                     }
 
                     else
@@ -127,13 +128,15 @@ namespace Perfect_Peace_System.Pages
                         query = "UPDATE Class SET teacher_id=NULL WHERE teacher_id='" + id + "'";
                         DbClient.query_execute(query);
 
-                        MessageBox.Show("Teacher Info Updated");
+                        MessageBox.Show("Staff Info Updated");
                     }
                 }
                 else
                 {
                     query = "UPDATE Teacher SET class_id=NULL, f_name='" + fnameTb.Text + "', l_name='" + lnameTb.Text + "', gender='" + getRadioBtnValue() + "', phone='" + phoneTB.Text + "', address='" + addressTb.Text + "', email='" + emailTb.Text + "', bank='" + bankTb.Text + "', account_number='" + accountNumTb.Text + "', ssnit_number='" + ssnitTb.Text + "', tin_number='" + tinTb.Text + "', date_updated='" + DateTime.Now + "' WHERE teacher_id='" + id + "'";
                     DbClient.query_execute(query);
+
+                    MessageBox.Show("Staff Info Updated");
                 }
              }
             catch (Exception ex)

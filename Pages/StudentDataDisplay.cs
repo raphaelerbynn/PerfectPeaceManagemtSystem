@@ -93,8 +93,6 @@ namespace Perfect_Peace_System.Pages
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
-                        query = "DELETE FROM Student WHERE student_id='" + id + "'";
-                        DbClient.query_execute(query);
 
                         query = "DELETE FROM Fee WHERE student_id='" + id + "'";
                         DbClient.query_execute(query);
@@ -104,8 +102,14 @@ namespace Perfect_Peace_System.Pages
                         
                         query = "DELETE FROM Student_result WHERE student_id='" + id + "'";
                         DbClient.query_execute(query);
+
+                        query = "DELETE FROM Attendance WHERE student_id='" + id + "'";
+                        DbClient.query_execute(query);
                         
                         query = "DELETE FROM Total_attendance WHERE student_id='" + id + "'";
+                        DbClient.query_execute(query);
+                        
+                        query = "DELETE FROM KG_assessment WHERE student_id='" + id + "'";
                         DbClient.query_execute(query);
 
                         studentDataView.Rows.RemoveAt(e.RowIndex);

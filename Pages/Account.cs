@@ -30,7 +30,7 @@ namespace Perfect_Peace_System.Pages
 
         private void loadInfoBtn_Click(object sender, EventArgs e)
         {
-            string queryTeacher = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher";
+            string queryTeacher = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'";
             string queryClass = "SELECT name FROM Class";
             if(categoryCb.SelectedIndex == 0)
             {
@@ -119,7 +119,26 @@ namespace Perfect_Peace_System.Pages
 
         private void feedingSearchBtn_Click(object sender, EventArgs e)
         {
-            feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
+            
+            if (!String.IsNullOrEmpty(feedingSearchTb.Text))
+            {
+                try
+                {
+                    (feedingDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("teacher LIKE '%{0}%'", feedingSearchTb.Text);
+                    feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
+
+            }
+            else
+            {
+                (feedingDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
+            }
         }
 
         private void feedingLoadBtn_Click(object sender, EventArgs e)
@@ -218,7 +237,25 @@ namespace Perfect_Peace_System.Pages
 
         private void extraClassesSearchBtn_Click(object sender, EventArgs e)
         {
-            extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
+            if (!String.IsNullOrEmpty(searchExtraClassesTb.Text))
+            {
+                try
+                {
+                    (extraClassesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("teacher LIKE '%{0}%'", searchExtraClassesTb.Text);
+                    extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
+
+            }
+            else
+            {
+                (extraClassesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
+            }
         }
 
         private void loadExtraClassesBtn_Click(object sender, EventArgs e)
@@ -316,7 +353,26 @@ namespace Perfect_Peace_System.Pages
 
         private void searchExpBtn_Click(object sender, EventArgs e)
         {
-            totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
+            
+            if (!String.IsNullOrEmpty(expSearchTb.Text))
+            {
+                try
+                {
+                    (expensesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("expense LIKE '%{0}%'", expSearchTb.Text);
+                    totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
+
+            }
+            else
+            {
+                (expensesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
+            }
         }
 
         private void loadExpBtn_Click(object sender, EventArgs e)
