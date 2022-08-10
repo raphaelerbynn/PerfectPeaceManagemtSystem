@@ -24,7 +24,14 @@ namespace Perfect_Peace_System.Pages
         List<ComboBox> languageGrade = new List<ComboBox>();
        
         private string student_id = StudentReport.getIdFromSelectedRow();
+        private string class_section = StudentReport.getClassCategory();
         private string query;
+        private bool enable = true;
+
+        private int exam_total;
+        private int class_total;
+        private int class_percentage;
+        private int exam_percentage;
 
         public ReportForKG()
         {
@@ -42,15 +49,113 @@ namespace Perfect_Peace_System.Pages
             
             getStudentInfo();
             compileResults();
+            kg_score_values();
             categoryCb.SelectedIndex = 0;
             termCb.SelectedIndex = 0;
         }
 
         private void compileResults()
         {
+            if (class_section.Equals("KG"))
+            {
+                changeLbl.Text = "Shows interest in writing";
+                changeLbl.Location = new Point(changeLbl.Location.X - 20, changeLbl.Location.Y);
+
+                colorsLbl.Text = "Recognizes colors";
+                colorsLbl.Location = new Point(colorsLbl.Location.X - 20, colorsLbl.Location.Y);
+
+                envLbl.Text = "OWOP";
+
+                foreach (Control control in languagePanel.Controls)
+                {
+                    if (control.Tag?.ToString() == "notKg")
+                    {
+                        Label lbl = new Label();
+                        lbl.Text = "Not applicable";
+                        lbl.Anchor = AnchorStyles.Top;
+                        lbl.Location = new Point(control.Location.X + control.Width + 5, control.Location.Y + 4);
+                        control.Enabled = false;
+                        lbl.Enabled = false;
+                        languagePanel.Controls.Add(lbl);
+                        foreach (Control c in languagePanel.Controls)
+                        {
+                            if (c.Location.Y == control.Location.Y)
+                            {
+                                c.Enabled = false;
+                            }
+                        }
+                    }
+                }
+
+                foreach (Control control in emotionalPanel.Controls)
+                {
+                    if (control.Tag?.ToString() == "notKg")
+                    {
+                        Label lbl = new Label();
+                        lbl.Text = "Not applicable";
+                        lbl.Anchor = AnchorStyles.Top;
+                        lbl.Location = new Point(control.Location.X + control.Width + 5, control.Location.Y + 4);
+                        control.Enabled = false;
+                        lbl.Enabled = false;
+                        emotionalPanel.Controls.Add(lbl);
+                        foreach (Control c in emotionalPanel.Controls)
+                        {
+                            if (c.Location.Y == control.Location.Y)
+                            {
+                                c.Enabled = false;
+                            }
+                        }
+                    }
+                }
+
+                foreach (Control control in physicalPanel.Controls)
+                {
+                    if (control.Tag?.ToString() == "notKg")
+                    {
+                        Label lbl = new Label();
+                        lbl.Text = "Not applicable";
+                        lbl.Anchor = AnchorStyles.Top;
+                        lbl.Location = new Point(control.Location.X + control.Width + 5, control.Location.Y + 4);
+                        control.Enabled = false;
+                        lbl.Enabled = false;
+                        physicalPanel.Controls.Add(lbl);
+                        foreach (Control c in physicalPanel.Controls)
+                        {
+                            if (c.Location.Y == control.Location.Y)
+                            {
+                                c.Enabled = false;
+                            }
+                        }
+                    }
+                }
+
+                foreach (Control control in cognititvePanel.Controls)
+                {
+
+                    if (control.Tag?.ToString() == "notKg")
+                    {
+                        Label lbl = new Label();
+                        lbl.Text = "Not applicable";
+                        lbl.Anchor = AnchorStyles.Top;
+                        lbl.Location = new Point(control.Location.X + control.Width + 5, control.Location.Y + 4);
+                        control.Enabled = false;
+                        lbl.Enabled = false;
+                        cognititvePanel.Controls.Add(lbl);
+                        foreach (Control c in cognititvePanel.Controls)
+                        {
+                            if (c.Location.Y == control.Location.Y)
+                            {
+                                c.Enabled = false;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //
             foreach (Control control in languagePanel.Controls)
             {
-                if (control is Label)
+                if (control is Label && control.Enabled == true)
                 {
                     Console.WriteLine(((Label)control).Text);
                     languageAssessment.Add((Label)control);
@@ -63,12 +168,12 @@ namespace Perfect_Peace_System.Pages
                         }
                     }
                 }
-                
+
             }
 
             foreach (Control control in emotionalPanel.Controls)
             {
-                if (control is Label)
+                if (control is Label && control.Enabled == true)
                 {
                     Console.WriteLine(((Label)control).Text);
                     emotionalAssessment.Add((Label)control);
@@ -81,11 +186,12 @@ namespace Perfect_Peace_System.Pages
                         }
                     }
                 }
-                
+
             }
+
             foreach (Control control in physicalPanel.Controls)
             {
-                if (control is Label)
+                if (control is Label && control.Enabled == true)
                 {
                     Console.WriteLine(((Label)control).Text);
                     physicalAssessment.Add((Label)control);
@@ -98,11 +204,11 @@ namespace Perfect_Peace_System.Pages
                         }
                     }
                 }
-                
             }
+
             foreach (Control control in cognititvePanel.Controls)
             {
-                if (control is Label)
+                if (control is Label && control.Enabled == true)
                 {
                     Console.WriteLine(((Label)control).Text);
                     cognitiveAssessment.Add((Label)control);
@@ -115,50 +221,17 @@ namespace Perfect_Peace_System.Pages
                         }
                     }
                 }
-                
             }
-            
-            /*foreach (Control control in emotionalPanel.Controls)
-            {
-                if (control is Label)
-                {
-                    Console.WriteLine(((Label)control).Text);
-                    emotionalAssessment.Add((Label)control);
-                    emotionalSatisfactory.Add(0);
-                    emotionalUnsatisfactory.Add(0);
-                    emotionalImprove.Add(0);
-                    emotionalNeeds.Add(0);
-                }
-                
-            }foreach (Control control in physicalPanel.Controls)
-            {
-                if (control is Label)
-                {
-                    Console.WriteLine(((Label)control).Text);
-                    physicalAssessment.Add((Label)control);
-                    physicalSatisfactory.Add(0);
-                    physicalUnsatisfactory.Add(0);
-                    physicalImprove.Add(0);
-                    physicalNeeds.Add(0);
-                }
-                
-            }foreach (Control control in cognititvePanel.Controls)
-            {
-                if (control is Label)
-                {
-                    Console.WriteLine(((Label)control).Text);
-                    cognitiveAssessment.Add((Label)control);
-                    cognitiveSatisfactory.Add(0);
-                    cognitiveUnsatisfactory.Add(0);
-                    cognitiveImprove.Add(0);
-                    cognitiveNeeds.Add(0);
-                }
-                
-            }*/
         }
 
         private void getStudentInfo()
         {
+            lanTotalLbl.Text = "";
+            artTotalLbl.Text = "";
+            envTotalLbl.Text = "";
+            mathTotalLbl.Text = "";
+            phoTotalLbl.Text = "";
+
             query = "SELECT * FROM Student WHERE student_id='" + student_id + "'";
             SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())
@@ -184,7 +257,9 @@ namespace Perfect_Peace_System.Pages
 
                 cognitiveLbl.Visible = false;
                 cognititvePanel.Visible = false;
-
+                
+                academicLbl.Visible = false;
+                academicPanel.Visible = false;
             }
             
             if(categoryCb.SelectedIndex == 1)
@@ -200,6 +275,9 @@ namespace Perfect_Peace_System.Pages
 
                 cognitiveLbl.Visible = false;
                 cognititvePanel.Visible = false;
+                
+                academicLbl.Visible = false;
+                academicPanel.Visible = false;
 
                 emotionalLbl.Location = new Point(emotionalLbl.Location.X, languageLbl.Location.Y);
                 emotionalPanel.Location = new Point(emotionalPanel.Location.X, languagePanel.Location.Y);
@@ -218,6 +296,9 @@ namespace Perfect_Peace_System.Pages
 
                 cognitiveLbl.Visible = false;
                 cognititvePanel.Visible = false;
+                
+                academicLbl.Visible = false;
+                academicPanel.Visible = false;
 
                 physicalLbl.Location = new Point(physicalLbl.Location.X, languageLbl.Location.Y);
                 physicalPanel.Location = new Point(physicalPanel.Location.X, languagePanel.Location.Y);
@@ -236,9 +317,33 @@ namespace Perfect_Peace_System.Pages
 
                 cognitiveLbl.Visible = true;
                 cognititvePanel.Visible = true;
+                
+                academicLbl.Visible = false;
+                academicPanel.Visible = false;
 
                 cognitiveLbl.Location = new Point(cognitiveLbl.Location.X, languageLbl.Location.Y);
                 cognititvePanel.Location = new Point(cognititvePanel.Location.X, languagePanel.Location.Y);
+            }
+
+            if(categoryCb.SelectedIndex == 4)
+            {
+                languageLbl.Visible = false;
+                languagePanel.Visible = false;
+
+                emotionalLbl.Visible = false;
+                emotionalPanel.Visible = false;
+
+                physicalLbl.Visible = false;
+                physicalPanel.Visible = false;
+
+                cognitiveLbl.Visible = false;
+                cognititvePanel.Visible = false;
+                
+                academicLbl.Visible = true;
+                academicPanel.Visible = true;
+
+                academicLbl.Location = new Point(academicLbl.Location.X, languageLbl.Location.Y);
+                academicPanel.Location = new Point(academicPanel.Location.X, languagePanel.Location.Y);
             }
         }
 
@@ -312,11 +417,65 @@ namespace Perfect_Peace_System.Pages
                         DbClient.query_execute(query);
                     }
                 }
+
+                kgScoresToDb(lanLbl.Text, lanClassScoreTb.Text, lanExamTb.Text, lanTotalLbl.Text);
+                kgScoresToDb(artLbl.Text, artClassTb.Text, artExamTb.Text, artTotalLbl.Text);
+                kgScoresToDb(envLbl.Text, envClassTb.Text, envExamTb.Text, envTotalLbl.Text);
+                kgScoresToDb(mathLbl.Text, mathClassTb.Text, mathExamTb.Text, mathTotalLbl.Text);
+                kgScoresToDb(phoLbl.Text, phoClassTb.Text, phoExamTb.Text, phoTotalLbl.Text);
+
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
                 Console.WriteLine(ex.StackTrace);
+            }
+        }
+
+        private void kgScoresToDb(string assessment, string cs, string es, string ts)
+        {
+            try
+            {
+                query = "INSERT INTO KG_assessment(assessment, category, class_score, exam_score, total_score, term, class, date, student_id) " +
+                              "VALUES('" + assessment + "', 'ACADEMIC PROGRESS/EXAMINATION SCORES', " + cs + ", '" + es + "', '" + ts + "', '" + termCb.SelectedItem.ToString() + "', '" + classLbl.Text + "', '" + DateTime.Today + "', '" + student_id + "')";
+                DbClient.query_execute(query);
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
+            }
+        }
+
+        private void kg_score_values()
+        {
+            try
+            {
+                query = "SELECT * FROM KG_calc_values";
+                SqlDataReader reader = DbClient.query_reader(query);
+                while (reader.Read())
+                {
+                    exam_percentage = int.Parse(reader["exam_percentage"].ToString());
+                    class_percentage = int.Parse(reader["class_percentage"].ToString());
+                    class_total = int.Parse(reader["class_total"].ToString());
+                    exam_total = int.Parse(reader["exam_total"].ToString());
+                    
+                    examPercentageTB.Text = exam_percentage.ToString();
+                    classPercentageLB.Text = class_percentage.ToString();
+                    classTotalMarksTB.Text = class_total.ToString();
+                    examTotalMarkTB.Text = exam_total.ToString();
+
+                    if (!String.IsNullOrEmpty(examPercentageTB.Text))
+                    {
+                        examTotalMarkTB.Enabled = false;
+                        classTotalMarksTB.Enabled = false;
+                        examPercentageTB.Enabled = false;
+                    }
+                }
+                reader.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -330,7 +489,230 @@ namespace Perfect_Peace_System.Pages
                 detailsToDb();
                 MessageBox.Show("Assessment Saved");
             }
+        }
 
+        private void setValBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                
+                class_total = int.Parse(classTotalMarksTB.Text);
+                class_percentage = int.Parse(classPercentageLB.Text);
+                exam_total = int.Parse(examTotalMarkTB.Text);
+                exam_percentage = int.Parse(examPercentageTB.Text);
+
+                if (enable == true)
+                {
+
+                    DbClient.query_execute("DELETE FROM KG_calc_values");
+
+                    query = "INSERT INTO KG_calc_values (exam_total, class_total, class_percentage, exam_percentage) " +
+                        "VALUES('" + examTotalMarkTB.Text + "', '" + classTotalMarksTB.Text + "', '" + classPercentageLB.Text + "', '" + examPercentageTB.Text + "')";
+                    DbClient.query_execute(query);
+                    MessageBox.Show("Parameters set... You can input your scores");
+                    classPercentageLB.Enabled = false;
+                    examPercentageTB.Enabled = false;
+                    classTotalMarksTB.Enabled = false;
+                    examTotalMarkTB.Enabled = false;
+
+                    enable = false;
+                }
+
+                else
+                {
+                    classPercentageLB.Enabled = true;
+                    examPercentageTB.Enabled = true;
+                    classTotalMarksTB.Enabled = true;
+                    examTotalMarkTB.Enabled = true;
+
+                    enable = true;
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Check your input");
+            }
+        }
+
+        private void examPercentageTB_TextChanged(object sender, EventArgs e)
+        {
+            int outputValue = 0;
+            bool isNumber = false;
+
+            isNumber = int.TryParse(examPercentageTB.Text, out outputValue);
+            if (!isNumber)
+            {
+                Console.WriteLine("Not a number");
+            }
+            else
+            {
+                classPercentageLB.Text = (100 - int.Parse(examPercentageTB.Text)).ToString();
+            }
+
+        }
+
+        private void calcResult_TextChanged(object sender, EventArgs e)
+        {
+            decimal lanTotal = 0;
+            if (!String.IsNullOrEmpty(lanClassScoreTb.Text))
+            {
+                if (int.Parse(lanClassScoreTb.Text) <= class_total)
+                {
+                    lanTotal += (decimal.Parse(lanClassScoreTb.Text) / class_total) * class_percentage;
+                }
+                else
+                {
+                    MessageBox.Show("Class score exceeds total");
+                    lanClassScoreTb.Text = null;
+                }
+            }
+            if (!String.IsNullOrEmpty(lanExamTb.Text))
+            {
+                if (int.Parse(lanExamTb.Text) <= exam_total)
+                {
+                    lanTotal += (decimal.Parse(lanExamTb.Text) / exam_total) * exam_percentage;
+                }
+                else
+                {
+                    MessageBox.Show("Exam score exceeds total");
+                    lanExamTb.Text = null;
+                }
+            }
+            lanTotalLbl.Text = String.Format("{0:0.00}", lanTotal);
+            
+        }
+
+        private void tb_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void art_TextChanged(object sender, EventArgs e)
+        {
+            decimal artTotal = 0;
+            if (!String.IsNullOrEmpty(artClassTb.Text))
+            {
+                if (int.Parse(artClassTb.Text) <= class_total)
+                {
+                    artTotal += (decimal.Parse(artClassTb.Text) / class_total) * class_percentage;
+                }
+                else
+                {
+                    MessageBox.Show("Class score exceeds total");
+                    artClassTb.Text = null;
+                }
+            }
+            if (!String.IsNullOrEmpty(artExamTb.Text))
+            {
+                if (int.Parse(artExamTb.Text) <= exam_total)
+                {
+                    artTotal += (decimal.Parse(artExamTb.Text) / exam_total) * exam_percentage;
+                }
+                else
+                {
+                    MessageBox.Show("Exam score exceeds total");
+                    artExamTb.Text = null;
+                }
+            }
+            artTotalLbl.Text = String.Format("{0:0.00}", artTotal);
+        }
+
+        private void env_TextChanged(object sender, EventArgs e)
+        {
+            decimal envTotal = 0;
+            if (!String.IsNullOrEmpty(envClassTb.Text))
+            {
+                if (int.Parse(envClassTb.Text) <= class_total)
+                {
+                    envTotal += (decimal.Parse(envClassTb.Text) / class_total) * class_percentage;
+                }
+                else
+                {
+                    MessageBox.Show("Class score exceeds total");
+                    envClassTb.Text = null;
+                }
+            }
+            if (!String.IsNullOrEmpty(envExamTb.Text))
+            {
+                if (int.Parse(envExamTb.Text) <= exam_total)
+                {
+                    envTotal += (decimal.Parse(envExamTb.Text) / exam_total) * exam_percentage;
+                }
+                else
+                {
+                    MessageBox.Show("Exam score exceeds total");
+                    envExamTb.Text = null;
+                }
+            }
+            envTotalLbl.Text = String.Format("{0:0.00}", envTotal);
+        }
+
+        private void math_TextChanged(object sender, EventArgs e)
+        {
+            decimal mathTotal = 0;
+            if (!String.IsNullOrEmpty(mathClassTb.Text))
+            {
+                if (int.Parse(mathClassTb.Text) <= class_total)
+                {
+                    mathTotal += (decimal.Parse(mathClassTb.Text) / class_total) * class_percentage;
+                }
+                else
+                {
+                    MessageBox.Show("Class score exceeds total");
+                    mathClassTb.Text = null;
+                }
+            }
+            if (!String.IsNullOrEmpty(mathExamTb.Text))
+            {
+                if (int.Parse(mathExamTb.Text) <= exam_total)
+                {
+                    mathTotal += (decimal.Parse(mathExamTb.Text) / exam_total) * exam_percentage;
+                }
+                else
+                {
+                    MessageBox.Show("Exam score exceeds total");
+                    mathExamTb.Text = null;
+                }
+            }
+            mathTotalLbl.Text = String.Format("{0:0.00}", mathTotal);
+        }
+
+        private void pho_TextChanged(object sender, EventArgs e)
+        {
+            decimal phoTotal = 0;
+            if (!String.IsNullOrEmpty(phoClassTb.Text))
+            {
+                if (int.Parse(phoClassTb.Text) <= class_total)
+                {
+                    phoTotal += (decimal.Parse(phoClassTb.Text) / class_total) * class_percentage;
+                }
+                else
+                {
+                    MessageBox.Show("Class score exceeds total");
+                    phoClassTb.Text = null;
+                }
+            }
+            if (!String.IsNullOrEmpty(phoExamTb.Text))
+            {
+                if (int.Parse(phoExamTb.Text) <= exam_total)
+                {
+                    phoTotal += (decimal.Parse(phoExamTb.Text) / exam_total) * exam_percentage;
+                }
+                else
+                {
+                    MessageBox.Show("Exam score exceeds total");
+                    phoExamTb.Text = null;
+                }
+            }
+            phoTotalLbl.Text = String.Format("{0:0.00}", phoTotal);
         }
     }
 }

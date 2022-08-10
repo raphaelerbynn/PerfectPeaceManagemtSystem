@@ -382,7 +382,7 @@ namespace Perfect_Peace_System.Pages
                 DataGridViewRow row = kgDataView.Rows[e.RowIndex];
                 id = row.Cells["student_id_kg"].Value.ToString();
                 termVal = row.Cells["term_kg"].Value.ToString();
-                className = row.Cells["student_class_kg"].ToString();
+                className = row.Cells["student_class_kg"].Value.ToString();
 
                 if (kgDataView.Columns[e.ColumnIndex].Name == "show_result_kg" && e.RowIndex >= 0)
                 {

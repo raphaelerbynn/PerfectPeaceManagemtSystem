@@ -33,7 +33,44 @@
             this.label2 = new System.Windows.Forms.Label();
             this.categoryCb = new System.Windows.Forms.ComboBox();
             this.label58 = new System.Windows.Forms.Label();
+            this.termCb = new System.Windows.Forms.ComboBox();
             this.saveBtn = new System.Windows.Forms.Button();
+            this.academicPanel = new System.Windows.Forms.Panel();
+            this.setValBtn = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.classPercentageLB = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.classTotalMarksTB = new System.Windows.Forms.TextBox();
+            this.phoLbl = new System.Windows.Forms.Label();
+            this.mathLbl = new System.Windows.Forms.Label();
+            this.envLbl = new System.Windows.Forms.Label();
+            this.phoTotalLbl = new System.Windows.Forms.Label();
+            this.mathTotalLbl = new System.Windows.Forms.Label();
+            this.envTotalLbl = new System.Windows.Forms.Label();
+            this.artTotalLbl = new System.Windows.Forms.Label();
+            this.lanTotalLbl = new System.Windows.Forms.Label();
+            this.artLbl = new System.Windows.Forms.Label();
+            this.lanLbl = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.examPercentageTB = new System.Windows.Forms.TextBox();
+            this.phoExamTb = new System.Windows.Forms.TextBox();
+            this.phoClassTb = new System.Windows.Forms.TextBox();
+            this.mathExamTb = new System.Windows.Forms.TextBox();
+            this.mathClassTb = new System.Windows.Forms.TextBox();
+            this.envExamTb = new System.Windows.Forms.TextBox();
+            this.envClassTb = new System.Windows.Forms.TextBox();
+            this.artExamTb = new System.Windows.Forms.TextBox();
+            this.artClassTb = new System.Windows.Forms.TextBox();
+            this.lanExamTb = new System.Windows.Forms.TextBox();
+            this.lanClassScoreTb = new System.Windows.Forms.TextBox();
+            this.examTotalMarkTB = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.cognititvePanel = new System.Windows.Forms.Panel();
             this.comboBox31 = new System.Windows.Forms.ComboBox();
             this.comboBox30 = new System.Windows.Forms.ComboBox();
@@ -48,7 +85,7 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
+            this.colorsLbl = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -97,21 +134,22 @@
             this.label51 = new System.Windows.Forms.Label();
             this.label50 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
+            this.changeLbl = new System.Windows.Forms.Label();
             this.languageLbl = new System.Windows.Forms.Label();
             this.emotionalLbl = new System.Windows.Forms.Label();
             this.physicalLbl = new System.Windows.Forms.Label();
+            this.academicLbl = new System.Windows.Forms.Label();
             this.cognitiveLbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.topPanel = new System.Windows.Forms.Panel();
             this.f = new System.Windows.Forms.Label();
             this.classLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.studentNameLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.termCb = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.bgPanel.SuspendLayout();
+            this.academicPanel.SuspendLayout();
             this.cognititvePanel.SuspendLayout();
             this.physicalPanel.SuspendLayout();
             this.emotionalPanel.SuspendLayout();
@@ -140,6 +178,7 @@
             this.bgPanel.Controls.Add(this.label58);
             this.bgPanel.Controls.Add(this.termCb);
             this.bgPanel.Controls.Add(this.saveBtn);
+            this.bgPanel.Controls.Add(this.academicPanel);
             this.bgPanel.Controls.Add(this.cognititvePanel);
             this.bgPanel.Controls.Add(this.physicalPanel);
             this.bgPanel.Controls.Add(this.emotionalPanel);
@@ -147,6 +186,7 @@
             this.bgPanel.Controls.Add(this.languageLbl);
             this.bgPanel.Controls.Add(this.emotionalLbl);
             this.bgPanel.Controls.Add(this.physicalLbl);
+            this.bgPanel.Controls.Add(this.academicLbl);
             this.bgPanel.Controls.Add(this.cognitiveLbl);
             this.bgPanel.Controls.Add(this.label4);
             this.bgPanel.Location = new System.Drawing.Point(0, 107);
@@ -173,7 +213,8 @@
             "LANGUAGE DEVELOPMENT (READING, LISTENING AND ORAL SKILLS)",
             "PERSONAL / SOCIAL / EMOTIONAL DEVELOPMENT",
             "PHYSICAL DEVELOPMENT",
-            "COGNITIVE DEVELOPMENT (POSITION, DIRECTION, THINKING)"});
+            "COGNITIVE DEVELOPMENT (POSITION, DIRECTION, THINKING)",
+            "ACADEMIC PROGRESS/EXAMINATION SCORES"});
             this.categoryCb.Location = new System.Drawing.Point(117, 24);
             this.categoryCb.Name = "categoryCb";
             this.categoryCb.Size = new System.Drawing.Size(721, 26);
@@ -192,6 +233,21 @@
             this.label58.TabIndex = 12;
             this.label58.Text = "Category: ";
             // 
+            // termCb
+            // 
+            this.termCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.termCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.termCb.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.termCb.FormattingEnabled = true;
+            this.termCb.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.termCb.Location = new System.Drawing.Point(359, 545);
+            this.termCb.Name = "termCb";
+            this.termCb.Size = new System.Drawing.Size(231, 26);
+            this.termCb.TabIndex = 13;
+            // 
             // saveBtn
             // 
             this.saveBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -207,6 +263,440 @@
             this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = false;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
+            // academicPanel
+            // 
+            this.academicPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.academicPanel.AutoScroll = true;
+            this.academicPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.academicPanel.Controls.Add(this.setValBtn);
+            this.academicPanel.Controls.Add(this.label10);
+            this.academicPanel.Controls.Add(this.label7);
+            this.academicPanel.Controls.Add(this.classPercentageLB);
+            this.academicPanel.Controls.Add(this.label5);
+            this.academicPanel.Controls.Add(this.classTotalMarksTB);
+            this.academicPanel.Controls.Add(this.phoLbl);
+            this.academicPanel.Controls.Add(this.mathLbl);
+            this.academicPanel.Controls.Add(this.envLbl);
+            this.academicPanel.Controls.Add(this.phoTotalLbl);
+            this.academicPanel.Controls.Add(this.mathTotalLbl);
+            this.academicPanel.Controls.Add(this.envTotalLbl);
+            this.academicPanel.Controls.Add(this.artTotalLbl);
+            this.academicPanel.Controls.Add(this.lanTotalLbl);
+            this.academicPanel.Controls.Add(this.artLbl);
+            this.academicPanel.Controls.Add(this.lanLbl);
+            this.academicPanel.Controls.Add(this.label22);
+            this.academicPanel.Controls.Add(this.label21);
+            this.academicPanel.Controls.Add(this.label20);
+            this.academicPanel.Controls.Add(this.label18);
+            this.academicPanel.Controls.Add(this.label11);
+            this.academicPanel.Controls.Add(this.examPercentageTB);
+            this.academicPanel.Controls.Add(this.phoExamTb);
+            this.academicPanel.Controls.Add(this.phoClassTb);
+            this.academicPanel.Controls.Add(this.mathExamTb);
+            this.academicPanel.Controls.Add(this.mathClassTb);
+            this.academicPanel.Controls.Add(this.envExamTb);
+            this.academicPanel.Controls.Add(this.envClassTb);
+            this.academicPanel.Controls.Add(this.artExamTb);
+            this.academicPanel.Controls.Add(this.artClassTb);
+            this.academicPanel.Controls.Add(this.lanExamTb);
+            this.academicPanel.Controls.Add(this.lanClassScoreTb);
+            this.academicPanel.Controls.Add(this.examTotalMarkTB);
+            this.academicPanel.Controls.Add(this.label12);
+            this.academicPanel.Controls.Add(this.label13);
+            this.academicPanel.Location = new System.Drawing.Point(12, 2046);
+            this.academicPanel.Name = "academicPanel";
+            this.academicPanel.Size = new System.Drawing.Size(865, 394);
+            this.academicPanel.TabIndex = 1;
+            this.academicPanel.Visible = false;
+            // 
+            // setValBtn
+            // 
+            this.setValBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.setValBtn.BackColor = System.Drawing.Color.DarkGreen;
+            this.setValBtn.FlatAppearance.BorderSize = 0;
+            this.setValBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.setValBtn.ForeColor = System.Drawing.Color.White;
+            this.setValBtn.Location = new System.Drawing.Point(405, 85);
+            this.setValBtn.Name = "setValBtn";
+            this.setValBtn.Size = new System.Drawing.Size(75, 23);
+            this.setValBtn.TabIndex = 31;
+            this.setValBtn.Text = "Set Values";
+            this.setValBtn.UseVisualStyleBackColor = false;
+            this.setValBtn.Click += new System.EventHandler(this.setValBtn_Click);
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(614, 50);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(20, 19);
+            this.label10.TabIndex = 30;
+            this.label10.Text = "%";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(683, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(20, 19);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "%";
+            // 
+            // classPercentageLB
+            // 
+            this.classPercentageLB.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.classPercentageLB.AutoSize = true;
+            this.classPercentageLB.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classPercentageLB.Location = new System.Drawing.Point(583, 49);
+            this.classPercentageLB.Name = "classPercentageLB";
+            this.classPercentageLB.Size = new System.Drawing.Size(25, 19);
+            this.classPercentageLB.TabIndex = 26;
+            this.classPercentageLB.Text = "00";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(448, 50);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(129, 19);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "Class Percentage: ";
+            // 
+            // classTotalMarksTB
+            // 
+            this.classTotalMarksTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.classTotalMarksTB.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classTotalMarksTB.Location = new System.Drawing.Point(299, 46);
+            this.classTotalMarksTB.Name = "classTotalMarksTB";
+            this.classTotalMarksTB.Size = new System.Drawing.Size(100, 27);
+            this.classTotalMarksTB.TabIndex = 24;
+            this.classTotalMarksTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // phoLbl
+            // 
+            this.phoLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.phoLbl.AutoSize = true;
+            this.phoLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoLbl.Location = new System.Drawing.Point(40, 352);
+            this.phoLbl.Name = "phoLbl";
+            this.phoLbl.Size = new System.Drawing.Size(59, 19);
+            this.phoLbl.TabIndex = 22;
+            this.phoLbl.Text = "Phonics";
+            // 
+            // mathLbl
+            // 
+            this.mathLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mathLbl.AutoSize = true;
+            this.mathLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mathLbl.Location = new System.Drawing.Point(40, 306);
+            this.mathLbl.Name = "mathLbl";
+            this.mathLbl.Size = new System.Drawing.Size(74, 19);
+            this.mathLbl.TabIndex = 22;
+            this.mathLbl.Text = "Numeracy";
+            // 
+            // envLbl
+            // 
+            this.envLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.envLbl.AutoSize = true;
+            this.envLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.envLbl.Location = new System.Drawing.Point(40, 266);
+            this.envLbl.Name = "envLbl";
+            this.envLbl.Size = new System.Drawing.Size(155, 19);
+            this.envLbl.TabIndex = 22;
+            this.envLbl.Text = "Environmental Science";
+            // 
+            // phoTotalLbl
+            // 
+            this.phoTotalLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.phoTotalLbl.AutoSize = true;
+            this.phoTotalLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoTotalLbl.Location = new System.Drawing.Point(695, 352);
+            this.phoTotalLbl.Name = "phoTotalLbl";
+            this.phoTotalLbl.Size = new System.Drawing.Size(93, 19);
+            this.phoTotalLbl.TabIndex = 22;
+            this.phoTotalLbl.Text = "Creative Arts";
+            // 
+            // mathTotalLbl
+            // 
+            this.mathTotalLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mathTotalLbl.AutoSize = true;
+            this.mathTotalLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mathTotalLbl.Location = new System.Drawing.Point(695, 306);
+            this.mathTotalLbl.Name = "mathTotalLbl";
+            this.mathTotalLbl.Size = new System.Drawing.Size(93, 19);
+            this.mathTotalLbl.TabIndex = 22;
+            this.mathTotalLbl.Text = "Creative Arts";
+            // 
+            // envTotalLbl
+            // 
+            this.envTotalLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.envTotalLbl.AutoSize = true;
+            this.envTotalLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.envTotalLbl.Location = new System.Drawing.Point(695, 266);
+            this.envTotalLbl.Name = "envTotalLbl";
+            this.envTotalLbl.Size = new System.Drawing.Size(93, 19);
+            this.envTotalLbl.TabIndex = 22;
+            this.envTotalLbl.Text = "Creative Arts";
+            // 
+            // artTotalLbl
+            // 
+            this.artTotalLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.artTotalLbl.AutoSize = true;
+            this.artTotalLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.artTotalLbl.Location = new System.Drawing.Point(695, 223);
+            this.artTotalLbl.Name = "artTotalLbl";
+            this.artTotalLbl.Size = new System.Drawing.Size(93, 19);
+            this.artTotalLbl.TabIndex = 22;
+            this.artTotalLbl.Text = "Creative Arts";
+            // 
+            // lanTotalLbl
+            // 
+            this.lanTotalLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lanTotalLbl.AutoSize = true;
+            this.lanTotalLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lanTotalLbl.Location = new System.Drawing.Point(695, 179);
+            this.lanTotalLbl.Name = "lanTotalLbl";
+            this.lanTotalLbl.Size = new System.Drawing.Size(93, 19);
+            this.lanTotalLbl.TabIndex = 22;
+            this.lanTotalLbl.Text = "Creative Arts";
+            // 
+            // artLbl
+            // 
+            this.artLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.artLbl.AutoSize = true;
+            this.artLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.artLbl.Location = new System.Drawing.Point(40, 223);
+            this.artLbl.Name = "artLbl";
+            this.artLbl.Size = new System.Drawing.Size(93, 19);
+            this.artLbl.TabIndex = 22;
+            this.artLbl.Text = "Creative Arts";
+            // 
+            // lanLbl
+            // 
+            this.lanLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lanLbl.AutoSize = true;
+            this.lanLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lanLbl.Location = new System.Drawing.Point(40, 179);
+            this.lanLbl.Name = "lanLbl";
+            this.lanLbl.Size = new System.Drawing.Size(129, 19);
+            this.lanLbl.TabIndex = 22;
+            this.lanLbl.Text = "Language/Literacy";
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(695, 139);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(85, 19);
+            this.label22.TabIndex = 22;
+            this.label22.Text = "Total Score";
+            // 
+            // label21
+            // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(510, 139);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(87, 19);
+            this.label21.TabIndex = 22;
+            this.label21.Text = "Exam Score";
+            // 
+            // label20
+            // 
+            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(295, 139);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(83, 19);
+            this.label20.TabIndex = 22;
+            this.label20.Text = "Class Score";
+            // 
+            // label18
+            // 
+            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(40, 139);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(133, 19);
+            this.label18.TabIndex = 22;
+            this.label18.Text = "Class Total Marks: ";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(161, 54);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(132, 19);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "Class Total Marks: ";
+            // 
+            // examPercentageTB
+            // 
+            this.examPercentageTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.examPercentageTB.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.examPercentageTB.Location = new System.Drawing.Point(583, 8);
+            this.examPercentageTB.Name = "examPercentageTB";
+            this.examPercentageTB.Size = new System.Drawing.Size(100, 27);
+            this.examPercentageTB.TabIndex = 21;
+            this.examPercentageTB.TextChanged += new System.EventHandler(this.examPercentageTB_TextChanged);
+            this.examPercentageTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // phoExamTb
+            // 
+            this.phoExamTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.phoExamTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoExamTb.Location = new System.Drawing.Point(514, 352);
+            this.phoExamTb.Name = "phoExamTb";
+            this.phoExamTb.Size = new System.Drawing.Size(100, 27);
+            this.phoExamTb.TabIndex = 20;
+            this.phoExamTb.TextChanged += new System.EventHandler(this.pho_TextChanged);
+            this.phoExamTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // phoClassTb
+            // 
+            this.phoClassTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.phoClassTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phoClassTb.Location = new System.Drawing.Point(299, 352);
+            this.phoClassTb.Name = "phoClassTb";
+            this.phoClassTb.Size = new System.Drawing.Size(100, 27);
+            this.phoClassTb.TabIndex = 20;
+            this.phoClassTb.TextChanged += new System.EventHandler(this.pho_TextChanged);
+            this.phoClassTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // mathExamTb
+            // 
+            this.mathExamTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mathExamTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mathExamTb.Location = new System.Drawing.Point(514, 306);
+            this.mathExamTb.Name = "mathExamTb";
+            this.mathExamTb.Size = new System.Drawing.Size(100, 27);
+            this.mathExamTb.TabIndex = 20;
+            this.mathExamTb.TextChanged += new System.EventHandler(this.math_TextChanged);
+            this.mathExamTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // mathClassTb
+            // 
+            this.mathClassTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mathClassTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mathClassTb.Location = new System.Drawing.Point(299, 306);
+            this.mathClassTb.Name = "mathClassTb";
+            this.mathClassTb.Size = new System.Drawing.Size(100, 27);
+            this.mathClassTb.TabIndex = 20;
+            this.mathClassTb.TextChanged += new System.EventHandler(this.math_TextChanged);
+            this.mathClassTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // envExamTb
+            // 
+            this.envExamTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.envExamTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.envExamTb.Location = new System.Drawing.Point(514, 266);
+            this.envExamTb.Name = "envExamTb";
+            this.envExamTb.Size = new System.Drawing.Size(100, 27);
+            this.envExamTb.TabIndex = 20;
+            this.envExamTb.TextChanged += new System.EventHandler(this.env_TextChanged);
+            this.envExamTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // envClassTb
+            // 
+            this.envClassTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.envClassTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.envClassTb.Location = new System.Drawing.Point(299, 266);
+            this.envClassTb.Name = "envClassTb";
+            this.envClassTb.Size = new System.Drawing.Size(100, 27);
+            this.envClassTb.TabIndex = 20;
+            this.envClassTb.TextChanged += new System.EventHandler(this.env_TextChanged);
+            this.envClassTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // artExamTb
+            // 
+            this.artExamTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.artExamTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.artExamTb.Location = new System.Drawing.Point(514, 223);
+            this.artExamTb.Name = "artExamTb";
+            this.artExamTb.Size = new System.Drawing.Size(100, 27);
+            this.artExamTb.TabIndex = 20;
+            this.artExamTb.TextChanged += new System.EventHandler(this.art_TextChanged);
+            this.artExamTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // artClassTb
+            // 
+            this.artClassTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.artClassTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.artClassTb.Location = new System.Drawing.Point(299, 223);
+            this.artClassTb.Name = "artClassTb";
+            this.artClassTb.Size = new System.Drawing.Size(100, 27);
+            this.artClassTb.TabIndex = 20;
+            this.artClassTb.TextChanged += new System.EventHandler(this.art_TextChanged);
+            this.artClassTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // lanExamTb
+            // 
+            this.lanExamTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lanExamTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lanExamTb.Location = new System.Drawing.Point(514, 179);
+            this.lanExamTb.Name = "lanExamTb";
+            this.lanExamTb.Size = new System.Drawing.Size(100, 27);
+            this.lanExamTb.TabIndex = 20;
+            this.lanExamTb.TextChanged += new System.EventHandler(this.calcResult_TextChanged);
+            this.lanExamTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // lanClassScoreTb
+            // 
+            this.lanClassScoreTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lanClassScoreTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lanClassScoreTb.Location = new System.Drawing.Point(299, 179);
+            this.lanClassScoreTb.Name = "lanClassScoreTb";
+            this.lanClassScoreTb.Size = new System.Drawing.Size(100, 27);
+            this.lanClassScoreTb.TabIndex = 20;
+            this.lanClassScoreTb.TextChanged += new System.EventHandler(this.calcResult_TextChanged);
+            this.lanClassScoreTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // examTotalMarkTB
+            // 
+            this.examTotalMarkTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.examTotalMarkTB.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.examTotalMarkTB.Location = new System.Drawing.Point(299, 12);
+            this.examTotalMarkTB.Name = "examTotalMarkTB";
+            this.examTotalMarkTB.Size = new System.Drawing.Size(100, 27);
+            this.examTotalMarkTB.TabIndex = 20;
+            this.examTotalMarkTB.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(448, 15);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(129, 19);
+            this.label12.TabIndex = 19;
+            this.label12.Text = "Exam Percentage: ";
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(161, 20);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(132, 19);
+            this.label13.TabIndex = 18;
+            this.label13.Text = "Exam Total Marks: ";
             // 
             // cognititvePanel
             // 
@@ -227,7 +717,7 @@
             this.cognititvePanel.Controls.Add(this.label30);
             this.cognititvePanel.Controls.Add(this.label29);
             this.cognititvePanel.Controls.Add(this.label28);
-            this.cognititvePanel.Controls.Add(this.label27);
+            this.cognititvePanel.Controls.Add(this.colorsLbl);
             this.cognititvePanel.Controls.Add(this.label26);
             this.cognititvePanel.Controls.Add(this.label25);
             this.cognititvePanel.Controls.Add(this.label24);
@@ -253,6 +743,7 @@
             this.comboBox31.Name = "comboBox31";
             this.comboBox31.Size = new System.Drawing.Size(423, 26);
             this.comboBox31.TabIndex = 14;
+            this.comboBox31.Tag = "notKg";
             // 
             // comboBox30
             // 
@@ -269,6 +760,7 @@
             this.comboBox30.Name = "comboBox30";
             this.comboBox30.Size = new System.Drawing.Size(423, 26);
             this.comboBox30.TabIndex = 14;
+            this.comboBox30.Tag = "notKg";
             // 
             // comboBox29
             // 
@@ -333,6 +825,7 @@
             this.comboBox26.Name = "comboBox26";
             this.comboBox26.Size = new System.Drawing.Size(423, 26);
             this.comboBox26.TabIndex = 14;
+            this.comboBox26.Tag = "notKg";
             // 
             // comboBox25
             // 
@@ -426,16 +919,16 @@
             this.label28.Tag = "assessment";
             this.label28.Text = "Picture making";
             // 
-            // label27
+            // colorsLbl
             // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(128, 265);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(186, 19);
-            this.label27.TabIndex = 0;
-            this.label27.Tag = "assessment";
-            this.label27.Text = "Recognizes primary colours";
+            this.colorsLbl.AutoSize = true;
+            this.colorsLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colorsLbl.Location = new System.Drawing.Point(128, 265);
+            this.colorsLbl.Name = "colorsLbl";
+            this.colorsLbl.Size = new System.Drawing.Size(186, 19);
+            this.colorsLbl.TabIndex = 0;
+            this.colorsLbl.Tag = "assessment";
+            this.colorsLbl.Text = "Recognizes primary colours";
             // 
             // label26
             // 
@@ -518,6 +1011,7 @@
             this.comboBox22.Name = "comboBox22";
             this.comboBox22.Size = new System.Drawing.Size(423, 26);
             this.comboBox22.TabIndex = 14;
+            this.comboBox22.Tag = "notKg";
             // 
             // comboBox21
             // 
@@ -861,7 +1355,7 @@
             this.languagePanel.Controls.Add(this.label51);
             this.languagePanel.Controls.Add(this.label50);
             this.languagePanel.Controls.Add(this.label49);
-            this.languagePanel.Controls.Add(this.label48);
+            this.languagePanel.Controls.Add(this.changeLbl);
             this.languagePanel.Location = new System.Drawing.Point(12, 122);
             this.languagePanel.Name = "languagePanel";
             this.languagePanel.Size = new System.Drawing.Size(865, 404);
@@ -898,6 +1392,7 @@
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(423, 26);
             this.comboBox10.TabIndex = 13;
+            this.comboBox10.Tag = "notKg";
             // 
             // comboBox9
             // 
@@ -978,6 +1473,7 @@
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(423, 26);
             this.comboBox5.TabIndex = 13;
+            this.comboBox5.Tag = "notKg";
             // 
             // comboBox4
             // 
@@ -994,7 +1490,7 @@
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(423, 26);
             this.comboBox4.TabIndex = 13;
-            this.comboBox4.Tag = "az";
+            this.comboBox4.Tag = "notKg";
             // 
             // comboBox3
             // 
@@ -1011,7 +1507,7 @@
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(423, 26);
             this.comboBox3.TabIndex = 13;
-            this.comboBox3.Tag = "er";
+            this.comboBox3.Tag = "notKg";
             // 
             // comboBox2
             // 
@@ -1138,17 +1634,18 @@
             this.label49.Tag = "assessment";
             this.label49.Text = "Forms simple sentence";
             // 
-            // label48
+            // changeLbl
             // 
-            this.label48.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(167, 539);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(145, 19);
-            this.label48.TabIndex = 0;
-            this.label48.Tag = "assessment";
-            this.label48.Text = "Listens to short story";
+            this.changeLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.changeLbl.AutoSize = true;
+            this.changeLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.changeLbl.Location = new System.Drawing.Point(167, 539);
+            this.changeLbl.Name = "changeLbl";
+            this.changeLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.changeLbl.Size = new System.Drawing.Size(145, 19);
+            this.changeLbl.TabIndex = 0;
+            this.changeLbl.Tag = "assessment";
+            this.changeLbl.Text = "Listens to short story";
             // 
             // languageLbl
             // 
@@ -1185,6 +1682,18 @@
             this.physicalLbl.Text = "PHYSICAL DEVELOPMENT";
             this.physicalLbl.Visible = false;
             // 
+            // academicLbl
+            // 
+            this.academicLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.academicLbl.AutoSize = true;
+            this.academicLbl.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.academicLbl.Location = new System.Drawing.Point(279, 2015);
+            this.academicLbl.Name = "academicLbl";
+            this.academicLbl.Size = new System.Drawing.Size(319, 19);
+            this.academicLbl.TabIndex = 0;
+            this.academicLbl.Text = "ACADEMIC PROGRESS/EXAMINATION SCORES";
+            this.academicLbl.Visible = false;
+            // 
             // cognitiveLbl
             // 
             this.cognitiveLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1196,6 +1705,18 @@
             this.cognitiveLbl.TabIndex = 0;
             this.cognitiveLbl.Text = "COGNITIVE DEVELOPMENT (POSITION, DIRECTION, THINKING)";
             this.cognitiveLbl.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(306, 545);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(45, 19);
+            this.label4.TabIndex = 0;
+            this.label4.Tag = "assessment";
+            this.label4.Text = "Term:";
             // 
             // topPanel
             // 
@@ -1266,33 +1787,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Student Name: ";
             // 
-            // termCb
-            // 
-            this.termCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.termCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.termCb.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.termCb.FormattingEnabled = true;
-            this.termCb.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3"});
-            this.termCb.Location = new System.Drawing.Point(359, 545);
-            this.termCb.Name = "termCb";
-            this.termCb.Size = new System.Drawing.Size(231, 26);
-            this.termCb.TabIndex = 13;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(306, 545);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 19);
-            this.label4.TabIndex = 0;
-            this.label4.Tag = "assessment";
-            this.label4.Text = "Term:";
-            // 
             // ReportForKG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1304,6 +1798,8 @@
             this.panel1.ResumeLayout(false);
             this.bgPanel.ResumeLayout(false);
             this.bgPanel.PerformLayout();
+            this.academicPanel.ResumeLayout(false);
+            this.academicPanel.PerformLayout();
             this.cognititvePanel.ResumeLayout(false);
             this.cognititvePanel.PerformLayout();
             this.physicalPanel.ResumeLayout(false);
@@ -1327,7 +1823,7 @@
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label colorsLbl;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
@@ -1355,7 +1851,7 @@
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label changeLbl;
         private System.Windows.Forms.Label languageLbl;
         private System.Windows.Forms.Label emotionalLbl;
         private System.Windows.Forms.Label physicalLbl;
@@ -1402,5 +1898,42 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox termCb;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel academicPanel;
+        private System.Windows.Forms.Label academicLbl;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label classPercentageLB;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox classTotalMarksTB;
+        private System.Windows.Forms.Label mathLbl;
+        private System.Windows.Forms.Label envLbl;
+        private System.Windows.Forms.Label artLbl;
+        private System.Windows.Forms.Label lanLbl;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox examPercentageTB;
+        private System.Windows.Forms.TextBox examTotalMarkTB;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button setValBtn;
+        private System.Windows.Forms.Label phoLbl;
+        private System.Windows.Forms.Label phoTotalLbl;
+        private System.Windows.Forms.Label mathTotalLbl;
+        private System.Windows.Forms.Label envTotalLbl;
+        private System.Windows.Forms.Label artTotalLbl;
+        private System.Windows.Forms.Label lanTotalLbl;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox phoExamTb;
+        private System.Windows.Forms.TextBox phoClassTb;
+        private System.Windows.Forms.TextBox mathExamTb;
+        private System.Windows.Forms.TextBox mathClassTb;
+        private System.Windows.Forms.TextBox envExamTb;
+        private System.Windows.Forms.TextBox envClassTb;
+        private System.Windows.Forms.TextBox artExamTb;
+        private System.Windows.Forms.TextBox artClassTb;
+        private System.Windows.Forms.TextBox lanExamTb;
+        private System.Windows.Forms.TextBox lanClassScoreTb;
     }
 }
