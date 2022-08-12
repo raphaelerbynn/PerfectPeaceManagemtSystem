@@ -158,122 +158,184 @@ namespace Perfect_Peace_System
 
         private void studentBtn_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender);
-            openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), panelView);
-            addStntBtn.Visible = true;
-            addStntBtn.Text = "Add Student";
-            titleLbl.Text = "STUDENTS";
-            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
+            if (InternetConnectivity.checkConnectivity())
+            {
+                ActivateBtn(sender);
+                openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), panelView);
+                addStntBtn.Visible = true;
+                addStntBtn.Text = "Add Student";
+                titleLbl.Text = "STUDENTS";
+                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
+            
         }
 
         private void addStntBtn_Click(object sender, EventArgs e)
         {
-            if (addStntBtn.Text == "Cancel add student")
+            if (InternetConnectivity.checkConnectivity())
             {
-                new Pages.AddStudent().Close();
-                openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), panelView);
-                addStntBtn.Text = "Add Student";
-            }
-            else if(addStntBtn.Text == "Add Student")
-            {
-                openNewPage.OpenChildForm(new Pages.AddStudent(), panelView);
-                addStntBtn.Text = "Cancel add student";
-            }
 
-            if(addStntBtn.Text == "Add To Staff")
-            {
-                openNewPage.OpenChildForm(new Pages.AddTeacher(), panelView);
-                addStntBtn.Text = "Cancel add add to staff";
-            }
-            else if (addStntBtn.Text == "Cancel add to staff")
-            {
-                new Pages.AddTeacher().Close();
-                openNewPage.OpenChildForm(new Pages.TeacherData(), panelView);
-                addStntBtn.Text = "Add To Staff";
-            }
+                if (addStntBtn.Text == "Cancel add student")
+                {
+                    new Pages.AddStudent().Close();
+                    openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), panelView);
+                    addStntBtn.Text = "Add Student";
+                }
+                else if (addStntBtn.Text == "Add Student")
+                {
+                    openNewPage.OpenChildForm(new Pages.AddStudent(), panelView);
+                    addStntBtn.Text = "Cancel add student";
+                }
 
-            if (addStntBtn.Text == "Add Class")
-            {
-                openNewPage.OpenChildForm(new Pages.AddClass(), panelView);
-                addStntBtn.Text = "Cancel add class";
-            }
-            else if (addStntBtn.Text == "Cancel add class")
-            {
-                new Pages.AddClass().Close();
-                openNewPage.OpenChildForm(new Pages.ClassData(), panelView);
-                addStntBtn.Text = "Add Class";
-            }
+                if (addStntBtn.Text == "Add To Staff")
+                {
+                    openNewPage.OpenChildForm(new Pages.AddTeacher(), panelView);
+                    addStntBtn.Text = "Cancel add add to staff";
+                }
+                else if (addStntBtn.Text == "Cancel add to staff")
+                {
+                    new Pages.AddTeacher().Close();
+                    openNewPage.OpenChildForm(new Pages.TeacherData(), panelView);
+                    addStntBtn.Text = "Add To Staff";
+                }
 
-            if (addStntBtn.Text == "Pay Fees")
-            {
-                openNewPage.OpenChildForm(new Pages.FeePaying(), panelView);
-                addStntBtn.Text = "Cancel pay fees";
-            }
-            else if (addStntBtn.Text == "Cancel pay fees")
-            {
-                new Pages.AddClass().Close();
-                openNewPage.OpenChildForm(new Pages.FeesData(), panelView);
-                addStntBtn.Text = "Pay Fees";
-            }
+                if (addStntBtn.Text == "Add Class")
+                {
+                    openNewPage.OpenChildForm(new Pages.AddClass(), panelView);
+                    addStntBtn.Text = "Cancel add class";
+                }
+                else if (addStntBtn.Text == "Cancel add class")
+                {
+                    new Pages.AddClass().Close();
+                    openNewPage.OpenChildForm(new Pages.ClassData(), panelView);
+                    addStntBtn.Text = "Add Class";
+                }
 
+                if (addStntBtn.Text == "Pay Fees")
+                {
+                    openNewPage.OpenChildForm(new Pages.FeePaying(), panelView);
+                    addStntBtn.Text = "Cancel pay fees";
+                }
+                else if (addStntBtn.Text == "Cancel pay fees")
+                {
+                    new Pages.AddClass().Close();
+                    openNewPage.OpenChildForm(new Pages.FeesData(), panelView);
+                    addStntBtn.Text = "Pay Fees";
+                }
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
 
         }
 
         private void teachersBtn_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender);
-            addStntBtn.Visible = true;
-            addStntBtn.Text = "Add To Staff";
-            titleLbl.Text = "STAFF";
-            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
-            openNewPage.OpenChildForm(new Pages.TeacherData(), panelView);
+            if (InternetConnectivity.checkConnectivity())
+            {
+                ActivateBtn(sender);
+                addStntBtn.Visible = true;
+                addStntBtn.Text = "Add To Staff";
+                titleLbl.Text = "STAFF";
+                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
+                openNewPage.OpenChildForm(new Pages.TeacherData(), panelView);
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
+            
         }
 
         private void parentsBtn_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender);
-            openNewPage.OpenChildForm(new Pages.ParentsData(), panelView);
-            addStntBtn.Visible = false;
-            titleLbl.Text = "PARENTS";
-            //addStntBtn.Text = "Send Message";
-            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
+            if (InternetConnectivity.checkConnectivity())
+            {
+                ActivateBtn(sender);
+                openNewPage.OpenChildForm(new Pages.ParentsData(), panelView);
+                addStntBtn.Visible = false;
+                titleLbl.Text = "PARENTS";
+                //addStntBtn.Text = "Send Message";
+                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
+            
         }
 
         private void classesBtn_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender);
-            addStntBtn.Visible = true;
-            addStntBtn.Text = "Add Class";
-            titleLbl.Text = "CLASSROOMS";
-            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
-            openNewPage.OpenChildForm(new Pages.ClassData(), panelView);
+
+            if (InternetConnectivity.checkConnectivity())
+            {
+                ActivateBtn(sender);
+                addStntBtn.Visible = true;
+                addStntBtn.Text = "Add Class";
+                titleLbl.Text = "CLASSROOMS";
+                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
+                openNewPage.OpenChildForm(new Pages.ClassData(), panelView);
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
+            
         }
 
         private void dashboardBtn_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender);
-            addStntBtn.Visible = false;
-            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
-            titleLbl.Text = "DASHBOARD";
-            openNewPage.OpenChildForm(new Pages.Dashboard(), panelView);
+            if (InternetConnectivity.checkConnectivity())
+            {
+                ActivateBtn(sender);
+                addStntBtn.Visible = false;
+                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
+                titleLbl.Text = "DASHBOARD";
+                openNewPage.OpenChildForm(new Pages.Dashboard(), panelView);
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
         }
 
         private void feesBtn_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender);
-            addStntBtn.Visible = true;
-            addStntBtn.Text = "Pay Fees";
-            titleLbl.Text = "FEES";
-            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
-            openNewPage.OpenChildForm(new Pages.FeesData(), panelView);
+            if (InternetConnectivity.checkConnectivity())
+            {
+                ActivateBtn(sender);
+                addStntBtn.Visible = true;
+                addStntBtn.Text = "Pay Fees";
+                titleLbl.Text = "FEES";
+                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
+                openNewPage.OpenChildForm(new Pages.FeesData(), panelView);
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
+            
         }
         
         private void accBtn_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender);
-            addStntBtn.Visible = false;
-            titleLbl.Text = "ACCOUNT";
-            openNewPage.OpenChildForm(new Pages.Account(), panelView);
+            if (InternetConnectivity.checkConnectivity())
+            {
+                ActivateBtn(sender);
+                addStntBtn.Visible = false;
+                titleLbl.Text = "ACCOUNT";
+                openNewPage.OpenChildForm(new Pages.Account(), panelView);
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
         }
         private void closeBtn_Click(object sender, EventArgs e)
         {
@@ -301,38 +363,70 @@ namespace Perfect_Peace_System
 
         private void reportBtn_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender);
-            addStntBtn.Visible = false;
-            titleLbl.Text = "STUDENT REPORT";
-            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
-            openNewPage.OpenChildForm(new Pages.StudentReport(), panelView);
+            if (InternetConnectivity.checkConnectivity())
+            {
+                ActivateBtn(sender);
+                addStntBtn.Visible = false;
+                titleLbl.Text = "STUDENT REPORT";
+                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
+                openNewPage.OpenChildForm(new Pages.StudentReport(), panelView);
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
+            
         }
 
         private void subjectBtn_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender);
-            addStntBtn.Visible = false;
-            titleLbl.Text = "SUBJECT INFORMATION";
-            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
-            openNewPage.OpenChildForm(new Pages.AddSubject(), panelView);
+            if (InternetConnectivity.checkConnectivity())
+            {
+                ActivateBtn(sender);
+                addStntBtn.Visible = false;
+                titleLbl.Text = "SUBJECT INFORMATION";
+                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
+                openNewPage.OpenChildForm(new Pages.AddSubject(), panelView);
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
+           
         }
 
         private void payrollBtn_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender);
-            addStntBtn.Visible = false;
-            titleLbl.Text = "PAYROLL";
-            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
-            openNewPage.OpenChildForm(new Pages.Payroll(), panelView);
+            if (InternetConnectivity.checkConnectivity())
+            {
+                ActivateBtn(sender);
+                addStntBtn.Visible = false;
+                titleLbl.Text = "PAYROLL";
+                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
+                openNewPage.OpenChildForm(new Pages.Payroll(), panelView);
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
+            
         }
 
         private void attendanceBtn_Click(object sender, EventArgs e)
         {
-            ActivateBtn(sender);
-            addStntBtn.Visible = false;
-            titleLbl.Text = "STUDENT ATTENDANCE";
-            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
-            openNewPage.OpenChildForm(new Pages.Attendance(), panelView);
+            if (InternetConnectivity.checkConnectivity())
+            {
+                ActivateBtn(sender);
+                addStntBtn.Visible = false;
+                titleLbl.Text = "STUDENT ATTENDANCE";
+                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
+                openNewPage.OpenChildForm(new Pages.Attendance(), panelView);
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
+            
         }
 
         private void topPanel_MouseMove(object sender, MouseEventArgs e)

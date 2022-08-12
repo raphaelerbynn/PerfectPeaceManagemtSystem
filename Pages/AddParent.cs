@@ -44,7 +44,7 @@ namespace Perfect_Peace_System.Pages
             reader.Close();
 
             Console.WriteLine();
-            query = "UPDATE Student SET fees_owing='"+fees_owned+"', class_id='"+class_id+"' WHERE class='"+AddStudent.class_name+"'";
+            query = "UPDATE Student SET fees_owing='"+fees_owned+"', class_id='"+class_id+"' WHERE class='"+AddStudent.class_name+"' AND class != ''";
             DbClient.query_execute(query);
         }
 
@@ -59,6 +59,11 @@ namespace Perfect_Peace_System.Pages
 
         private void registerParent_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             Person parent = new Parent(contactTb.Text, contact1Tb.Text, relationshipCB.Text, fnameTb.Text, lnameTb.Text, getRadioBtnValue(), DateTime.Now);
             parent.save();
 

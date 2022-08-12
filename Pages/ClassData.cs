@@ -86,6 +86,11 @@ namespace Perfect_Peace_System.Pages
 
         private void classDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = classDataView.Rows[e.RowIndex];

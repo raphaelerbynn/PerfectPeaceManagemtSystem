@@ -191,6 +191,11 @@ namespace Perfect_Peace_System.Pages
 
         private void savePaymentBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 query = "INSERT INTO Salary_payment (name, amount, net, salary_date, payment_method, date_paid)" +

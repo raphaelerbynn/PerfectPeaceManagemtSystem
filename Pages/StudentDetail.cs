@@ -53,14 +53,17 @@ namespace Perfect_Peace_System.Pages
                 lblGender.Text = reader["gender"].ToString();
                 lblClass.Text = reader["class"].ToString();
 
-
-                if (int.Parse(reader["fees_owing"].ToString()) > 0)
+                string fee = reader["fees_owing"].ToString();
+                if (!String.IsNullOrEmpty(fee))
                 {
-                    lblFees.Text = "Owing(Ghc" + reader["fees_owing"].ToString() + ")";
-                }
-                else
-                {
-                    lblFees.Text = "Paid In Full";
+                    if (int.Parse(fee) > 0)
+                    {
+                        lblFees.Text = "Owing(Ghc" + reader["fees_owing"].ToString() + ")";
+                    }
+                    else
+                    {
+                        lblFees.Text = "Paid In Full";
+                    }
                 }
 
             }

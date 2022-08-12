@@ -47,6 +47,11 @@ namespace Perfect_Peace_System.Pages
 
         private void registerTeacherBnt_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 Teacher teacher;

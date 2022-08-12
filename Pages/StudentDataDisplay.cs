@@ -78,6 +78,11 @@ namespace Perfect_Peace_System.Pages
 
         private void studentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = studentDataView.Rows[e.RowIndex];
@@ -148,21 +153,35 @@ namespace Perfect_Peace_System.Pages
 
         public string getParentIdFromSelectedRow()
         {
-            query = "SELECT parent_id FROM Student WHERE student_id='" + id + "'";
-            string parent_id = "";
-            System.Data.SqlClient.SqlDataReader reader0 = DbClient.query_reader(query);
-            while (reader0.Read())
+            try
             {
-                parent_id = reader0["parent_id"].ToString();
-            }
-            reader0.Close();
+                query = "SELECT parent_id FROM Student WHERE student_id='" + id + "' AND parent_id IS NOT NULL";
+                string parent_id = "";
+                System.Data.SqlClient.SqlDataReader reader0 = DbClient.query_reader(query);
+                while (reader0.Read())
+                {
+                    parent_id = reader0["parent_id"].ToString();
+                }
+                reader0.Close();
 
-            return parent_id;
+                return parent_id;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                return null;
+
+            }
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            if(!String.IsNullOrEmpty(searchTextBox.Text))
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
+            if (!String.IsNullOrEmpty(searchTextBox.Text))
             {
                 try
                 {

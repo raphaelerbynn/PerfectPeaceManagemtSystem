@@ -82,6 +82,11 @@ namespace Perfect_Peace_System.Pages
 
         private void updateStntBnt_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             if (classCb.SelectedIndex > -1)
             {
                 string class_id = DbClient.query_executeScaler("SELECT class_id FROM Class WHERE name='" + classCb.SelectedItem.ToString() + "'");

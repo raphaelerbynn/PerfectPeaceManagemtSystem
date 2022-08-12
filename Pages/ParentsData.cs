@@ -80,6 +80,11 @@ namespace Perfect_Peace_System.Pages
 
         private void showParentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = showParentDataView.Rows[e.RowIndex];
@@ -112,6 +117,11 @@ namespace Perfect_Peace_System.Pages
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             if (!String.IsNullOrEmpty(searchTextBox.Text))
             {
                 try

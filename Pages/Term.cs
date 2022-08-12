@@ -31,6 +31,11 @@ namespace Perfect_Peace_System.Pages
 
         private void saveAttenceBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 string message = "Are you sure you want to save all attendance for the term?";
@@ -76,6 +81,11 @@ namespace Perfect_Peace_System.Pages
 
         private void saveDateBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             string message = "Are you sure you want to set next term end date?";
             MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, "", deleteAction);
@@ -125,6 +135,11 @@ namespace Perfect_Peace_System.Pages
 
         private void feesBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 string message = "Are you sure you want to reset student fees for next term?";
@@ -153,6 +168,11 @@ namespace Perfect_Peace_System.Pages
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 string message = "Are you sure you want to end this term?";

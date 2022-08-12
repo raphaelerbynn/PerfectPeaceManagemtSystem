@@ -186,30 +186,55 @@ namespace Perfect_Peace_System.Pages
 
         private void studentPanel_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             this.Close();
             openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), Home.displayPanel);
         }
         
         private void teacherPanel_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             this.Close();
             openNewPage.OpenChildForm(new Pages.TeacherData(), Home.displayPanel);
         }
         
         private void classPanel_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             this.Close();
             openNewPage.OpenChildForm(new Pages.ClassData(), Home.displayPanel);
         }
 
         private void feesLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             this.Close();
             openNewPage.OpenChildForm(new Pages.FeesData(), Home.displayPanel);
         }
 
         private void eventLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             this.Close();
             openNewPage.OpenChildForm(new Pages.EventData(), Home.displayPanel);
         }

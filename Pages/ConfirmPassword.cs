@@ -45,7 +45,12 @@ namespace Perfect_Peace_System.Pages
 
         private void confirmBtn_Click(object sender, EventArgs e)
         {
-            if(passwordConfirmed() == true)
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
+            if (passwordConfirmed() == true)
             {
                 GetData.setConfirmPassword(true);
                 this.Close();

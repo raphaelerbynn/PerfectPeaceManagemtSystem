@@ -44,6 +44,11 @@ namespace Perfect_Peace_System.Pages
         //salary base
         private void salaryBaseDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = salaryBaseDataView.Rows[e.RowIndex];
@@ -77,11 +82,21 @@ namespace Perfect_Peace_System.Pages
 
         private void addSalaryBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             openNewPage.OpenChildForm(new Pages.AddSalary(), salaryBasedPanel);
         }
 
         private void salaryBaseBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             empSalaryBtn.BackColor = Color.Gray;
             paymentBtn.BackColor = Color.Gray;
             salaryBaseBtn.BackColor = Home.foreColor;
@@ -147,6 +162,11 @@ namespace Perfect_Peace_System.Pages
         //employee salary
         private void empSalaryBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             empSalaryBtn.BackColor = Home.foreColor;
             paymentBtn.BackColor = Color.Gray;
             salaryBaseBtn.BackColor = Color.Gray;
@@ -204,6 +224,11 @@ namespace Perfect_Peace_System.Pages
         private string empSalaryId;
         private void empSalaryDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = empSalaryDataView.Rows[e.RowIndex];
@@ -231,6 +256,11 @@ namespace Perfect_Peace_System.Pages
 
         private void assignSalaryBaseBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             if (salaryBaseCb.SelectedIndex != -1)
             {
                 query = "SELECT salary_id FROM Salary WHERE [title]+'('+[rank]+')'='" + salaryBaseCb.SelectedItem.ToString() + "'";
@@ -252,6 +282,11 @@ namespace Perfect_Peace_System.Pages
         private static string id;
         private void makePaymentBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             if (!String.IsNullOrEmpty(paymentNameCb.Text))
             {
                 try
@@ -282,6 +317,11 @@ namespace Perfect_Peace_System.Pages
 
         private void paymentBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             empSalaryBtn.BackColor = Color.Gray;
             paymentBtn.BackColor = Home.foreColor;
             salaryBaseBtn.BackColor = Color.Gray;
@@ -316,6 +356,11 @@ namespace Perfect_Peace_System.Pages
 
         private void paymentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = paymentDataView.Rows[e.RowIndex];
@@ -356,6 +401,11 @@ namespace Perfect_Peace_System.Pages
 
         private void searchEmpBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             if (!String.IsNullOrEmpty(searchEmpTb.Text))
             {
                 try
@@ -378,6 +428,11 @@ namespace Perfect_Peace_System.Pages
 
         private void searchPaidEmpBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             if (!String.IsNullOrEmpty(searchPaidEmpTb.Text))
             {
                 try

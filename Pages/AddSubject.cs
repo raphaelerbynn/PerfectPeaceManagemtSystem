@@ -45,6 +45,11 @@ namespace Perfect_Peace_System.Pages
 
         private void studentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = subjectDataView.Rows[e.RowIndex];
@@ -75,6 +80,11 @@ namespace Perfect_Peace_System.Pages
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 if (!(String.IsNullOrEmpty(subjectNameTB.Text) && String.IsNullOrEmpty(examTotalMarkTB.Text) &&

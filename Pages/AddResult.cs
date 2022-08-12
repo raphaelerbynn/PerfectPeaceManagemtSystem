@@ -76,109 +76,112 @@ namespace Perfect_Peace_System.Pages
 
             query = "SELECT * FROM Subject";
             SqlDataReader reader = DbClient.query_reader(query);
-            while (reader.Read())
+            if (reader != null)
             {
-                int classTotal = int.Parse(reader["class_total_marks"].ToString());
-                classScores.Add(classTotal);
-                int examTotal = int.Parse(reader["exam_total_marks"].ToString());
-                examScores.Add(examTotal);
+                while (reader.Read())
+                {
+                    int classTotal = int.Parse(reader["class_total_marks"].ToString());
+                    classScores.Add(classTotal);
+                    int examTotal = int.Parse(reader["exam_total_marks"].ToString());
+                    examScores.Add(examTotal);
 
-                //subjects
-                Label subjectLabel = new Label();
-                subjectLabel.Text = reader["name"].ToString();
-                subjectLabel.Location = new Point(subLocationX, subLocationY);
-                subjectLabel.Anchor = AnchorStyles.Top;
-                subjectLabel.AutoSize = true;
-                subjectLabel.Font = new Font("Calibri", 12);
-                subjectLbls.Add(subjectLabel);
+                    //subjects
+                    Label subjectLabel = new Label();
+                    subjectLabel.Text = reader["name"].ToString();
+                    subjectLabel.Location = new Point(subLocationX, subLocationY);
+                    subjectLabel.Anchor = AnchorStyles.Top;
+                    subjectLabel.AutoSize = true;
+                    subjectLabel.Font = new Font("Calibri", 12);
+                    subjectLbls.Add(subjectLabel);
 
-                //subject_ids
-                string id = reader["subject_id"].ToString();
-                subject_ids.Add(id);
+                    //subject_ids
+                    string id = reader["subject_id"].ToString();
+                    subject_ids.Add(id);
 
-                //class score textboxes
-                TextBox classScoreTB = new TextBox();
-                classScoreTB.Location = new Point(classMarkLocationX, subLocationY);
-                classScoreTB.Anchor = AnchorStyles.Top;
-                classScoreTB.Size = new Size(73, 20);
-                classScoreTBs.Add(classScoreTB);
+                    //class score textboxes
+                    TextBox classScoreTB = new TextBox();
+                    classScoreTB.Location = new Point(classMarkLocationX, subLocationY);
+                    classScoreTB.Anchor = AnchorStyles.Top;
+                    classScoreTB.Size = new Size(73, 20);
+                    classScoreTBs.Add(classScoreTB);
 
-                //class score labels
-                Label classScoreLabel = new Label();
-                classScoreLabel.Text = reader["class_percentage"].ToString() + "% =";
-                classScoreLabel.Location = new Point(classMarkLocationX + 75, subLocationY);
-                classScoreLabel.Anchor = AnchorStyles.Top;
-                classScoreLabel.AutoSize = true;
-                classScoreLabel.Font = new Font("Calibri", 12);
-                classScoreLbls.Add(classScoreLabel);
+                    //class score labels
+                    Label classScoreLabel = new Label();
+                    classScoreLabel.Text = reader["class_percentage"].ToString() + "% =";
+                    classScoreLabel.Location = new Point(classMarkLocationX + 75, subLocationY);
+                    classScoreLabel.Anchor = AnchorStyles.Top;
+                    classScoreLabel.AutoSize = true;
+                    classScoreLabel.Font = new Font("Calibri", 12);
+                    classScoreLbls.Add(classScoreLabel);
 
-                //class %
-                int class_percentage = int.Parse(reader["class_percentage"].ToString());
-                classPercentages.Add(class_percentage);
+                    //class %
+                    int class_percentage = int.Parse(reader["class_percentage"].ToString());
+                    classPercentages.Add(class_percentage);
 
-                //class marks label
-                Label classScoreCalcLabel = new Label();
-                classScoreCalcLabel.Text = "00";
-                classScoreCalcLabel.Location = new Point(classMarkLocationX + 120, subLocationY);
-                classScoreCalcLabel.Anchor = AnchorStyles.Top;
-                classScoreCalcLabel.AutoSize = true;
-                classScoreCalcLabel.Font = new Font("Calibri", 12, FontStyle.Bold);
-                classScoreCalcLabel.ForeColor = Color.BlueViolet;
-                classScoreCalcLbls.Add(classScoreCalcLabel);
+                    //class marks label
+                    Label classScoreCalcLabel = new Label();
+                    classScoreCalcLabel.Text = "00";
+                    classScoreCalcLabel.Location = new Point(classMarkLocationX + 120, subLocationY);
+                    classScoreCalcLabel.Anchor = AnchorStyles.Top;
+                    classScoreCalcLabel.AutoSize = true;
+                    classScoreCalcLabel.Font = new Font("Calibri", 12, FontStyle.Bold);
+                    classScoreCalcLabel.ForeColor = Color.BlueViolet;
+                    classScoreCalcLbls.Add(classScoreCalcLabel);
 
-                //exam score textboxes
-                TextBox examScoreTB = new TextBox();
-                examScoreTB.Location = new Point(examMarkLocationX, subLocationY);
-                examScoreTB.Anchor = AnchorStyles.Top;
-                examScoreTB.Size = new Size(73, 20);
-                examScoreTBs.Add(examScoreTB);
+                    //exam score textboxes
+                    TextBox examScoreTB = new TextBox();
+                    examScoreTB.Location = new Point(examMarkLocationX, subLocationY);
+                    examScoreTB.Anchor = AnchorStyles.Top;
+                    examScoreTB.Size = new Size(73, 20);
+                    examScoreTBs.Add(examScoreTB);
 
-                //exam score labels
-                Label examScoreLabel = new Label();
-                examScoreLabel.Text = reader["exam_percentage"].ToString() + "% =";
-                examScoreLabel.Location = new Point(examMarkLocationX + 75, subLocationY);
-                examScoreLabel.Anchor = AnchorStyles.Top;
-                examScoreLabel.AutoSize = true;
-                examScoreLabel.Font = new Font("Calibri", 12);
-                examScoreLbls.Add(examScoreLabel);
+                    //exam score labels
+                    Label examScoreLabel = new Label();
+                    examScoreLabel.Text = reader["exam_percentage"].ToString() + "% =";
+                    examScoreLabel.Location = new Point(examMarkLocationX + 75, subLocationY);
+                    examScoreLabel.Anchor = AnchorStyles.Top;
+                    examScoreLabel.AutoSize = true;
+                    examScoreLabel.Font = new Font("Calibri", 12);
+                    examScoreLbls.Add(examScoreLabel);
 
-                //exam %
-                int exam_percentage = int.Parse(reader["exam_percentage"].ToString());
-                examPercentages.Add(exam_percentage);
+                    //exam %
+                    int exam_percentage = int.Parse(reader["exam_percentage"].ToString());
+                    examPercentages.Add(exam_percentage);
 
-                //exam marks label
-                Label examScoreCalcLabel = new Label();
-                examScoreCalcLabel.Text = "00";
-                examScoreCalcLabel.Location = new Point(examMarkLocationX + 120, subLocationY);
-                examScoreCalcLabel.Anchor = AnchorStyles.Top;
-                examScoreCalcLabel.AutoSize = true;
-                examScoreCalcLabel.Font = new Font("Calibri", 12, FontStyle.Bold);
-                examScoreCalcLabel.ForeColor = Color.BlueViolet;
-                examScoreCalcLbls.Add(examScoreCalcLabel);
+                    //exam marks label
+                    Label examScoreCalcLabel = new Label();
+                    examScoreCalcLabel.Text = "00";
+                    examScoreCalcLabel.Location = new Point(examMarkLocationX + 120, subLocationY);
+                    examScoreCalcLabel.Anchor = AnchorStyles.Top;
+                    examScoreCalcLabel.AutoSize = true;
+                    examScoreCalcLabel.Font = new Font("Calibri", 12, FontStyle.Bold);
+                    examScoreCalcLabel.ForeColor = Color.BlueViolet;
+                    examScoreCalcLbls.Add(examScoreCalcLabel);
 
 
 
-                //total marks label
-                Label totalMarksLabel = new Label();
-                totalMarksLabel.Text = "00";
-                totalMarksLabel.Location = new Point(totalMarksLocationX, subLocationY);
-                totalMarksLabel.Anchor = AnchorStyles.Top;
-                totalMarksLabel.AutoSize = true;
-                totalMarksLabel.Font = new Font("Calibri", 14, FontStyle.Bold);
-                totalMarksLbls.Add(totalMarksLabel);
+                    //total marks label
+                    Label totalMarksLabel = new Label();
+                    totalMarksLabel.Text = "00";
+                    totalMarksLabel.Location = new Point(totalMarksLocationX, subLocationY);
+                    totalMarksLabel.Anchor = AnchorStyles.Top;
+                    totalMarksLabel.AutoSize = true;
+                    totalMarksLabel.Font = new Font("Calibri", 14, FontStyle.Bold);
+                    totalMarksLbls.Add(totalMarksLabel);
 
-                //remarks label
-                Label remarksLabel = new Label();
-                remarksLabel.Text = "----------";
-                remarksLabel.Location = new Point(remarksLocationX, subLocationY);
-                remarksLabel.Anchor = AnchorStyles.Top;
-                remarksLabel.AutoSize = true;
-                remarksLabel.Font = new Font("Calibri", 14, FontStyle.Bold);
-                remarkLbls.Add(remarksLabel);
+                    //remarks label
+                    Label remarksLabel = new Label();
+                    remarksLabel.Text = "----------";
+                    remarksLabel.Location = new Point(remarksLocationX, subLocationY);
+                    remarksLabel.Anchor = AnchorStyles.Top;
+                    remarksLabel.AutoSize = true;
+                    remarksLabel.Font = new Font("Calibri", 14, FontStyle.Bold);
+                    remarkLbls.Add(remarksLabel);
 
-                subLocationY += 50;
+                    subLocationY += 50;
+                }
+                reader.Close();
             }
-            reader.Close();            
 
             for(int i=0; i<subjectLbls.Count; i++)
             {
@@ -322,6 +325,11 @@ namespace Perfect_Peace_System.Pages
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             string message = "Do you want to save this result?";
 
             MessageBoxButtons action = MessageBoxButtons.YesNo;
@@ -352,13 +360,15 @@ namespace Perfect_Peace_System.Pages
 
                         query = "SELECT * FROM Subject WHERE subject_id='" + subject_ids[i] + "'";
                         SqlDataReader reader = DbClient.query_reader(query);
-                        while (reader.Read())
+                        if (reader != null)
                         {
-                            pass_score += int.Parse(reader["pass_marks"].ToString());
-                            total_raw_score += 100;
+                            while (reader.Read())
+                            {
+                                pass_score += int.Parse(reader["pass_marks"].ToString());
+                                total_raw_score += 100;
+                            }
+                            reader.Close();
                         }
-                        reader.Close();
-
                         raw_score += double.Parse(totalMarksLbls[i].Text);
                     }
                 }
@@ -417,6 +427,11 @@ namespace Perfect_Peace_System.Pages
         
         private void loadClassrooms()
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             query = "SELECT name FROM Class";
             DbClient.query_reader(classCb, query);
         }

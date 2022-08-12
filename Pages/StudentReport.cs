@@ -77,6 +77,11 @@ namespace Perfect_Peace_System.Pages
 
         private void loadListBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             titleLbl.Visible = true;
             titleLbl.Text = "CLASS LIST";
             explainTb.Visible = false;
@@ -119,6 +124,11 @@ namespace Perfect_Peace_System.Pages
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             if (!String.IsNullOrEmpty(searchTextBox.Text))
             {
                 try
@@ -183,6 +193,11 @@ namespace Perfect_Peace_System.Pages
 
         private void studentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = studentDataView.Rows[e.RowIndex];
@@ -211,6 +226,11 @@ namespace Perfect_Peace_System.Pages
 
         private void viewResultBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             titleLbl.Visible = true;
             titleLbl.Text = "RESULTS";
             explainTb.Visible = true;
@@ -293,6 +313,11 @@ namespace Perfect_Peace_System.Pages
 
         private void resultsDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = resultsDataView.Rows[e.RowIndex];
@@ -377,6 +402,11 @@ namespace Perfect_Peace_System.Pages
 
         private void kgDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = kgDataView.Rows[e.RowIndex];

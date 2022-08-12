@@ -87,6 +87,11 @@ namespace Perfect_Peace_System.Pages
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             if (!String.IsNullOrEmpty(searchTextBox.Text))
             {
                 try
@@ -139,6 +144,11 @@ namespace Perfect_Peace_System.Pages
 
         private void feesDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = feesDataView.Rows[e.RowIndex];

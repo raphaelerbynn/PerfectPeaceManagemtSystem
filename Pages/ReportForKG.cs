@@ -481,6 +481,11 @@ namespace Perfect_Peace_System.Pages
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             string message = "All Categories filled and you want to save?";
             MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
             DialogResult result = MessageBox.Show(message, "", deleteAction);
@@ -493,6 +498,11 @@ namespace Perfect_Peace_System.Pages
 
         private void setValBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 

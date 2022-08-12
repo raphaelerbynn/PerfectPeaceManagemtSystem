@@ -25,6 +25,11 @@ namespace Perfect_Peace_System.Pages
 
         private void addClassBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             if (!(String.IsNullOrEmpty(nameTb.Text) || String.IsNullOrEmpty(capacityTb.Text)) && sectionCb.SelectedIndex > -1)
             {
                 ClassRoom classRoom = new ClassRoom(
@@ -69,9 +74,12 @@ namespace Perfect_Peace_System.Pages
         {
             nameTb.Text = null;
             capacityTb.Text = null;
-            foreach(NumericUpDown box in bgPanel.Controls)
+            foreach(Control box in bgPanel.Controls)
             {
-                box.Value = 0;
+                if (box is NumericUpDown)
+                {
+                    ((NumericUpDown)box).Value = 0;
+                }
             }
             sectionCb.SelectedIndex = -1;
             teacherCb.SelectedIndex = -1;

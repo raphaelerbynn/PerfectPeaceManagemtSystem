@@ -47,10 +47,13 @@ namespace Perfect_Peace_System.Pages
 
         }
 
-        
-
         private void registerStntBnt_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 Person person = new Student(
@@ -71,10 +74,11 @@ namespace Perfect_Peace_System.Pages
                 }
                 else
                 {
-                    if (classCb.SelectedIndex > -1)
+                    if (classCb.SelectedIndex > -1 || !String.IsNullOrEmpty(classCb.Text))
                     {
                         if (classroom.maxCapacity(classCb.Text) > classroom.curCapacity(classCb.Text))
                         {
+
                             person.save();
                             MessageBox.Show("Student Saved");
                             clearFeilds();
@@ -100,6 +104,7 @@ namespace Perfect_Peace_System.Pages
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                Console.WriteLine(ex);
             }
 
         }

@@ -66,6 +66,11 @@ namespace Perfect_Peace_System.Pages
 
         private void teacherDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = teacherDataGridView.Rows[e.RowIndex];
@@ -133,6 +138,11 @@ namespace Perfect_Peace_System.Pages
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             if (teacherDataGridView.Visible == true)
             {
                 if (!String.IsNullOrEmpty(searchTextBox.Text))
@@ -209,6 +219,11 @@ namespace Perfect_Peace_System.Pages
 
         private void nonTeachingDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = nonTeachingDataView.Rows[e.RowIndex];

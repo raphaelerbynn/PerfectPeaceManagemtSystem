@@ -51,6 +51,11 @@ namespace Perfect_Peace_System.Pages
 
         private void loadAttendanceBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 if (classCb.SelectedIndex != -1)
@@ -103,6 +108,11 @@ namespace Perfect_Peace_System.Pages
 
         private void checkAttendanceBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             _date = attendanceDatePk.Value;
             OpenNewPage openNewPage = new OpenNewPage();
             openNewPage.OpenChildForm(new Pages.MarkAttendance(), attendancePanel);

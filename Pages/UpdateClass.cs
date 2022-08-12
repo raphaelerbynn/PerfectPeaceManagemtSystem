@@ -24,6 +24,11 @@ namespace Perfect_Peace_System.Pages
 
         private void updateClassBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             if (!String.IsNullOrEmpty(teacherCb.Text))
             {
                 query = "UPDATE Class SET name='"+nameTb.Text+"', section='"+sectionCb.SelectedItem.ToString()+"', capacity='"+capacityTb.Text+"', fees='"+totalFeesLbl.Text+"', tuition='" + tuition.Value.ToString() + "', firstAid='" + firstAid.Value.ToString() + "', PTA='" + PTA.Value.ToString() + "', water='" + water.Value.ToString() + "', maintenance='" + maintenance.Value.ToString() + "', stationary='"+stationary.Value.ToString()+ "', cocurricular='" + cocurricular.Value.ToString() + "' WHERE class_id='" + id+"'";

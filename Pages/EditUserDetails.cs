@@ -51,6 +51,11 @@ namespace Perfect_Peace_System.Pages
 
         private void createAccBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 string message = "Are you sure you want to change user details?";

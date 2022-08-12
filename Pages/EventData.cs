@@ -32,6 +32,11 @@ namespace Perfect_Peace_System.Pages
 
         private void classDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 DataGridViewRow row = eventDataView.Rows[e.RowIndex];
@@ -63,6 +68,11 @@ namespace Perfect_Peace_System.Pages
 
         private void addEventLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             OpenNewPage openNewPage = new OpenNewPage();
             openNewPage.OpenChildForm(new Pages.AddEvent(), bgPanel);
         }

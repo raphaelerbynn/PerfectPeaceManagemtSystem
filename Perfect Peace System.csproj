@@ -57,11 +57,21 @@
     <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup>
+    <Win32Resource>
+    </Win32Resource>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="System">
       <HintPath>..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
@@ -80,6 +90,7 @@
     <Compile Include="Converter.cs" />
     <Compile Include="DbClient.cs" />
     <Compile Include="GetData.cs" />
+    <Compile Include="InternetConnectivity.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,12 +121,6 @@
     <Compile Include="Pages\AddSubject.Designer.cs">
       <DependentUpon>AddSubject.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pages\AssessmentCard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pages\AssessmentCard.Designer.cs">
-      <DependentUpon>AssessmentCard.cs</DependentUpon>
-    </Compile>
     <Compile Include="Pages\ConfirmPassword.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,12 +144,6 @@
     </Compile>
     <Compile Include="Pages\EventData.Designer.cs">
       <DependentUpon>EventData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\KGAssessment.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Pages\KGAssessment.Designer.cs">
-      <DependentUpon>KGAssessment.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginInput.cs">
       <SubType>Form</SubType>
@@ -371,9 +370,6 @@
     <EmbeddedResource Include="Pages\AddTeacher.resx">
       <DependentUpon>AddTeacher.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pages\AssessmentCard.resx">
-      <DependentUpon>AssessmentCard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Pages\ConfirmPassword.resx">
       <DependentUpon>ConfirmPassword.cs</DependentUpon>
     </EmbeddedResource>
@@ -385,9 +381,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\EventData.resx">
       <DependentUpon>EventData.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Pages\KGAssessment.resx">
-      <DependentUpon>KGAssessment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\LoginInput.resx">
       <DependentUpon>LoginInput.cs</DependentUpon>
@@ -515,6 +508,8 @@
     <None Include="icons\teacher_dash.png" />
     <None Include="icons\teacher_dash_bg.png" />
     <None Include="icons\work-schedule.png" />
+    <Content Include="icon.ico" />
+    <Content Include="normal copy.ico" />
     <Content Include="PerfectPeace.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

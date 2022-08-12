@@ -52,6 +52,11 @@ namespace Perfect_Peace_System.Pages
 
         private void createAccBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 string category = loginAsLbl.Text;
@@ -128,6 +133,7 @@ namespace Perfect_Peace_System.Pages
             catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                MessageBox.Show(ex.Message);
                 MessageBox.Show("Username already exists");
             }
         }

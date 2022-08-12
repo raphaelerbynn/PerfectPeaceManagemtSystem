@@ -95,6 +95,11 @@ namespace Perfect_Peace_System.Pages
 
         private void updateTeacherBnt_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
             try
             {
                 if (staffCategory.Equals("Teaching"))
