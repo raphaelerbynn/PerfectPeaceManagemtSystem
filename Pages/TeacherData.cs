@@ -32,9 +32,9 @@ namespace Perfect_Peace_System.Pages
             nonTeachingDataView.BackgroundColor = Home.foreColor;
 
             adjustColumnOrder();
-            teacher.show_data(teacherDataGridView);
-            teacher.show_non_teaching(nonTeachingDataView);
-            getClassName();
+            teacherDataGridView.DataSource = DataFromDb.getAllTeacherData();
+            nonTeachingDataView.DataSource = DataFromDb.getAllNonTeacherData();
+            //getClassName();
         }
 
         private void adjustColumnOrder()
@@ -187,15 +187,24 @@ namespace Perfect_Peace_System.Pages
 
         private void getClassName()
         {
-            foreach(DataGridViewRow row in teacherDataGridView.Rows)
+            try
             {
-                query = "SELECT name FROM Class WHERE class_id='" + row.Cells["_class"].Value.ToString() + "'";
-                System.Data.SqlClient.SqlDataReader reader = DbClient.query_reader(query);
-                while (reader.Read())
-                {
-                    row.Cells["_class"].Value = reader["name"].ToString();
+                if(teacherDataGridView.Rows.Count > 0) {
+                    foreach (DataGridViewRow row in teacherDataGridView.Rows)
+                    {
+                        query = "SELECT name FROM Class WHERE class_id='" + row.Cells["_class"].Value.ToString() + "'";
+                        System.Data.SqlClient.SqlDataReader reader = DbClient.query_reader(query);
+                        while (reader.Read())
+                        {
+                            row.Cells["_class"].Value = reader["name"].ToString();
+                        }
+                        reader.Close();
+                    }
                 }
-                reader.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -273,7 +282,14 @@ namespace Perfect_Peace_System.Pages
             {
                 MessageBox.Show(ex.Message);
                 Console.WriteLine(ex);
+
             }
+        }
+
+        private void refeshBtn_Click(object sender, EventArgs e)
+        {
+            DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, CAST(class_id AS VARCHAR(10)) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
+            DataFromDb.getAllNonTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, staff_position, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Non-Teaching'");
         }
     }
 }

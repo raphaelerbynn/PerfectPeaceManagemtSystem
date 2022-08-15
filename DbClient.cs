@@ -13,7 +13,7 @@ namespace Perfect_Peace_System
     static class DbClient
     {
 
-        public  static string connectionString = ConfigurationManager.ConnectionStrings["AzureDb"].ConnectionString;
+        public const string connectionString = @"Server=tcp:perfect-peace-server.database.windows.net,1433;Initial Catalog=PerfectPeace;Persist Security Info=False;User ID=perfectpeace;Password=peace@2022;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"; 
         public static SqlConnection connection;
         public static SqlCommand cmd;
         public static SqlDataAdapter dataAdapter;
@@ -24,9 +24,7 @@ namespace Perfect_Peace_System
         {
             connection = new SqlConnection(connectionString);
             connection.Open();
-                
         }
-
 
         public static void query_execute(string query)
         {
@@ -37,6 +35,7 @@ namespace Perfect_Peace_System
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
             }
         }
         
@@ -51,9 +50,26 @@ namespace Perfect_Peace_System
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
                 return null;
             }
                 
+        }
+
+        public static SqlDataReader get_reader(string query)
+        {
+            try
+            {
+                cmd = new SqlCommand(query, connection);
+                reader = cmd.ExecuteReader();
+                return reader;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
+                return null;
+            }
         }
 
         public static void query_reader(ComboBox combo, string query)
@@ -70,7 +86,8 @@ namespace Perfect_Peace_System
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message); 
+                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
             }
         }
         
@@ -78,14 +95,15 @@ namespace Perfect_Peace_System
         {
             try
             {
-
                 cmd = new SqlCommand(query, connection);
                 reader = cmd.ExecuteReader();
 
                 return reader;
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
                 return null;
             }
         }
@@ -101,6 +119,7 @@ namespace Perfect_Peace_System
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
                 return null;
             }
         }
@@ -124,15 +143,31 @@ namespace Perfect_Peace_System
                 dataAdapter = new SqlDataAdapter(query, connection);
                 dataAdapter.Fill(dataTable);
                 dataGrid.DataSource = dataTable;
-            }catch(Exception ex)
+            }
+            catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
             }
         }
 
-
-
-
+        public static DataTable dataSource(string query)
+        {
+            try
+            {
+                dataTable = new DataTable();
+                query_execute(query);
+                dataAdapter = new SqlDataAdapter(query, connection);
+                dataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
+                return null;
+            }
+        }
 
         public static void connection_close()
         {

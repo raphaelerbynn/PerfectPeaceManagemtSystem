@@ -43,12 +43,14 @@
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.time = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.refeshBtn = new System.Windows.Forms.Button();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.eventDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // bgPanel
             // 
+            this.bgPanel.Controls.Add(this.refeshBtn);
             this.bgPanel.Controls.Add(this.addEventLink);
             this.bgPanel.Controls.Add(this.eventDataView);
             this.bgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -183,6 +185,19 @@
             this.delete.ReadOnly = true;
             this.delete.Width = 38;
             // 
+            // refeshBtn
+            // 
+            this.refeshBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.refeshBtn.FlatAppearance.BorderSize = 0;
+            this.refeshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refeshBtn.Location = new System.Drawing.Point(12, 5);
+            this.refeshBtn.Name = "refeshBtn";
+            this.refeshBtn.Size = new System.Drawing.Size(75, 23);
+            this.refeshBtn.TabIndex = 6;
+            this.refeshBtn.Text = "Refresh";
+            this.refeshBtn.UseVisualStyleBackColor = false;
+            this.refeshBtn.Click += new System.EventHandler(this.refeshBtn_Click);
+            // 
             // EventData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,5 +224,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
         private System.Windows.Forms.DataGridViewTextBoxColumn time;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private System.Windows.Forms.Button refeshBtn;
     }
 }

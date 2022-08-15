@@ -59,6 +59,7 @@
             this.view = new System.Windows.Forms.DataGridViewImageColumn();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.refeshBtn = new System.Windows.Forms.Button();
             this.showDataPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataView)).BeginInit();
@@ -79,6 +80,7 @@
             this.topPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.topPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.topPanel.Controls.Add(this.refeshBtn);
             this.topPanel.Controls.Add(this.searchBtn);
             this.topPanel.Controls.Add(this.label2);
             this.topPanel.Controls.Add(this.label1);
@@ -329,6 +331,19 @@
             this.delete.ReadOnly = true;
             this.delete.Width = 50;
             // 
+            // refeshBtn
+            // 
+            this.refeshBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.refeshBtn.FlatAppearance.BorderSize = 0;
+            this.refeshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refeshBtn.Location = new System.Drawing.Point(12, 30);
+            this.refeshBtn.Name = "refeshBtn";
+            this.refeshBtn.Size = new System.Drawing.Size(75, 23);
+            this.refeshBtn.TabIndex = 5;
+            this.refeshBtn.Text = "Refresh";
+            this.refeshBtn.UseVisualStyleBackColor = false;
+            this.refeshBtn.Click += new System.EventHandler(this.refeshBtn_Click);
+            // 
             // StudentDataDisplay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -363,5 +378,6 @@
         private System.Windows.Forms.DataGridViewImageColumn view;
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private System.Windows.Forms.Button refeshBtn;
     }
 }

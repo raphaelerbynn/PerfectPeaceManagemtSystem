@@ -83,7 +83,6 @@ namespace Perfect_Peace_System.Pages
                             MessageBox.Show("Student Saved");
                             clearFeilds();
                             openNewPage.OpenChildForm(new Pages.AddParent(), registerPanel);
-
                         }
                         else
                         {
@@ -98,7 +97,7 @@ namespace Perfect_Peace_System.Pages
                         openNewPage.OpenChildForm(new Pages.AddParent(), registerPanel);
                     }
 
-                    
+                    DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
                 }
             }
             catch (Exception ex)

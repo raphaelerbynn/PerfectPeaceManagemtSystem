@@ -97,6 +97,7 @@ namespace Perfect_Peace_System.Pages
                     query = "UPDATE Student SET class_id='"+class_id+"', class='"+classCb.SelectedItem.ToString()+"' WHERE student_id='"+id+"'";
                     DbClient.query_execute(query);
                     MessageBox.Show("Student updated successfully");
+                    DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
 
                 }
                 else
@@ -111,6 +112,8 @@ namespace Perfect_Peace_System.Pages
                 query = "UPDATE Student SET class_id=NULL, class=NULL WHERE student_id='"+id+"'";
                 DbClient.query_execute(query);
                 MessageBox.Show("Student updated successfully");
+                DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
+
             }
         }
 

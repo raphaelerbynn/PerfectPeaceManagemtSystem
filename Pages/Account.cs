@@ -118,6 +118,7 @@ namespace Perfect_Peace_System.Pages
                     feedingClassCb.SelectedIndex = -1;
                     feedingAmntTb.Text = null;
                     feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
+                    DataFromDb.getFeedingFeeData();
                 }
                 catch (Exception ex)
                 {
@@ -270,14 +271,6 @@ namespace Perfect_Peace_System.Pages
             {
                 MessageBox.Show("Check your internet connection");
             }
-            if (InternetConnectivity.checkConnectivity())
-            {
-
-            }
-            else
-            {
-                MessageBox.Show("Check your internet connection");
-            }
         }
 
         private void extraClassesSearchBtn_Click(object sender, EventArgs e)
@@ -414,6 +407,7 @@ namespace Perfect_Peace_System.Pages
                     expenseTb.Text = null;
                     expAmountTb.Text = null;
                     totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
+                    DataFromDb.getExtraClassesData();
                 }
                 catch (Exception ex)
                 {

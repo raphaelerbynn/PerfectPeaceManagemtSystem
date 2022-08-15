@@ -18,8 +18,10 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
             bgPanel.BackColor = Home.foreColor;
+
             query = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher EXCEPT SELECT [f_name]+' '+[l_name] FROM Teacher WHERE class_id IS NOT NULL";
             DbClient.query_reader(teacherCb, query);
+            
             totalFeesLbl.Text = "0.00";
         }
 
@@ -57,6 +59,7 @@ namespace Perfect_Peace_System.Pages
                     query = "UPDATE Teacher SET class_id='" + DbClient.GetLastId("Class") + "' WHERE teacher_id='" + teacher_id + "'";
                     DbClient.query_execute(query);
                 }
+                DataFromDb.getAllClass = DbClient.dataSource("SELECT class_id, name, section, capacity, fees, teacher_id, (SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE Teacher.teacher_id=Class.teacher_id AS teacher FROM Class");
                 MessageBox.Show("Class Added");
             }
             else

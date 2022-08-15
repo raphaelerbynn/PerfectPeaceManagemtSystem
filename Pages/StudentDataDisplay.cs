@@ -32,21 +32,12 @@ namespace Perfect_Peace_System.Pages
             topPanel.BackColor = Home.foreColor;
             if (Pages.LoginInput.category.Equals("Administrator"))
             {
-                student.show_data(studentDataView);
+                studentDataView.DataSource = DataFromDb.getAllStudentData();
             }
             
             if(Pages.LoginInput.category.Equals("Class Teacher"))
             {
-                string class_id = "";
-                query = "SELECT class_id FROM Class WHERE teacher_id='" + Pages.LoginInput.teacher_id + "'";
-                SqlDataReader reader = DbClient.query_reader(query);
-                while (reader.Read())
-                {
-                    class_id = reader["class_id"].ToString();
-                }
-                reader.Close();
-                query = "SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student WHERE class_id='"+class_id+"'";
-                DbClient.dataGridFill(studentDataView, query);
+                studentDataView.DataSource = DataFromDb.getAllStudentDataForTeacher();
                 searchCb.Items.RemoveAt(2);
 
                 delete.Visible = false;
@@ -122,8 +113,9 @@ namespace Perfect_Peace_System.Pages
                         parent.delete(parent_id);
                    
                         MessageBox.Show(name + " deleted from system");
+                        
                     }
-                   
+
                 }
 
                 if (studentDataView.Columns[e.ColumnIndex].Name == "view" && e.RowIndex >= 0)
@@ -196,6 +188,19 @@ namespace Perfect_Peace_System.Pages
             else
             {
                 (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+            }
+        }
+
+        private void refeshBtn_Click(object sender, EventArgs e)
+        {
+            if (Pages.LoginInput.category.Equals("Administrator"))
+            {
+                DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
+            }
+
+            if (Pages.LoginInput.category.Equals("Class Teacher"))
+            {
+                DataFromDb.getAllStudentForTeacher = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student WHERE class_id='" + DataFromDb.class_id_teacher() + "'");
             }
         }
     }

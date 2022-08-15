@@ -21,7 +21,7 @@ namespace Perfect_Peace_System.Pages
             eventDataView.BackgroundColor = Home.foreColor;
             bgPanel.BackColor = Home.foreColor;
             addEventLink.LinkColor = Home.themeColor;
-            populateEventData();
+            eventDataView.DataSource = DataFromDb.getAllEventData();
 
             if(Pages.LoginInput.category.Equals("Accountant") || Pages.LoginInput.category.Equals("Class Teacher"))
             {
@@ -75,6 +75,12 @@ namespace Perfect_Peace_System.Pages
             }
             OpenNewPage openNewPage = new OpenNewPage();
             openNewPage.OpenChildForm(new Pages.AddEvent(), bgPanel);
+        }
+
+        private void refeshBtn_Click(object sender, EventArgs e)
+        {
+            DataFromDb.getAllEvent = DbClient.dataSource("SELECT event_id, name, description, FORMAT(date, 'dd-MM-yyyy') AS date, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time FROM Event");
+
         }
     }
 }

@@ -87,19 +87,22 @@ namespace Perfect_Peace_System.Pages
             eventListView.View = View.Details;
             query = "SELECT TOP 5 name, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time, FORMAT(date, 'dd-MM-yyyy') AS date FROM Event ORDER BY event_id DESC";
             SqlDataReader reader = DbClient.query_reader(query);
-            while (reader.Read())
+            if (reader != null)
             {
-                ListViewItem item = new ListViewItem(reader["name"].ToString());
-                item.SubItems.Add(reader["date"].ToString());
-                item.SubItems.Add(reader["time"].ToString());
+                while (reader.Read())
+                {
+                    ListViewItem item = new ListViewItem(reader["name"].ToString());
+                    item.SubItems.Add(reader["date"].ToString());
+                    item.SubItems.Add(reader["time"].ToString());
 
-                item.SubItems[0].Font = new Font("Calibri", 12, FontStyle.Bold);
-                item.SubItems[1].Font = new Font("Calibri", 12, FontStyle.Bold);
-                item.SubItems[2].Font = new Font("Calibri", 12, FontStyle.Bold);
-                item.UseItemStyleForSubItems = false;
-                eventListView.Items.Add(item);
+                    item.SubItems[0].Font = new Font("Calibri", 12, FontStyle.Bold);
+                    item.SubItems[1].Font = new Font("Calibri", 12, FontStyle.Bold);
+                    item.SubItems[2].Font = new Font("Calibri", 12, FontStyle.Bold);
+                    item.UseItemStyleForSubItems = false;
+                    eventListView.Items.Add(item);
+                }
+                reader.Close();
             }
-            reader.Close();
         }
 
         private void populateFees()
@@ -107,20 +110,23 @@ namespace Perfect_Peace_System.Pages
             feesListView.View = View.Details;
             query = "SELECT * FROM Student  WHERE fees_owing>0 ORDER BY fees_owing DESC";
             SqlDataReader reader = DbClient.query_reader(query);
-            while (reader.Read())
+            if (reader != null)
             {
-                ListViewItem item = new ListViewItem(reader["f_name"].ToString() + " " + reader["l_name"].ToString());
-                item.SubItems.Add(reader["class"].ToString());
-                item.SubItems.Add(reader["fees_owing"].ToString());
-                item.SubItems[2].ForeColor = Color.Red;
+                while (reader.Read())
+                {
+                    ListViewItem item = new ListViewItem(reader["f_name"].ToString() + " " + reader["l_name"].ToString());
+                    item.SubItems.Add(reader["class"].ToString());
+                    item.SubItems.Add(reader["fees_owing"].ToString());
+                    item.SubItems[2].ForeColor = Color.Red;
 
-                item.SubItems[0].Font = new Font("Calibri", 12, FontStyle.Bold);
-                item.SubItems[1].Font = new Font("Calibri", 12, FontStyle.Bold);
-                item.SubItems[2].Font = new Font("Calibri", 12, FontStyle.Bold);
-                item.UseItemStyleForSubItems = false;
-                feesListView.Items.Add(item);
+                    item.SubItems[0].Font = new Font("Calibri", 12, FontStyle.Bold);
+                    item.SubItems[1].Font = new Font("Calibri", 12, FontStyle.Bold);
+                    item.SubItems[2].Font = new Font("Calibri", 12, FontStyle.Bold);
+                    item.UseItemStyleForSubItems = false;
+                    feesListView.Items.Add(item);
+                }
+                reader.Close();
             }
-            reader.Close();
         }
 
         private void loadDataToDounutChat()
@@ -134,14 +140,17 @@ namespace Perfect_Peace_System.Pages
 
             query = "SELECT * FROM Class";
             SqlDataReader reader = DbClient.query_reader(query);
-            while (reader.Read())
+            if (reader != null)
             {
+                while (reader.Read())
+                {
 
-                classes.Add(reader["name"].ToString());
-                classDict.Add(reader["name"].ToString(),  reader["class_id"].ToString());
-                //Console.WriteLine(this.classChart.Legends);
+                    classes.Add(reader["name"].ToString());
+                    classDict.Add(reader["name"].ToString(), reader["class_id"].ToString());
+                    //Console.WriteLine(this.classChart.Legends);
+                }
+                reader.Close();
             }
-            reader.Close();
             
             for(int i = 0; i < classes.Count; i++)
             {

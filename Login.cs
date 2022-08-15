@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Perfect_Peace_System
@@ -48,7 +42,7 @@ namespace Perfect_Peace_System
         private void timer1_Tick(object sender, EventArgs e)
         {
             loadingPanel.Width += 3;
-            if(loadingPanel.Width >= loadingPlaceholderPanel.Width)
+            if (loadingPanel.Width >= loadingPlaceholderPanel.Width)
             {
                 timer1.Stop();
                 OpenNewPage openNewPage = new OpenNewPage();
@@ -68,5 +62,5 @@ namespace Perfect_Peace_System
         }
     }
 
-    
+
 }

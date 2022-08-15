@@ -25,12 +25,14 @@ namespace Perfect_Peace_System.Pages
 
         private void adminLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+
             openNewPage = new OpenNewPage();
             Control control = sender as Control;
             if(control.Name == "adminLink")
             {
                 loginAsText = control.Text;
-            }else if(control.Name == "classTeacherLink")
+            }
+            else if(control.Name == "classTeacherLink")
             {
                 loginAsText = control.Text;
             }

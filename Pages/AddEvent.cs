@@ -52,6 +52,7 @@ namespace Perfect_Peace_System.Pages
             _event.insert_event();
             MessageBox.Show("Event Added");
             clearFeild();
+            DataFromDb.getAllEvent = DbClient.dataSource("SELECT event_id, name, description, FORMAT(date, 'dd-MM-yyyy') AS date, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time FROM Event");
         }
 
         private void clearBtn_Click(object sender, EventArgs e)

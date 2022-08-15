@@ -30,19 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.menuPanel = new System.Windows.Forms.Panel();
-            this.topPanel = new System.Windows.Forms.Panel();
-            this.logoutLink = new System.Windows.Forms.LinkLabel();
-            this.usernameLbl = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.categoryLbl = new System.Windows.Forms.Label();
-            this.titleLbl = new System.Windows.Forms.Label();
-            this.logoPanel = new System.Windows.Forms.Panel();
-            this.schNameLbl = new System.Windows.Forms.Label();
-            this.line1 = new System.Windows.Forms.Panel();
-            this.line2 = new System.Windows.Forms.Panel();
-            this.line3 = new System.Windows.Forms.Panel();
-            this.panelView = new System.Windows.Forms.Panel();
-            this.addStntBtn = new System.Windows.Forms.LinkLabel();
             this.subjectBtn = new System.Windows.Forms.Button();
             this.payrollBtn = new System.Windows.Forms.Button();
             this.reportBtn = new System.Windows.Forms.Button();
@@ -54,16 +41,29 @@
             this.teachersBtn = new System.Windows.Forms.Button();
             this.studentBtn = new System.Windows.Forms.Button();
             this.dashboardBtn = new System.Windows.Forms.Button();
+            this.topPanel = new System.Windows.Forms.Panel();
+            this.logoutLink = new System.Windows.Forms.LinkLabel();
+            this.usernameLbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.categoryLbl = new System.Windows.Forms.Label();
             this.maxBtn = new System.Windows.Forms.PictureBox();
             this.minBtn = new System.Windows.Forms.PictureBox();
             this.closeBtn = new System.Windows.Forms.PictureBox();
+            this.titleLbl = new System.Windows.Forms.Label();
+            this.logoPanel = new System.Windows.Forms.Panel();
+            this.schNameLbl = new System.Windows.Forms.Label();
             this.logo = new System.Windows.Forms.PictureBox();
+            this.line1 = new System.Windows.Forms.Panel();
+            this.line2 = new System.Windows.Forms.Panel();
+            this.line3 = new System.Windows.Forms.Panel();
+            this.panelView = new System.Windows.Forms.Panel();
+            this.addStntBtn = new System.Windows.Forms.LinkLabel();
             this.menuPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
-            this.logoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maxBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).BeginInit();
+            this.logoPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,155 +88,6 @@
             this.menuPanel.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
             this.menuPanel.Size = new System.Drawing.Size(154, 670);
             this.menuPanel.TabIndex = 0;
-            // 
-            // topPanel
-            // 
-            this.topPanel.Controls.Add(this.logoutLink);
-            this.topPanel.Controls.Add(this.usernameLbl);
-            this.topPanel.Controls.Add(this.label1);
-            this.topPanel.Controls.Add(this.categoryLbl);
-            this.topPanel.Controls.Add(this.maxBtn);
-            this.topPanel.Controls.Add(this.minBtn);
-            this.topPanel.Controls.Add(this.closeBtn);
-            this.topPanel.Controls.Add(this.titleLbl);
-            this.topPanel.Controls.Add(this.logoPanel);
-            this.topPanel.Controls.Add(this.line1);
-            this.topPanel.Controls.Add(this.line2);
-            this.topPanel.Controls.Add(this.line3);
-            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topPanel.Location = new System.Drawing.Point(0, 0);
-            this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1120, 74);
-            this.topPanel.TabIndex = 2;
-            this.topPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.topPanel_MouseMove);
-            // 
-            // logoutLink
-            // 
-            this.logoutLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.logoutLink.AutoSize = true;
-            this.logoutLink.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.logoutLink.Location = new System.Drawing.Point(1044, 30);
-            this.logoutLink.Name = "logoutLink";
-            this.logoutLink.Size = new System.Drawing.Size(57, 19);
-            this.logoutLink.TabIndex = 10;
-            this.logoutLink.TabStop = true;
-            this.logoutLink.Text = "Logout";
-            this.logoutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.logoutLink_LinkClicked);
-            // 
-            // usernameLbl
-            // 
-            this.usernameLbl.AutoSize = true;
-            this.usernameLbl.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameLbl.Location = new System.Drawing.Point(273, 31);
-            this.usernameLbl.Name = "usernameLbl";
-            this.usernameLbl.Size = new System.Drawing.Size(117, 18);
-            this.usernameLbl.TabIndex = 9;
-            this.usernameLbl.Text = "Username/email:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(157, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 16);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Username/email:";
-            // 
-            // categoryLbl
-            // 
-            this.categoryLbl.AutoSize = true;
-            this.categoryLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoryLbl.Location = new System.Drawing.Point(157, 12);
-            this.categoryLbl.Name = "categoryLbl";
-            this.categoryLbl.Size = new System.Drawing.Size(58, 16);
-            this.categoryLbl.TabIndex = 9;
-            this.categoryLbl.Text = "Teacher";
-            // 
-            // titleLbl
-            // 
-            this.titleLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.titleLbl.AutoSize = true;
-            this.titleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLbl.Location = new System.Drawing.Point(579, 37);
-            this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(122, 20);
-            this.titleLbl.TabIndex = 5;
-            this.titleLbl.Text = "DASHBOARD";
-            this.titleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // logoPanel
-            // 
-            this.logoPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.logoPanel.Controls.Add(this.schNameLbl);
-            this.logoPanel.Controls.Add(this.logo);
-            this.logoPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.logoPanel.Location = new System.Drawing.Point(0, 0);
-            this.logoPanel.Name = "logoPanel";
-            this.logoPanel.Size = new System.Drawing.Size(154, 74);
-            this.logoPanel.TabIndex = 4;
-            // 
-            // schNameLbl
-            // 
-            this.schNameLbl.AutoSize = true;
-            this.schNameLbl.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.schNameLbl.Location = new System.Drawing.Point(68, 25);
-            this.schNameLbl.Name = "schNameLbl";
-            this.schNameLbl.Size = new System.Drawing.Size(0, 13);
-            this.schNameLbl.TabIndex = 1;
-            // 
-            // line1
-            // 
-            this.line1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.line1.Location = new System.Drawing.Point(160, 54);
-            this.line1.Name = "line1";
-            this.line1.Size = new System.Drawing.Size(307, 3);
-            this.line1.TabIndex = 3;
-            // 
-            // line2
-            // 
-            this.line2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.line2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.line2.Location = new System.Drawing.Point(810, 54);
-            this.line2.Name = "line2";
-            this.line2.Size = new System.Drawing.Size(307, 3);
-            this.line2.TabIndex = 2;
-            // 
-            // line3
-            // 
-            this.line3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.line3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.line3.Location = new System.Drawing.Point(160, 69);
-            this.line3.Name = "line3";
-            this.line3.Size = new System.Drawing.Size(957, 5);
-            this.line3.TabIndex = 2;
-            // 
-            // panelView
-            // 
-            this.panelView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelView.BackColor = System.Drawing.Color.Transparent;
-            this.panelView.Location = new System.Drawing.Point(154, 106);
-            this.panelView.Name = "panelView";
-            this.panelView.Padding = new System.Windows.Forms.Padding(5);
-            this.panelView.Size = new System.Drawing.Size(966, 638);
-            this.panelView.TabIndex = 4;
-            // 
-            // addStntBtn
-            // 
-            this.addStntBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.addStntBtn.AutoSize = true;
-            this.addStntBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addStntBtn.Location = new System.Drawing.Point(912, 84);
-            this.addStntBtn.Name = "addStntBtn";
-            this.addStntBtn.Size = new System.Drawing.Size(87, 19);
-            this.addStntBtn.TabIndex = 5;
-            this.addStntBtn.TabStop = true;
-            this.addStntBtn.Text = "Add Student";
-            this.addStntBtn.Visible = false;
-            this.addStntBtn.Click += new System.EventHandler(this.addStntBtn_Click);
             // 
             // subjectBtn
             // 
@@ -448,6 +299,70 @@
             this.dashboardBtn.UseVisualStyleBackColor = true;
             this.dashboardBtn.Click += new System.EventHandler(this.dashboardBtn_Click);
             // 
+            // topPanel
+            // 
+            this.topPanel.Controls.Add(this.logoutLink);
+            this.topPanel.Controls.Add(this.usernameLbl);
+            this.topPanel.Controls.Add(this.label1);
+            this.topPanel.Controls.Add(this.categoryLbl);
+            this.topPanel.Controls.Add(this.maxBtn);
+            this.topPanel.Controls.Add(this.minBtn);
+            this.topPanel.Controls.Add(this.closeBtn);
+            this.topPanel.Controls.Add(this.titleLbl);
+            this.topPanel.Controls.Add(this.logoPanel);
+            this.topPanel.Controls.Add(this.line1);
+            this.topPanel.Controls.Add(this.line2);
+            this.topPanel.Controls.Add(this.line3);
+            this.topPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(1120, 74);
+            this.topPanel.TabIndex = 2;
+            this.topPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.topPanel_MouseMove);
+            // 
+            // logoutLink
+            // 
+            this.logoutLink.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.logoutLink.AutoSize = true;
+            this.logoutLink.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutLink.Location = new System.Drawing.Point(1044, 30);
+            this.logoutLink.Name = "logoutLink";
+            this.logoutLink.Size = new System.Drawing.Size(57, 19);
+            this.logoutLink.TabIndex = 10;
+            this.logoutLink.TabStop = true;
+            this.logoutLink.Text = "Logout";
+            this.logoutLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.logoutLink_LinkClicked);
+            // 
+            // usernameLbl
+            // 
+            this.usernameLbl.AutoSize = true;
+            this.usernameLbl.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameLbl.Location = new System.Drawing.Point(273, 31);
+            this.usernameLbl.Name = "usernameLbl";
+            this.usernameLbl.Size = new System.Drawing.Size(117, 18);
+            this.usernameLbl.TabIndex = 9;
+            this.usernameLbl.Text = "Username/email:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(157, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(110, 16);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Username/email:";
+            // 
+            // categoryLbl
+            // 
+            this.categoryLbl.AutoSize = true;
+            this.categoryLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryLbl.Location = new System.Drawing.Point(157, 12);
+            this.categoryLbl.Name = "categoryLbl";
+            this.categoryLbl.Size = new System.Drawing.Size(58, 16);
+            this.categoryLbl.TabIndex = 9;
+            this.categoryLbl.Text = "Teacher";
+            // 
             // maxBtn
             // 
             this.maxBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -487,6 +402,38 @@
             this.closeBtn.TabStop = false;
             this.closeBtn.Click += new System.EventHandler(this.closeBtn_Click);
             // 
+            // titleLbl
+            // 
+            this.titleLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.titleLbl.AutoSize = true;
+            this.titleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLbl.Location = new System.Drawing.Point(579, 37);
+            this.titleLbl.Name = "titleLbl";
+            this.titleLbl.Size = new System.Drawing.Size(122, 20);
+            this.titleLbl.TabIndex = 5;
+            this.titleLbl.Text = "DASHBOARD";
+            this.titleLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // logoPanel
+            // 
+            this.logoPanel.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.logoPanel.Controls.Add(this.schNameLbl);
+            this.logoPanel.Controls.Add(this.logo);
+            this.logoPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.logoPanel.Location = new System.Drawing.Point(0, 0);
+            this.logoPanel.Name = "logoPanel";
+            this.logoPanel.Size = new System.Drawing.Size(154, 74);
+            this.logoPanel.TabIndex = 4;
+            // 
+            // schNameLbl
+            // 
+            this.schNameLbl.AutoSize = true;
+            this.schNameLbl.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.schNameLbl.Location = new System.Drawing.Point(68, 25);
+            this.schNameLbl.Name = "schNameLbl";
+            this.schNameLbl.Size = new System.Drawing.Size(0, 13);
+            this.schNameLbl.TabIndex = 1;
+            // 
             // logo
             // 
             this.logo.Image = global::Perfect_Peace_System.Properties.Resources.perfectpeacelogoSmall;
@@ -496,6 +443,59 @@
             this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logo.TabIndex = 0;
             this.logo.TabStop = false;
+            // 
+            // line1
+            // 
+            this.line1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.line1.Location = new System.Drawing.Point(160, 54);
+            this.line1.Name = "line1";
+            this.line1.Size = new System.Drawing.Size(307, 3);
+            this.line1.TabIndex = 3;
+            // 
+            // line2
+            // 
+            this.line2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.line2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.line2.Location = new System.Drawing.Point(810, 54);
+            this.line2.Name = "line2";
+            this.line2.Size = new System.Drawing.Size(307, 3);
+            this.line2.TabIndex = 2;
+            // 
+            // line3
+            // 
+            this.line3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.line3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.line3.Location = new System.Drawing.Point(160, 69);
+            this.line3.Name = "line3";
+            this.line3.Size = new System.Drawing.Size(957, 5);
+            this.line3.TabIndex = 2;
+            // 
+            // panelView
+            // 
+            this.panelView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelView.BackColor = System.Drawing.Color.Transparent;
+            this.panelView.Location = new System.Drawing.Point(154, 106);
+            this.panelView.Name = "panelView";
+            this.panelView.Padding = new System.Windows.Forms.Padding(5);
+            this.panelView.Size = new System.Drawing.Size(966, 638);
+            this.panelView.TabIndex = 4;
+            // 
+            // addStntBtn
+            // 
+            this.addStntBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.addStntBtn.AutoSize = true;
+            this.addStntBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addStntBtn.Location = new System.Drawing.Point(912, 84);
+            this.addStntBtn.Name = "addStntBtn";
+            this.addStntBtn.Size = new System.Drawing.Size(87, 19);
+            this.addStntBtn.TabIndex = 5;
+            this.addStntBtn.TabStop = true;
+            this.addStntBtn.Text = "Add Student";
+            this.addStntBtn.Visible = false;
+            this.addStntBtn.Click += new System.EventHandler(this.addStntBtn_Click);
             // 
             // Home
             // 
@@ -514,11 +514,11 @@
             this.menuPanel.PerformLayout();
             this.topPanel.ResumeLayout(false);
             this.topPanel.PerformLayout();
-            this.logoPanel.ResumeLayout(false);
-            this.logoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.maxBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.minBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.closeBtn)).EndInit();
+            this.logoPanel.ResumeLayout(false);
+            this.logoPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

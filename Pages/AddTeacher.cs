@@ -93,7 +93,10 @@ namespace Perfect_Peace_System.Pages
                     teacher.save();
                     MessageBox.Show("Staff Personnel Saved");
                     clearFeilds();
+                    DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, (SELECT name FROM Class WHERE Class.class_id=Teacher.class_id) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
+
                 }
+
             }
             catch (Exception ex)
             {

@@ -29,8 +29,14 @@ namespace Perfect_Peace_System.Pages
 
             if (Pages.LoginInput.category.Equals("Administrator"))
             {
-                query = "SELECT name FROM Class";
-                DbClient.query_reader(classCb, query);
+                if (DataFromDb.allClassReader != null)
+                {
+                    while (DataFromDb.allClassReader.Read())
+                    {
+                        classCb.Items.Add(DataFromDb.allClassReader[0].ToString());
+                    }
+                    DataFromDb.allClassReader.Close();
+                }
             }
 
             if (Pages.LoginInput.category.Equals("Class Teacher"))

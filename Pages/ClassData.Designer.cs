@@ -54,12 +54,14 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.refeshBtn = new System.Windows.Forms.Button();
             this.showDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.classDataView)).BeginInit();
             this.SuspendLayout();
             // 
             // showDataPanel
             // 
+            this.showDataPanel.Controls.Add(this.refeshBtn);
             this.showDataPanel.Controls.Add(this.classDataView);
             this.showDataPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.showDataPanel.Location = new System.Drawing.Point(0, 0);
@@ -71,6 +73,9 @@
             // 
             this.classDataView.AllowUserToAddRows = false;
             this.classDataView.AllowUserToDeleteRows = false;
+            this.classDataView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.classDataView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.classDataView.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.classDataView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -104,9 +109,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.InfoText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.classDataView.DefaultCellStyle = dataGridViewCellStyle5;
-            this.classDataView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.classDataView.EnableHeadersVisualStyles = false;
-            this.classDataView.Location = new System.Drawing.Point(0, 0);
+            this.classDataView.Location = new System.Drawing.Point(0, 40);
             this.classDataView.Name = "classDataView";
             this.classDataView.ReadOnly = true;
             this.classDataView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -123,7 +127,7 @@
             dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.classDataView.RowsDefaultCellStyle = dataGridViewCellStyle7;
             this.classDataView.RowTemplate.Height = 30;
-            this.classDataView.Size = new System.Drawing.Size(800, 450);
+            this.classDataView.Size = new System.Drawing.Size(800, 410);
             this.classDataView.TabIndex = 0;
             this.classDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.classDataView_CellContentClick);
             this.classDataView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.classDataView_DataError);
@@ -256,6 +260,19 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.Width = 40;
             // 
+            // refeshBtn
+            // 
+            this.refeshBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.refeshBtn.FlatAppearance.BorderSize = 0;
+            this.refeshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refeshBtn.Location = new System.Drawing.Point(12, 12);
+            this.refeshBtn.Name = "refeshBtn";
+            this.refeshBtn.Size = new System.Drawing.Size(75, 23);
+            this.refeshBtn.TabIndex = 7;
+            this.refeshBtn.Text = "Refresh";
+            this.refeshBtn.UseVisualStyleBackColor = false;
+            this.refeshBtn.Click += new System.EventHandler(this.refeshBtn_Click);
+            // 
             // ClassData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,5 +304,6 @@
         private System.Windows.Forms.DataGridViewImageColumn view;
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;
+        private System.Windows.Forms.Button refeshBtn;
     }
 }

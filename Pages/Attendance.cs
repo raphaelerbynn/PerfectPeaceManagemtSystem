@@ -21,8 +21,10 @@ namespace Perfect_Peace_System.Pages
             InitializeComponent();
             if (Pages.LoginInput.category.Equals("Administrator"))
             {
+
                 query = "SELECT name FROM Class";
-                DbClient.query_reader(classCb, query);
+                DbClient.query_reader(classCb, query); 
+
             }
             attendanceDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
             attendanceDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
@@ -116,6 +118,11 @@ namespace Perfect_Peace_System.Pages
             _date = attendanceDatePk.Value;
             OpenNewPage openNewPage = new OpenNewPage();
             openNewPage.OpenChildForm(new Pages.MarkAttendance(), attendancePanel);
+        }
+
+        private void attendanceDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

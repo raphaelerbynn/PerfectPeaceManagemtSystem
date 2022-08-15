@@ -29,8 +29,8 @@ namespace Perfect_Peace_System.Pages
             
             columnArrangement();
 
-            parent.show_data(showParentDataView);
-            getChild();
+            showParentDataView.DataSource = DataFromDb.getAllParentData();
+            //getChild();
         }
 
         private void columnArrangement()
@@ -138,6 +138,12 @@ namespace Perfect_Peace_System.Pages
             {
                 (showParentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
             }
+        }
+
+        private void refeshBtn_Click(object sender, EventArgs e)
+        {
+            DataFromDb.getAllTeacher = DbClient.dataSource("SELECT parent_id,contact,gender,relationship, [f_name]+' '+[l_name] AS name FROM Parent");
+
         }
     }
 }

@@ -47,8 +47,10 @@ namespace Perfect_Peace_System.Pages
 
         private void loginBtn_Click(object sender, EventArgs e)
         {
+
             if (InternetConnectivity.checkConnectivity())
             {
+
                 try
                 {
                     category = loginAsLbl.Text;
@@ -80,6 +82,25 @@ namespace Perfect_Peace_System.Pages
 
                     if (checkUserDetails(username, password) == true)
                     {
+                        if (category.Equals("Administrator"))
+                        {
+                            DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
+                            DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, (SELECT name FROM Class WHERE Class.class_id=Teacher.class_id) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
+                            DataFromDb.getAllNonTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, staff_position, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Non-Teaching'");
+                            DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
+                            DataFromDb.getAllClass = DbClient.dataSource("SELECT class_id, name, section, capacity, fees, teacher_id, (SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE Teacher.teacher_id=Class.teacher_id) AS teacher FROM Class");
+                            DataFromDb.getExpenses = DbClient.dataSource("");
+                        }
+                        else if (category.Equals("Class Teacher"))
+                        {
+                            DataFromDb.getAllStudentForTeacher = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student WHERE class_id='" + DataFromDb.class_id_teacher() + "'");
+                        }
+                        else
+                        {
+                            
+                        }
+                        DataFromDb.getAllEvent = DbClient.dataSource("SELECT event_id, name, description, FORMAT(date, 'dd-MM-yyyy') AS date, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time FROM Event");
+
                         wrongMeesageLbl.Visible = false;
                         Login login = (Login)Application.OpenForms["Login"];
                         login.Hide();
@@ -160,6 +181,7 @@ namespace Perfect_Peace_System.Pages
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Console.WriteLine(ex);
                 return false;
             }
             
