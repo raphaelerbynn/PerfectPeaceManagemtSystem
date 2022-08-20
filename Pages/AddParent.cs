@@ -70,9 +70,25 @@ namespace Perfect_Peace_System.Pages
             query = "UPDATE Student SET parent_id=" + DbClient.GetLastId("Parent") + " WHERE student_id=" + DbClient.GetLastId("Student");
             DbClient.query_execute(query);
             MessageBox.Show("Parent Registered");
-
+            DataFromDb.getAllParent = DbClient.dataSource("SELECT parent_id,contact,gender,relationship, [f_name]+' '+[l_name] AS name FROM Parent");
             this.Close();
             this.Hide();
+        }
+
+        private void clearFeild_Click(object sender, EventArgs e)
+        {
+            clearFeild();
+        }
+
+        private void clearFeild()
+        {
+            fnameTb.Text = null;
+            lnameTb.Text = null;
+            maleRadioBtn.Checked = true;
+            contactTb.Text = null;
+            contact1Tb.Text = null;
+            relationshipCB.SelectedIndex = -1;
+
         }
     }
 }

@@ -36,6 +36,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -44,6 +45,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -51,12 +53,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bgPanel = new System.Windows.Forms.Panel();
             this.feedingPanel = new System.Windows.Forms.Panel();
             this.addMonthCheckBF = new System.Windows.Forms.CheckBox();
@@ -76,6 +76,7 @@
             this.feedingClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feedingAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.feedingDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deleteFeeding = new System.Windows.Forms.DataGridViewImageColumn();
             this.addFeedingBtn = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.feedingAmntTb = new System.Windows.Forms.TextBox();
@@ -108,6 +109,7 @@
             this.ex_cl_class = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.extraClassesAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ex_cl_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ex_cl_delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.addExtraClassesBtn = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.extraClassesAmntTb = new System.Windows.Forms.TextBox();
@@ -132,6 +134,7 @@
             this.expense = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exp_amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exp_date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.exp_delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.addExpBtn = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.expenseTb = new System.Windows.Forms.TextBox();
@@ -144,6 +147,7 @@
             this.searchExpBtn = new System.Windows.Forms.Button();
             this.expSearchTb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.titleLbl = new System.Windows.Forms.Label();
@@ -153,10 +157,7 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.deleteFeeding = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ex_cl_delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.exp_delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label6 = new System.Windows.Forms.Label();
+            this.refeshBtn = new System.Windows.Forms.Button();
             this.bgPanel.SuspendLayout();
             this.feedingPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.feedingDataView)).BeginInit();
@@ -168,6 +169,7 @@
             // 
             // bgPanel
             // 
+            this.bgPanel.Controls.Add(this.refeshBtn);
             this.bgPanel.Controls.Add(this.feedingPanel);
             this.bgPanel.Controls.Add(this.classesPanel);
             this.bgPanel.Controls.Add(this.expensePanel);
@@ -456,6 +458,21 @@
             this.feedingDate.Name = "feedingDate";
             this.feedingDate.ReadOnly = true;
             this.feedingDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // deleteFeeding
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = null;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.deleteFeeding.DefaultCellStyle = dataGridViewCellStyle6;
+            this.deleteFeeding.FillWeight = 30F;
+            this.deleteFeeding.HeaderText = "";
+            this.deleteFeeding.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.deleteFeeding.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.deleteFeeding.Name = "deleteFeeding";
+            this.deleteFeeding.ReadOnly = true;
+            this.deleteFeeding.Width = 50;
             // 
             // addFeedingBtn
             // 
@@ -905,6 +922,21 @@
             this.ex_cl_date.ReadOnly = true;
             this.ex_cl_date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // ex_cl_delete
+            // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.NullValue = null;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.ex_cl_delete.DefaultCellStyle = dataGridViewCellStyle15;
+            this.ex_cl_delete.FillWeight = 30F;
+            this.ex_cl_delete.HeaderText = "";
+            this.ex_cl_delete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.ex_cl_delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.ex_cl_delete.Name = "ex_cl_delete";
+            this.ex_cl_delete.ReadOnly = true;
+            this.ex_cl_delete.Width = 50;
+            // 
             // addExtraClassesBtn
             // 
             this.addExtraClassesBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1254,6 +1286,21 @@
             this.exp_date.ReadOnly = true;
             this.exp_date.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // exp_delete
+            // 
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle23.NullValue = null;
+            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.exp_delete.DefaultCellStyle = dataGridViewCellStyle23;
+            this.exp_delete.FillWeight = 30F;
+            this.exp_delete.HeaderText = "";
+            this.exp_delete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.exp_delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.exp_delete.Name = "exp_delete";
+            this.exp_delete.ReadOnly = true;
+            this.exp_delete.Width = 50;
+            // 
             // addExpBtn
             // 
             this.addExpBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1402,6 +1449,17 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Expense:";
             // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(755, 219);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(36, 19);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "GHc";
+            // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1521,61 +1579,18 @@
             this.dataGridViewImageColumn3.ReadOnly = true;
             this.dataGridViewImageColumn3.Width = 50;
             // 
-            // deleteFeeding
+            // refeshBtn
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.NullValue = null;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.deleteFeeding.DefaultCellStyle = dataGridViewCellStyle6;
-            this.deleteFeeding.FillWeight = 30F;
-            this.deleteFeeding.HeaderText = "";
-            this.deleteFeeding.Image = global::Perfect_Peace_System.Properties.Resources.delete;
-            this.deleteFeeding.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.deleteFeeding.Name = "deleteFeeding";
-            this.deleteFeeding.ReadOnly = true;
-            this.deleteFeeding.Width = 50;
-            // 
-            // ex_cl_delete
-            // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.NullValue = null;
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.ex_cl_delete.DefaultCellStyle = dataGridViewCellStyle15;
-            this.ex_cl_delete.FillWeight = 30F;
-            this.ex_cl_delete.HeaderText = "";
-            this.ex_cl_delete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
-            this.ex_cl_delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.ex_cl_delete.Name = "ex_cl_delete";
-            this.ex_cl_delete.ReadOnly = true;
-            this.ex_cl_delete.Width = 50;
-            // 
-            // exp_delete
-            // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.NullValue = null;
-            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.exp_delete.DefaultCellStyle = dataGridViewCellStyle23;
-            this.exp_delete.FillWeight = 30F;
-            this.exp_delete.HeaderText = "";
-            this.exp_delete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
-            this.exp_delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.exp_delete.Name = "exp_delete";
-            this.exp_delete.ReadOnly = true;
-            this.exp_delete.Width = 50;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(755, 219);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(36, 19);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "GHc";
+            this.refeshBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.refeshBtn.FlatAppearance.BorderSize = 0;
+            this.refeshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refeshBtn.Location = new System.Drawing.Point(3, 21);
+            this.refeshBtn.Name = "refeshBtn";
+            this.refeshBtn.Size = new System.Drawing.Size(75, 23);
+            this.refeshBtn.TabIndex = 45;
+            this.refeshBtn.Text = "Refresh";
+            this.refeshBtn.UseVisualStyleBackColor = false;
+            this.refeshBtn.Click += new System.EventHandler(this.refeshBtn_Click);
             // 
             // Account
             // 
@@ -1702,5 +1717,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button refeshBtn;
     }
 }

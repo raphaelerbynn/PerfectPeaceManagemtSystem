@@ -77,8 +77,9 @@ namespace Perfect_Peace_System.Pages
             expensesDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
             expensesDataView.BackgroundColor = Home.foreColor;
             //load data
-            query = "SELECT expense_id, expense, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Expense";
-            DbClient.dataGridFill(expensesDataView, query);
+            //query = "SELECT expense_id, expense, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Expense";
+            //DbClient.dataGridFill(expensesDataView, query);
+            expensesDataView.DataSource = DataFromDb.getExpensesData();
             totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
 
         }
@@ -88,8 +89,9 @@ namespace Perfect_Peace_System.Pages
             extraClassesDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
             extraClassesDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
             extraClassesDataView.BackgroundColor = Home.foreColor;
-            query = "SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes";
-            DbClient.dataGridFill(extraClassesDataView, query);
+            //query = "SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes";
+            //DbClient.dataGridFill(extraClassesDataView, query);
+            extraClassesDataView.DataSource = DataFromDb.getExtraClassesData();
             extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
         }
 
@@ -98,8 +100,10 @@ namespace Perfect_Peace_System.Pages
             feedingDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
             feedingDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
             feedingDataView.BackgroundColor = Home.foreColor;
-            query = "SELECT feeding_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Feeding_fee";
-            DbClient.dataGridFill(feedingDataView, query);
+
+            //query = "SELECT feeding_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Feeding_fee";
+            //DbClient.dataGridFill(feedingDataView, query);
+            feedingDataView.DataSource = DataFromDb.getFeedingFeeData();
             feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
         }
 
@@ -113,12 +117,13 @@ namespace Perfect_Peace_System.Pages
                     query = "INSERT INTO Feeding_fee(teacher, class, amount, date) " +
                         "VALUES('" + feedingTeacherCb.Text + "', '" + feedingClassCb.Text + "', '" + feedingAmntTb.Text + "', '" + DateTime.Today + "')";
                     DbClient.query_execute(query);
-                    showFeeding();
+                    
                     feedingTeacherCb.SelectedIndex = -1;
                     feedingClassCb.SelectedIndex = -1;
                     feedingAmntTb.Text = null;
                     feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
-                    DataFromDb.getFeedingFeeData();
+                    DataFromDb.getFeedingFee = DbClient.dataSource("SELECT feeding_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Feeding_fee");
+                    showFeeding();
                 }
                 catch (Exception ex)
                 {
@@ -258,14 +263,24 @@ namespace Perfect_Peace_System.Pages
         {
             if (InternetConnectivity.checkConnectivity())
             {
-                if (InternetConnectivity.checkConnectivity())
-                {
 
-                }
-                else
+                try
                 {
-                    MessageBox.Show("Check your internet connection");
+                    query = "INSERT INTO Extra_classes(teacher, class, amount, date) " +
+                        "VALUES('" + teacherCb.Text + "', '" + extraClassesClassCb.Text + "', '" + extraClassesAmntTb.Text + "', '" + DateTime.Today + "')";
+                    DbClient.query_execute(query);
+                    
+                    teacherCb.SelectedIndex = -1;
+                    extraClassesClassCb.SelectedIndex = -1;
+                    extraClassesAmntTb.Text = null;
+                    DataFromDb.getExtraClasses = DbClient.dataSource("SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes");
+                    showExtraClasses();
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
             }
             else
             {
@@ -403,11 +418,12 @@ namespace Perfect_Peace_System.Pages
                     query = "INSERT INTO Expense(expense, amount, date) " +
                         "VALUES('" + expenseTb.Text + "', '" + expAmountTb.Text + "', '" + DateTime.Today + "')";
                     DbClient.query_execute(query);
-                    showExpenses();
+                    
                     expenseTb.Text = null;
                     expAmountTb.Text = null;
                     totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
-                    DataFromDb.getExtraClassesData();
+                    DataFromDb.getExpenses = DbClient.dataSource("SELECT expense_id, expense, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Expense");
+                    showExpenses();
                 }
                 catch (Exception ex)
                 {
@@ -540,6 +556,25 @@ namespace Perfect_Peace_System.Pages
             }
             return total.ToString();
         }
-                
+
+        private void refeshBtn_Click(object sender, EventArgs e)
+        {
+            if(feedingPanel.Visible == true)
+            {
+                DataFromDb.getFeedingFee = DbClient.dataSource("SELECT feeding_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Feeding_fee");
+                MessageBox.Show("Feeding data refreshed");
+            }
+            else if(expensePanel.Visible == true)
+            {
+                DataFromDb.getExpenses = DbClient.dataSource("SELECT expense_id, expense, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Expense");
+                MessageBox.Show("Expenses data refreshed");
+            }
+            else if(classesPanel.Visible == true)
+            {
+                DataFromDb.getExtraClasses = DbClient.dataSource("SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes");
+                MessageBox.Show("Extra classes data refreshed");
+            }
+            else { }
+        }
     }
 }

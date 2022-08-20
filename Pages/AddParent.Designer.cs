@@ -32,7 +32,7 @@
             this.femaleRadioBtn = new System.Windows.Forms.RadioButton();
             this.maleRadioBtn = new System.Windows.Forms.RadioButton();
             this.label7 = new System.Windows.Forms.Label();
-            this.clearFeild = new System.Windows.Forms.Button();
+            this.clearFeildBtn = new System.Windows.Forms.Button();
             this.registerParent = new System.Windows.Forms.Button();
             this.childCB = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@
             this.bpPanel.Controls.Add(this.femaleRadioBtn);
             this.bpPanel.Controls.Add(this.maleRadioBtn);
             this.bpPanel.Controls.Add(this.label7);
-            this.bpPanel.Controls.Add(this.clearFeild);
+            this.bpPanel.Controls.Add(this.clearFeildBtn);
             this.bpPanel.Controls.Add(this.registerParent);
             this.bpPanel.Controls.Add(this.childCB);
             this.bpPanel.Controls.Add(this.label6);
@@ -113,27 +113,36 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Gender: ";
             // 
-            // clearFeild
+            // clearFeildBtn
             // 
-            this.clearFeild.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.clearFeild.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clearFeild.Location = new System.Drawing.Point(507, 469);
-            this.clearFeild.Name = "clearFeild";
-            this.clearFeild.Size = new System.Drawing.Size(112, 28);
-            this.clearFeild.TabIndex = 14;
-            this.clearFeild.Text = "Clear";
-            this.clearFeild.UseVisualStyleBackColor = true;
+            this.clearFeildBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.clearFeildBtn.AutoSize = true;
+            this.clearFeildBtn.BackColor = System.Drawing.Color.DarkRed;
+            this.clearFeildBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.clearFeildBtn.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clearFeildBtn.ForeColor = System.Drawing.Color.White;
+            this.clearFeildBtn.Location = new System.Drawing.Point(507, 469);
+            this.clearFeildBtn.Name = "clearFeildBtn";
+            this.clearFeildBtn.Size = new System.Drawing.Size(112, 31);
+            this.clearFeildBtn.TabIndex = 14;
+            this.clearFeildBtn.Text = "Clear";
+            this.clearFeildBtn.UseVisualStyleBackColor = false;
+            this.clearFeildBtn.Click += new System.EventHandler(this.clearFeild_Click);
             // 
             // registerParent
             // 
             this.registerParent.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.registerParent.AutoSize = true;
+            this.registerParent.BackColor = System.Drawing.Color.DarkGreen;
+            this.registerParent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerParent.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.registerParent.ForeColor = System.Drawing.Color.White;
             this.registerParent.Location = new System.Drawing.Point(355, 470);
             this.registerParent.Name = "registerParent";
-            this.registerParent.Size = new System.Drawing.Size(112, 27);
+            this.registerParent.Size = new System.Drawing.Size(121, 31);
             this.registerParent.TabIndex = 13;
             this.registerParent.Text = "Register Parent";
-            this.registerParent.UseVisualStyleBackColor = true;
+            this.registerParent.UseVisualStyleBackColor = false;
             this.registerParent.Click += new System.EventHandler(this.registerParent_Click);
             // 
             // childCB
@@ -301,7 +310,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox contact1Tb;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button clearFeild;
+        private System.Windows.Forms.Button clearFeildBtn;
         private System.Windows.Forms.Button registerParent;
         private System.Windows.Forms.ComboBox childCB;
         private System.Windows.Forms.Label label6;

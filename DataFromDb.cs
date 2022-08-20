@@ -104,6 +104,32 @@ namespace Perfect_Peace_System
         {
             return getExtraClasses;
         }
+        
+        //payroll
+        public static DataTable getSalaryBase;
+        public static DataTable getSalaryBaseData()
+        {
+            return getSalaryBase;
+        }
+        
+        public static DataTable getEmployeeSalary;
+        public static DataTable getEmployeeSalaryData()
+        {
+            return getEmployeeSalary;
+        }
+        
+        public static DataTable getSalaryPayment;
+        public static DataTable getSalaryPaymentData()
+        {
+            return getSalaryPayment;
+        }
+
+        //fees
+        public static DataTable getFees;
+        public static DataTable getFeesData()
+        {
+            return getFees;
+        }
 
 
 

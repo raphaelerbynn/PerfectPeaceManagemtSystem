@@ -115,8 +115,9 @@ namespace Perfect_Peace_System.Pages
             salaryBaseDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
             salaryBaseDataView.BackgroundColor = Home.foreColor;
 
-            query = "SELECT *, amount AS net_amount, amount AS gross_amount FROM Salary";
-            DbClient.dataGridFill(salaryBaseDataView, query);
+            //query = "SELECT *, amount AS net_amount, amount AS gross_amount FROM Salary";
+            //DbClient.dataGridFill(salaryBaseDataView, query);
+            salaryBaseDataView.DataSource = DataFromDb.getSalaryBaseData();
 
             foreach (DataGridViewRow item in salaryBaseDataView.Rows)
             {
@@ -189,10 +190,12 @@ namespace Perfect_Peace_System.Pages
                 empSalaryDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
                 empSalaryDataView.BackgroundColor = Home.foreColor;
 
-                query = "SELECT teacher_id, [f_name]+' '+[l_name] AS name, email, CAST(teacher_id AS VARCHAR(100)) AS salary_base FROM Teacher";
-                DbClient.dataGridFill(empSalaryDataView, query);
+                // query = "SELECT teacher_id, [f_name]+' '+[l_name] AS name, email, CAST(teacher_id AS VARCHAR(100)) AS salary_base FROM Teacher";
+                // DbClient.dataGridFill(empSalaryDataView, query);
+                
+                empSalaryDataView.DataSource = DataFromDb.getEmployeeSalaryData();
 
-                foreach (DataGridViewRow item in empSalaryDataView.Rows)
+               /* foreach (DataGridViewRow item in empSalaryDataView.Rows)
                 {
                     string salary_id = "";
                     item.Cells["emp_salary_base"].Value = null;
@@ -213,7 +216,7 @@ namespace Perfect_Peace_System.Pages
                     }
                     reader.Close();
                     
-                }
+                }*/
             }
             catch(Exception ex)
             {
@@ -343,9 +346,9 @@ namespace Perfect_Peace_System.Pages
                 paymentDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
                 paymentDataView.BackgroundColor = Home.foreColor;
 
-                query = "SELECT salary_payment_id, name, amount, net, salary_date, payment_method, FORMAT(date_paid, 'dd-MMM-yyyy') AS date_paid FROM Salary_payment";
-                DbClient.dataGridFill(paymentDataView, query);
-
+                //query = "SELECT salary_payment_id, name, amount, net, salary_date, payment_method, FORMAT(date_paid, 'dd-MMM-yyyy') AS date_paid FROM Salary_payment";
+                //DbClient.dataGridFill(paymentDataView, query);
+                paymentDataView.DataSource = DataFromDb.getSalaryPaymentData();
                 adjustPaymentColumns();
             }
             catch(Exception ex)
