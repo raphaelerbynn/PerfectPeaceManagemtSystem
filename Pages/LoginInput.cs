@@ -82,47 +82,13 @@ namespace Perfect_Peace_System.Pages
 
                     if (checkUserDetails(username, password) == true)
                     {
-                        if (category.Equals("Administrator"))
-                        {
-                            DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
-                            DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, (SELECT name FROM Class WHERE Class.class_id=Teacher.class_id) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
-                            DataFromDb.getAllParent = DbClient.dataSource("SELECT parent_id,contact,gender,relationship, [f_name]+' '+[l_name] AS name FROM Parent");
-                            DataFromDb.getAllNonTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, staff_position, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Non-Teaching'");
-                            DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
-                            DataFromDb.getAllClass = DbClient.dataSource("SELECT class_id, name, section, capacity, fees, teacher_id, (SELECT [f_name]+' '+[l_name] FROM Teacher WHERE Teacher.teacher_id=Class.teacher_id) AS teacher FROM Class");
-                            DataFromDb.getExpenses = DbClient.dataSource("SELECT expense_id, expense, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Expense");
-                            DataFromDb.getFeedingFee = DbClient.dataSource("SELECT feeding_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Feeding_fee");
-                            DataFromDb.getExtraClasses = DbClient.dataSource("SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes");
-                            DataFromDb.getSalaryBase = DbClient.dataSource("SELECT *, amount AS net_amount, amount AS gross_amount FROM Salary");
-                            DataFromDb.getEmployeeSalary = DbClient.dataSource("SELECT teacher_id, [f_name] + ' ' +[l_name] AS name, email, " +
-                                                            "(SELECT [title]+'('+[rank]+')' AS position FROM Salary WHERE Salary.salary_id=(SELECT salary_id FROM Employee_salary WHERE Employee_salary.teacher_id=Teacher.teacher_id)) " +
-                                                            "AS salary_base FROM Teacher");
-                            DataFromDb.getSalaryPayment = DbClient.dataSource("SELECT salary_payment_id, name, amount, net, salary_date, payment_method, FORMAT(date_paid, 'dd-MMM-yyyy') AS date_paid FROM Salary_payment");
-                        }
-                        else if (category.Equals("Class Teacher"))
-                        {
-                            DataFromDb.getAllStudentForTeacher = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student WHERE class_id='" + DataFromDb.class_id_teacher() + "'");
-                        }
-                        else
-                        {
-                            DataFromDb.getExpenses = DbClient.dataSource("SELECT expense_id, expense, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Expense");
-                            DataFromDb.getFeedingFee = DbClient.dataSource("SELECT feeding_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Feeding_fee");
-                            DataFromDb.getExtraClasses = DbClient.dataSource("SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes");
-                            DataFromDb.getSalaryBase = DbClient.dataSource("SELECT *, amount AS net_amount, amount AS gross_amount FROM Salary");
-                            DataFromDb.getEmployeeSalary = DbClient.dataSource("SELECT teacher_id, [f_name] + ' ' +[l_name] AS name, email, " +
-                                                            "(SELECT [title]+'('+[rank]+')' AS position FROM Salary WHERE Salary.salary_id=(SELECT salary_id FROM Employee_salary WHERE Employee_salary.teacher_id=Teacher.teacher_id)) " +
-                                                            "AS salary_base FROM Teacher");
-                            DataFromDb.getSalaryPayment = DbClient.dataSource("SELECT salary_payment_id, name, amount, net, salary_date, payment_method, FORMAT(date_paid, 'dd-MMM-yyyy') AS date_paid FROM Salary_payment");
-
-                        }
-                        DataFromDb.getAllEvent = DbClient.dataSource("SELECT event_id, name, description, FORMAT(date, 'dd-MM-yyyy') AS date, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time FROM Event");
-
+                        
                         wrongMeesageLbl.Visible = false;
                         Login login = (Login)Application.OpenForms["Login"];
                         login.Hide();
 
-                        Home home = new Home();
-                        home.Show();
+                        Loading loading = new Loading();
+                        loading.Show();
 
                         usernameTb.Text = null;
                         passwordTb.Text = null;

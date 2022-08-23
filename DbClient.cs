@@ -97,7 +97,7 @@ namespace Perfect_Peace_System
             {
                 cmd = new SqlCommand(query, connection);
                 reader = cmd.ExecuteReader();
-
+                //reader.Close();
                 return reader;
             }
             catch(Exception ex)

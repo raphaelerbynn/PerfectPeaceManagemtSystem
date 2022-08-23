@@ -454,5 +454,35 @@ namespace Perfect_Peace_System.Pages
                 (paymentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
             }
         }
+
+        private void Payroll_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void refeshBtn_Click(object sender, EventArgs e)
+        {
+            if (salaryBasedPanel.Visible == true)
+            {
+                DataFromDb.getSalaryBase = DbClient.dataSource("SELECT *, amount AS net_amount, amount AS gross_amount FROM Salary");
+                MessageBox.Show("Salary base refreshed");
+                salaryBaseDataView.DataSource = DataFromDb.getSalaryBaseData();
+            }
+            else if(paymentPanel.Visible == true)
+            {
+                DataFromDb.getSalaryPayment = DbClient.dataSource("SELECT salary_payment_id, name, amount, net, salary_date, payment_method, FORMAT(date_paid, 'dd-MMM-yyyy') AS date_paid FROM Salary_payment");
+                MessageBox.Show("Payment data refreshed");
+                paymentDataView.DataSource = DataFromDb.getSalaryPaymentData();
+            }
+            else if(empSalaryPanel.Visible == true)
+            {
+                DataFromDb.getEmployeeSalary = DbClient.dataSource("SELECT teacher_id, [f_name] + ' ' +[l_name] AS name, email, " +
+                                            "(SELECT [title]+'('+[rank]+')' AS position FROM Salary WHERE Salary.salary_id=(SELECT salary_id FROM Employee_salary WHERE Employee_salary.teacher_id=Teacher.teacher_id)) " +
+                                            "AS salary_base FROM Teacher");
+                MessageBox.Show("Employee salary refreshed");
+                empSalaryDataView.DataSource = DataFromDb.getEmployeeSalaryData();
+            }
+            else { }
+        }
     }
 }

@@ -136,7 +136,8 @@ namespace Perfect_Peace_System.Pages
         private void refeshBtn_Click(object sender, EventArgs e)
         {
             DataFromDb.getAllClass = DbClient.dataSource("SELECT class_id, name, section, capacity, fees, teacher_id, (SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE Teacher.teacher_id=Class.teacher_id) AS teacher FROM Class");
-            MessageBox.Show("Data refreshed");
+            MessageBox.Show("Class data refreshed");
+            classDataView.DataSource = DataFromDb.getAllClassData();
         }
     }
 

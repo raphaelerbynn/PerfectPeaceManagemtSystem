@@ -23,7 +23,7 @@ namespace Perfect_Peace_System.Pages
             bgPanel.BackColor = Home.foreColor;
 
             subject = new Subject();
-            subject.show_data(subjectDataView);
+            subjectDataView.DataSource = DataFromDb.getSubjectData();
             columnArrangement();
         }
 
@@ -94,7 +94,8 @@ namespace Perfect_Peace_System.Pages
                     subject = new Subject(subjectNameTB.Text, int.Parse(examTotalMarkTB.Text), int.Parse(classTotalMarksTB.Text), int.Parse(examPercentageTB.Text), int.Parse(classPercentageLB.Text), int.Parse(passMarksTB.Text));
                     subject.insert_data();
                     clearFeild();
-                    subject.show_data(subjectDataView);
+                    DataFromDb.getSubject = DbClient.dataSource("SELECT subject_id, name, exam_total_marks, class_total_marks, exam_percentage, class_percentage, pass_marks FROM Subject");
+                    subjectDataView.DataSource = DataFromDb.getSubjectData();
                 }
                 else
                 {

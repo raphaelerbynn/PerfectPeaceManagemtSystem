@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -22,6 +23,7 @@ namespace Perfect_Peace_System
         public static Color themeColor;
         public static Panel displayPanel;
         public static Button _studentBtn, _teachersBtn, _classBtn;
+        string category = Pages.LoginInput.category;
         //public extern bool ReleaseCapture();
 
         public Home()
@@ -44,7 +46,7 @@ namespace Perfect_Peace_System
             user_details();
 
             //user accessibility
-            string category = Pages.LoginInput.category;
+            
             if (category.Equals("Class Teacher"))
             {
                 addStntBtn.Visible = false;
@@ -448,6 +450,11 @@ namespace Perfect_Peace_System
                 Login login = (Login)Application.OpenForms["Login"];
                 login.Show();
             }
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void minBtn_Click(object sender, EventArgs e)

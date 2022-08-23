@@ -26,9 +26,11 @@ namespace Perfect_Peace_System.Pages
             feesDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
             feesDataView.BackgroundColor = Home.foreColor;
 
-           
-            fees.show_data(feesDataView);
-            getStudent();
+
+            //fees.show_data(feesDataView);
+            //getStudent();
+
+            feesDataView.DataSource = DataFromDb.getFeesData();
             columnArrangement();
 
         }
@@ -99,7 +101,9 @@ namespace Perfect_Peace_System.Pages
 
                     if (searchCb.Text == "Student Name")
                     {
-                        string student_id = "";
+                        (feesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("student LIKE '%{0}%'", searchTextBox.Text);
+
+                        /*string student_id = "";
                         query = "SELECT student_id FROM Student WHERE CONCAT(f_name,l_name) LIKE '%" + searchTextBox.Text + "%'";
                         SqlDataReader reader = DbClient.query_reader(query);
                         while (reader.Read())
@@ -112,7 +116,7 @@ namespace Perfect_Peace_System.Pages
                             "CAST(student_id AS VARCHAR(50)) AS student, CAST(class_id AS VARCHAR(50)) AS class FROM Fee" +
                             " WHERE student_id='" + student_id + "'";
                         DbClient.dataGridFill(feesDataView, query);
-                        getStudent();
+                        getStudent();*/
                     }
                     else if (searchCb.Text == "Payment Mode")
                     {
@@ -186,5 +190,11 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
+        private void refeshBtn_Click(object sender, EventArgs e)
+        {
+            DataFromDb.getFees = DbClient.dataSource("SELECT fee_id, student_id, paid, remaining, payment_mode, FORMAT(date_paid, 'dd-MMM-yyyy') AS date_paid, term, (SELECT [f_name]+' '+[l_name] AS name FROM Student WHERE Student.student_id=Fee.student_id) AS student, (SELECT class FROM Student WHERE Student.student_id=Fee.student_id) AS class FROM Fee");
+            MessageBox.Show("Fees data refreshed");
+            feesDataView.DataSource = DataFromDb.getFeesData();
+        }
     }
 }

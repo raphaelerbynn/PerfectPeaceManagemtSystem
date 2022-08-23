@@ -510,6 +510,7 @@
             this.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Load += new System.EventHandler(this.Home_Load);
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
             this.topPanel.ResumeLayout(false);

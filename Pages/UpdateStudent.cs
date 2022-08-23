@@ -26,7 +26,6 @@ namespace Perfect_Peace_System.Pages
 
         private void fillFields()
         {
-            
             string _class = "";
             //Console.WriteLine(StudentDataDisplay.getIdFromSelectedRow());
 

@@ -169,6 +169,12 @@
     <Compile Include="Pages\EventData.Designer.cs">
       <DependentUpon>EventData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LoginInput.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -405,6 +411,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\EventData.resx">
       <DependentUpon>EventData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\LoginInput.resx">
       <DependentUpon>LoginInput.cs</DependentUpon>

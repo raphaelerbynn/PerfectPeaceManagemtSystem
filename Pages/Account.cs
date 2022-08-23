@@ -32,6 +32,7 @@ namespace Perfect_Peace_System.Pages
         {
             if (InternetConnectivity.checkConnectivity())
             {
+                refeshBtn.Visible = true;
                 string queryTeacher = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'";
                 string queryClass = "SELECT name FROM Class";
                 if (categoryCb.SelectedIndex == 0)
@@ -563,16 +564,19 @@ namespace Perfect_Peace_System.Pages
             {
                 DataFromDb.getFeedingFee = DbClient.dataSource("SELECT feeding_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Feeding_fee");
                 MessageBox.Show("Feeding data refreshed");
+                showFeeding();
             }
             else if(expensePanel.Visible == true)
             {
                 DataFromDb.getExpenses = DbClient.dataSource("SELECT expense_id, expense, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Expense");
                 MessageBox.Show("Expenses data refreshed");
+                showExpenses();
             }
             else if(classesPanel.Visible == true)
             {
                 DataFromDb.getExtraClasses = DbClient.dataSource("SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes");
                 MessageBox.Show("Extra classes data refreshed");
+                showExtraClasses();
             }
             else { }
         }

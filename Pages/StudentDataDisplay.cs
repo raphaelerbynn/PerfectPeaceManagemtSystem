@@ -196,11 +196,16 @@ namespace Perfect_Peace_System.Pages
             if (Pages.LoginInput.category.Equals("Administrator"))
             {
                 DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
+                MessageBox.Show("Student data refreshed");
+                studentDataView.DataSource = DataFromDb.getAllStudentData();
+
             }
 
             if (Pages.LoginInput.category.Equals("Class Teacher"))
             {
                 DataFromDb.getAllStudentForTeacher = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student WHERE class_id='" + DataFromDb.class_id_teacher() + "'");
+                MessageBox.Show("Student data refreshed");
+                studentDataView.DataSource = DataFromDb.getAllStudentDataForTeacher();
             }
         }
     }

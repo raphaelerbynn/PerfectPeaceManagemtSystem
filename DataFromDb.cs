@@ -11,6 +11,16 @@ namespace Perfect_Peace_System
     internal class DataFromDb
     {
         private static string query;
+        
+        //dashboard
+        public static string totalStudents = DbClient.query_executeScaler("SELECT COUNT(*) FROM Student");
+        public static string totalTeachers = DbClient.query_executeScaler("SELECT COUNT(*) FROM Teacher");
+        public static string totalRooms = DbClient.query_executeScaler("SELECT COUNT(*) FROM Class");
+
+        /*public static SqlDataReader eventReader = DbClient.query_reader("SELECT TOP 5 name, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time, FORMAT(date, 'dd-MM-yyyy') AS date FROM Event ORDER BY event_id DESC");
+        public static SqlDataReader feesReader = DbClient.query_reader("SELECT * FROM Student  WHERE fees_owing>0 ORDER BY fees_owing DESC");
+        public static SqlDataReader classReader = DbClient.query_reader("SELECT * FROM Class");*/
+        
 
         //----------for admin
         //student data
@@ -60,7 +70,12 @@ namespace Perfect_Peace_System
             return allClassReader;
         }
 
-
+        //subject
+        public static DataTable getSubject;
+        public static DataTable getSubjectData()
+        {
+            return getSubject;
+        }
 
         //---------for teacher
         //teacher class id
@@ -75,6 +90,7 @@ namespace Perfect_Peace_System
             }
             reader.Close();
             return class_id;
+            
         }
 
         //student data

@@ -290,6 +290,10 @@ namespace Perfect_Peace_System.Pages
         {
             DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, CAST(class_id AS VARCHAR(10)) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
             DataFromDb.getAllNonTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, staff_position, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Non-Teaching'");
+
+            MessageBox.Show("Staff data refreshed");
+            nonTeachingDataView.DataSource = DataFromDb.getAllNonTeacherData();
+            teacherDataGridView.DataSource = DataFromDb.getAllTeacherData();
         }
     }
 }

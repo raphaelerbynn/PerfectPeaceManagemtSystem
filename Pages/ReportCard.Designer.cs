@@ -2015,7 +2015,7 @@
             this.resultDataView.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.resultDataView.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle45.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle45.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle45.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle45.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle45.SelectionBackColor = System.Drawing.SystemColors.Control;
@@ -2033,7 +2033,7 @@
             this.remarks});
             dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle51.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle51.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle51.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle51.SelectionBackColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle51.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -2052,7 +2052,7 @@
             dataGridViewCellStyle52.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             dataGridViewCellStyle52.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.resultDataView.RowsDefaultCellStyle = dataGridViewCellStyle52;
-            this.resultDataView.RowTemplate.Height = 30;
+            this.resultDataView.RowTemplate.Height = 27;
             this.resultDataView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.resultDataView.Size = new System.Drawing.Size(689, 68);
             this.resultDataView.TabIndex = 17;

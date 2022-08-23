@@ -80,7 +80,8 @@ namespace Perfect_Peace_System.Pages
         private void refeshBtn_Click(object sender, EventArgs e)
         {
             DataFromDb.getAllEvent = DbClient.dataSource("SELECT event_id, name, description, FORMAT(date, 'dd-MM-yyyy') AS date, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time FROM Event");
-
+            MessageBox.Show("Event data refreshed");
+            eventDataView.DataSource = DataFromDb.getAllEventData();
         }
     }
 }

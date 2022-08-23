@@ -64,17 +64,17 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
-                query = "SELECT COUNT(*) FROM Student";
-                string totalStudents = DbClient.query_executeScaler(query);
-                lblTotalStnt.Text = totalStudents;
+                /*query = "SELECT COUNT(*) FROM Student";
+                string totalStudents = DbClient.query_executeScaler(query);*/
+                lblTotalStnt.Text = DataFromDb.totalStudents;
 
-                query = "SELECT COUNT(*) FROM Teacher";
-                string totalTeachers = DbClient.query_executeScaler(query);
-                lbltotalTeachers.Text = totalTeachers;
+                /*query = "SELECT COUNT(*) FROM Teacher";
+                string totalTeachers = DbClient.query_executeScaler(query);*/
+                lbltotalTeachers.Text = DataFromDb.totalTeachers;
 
-                query = "SELECT COUNT(*) FROM Class";
-                string totalRooms = DbClient.query_executeScaler(query);
-                lblTotoalRooms.Text = totalRooms;
+                /*query = "SELECT COUNT(*) FROM Class";
+                string totalRooms = DbClient.query_executeScaler(query);*/
+                lblTotoalRooms.Text = DataFromDb.totalRooms;
             }
             catch (Exception ex)
             {
@@ -87,6 +87,7 @@ namespace Perfect_Peace_System.Pages
             eventListView.View = View.Details;
             query = "SELECT TOP 5 name, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time, FORMAT(date, 'dd-MM-yyyy') AS date FROM Event ORDER BY event_id DESC";
             SqlDataReader reader = DbClient.query_reader(query);
+            //SqlDataReader reader = DataFromDb.eventReader;
             if (reader != null)
             {
                 while (reader.Read())
@@ -110,6 +111,7 @@ namespace Perfect_Peace_System.Pages
             feesListView.View = View.Details;
             query = "SELECT * FROM Student  WHERE fees_owing>0 ORDER BY fees_owing DESC";
             SqlDataReader reader = DbClient.query_reader(query);
+            //SqlDataReader reader = DataFromDb.feesReader;
             if (reader != null)
             {
                 while (reader.Read())
@@ -140,6 +142,7 @@ namespace Perfect_Peace_System.Pages
 
             query = "SELECT * FROM Class";
             SqlDataReader reader = DbClient.query_reader(query);
+            //SqlDataReader reader = DataFromDb.classReader;
             if (reader != null)
             {
                 while (reader.Read())

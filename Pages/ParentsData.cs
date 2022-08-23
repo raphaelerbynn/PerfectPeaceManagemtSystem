@@ -143,7 +143,7 @@ namespace Perfect_Peace_System.Pages
         private void refeshBtn_Click(object sender, EventArgs e)
         {
             DataFromDb.getAllTeacher = DbClient.dataSource("SELECT parent_id,contact,gender,relationship, [f_name]+' '+[l_name] AS name FROM Parent");
-
+            showParentDataView.DataSource = DataFromDb.getAllParentData();
         }
     }
 }
