@@ -198,7 +198,7 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
-                query = "INSERT INTO Salary_payment (name, amount, net, salary_date, payment_method, date_paid)" +
+                query = "INSERT INTO Salary_payment (name, amount, net, salary_date, payment_method, date_paid) " +
                     "VALUES('"+empNameLbl.Text+"', '"+amountPaidTb.Text+"', '"+netSalaryLbl.Text+"', '"+salaryMonthLbl.Text+"', '"+modeOfPaymentLbl.Text+"', '"+DateTime.Today+"')";
                 DbClient.query_execute(query);
 

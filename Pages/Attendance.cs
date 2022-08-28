@@ -115,7 +115,7 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
-            _date = attendanceDatePk.Value;
+            _date = attendanceDatePk.Value.Date;
             OpenNewPage openNewPage = new OpenNewPage();
             openNewPage.OpenChildForm(new Pages.MarkAttendance(), attendancePanel);
         }

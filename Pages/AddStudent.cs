@@ -57,9 +57,9 @@ namespace Perfect_Peace_System.Pages
             try
             {
                 Person person = new Student(
-                    DateTime.Parse(dobPicker.Text), classCb.Text, 0.00f,
+                    dobPicker.Value.Date, classCb.Text, 0.00f,
                     fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text,
-                    getRadioBtnValue(), DateTime.Parse(DateTime.Now.ToString())
+                    getRadioBtnValue(), DateTime.Today
                     );
 
                 class_name = classCb.Text;
@@ -98,12 +98,13 @@ namespace Perfect_Peace_System.Pages
                     }
 
                     DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
+                    DataFromDb.totalStudents = DbClient.query_executeScaler("SELECT COUNT(*) FROM Student");
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
-                Console.WriteLine(ex);
+                Console.WriteLine(ex.StackTrace);
             }
 
         }

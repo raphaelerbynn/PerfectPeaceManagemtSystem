@@ -15,7 +15,7 @@ namespace Perfect_Peace_System
             {
                 Random random = new Random();
                 Ping myPing = new Ping();
-                String[] host = { "google.com" };
+                String[] host = { "google.com", "bing.com"};
                 byte[] buffer = new byte[32];
                 int timeout = 1000;
                 int i = random.Next(host.Length);

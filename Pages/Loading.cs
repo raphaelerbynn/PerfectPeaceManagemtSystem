@@ -127,9 +127,6 @@ namespace Perfect_Peace_System.Pages
             home.Show();
             this.Close();
         }
-
-        
-        
     }
 }
 

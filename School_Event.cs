@@ -29,7 +29,7 @@ namespace Perfect_Peace_System
         public void insert_event()
         {
             query = "INSERT INTO Event(name, description, date, time, created_at) " +
-                "VALUES('" + name + "','" + description + "','" + date + "','" +time+ "','" +DateTime.Now+ "')";
+                "VALUES('" + name + "','" + description + "','" + date + "','" +time+ "','" +DateTime.Today+ "')";
             DbClient.query_execute(query);
         }
         public void show_data(DataGridView dataGrid)

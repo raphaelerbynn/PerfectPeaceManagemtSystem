@@ -133,39 +133,46 @@ namespace Perfect_Peace_System.Pages
 
         private void loadDataToDounutChat()
         {
-            List<string> classes = new List<string>();
-            Dictionary<string, string> classDict = new Dictionary<string, string>();
-            
-
-            //string sub_query = "SELECT COUNT(" + reader["class_id"].ToString() + ") FROM Students";
-            //string classTotal = DbClient.query_executeScaler(sub_query);
-
-            query = "SELECT * FROM Class";
-            SqlDataReader reader = DbClient.query_reader(query);
-            //SqlDataReader reader = DataFromDb.classReader;
-            if (reader != null)
+            try
             {
-                while (reader.Read())
-                {
+                List<string> classes = new List<string>();
+                Dictionary<string, string> classDict = new Dictionary<string, string>();
 
-                    classes.Add(reader["name"].ToString());
-                    classDict.Add(reader["name"].ToString(), reader["class_id"].ToString());
-                    //Console.WriteLine(this.classChart.Legends);
-                }
-                reader.Close();
-            }
-            
-            for(int i = 0; i < classes.Count; i++)
-            {
-                string sub_query = "SELECT COUNT(*) FROM Student WHERE class='" + classes[i]+"'";
-                int classTotal = int.Parse(DbClient.query_executeScaler(sub_query));
-                Console.WriteLine(classDict[classes[i]]);
 
-                if (classTotal  > 0)
+                //string sub_query = "SELECT COUNT(" + reader["class_id"].ToString() + ") FROM Students";
+                //string classTotal = DbClient.query_executeScaler(sub_query);
+
+                query = "SELECT * FROM Class";
+                SqlDataReader reader = DbClient.query_reader(query);
+                //SqlDataReader reader = DataFromDb.classReader;
+                if (reader != null)
                 {
-                    this.classChart.Series["Class"].Points.AddXY(classes[i], classTotal);
+                    while (reader.Read())
+                    {
+
+                        classes.Add(reader["name"].ToString());
+                        classDict.Add(reader["name"].ToString(), reader["class_id"].ToString());
+                        //Console.WriteLine(this.classChart.Legends);
+                    }
+                    reader.Close();
                 }
 
+                for (int i = 0; i < classes.Count; i++)
+                {
+                    string sub_query = "SELECT COUNT(*) FROM Student WHERE class='" + classes[i] + "'";
+                    int classTotal = int.Parse(DbClient.query_executeScaler(sub_query));
+                    Console.WriteLine(classDict[classes[i]]);
+
+                    if (classTotal > 0)
+                    {
+                        this.classChart.Series["Class"].Points.AddXY(classes[i], classTotal);
+                    }
+
+                }
+            }catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+                MessageBox.Show(ex.Message);
             }
 
             //this.classChart.Series["Class"].Points.AddXY(reader["name"], classTotal);

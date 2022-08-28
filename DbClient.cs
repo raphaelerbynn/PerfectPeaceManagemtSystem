@@ -31,6 +31,7 @@ namespace Perfect_Peace_System
             try
             {
                 cmd = new SqlCommand(query, connection);
+                
                 cmd.ExecuteNonQuery();
             }catch(Exception ex)
             {

@@ -102,16 +102,16 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
-                string date_end = "";
+                DateTime date_end = DateTime.Today;
                 query = "SELECT end_date FROM Term";
                 SqlDataReader reader = DbClient.query_reader(query);
                 while (reader.Read())
                 {
-                    date_end = reader["end_date"].ToString();
+                    date_end = DateTime.Parse(reader["end_date"].ToString());
                 }
                 reader.Close();
 
-                query = "DELETE FROM Attendance WHERE class='" + classCb.Text + "' AND date_marked='" + _date.ToString() + "'";
+                query = "DELETE FROM Attendance WHERE class='" + classCb.Text + "' AND date_marked='" + _date + "'";
                 DbClient.query_execute(query);
 
                 string message = "Save today's attendance?";
@@ -138,7 +138,7 @@ namespace Perfect_Peace_System.Pages
                         }
 
                         query = "INSERT INTO Attendance(student_id, class, status, date_marked, date_end)" +
-                        "VALUES('" + id + "', '" + classCb.Text + "', '" + status + "', '" + _date + "', '"+date_end+"')";
+                        "VALUES('" + id + "', '" + classCb.Text + "', '" + status + "', '" + _date + "', '" + date_end + "')";
                         DbClient.query_execute(query);
                     }
                     this.Close();
@@ -146,6 +146,7 @@ namespace Perfect_Peace_System.Pages
             }catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Console.WriteLine(ex.StackTrace);
             }
             
         }

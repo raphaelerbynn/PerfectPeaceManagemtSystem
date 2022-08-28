@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,9 +58,9 @@ namespace Perfect_Peace_System
 
         public override void save()
         {
-            
+
             query = "INSERT INTO Student (f_name, m_name, l_name, dob, gender, class, address, fees_paid, date_registered)" +
-                "VALUES('" + f_name + "','" + m_name + "','" + l_name + "','" + dob + "','" + gender + "','" + _class + "','" + address + "','" + fees_paid + "','" + _date_registered + "')";
+                " VALUES('" + f_name + "','" + m_name + "','" + l_name + "','" + dob + "','" + gender + "','" + _class + "','" + address + "','" + fees_paid + "','" + _date_registered + "')";
             DbClient.query_execute(query);
         }
 

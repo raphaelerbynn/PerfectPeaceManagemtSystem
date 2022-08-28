@@ -99,7 +99,7 @@ namespace Perfect_Peace_System.Pages
                         
                         teacherDataGridView.Rows.RemoveAt(e.RowIndex);
                         teacher.delete(id);
-
+                        DataFromDb.totalTeachers = DbClient.query_executeScaler("SELECT COUNT(*) FROM Teacher");
                         MessageBox.Show(name + " deleted from system");
                     }
                 }
@@ -259,6 +259,7 @@ namespace Perfect_Peace_System.Pages
                         nonTeachingDataView.Rows.RemoveAt(e.RowIndex);
                         teacher.delete(id);
 
+                        DataFromDb.totalTeachers = DbClient.query_executeScaler("SELECT COUNT(*) FROM Teacher");
                         MessageBox.Show(name + " deleted from system");
                     }
                 }

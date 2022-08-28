@@ -64,7 +64,7 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
-            Person parent = new Parent(contactTb.Text, contact1Tb.Text, relationshipCB.Text, fnameTb.Text, lnameTb.Text, getRadioBtnValue(), DateTime.Now);
+            Person parent = new Parent(contactTb.Text, contact1Tb.Text, relationshipCB.Text, fnameTb.Text, lnameTb.Text, getRadioBtnValue(), DateTime.Today);
             parent.save();
 
             query = "UPDATE Student SET parent_id=" + DbClient.GetLastId("Parent") + " WHERE student_id=" + DbClient.GetLastId("Student");

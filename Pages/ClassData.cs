@@ -118,6 +118,7 @@ namespace Perfect_Peace_System.Pages
                         DbClient.query_execute(query);
 
                         classDataView.Rows.RemoveAt(e.RowIndex);
+                        DataFromDb.totalRooms = DbClient.query_executeScaler("SELECT COUNT(*) FROM Class");
                         MessageBox.Show(name + " deleted from system");
                     }
                 }

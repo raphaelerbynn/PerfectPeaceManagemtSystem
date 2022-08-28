@@ -61,14 +61,14 @@ namespace Perfect_Peace_System.Pages
                     {
                         teacher = new Teacher(categoryCb.SelectedItem.ToString(), "Accountant",
                             bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text,
-                            getRadioBtnValue(), DateTime.Parse(DateTime.Now.ToString())
+                            getRadioBtnValue(), DateTime.Today
                         );
                     }
                     else
                     {
                         teacher = new Teacher(categoryCb.SelectedItem.ToString(), String.IsNullOrEmpty(specificLbl.Text) ? "Other" : specificLbl.Text,
                             bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text,
-                            getRadioBtnValue(), DateTime.Parse(DateTime.Now.ToString())
+                            getRadioBtnValue(), DateTime.Today
                         );
                     }
 
@@ -77,7 +77,7 @@ namespace Perfect_Peace_System.Pages
                 {
                     teacher = new Teacher(categoryCb.SelectedItem.ToString(), "Teacher",
                         bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text,
-                        getRadioBtnValue(), DateTime.Parse(DateTime.Now.ToString())
+                        getRadioBtnValue(), DateTime.Today
                     );
                 }
 
@@ -94,7 +94,7 @@ namespace Perfect_Peace_System.Pages
                     MessageBox.Show("Staff Personnel Saved");
                     clearFeilds();
                     DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, (SELECT name FROM Class WHERE Class.class_id=Teacher.class_id) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
-
+                    DataFromDb.totalTeachers = DbClient.query_executeScaler("SELECT COUNT(*) FROM Teacher");
                 }
 
             }

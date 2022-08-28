@@ -127,7 +127,7 @@ namespace Perfect_Peace_System.Pages
                     {
                         //Teacher teacher = new Teacher(bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, null, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
                         //teacher.update(id);
-                        query = "UPDATE Teacher SET class_id=NULL, f_name='" + fnameTb.Text + "', l_name='" + lnameTb.Text + "', gender='" + getRadioBtnValue() + "', phone='" + phoneTB.Text + "', address='" + addressTb.Text + "', email='" + emailTb.Text + "', bank='" + bankTb.Text + "', account_number='" + accountNumTb.Text + "', ssnit_number='" + ssnitTb.Text + "', tin_number='" + tinTb.Text + "', date_updated='" + DateTime.Now + "' WHERE teacher_id='" + id + "'";
+                        query = "UPDATE Teacher SET class_id=NULL, f_name='" + fnameTb.Text + "', l_name='" + lnameTb.Text + "', gender='" + getRadioBtnValue() + "', phone='" + phoneTB.Text + "', address='" + addressTb.Text + "', email='" + emailTb.Text + "', bank='" + bankTb.Text + "', account_number='" + accountNumTb.Text + "', ssnit_number='" + ssnitTb.Text + "', tin_number='" + tinTb.Text + "', date_updated='" + DateTime.Today + "' WHERE teacher_id='" + id + "'";
                         DbClient.query_execute(query);
 
                         query = "UPDATE Class SET teacher_id=NULL WHERE teacher_id='" + id + "'";
@@ -139,7 +139,7 @@ namespace Perfect_Peace_System.Pages
                 }
                 else
                 {
-                    query = "UPDATE Teacher SET class_id=NULL, f_name='" + fnameTb.Text + "', l_name='" + lnameTb.Text + "', gender='" + getRadioBtnValue() + "', phone='" + phoneTB.Text + "', address='" + addressTb.Text + "', email='" + emailTb.Text + "', bank='" + bankTb.Text + "', account_number='" + accountNumTb.Text + "', ssnit_number='" + ssnitTb.Text + "', tin_number='" + tinTb.Text + "', date_updated='" + DateTime.Now + "' WHERE teacher_id='" + id + "'";
+                    query = "UPDATE Teacher SET class_id=NULL, f_name='" + fnameTb.Text + "', l_name='" + lnameTb.Text + "', gender='" + getRadioBtnValue() + "', phone='" + phoneTB.Text + "', address='" + addressTb.Text + "', email='" + emailTb.Text + "', bank='" + bankTb.Text + "', account_number='" + accountNumTb.Text + "', ssnit_number='" + ssnitTb.Text + "', tin_number='" + tinTb.Text + "', date_updated='" + DateTime.Today + "' WHERE teacher_id='" + id + "'";
                     DbClient.query_execute(query);
 
                     MessageBox.Show("Staff Info Updated");

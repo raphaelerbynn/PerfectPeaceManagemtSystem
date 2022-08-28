@@ -113,7 +113,8 @@ namespace Perfect_Peace_System.Pages
                         parent.delete(parent_id);
                    
                         MessageBox.Show(name + " deleted from system");
-                        
+                        DataFromDb.totalStudents = DbClient.query_executeScaler("SELECT COUNT(*) FROM Student");
+
                     }
 
                 }
