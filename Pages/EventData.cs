@@ -60,19 +60,15 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
-        private void populateEventData()
+        /*private void populateEventData()
         {
             query = "SELECT event_id, name, description, FORMAT(date, 'dd-MM-yyyy') AS date, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time FROM Event";
             DbClient.dataGridFill(eventDataView, query);
-        }
+        }*/
 
         private void addEventLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity() == false)
-            {
-                MessageBox.Show("Check your internet connection");
-                return;
-            }
+            
             OpenNewPage openNewPage = new OpenNewPage();
             openNewPage.OpenChildForm(new Pages.AddEvent(), bgPanel);
         }

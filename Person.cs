@@ -13,18 +13,18 @@ namespace Perfect_Peace_System
         protected string f_name;
         protected string m_name;
         protected string l_name;
-        protected DateTime dob;
+        protected string dob;
         protected string address;
         protected string gender;
-        protected DateTime _dateUpdated;
-        protected DateTime _date_registered;
+        protected string _dateUpdated;
+        protected string _date_registered;
 
         public Person()
         {
 
         }
 
-        public Person(string f_name, string l_name, string address, string gender, DateTime _date_registered)
+        public Person(string f_name, string l_name, string address, string gender, string _date_registered)
         {
 
             this.f_name = f_name;
@@ -35,7 +35,7 @@ namespace Perfect_Peace_System
 
         }
 
-        public Person(string f_name, string l_name, string gender, DateTime _date_registered)
+        public Person(string f_name, string l_name, string gender, string _date_registered)
         {
 
             this.f_name = f_name;
@@ -45,7 +45,7 @@ namespace Perfect_Peace_System
 
         }
 
-        public Person(string f_name, string m_name, string l_name, string address, string gender, DateTime _date_registered)
+        public Person(string f_name, string m_name, string l_name, string address, string gender, string _date_registered)
         {
             this.f_name = f_name;
             this.m_name = m_name;

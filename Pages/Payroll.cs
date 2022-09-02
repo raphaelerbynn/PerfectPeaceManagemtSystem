@@ -82,11 +82,7 @@ namespace Perfect_Peace_System.Pages
 
         private void addSalaryBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity() == false)
-            {
-                MessageBox.Show("Check your internet connection");
-                return;
-            }
+            
             openNewPage.OpenChildForm(new Pages.AddSalary(), salaryBasedPanel);
         }
 
@@ -271,6 +267,9 @@ namespace Perfect_Peace_System.Pages
 
                 if (!String.IsNullOrEmpty(empNameTb.Text))
                 {
+                    query = "DELETE FROM Employee_salary WHERE teacher_id='"+empSalaryId+"'";
+                    DbClient.query_execute(query);
+
                     query = "INSERT INTO Employee_salary(teacher_id, salary_id) VALUES('" + empSalaryId + "', '" + salaryId + "')";
                     DbClient.query_execute(query);
 

@@ -77,8 +77,7 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
-            try
-            {
+           
                 string totalAmnt = totalAmntLbl.Text.ToString();
                 string paidAmnt = amntTb.Text.ToString();
                 string remainingAmnt = remainAmntLbl.Text.ToString();
@@ -117,12 +116,6 @@ namespace Perfect_Peace_System.Pages
                     openNewPage.OpenChildForm(new Pages.FeeReceipt(), feePanel);
                 }
 
-            }
-            catch(Exception ex) 
-            { 
-                Console.WriteLine(ex);
-                MessageBox.Show(ex.Message); 
-            }
         }
 
         private void fillCombos()

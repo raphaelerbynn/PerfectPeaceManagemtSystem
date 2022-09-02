@@ -10,7 +10,7 @@ namespace Perfect_Peace_System
 {
     public class Student : Person
     {
-        private DateTime dob;
+        private string dob;
         private string _class;
         private float fees_owed;
         private float fees_paid;
@@ -19,7 +19,7 @@ namespace Perfect_Peace_System
 
         public Student() { }
 
-        public Student(DateTime dob, string _class, float fees_owed, float fees_paid)
+        public Student(string dob, string _class, float fees_owed, float fees_paid)
         {
 
             this.dob = dob;
@@ -27,7 +27,7 @@ namespace Perfect_Peace_System
             this.fees_paid = fees_paid;
         }
 
-        public Student(DateTime dob, string _class, float fees_paid, string f_name, string m_name, string l_name, string address, string gender, DateTime _date_registerd) :
+        public Student(string dob, string _class, float fees_paid, string f_name, string m_name, string l_name, string address, string gender, string _date_registerd) :
                             base(f_name, m_name, l_name, address, gender, _date_registerd)
         {
             this.dob = dob;
@@ -35,7 +35,7 @@ namespace Perfect_Peace_System
             this.fees_paid = fees_paid;
         }
 
-        public Student(DateTime dob, string _class, string f_name, string m_name, string l_name, string address, string gender, DateTime _date_registerd) :
+        public Student(string dob, string _class, string f_name, string m_name, string l_name, string address, string gender, string _date_registerd) :
                             base(f_name, m_name, l_name, address, gender, _date_registerd)
         {
             this.dob = dob;

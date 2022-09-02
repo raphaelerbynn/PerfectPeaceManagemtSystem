@@ -24,7 +24,7 @@ namespace Perfect_Peace_System
             this.relationship = relationship;
         }
 
-        public Parent(string contact, string otherContact, string relationship,string f_name, string l_name, string gender, DateTime _dateRegistered):
+        public Parent(string contact, string otherContact, string relationship,string f_name, string l_name, string gender, string _dateRegistered):
              base(f_name, l_name, gender, _dateRegistered)
         {
             this.contact = contact;
@@ -52,7 +52,7 @@ namespace Perfect_Peace_System
 
         public override void show_data(DataGridView dataGrid)
         {
-            query = "SELECT parent_id,contact,gender,relationship, [f_name]+' '+[l_name] AS name FROM Parent";
+            query = "SELECT parent_id,contact, relationship, [f_name]+' '+[l_name] AS name, (SELECT [f_name]+' '+[l_name] FROM Student WHERE Student.parent_id=Parent.parent_id) AS child FROM Parent";
             DbClient.dataGridFill(dataGrid, query);
         }
 

@@ -57,9 +57,9 @@ namespace Perfect_Peace_System.Pages
             try
             {
                 Person person = new Student(
-                    dobPicker.Value.Date, classCb.Text, 0.00f,
+                    dobPicker.Value.Date.ToString(), classCb.Text, 0.00f,
                     fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text,
-                    getRadioBtnValue(), DateTime.Today
+                    getRadioBtnValue(), DateTime.Today.Date.ToString()
                     );
 
                 class_name = classCb.Text;

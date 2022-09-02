@@ -91,7 +91,7 @@ namespace Perfect_Peace_System.Pages
                 string class_id = DbClient.query_executeScaler("SELECT class_id FROM Class WHERE name='" + classCb.SelectedItem.ToString() + "'");
                 if (classroom.maxCapacity(classCb.Text) > classroom.curCapacity(classCb.Text))
                 {
-                    Student student = new Student(DateTime.Parse(dobPicker.Text), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
+                    Student student = new Student(dobPicker.Value.Date.ToString(), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Today.Date.ToString());
                     student.update(id);
                     query = "UPDATE Student SET class_id='"+class_id+"', class='"+classCb.SelectedItem.ToString()+"' WHERE student_id='"+id+"'";
                     DbClient.query_execute(query);
@@ -106,7 +106,7 @@ namespace Perfect_Peace_System.Pages
             }
             else
             {
-                Student student = new Student(DateTime.Parse(dobPicker.Text), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
+                Student student = new Student(dobPicker.Value.Date.ToString(), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Today.Date.ToString());
                 student.update(id);
                 query = "UPDATE Student SET class_id=NULL, class=NULL WHERE student_id='"+id+"'";
                 DbClient.query_execute(query);

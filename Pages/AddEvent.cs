@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -48,9 +49,11 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Event name empty!!!");
                 return;
             }
-            School_Event _event = new School_Event(lblName.Text, lblDescription.Text, datePicker.Value.Date, timePicker.Value);
+            School_Event _event = new School_Event(lblName.Text, lblDescription.Text, datePicker.Value, timePicker.Value);
             _event.insert_event();
+            MessageBox.Show(datePicker.Value + "\n" + new SqlDateTime(datePicker.Value) + "\n" + new SqlDateTime(DateTime.Now) + "\n" + new SqlDateTime(datePicker.Value.Date));
             MessageBox.Show("Event Added");
+            
             clearFeild();
             DataFromDb.getAllEvent = DbClient.dataSource("SELECT event_id, name, description, FORMAT(date, 'dd-MM-yyyy') AS date, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time FROM Event");
         }

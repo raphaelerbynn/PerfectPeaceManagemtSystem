@@ -50,7 +50,7 @@ namespace Perfect_Peace_System.Pages
             searchCb.SelectedIndex = 0;
         }
 
-        private void getChild()
+        /*private void getChild()
         {
             try
             {
@@ -76,7 +76,7 @@ namespace Perfect_Peace_System.Pages
                 Console.WriteLine(ex.Message);
             }
             
-        }
+        }*/
 
         private void showParentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {

@@ -36,7 +36,7 @@ namespace Perfect_Peace_System.Pages
                 DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, (SELECT name FROM Class WHERE Class.class_id=Teacher.class_id) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
-                DataFromDb.getAllParent = DbClient.dataSource("SELECT parent_id,contact,gender,relationship, [f_name]+' '+[l_name] AS name FROM Parent");
+                DataFromDb.getAllParent = DbClient.dataSource("SELECT parent_id,contact,relationship, [f_name]+' '+[l_name] AS name, (SELECT [f_name]+' '+[l_name] FROM Student WHERE Student.parent_id=Parent.parent_id) AS child FROM Parent");
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
                 DataFromDb.getAllNonTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, staff_position, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Non-Teaching'");

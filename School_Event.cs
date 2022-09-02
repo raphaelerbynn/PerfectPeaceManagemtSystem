@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,7 @@ namespace Perfect_Peace_System
     {
         private string name;
         private string description;
-        private DateTime date;
+        private SqlDateTime date;
         private DateTime time;
 
         private string query;
@@ -29,7 +30,7 @@ namespace Perfect_Peace_System
         public void insert_event()
         {
             query = "INSERT INTO Event(name, description, date, time, created_at) " +
-                "VALUES('" + name + "','" + description + "','" + date + "','" +time+ "','" +DateTime.Today+ "')";
+                "VALUES('" + name + "','" + description + "','" + date + "','" +time+ "','" + new SqlDateTime(DateTime.Now)+"')";
             DbClient.query_execute(query);
         }
         public void show_data(DataGridView dataGrid)

@@ -249,11 +249,7 @@ namespace Perfect_Peace_System.Pages
 
         private void eventLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity() == false)
-            {
-                MessageBox.Show("Check your internet connection");
-                return;
-            }
+           
             this.Close();
             openNewPage.OpenChildForm(new Pages.EventData(), Home.displayPanel);
         }

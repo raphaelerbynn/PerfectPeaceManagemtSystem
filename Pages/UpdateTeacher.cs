@@ -110,7 +110,7 @@ namespace Perfect_Peace_System.Pages
                         query = "SELECT class_id FROM Class WHERE name='" + classCb.SelectedItem.ToString() + "'";
                         string class_id = DbClient.query_executeScaler(query).ToString();
 
-                        Teacher teacher = new Teacher(bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, class_id, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Now);
+                        Teacher teacher = new Teacher(bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, class_id, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Today.Date.ToString());
                         teacher.update(id);
 
                         query = "UPDATE Class SET teacher_id=NULL WHERE teacher_id='" + id + "'";

@@ -61,14 +61,14 @@ namespace Perfect_Peace_System.Pages
                     {
                         teacher = new Teacher(categoryCb.SelectedItem.ToString(), "Accountant",
                             bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text,
-                            getRadioBtnValue(), DateTime.Today
+                            getRadioBtnValue(), DateTime.Today.Date.ToString()
                         );
                     }
                     else
                     {
                         teacher = new Teacher(categoryCb.SelectedItem.ToString(), String.IsNullOrEmpty(specificLbl.Text) ? "Other" : specificLbl.Text,
                             bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text,
-                            getRadioBtnValue(), DateTime.Today
+                            getRadioBtnValue(), DateTime.Today.Date.ToString()
                         );
                     }
 
@@ -77,7 +77,7 @@ namespace Perfect_Peace_System.Pages
                 {
                     teacher = new Teacher(categoryCb.SelectedItem.ToString(), "Teacher",
                         bankTb.Text, accountNumTb.Text, ssnitTb.Text, tinTb.Text, phoneTB.Text, emailTb.Text, fnameTb.Text, lnameTb.Text, addressTb.Text,
-                        getRadioBtnValue(), DateTime.Today
+                        getRadioBtnValue(), DateTime.Today.Date.ToString()
                     );
                 }
 

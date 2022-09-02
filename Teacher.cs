@@ -29,7 +29,7 @@ namespace Perfect_Peace_System
             this.email = email;
         }
 
-        public Teacher(string category, string staff_position, string bank, string account_number, string ssnit_number, string tin_number, string phone, string email, string f_name, string l_name, string address, string gender, DateTime _date_registered):
+        public Teacher(string category, string staff_position, string bank, string account_number, string ssnit_number, string tin_number, string phone, string email, string f_name, string l_name, string address, string gender, string _date_registered):
             base(f_name, l_name, address, gender, _date_registered)
         {
             this.category = category;
@@ -42,7 +42,7 @@ namespace Perfect_Peace_System
             this.tin_number = tin_number;
         }
 
-        public Teacher(string bank, string account_number, string ssnit_number, string tin_number, string _class, string phone, string email, string f_name, string l_name, string address, string gender, DateTime _date_registered):
+        public Teacher(string bank, string account_number, string ssnit_number, string tin_number, string _class, string phone, string email, string f_name, string l_name, string address, string gender, string _date_registered):
             base(f_name, l_name, address, gender, _date_registered)
         {
             this.phone = phone;

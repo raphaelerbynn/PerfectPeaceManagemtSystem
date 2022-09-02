@@ -160,20 +160,14 @@ namespace Perfect_Peace_System
 
         private void studentBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity())
-            {
+            
                 ActivateBtn(sender);
                 openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), panelView);
                 addStntBtn.Visible = true;
                 addStntBtn.Text = "Add Student";
                 titleLbl.Text = "STUDENTS";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
-            }
-            else
-            {
-                MessageBox.Show("Check your internet connection");
-            }
-            
+           
         }
 
         private void addStntBtn_Click(object sender, EventArgs e)
@@ -238,56 +232,39 @@ namespace Perfect_Peace_System
 
         private void teachersBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity())
-            {
+           
                 ActivateBtn(sender);
                 addStntBtn.Visible = true;
                 addStntBtn.Text = "Add To Staff";
                 titleLbl.Text = "STAFF";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
                 openNewPage.OpenChildForm(new Pages.TeacherData(), panelView);
-            }
-            else
-            {
-                MessageBox.Show("Check your internet connection");
-            }
             
         }
 
         private void parentsBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity())
-            {
+            
                 ActivateBtn(sender);
                 openNewPage.OpenChildForm(new Pages.ParentsData(), panelView);
                 addStntBtn.Visible = false;
                 titleLbl.Text = "PARENTS";
                 //addStntBtn.Text = "Send Message";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
-            }
-            else
-            {
-                MessageBox.Show("Check your internet connection");
-            }
+            
             
         }
 
         private void classesBtn_Click(object sender, EventArgs e)
         {
 
-            if (InternetConnectivity.checkConnectivity())
-            {
                 ActivateBtn(sender);
                 addStntBtn.Visible = true;
                 addStntBtn.Text = "Add Class";
                 titleLbl.Text = "CLASSROOMS";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
                 openNewPage.OpenChildForm(new Pages.ClassData(), panelView);
-            }
-            else
-            {
-                MessageBox.Show("Check your internet connection");
-            }
+           
             
         }
 
@@ -309,35 +286,24 @@ namespace Perfect_Peace_System
 
         private void feesBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity())
-            {
+            
                 ActivateBtn(sender);
                 addStntBtn.Visible = true;
                 addStntBtn.Text = "Pay Fees";
                 titleLbl.Text = "FEES";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
-                openNewPage.OpenChildForm(new Pages.FeesData(), panelView);
-            }
-            else
-            {
-                MessageBox.Show("Check your internet connection");
-            }
-            
+            openNewPage.OpenChildForm(new Pages.FeesData(), panelView);
+
         }
         
         private void accBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity())
-            {
+            
                 ActivateBtn(sender);
                 addStntBtn.Visible = false;
                 titleLbl.Text = "ACCOUNT";
                 openNewPage.OpenChildForm(new Pages.Account(), panelView);
-            }
-            else
-            {
-                MessageBox.Show("Check your internet connection");
-            }
+            
         }
         private void closeBtn_Click(object sender, EventArgs e)
         {
@@ -382,19 +348,13 @@ namespace Perfect_Peace_System
 
         private void subjectBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity())
-            {
+            
                 ActivateBtn(sender);
                 addStntBtn.Visible = false;
                 titleLbl.Text = "SUBJECT INFORMATION";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
                 openNewPage.OpenChildForm(new Pages.AddSubject(), panelView);
-            }
-            else
-            {
-                MessageBox.Show("Check your internet connection");
-            }
-           
+            
         }
 
         private void payrollBtn_Click(object sender, EventArgs e)
