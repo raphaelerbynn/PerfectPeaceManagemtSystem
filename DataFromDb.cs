@@ -120,7 +120,13 @@ namespace Perfect_Peace_System
         {
             return getExtraClasses;
         }
-        
+
+        public static DataTable getBusFee;
+        public static DataTable getBusFeeData()
+        {
+            return getBusFee;
+        }
+
         //payroll
         public static DataTable getSalaryBase;
         public static DataTable getSalaryBaseData()
@@ -142,6 +148,7 @@ namespace Perfect_Peace_System
 
         //fees
         public static DataTable getFees;
+
         public static DataTable getFeesData()
         {
             return getFees;

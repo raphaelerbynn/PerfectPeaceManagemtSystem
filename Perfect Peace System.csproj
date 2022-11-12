@@ -27,7 +27,7 @@
     <PublisherName>Mountain</PublisherName>
     <SuiteName>Mountain</SuiteName>
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -126,6 +126,12 @@
     </Compile>
     <Compile Include="Pages\Account.Designer.cs">
       <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddMedicalReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\AddMedicalReport.Designer.cs">
+      <DependentUpon>AddMedicalReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Pages\AddResult.cs">
       <SubType>Form</SubType>
@@ -363,6 +369,7 @@
     <Compile Include="Person.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Subject.cs" />
     <Compile Include="Teacher.cs" />
@@ -381,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\AddEvent.resx">
       <DependentUpon>AddEvent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AddMedicalReport.resx">
+      <DependentUpon>AddMedicalReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\AddParent.resx">
       <DependentUpon>AddParent.cs</DependentUpon>

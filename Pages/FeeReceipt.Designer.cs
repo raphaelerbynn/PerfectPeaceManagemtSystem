@@ -173,12 +173,12 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(131, 115);
+            this.label2.Location = new System.Drawing.Point(128, 115);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(542, 15);
+            this.label2.Size = new System.Drawing.Size(568, 15);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Atabaadze, Central Region   |   Contact: 024 233 2420   |   Email: perfectpeacesc" +
-    "hool@outlook.com";
+            this.label2.Text = "Memoeasem/Essaman, Central Region   |   Contact: 024 233 2420   |   Email: perfec" +
+    "tpeace@gmail.com";
             // 
             // termLbl
             // 

@@ -590,11 +590,11 @@
             this.label54.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(303, 37);
+            this.label54.Location = new System.Drawing.Point(281, 37);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(84, 15);
+            this.label54.Size = new System.Drawing.Size(140, 15);
             this.label54.TabIndex = 40;
-            this.label54.Text = "MEMPEASSEM";
+            this.label54.Text = "MEMPEASSEM/ESSAMAN";
             // 
             // label55
             // 
@@ -2514,11 +2514,11 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(312, 59);
+            this.label2.Location = new System.Drawing.Point(279, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 19);
+            this.label2.Size = new System.Drawing.Size(172, 19);
             this.label2.TabIndex = 1;
-            this.label2.Text = "MEMPEASSEM";
+            this.label2.Text = "MEMPEASSEM/ESSAMAN";
             // 
             // label1
             // 

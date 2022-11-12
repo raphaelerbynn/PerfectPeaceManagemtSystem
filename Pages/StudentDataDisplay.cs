@@ -89,7 +89,7 @@ namespace Perfect_Peace_System.Pages
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
-
+                        
                         query = "DELETE FROM Fee WHERE student_id='" + id + "'";
                         DbClient.query_execute(query);
 

@@ -9,16 +9,16 @@ namespace Perfect_Peace_System
 {
     internal class OpenNewPage
     {
-        Form activeForm;
+        //Form activeForm;
 
         public void OpenChildForm(Form childForm, Panel panel)
         {
-            if (activeForm != null)
+            /*if (activeForm != null)
             {
                 activeForm.Close();
             }
             activeForm = childForm;
-            childForm.TopLevel = false;
+            */childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
             childForm.Dock = DockStyle.Fill;
             panel.Controls.Add(childForm);

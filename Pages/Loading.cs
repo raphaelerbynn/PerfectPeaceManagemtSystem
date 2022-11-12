@@ -29,7 +29,7 @@ namespace Perfect_Peace_System.Pages
             int i = 0;
             if (category.Equals("Administrator"))
             {
-                int workNumber = 14;
+                int workNumber = 15;
                 DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
@@ -52,6 +52,9 @@ namespace Perfect_Peace_System.Pages
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
                 DataFromDb.getFeedingFee = DbClient.dataSource("SELECT feeding_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Feeding_fee");
+                i += 100 / workNumber;
+                backgroundWorker.ReportProgress(i);
+                DataFromDb.getBusFee = DbClient.dataSource("SELECT sus_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Bus_fee");
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
                 DataFromDb.getExtraClasses = DbClient.dataSource("SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes");

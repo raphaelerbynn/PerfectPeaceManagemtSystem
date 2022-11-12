@@ -89,12 +89,14 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.accountNumLbl = new System.Windows.Forms.Label();
             this.tinLbl = new System.Windows.Forms.Label();
             this.bankLbl = new System.Windows.Forms.Label();
             this.ssnitLbl = new System.Windows.Forms.Label();
             this.contactLbl = new System.Windows.Forms.Label();
+            this.categoryLbl = new System.Windows.Forms.Label();
             this.emailLbl = new System.Windows.Forms.Label();
             this.staffIdLbl = new System.Windows.Forms.Label();
             this.empNameLbl = new System.Windows.Forms.Label();
@@ -102,8 +104,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.categoryLbl = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.bgPanel.SuspendLayout();
             this.payslipPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -870,6 +870,17 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "EMAIL:";
             // 
+            // label21
+            // 
+            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(335, 40);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(50, 19);
+            this.label21.TabIndex = 6;
+            this.label21.Text = "STAFF:";
+            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -936,6 +947,17 @@
             this.contactLbl.TabIndex = 5;
             this.contactLbl.Text = "---------------";
             // 
+            // categoryLbl
+            // 
+            this.categoryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.categoryLbl.AutoSize = true;
+            this.categoryLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryLbl.Location = new System.Drawing.Point(391, 40);
+            this.categoryLbl.Name = "categoryLbl";
+            this.categoryLbl.Size = new System.Drawing.Size(84, 19);
+            this.categoryLbl.TabIndex = 5;
+            this.categoryLbl.Text = "---------------";
+            // 
             // emailLbl
             // 
             this.emailLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -996,11 +1018,11 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(304, 59);
+            this.label2.Location = new System.Drawing.Point(274, 59);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 19);
+            this.label2.Size = new System.Drawing.Size(172, 19);
             this.label2.TabIndex = 1;
-            this.label2.Text = "MEMPEASSEM";
+            this.label2.Text = "MEMPEASSEM/ESSAMAN";
             // 
             // label1
             // 
@@ -1012,28 +1034,6 @@
             this.label1.Size = new System.Drawing.Size(278, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "PERFECT PEACE  PREPARATORY SCHOOL";
-            // 
-            // categoryLbl
-            // 
-            this.categoryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.categoryLbl.AutoSize = true;
-            this.categoryLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoryLbl.Location = new System.Drawing.Point(391, 40);
-            this.categoryLbl.Name = "categoryLbl";
-            this.categoryLbl.Size = new System.Drawing.Size(84, 19);
-            this.categoryLbl.TabIndex = 5;
-            this.categoryLbl.Text = "---------------";
-            // 
-            // label21
-            // 
-            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(335, 40);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(50, 19);
-            this.label21.TabIndex = 6;
-            this.label21.Text = "STAFF:";
             // 
             // PaySlip
             // 

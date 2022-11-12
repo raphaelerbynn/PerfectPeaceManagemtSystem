@@ -20,11 +20,14 @@ namespace Perfect_Peace_System.Pages
             showExpenses();
             showFeeding();
             showExtraClasses();
+            showBusFees();
 
             bgPanel.BackColor = Home.themeColor;
             feedingPanel.BackColor = Home.foreColor;
             expensePanel.BackColor = Home.foreColor;
             classesPanel.BackColor = Home.foreColor;
+            busPanel.BackColor = Home.foreColor;
+
 
         }
 
@@ -40,11 +43,13 @@ namespace Perfect_Peace_System.Pages
                     classesPanel.Visible = false;
                     feedingPanel.Visible = false;
                     expensePanel.Visible = true;
+                    busPanel.Visible = false;
                 }
                 else if (categoryCb.SelectedIndex == 1)
                 {
                     expensePanel.Visible = false;
                     feedingPanel.Visible = false;
+                    busPanel.Visible = false;
                     classesPanel.Visible = true;
                     classesPanel.Location = expensePanel.Location;
                     DbClient.query_reader(teacherCb, queryTeacher);
@@ -54,16 +59,29 @@ namespace Perfect_Peace_System.Pages
                 {
                     expensePanel.Visible = false;
                     classesPanel.Visible = false;
+                    busPanel.Visible = false;
                     feedingPanel.Visible = true;
                     feedingPanel.Location = expensePanel.Location;
                     DbClient.query_reader(feedingTeacherCb, queryTeacher);
                     DbClient.query_reader(feedingClassCb, queryClass);
+                }
+                else if (categoryCb.SelectedIndex == 3)
+                {
+                    expensePanel.Visible = false;
+                    classesPanel.Visible = false;
+                    feedingPanel.Visible = false;
+                    busPanel.Visible = true;
+                    busPanel.Location = expensePanel.Location;
+                    DbClient.query_reader(busTeacherCb, queryTeacher);
+                    DbClient.query_reader(busClassCb, queryClass);
                 }
                 else
                 {
                     expensePanel.Visible = false;
                     classesPanel.Visible = false;
                     feedingPanel.Visible = false;
+                    busPanel.Visible = false;
+
                 }
             }
             else
@@ -107,6 +125,17 @@ namespace Perfect_Peace_System.Pages
             feedingDataView.DataSource = DataFromDb.getFeedingFeeData();
             feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
         }
+
+        private void showBusFees()
+        {
+            busFeeDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            busFeeDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            busFeeDataView.BackgroundColor = Home.foreColor;
+
+            busFeeDataView.DataSource = DataFromDb.getBusFeeData();
+            busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
+        }
+
 
         //feeding
         private void addFeedingBtn_Click(object sender, EventArgs e)
@@ -579,6 +608,157 @@ namespace Perfect_Peace_System.Pages
                 showExtraClasses();
             }
             else { }
+        }
+
+
+        //bus fee
+        private void addBusFeeBtn_Click(object sender, EventArgs e)
+        {
+            if (InternetConnectivity.checkConnectivity())
+            {
+                try
+                {
+                    query = "INSERT INTO Bus_fee(teacher, class, amount, date) " +
+                        "VALUES('" + busTeacherCb.Text + "', '" + busClassCb.Text + "', '" + busAmountTb.Text + "', '" + DateTime.Today + "')";
+                    DbClient.query_execute(query);
+
+                    busTeacherCb.SelectedIndex = -1;
+                    busClassCb.SelectedIndex = -1;
+                    busAmountTb.Text = null;
+                    busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
+                    DataFromDb.getBusFee = DbClient.dataSource("SELECT bus_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Bus_fee");
+                    showFeeding();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show("Input all fields correctly!");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
+        }
+
+        private void loadBusList_Click(object sender, EventArgs e)
+        {
+            if (InternetConnectivity.checkConnectivity())
+            {
+                string loadListDateF = busYearPk.Text;
+                if (busMonthPk.Visible == true)
+                {
+                    loadListDateF = busMonthPk.Text + "-" + busYearPk.Text;
+                    if (dayExtraClassesPk.Visible == true)
+                    {
+                        loadListDateF = busDayPk.Text + "-" + loadListDateF;
+                    }
+                }
+            (busFeeDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", loadListDateF);
+                busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
+        }
+
+        private void busSearchBtn_Click(object sender, EventArgs e)
+        {
+            if (InternetConnectivity.checkConnectivity())
+            {
+                if (!String.IsNullOrEmpty(busFeeSearchTb.Text))
+                {
+                    try
+                    {
+                        (busFeeDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("teacher LIKE '%{0}%'", busFeeSearchTb.Text);
+                        busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Search Again");
+                        Console.WriteLine(ex.Message);
+                    }
+
+                }
+                else
+                {
+                    (busFeeDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                    busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
+
+        }
+
+        private void busAddMonth_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (busAddMonth.Checked)
+            {
+                busAddDay.Visible = true;
+                busdMonthLbl.Visible = true;
+                busMonthPk.Visible = true;
+            }
+            else
+            {
+                busAddDay.Visible = false;
+                busdMonthLbl.Visible = false;
+                busMonthPk.Visible = false;
+            }
+        }
+
+        private void busAddDay_CheckedChanged(object sender, EventArgs e)
+        {
+            if (busAddDay.Checked)
+            {
+                busDayLbl.Visible = true;
+                busDayPk.Visible = true;
+            }
+            else
+            {
+                busDayLbl.Visible = false;
+                busDayPk.Visible = false;
+            }
+        }
+
+        private void busFeeDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (InternetConnectivity.checkConnectivity())
+            {
+                try
+                {
+                    DataGridViewRow row = busFeeDataView.Rows[e.RowIndex];
+                    string id = row.Cells["busFee_id"].Value.ToString();
+                    if (busFeeDataView.Columns[e.ColumnIndex].Name == "busDelete" && e.RowIndex >= 0)
+                    {
+                        string message = "Do you want to delete this data?";
+                        MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                        DialogResult result = MessageBox.Show(message, "", deleteAction);
+                        if (result == DialogResult.Yes)
+                        {
+                            busFeeDataView.Rows.RemoveAt(e.RowIndex);
+                            query = "DELETE FROM Bus_fee WHERE bus_fee_fee_id='" + id + "'";
+                            DbClient.query_execute(query);
+                            MessageBox.Show("Data deleted from system");
+                            busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
+                        }
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Check your internet connection");
+            }
         }
     }
 }

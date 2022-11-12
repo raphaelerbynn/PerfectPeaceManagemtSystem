@@ -85,6 +85,11 @@ namespace Perfect_Peace_System.Pages
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
+                        DbClient.query_execute("UPDATE Class SET name=UPPER(name)");
+                        DbClient.query_execute("UPDATE Student SET class=UPPER(class)");
+                        DbClient.query_execute("UPDATE Teacher SET f_name=UPPER(f_name), l_name=UPPER(l_name)");
+
+
                         query = "UPDATE Class SET teacher_id=NULL WHERE teacher_id='" + id + "'";
                         DbClient.query_execute(query);
                         
@@ -289,8 +294,14 @@ namespace Perfect_Peace_System.Pages
 
         private void refeshBtn_Click(object sender, EventArgs e)
         {
-            DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, CAST(class_id AS VARCHAR(10)) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
             DataFromDb.getAllNonTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, staff_position, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Non-Teaching'");
+
+            DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, (SELECT name FROM Class WHERE Class.class_id=Teacher.class_id) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
+
+            DbClient.query_execute("UPDATE Class SET name=UPPER(name)");
+            DbClient.query_execute("UPDATE Student SET class=UPPER(class)");
+            DbClient.query_execute("UPDATE Teacher SET f_name=UPPER(f_name), l_name=UPPER(l_name)");
+
 
             MessageBox.Show("Staff data refreshed");
             nonTeachingDataView.DataSource = DataFromDb.getAllNonTeacherData();
