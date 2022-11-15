@@ -119,10 +119,5 @@ namespace Perfect_Peace_System.Pages
             OpenNewPage openNewPage = new OpenNewPage();
             openNewPage.OpenChildForm(new Pages.MarkAttendance(), attendancePanel);
         }
-
-        private void attendanceDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

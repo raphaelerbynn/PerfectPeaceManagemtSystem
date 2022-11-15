@@ -248,7 +248,7 @@ namespace Perfect_Peace_System.Pages
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
                 }
             }
             else
@@ -403,7 +403,7 @@ namespace Perfect_Peace_System.Pages
             }
             else
             {
-                MessageBox.Show("Check your internet connection");
+                //MessageBox.Show("Check your internet connection");
             }
            
         }
@@ -545,7 +545,7 @@ namespace Perfect_Peace_System.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
             }
         }
 
@@ -627,7 +627,7 @@ namespace Perfect_Peace_System.Pages
                     busAmountTb.Text = null;
                     busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
                     DataFromDb.getBusFee = DbClient.dataSource("SELECT bus_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Bus_fee");
-                    showFeeding();
+                    showBusFees();
                 }
                 catch (Exception ex)
                 {
@@ -742,7 +742,7 @@ namespace Perfect_Peace_System.Pages
                         if (result == DialogResult.Yes)
                         {
                             busFeeDataView.Rows.RemoveAt(e.RowIndex);
-                            query = "DELETE FROM Bus_fee WHERE bus_fee_fee_id='" + id + "'";
+                            query = "DELETE FROM Bus_fee WHERE bus_fee_id='" + id + "'";
                             DbClient.query_execute(query);
                             MessageBox.Show("Data deleted from system");
                             busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
@@ -752,7 +752,7 @@ namespace Perfect_Peace_System.Pages
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message);
+                    //MessageBox.Show(ex.Message);
                 }
             }
             else

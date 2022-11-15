@@ -32,6 +32,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -61,11 +66,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bgPanel = new System.Windows.Forms.Panel();
             this.busPanel = new System.Windows.Forms.Panel();
             this.busAddMonth = new System.Windows.Forms.CheckBox();
@@ -80,6 +80,12 @@
             this.busTotalLbl = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.busFeeDataView = new System.Windows.Forms.DataGridView();
+            this.busFee_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.busTeacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.busClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.busFeeAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.busDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.busDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.addBusFeeBtn = new System.Windows.Forms.Button();
             this.label34 = new System.Windows.Forms.Label();
             this.busAmountTb = new System.Windows.Forms.TextBox();
@@ -194,12 +200,6 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.busFee_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.busTeacher = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.busClass = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.busFeeAmount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.busDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.busDelete = new System.Windows.Forms.DataGridViewImageColumn();
             this.bgPanel.SuspendLayout();
             this.busPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.busFeeDataView)).BeginInit();
@@ -454,6 +454,71 @@
             this.busFeeDataView.TabIndex = 33;
             this.busFeeDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.busFeeDataView_CellContentClick);
             // 
+            // busFee_id
+            // 
+            this.busFee_id.DataPropertyName = "bus_fee_id";
+            this.busFee_id.HeaderText = "ID";
+            this.busFee_id.Name = "busFee_id";
+            this.busFee_id.ReadOnly = true;
+            this.busFee_id.Visible = false;
+            // 
+            // busTeacher
+            // 
+            this.busTeacher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.busTeacher.DataPropertyName = "teacher";
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.busTeacher.DefaultCellStyle = dataGridViewCellStyle2;
+            this.busTeacher.HeaderText = "TEACHER";
+            this.busTeacher.Name = "busTeacher";
+            this.busTeacher.ReadOnly = true;
+            this.busTeacher.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // busClass
+            // 
+            this.busClass.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.busClass.DataPropertyName = "class";
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.busClass.DefaultCellStyle = dataGridViewCellStyle3;
+            this.busClass.HeaderText = "CLASS";
+            this.busClass.Name = "busClass";
+            this.busClass.ReadOnly = true;
+            // 
+            // busFeeAmount
+            // 
+            this.busFeeAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.busFeeAmount.DataPropertyName = "amount";
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.busFeeAmount.DefaultCellStyle = dataGridViewCellStyle4;
+            this.busFeeAmount.HeaderText = "AMOUNT";
+            this.busFeeAmount.Name = "busFeeAmount";
+            this.busFeeAmount.ReadOnly = true;
+            // 
+            // busDate
+            // 
+            this.busDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.busDate.DataPropertyName = "date";
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.busDate.DefaultCellStyle = dataGridViewCellStyle5;
+            this.busDate.HeaderText = "DATE";
+            this.busDate.Name = "busDate";
+            this.busDate.ReadOnly = true;
+            this.busDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // busDelete
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = null;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.busDelete.DefaultCellStyle = dataGridViewCellStyle6;
+            this.busDelete.FillWeight = 30F;
+            this.busDelete.HeaderText = "";
+            this.busDelete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.busDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.busDelete.Name = "busDelete";
+            this.busDelete.ReadOnly = true;
+            this.busDelete.Width = 50;
+            // 
             // addBusFeeBtn
             // 
             this.addBusFeeBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -488,6 +553,7 @@
             this.busAmountTb.Name = "busAmountTb";
             this.busAmountTb.Size = new System.Drawing.Size(175, 20);
             this.busAmountTb.TabIndex = 29;
+            this.busAmountTb.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tB_KeyPress);
             // 
             // busdMonthLbl
             // 
@@ -2035,71 +2101,6 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.ReadOnly = true;
             this.dataGridViewImageColumn3.Width = 50;
-            // 
-            // busFee_id
-            // 
-            this.busFee_id.DataPropertyName = "bus_fee_id";
-            this.busFee_id.HeaderText = "ID";
-            this.busFee_id.Name = "busFee_id";
-            this.busFee_id.ReadOnly = true;
-            this.busFee_id.Visible = false;
-            // 
-            // busTeacher
-            // 
-            this.busTeacher.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.busTeacher.DataPropertyName = "teacher";
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.busTeacher.DefaultCellStyle = dataGridViewCellStyle2;
-            this.busTeacher.HeaderText = "TEACHER";
-            this.busTeacher.Name = "busTeacher";
-            this.busTeacher.ReadOnly = true;
-            this.busTeacher.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // busClass
-            // 
-            this.busClass.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.busClass.DataPropertyName = "class";
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.busClass.DefaultCellStyle = dataGridViewCellStyle3;
-            this.busClass.HeaderText = "CLASS";
-            this.busClass.Name = "busClass";
-            this.busClass.ReadOnly = true;
-            // 
-            // busFeeAmount
-            // 
-            this.busFeeAmount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.busFeeAmount.DataPropertyName = "amount";
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.busFeeAmount.DefaultCellStyle = dataGridViewCellStyle4;
-            this.busFeeAmount.HeaderText = "AMOUNT";
-            this.busFeeAmount.Name = "busFeeAmount";
-            this.busFeeAmount.ReadOnly = true;
-            // 
-            // busDate
-            // 
-            this.busDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.busDate.DataPropertyName = "date";
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.busDate.DefaultCellStyle = dataGridViewCellStyle5;
-            this.busDate.HeaderText = "DATE";
-            this.busDate.Name = "busDate";
-            this.busDate.ReadOnly = true;
-            this.busDate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // busDelete
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.NullValue = null;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Transparent;
-            this.busDelete.DefaultCellStyle = dataGridViewCellStyle6;
-            this.busDelete.FillWeight = 30F;
-            this.busDelete.HeaderText = "";
-            this.busDelete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
-            this.busDelete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.busDelete.Name = "busDelete";
-            this.busDelete.ReadOnly = true;
-            this.busDelete.Width = 50;
             // 
             // Account
             // 

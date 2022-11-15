@@ -240,7 +240,6 @@
             this.attendanceDataView.ShowEditingIcon = false;
             this.attendanceDataView.Size = new System.Drawing.Size(826, 552);
             this.attendanceDataView.TabIndex = 46;
-            this.attendanceDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.attendanceDataView_CellContentClick);
             // 
             // student_roll
             // 

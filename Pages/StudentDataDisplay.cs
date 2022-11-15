@@ -42,9 +42,34 @@ namespace Perfect_Peace_System.Pages
 
                 delete.Visible = false;
             }
+            getTotalGendeView();
+
         }
 
         
+
+        private void getTotalGendeView()
+        {
+            
+            double totalMale = 0;
+            double totalFemale = 0;
+            foreach (DataGridViewRow item in studentDataView.Rows)
+            {
+                if (item.Cells["gender"].Value.ToString().Equals("Male"))
+                {
+                    totalMale++;
+
+                }
+                else
+                {
+                    totalFemale++;
+
+                }
+            }
+            
+            maleLbl.Text = totalMale.ToString();
+            femaleLbl.Text = totalFemale.ToString();
+        }
 
         private void adjustColumnOrder()
         {
@@ -64,7 +89,7 @@ namespace Perfect_Peace_System.Pages
 
         private void reloadDataBtn_Click(object sender, EventArgs e)
         {
-            student.show_data(studentDataView);
+            //student.show_data(studentDataView);
         }
 
         private void studentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -114,6 +139,7 @@ namespace Perfect_Peace_System.Pages
                    
                         MessageBox.Show(name + " deleted from system");
                         DataFromDb.totalStudents = DbClient.query_executeScaler("SELECT COUNT(*) FROM Student");
+                        getTotalGendeView();
 
                     }
 
@@ -134,7 +160,7 @@ namespace Perfect_Peace_System.Pages
                 }
             }catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                //MessageBox.Show(ex.Message);
                 Console.WriteLine(ex);
             }
         }
@@ -179,7 +205,9 @@ namespace Perfect_Peace_System.Pages
                 try
                 {
                     (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format(searchCb.Text + " LIKE '%{0}%'", searchTextBox.Text);
-                }catch(Exception ex)
+                    getTotalGendeView();
+                }
+                catch(Exception ex)
                 {
                     MessageBox.Show("Search Again");
                     Console.WriteLine(ex.Message);
@@ -189,6 +217,7 @@ namespace Perfect_Peace_System.Pages
             else
             {
                 (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                getTotalGendeView();
             }
         }
 
@@ -197,17 +226,37 @@ namespace Perfect_Peace_System.Pages
             if (Pages.LoginInput.category.Equals("Administrator"))
             {
                 DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
-                MessageBox.Show("Student data refreshed");
+                
                 studentDataView.DataSource = DataFromDb.getAllStudentData();
+                MessageBox.Show("Student data refreshed");
+                getTotalGendeView();
 
             }
 
             if (Pages.LoginInput.category.Equals("Class Teacher"))
             {
                 DataFromDb.getAllStudentForTeacher = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student WHERE class_id='" + DataFromDb.class_id_teacher() + "'");
-                MessageBox.Show("Student data refreshed");
+                
                 studentDataView.DataSource = DataFromDb.getAllStudentDataForTeacher();
+                MessageBox.Show("Student data refreshed");
+                getTotalGendeView();
             }
+        }
+
+        private void studentDataView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+
+            var grid = sender as DataGridView;
+            var row_number = (e.RowIndex + 1).ToString();
+
+            var centerFormat = new StringFormat()
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
+
+            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+            e.Graphics.DrawString(row_number, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
         }
     }
 

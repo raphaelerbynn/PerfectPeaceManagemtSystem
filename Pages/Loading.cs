@@ -33,13 +33,13 @@ namespace Perfect_Peace_System.Pages
                 DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
-                DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, (SELECT name FROM Class WHERE Class.class_id=Teacher.class_id) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
+                DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,gender, email, (SELECT name FROM Class WHERE Class.class_id=Teacher.class_id) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
                 DataFromDb.getAllParent = DbClient.dataSource("SELECT parent_id,contact,relationship, [f_name]+' '+[l_name] AS name, (SELECT [f_name]+' '+[l_name] FROM Student WHERE Student.parent_id=Parent.parent_id) AS child FROM Parent");
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
-                DataFromDb.getAllNonTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, staff_position, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Non-Teaching'");
+                DataFromDb.getAllNonTeacher = DbClient.dataSource("SELECT teacher_id,gender, phone,email, staff_position, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Non-Teaching'");
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
                 DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
@@ -54,7 +54,7 @@ namespace Perfect_Peace_System.Pages
                 DataFromDb.getFeedingFee = DbClient.dataSource("SELECT feeding_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Feeding_fee");
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
-                DataFromDb.getBusFee = DbClient.dataSource("SELECT sus_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Bus_fee");
+                DataFromDb.getBusFee = DbClient.dataSource("SELECT bus_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Bus_fee");
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
                 DataFromDb.getExtraClasses = DbClient.dataSource("SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes");
@@ -96,6 +96,9 @@ namespace Perfect_Peace_System.Pages
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
                 DataFromDb.getExtraClasses = DbClient.dataSource("SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes");
+                i += 100 / workNumber;
+                backgroundWorker.ReportProgress(i);
+                DataFromDb.getBusFee = DbClient.dataSource("SELECT bus_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Bus_fee");
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
                 DataFromDb.getSalaryBase = DbClient.dataSource("SELECT *, amount AS net_amount, amount AS gross_amount FROM Salary");

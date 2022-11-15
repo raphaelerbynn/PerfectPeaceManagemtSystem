@@ -39,12 +39,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentDataDisplay));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.showDataPanel = new System.Windows.Forms.Panel();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.refeshBtn = new System.Windows.Forms.Button();
+            this.femaleLbl = new System.Windows.Forms.Label();
             this.searchBtn = new System.Windows.Forms.Button();
+            this.maleLbl = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.searchCb = new System.Windows.Forms.ComboBox();
@@ -59,7 +63,6 @@
             this.view = new System.Windows.Forms.DataGridViewImageColumn();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
-            this.refeshBtn = new System.Windows.Forms.Button();
             this.showDataPanel.SuspendLayout();
             this.topPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataView)).BeginInit();
@@ -80,16 +83,56 @@
             this.topPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.topPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.topPanel.Controls.Add(this.label4);
             this.topPanel.Controls.Add(this.refeshBtn);
+            this.topPanel.Controls.Add(this.femaleLbl);
             this.topPanel.Controls.Add(this.searchBtn);
+            this.topPanel.Controls.Add(this.maleLbl);
+            this.topPanel.Controls.Add(this.label3);
             this.topPanel.Controls.Add(this.label2);
             this.topPanel.Controls.Add(this.label1);
             this.topPanel.Controls.Add(this.searchCb);
             this.topPanel.Controls.Add(this.searchTextBox);
             this.topPanel.Location = new System.Drawing.Point(0, 0);
             this.topPanel.Name = "topPanel";
-            this.topPanel.Size = new System.Drawing.Size(1102, 59);
+            this.topPanel.Size = new System.Drawing.Size(1102, 104);
             this.topPanel.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(879, 78);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(67, 19);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Females:";
+            // 
+            // refeshBtn
+            // 
+            this.refeshBtn.BackColor = System.Drawing.Color.SpringGreen;
+            this.refeshBtn.FlatAppearance.BorderSize = 0;
+            this.refeshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.refeshBtn.Location = new System.Drawing.Point(12, 74);
+            this.refeshBtn.Name = "refeshBtn";
+            this.refeshBtn.Size = new System.Drawing.Size(75, 23);
+            this.refeshBtn.TabIndex = 5;
+            this.refeshBtn.Text = "Refresh";
+            this.refeshBtn.UseVisualStyleBackColor = false;
+            this.refeshBtn.Click += new System.EventHandler(this.refeshBtn_Click);
+            // 
+            // femaleLbl
+            // 
+            this.femaleLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.femaleLbl.AutoSize = true;
+            this.femaleLbl.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.femaleLbl.ForeColor = System.Drawing.Color.DarkMagenta;
+            this.femaleLbl.Location = new System.Drawing.Point(952, 74);
+            this.femaleLbl.Name = "femaleLbl";
+            this.femaleLbl.Size = new System.Drawing.Size(40, 24);
+            this.femaleLbl.TabIndex = 6;
+            this.femaleLbl.Text = "000";
             // 
             // searchBtn
             // 
@@ -102,6 +145,29 @@
             this.searchBtn.Text = "Search";
             this.searchBtn.UseVisualStyleBackColor = true;
             this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            // 
+            // maleLbl
+            // 
+            this.maleLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.maleLbl.AutoSize = true;
+            this.maleLbl.Font = new System.Drawing.Font("Calibri", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maleLbl.ForeColor = System.Drawing.Color.DarkGreen;
+            this.maleLbl.Location = new System.Drawing.Point(697, 73);
+            this.maleLbl.Name = "maleLbl";
+            this.maleLbl.Size = new System.Drawing.Size(40, 24);
+            this.maleLbl.TabIndex = 6;
+            this.maleLbl.Text = "000";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(638, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(53, 19);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Males:";
             // 
             // label2
             // 
@@ -191,7 +257,7 @@
             dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.studentDataView.DefaultCellStyle = dataGridViewCellStyle11;
             this.studentDataView.EnableHeadersVisualStyles = false;
-            this.studentDataView.Location = new System.Drawing.Point(0, 56);
+            this.studentDataView.Location = new System.Drawing.Point(0, 101);
             this.studentDataView.Name = "studentDataView";
             this.studentDataView.ReadOnly = true;
             this.studentDataView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -204,16 +270,15 @@
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.studentDataView.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
-            this.studentDataView.RowHeadersWidth = 18;
-            this.studentDataView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridViewCellStyle13.BackColor = System.Drawing.Color.Snow;
             this.studentDataView.RowsDefaultCellStyle = dataGridViewCellStyle13;
             this.studentDataView.RowTemplate.Height = 30;
             this.studentDataView.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.studentDataView.ShowEditingIcon = false;
-            this.studentDataView.Size = new System.Drawing.Size(1102, 648);
+            this.studentDataView.Size = new System.Drawing.Size(1102, 591);
             this.studentDataView.TabIndex = 4;
             this.studentDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.studentDataView_CellContentClick);
+            this.studentDataView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.studentDataView_RowPostPaint);
             // 
             // student_Id
             // 
@@ -289,7 +354,7 @@
             // view
             // 
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle8.NullValue")));
+            dataGridViewCellStyle8.NullValue = null;
             dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Control;
             this.view.DefaultCellStyle = dataGridViewCellStyle8;
@@ -304,7 +369,7 @@
             // edit
             // 
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle9.NullValue")));
+            dataGridViewCellStyle9.NullValue = null;
             dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 0, 30, 0);
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Control;
             this.edit.DefaultCellStyle = dataGridViewCellStyle9;
@@ -319,7 +384,7 @@
             // delete
             // 
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle10.NullValue")));
+            dataGridViewCellStyle10.NullValue = null;
             dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Control;
             this.delete.DefaultCellStyle = dataGridViewCellStyle10;
@@ -330,19 +395,6 @@
             this.delete.Name = "delete";
             this.delete.ReadOnly = true;
             this.delete.Width = 50;
-            // 
-            // refeshBtn
-            // 
-            this.refeshBtn.BackColor = System.Drawing.Color.SpringGreen;
-            this.refeshBtn.FlatAppearance.BorderSize = 0;
-            this.refeshBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.refeshBtn.Location = new System.Drawing.Point(12, 30);
-            this.refeshBtn.Name = "refeshBtn";
-            this.refeshBtn.Size = new System.Drawing.Size(75, 23);
-            this.refeshBtn.TabIndex = 5;
-            this.refeshBtn.Text = "Refresh";
-            this.refeshBtn.UseVisualStyleBackColor = false;
-            this.refeshBtn.Click += new System.EventHandler(this.refeshBtn_Click);
             // 
             // StudentDataDisplay
             // 
@@ -379,5 +431,9 @@
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;
         private System.Windows.Forms.Button refeshBtn;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label femaleLbl;
+        private System.Windows.Forms.Label maleLbl;
+        private System.Windows.Forms.Label label3;
     }
 }

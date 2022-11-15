@@ -34,7 +34,7 @@ namespace Perfect_Peace_System.Pages
             adjustColumnOrder();
             teacherDataGridView.DataSource = DataFromDb.getAllTeacherData();
             nonTeachingDataView.DataSource = DataFromDb.getAllNonTeacherData();
-            //getClassName();
+
         }
 
         private void adjustColumnOrder()
@@ -126,7 +126,7 @@ namespace Perfect_Peace_System.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                
                 Console.WriteLine(ex);
             }
         }
@@ -219,6 +219,7 @@ namespace Perfect_Peace_System.Pages
             {
                 teacherDataGridView.Visible = false;
                 nonTeachingDataView.Visible = true;
+                
             }
         }
 
@@ -228,6 +229,7 @@ namespace Perfect_Peace_System.Pages
             {
                 teacherDataGridView.Visible = true;
                 nonTeachingDataView.Visible = false;
+                
             }
         }
 
@@ -266,6 +268,7 @@ namespace Perfect_Peace_System.Pages
 
                         DataFromDb.totalTeachers = DbClient.query_executeScaler("SELECT COUNT(*) FROM Teacher");
                         MessageBox.Show(name + " deleted from system");
+                        
                     }
                 }
 
@@ -286,7 +289,6 @@ namespace Perfect_Peace_System.Pages
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 Console.WriteLine(ex);
 
             }
@@ -306,6 +308,24 @@ namespace Perfect_Peace_System.Pages
             MessageBox.Show("Staff data refreshed");
             nonTeachingDataView.DataSource = DataFromDb.getAllNonTeacherData();
             teacherDataGridView.DataSource = DataFromDb.getAllTeacherData();
+
         }
+
+        private void teacherDataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
+        {
+            var grid = sender as DataGridView;
+            var row_number = (e.RowIndex + 1).ToString();
+
+            var centerFormat = new StringFormat()
+            {
+                Alignment = StringAlignment.Center,
+                LineAlignment = StringAlignment.Center
+            };
+
+            var headerBounds = new Rectangle(e.RowBounds.Left, e.RowBounds.Top, grid.RowHeadersWidth, e.RowBounds.Height);
+            e.Graphics.DrawString(row_number, this.Font, SystemBrushes.ControlText, headerBounds, centerFormat);
+        }
+
+        
     }
 }
