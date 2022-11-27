@@ -467,6 +467,7 @@
             // DT6
             // 
             this.DT6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.DT6.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT6.Location = new System.Drawing.Point(609, 522);
             this.DT6.Name = "DT6";
@@ -476,6 +477,7 @@
             // 
             // AT6
             // 
+            this.AT6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.AT6.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AT6.Location = new System.Drawing.Point(74, 520);
             this.AT6.Name = "AT6";
@@ -507,6 +509,7 @@
             // DT5
             // 
             this.DT5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.DT5.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT5.Location = new System.Drawing.Point(609, 476);
             this.DT5.Name = "DT5";
@@ -516,6 +519,7 @@
             // 
             // AT5
             // 
+            this.AT5.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.AT5.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AT5.Location = new System.Drawing.Point(74, 474);
             this.AT5.Name = "AT5";
@@ -547,6 +551,7 @@
             // DT4
             // 
             this.DT4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.DT4.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT4.Location = new System.Drawing.Point(609, 429);
             this.DT4.Name = "DT4";
@@ -556,6 +561,7 @@
             // 
             // AT4
             // 
+            this.AT4.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.AT4.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AT4.Location = new System.Drawing.Point(74, 427);
             this.AT4.Name = "AT4";
@@ -587,6 +593,7 @@
             // DT3
             // 
             this.DT3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.DT3.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT3.Location = new System.Drawing.Point(609, 388);
             this.DT3.Name = "DT3";
@@ -607,6 +614,7 @@
             // 
             // AT3
             // 
+            this.AT3.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.AT3.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AT3.Location = new System.Drawing.Point(74, 386);
             this.AT3.Name = "AT3";
@@ -617,6 +625,7 @@
             // DT2
             // 
             this.DT2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.DT2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT2.Location = new System.Drawing.Point(609, 345);
             this.DT2.Name = "DT2";
@@ -647,6 +656,7 @@
             // 
             // AT2
             // 
+            this.AT2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.AT2.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AT2.Location = new System.Drawing.Point(74, 343);
             this.AT2.Name = "AT2";
@@ -657,6 +667,7 @@
             // DT1
             // 
             this.DT1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DT1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.DT1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DT1.Location = new System.Drawing.Point(609, 302);
             this.DT1.Name = "DT1";
@@ -687,6 +698,7 @@
             // 
             // AT1
             // 
+            this.AT1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.AT1.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AT1.Location = new System.Drawing.Point(74, 300);
             this.AT1.Name = "AT1";
@@ -739,6 +751,7 @@
             // rankTb
             // 
             this.rankTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.rankTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.rankTb.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rankTb.Location = new System.Drawing.Point(206, 133);
             this.rankTb.Name = "rankTb";
@@ -759,6 +772,7 @@
             // titleTb
             // 
             this.titleTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.titleTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.titleTb.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleTb.Location = new System.Drawing.Point(206, 84);
             this.titleTb.Name = "titleTb";

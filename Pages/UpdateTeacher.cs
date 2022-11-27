@@ -88,9 +88,9 @@ namespace Perfect_Peace_System.Pages
         {
             if (femaleRadio.Checked == true)
             {
-                return "Female";
+                return "FEMALE";
             }
-            return "Male";
+            return "MALE";
         }
 
         private void updateTeacherBnt_Click(object sender, EventArgs e)

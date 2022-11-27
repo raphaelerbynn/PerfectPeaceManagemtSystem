@@ -521,6 +521,7 @@
             // nameTb
             // 
             this.nameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.nameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameTb.Location = new System.Drawing.Point(190, 74);
             this.nameTb.Name = "nameTb";

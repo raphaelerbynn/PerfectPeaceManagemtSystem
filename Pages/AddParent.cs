@@ -52,9 +52,9 @@ namespace Perfect_Peace_System.Pages
         {
             if (femaleRadioBtn.Checked == true)
             {
-                return "female";
+                return "FEMALE";
             }
-            return "male";
+            return "MALE";
         }
 
         private void registerParent_Click(object sender, EventArgs e)

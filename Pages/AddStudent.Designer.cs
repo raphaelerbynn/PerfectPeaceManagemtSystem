@@ -33,6 +33,7 @@
             this.registerStntBnt = new System.Windows.Forms.Button();
             this.classCb = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.maleRadio = new System.Windows.Forms.RadioButton();
             this.femaleRadio = new System.Windows.Forms.RadioButton();
             this.dobPicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.fnameTb = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.maleRadio = new System.Windows.Forms.RadioButton();
             this.registerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -131,6 +131,23 @@
             this.label7.TabIndex = 15;
             this.label7.Text = "Class: ";
             // 
+            // maleRadio
+            // 
+            this.maleRadio.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.maleRadio.AutoSize = true;
+            this.maleRadio.Checked = true;
+            this.maleRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.maleRadio.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maleRadio.Location = new System.Drawing.Point(154, 267);
+            this.maleRadio.Name = "maleRadio";
+            this.maleRadio.Size = new System.Drawing.Size(57, 26);
+            this.maleRadio.TabIndex = 14;
+            this.maleRadio.TabStop = true;
+            this.maleRadio.Text = "Male";
+            this.maleRadio.UseCompatibleTextRendering = true;
+            this.maleRadio.UseVisualStyleBackColor = true;
+            this.maleRadio.CheckedChanged += new System.EventHandler(this.femaleRadio_CheckedChanged);
+            // 
             // femaleRadio
             // 
             this.femaleRadio.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -171,6 +188,7 @@
             // mnameTb
             // 
             this.mnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.mnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnameTb.Location = new System.Drawing.Point(154, 121);
             this.mnameTb.Name = "mnameTb";
@@ -192,6 +210,7 @@
             // lnameTb
             // 
             this.lnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.lnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnameTb.Location = new System.Drawing.Point(154, 170);
             this.lnameTb.Name = "lnameTb";
@@ -247,6 +266,7 @@
             // fnameTb
             // 
             this.fnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.fnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fnameTb.Location = new System.Drawing.Point(154, 75);
             this.fnameTb.Name = "fnameTb";
@@ -275,23 +295,6 @@
             this.label1.Size = new System.Drawing.Size(95, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "First Name: *";
-            // 
-            // maleRadio
-            // 
-            this.maleRadio.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.maleRadio.AutoSize = true;
-            this.maleRadio.Checked = true;
-            this.maleRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.maleRadio.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maleRadio.Location = new System.Drawing.Point(154, 267);
-            this.maleRadio.Name = "maleRadio";
-            this.maleRadio.Size = new System.Drawing.Size(57, 26);
-            this.maleRadio.TabIndex = 14;
-            this.maleRadio.TabStop = true;
-            this.maleRadio.Text = "Male";
-            this.maleRadio.UseCompatibleTextRendering = true;
-            this.maleRadio.UseVisualStyleBackColor = true;
-            this.maleRadio.CheckedChanged += new System.EventHandler(this.femaleRadio_CheckedChanged);
             // 
             // AddStudent
             // 

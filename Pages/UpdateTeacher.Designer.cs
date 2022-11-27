@@ -133,6 +133,7 @@
             // fnameTb
             // 
             this.fnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.fnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fnameTb.Location = new System.Drawing.Point(131, 78);
             this.fnameTb.Name = "fnameTb";
@@ -210,6 +211,7 @@
             // accountNumTb
             // 
             this.accountNumTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.accountNumTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.accountNumTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountNumTb.Location = new System.Drawing.Point(150, 500);
             this.accountNumTb.Name = "accountNumTb";
@@ -219,6 +221,7 @@
             // tinTb
             // 
             this.tinTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tinTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tinTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tinTb.Location = new System.Drawing.Point(150, 595);
             this.tinTb.Name = "tinTb";
@@ -228,6 +231,7 @@
             // ssnitTb
             // 
             this.ssnitTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ssnitTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ssnitTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ssnitTb.Location = new System.Drawing.Point(150, 550);
             this.ssnitTb.Name = "ssnitTb";
@@ -237,6 +241,7 @@
             // bankTb
             // 
             this.bankTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bankTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.bankTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bankTb.Location = new System.Drawing.Point(150, 453);
             this.bankTb.Name = "bankTb";
@@ -354,6 +359,7 @@
             // lnameTb
             // 
             this.lnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.lnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnameTb.Location = new System.Drawing.Point(131, 122);
             this.lnameTb.Name = "lnameTb";

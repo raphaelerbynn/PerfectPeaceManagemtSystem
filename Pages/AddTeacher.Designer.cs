@@ -45,22 +45,22 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bgPanel = new System.Windows.Forms.Panel();
+            this.positionCb = new System.Windows.Forms.ComboBox();
+            this.categoryCb = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.accountNumTb = new System.Windows.Forms.TextBox();
+            this.specificTb = new System.Windows.Forms.TextBox();
             this.tinTb = new System.Windows.Forms.TextBox();
             this.ssnitTb = new System.Windows.Forms.TextBox();
             this.bankTb = new System.Windows.Forms.TextBox();
+            this.specificLbl = new System.Windows.Forms.Label();
+            this.positionLbl = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.categoryCb = new System.Windows.Forms.ComboBox();
-            this.positionCb = new System.Windows.Forms.ComboBox();
-            this.positionLbl = new System.Windows.Forms.Label();
-            this.specificLbl = new System.Windows.Forms.Label();
-            this.specificTb = new System.Windows.Forms.TextBox();
             this.bgPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -112,7 +112,7 @@
             this.clearFeildBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.clearFeildBtn.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clearFeildBtn.ForeColor = System.Drawing.Color.White;
-            this.clearFeildBtn.Location = new System.Drawing.Point(522, 813);
+            this.clearFeildBtn.Location = new System.Drawing.Point(498, 813);
             this.clearFeildBtn.Name = "clearFeildBtn";
             this.clearFeildBtn.Size = new System.Drawing.Size(75, 23);
             this.clearFeildBtn.TabIndex = 34;
@@ -128,7 +128,7 @@
             this.registerTeacherBnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerTeacherBnt.Font = new System.Drawing.Font("Calibri", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerTeacherBnt.ForeColor = System.Drawing.Color.White;
-            this.registerTeacherBnt.Location = new System.Drawing.Point(346, 813);
+            this.registerTeacherBnt.Location = new System.Drawing.Point(398, 813);
             this.registerTeacherBnt.Name = "registerTeacherBnt";
             this.registerTeacherBnt.Size = new System.Drawing.Size(75, 23);
             this.registerTeacherBnt.TabIndex = 33;
@@ -180,6 +180,7 @@
             // lnameTb
             // 
             this.lnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.lnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnameTb.Location = new System.Drawing.Point(140, 122);
             this.lnameTb.Name = "lnameTb";
@@ -222,6 +223,7 @@
             // fnameTb
             // 
             this.fnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.fnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fnameTb.Location = new System.Drawing.Point(140, 78);
             this.fnameTb.Name = "fnameTb";
@@ -292,6 +294,37 @@
             this.bgPanel.Size = new System.Drawing.Size(950, 539);
             this.bgPanel.TabIndex = 39;
             // 
+            // positionCb
+            // 
+            this.positionCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.positionCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.positionCb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.positionCb.FormattingEnabled = true;
+            this.positionCb.Items.AddRange(new object[] {
+            "Accountant",
+            "Other"});
+            this.positionCb.Location = new System.Drawing.Point(159, 705);
+            this.positionCb.Name = "positionCb";
+            this.positionCb.Size = new System.Drawing.Size(697, 27);
+            this.positionCb.TabIndex = 40;
+            this.positionCb.Visible = false;
+            this.positionCb.SelectedIndexChanged += new System.EventHandler(this.positionCb_SelectedIndexChanged);
+            // 
+            // categoryCb
+            // 
+            this.categoryCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.categoryCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.categoryCb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.categoryCb.FormattingEnabled = true;
+            this.categoryCb.Items.AddRange(new object[] {
+            "Teaching",
+            "Non-Teaching"});
+            this.categoryCb.Location = new System.Drawing.Point(159, 659);
+            this.categoryCb.Name = "categoryCb";
+            this.categoryCb.Size = new System.Drawing.Size(697, 27);
+            this.categoryCb.TabIndex = 40;
+            this.categoryCb.SelectedIndexChanged += new System.EventHandler(this.categoryCb_SelectedIndexChanged);
+            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -314,15 +347,28 @@
             // accountNumTb
             // 
             this.accountNumTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.accountNumTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.accountNumTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.accountNumTb.Location = new System.Drawing.Point(159, 500);
             this.accountNumTb.Name = "accountNumTb";
             this.accountNumTb.Size = new System.Drawing.Size(697, 27);
             this.accountNumTb.TabIndex = 37;
             // 
+            // specificTb
+            // 
+            this.specificTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.specificTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.specificTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.specificTb.Location = new System.Drawing.Point(159, 747);
+            this.specificTb.Name = "specificTb";
+            this.specificTb.Size = new System.Drawing.Size(697, 27);
+            this.specificTb.TabIndex = 37;
+            this.specificTb.Visible = false;
+            // 
             // tinTb
             // 
             this.tinTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tinTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tinTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tinTb.Location = new System.Drawing.Point(159, 595);
             this.tinTb.Name = "tinTb";
@@ -332,6 +378,7 @@
             // ssnitTb
             // 
             this.ssnitTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ssnitTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ssnitTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ssnitTb.Location = new System.Drawing.Point(159, 550);
             this.ssnitTb.Name = "ssnitTb";
@@ -341,11 +388,47 @@
             // bankTb
             // 
             this.bankTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.bankTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.bankTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bankTb.Location = new System.Drawing.Point(159, 453);
             this.bankTb.Name = "bankTb";
             this.bankTb.Size = new System.Drawing.Size(697, 27);
             this.bankTb.TabIndex = 37;
+            // 
+            // specificLbl
+            // 
+            this.specificLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.specificLbl.AutoSize = true;
+            this.specificLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.specificLbl.Location = new System.Drawing.Point(88, 755);
+            this.specificLbl.Name = "specificLbl";
+            this.specificLbl.Size = new System.Drawing.Size(62, 19);
+            this.specificLbl.TabIndex = 30;
+            this.specificLbl.Text = "Specific:";
+            this.specificLbl.Visible = false;
+            // 
+            // positionLbl
+            // 
+            this.positionLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.positionLbl.AutoSize = true;
+            this.positionLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.positionLbl.Location = new System.Drawing.Point(88, 713);
+            this.positionLbl.Name = "positionLbl";
+            this.positionLbl.Size = new System.Drawing.Size(65, 19);
+            this.positionLbl.TabIndex = 30;
+            this.positionLbl.Text = "Position:";
+            this.positionLbl.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(82, 667);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(71, 19);
+            this.label14.TabIndex = 30;
+            this.label14.Text = "Category:";
             // 
             // label13
             // 
@@ -390,82 +473,6 @@
             this.label9.Size = new System.Drawing.Size(87, 19);
             this.label9.TabIndex = 30;
             this.label9.Text = "Bank Name:";
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(82, 667);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(71, 19);
-            this.label14.TabIndex = 30;
-            this.label14.Text = "Category:";
-            // 
-            // categoryCb
-            // 
-            this.categoryCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.categoryCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.categoryCb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.categoryCb.FormattingEnabled = true;
-            this.categoryCb.Items.AddRange(new object[] {
-            "Teaching",
-            "Non-Teaching"});
-            this.categoryCb.Location = new System.Drawing.Point(159, 659);
-            this.categoryCb.Name = "categoryCb";
-            this.categoryCb.Size = new System.Drawing.Size(697, 27);
-            this.categoryCb.TabIndex = 40;
-            this.categoryCb.SelectedIndexChanged += new System.EventHandler(this.categoryCb_SelectedIndexChanged);
-            // 
-            // positionCb
-            // 
-            this.positionCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.positionCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.positionCb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.positionCb.FormattingEnabled = true;
-            this.positionCb.Items.AddRange(new object[] {
-            "Accountant",
-            "Other"});
-            this.positionCb.Location = new System.Drawing.Point(159, 705);
-            this.positionCb.Name = "positionCb";
-            this.positionCb.Size = new System.Drawing.Size(697, 27);
-            this.positionCb.TabIndex = 40;
-            this.positionCb.Visible = false;
-            this.positionCb.SelectedIndexChanged += new System.EventHandler(this.positionCb_SelectedIndexChanged);
-            // 
-            // positionLbl
-            // 
-            this.positionLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.positionLbl.AutoSize = true;
-            this.positionLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.positionLbl.Location = new System.Drawing.Point(88, 713);
-            this.positionLbl.Name = "positionLbl";
-            this.positionLbl.Size = new System.Drawing.Size(65, 19);
-            this.positionLbl.TabIndex = 30;
-            this.positionLbl.Text = "Position:";
-            this.positionLbl.Visible = false;
-            // 
-            // specificLbl
-            // 
-            this.specificLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.specificLbl.AutoSize = true;
-            this.specificLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.specificLbl.Location = new System.Drawing.Point(88, 755);
-            this.specificLbl.Name = "specificLbl";
-            this.specificLbl.Size = new System.Drawing.Size(62, 19);
-            this.specificLbl.TabIndex = 30;
-            this.specificLbl.Text = "Specific:";
-            this.specificLbl.Visible = false;
-            // 
-            // specificTb
-            // 
-            this.specificTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.specificTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.specificTb.Location = new System.Drawing.Point(159, 747);
-            this.specificTb.Name = "specificTb";
-            this.specificTb.Size = new System.Drawing.Size(697, 27);
-            this.specificTb.TabIndex = 37;
-            this.specificTb.Visible = false;
             // 
             // AddTeacher
             // 

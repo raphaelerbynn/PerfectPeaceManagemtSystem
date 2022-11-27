@@ -42,13 +42,13 @@
             this.contactTb = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.occupationTb = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.contact1Tb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.fnameTb = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.occupationTb = new System.Windows.Forms.TextBox();
             this.bpPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -177,11 +177,11 @@
             this.relationshipCB.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.relationshipCB.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.relationshipCB.Items.AddRange(new object[] {
-            "Father",
-            "Mother",
-            "Sibling",
-            "Family Member",
-            "Guardian"});
+            "FATHER",
+            "MOTHER",
+            "SIBLING",
+            "FAMILY MEMBER",
+            "GUARDIAN"});
             this.relationshipCB.Location = new System.Drawing.Point(152, 347);
             this.relationshipCB.Name = "relationshipCB";
             this.relationshipCB.Size = new System.Drawing.Size(703, 27);
@@ -190,6 +190,7 @@
             // lnameTb
             // 
             this.lnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.lnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnameTb.Location = new System.Drawing.Point(151, 136);
             this.lnameTb.Name = "lnameTb";
@@ -238,6 +239,27 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Relationship: ";
             // 
+            // occupationTb
+            // 
+            this.occupationTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.occupationTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.occupationTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.occupationTb.Location = new System.Drawing.Point(152, 301);
+            this.occupationTb.Name = "occupationTb";
+            this.occupationTb.Size = new System.Drawing.Size(703, 27);
+            this.occupationTb.TabIndex = 3;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(60, 304);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(87, 19);
+            this.label9.TabIndex = 2;
+            this.label9.Text = "Occupation:";
+            // 
             // contact1Tb
             // 
             this.contact1Tb.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -261,6 +283,7 @@
             // fnameTb
             // 
             this.fnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.fnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fnameTb.Location = new System.Drawing.Point(151, 95);
             this.fnameTb.Name = "fnameTb";
@@ -288,26 +311,6 @@
             this.label1.Size = new System.Drawing.Size(87, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "First Name: ";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(60, 304);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(87, 19);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Occupation:";
-            // 
-            // occupationTb
-            // 
-            this.occupationTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.occupationTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.occupationTb.Location = new System.Drawing.Point(152, 301);
-            this.occupationTb.Name = "occupationTb";
-            this.occupationTb.Size = new System.Drawing.Size(703, 27);
-            this.occupationTb.TabIndex = 3;
             // 
             // AddParent
             // 

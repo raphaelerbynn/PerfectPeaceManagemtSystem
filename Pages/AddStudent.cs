@@ -30,9 +30,9 @@ namespace Perfect_Peace_System.Pages
         {
             if (femaleRadio.Checked == true)
             {
-                return "Female";
+                return "FEMALE";
             }
-            return "Male";
+            return "MALE";
         }
 
         public void clearFeilds()

@@ -127,6 +127,7 @@
             // mnameTb
             // 
             this.mnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.mnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnameTb.Location = new System.Drawing.Point(145, 114);
             this.mnameTb.Name = "mnameTb";
@@ -147,6 +148,7 @@
             // lnameTb
             // 
             this.lnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.lnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lnameTb.Location = new System.Drawing.Point(145, 163);
             this.lnameTb.Name = "lnameTb";
@@ -189,6 +191,7 @@
             // fnameTb
             // 
             this.fnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.fnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.fnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.fnameTb.Location = new System.Drawing.Point(145, 66);
             this.fnameTb.Name = "fnameTb";
