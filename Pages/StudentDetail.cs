@@ -86,6 +86,7 @@ namespace Perfect_Peace_System.Pages
                 lblContact.Text = reader1["contact"].ToString();
                 lblOtherContact.Text = reader1["contact1"].ToString();
                 lblRelationship.Text = reader1["relationship"].ToString();
+                occupationLbl.Text = reader1["occupation"].ToString();
             }
             reader1.Close();
             Console.WriteLine(parent_id);

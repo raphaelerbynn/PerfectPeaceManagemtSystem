@@ -12,30 +12,33 @@ namespace Perfect_Peace_System
         private string contact;
         private string otherContact;
         private string relationship;
+        private string occupation;
 
         private string query;
 
         public Parent() { }
 
-        public Parent(string contact, string otherContact, string relationship)
+        public Parent(string contact, string otherContact, string relationship, string occupation)
         {
             this.contact = contact;
             this.otherContact = otherContact;
             this.relationship = relationship;
+            this.occupation = occupation;
         }
 
-        public Parent(string contact, string otherContact, string relationship,string f_name, string l_name, string gender, string _dateRegistered):
+        public Parent(string contact, string otherContact, string relationship, string occupation,string f_name, string l_name, string gender, string _dateRegistered):
              base(f_name, l_name, gender, _dateRegistered)
         {
             this.contact = contact;
             this.otherContact = otherContact;
             this.relationship = relationship;
+            this.occupation = occupation;
         }
 
         public override void save()
         {
-            query = "INSERT INTO Parent (f_name, l_name, gender, contact, contact1, relationship, created_at)" +
-                "VALUES('" + f_name + "','" + l_name + "','" + gender + "','" + contact + "','" + otherContact + "','" + relationship + "','" + _date_registered + "')";
+            query = "INSERT INTO Parent (f_name, l_name, gender, contact, contact1, relationship, occupation, created_at)" +
+                "VALUES('" + f_name + "','" + l_name + "','" + gender + "','" + contact + "','" + otherContact + "','" + relationship + "','" + occupation + "','" + _date_registered + "')";
             DbClient.query_execute(query);
         }
         

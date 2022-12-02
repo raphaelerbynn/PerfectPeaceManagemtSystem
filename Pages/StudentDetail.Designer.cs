@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.bgPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.parentPanel = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -56,12 +57,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.occupationLbl = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.bgPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.parentPanel.SuspendLayout();
             this.classPanel.SuspendLayout();
             this.studentPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // bgPanel
@@ -78,14 +80,28 @@
             this.bgPanel.Size = new System.Drawing.Size(801, 618);
             this.bgPanel.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Perfect_Peace_System.Properties.Resources.controls;
+            this.pictureBox1.Location = new System.Drawing.Point(768, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(21, 21);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // parentPanel
             // 
             this.parentPanel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.parentPanel.Controls.Add(this.label15);
             this.parentPanel.Controls.Add(this.label12);
             this.parentPanel.Controls.Add(this.label8);
             this.parentPanel.Controls.Add(this.label10);
             this.parentPanel.Controls.Add(this.lblRelationship);
             this.parentPanel.Controls.Add(this.label11);
+            this.parentPanel.Controls.Add(this.occupationLbl);
             this.parentPanel.Controls.Add(this.lblContact);
             this.parentPanel.Controls.Add(this.lblOtherContact);
             this.parentPanel.Controls.Add(this.lblParentName);
@@ -366,17 +382,25 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Student Details";
             // 
-            // pictureBox1
+            // occupationLbl
             // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Perfect_Peace_System.Properties.Resources.controls;
-            this.pictureBox1.Location = new System.Drawing.Point(768, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(21, 21);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.occupationLbl.AutoSize = true;
+            this.occupationLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.occupationLbl.Location = new System.Drawing.Point(420, 115);
+            this.occupationLbl.Name = "occupationLbl";
+            this.occupationLbl.Size = new System.Drawing.Size(85, 19);
+            this.occupationLbl.TabIndex = 13;
+            this.occupationLbl.Text = "...................";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(327, 115);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(87, 19);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Occupation:\r\n";
             // 
             // StudentDetail
             // 
@@ -390,13 +414,13 @@
             this.Text = "Student Details";
             this.bgPanel.ResumeLayout(false);
             this.bgPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.parentPanel.ResumeLayout(false);
             this.parentPanel.PerformLayout();
             this.classPanel.ResumeLayout(false);
             this.classPanel.PerformLayout();
             this.studentPanel.ResumeLayout(false);
             this.studentPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -432,5 +456,7 @@
         private System.Windows.Forms.Panel studentPanel;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label occupationLbl;
     }
 }
