@@ -531,6 +531,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\report.png" />
     <None Include="Resources\assign.png" />
     <None Include="Resources\input.jpg" />
     <None Include="Resources\printer.png" />

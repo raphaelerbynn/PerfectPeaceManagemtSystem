@@ -132,6 +132,9 @@ namespace Perfect_Peace_System.Pages
                         
                         query = "DELETE FROM KG_assessment WHERE student_id='" + id + "'";
                         DbClient.query_execute(query);
+                        
+                        query = "DELETE FROM Medical_report WHERE student_id='" + id + "'";
+                        DbClient.query_execute(query);
 
                         studentDataView.Rows.RemoveAt(e.RowIndex);
                         student.delete(id);
@@ -157,6 +160,12 @@ namespace Perfect_Peace_System.Pages
                 {
                     //update data
                     openNewPage.OpenChildForm(new Pages.UpdateStudent(), showDataPanel);
+                }
+                
+                if (studentDataView.Columns[e.ColumnIndex].Name == "medicalReport")
+                {
+                    
+                    openNewPage.OpenChildForm(new Pages.MedicalReport(), showDataPanel);
                 }
             }catch (Exception ex)
             {
