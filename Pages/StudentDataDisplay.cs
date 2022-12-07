@@ -80,8 +80,9 @@ namespace Perfect_Peace_System.Pages
             studentDataView.Columns["fees_details"].DisplayIndex = 6;
             studentDataView.Columns["gender"].DisplayIndex = 2;
             studentDataView.Columns["view"].DisplayIndex = 6;
-            studentDataView.Columns["edit"].DisplayIndex = 7;
-            studentDataView.Columns["delete"].DisplayIndex = 8;
+            studentDataView.Columns["medicalReport"].DisplayIndex = 7;
+            studentDataView.Columns["edit"].DisplayIndex = 8;
+            studentDataView.Columns["delete"].DisplayIndex = 9;
 
             studentDataView.AutoGenerateColumns = false;
             searchCb.SelectedIndex = 0;

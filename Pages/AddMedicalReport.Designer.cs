@@ -200,7 +200,7 @@
             this.bgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bgPanel.Location = new System.Drawing.Point(0, 0);
             this.bgPanel.Name = "bgPanel";
-            this.bgPanel.Size = new System.Drawing.Size(898, 630);
+            this.bgPanel.Size = new System.Drawing.Size(963, 761);
             this.bgPanel.TabIndex = 0;
             // 
             // panel3
@@ -222,12 +222,10 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(122, 1076);
+            this.label28.Location = new System.Drawing.Point(122, 1081);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(41, 13);
+            this.label28.Size = new System.Drawing.Size(0, 13);
             this.label28.TabIndex = 13;
-            this.label28.Text = "label28";
-            this.label28.Visible = false;
             // 
             // clearBtn
             // 
@@ -267,9 +265,8 @@
             // TBEyeTest
             // 
             this.TBEyeTest.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBEyeTest.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBEyeTest.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBEyeTest.Location = new System.Drawing.Point(145, 839);
+            this.TBEyeTest.Location = new System.Drawing.Point(178, 839);
             this.TBEyeTest.Multiline = true;
             this.TBEyeTest.Name = "TBEyeTest";
             this.TBEyeTest.Size = new System.Drawing.Size(260, 100);
@@ -278,9 +275,8 @@
             // TBRespiration
             // 
             this.TBRespiration.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBRespiration.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBRespiration.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBRespiration.Location = new System.Drawing.Point(145, 755);
+            this.TBRespiration.Location = new System.Drawing.Point(178, 755);
             this.TBRespiration.Name = "TBRespiration";
             this.TBRespiration.Size = new System.Drawing.Size(260, 25);
             this.TBRespiration.TabIndex = 10;
@@ -288,9 +284,8 @@
             // TBPulse
             // 
             this.TBPulse.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBPulse.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBPulse.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPulse.Location = new System.Drawing.Point(145, 724);
+            this.TBPulse.Location = new System.Drawing.Point(178, 724);
             this.TBPulse.Name = "TBPulse";
             this.TBPulse.Size = new System.Drawing.Size(260, 25);
             this.TBPulse.TabIndex = 10;
@@ -298,9 +293,8 @@
             // TBTemp
             // 
             this.TBTemp.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBTemp.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBTemp.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBTemp.Location = new System.Drawing.Point(145, 693);
+            this.TBTemp.Location = new System.Drawing.Point(178, 693);
             this.TBTemp.Name = "TBTemp";
             this.TBTemp.Size = new System.Drawing.Size(260, 25);
             this.TBTemp.TabIndex = 10;
@@ -308,9 +302,8 @@
             // TBbmi
             // 
             this.TBbmi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBbmi.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBbmi.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBbmi.Location = new System.Drawing.Point(145, 661);
+            this.TBbmi.Location = new System.Drawing.Point(178, 661);
             this.TBbmi.Name = "TBbmi";
             this.TBbmi.Size = new System.Drawing.Size(260, 25);
             this.TBbmi.TabIndex = 10;
@@ -318,9 +311,8 @@
             // TBHeight
             // 
             this.TBHeight.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBHeight.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBHeight.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBHeight.Location = new System.Drawing.Point(145, 630);
+            this.TBHeight.Location = new System.Drawing.Point(178, 630);
             this.TBHeight.Name = "TBHeight";
             this.TBHeight.Size = new System.Drawing.Size(260, 25);
             this.TBHeight.TabIndex = 10;
@@ -328,9 +320,8 @@
             // TBWeight
             // 
             this.TBWeight.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBWeight.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBWeight.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBWeight.Location = new System.Drawing.Point(145, 599);
+            this.TBWeight.Location = new System.Drawing.Point(178, 599);
             this.TBWeight.Name = "TBWeight";
             this.TBWeight.Size = new System.Drawing.Size(260, 25);
             this.TBWeight.TabIndex = 10;
@@ -340,7 +331,7 @@
             this.TBMic.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TBMic.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBMic.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBMic.Location = new System.Drawing.Point(145, 505);
+            this.TBMic.Location = new System.Drawing.Point(178, 505);
             this.TBMic.Name = "TBMic";
             this.TBMic.Size = new System.Drawing.Size(260, 25);
             this.TBMic.TabIndex = 10;
@@ -348,9 +339,8 @@
             // TBother
             // 
             this.TBother.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBother.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBother.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBother.Location = new System.Drawing.Point(588, 659);
+            this.TBother.Location = new System.Drawing.Point(621, 659);
             this.TBother.Multiline = true;
             this.TBother.Name = "TBother";
             this.TBother.Size = new System.Drawing.Size(260, 84);
@@ -359,9 +349,8 @@
             // TBRBC
             // 
             this.TBRBC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBRBC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBRBC.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBRBC.Location = new System.Drawing.Point(588, 628);
+            this.TBRBC.Location = new System.Drawing.Point(621, 628);
             this.TBRBC.Name = "TBRBC";
             this.TBRBC.Size = new System.Drawing.Size(260, 25);
             this.TBRBC.TabIndex = 10;
@@ -369,9 +358,8 @@
             // TBPus
             // 
             this.TBPus.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBPus.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBPus.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPus.Location = new System.Drawing.Point(588, 597);
+            this.TBPus.Location = new System.Drawing.Point(621, 597);
             this.TBPus.Name = "TBPus";
             this.TBPus.Size = new System.Drawing.Size(260, 25);
             this.TBPus.TabIndex = 10;
@@ -379,9 +367,8 @@
             // TBEpi
             // 
             this.TBEpi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBEpi.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBEpi.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBEpi.Location = new System.Drawing.Point(588, 566);
+            this.TBEpi.Location = new System.Drawing.Point(621, 566);
             this.TBEpi.Name = "TBEpi";
             this.TBEpi.Size = new System.Drawing.Size(260, 25);
             this.TBEpi.TabIndex = 10;
@@ -389,9 +376,8 @@
             // TBKetone
             // 
             this.TBKetone.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBKetone.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBKetone.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBKetone.Location = new System.Drawing.Point(588, 514);
+            this.TBKetone.Location = new System.Drawing.Point(621, 514);
             this.TBKetone.Name = "TBKetone";
             this.TBKetone.Size = new System.Drawing.Size(260, 25);
             this.TBKetone.TabIndex = 10;
@@ -399,9 +385,8 @@
             // TBGlucose
             // 
             this.TBGlucose.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBGlucose.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBGlucose.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBGlucose.Location = new System.Drawing.Point(588, 483);
+            this.TBGlucose.Location = new System.Drawing.Point(621, 483);
             this.TBGlucose.Name = "TBGlucose";
             this.TBGlucose.Size = new System.Drawing.Size(260, 25);
             this.TBGlucose.TabIndex = 10;
@@ -409,9 +394,8 @@
             // TBProtein
             // 
             this.TBProtein.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBProtein.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBProtein.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBProtein.Location = new System.Drawing.Point(588, 452);
+            this.TBProtein.Location = new System.Drawing.Point(621, 452);
             this.TBProtein.Name = "TBProtein";
             this.TBProtein.Size = new System.Drawing.Size(260, 25);
             this.TBProtein.TabIndex = 10;
@@ -419,9 +403,8 @@
             // TBGravity
             // 
             this.TBGravity.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBGravity.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBGravity.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBGravity.Location = new System.Drawing.Point(588, 421);
+            this.TBGravity.Location = new System.Drawing.Point(621, 421);
             this.TBGravity.Name = "TBGravity";
             this.TBGravity.Size = new System.Drawing.Size(260, 25);
             this.TBGravity.TabIndex = 10;
@@ -431,7 +414,7 @@
             this.TBMac.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.TBMac.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBMac.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBMac.Location = new System.Drawing.Point(145, 474);
+            this.TBMac.Location = new System.Drawing.Point(178, 474);
             this.TBMac.Name = "TBMac";
             this.TBMac.Size = new System.Drawing.Size(260, 25);
             this.TBMac.TabIndex = 10;
@@ -439,9 +422,8 @@
             // TBPH
             // 
             this.TBPH.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBPH.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBPH.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBPH.Location = new System.Drawing.Point(588, 390);
+            this.TBPH.Location = new System.Drawing.Point(621, 390);
             this.TBPH.Name = "TBPH";
             this.TBPH.Size = new System.Drawing.Size(260, 25);
             this.TBPH.TabIndex = 10;
@@ -449,9 +431,8 @@
             // TBG6
             // 
             this.TBG6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBG6.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBG6.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBG6.Location = new System.Drawing.Point(145, 390);
+            this.TBG6.Location = new System.Drawing.Point(178, 390);
             this.TBG6.Name = "TBG6";
             this.TBG6.Size = new System.Drawing.Size(260, 25);
             this.TBG6.TabIndex = 10;
@@ -459,9 +440,8 @@
             // TBNitrit
             // 
             this.TBNitrit.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBNitrit.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBNitrit.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBNitrit.Location = new System.Drawing.Point(588, 359);
+            this.TBNitrit.Location = new System.Drawing.Point(621, 359);
             this.TBNitrit.Name = "TBNitrit";
             this.TBNitrit.Size = new System.Drawing.Size(260, 25);
             this.TBNitrit.TabIndex = 10;
@@ -469,9 +449,8 @@
             // TBFullBlood
             // 
             this.TBFullBlood.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBFullBlood.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBFullBlood.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBFullBlood.Location = new System.Drawing.Point(145, 359);
+            this.TBFullBlood.Location = new System.Drawing.Point(178, 359);
             this.TBFullBlood.Name = "TBFullBlood";
             this.TBFullBlood.Size = new System.Drawing.Size(260, 25);
             this.TBFullBlood.TabIndex = 10;
@@ -479,9 +458,8 @@
             // TBBlood
             // 
             this.TBBlood.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBBlood.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBBlood.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBlood.Location = new System.Drawing.Point(588, 327);
+            this.TBBlood.Location = new System.Drawing.Point(621, 327);
             this.TBBlood.Name = "TBBlood";
             this.TBBlood.Size = new System.Drawing.Size(260, 25);
             this.TBBlood.TabIndex = 10;
@@ -489,9 +467,8 @@
             // TBHev
             // 
             this.TBHev.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBHev.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBHev.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBHev.Location = new System.Drawing.Point(145, 327);
+            this.TBHev.Location = new System.Drawing.Point(178, 327);
             this.TBHev.Name = "TBHev";
             this.TBHev.Size = new System.Drawing.Size(260, 25);
             this.TBHev.TabIndex = 10;
@@ -501,7 +478,7 @@
             this.label27.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(526, 661);
+            this.label27.Location = new System.Drawing.Point(559, 661);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(57, 19);
             this.label27.TabIndex = 7;
@@ -510,9 +487,8 @@
             // TBBili
             // 
             this.TBBili.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBBili.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBBili.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBili.Location = new System.Drawing.Point(588, 294);
+            this.TBBili.Location = new System.Drawing.Point(621, 294);
             this.TBBili.Name = "TBBili";
             this.TBBili.Size = new System.Drawing.Size(260, 25);
             this.TBBili.TabIndex = 10;
@@ -522,7 +498,7 @@
             this.label26.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(536, 630);
+            this.label26.Location = new System.Drawing.Point(569, 630);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(47, 19);
             this.label26.TabIndex = 7;
@@ -533,7 +509,7 @@
             this.label36.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(74, 841);
+            this.label36.Location = new System.Drawing.Point(107, 841);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(65, 19);
             this.label36.TabIndex = 7;
@@ -542,9 +518,8 @@
             // TBUrobil
             // 
             this.TBUrobil.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBUrobil.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBUrobil.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBUrobil.Location = new System.Drawing.Point(588, 262);
+            this.TBUrobil.Location = new System.Drawing.Point(621, 262);
             this.TBUrobil.Name = "TBUrobil";
             this.TBUrobil.Size = new System.Drawing.Size(260, 25);
             this.TBUrobil.TabIndex = 10;
@@ -554,7 +529,7 @@
             this.label35.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(52, 757);
+            this.label35.Location = new System.Drawing.Point(85, 757);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(87, 19);
             this.label35.TabIndex = 7;
@@ -565,7 +540,7 @@
             this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(513, 599);
+            this.label25.Location = new System.Drawing.Point(546, 599);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(70, 19);
             this.label25.TabIndex = 7;
@@ -576,7 +551,7 @@
             this.label34.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(91, 726);
+            this.label34.Location = new System.Drawing.Point(124, 726);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(48, 19);
             this.label34.TabIndex = 7;
@@ -585,9 +560,8 @@
             // TBRetro
             // 
             this.TBRetro.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBRetro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBRetro.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBRetro.Location = new System.Drawing.Point(145, 294);
+            this.TBRetro.Location = new System.Drawing.Point(178, 294);
             this.TBRetro.Name = "TBRetro";
             this.TBRetro.Size = new System.Drawing.Size(260, 25);
             this.TBRetro.TabIndex = 10;
@@ -597,7 +571,7 @@
             this.label33.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(44, 695);
+            this.label33.Location = new System.Drawing.Point(77, 695);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(95, 19);
             this.label33.TabIndex = 7;
@@ -608,7 +582,7 @@
             this.label24.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(475, 568);
+            this.label24.Location = new System.Drawing.Point(508, 568);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(108, 19);
             this.label24.TabIndex = 7;
@@ -619,7 +593,7 @@
             this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(17, 663);
+            this.label32.Location = new System.Drawing.Point(50, 663);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(122, 19);
             this.label32.TabIndex = 7;
@@ -628,9 +602,8 @@
             // TBHB
             // 
             this.TBHB.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBHB.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBHB.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBHB.Location = new System.Drawing.Point(145, 262);
+            this.TBHB.Location = new System.Drawing.Point(178, 262);
             this.TBHB.Name = "TBHB";
             this.TBHB.Size = new System.Drawing.Size(260, 25);
             this.TBHB.TabIndex = 10;
@@ -640,7 +613,7 @@
             this.label31.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(83, 632);
+            this.label31.Location = new System.Drawing.Point(116, 632);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(56, 19);
             this.label31.TabIndex = 7;
@@ -651,7 +624,7 @@
             this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(518, 516);
+            this.label23.Location = new System.Drawing.Point(551, 516);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(65, 19);
             this.label23.TabIndex = 7;
@@ -662,7 +635,7 @@
             this.label30.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(80, 601);
+            this.label30.Location = new System.Drawing.Point(113, 601);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(59, 19);
             this.label30.TabIndex = 7;
@@ -671,9 +644,8 @@
             // TBLeuk
             // 
             this.TBLeuk.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBLeuk.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBLeuk.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBLeuk.Location = new System.Drawing.Point(588, 230);
+            this.TBLeuk.Location = new System.Drawing.Point(621, 230);
             this.TBLeuk.Name = "TBLeuk";
             this.TBLeuk.Size = new System.Drawing.Size(260, 25);
             this.TBLeuk.TabIndex = 10;
@@ -683,7 +655,7 @@
             this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(518, 485);
+            this.label22.Location = new System.Drawing.Point(551, 485);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(65, 19);
             this.label22.TabIndex = 7;
@@ -694,7 +666,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(102, 507);
+            this.label11.Location = new System.Drawing.Point(135, 507);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(37, 19);
             this.label11.TabIndex = 7;
@@ -705,7 +677,7 @@
             this.lbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl.AutoSize = true;
             this.lbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl.Location = new System.Drawing.Point(524, 454);
+            this.lbl.Location = new System.Drawing.Point(557, 454);
             this.lbl.Name = "lbl";
             this.lbl.Size = new System.Drawing.Size(59, 19);
             this.lbl.TabIndex = 7;
@@ -714,9 +686,8 @@
             // TBSickling
             // 
             this.TBSickling.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBSickling.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBSickling.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBSickling.Location = new System.Drawing.Point(145, 230);
+            this.TBSickling.Location = new System.Drawing.Point(178, 230);
             this.TBSickling.Name = "TBSickling";
             this.TBSickling.Size = new System.Drawing.Size(260, 25);
             this.TBSickling.TabIndex = 10;
@@ -726,7 +697,7 @@
             this.lbl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl1.Location = new System.Drawing.Point(473, 423);
+            this.lbl1.Location = new System.Drawing.Point(506, 423);
             this.lbl1.Name = "lbl1";
             this.lbl1.Size = new System.Drawing.Size(110, 19);
             this.lbl1.TabIndex = 7;
@@ -735,9 +706,8 @@
             // TBColor
             // 
             this.TBColor.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBColor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBColor.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBColor.Location = new System.Drawing.Point(588, 196);
+            this.TBColor.Location = new System.Drawing.Point(621, 196);
             this.TBColor.Name = "TBColor";
             this.TBColor.Size = new System.Drawing.Size(260, 25);
             this.TBColor.TabIndex = 10;
@@ -747,7 +717,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(98, 476);
+            this.label10.Location = new System.Drawing.Point(131, 476);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(41, 19);
             this.label10.TabIndex = 7;
@@ -758,7 +728,7 @@
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(552, 392);
+            this.label19.Location = new System.Drawing.Point(585, 392);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(31, 19);
             this.label19.TabIndex = 7;
@@ -767,9 +737,8 @@
             // TBFactor
             // 
             this.TBFactor.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBFactor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBFactor.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBFactor.Location = new System.Drawing.Point(145, 196);
+            this.TBFactor.Location = new System.Drawing.Point(178, 196);
             this.TBFactor.Name = "TBFactor";
             this.TBFactor.Size = new System.Drawing.Size(260, 25);
             this.TBFactor.TabIndex = 10;
@@ -777,9 +746,8 @@
             // TBAppearance
             // 
             this.TBAppearance.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBAppearance.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBAppearance.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBAppearance.Location = new System.Drawing.Point(588, 164);
+            this.TBAppearance.Location = new System.Drawing.Point(621, 164);
             this.TBAppearance.Name = "TBAppearance";
             this.TBAppearance.Size = new System.Drawing.Size(260, 25);
             this.TBAppearance.TabIndex = 10;
@@ -789,7 +757,7 @@
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(30, 392);
+            this.label8.Location = new System.Drawing.Point(63, 392);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(109, 19);
             this.label8.TabIndex = 7;
@@ -800,7 +768,7 @@
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(537, 361);
+            this.label18.Location = new System.Drawing.Point(570, 361);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(46, 19);
             this.label18.TabIndex = 7;
@@ -809,9 +777,8 @@
             // TBBloodGroup
             // 
             this.TBBloodGroup.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.TBBloodGroup.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.TBBloodGroup.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBBloodGroup.Location = new System.Drawing.Point(145, 164);
+            this.TBBloodGroup.Location = new System.Drawing.Point(178, 164);
             this.TBBloodGroup.Name = "TBBloodGroup";
             this.TBBloodGroup.Size = new System.Drawing.Size(260, 25);
             this.TBBloodGroup.TabIndex = 10;
@@ -821,7 +788,7 @@
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(533, 329);
+            this.label17.Location = new System.Drawing.Point(566, 329);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(50, 19);
             this.label17.TabIndex = 7;
@@ -832,7 +799,7 @@
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(23, 361);
+            this.label7.Location = new System.Drawing.Point(56, 361);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(116, 19);
             this.label7.TabIndex = 7;
@@ -843,7 +810,7 @@
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(479, 264);
+            this.label16.Location = new System.Drawing.Point(512, 264);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(104, 19);
             this.label16.TabIndex = 7;
@@ -854,7 +821,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(101, 329);
+            this.label6.Location = new System.Drawing.Point(134, 329);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 19);
             this.label6.TabIndex = 7;
@@ -865,7 +832,7 @@
             this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(516, 296);
+            this.label15.Location = new System.Drawing.Point(549, 296);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(67, 19);
             this.label15.TabIndex = 7;
@@ -876,7 +843,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(81, 264);
+            this.label5.Location = new System.Drawing.Point(114, 264);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 19);
             this.label5.TabIndex = 7;
@@ -887,7 +854,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(446, 232);
+            this.label14.Location = new System.Drawing.Point(479, 232);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(137, 19);
             this.label14.TabIndex = 7;
@@ -898,7 +865,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(44, 296);
+            this.label4.Location = new System.Drawing.Point(77, 296);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 19);
             this.label4.TabIndex = 7;
@@ -909,7 +876,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(536, 198);
+            this.label13.Location = new System.Drawing.Point(569, 198);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(47, 19);
             this.label13.TabIndex = 7;
@@ -920,7 +887,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(77, 232);
+            this.label3.Location = new System.Drawing.Point(110, 232);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 19);
             this.label3.TabIndex = 7;
@@ -931,7 +898,7 @@
             this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(493, 166);
+            this.label12.Location = new System.Drawing.Point(526, 166);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(90, 19);
             this.label12.TabIndex = 7;
@@ -942,7 +909,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 198);
+            this.label2.Location = new System.Drawing.Point(70, 198);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 19);
             this.label2.TabIndex = 7;
@@ -953,7 +920,7 @@
             this.classLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.classLbl.AutoSize = true;
             this.classLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classLbl.Location = new System.Drawing.Point(615, 54);
+            this.classLbl.Location = new System.Drawing.Point(648, 54);
             this.classLbl.Name = "classLbl";
             this.classLbl.Size = new System.Drawing.Size(24, 19);
             this.classLbl.TabIndex = 7;
@@ -964,7 +931,7 @@
             this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(561, 54);
+            this.label40.Location = new System.Drawing.Point(594, 54);
             this.label40.Name = "label40";
             this.label40.Size = new System.Drawing.Size(48, 19);
             this.label40.TabIndex = 7;
@@ -975,7 +942,7 @@
             this.nameLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nameLbl.AutoSize = true;
             this.nameLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameLbl.Location = new System.Drawing.Point(98, 54);
+            this.nameLbl.Location = new System.Drawing.Point(131, 54);
             this.nameLbl.Name = "nameLbl";
             this.nameLbl.Size = new System.Drawing.Size(82, 19);
             this.nameLbl.TabIndex = 7;
@@ -986,7 +953,7 @@
             this.label39.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(44, 54);
+            this.label39.Location = new System.Drawing.Point(77, 54);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(51, 19);
             this.label39.TabIndex = 7;
@@ -997,7 +964,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(48, 166);
+            this.label1.Location = new System.Drawing.Point(81, 166);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 19);
             this.label1.TabIndex = 7;
@@ -1008,7 +975,7 @@
             this.label38.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(225, 572);
+            this.label38.Location = new System.Drawing.Point(258, 572);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(89, 19);
             this.label38.TabIndex = 4;
@@ -1019,7 +986,7 @@
             this.label37.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(225, 443);
+            this.label37.Location = new System.Drawing.Point(258, 443);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(81, 19);
             this.label37.TabIndex = 4;
@@ -1030,7 +997,7 @@
             this.label29.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Calibri", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(664, 136);
+            this.label29.Location = new System.Drawing.Point(697, 136);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(85, 19);
             this.label29.TabIndex = 4;
@@ -1041,7 +1008,7 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(349, 97);
+            this.label9.Location = new System.Drawing.Point(382, 97);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(169, 19);
             this.label9.TabIndex = 4;
@@ -1052,7 +1019,7 @@
             this.empSalaryLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.empSalaryLbl.AutoSize = true;
             this.empSalaryLbl.Font = new System.Drawing.Font("Calibri", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.empSalaryLbl.Location = new System.Drawing.Point(358, 9);
+            this.empSalaryLbl.Location = new System.Drawing.Point(391, 9);
             this.empSalaryLbl.Name = "empSalaryLbl";
             this.empSalaryLbl.Size = new System.Drawing.Size(150, 23);
             this.empSalaryLbl.TabIndex = 4;
@@ -1062,7 +1029,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(898, 630);
+            this.ClientSize = new System.Drawing.Size(963, 761);
             this.Controls.Add(this.bgPanel);
             this.Name = "AddMedicalReport";
             this.Text = "AddMedicalReport";
