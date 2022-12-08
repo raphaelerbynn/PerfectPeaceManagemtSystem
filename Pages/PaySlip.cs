@@ -9,11 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net.Mail;
+using System.Net;
 
 namespace Perfect_Peace_System.Pages
 {
     public partial class PaySlip : Form
     {
+        private string email;
         private string employeeId = Payroll.getPaymentNameId();
         private string query;
         readonly PrintDocument printdoc = new PrintDocument();
@@ -41,6 +44,7 @@ namespace Perfect_Peace_System.Pages
                 {
                     empNameLbl.Text = reader["f_name"].ToString() + " " + reader["l_name"].ToString();
                     emailLbl.Text = reader["email"].ToString();
+                    email = reader["email"].ToString();
                     contactLbl.Text = reader["phone"].ToString();
                     staffIdLbl.Text = "PPS"+reader["teacher_id"].ToString();
                     ssnitLbl.Text = reader["ssnit_number"].ToString();
@@ -179,7 +183,7 @@ namespace Perfect_Peace_System.Pages
         private void printdoc_printPage(object sender, PrintPageEventArgs e)
         {
             var bitMap = ControlPrinter.ScrollableControlToBitmap(this.payslipPanel, true, true);
-            e.Graphics.DrawImage(bitMap, new Rectangle(0, 0, payslipPanel.Width, payslipPanel.Height));
+            e.Graphics.DrawImage(bitMap, new Rectangle((printdoc.DefaultPageSettings.PaperSize.Width - payslipPanel.Width) / 2, 0, payslipPanel.Width, payslipPanel.Height));
         }
 
         private void addToPaymentBtn_Click(object sender, EventArgs e)
@@ -187,6 +191,43 @@ namespace Perfect_Peace_System.Pages
             amountPaidLbl.Text = "GHc "+amountPaidTb.Text;
             salaryMonthLbl.Text = salaryMonthPk.Text;
             modeOfPaymentLbl.Text = modeOfPaymentCb.Text;
+        }
+
+        private void sendEmailAfterPayment(MailAddress to, MailAddress from, string amount)
+        {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
+            try
+            {
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+                smtp.EnableSsl = true;
+                // smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new NetworkCredential("perfectpeace@gmail.com", "");
+
+                MailMessage mail = new MailMessage();
+                mail.From = from;
+                mail.To.Add(to);
+                mail.Subject = "";
+                mail.Body = "";
+
+                //smtp.Port = 587;
+                //smtp.Host = "smtp.gmail.com";
+                //smtp.EnableSsl = true;
+                //smtp.UseDefaultCredentials = false;
+                //smtp.Credentials = new NetworkCredential("erbynn1234@gmail.com", "mountain500000");
+                //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                smtp.Send(mail);
+                MessageBox.Show("Email Sent to Employee");
+                //.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Err: " + ex.Message);
+            }
+            
         }
 
         private void savePaymentBtn_Click(object sender, EventArgs e)
@@ -203,6 +244,11 @@ namespace Perfect_Peace_System.Pages
                 DbClient.query_execute(query);
 
                 MessageBox.Show("Payment Saved");
+
+                MailAddress to = new MailAddress(email);
+                MailAddress from = new MailAddress("perfectpeace@gmail.com", "PERFECT PEACE PREPARATORY SCHOOL");
+                sendEmailAfterPayment(to, from, amountPaidLbl.Text);
+
                 string message = "Do you want to print PaySlip?";
                 MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, "", deleteAction);

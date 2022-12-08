@@ -177,7 +177,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(568, 15);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Memoeasem/Essaman, Central Region   |   Contact: 024 233 2420   |   Email: perfec" +
+            this.label2.Text = "Mempeasem/Essaman, Central Region   |   Contact: 024 233 2420   |   Email: perfec" +
     "tpeace@gmail.com";
             // 
             // termLbl
