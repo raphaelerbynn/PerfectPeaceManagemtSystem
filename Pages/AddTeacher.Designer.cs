@@ -61,14 +61,18 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.bgPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // emailTb
             // 
             this.emailTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.emailTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.emailTb.Location = new System.Drawing.Point(140, 266);
+            this.emailTb.Location = new System.Drawing.Point(104, 208);
             this.emailTb.Name = "emailTb";
             this.emailTb.Size = new System.Drawing.Size(716, 27);
             this.emailTb.TabIndex = 38;
@@ -77,7 +81,7 @@
             // 
             this.phoneTB.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.phoneTB.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.phoneTB.Location = new System.Drawing.Point(140, 216);
+            this.phoneTB.Location = new System.Drawing.Point(104, 158);
             this.phoneTB.Name = "phoneTB";
             this.phoneTB.Size = new System.Drawing.Size(716, 27);
             this.phoneTB.TabIndex = 37;
@@ -87,7 +91,7 @@
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(81, 269);
+            this.label5.Location = new System.Drawing.Point(45, 211);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 19);
             this.label5.TabIndex = 36;
@@ -98,7 +102,7 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(69, 219);
+            this.label2.Location = new System.Drawing.Point(33, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 19);
             this.label2.TabIndex = 35;
@@ -142,7 +146,7 @@
             this.femaleRadio.AutoSize = true;
             this.femaleRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.femaleRadio.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.femaleRadio.Location = new System.Drawing.Point(203, 171);
+            this.femaleRadio.Location = new System.Drawing.Point(167, 113);
             this.femaleRadio.Name = "femaleRadio";
             this.femaleRadio.Size = new System.Drawing.Size(72, 26);
             this.femaleRadio.TabIndex = 32;
@@ -157,7 +161,7 @@
             this.maleRadio.Checked = true;
             this.maleRadio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.maleRadio.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maleRadio.Location = new System.Drawing.Point(140, 171);
+            this.maleRadio.Location = new System.Drawing.Point(104, 113);
             this.maleRadio.Name = "maleRadio";
             this.maleRadio.Size = new System.Drawing.Size(57, 26);
             this.maleRadio.TabIndex = 31;
@@ -171,7 +175,7 @@
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(57, 318);
+            this.label6.Location = new System.Drawing.Point(21, 260);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(77, 19);
             this.label6.TabIndex = 30;
@@ -182,7 +186,7 @@
             this.lnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.lnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnameTb.Location = new System.Drawing.Point(140, 122);
+            this.lnameTb.Location = new System.Drawing.Point(104, 64);
             this.lnameTb.Name = "lnameTb";
             this.lnameTb.Size = new System.Drawing.Size(716, 27);
             this.lnameTb.TabIndex = 29;
@@ -192,7 +196,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 125);
+            this.label4.Location = new System.Drawing.Point(4, 67);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(94, 19);
             this.label4.TabIndex = 28;
@@ -203,7 +207,7 @@
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(70, 171);
+            this.label3.Location = new System.Drawing.Point(34, 113);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 19);
             this.label3.TabIndex = 27;
@@ -214,7 +218,7 @@
             this.addressTb.AcceptsReturn = true;
             this.addressTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.addressTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addressTb.Location = new System.Drawing.Point(140, 315);
+            this.addressTb.Location = new System.Drawing.Point(104, 257);
             this.addressTb.Multiline = true;
             this.addressTb.Name = "addressTb";
             this.addressTb.Size = new System.Drawing.Size(716, 66);
@@ -225,7 +229,7 @@
             this.fnameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.fnameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.fnameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fnameTb.Location = new System.Drawing.Point(140, 78);
+            this.fnameTb.Location = new System.Drawing.Point(104, 20);
             this.fnameTb.Name = "fnameTb";
             this.fnameTb.Size = new System.Drawing.Size(716, 27);
             this.fnameTb.TabIndex = 25;
@@ -246,7 +250,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(39, 81);
+            this.label1.Location = new System.Drawing.Point(3, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 19);
             this.label1.TabIndex = 24;
@@ -255,38 +259,13 @@
             // bgPanel
             // 
             this.bgPanel.AutoScroll = true;
-            this.bgPanel.Controls.Add(this.positionCb);
-            this.bgPanel.Controls.Add(this.categoryCb);
+            this.bgPanel.Controls.Add(this.panel2);
+            this.bgPanel.Controls.Add(this.panel1);
             this.bgPanel.Controls.Add(this.label12);
-            this.bgPanel.Controls.Add(this.fnameTb);
             this.bgPanel.Controls.Add(this.clearFeildBtn);
-            this.bgPanel.Controls.Add(this.emailTb);
             this.bgPanel.Controls.Add(this.registerTeacherBnt);
-            this.bgPanel.Controls.Add(this.label1);
             this.bgPanel.Controls.Add(this.label8);
             this.bgPanel.Controls.Add(this.label7);
-            this.bgPanel.Controls.Add(this.accountNumTb);
-            this.bgPanel.Controls.Add(this.specificTb);
-            this.bgPanel.Controls.Add(this.tinTb);
-            this.bgPanel.Controls.Add(this.ssnitTb);
-            this.bgPanel.Controls.Add(this.bankTb);
-            this.bgPanel.Controls.Add(this.phoneTB);
-            this.bgPanel.Controls.Add(this.addressTb);
-            this.bgPanel.Controls.Add(this.label5);
-            this.bgPanel.Controls.Add(this.label3);
-            this.bgPanel.Controls.Add(this.label2);
-            this.bgPanel.Controls.Add(this.label4);
-            this.bgPanel.Controls.Add(this.specificLbl);
-            this.bgPanel.Controls.Add(this.positionLbl);
-            this.bgPanel.Controls.Add(this.label14);
-            this.bgPanel.Controls.Add(this.label13);
-            this.bgPanel.Controls.Add(this.label10);
-            this.bgPanel.Controls.Add(this.label11);
-            this.bgPanel.Controls.Add(this.lnameTb);
-            this.bgPanel.Controls.Add(this.label9);
-            this.bgPanel.Controls.Add(this.label6);
-            this.bgPanel.Controls.Add(this.femaleRadio);
-            this.bgPanel.Controls.Add(this.maleRadio);
             this.bgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bgPanel.Location = new System.Drawing.Point(0, 0);
             this.bgPanel.Name = "bgPanel";
@@ -303,7 +282,7 @@
             this.positionCb.Items.AddRange(new object[] {
             "Accountant",
             "Other"});
-            this.positionCb.Location = new System.Drawing.Point(159, 705);
+            this.positionCb.Location = new System.Drawing.Point(130, 269);
             this.positionCb.Name = "positionCb";
             this.positionCb.Size = new System.Drawing.Size(697, 27);
             this.positionCb.TabIndex = 40;
@@ -319,7 +298,7 @@
             this.categoryCb.Items.AddRange(new object[] {
             "Teaching",
             "Non-Teaching"});
-            this.categoryCb.Location = new System.Drawing.Point(159, 659);
+            this.categoryCb.Location = new System.Drawing.Point(130, 223);
             this.categoryCb.Name = "categoryCb";
             this.categoryCb.Size = new System.Drawing.Size(697, 27);
             this.categoryCb.TabIndex = 40;
@@ -349,7 +328,7 @@
             this.accountNumTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.accountNumTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.accountNumTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.accountNumTb.Location = new System.Drawing.Point(159, 500);
+            this.accountNumTb.Location = new System.Drawing.Point(130, 64);
             this.accountNumTb.Name = "accountNumTb";
             this.accountNumTb.Size = new System.Drawing.Size(697, 27);
             this.accountNumTb.TabIndex = 37;
@@ -359,7 +338,7 @@
             this.specificTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.specificTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.specificTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.specificTb.Location = new System.Drawing.Point(159, 747);
+            this.specificTb.Location = new System.Drawing.Point(130, 311);
             this.specificTb.Name = "specificTb";
             this.specificTb.Size = new System.Drawing.Size(697, 27);
             this.specificTb.TabIndex = 37;
@@ -370,7 +349,7 @@
             this.tinTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tinTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.tinTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tinTb.Location = new System.Drawing.Point(159, 595);
+            this.tinTb.Location = new System.Drawing.Point(130, 159);
             this.tinTb.Name = "tinTb";
             this.tinTb.Size = new System.Drawing.Size(697, 27);
             this.tinTb.TabIndex = 37;
@@ -380,7 +359,7 @@
             this.ssnitTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ssnitTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ssnitTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ssnitTb.Location = new System.Drawing.Point(159, 550);
+            this.ssnitTb.Location = new System.Drawing.Point(130, 114);
             this.ssnitTb.Name = "ssnitTb";
             this.ssnitTb.Size = new System.Drawing.Size(697, 27);
             this.ssnitTb.TabIndex = 37;
@@ -390,7 +369,7 @@
             this.bankTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.bankTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.bankTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bankTb.Location = new System.Drawing.Point(159, 453);
+            this.bankTb.Location = new System.Drawing.Point(130, 17);
             this.bankTb.Name = "bankTb";
             this.bankTb.Size = new System.Drawing.Size(697, 27);
             this.bankTb.TabIndex = 37;
@@ -400,7 +379,7 @@
             this.specificLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.specificLbl.AutoSize = true;
             this.specificLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.specificLbl.Location = new System.Drawing.Point(88, 755);
+            this.specificLbl.Location = new System.Drawing.Point(59, 319);
             this.specificLbl.Name = "specificLbl";
             this.specificLbl.Size = new System.Drawing.Size(62, 19);
             this.specificLbl.TabIndex = 30;
@@ -412,7 +391,7 @@
             this.positionLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.positionLbl.AutoSize = true;
             this.positionLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.positionLbl.Location = new System.Drawing.Point(88, 713);
+            this.positionLbl.Location = new System.Drawing.Point(59, 277);
             this.positionLbl.Name = "positionLbl";
             this.positionLbl.Size = new System.Drawing.Size(65, 19);
             this.positionLbl.TabIndex = 30;
@@ -424,7 +403,7 @@
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(82, 667);
+            this.label14.Location = new System.Drawing.Point(53, 231);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(71, 19);
             this.label14.TabIndex = 30;
@@ -435,7 +414,7 @@
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(63, 598);
+            this.label13.Location = new System.Drawing.Point(34, 162);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(90, 19);
             this.label13.TabIndex = 30;
@@ -446,7 +425,7 @@
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(33, 503);
+            this.label10.Location = new System.Drawing.Point(4, 67);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(120, 19);
             this.label10.TabIndex = 30;
@@ -457,7 +436,7 @@
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(49, 553);
+            this.label11.Location = new System.Drawing.Point(20, 117);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(104, 19);
             this.label11.TabIndex = 30;
@@ -468,11 +447,56 @@
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(66, 456);
+            this.label9.Location = new System.Drawing.Point(37, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 19);
             this.label9.TabIndex = 30;
             this.label9.Text = "Bank Name:";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.maleRadio);
+            this.panel1.Controls.Add(this.femaleRadio);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.lnameTb);
+            this.panel1.Controls.Add(this.fnameTb);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.emailTb);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.addressTb);
+            this.panel1.Controls.Add(this.phoneTB);
+            this.panel1.Location = new System.Drawing.Point(37, 54);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(853, 346);
+            this.panel1.TabIndex = 41;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Controls.Add(this.positionCb);
+            this.panel2.Controls.Add(this.label10);
+            this.panel2.Controls.Add(this.categoryCb);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.positionLbl);
+            this.panel2.Controls.Add(this.specificLbl);
+            this.panel2.Controls.Add(this.bankTb);
+            this.panel2.Controls.Add(this.ssnitTb);
+            this.panel2.Controls.Add(this.accountNumTb);
+            this.panel2.Controls.Add(this.tinTb);
+            this.panel2.Controls.Add(this.specificTb);
+            this.panel2.Location = new System.Drawing.Point(37, 444);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(853, 363);
+            this.panel2.TabIndex = 42;
             // 
             // AddTeacher
             // 
@@ -484,6 +508,10 @@
             this.Text = "AddTeacher";
             this.bgPanel.ResumeLayout(false);
             this.bgPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -523,5 +551,7 @@
         private System.Windows.Forms.TextBox specificTb;
         private System.Windows.Forms.Label specificLbl;
         private System.Windows.Forms.Label positionLbl;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }

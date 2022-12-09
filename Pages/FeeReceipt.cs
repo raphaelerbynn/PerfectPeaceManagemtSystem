@@ -50,7 +50,7 @@ namespace Perfect_Peace_System.Pages
                     totalAmntLbl.Text = "GHc " + reader["total"].ToString();
                     dateLbl.Text = reader["date"].ToString();
 
-                    amntLbl_1.Text = amntLbl_0.Text;
+                    amntLbl_1.Text = reader["paid"].ToString();
                 }
                 reader.Close();
 
@@ -79,19 +79,20 @@ namespace Perfect_Peace_System.Pages
             PrintDocument printdoc = new PrintDocument();
             PrintPreviewDialog printPreview = new PrintPreviewDialog();
 
-            PrinterSettings ps = new PrinterSettings();
+            //PrinterSettings ps = new PrinterSettings();
             //reportCardPanel = panel;
             //getPrintArea(panel);
             printPreview.Document = printdoc;
             printdoc.PrintPage += new PrintPageEventHandler(printResult_printPage);
             ((Form)printPreview).Size = new Size(950, 539);
+            printdoc.DefaultPageSettings.PaperSize = new PaperSize("pprnm", 285, 600);
             printPreview.ShowDialog();
         }
 
         private void printResult_printPage(object sender, PrintPageEventArgs e)
         {
             var bitMap = ControlPrinter.ScrollableControlToBitmap(this.receiptPanel, true, true);
-            e.Graphics.DrawImage(bitMap, new Rectangle(5, 5, receiptPanel.Width, receiptPanel.Height));
+            e.Graphics.DrawImage(bitMap, new Rectangle(0, 0, receiptPanel.Width, receiptPanel.Height));
         }
 
         /*private void Print(Panel panel)
@@ -122,7 +123,5 @@ namespace Perfect_Peace_System.Pages
         {
 
         }
-
-
     }
 }
