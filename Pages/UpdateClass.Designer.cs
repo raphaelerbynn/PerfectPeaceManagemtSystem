@@ -64,6 +64,7 @@
             this.nameTb = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.bgPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tuition)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.firstAid)).BeginInit();
@@ -72,45 +73,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.maintenance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationary)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cocurricular)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bgPanel
             // 
-            this.bgPanel.Controls.Add(this.label19);
-            this.bgPanel.Controls.Add(this.tuition);
-            this.bgPanel.Controls.Add(this.label17);
-            this.bgPanel.Controls.Add(this.firstAid);
-            this.bgPanel.Controls.Add(this.label15);
-            this.bgPanel.Controls.Add(this.PTA);
-            this.bgPanel.Controls.Add(this.label13);
-            this.bgPanel.Controls.Add(this.water);
-            this.bgPanel.Controls.Add(this.label18);
-            this.bgPanel.Controls.Add(this.label11);
-            this.bgPanel.Controls.Add(this.label16);
-            this.bgPanel.Controls.Add(this.maintenance);
-            this.bgPanel.Controls.Add(this.label14);
-            this.bgPanel.Controls.Add(this.label9);
-            this.bgPanel.Controls.Add(this.label12);
-            this.bgPanel.Controls.Add(this.stationary);
-            this.bgPanel.Controls.Add(this.label10);
-            this.bgPanel.Controls.Add(this.label21);
-            this.bgPanel.Controls.Add(this.totalFeesLbl);
-            this.bgPanel.Controls.Add(this.label8);
-            this.bgPanel.Controls.Add(this.label20);
-            this.bgPanel.Controls.Add(this.cocurricular);
-            this.bgPanel.Controls.Add(this.label22);
-            this.bgPanel.Controls.Add(this.label23);
-            this.bgPanel.Controls.Add(this.noTeacherLink);
+            this.bgPanel.Controls.Add(this.panel1);
             this.bgPanel.Controls.Add(this.updateClassBtn);
-            this.bgPanel.Controls.Add(this.teacherCb);
-            this.bgPanel.Controls.Add(this.sectionCb);
-            this.bgPanel.Controls.Add(this.capacityTb);
-            this.bgPanel.Controls.Add(this.label5);
-            this.bgPanel.Controls.Add(this.label4);
-            this.bgPanel.Controls.Add(this.label3);
-            this.bgPanel.Controls.Add(this.nameTb);
             this.bgPanel.Controls.Add(this.label7);
-            this.bgPanel.Controls.Add(this.label1);
             this.bgPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bgPanel.Location = new System.Drawing.Point(0, 0);
             this.bgPanel.Name = "bgPanel";
@@ -119,10 +89,9 @@
             // 
             // label19
             // 
-            this.label19.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(364, 207);
+            this.label19.Location = new System.Drawing.Point(306, 158);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(34, 19);
             this.label19.TabIndex = 51;
@@ -130,9 +99,8 @@
             // 
             // tuition
             // 
-            this.tuition.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tuition.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tuition.Location = new System.Drawing.Point(404, 205);
+            this.tuition.Location = new System.Drawing.Point(346, 156);
             this.tuition.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -146,10 +114,9 @@
             // 
             // label17
             // 
-            this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(364, 240);
+            this.label17.Location = new System.Drawing.Point(306, 191);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(34, 19);
             this.label17.TabIndex = 49;
@@ -157,9 +124,8 @@
             // 
             // firstAid
             // 
-            this.firstAid.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.firstAid.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.firstAid.Location = new System.Drawing.Point(404, 238);
+            this.firstAid.Location = new System.Drawing.Point(346, 189);
             this.firstAid.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -173,10 +139,9 @@
             // 
             // label15
             // 
-            this.label15.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(364, 272);
+            this.label15.Location = new System.Drawing.Point(306, 223);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(34, 19);
             this.label15.TabIndex = 45;
@@ -184,9 +149,8 @@
             // 
             // PTA
             // 
-            this.PTA.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.PTA.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PTA.Location = new System.Drawing.Point(404, 270);
+            this.PTA.Location = new System.Drawing.Point(346, 221);
             this.PTA.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -200,10 +164,9 @@
             // 
             // label13
             // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(364, 304);
+            this.label13.Location = new System.Drawing.Point(306, 255);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(34, 19);
             this.label13.TabIndex = 43;
@@ -211,9 +174,8 @@
             // 
             // water
             // 
-            this.water.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.water.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.water.Location = new System.Drawing.Point(404, 302);
+            this.water.Location = new System.Drawing.Point(346, 253);
             this.water.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -227,10 +189,9 @@
             // 
             // label18
             // 
-            this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(274, 207);
+            this.label18.Location = new System.Drawing.Point(216, 158);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(88, 19);
             this.label18.TabIndex = 34;
@@ -238,10 +199,9 @@
             // 
             // label11
             // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(364, 334);
+            this.label11.Location = new System.Drawing.Point(306, 285);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(34, 19);
             this.label11.TabIndex = 50;
@@ -249,10 +209,9 @@
             // 
             // label16
             // 
-            this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(292, 240);
+            this.label16.Location = new System.Drawing.Point(234, 191);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(70, 19);
             this.label16.TabIndex = 35;
@@ -260,9 +219,8 @@
             // 
             // maintenance
             // 
-            this.maintenance.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.maintenance.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maintenance.Location = new System.Drawing.Point(404, 332);
+            this.maintenance.Location = new System.Drawing.Point(346, 283);
             this.maintenance.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -276,10 +234,9 @@
             // 
             // label14
             // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(284, 272);
+            this.label14.Location = new System.Drawing.Point(226, 223);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(78, 19);
             this.label14.TabIndex = 32;
@@ -287,10 +244,9 @@
             // 
             // label9
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(364, 364);
+            this.label9.Location = new System.Drawing.Point(306, 315);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(34, 19);
             this.label9.TabIndex = 44;
@@ -298,10 +254,9 @@
             // 
             // label12
             // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(161, 302);
+            this.label12.Location = new System.Drawing.Point(103, 253);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(197, 19);
             this.label12.TabIndex = 31;
@@ -309,9 +264,8 @@
             // 
             // stationary
             // 
-            this.stationary.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.stationary.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.stationary.Location = new System.Drawing.Point(404, 362);
+            this.stationary.Location = new System.Drawing.Point(346, 313);
             this.stationary.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -325,10 +279,9 @@
             // 
             // label10
             // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(260, 334);
+            this.label10.Location = new System.Drawing.Point(202, 285);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(98, 19);
             this.label10.TabIndex = 30;
@@ -336,10 +289,9 @@
             // 
             // label21
             // 
-            this.label21.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(364, 397);
+            this.label21.Location = new System.Drawing.Point(306, 348);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(34, 19);
             this.label21.TabIndex = 46;
@@ -347,10 +299,9 @@
             // 
             // totalFeesLbl
             // 
-            this.totalFeesLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.totalFeesLbl.AutoSize = true;
             this.totalFeesLbl.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.totalFeesLbl.Location = new System.Drawing.Point(394, 432);
+            this.totalFeesLbl.Location = new System.Drawing.Point(336, 383);
             this.totalFeesLbl.Name = "totalFeesLbl";
             this.totalFeesLbl.Size = new System.Drawing.Size(45, 23);
             this.totalFeesLbl.TabIndex = 47;
@@ -358,10 +309,9 @@
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(364, 434);
+            this.label8.Location = new System.Drawing.Point(306, 385);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(35, 19);
             this.label8.TabIndex = 48;
@@ -369,10 +319,9 @@
             // 
             // label20
             // 
-            this.label20.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(280, 364);
+            this.label20.Location = new System.Drawing.Point(222, 315);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(78, 19);
             this.label20.TabIndex = 29;
@@ -380,9 +329,8 @@
             // 
             // cocurricular
             // 
-            this.cocurricular.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cocurricular.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cocurricular.Location = new System.Drawing.Point(404, 395);
+            this.cocurricular.Location = new System.Drawing.Point(346, 346);
             this.cocurricular.Maximum = new decimal(new int[] {
             100000,
             0,
@@ -396,10 +344,9 @@
             // 
             // label22
             // 
-            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(267, 397);
+            this.label22.Location = new System.Drawing.Point(209, 348);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(95, 19);
             this.label22.TabIndex = 33;
@@ -407,10 +354,9 @@
             // 
             // label23
             // 
-            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(315, 434);
+            this.label23.Location = new System.Drawing.Point(257, 385);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(47, 19);
             this.label23.TabIndex = 28;
@@ -418,9 +364,8 @@
             // 
             // noTeacherLink
             // 
-            this.noTeacherLink.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.noTeacherLink.AutoSize = true;
-            this.noTeacherLink.Location = new System.Drawing.Point(557, 195);
+            this.noTeacherLink.Location = new System.Drawing.Point(499, 146);
             this.noTeacherLink.Name = "noTeacherLink";
             this.noTeacherLink.Size = new System.Drawing.Size(98, 13);
             this.noTeacherLink.TabIndex = 27;
@@ -446,18 +391,16 @@
             // 
             // teacherCb
             // 
-            this.teacherCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.teacherCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.teacherCb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.teacherCb.FormattingEnabled = true;
-            this.teacherCb.Location = new System.Drawing.Point(199, 165);
+            this.teacherCb.Location = new System.Drawing.Point(141, 116);
             this.teacherCb.Name = "teacherCb";
             this.teacherCb.Size = new System.Drawing.Size(456, 27);
             this.teacherCb.TabIndex = 21;
             // 
             // sectionCb
             // 
-            this.sectionCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.sectionCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.sectionCb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sectionCb.FormattingEnabled = true;
@@ -468,26 +411,24 @@
             "Lower Primary",
             "Upper Primary",
             "JHS"});
-            this.sectionCb.Location = new System.Drawing.Point(199, 132);
+            this.sectionCb.Location = new System.Drawing.Point(141, 83);
             this.sectionCb.Name = "sectionCb";
             this.sectionCb.Size = new System.Drawing.Size(456, 27);
             this.sectionCb.TabIndex = 20;
             // 
             // capacityTb
             // 
-            this.capacityTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.capacityTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.capacityTb.Location = new System.Drawing.Point(199, 99);
+            this.capacityTb.Location = new System.Drawing.Point(141, 50);
             this.capacityTb.Name = "capacityTb";
             this.capacityTb.Size = new System.Drawing.Size(456, 27);
             this.capacityTb.TabIndex = 19;
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(120, 102);
+            this.label5.Location = new System.Drawing.Point(62, 53);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(73, 19);
             this.label5.TabIndex = 18;
@@ -495,10 +436,9 @@
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(129, 135);
+            this.label4.Location = new System.Drawing.Point(71, 86);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(64, 19);
             this.label4.TabIndex = 17;
@@ -506,10 +446,9 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(125, 168);
+            this.label3.Location = new System.Drawing.Point(67, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 19);
             this.label3.TabIndex = 16;
@@ -517,10 +456,9 @@
             // 
             // nameTb
             // 
-            this.nameTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.nameTb.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nameTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameTb.Location = new System.Drawing.Point(199, 66);
+            this.nameTb.Location = new System.Drawing.Point(141, 17);
             this.nameTb.Name = "nameTb";
             this.nameTb.Size = new System.Drawing.Size(456, 27);
             this.nameTb.TabIndex = 15;
@@ -538,14 +476,55 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(99, 69);
+            this.label1.Location = new System.Drawing.Point(41, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 19);
             this.label1.TabIndex = 14;
             this.label1.Text = "Class Name: ";
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.label19);
+            this.panel1.Controls.Add(this.nameTb);
+            this.panel1.Controls.Add(this.tuition);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label17);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.firstAid);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label15);
+            this.panel1.Controls.Add(this.capacityTb);
+            this.panel1.Controls.Add(this.PTA);
+            this.panel1.Controls.Add(this.sectionCb);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.teacherCb);
+            this.panel1.Controls.Add(this.water);
+            this.panel1.Controls.Add(this.noTeacherLink);
+            this.panel1.Controls.Add(this.label18);
+            this.panel1.Controls.Add(this.label23);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Controls.Add(this.label22);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.cocurricular);
+            this.panel1.Controls.Add(this.maintenance);
+            this.panel1.Controls.Add(this.label20);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.totalFeesLbl);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.label21);
+            this.panel1.Controls.Add(this.stationary);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Location = new System.Drawing.Point(43, 54);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(695, 415);
+            this.panel1.TabIndex = 52;
             // 
             // UpdateClass
             // 
@@ -564,6 +543,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.maintenance)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stationary)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cocurricular)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -606,5 +587,6 @@
         private System.Windows.Forms.NumericUpDown cocurricular;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Panel panel1;
     }
 }

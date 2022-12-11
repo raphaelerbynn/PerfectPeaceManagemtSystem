@@ -71,12 +71,23 @@ namespace Perfect_Peace_System
 
         public override void update(string id)
         {
-            query = "UPDATE Student SET f_name='" + f_name + "', m_name='" + m_name + "', l_name='" + l_name + "', dob='" + dob + "', gender='" + gender + "', class='" + _class + ", 'class_id='" + class_id + "', address='" + address + "', date_updated='" + DateTime.Now + "' WHERE student_id='" +id+"'";
+            query = "UPDATE Student SET f_name='" + f_name + "', m_name='" + m_name + "', l_name='" + l_name + "', dob='" + dob + "', gender='" + gender + "', class='" + _class + "', address='" + address + "', date_updated='" + DateTime.Now + "' WHERE student_id='" +id+"'";
             DbClient.query_execute(query);
         }
 
         public override void show_data(DataGridView dataGrid)
         {
+
+
+
+
+
+
+
+
+
+
+
             query = "SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student";
             DbClient.dataGridFill(dataGrid, query);
         }

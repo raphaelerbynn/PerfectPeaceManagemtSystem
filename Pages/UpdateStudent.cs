@@ -14,6 +14,7 @@ namespace Perfect_Peace_System.Pages
     {
         string query;
         private string id = StudentDataDisplay.getIdFromSelectedRow();
+        private string parent_id;
         OpenNewPage openNewPage = new OpenNewPage();
         ClassRoom classroom = new ClassRoom();
 
@@ -38,17 +39,39 @@ namespace Perfect_Peace_System.Pages
                 lnameTb.Text = reader["l_name"].ToString(); 
                 dobPicker.Text = reader["dob"].ToString();
                 addressTb.Text = reader["address"].ToString();
+                parent_id = reader["parent_id"].ToString();
 
                 _class = reader["class"].ToString();
                 
                 
                 //Console.WriteLine(index);
 
-                if (reader["gender"].ToString() == "Female")
+                if (reader["gender"].ToString() == "FEMALE")
                 {
                     femaleRadio.Checked = true;
                 }
                 maleRadio.Checked = true;
+                
+            }
+            reader.Close();
+            
+            query = "SELECT * FROM Parent WHERE parent_id='" + id + "'";
+            reader = DbClient.query_reader(query);
+            while (reader.Read())
+            {
+                fnamePTb.Text = reader["f_name"].ToString(); 
+                lnamePTb.Text = reader["l_name"].ToString(); 
+                contactTb.Text = reader["contact"].ToString();
+                contact1Tb.Text = reader["contact1"].ToString();
+                relationshipCB.Text = reader["relationship"].ToString();
+                occupationTb.Text = reader["occupation"].ToString();
+
+
+                if (reader["gender"].ToString() == "FEMALE")
+                {
+                    femaleRadioBtn.Checked = true;
+                }
+                maleRadioBtn.Checked = true;
                 
             }
             reader.Close();
@@ -65,14 +88,20 @@ namespace Perfect_Peace_System.Pages
                     break;
                 }
             }
-            //classCb.SelectedIndex = index;
-
-            Console.WriteLine(_class);
         }
 
         private string getRadioBtnValue()
         {
             if (femaleRadio.Checked == true)
+            {
+                return "FEMALE";
+            }
+            return "MALE";
+        }
+        
+        private string getRadioBtnValueParent()
+        {
+            if (femaleRadioBtn.Checked == true)
             {
                 return "FEMALE";
             }
@@ -89,12 +118,18 @@ namespace Perfect_Peace_System.Pages
             if (classCb.SelectedIndex > -1)
             {
                 string class_id = DbClient.query_executeScaler("SELECT class_id FROM Class WHERE name='" + classCb.SelectedItem.ToString() + "'");
+                Console.WriteLine("ccccccccccccccllllllllssss:  "+class_id);
                 if (classroom.maxCapacity(classCb.Text) > classroom.curCapacity(classCb.Text))
                 {
                     Student student = new Student(dobPicker.Value.Date.ToString(), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Today.Date.ToString());
                     student.update(id);
+
                     query = "UPDATE Student SET class_id='"+class_id+"', class='"+classCb.SelectedItem.ToString()+"' WHERE student_id='"+id+"'";
                     DbClient.query_execute(query);
+
+                    query = "UPDATE Parent SET f_name='" + fnamePTb.Text + "', l_name='" + lnamePTb.Text + "', contact='" + contactTb.Text + "', contact1='" + contact1Tb.Text + "', relationship='" + relationshipCB.Text + "', occupation='" + occupationTb.Text + "', gender='" + getRadioBtnValueParent() + "' WHERE parent_id='" + parent_id + "'";
+                    DbClient.query_execute(query);
+
                     MessageBox.Show("Student updated successfully");
                     DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
 
@@ -110,6 +145,10 @@ namespace Perfect_Peace_System.Pages
                 student.update(id);
                 query = "UPDATE Student SET class_id=NULL, class=NULL WHERE student_id='"+id+"'";
                 DbClient.query_execute(query);
+                
+                query = "UPDATE Parent SET f_name='"+fnamePTb.Text+"', l_name='"+lnamePTb.Text+"', contact='"+contactTb.Text+"', contact1='"+contact1Tb.Text+"', relationship='"+relationshipCB.Text+"', occupation='"+occupationTb.Text+"', gender='"+getRadioBtnValueParent()+"' WHERE parent_id='"+parent_id+"'";
+                DbClient.query_execute(query);
+
                 MessageBox.Show("Student updated successfully");
                 DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
 

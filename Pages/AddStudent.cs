@@ -67,64 +67,7 @@ namespace Perfect_Peace_System.Pages
 
         private void registerStntBnt_Click(object sender, EventArgs e)
         {
-            /*if (InternetConnectivity.checkConnectivity() == false)
-            {
-                MessageBox.Show("Check your internet connection");
-                return;
-            }
-            try
-            {
-                Person person = new Student(
-                    dobPicker.Value.Date.ToString(), classCb.Text, 0.00f, "",
-                    fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text,
-                    getRadioBtnValueS(), DateTime.Today.Date.ToString()
-                    );
-
-                class_name = classCb.Text;
-                Console.WriteLine("class name: " + class_name);
-
-                if (String.IsNullOrWhiteSpace(fnameTb.Text) ||
-                    String.IsNullOrWhiteSpace(lnameTb.Text) ||
-                    String.IsNullOrWhiteSpace(dobPicker.Text) ||
-                    String.IsNullOrWhiteSpace(addressTb.Text))
-                {
-                    MessageBox.Show("Feilds with * must be filled!");
-                }
-                else
-                {
-                    if (classCb.SelectedIndex > -1 || !String.IsNullOrEmpty(classCb.Text))
-                    {
-                        if (classroom.maxCapacity(classCb.Text) > classroom.curCapacity(classCb.Text))
-                        {
-
-                            person.save();
-                            MessageBox.Show("Student Saved");
-                            clearFeilds();
-                            openNewPage.OpenChildForm(new Pages.AddParent(), registerPanel);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Class full!!!");
-                        }
-                    }
-                    else
-                    {
-                        person.save();
-                        MessageBox.Show("Student Saved");
-                        clearFeilds();
-                        openNewPage.OpenChildForm(new Pages.AddParent(), registerPanel);
-                    }
-
-                    DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
-                    DataFromDb.totalStudents = DbClient.query_executeScaler("SELECT COUNT(*) FROM Student");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                Console.WriteLine(ex.StackTrace);
-            }*/
-
+            
         }
 
 
