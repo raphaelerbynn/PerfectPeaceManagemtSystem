@@ -77,17 +77,6 @@ namespace Perfect_Peace_System
 
         public override void show_data(DataGridView dataGrid)
         {
-
-
-
-
-
-
-
-
-
-
-
             query = "SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student";
             DbClient.dataGridFill(dataGrid, query);
         }

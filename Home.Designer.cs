@@ -213,7 +213,7 @@
             this.classesBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.classesBtn.ForeColor = System.Drawing.Color.White;
             this.classesBtn.Image = global::Perfect_Peace_System.Properties.Resources.classroom;
-            this.classesBtn.Location = new System.Drawing.Point(0, 251);
+            this.classesBtn.Location = new System.Drawing.Point(0, 188);
             this.classesBtn.Name = "classesBtn";
             this.classesBtn.Size = new System.Drawing.Size(154, 62);
             this.classesBtn.TabIndex = 5;
@@ -231,13 +231,13 @@
             this.parentsBtn.FlatAppearance.BorderSize = 0;
             this.parentsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.parentsBtn.ForeColor = System.Drawing.Color.White;
-            this.parentsBtn.Image = global::Perfect_Peace_System.Properties.Resources.elderly_male;
-            this.parentsBtn.Location = new System.Drawing.Point(0, 189);
+            this.parentsBtn.Image = global::Perfect_Peace_System.Properties.Resources.report;
+            this.parentsBtn.Location = new System.Drawing.Point(0, 254);
             this.parentsBtn.Name = "parentsBtn";
             this.parentsBtn.Size = new System.Drawing.Size(154, 62);
             this.parentsBtn.TabIndex = 4;
             this.parentsBtn.Tag = "3";
-            this.parentsBtn.Text = "Parents";
+            this.parentsBtn.Text = "Weekly Report";
             this.parentsBtn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.parentsBtn.UseVisualStyleBackColor = true;
             this.parentsBtn.Click += new System.EventHandler(this.parentsBtn_Click);

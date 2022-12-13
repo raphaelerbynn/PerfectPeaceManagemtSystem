@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Net.Mail;
 using System.Net;
+using System.IO;
 
 namespace Perfect_Peace_System.Pages
 {
@@ -202,16 +203,42 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                /*string template = File.ReadAllText("../email/payment_template.html");
+                template = template.Replace("{name}", empNameLbl.Text);
+                template = template.Replace("{month}", salaryMonthLbl.Text);
+                template = template.Replace("{date}", datePaidLbl.Text);
+                template = template.Replace("{mode}", modeOfPaymentLbl.Text);
+                template = template.Replace("{amount}", amountPaidLbl.Text);*/
+
+                string template = 
+                    "----------------------------------------------\n" +
+                    "                  PAYMENT MADE                \n" +
+                    "----------------------------------------------\n" +
+                    "Hi, "+empNameLbl.Text+",\n" +
+                    "Montly payment for "+salaryMonthLbl.Text+"\n" +
+                    "paid on "+datePaidLbl.Text+" using " +modeOfPaymentLbl.Text+"\n\n" +
+                    "PAYMENT DETAILS     \n" +
+                    "----------------------\n" +
+                    "Amount: " + amountPaidLbl.Text +"\n" +
+                    "Date: " + datePaidLbl.Text +"\n" +
+                    "Mode: " + modeOfPaymentLbl.Text +"\n\n" +
+                    "Thank you for making Perfect\n" +
+                    "Peace a great organization.\n" +
+                    "-----------------------------------------------";
+
                 SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
                 smtp.EnableSsl = true;
                 // smtp.UseDefaultCredentials = false;
-                smtp.Credentials = new NetworkCredential("perfectpeace@gmail.com", "");
+                smtp.Credentials = new NetworkCredential("perfectpeacepreparatoryschool@gmail.com", "wufspbppaqsntywu");
 
                 MailMessage mail = new MailMessage();
                 mail.From = from;
                 mail.To.Add(to);
-                mail.Subject = "";
-                mail.Body = "";
+                mail.Subject = "Salary Payment";
+                
+                mail.IsBodyHtml = false;
+                mail.Body = template;
+                //mail.Body = "Payment made of an amount of" + amountPaidLbl.Text;
 
                 //smtp.Port = 587;
                 //smtp.Host = "smtp.gmail.com";
@@ -246,7 +273,7 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Payment Saved");
 
                 MailAddress to = new MailAddress(email);
-                MailAddress from = new MailAddress("perfectpeace@gmail.com", "PERFECT PEACE PREPARATORY SCHOOL");
+                MailAddress from = new MailAddress("perfectpeacepreparatoryschool@gmail.com", "PERFECT PEACE PREPARATORY SCHOOL");
                 sendEmailAfterPayment(to, from, amountPaidLbl.Text);
 
                 string message = "Do you want to print PaySlip?";

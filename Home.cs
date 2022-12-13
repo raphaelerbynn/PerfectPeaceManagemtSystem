@@ -248,7 +248,7 @@ namespace Perfect_Peace_System
                 ActivateBtn(sender);
                 openNewPage.OpenChildForm(new Pages.ParentsData(), panelView);
                 addStntBtn.Visible = false;
-                titleLbl.Text = "PARENTS";
+                titleLbl.Text = "WEEKLY REPORT";
                 //addStntBtn.Text = "Send Message";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
             
