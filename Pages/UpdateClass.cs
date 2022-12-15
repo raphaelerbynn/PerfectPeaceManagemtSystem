@@ -19,6 +19,9 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
             bgPanel.BackColor = Home.foreColor;
+            /*
+            string query1 = "UPDATE Student SET class_id='15' WHERE class='KG ONE' ";
+            DbClient.query_execute(query1);*/
             fillData();
         }
 
@@ -39,12 +42,16 @@ namespace Perfect_Peace_System.Pages
 
                 query = "UPDATE Teacher SET class_id=NULL WHERE class_id='" + id + "'";
                 DbClient.query_execute(query);
+                
 
                 query = "UPDATE Class SET teacher_id=" + teacher_id + " WHERE name='" + nameTb.Text + "'";
                 DbClient.query_execute(query);
 
                 query = "UPDATE Teacher SET class_id='"+id+"' WHERE teacher_id='" + teacher_id + "'";
                 DbClient.query_execute(query);
+
+               
+                Console.WriteLine(id);
 
             }
             else
@@ -55,7 +62,14 @@ namespace Perfect_Peace_System.Pages
                 query = "UPDATE Teacher SET class_id=NULL WHERE class_id='" + id + "'";
                 DbClient.query_execute(query);
 
+
+                
+                Console.WriteLine(id);
+
             }
+            query = "UPDATE Student SET class='" + nameTb.Text + "' WHERE class_id='" + id + "'";
+            DbClient.query_execute(query);
+
             DataFromDb.getAllClass = DbClient.dataSource("SELECT class_id, name, section, capacity, fees, teacher_id, (SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE Teacher.teacher_id=Class.teacher_id) AS teacher FROM Class");
             MessageBox.Show("Class Updated");
 
@@ -125,6 +139,11 @@ namespace Perfect_Peace_System.Pages
             totalFees += cocurricular.Value;
 
             totalFeesLbl.Text = totalFees.ToString();
+        }
+
+        private void backLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

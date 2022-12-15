@@ -28,16 +28,23 @@ namespace Perfect_Peace_System
 
         public static void query_execute(string query)
         {
-            try
-            {
+            /*try
+            {*/
                 cmd = new SqlCommand(query, connection);
                 
-                cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();/*
             }catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                Console.WriteLine(ex);
-            }
+                if (ex.ToString().Contains("Violation of PRIMARY KEY"))
+                {
+                    MessageBox.Show("Data with same id already exists");
+                }
+                else
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
+            }*/
         }
         
         public static string query_executeScaler(string query)

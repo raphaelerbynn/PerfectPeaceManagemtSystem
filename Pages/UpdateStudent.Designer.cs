@@ -42,12 +42,11 @@
             this.addressTb = new System.Windows.Forms.TextBox();
             this.fnameTb = new System.Windows.Forms.TextBox();
             this.registerPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.assignNoClassLbl = new System.Windows.Forms.LinkLabel();
             this.maleRadio = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.fnamePTb = new System.Windows.Forms.TextBox();
@@ -64,11 +63,13 @@
             this.label16 = new System.Windows.Forms.Label();
             this.relationshipCB = new System.Windows.Forms.ComboBox();
             this.lnamePTb = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.backLbl = new System.Windows.Forms.LinkLabel();
             this.registerPanel.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // registerStntBnt
@@ -222,6 +223,7 @@
             // registerPanel
             // 
             this.registerPanel.AutoScroll = true;
+            this.registerPanel.Controls.Add(this.backLbl);
             this.registerPanel.Controls.Add(this.panel1);
             this.registerPanel.Controls.Add(this.panel2);
             this.registerPanel.Controls.Add(this.label9);
@@ -233,6 +235,53 @@
             this.registerPanel.Name = "registerPanel";
             this.registerPanel.Size = new System.Drawing.Size(972, 706);
             this.registerPanel.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.fnameTb);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.assignNoClassLbl);
+            this.panel1.Controls.Add(this.addressTb);
+            this.panel1.Controls.Add(this.classCb);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.femaleRadio);
+            this.panel1.Controls.Add(this.lnameTb);
+            this.panel1.Controls.Add(this.maleRadio);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.dobPicker);
+            this.panel1.Controls.Add(this.mnameTb);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(45, 47);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(864, 389);
+            this.panel1.TabIndex = 43;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(95, 19);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "First Name: *";
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(8, 143);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(108, 19);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Date of Birth: *";
             // 
             // assignNoClassLbl
             // 
@@ -262,47 +311,6 @@
             this.maleRadio.Text = "Male";
             this.maleRadio.UseCompatibleTextRendering = true;
             this.maleRadio.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 143);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 19);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Date of Birth: *";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(428, 23);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(170, 19);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "UPDATE STUDENT DATA";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 19);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "First Name: *";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(332, 931);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(0, 13);
-            this.label9.TabIndex = 19;
             // 
             // panel2
             // 
@@ -495,30 +503,13 @@
             this.lnamePTb.Size = new System.Drawing.Size(712, 27);
             this.lnamePTb.TabIndex = 30;
             // 
-            // panel1
+            // label9
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.fnameTb);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.assignNoClassLbl);
-            this.panel1.Controls.Add(this.addressTb);
-            this.panel1.Controls.Add(this.classCb);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.femaleRadio);
-            this.panel1.Controls.Add(this.lnameTb);
-            this.panel1.Controls.Add(this.maleRadio);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.dobPicker);
-            this.panel1.Controls.Add(this.mnameTb);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Location = new System.Drawing.Point(45, 47);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(864, 389);
-            this.panel1.TabIndex = 43;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(332, 931);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(0, 13);
+            this.label9.TabIndex = 19;
             // 
             // label18
             // 
@@ -531,6 +522,29 @@
             this.label18.TabIndex = 1;
             this.label18.Text = "PARENT DATA";
             // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(428, 23);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(170, 19);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "UPDATE STUDENT DATA";
+            // 
+            // backLbl
+            // 
+            this.backLbl.AutoSize = true;
+            this.backLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backLbl.Location = new System.Drawing.Point(41, 23);
+            this.backLbl.Name = "backLbl";
+            this.backLbl.Size = new System.Drawing.Size(33, 19);
+            this.backLbl.TabIndex = 44;
+            this.backLbl.TabStop = true;
+            this.backLbl.Text = "<<<";
+            this.backLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.backLbl_LinkClicked);
+            // 
             // UpdateStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -541,10 +555,10 @@
             this.Text = "UpdateStudent";
             this.registerPanel.ResumeLayout(false);
             this.registerPanel.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -588,5 +602,6 @@
         private System.Windows.Forms.ComboBox relationshipCB;
         private System.Windows.Forms.TextBox lnamePTb;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.LinkLabel backLbl;
     }
 }

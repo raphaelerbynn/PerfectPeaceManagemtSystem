@@ -147,6 +147,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.studentNameLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.backLbl = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.bgPanel.SuspendLayout();
             this.academicPanel.SuspendLayout();
@@ -1721,6 +1722,7 @@
             // topPanel
             // 
             this.topPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.topPanel.Controls.Add(this.backLbl);
             this.topPanel.Controls.Add(this.f);
             this.topPanel.Controls.Add(this.classLbl);
             this.topPanel.Controls.Add(this.label3);
@@ -1786,6 +1788,18 @@
             this.label1.Size = new System.Drawing.Size(120, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Student Name: ";
+            // 
+            // backLbl
+            // 
+            this.backLbl.AutoSize = true;
+            this.backLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backLbl.Location = new System.Drawing.Point(8, 13);
+            this.backLbl.Name = "backLbl";
+            this.backLbl.Size = new System.Drawing.Size(33, 19);
+            this.backLbl.TabIndex = 28;
+            this.backLbl.TabStop = true;
+            this.backLbl.Text = "<<<";
+            this.backLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.backLbl_LinkClicked);
             // 
             // ReportForKG
             // 
@@ -1935,5 +1949,6 @@
         private System.Windows.Forms.TextBox artClassTb;
         private System.Windows.Forms.TextBox lanExamTb;
         private System.Windows.Forms.TextBox lanClassScoreTb;
+        private System.Windows.Forms.LinkLabel backLbl;
     }
 }

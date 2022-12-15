@@ -120,7 +120,7 @@ namespace Perfect_Peace_System.Pages
                 if (teacherDataGridView.Columns[e.ColumnIndex].Name == "edit" && e.RowIndex >= 0)
                 {
                     //update data
-                    teacherDataGridView.Visible = false;
+                    //teacherDataGridView.Visible = false;
                     openNewPage.OpenChildForm(new Pages.UpdateTeacher(), showDataPanel);
                 }
             }

@@ -42,6 +42,7 @@
             this.nameLbl = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
@@ -72,6 +73,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.eyeTestLbl = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.respirationLbl = new System.Windows.Forms.Label();
             this.pulseLbl = new System.Windows.Forms.Label();
@@ -114,8 +116,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.eyeTestLbl = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
             this.bgPanel.SuspendLayout();
             this.reportPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -154,7 +154,7 @@
             // 
             this.backLink.AutoSize = true;
             this.backLink.Font = new System.Drawing.Font("Calibri", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backLink.Location = new System.Drawing.Point(13, 12);
+            this.backLink.Location = new System.Drawing.Point(44, 44);
             this.backLink.Name = "backLink";
             this.backLink.Size = new System.Drawing.Size(37, 22);
             this.backLink.TabIndex = 54;
@@ -366,6 +366,17 @@
             this.label30.Size = new System.Drawing.Size(169, 19);
             this.label30.TabIndex = 45;
             this.label30.Text = "LABORATORY ANALYSIS";
+            // 
+            // label43
+            // 
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(55, 864);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(67, 19);
+            this.label43.TabIndex = 36;
+            this.label43.Text = "Eye Test:";
             // 
             // label35
             // 
@@ -696,6 +707,17 @@
             this.label10.Size = new System.Drawing.Size(62, 19);
             this.label10.TabIndex = 15;
             this.label10.Text = "Sickling:";
+            // 
+            // eyeTestLbl
+            // 
+            this.eyeTestLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.eyeTestLbl.AutoSize = true;
+            this.eyeTestLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eyeTestLbl.Location = new System.Drawing.Point(135, 862);
+            this.eyeTestLbl.Name = "eyeTestLbl";
+            this.eyeTestLbl.Size = new System.Drawing.Size(110, 21);
+            this.eyeTestLbl.TabIndex = 17;
+            this.eyeTestLbl.Text = "--------------------";
             // 
             // label11
             // 
@@ -1153,28 +1175,6 @@
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(0, 19);
             this.label39.TabIndex = 36;
-            // 
-            // eyeTestLbl
-            // 
-            this.eyeTestLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.eyeTestLbl.AutoSize = true;
-            this.eyeTestLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eyeTestLbl.Location = new System.Drawing.Point(135, 862);
-            this.eyeTestLbl.Name = "eyeTestLbl";
-            this.eyeTestLbl.Size = new System.Drawing.Size(110, 21);
-            this.eyeTestLbl.TabIndex = 17;
-            this.eyeTestLbl.Text = "--------------------";
-            // 
-            // label43
-            // 
-            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(55, 864);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(67, 19);
-            this.label43.TabIndex = 36;
-            this.label43.Text = "Eye Test:";
             // 
             // MedicalReport
             // 

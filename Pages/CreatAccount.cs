@@ -132,9 +132,15 @@ namespace Perfect_Peace_System.Pages
             }
             catch(Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                MessageBox.Show(ex.Message);
-                MessageBox.Show("Username already exists");
+                if (ex.ToString().Contains("Violation of PRIMARY KEY"))
+                {
+                    MessageBox.Show("Data with same id already exists");
+                }
+                else
+                {
+                    Console.WriteLine(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

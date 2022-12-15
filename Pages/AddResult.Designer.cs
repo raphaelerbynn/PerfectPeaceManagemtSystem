@@ -68,6 +68,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.studentNameLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.backLbl = new System.Windows.Forms.LinkLabel();
             this.bgPanel.SuspendLayout();
             this.teacherRemarksPanel.SuspendLayout();
             this.inputPanel.SuspendLayout();
@@ -506,6 +507,7 @@
             this.topPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.topPanel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.topPanel.Controls.Add(this.backLbl);
             this.topPanel.Controls.Add(this.f);
             this.topPanel.Controls.Add(this.classLbl);
             this.topPanel.Controls.Add(this.label3);
@@ -571,6 +573,18 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Student Name: ";
             // 
+            // backLbl
+            // 
+            this.backLbl.AutoSize = true;
+            this.backLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backLbl.Location = new System.Drawing.Point(12, 13);
+            this.backLbl.Name = "backLbl";
+            this.backLbl.Size = new System.Drawing.Size(33, 19);
+            this.backLbl.TabIndex = 28;
+            this.backLbl.TabStop = true;
+            this.backLbl.Text = "<<<";
+            this.backLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.backLbl_LinkClicked);
+            // 
             // AddResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -632,5 +646,6 @@
         private System.Windows.Forms.Label promotedLbl;
         private System.Windows.Forms.ComboBox classCb;
         private System.Windows.Forms.ComboBox statusCb;
+        private System.Windows.Forms.LinkLabel backLbl;
     }
 }

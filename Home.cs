@@ -218,9 +218,20 @@ namespace Perfect_Peace_System
                 }
                 else if (addStntBtn.Text == "Cancel pay fees")
                 {
-                    new Pages.AddClass().Close();
+                    new Pages.FeePaying().Close();
                     openNewPage.OpenChildForm(new Pages.FeesData(), panelView);
                     addStntBtn.Text = "Pay Fees";
+                }
+                if (addStntBtn.Text == "Add Weekly Report")
+                {
+                    openNewPage.OpenChildForm(new Pages.AddParent(), panelView);
+                    addStntBtn.Text = "Cancel Add Weekly Report";
+                }
+                else if (addStntBtn.Text == "Cancel Add Weekly Report")
+                {
+                    new Pages.AddParent().Close();
+                    openNewPage.OpenChildForm(new Pages.ParentsData(), panelView);
+                    addStntBtn.Text = "Add Weekly Report";
                 }
             }
             else
@@ -247,10 +258,10 @@ namespace Perfect_Peace_System
             
                 ActivateBtn(sender);
                 openNewPage.OpenChildForm(new Pages.ParentsData(), panelView);
-                addStntBtn.Visible = false;
+                addStntBtn.Visible = true;
                 titleLbl.Text = "WEEKLY REPORT";
-                //addStntBtn.Text = "Send Message";
-                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
+                addStntBtn.Text = "Add Weekly Report";
+                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
             
             
         }

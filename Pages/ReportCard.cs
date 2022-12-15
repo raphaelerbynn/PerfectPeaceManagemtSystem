@@ -234,7 +234,7 @@ namespace Perfect_Peace_System.Pages
                 query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+"' AND category LIKE '%COGNITIVE%' AND class='"+classKgLbl.Text+"'";
                 DbClient.dataGridFill(cognitiveDataView, query);
 
-                foreach(DataGridViewRow row in cognitiveDataView.Rows)
+                foreach (DataGridViewRow row in cognitiveDataView.Rows)
                 {
                     if (row.Cells["satisfactoryC"].Value.ToString() == "1")
                     {
@@ -244,7 +244,7 @@ namespace Perfect_Peace_System.Pages
                     {
                         row.Cells["satisfactoryC"].Value = " ";
                     }
-                    
+
                     if (row.Cells["improvedC"].Value.ToString() == "1")
                     {
                         row.Cells["improvedC"].Value = "✔";
@@ -253,7 +253,7 @@ namespace Perfect_Peace_System.Pages
                     {
                         row.Cells["improvedC"].Value = " ";
                     }
-                    
+
                     if (row.Cells["needs_improvementC"].Value.ToString() == "1")
                     {
                         row.Cells["needs_improvementC"].Value = "✔";
@@ -261,27 +261,25 @@ namespace Perfect_Peace_System.Pages
                     else
                     {
                         row.Cells["needs_improvementC"].Value = " ";
+                        if (row.Cells["unsatisfactoryC"].Value.ToString() == "1")
+                        {
+                            row.Cells["unsatisfactoryC"].Value = "✔";
+                        }
+                        else
+                        {
+                            row.Cells["unsatisfactoryC"].Value = " ";
+                        }
+
                     }
-                    
-                    if (row.Cells["unsatisfactoryC"].Value.ToString() == "1")
-                    {
-                        row.Cells["unsatisfactoryC"].Value = "✔";
-                    }
-                    else
-                    {
-                        row.Cells["unsatisfactoryC"].Value = " ";
-                    }
-                    
+
+                    int academic_length = academicDataView.RowTemplate.Height * 5;
+                    academicDataView.Size = new Size(academicDataView.Width, academicDataView.Height + academic_length);
+                    titleLbl.Location = new Point(titleLbl.Location.X, academicDataView.Location.Y - 15);
+
+                    query = "SELECT assessment, class_score, exam_score, total_score FROM KG_assessment WHERE student_id='" + student_id + "' AND category LIKE '%ACADEMIC%'";
+                    DbClient.dataGridFill(academicDataView, query);
+
                 }
-
-                int academic_length = academicDataView.RowTemplate.Height * 5;
-                academicDataView.Size = new Size(academicDataView.Width, academicDataView.Height + academic_length);
-                titleLbl.Location = new Point(titleLbl.Location.X, academicDataView.Location.Y - 15);
-
-                query = "SELECT assessment, class_score, exam_score, total_score FROM KG_assessment WHERE student_id='" + student_id + "' AND category LIKE '%ACADEMIC%'";
-                DbClient.dataGridFill(academicDataView, query);
-
-
             }
             catch (Exception ex)
             {
@@ -506,8 +504,10 @@ namespace Perfect_Peace_System.Pages
                     total_fees += double.Parse(feesLbl.Text);
                 }
                 totalFeesLbl.Text = "Ghc " + total_fees.ToString();
+
+                Console.WriteLine(promotedClassLbl.Text);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
                 MessageBox.Show(ex.Message);
@@ -694,6 +694,11 @@ namespace Perfect_Peace_System.Pages
         private void languageDataView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
             e.Cancel = true;
+        }
+
+        private void backLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

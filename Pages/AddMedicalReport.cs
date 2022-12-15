@@ -247,5 +247,10 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void backLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

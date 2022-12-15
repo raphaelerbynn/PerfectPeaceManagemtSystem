@@ -445,5 +445,10 @@ namespace Perfect_Peace_System.Pages
                 classCb.SelectedIndex = -1;
             }
         }
+
+        private void backLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

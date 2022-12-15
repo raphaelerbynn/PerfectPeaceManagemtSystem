@@ -21,7 +21,8 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
             openNewPage = new OpenNewPage();
-            
+
+            //DbClient.query_execute("DELETE FROM Student_marks WHERE subject_id='5'");
 
             int screenHeight = Screen.PrimaryScreen.Bounds.Height;
             int screenWidth = Screen.PrimaryScreen.Bounds.Width;

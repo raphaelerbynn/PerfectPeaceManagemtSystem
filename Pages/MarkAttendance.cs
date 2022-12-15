@@ -150,5 +150,10 @@ namespace Perfect_Peace_System.Pages
             }
             
         }
+
+        private void backLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

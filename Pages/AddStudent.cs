@@ -214,7 +214,7 @@ namespace Perfect_Peace_System.Pages
                     DbClient.query_execute(query);
                     MessageBox.Show("Student Registered");
                     clearFeilds();
-                    DataFromDb.getAllParent = DbClient.dataSource("SELECT parent_id,contact,gender,relationship, [f_name]+' '+[l_name] AS name FROM Parent");
+                    //DataFromDb.getAllParent = DbClient.dataSource("SELECT parent_id,contact,gender,relationship, [f_name]+' '+[l_name] AS name FROM Parent");
 
                     DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
                     DataFromDb.totalStudents = DbClient.query_executeScaler("SELECT COUNT(*) FROM Student");

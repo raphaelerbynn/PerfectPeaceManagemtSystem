@@ -104,6 +104,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.backLbl = new System.Windows.Forms.LinkLabel();
             this.bgPanel.SuspendLayout();
             this.payslipPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -115,6 +116,7 @@
             // bgPanel
             // 
             this.bgPanel.AutoScroll = true;
+            this.bgPanel.Controls.Add(this.backLbl);
             this.bgPanel.Controls.Add(this.label18);
             this.bgPanel.Controls.Add(this.salaryMonthPk);
             this.bgPanel.Controls.Add(this.modeOfPaymentCb);
@@ -1035,6 +1037,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "PERFECT PEACE  PREPARATORY SCHOOL";
             // 
+            // backLbl
+            // 
+            this.backLbl.AutoSize = true;
+            this.backLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backLbl.Location = new System.Drawing.Point(35, 17);
+            this.backLbl.Name = "backLbl";
+            this.backLbl.Size = new System.Drawing.Size(33, 19);
+            this.backLbl.TabIndex = 56;
+            this.backLbl.TabStop = true;
+            this.backLbl.Text = "<<<";
+            this.backLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.backLbl_LinkClicked);
+            // 
             // PaySlip
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1135,5 +1149,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label categoryLbl;
+        private System.Windows.Forms.LinkLabel backLbl;
     }
 }

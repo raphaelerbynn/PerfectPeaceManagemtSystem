@@ -31,6 +31,8 @@
             this.bgPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.parentPanel = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblAcc = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -38,8 +40,6 @@
             this.lblTin = new System.Windows.Forms.Label();
             this.lblBank = new System.Windows.Forms.Label();
             this.classPanel = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblAcc = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblClass = new System.Windows.Forms.Label();
             this.studentPanel = new System.Windows.Forms.Panel();
@@ -103,6 +103,26 @@
             this.parentPanel.Name = "parentPanel";
             this.parentPanel.Size = new System.Drawing.Size(616, 172);
             this.parentPanel.TabIndex = 25;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(31, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(120, 19);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Account Number:";
+            // 
+            // lblAcc
+            // 
+            this.lblAcc.AutoSize = true;
+            this.lblAcc.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAcc.Location = new System.Drawing.Point(157, 58);
+            this.lblAcc.Name = "lblAcc";
+            this.lblAcc.Size = new System.Drawing.Size(85, 19);
+            this.lblAcc.TabIndex = 15;
+            this.lblAcc.Text = "...................";
             // 
             // label12
             // 
@@ -173,26 +193,6 @@
             this.classPanel.Name = "classPanel";
             this.classPanel.Size = new System.Drawing.Size(616, 71);
             this.classPanel.TabIndex = 24;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(120, 19);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Account Number:";
-            // 
-            // lblAcc
-            // 
-            this.lblAcc.AutoSize = true;
-            this.lblAcc.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAcc.Location = new System.Drawing.Point(157, 58);
-            this.lblAcc.Name = "lblAcc";
-            this.lblAcc.Size = new System.Drawing.Size(85, 19);
-            this.lblAcc.TabIndex = 15;
-            this.lblAcc.Text = "...................";
             // 
             // label4
             // 
@@ -276,7 +276,7 @@
             // 
             this.lblAddress.AutoSize = true;
             this.lblAddress.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(402, 109);
+            this.lblAddress.Location = new System.Drawing.Point(289, 128);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(85, 19);
             this.lblAddress.TabIndex = 14;
@@ -296,7 +296,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(382, 63);
+            this.lblEmail.Location = new System.Drawing.Point(344, 63);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(85, 19);
             this.lblEmail.TabIndex = 18;
@@ -316,7 +316,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(327, 109);
+            this.label9.Location = new System.Drawing.Point(289, 109);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(69, 19);
             this.label9.TabIndex = 9;
@@ -326,7 +326,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(327, 63);
+            this.label5.Location = new System.Drawing.Point(289, 63);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 19);
             this.label5.TabIndex = 5;

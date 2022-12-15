@@ -29,7 +29,7 @@ namespace Perfect_Peace_System.Pages
             
             columnArrangement();
 
-            showParentDataView.DataSource = DataFromDb.getAllParentData();
+            showParentDataView.DataSource = DataFromDb.getAllWeeklyReportData();
             //getChild();
         }
 
@@ -39,13 +39,11 @@ namespace Perfect_Peace_System.Pages
 
             showParentDataView.Columns["id"].DisplayIndex = 0;
             showParentDataView.Columns["name"].DisplayIndex = 1;
-            showParentDataView.Columns["child"].DisplayIndex = 2;
-            showParentDataView.Columns["relationship"].DisplayIndex = 3;
-            showParentDataView.Columns["contact"].DisplayIndex = 4;
-            showParentDataView.Columns["message"].DisplayIndex = 5;
-            showParentDataView.Columns["view"].DisplayIndex = 6;
-            showParentDataView.Columns["edit"].DisplayIndex = 7;
-            showParentDataView.Columns["delete"].DisplayIndex = 8;
+            showParentDataView.Columns["_class"].DisplayIndex = 2;
+            showParentDataView.Columns["date"].DisplayIndex = 3;
+            showParentDataView.Columns["view"].DisplayIndex = 4;
+            showParentDataView.Columns["edit"].DisplayIndex = 5;
+            showParentDataView.Columns["delete"].DisplayIndex = 6;
             
             searchCb.SelectedIndex = 0;
         }
@@ -143,7 +141,7 @@ namespace Perfect_Peace_System.Pages
         private void refeshBtn_Click(object sender, EventArgs e)
         {
             DataFromDb.getAllTeacher = DbClient.dataSource("SELECT parent_id,contact,gender,relationship, [f_name]+' '+[l_name] AS name FROM Parent");
-            showParentDataView.DataSource = DataFromDb.getAllParentData();
+            //showParentDataView.DataSource = DataFromDb.getAllParentData();
         }
     }
 }

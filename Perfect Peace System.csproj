@@ -290,6 +290,12 @@
     <Compile Include="Pages\UsersDetails.Designer.cs">
       <DependentUpon>UsersDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resolution.cs" />
     <Compile Include="School_Event.cs" />
     <Compile Include="Home.cs">
@@ -505,6 +511,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\UsersDetails.resx">
       <DependentUpon>UsersDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

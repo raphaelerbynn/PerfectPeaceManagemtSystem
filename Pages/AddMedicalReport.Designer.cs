@@ -110,12 +110,14 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.empSalaryLbl = new System.Windows.Forms.Label();
+            this.backLbl = new System.Windows.Forms.LinkLabel();
             this.bgPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // bgPanel
             // 
             this.bgPanel.AutoScroll = true;
+            this.bgPanel.Controls.Add(this.backLbl);
             this.bgPanel.Controls.Add(this.panel3);
             this.bgPanel.Controls.Add(this.panel2);
             this.bgPanel.Controls.Add(this.label28);
@@ -1025,6 +1027,18 @@
             this.empSalaryLbl.TabIndex = 4;
             this.empSalaryLbl.Text = "MEDICAL REPORT";
             // 
+            // backLbl
+            // 
+            this.backLbl.AutoSize = true;
+            this.backLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backLbl.Location = new System.Drawing.Point(12, 13);
+            this.backLbl.Name = "backLbl";
+            this.backLbl.Size = new System.Drawing.Size(33, 19);
+            this.backLbl.TabIndex = 28;
+            this.backLbl.TabStop = true;
+            this.backLbl.Text = "<<<";
+            this.backLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.backLbl_LinkClicked);
+            // 
             // AddMedicalReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1123,5 +1137,6 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label empSalaryLbl;
+        private System.Windows.Forms.LinkLabel backLbl;
     }
 }

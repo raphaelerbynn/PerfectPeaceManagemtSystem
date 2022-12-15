@@ -41,6 +41,8 @@
             this.classLbl = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.remainingLbl = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -65,8 +67,6 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.printBtn = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.bgPanel.SuspendLayout();
             this.receiptPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -262,6 +262,22 @@
             this.remainingLbl.Text = "----------";
             this.remainingLbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
+            this.panel2.Location = new System.Drawing.Point(15, 590);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(273, 3);
+            this.panel2.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
+            this.panel1.Location = new System.Drawing.Point(15, 514);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(273, 3);
+            this.panel1.TabIndex = 4;
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.DimGray;
@@ -444,12 +460,12 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.White;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(36, 103);
+            this.label2.Location = new System.Drawing.Point(9, 99);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(224, 45);
+            this.label2.Size = new System.Drawing.Size(284, 45);
             this.label2.TabIndex = 29;
-            this.label2.Text = "Contact: 024 233 2420\r\nEmail: perfectpeace@gmail.com\r\nMempeasem/Essaman, Central " +
-    "Region";
+            this.label2.Text = "Contact: 024 233 2420\r\nEmail: perfectpeacepreparatoryschool@gmail.com\r\nMempeasem/" +
+    "Essaman, Central Region";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label5
@@ -541,22 +557,6 @@
             this.printBtn.Text = "Print Receipt";
             this.printBtn.UseVisualStyleBackColor = false;
             this.printBtn.Click += new System.EventHandler(this.printBtn_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.DimGray;
-            this.panel1.Location = new System.Drawing.Point(15, 514);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(273, 3);
-            this.panel1.TabIndex = 4;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.DimGray;
-            this.panel2.Location = new System.Drawing.Point(15, 590);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(273, 3);
-            this.panel2.TabIndex = 4;
             // 
             // FeeReceipt
             // 

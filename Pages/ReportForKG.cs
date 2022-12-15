@@ -724,5 +724,10 @@ namespace Perfect_Peace_System.Pages
             }
             phoTotalLbl.Text = String.Format("{0:0.00}", phoTotal);
         }
+
+        private void backLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

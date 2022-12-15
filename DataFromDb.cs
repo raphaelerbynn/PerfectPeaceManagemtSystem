@@ -51,10 +51,10 @@ namespace Perfect_Peace_System
         }
         
         //parent data
-        public static DataTable getAllParent;
-        public static DataTable getAllParentData()
+        public static DataTable getAllWeeklyReport;
+        public static DataTable getAllWeeklyReportData()
         {
-            return getAllParent;
+            return getAllWeeklyReport;
         }
 
         //class data
