@@ -269,6 +269,7 @@ namespace Perfect_Peace_System.Pages
                     }
                     //upddating total score
                     totalMarksLbls[i].Text = (double.Parse(examScoreCalcLbls[i].Text) + double.Parse(classScoreCalcLbls[i].Text)).ToString();
+                    
                     if (double.Parse(totalMarksLbls[i].Text) >= 80)
                     {
                         remarkLbls[i].Text = "Excellent"; 

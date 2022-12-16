@@ -30,14 +30,28 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
             
-            fillLabels();
-            fillLabelsKg();
-            populateResults();
-            populateAssessment();
             MessageBox.Show("Before printing result, Admin must save term attendance to get total student attendance", "Hint", MessageBoxButtons.OK, MessageBoxIcon.Information);
             bgPanel.BackColor = Home.foreColor;
-
+            orderColumn();
             showReport();
+        }
+
+        private void orderColumn()
+        {
+            resultDataView.ReadOnly = false;
+            resultDataView.Columns["subject"].DisplayIndex = 0;
+            resultDataView.Columns["exam_score"].DisplayIndex = 1;
+            resultDataView.Columns["class_score"].DisplayIndex = 2;
+            resultDataView.Columns["total_score"].DisplayIndex = 3;
+            resultDataView.Columns["position_in_subject"].DisplayIndex = 4;
+            resultDataView.Columns["remarks"].DisplayIndex = 6;
+            resultDataView.Columns["grade"].DisplayIndex = 5;
+            
+            //grade.DisplayIndex = 6;
+            //remarks.DisplayIndex = 5;
+
+            resultDataView.AutoGenerateColumns = false;
+            resultDataView.ReadOnly = true;
         }
 
         private void showReport()
@@ -46,6 +60,8 @@ namespace Perfect_Peace_System.Pages
                 class_section.Equals("Nursury") ||
                 class_section.Equals("KG"))
             {
+                fillLabelsKg();
+                populateAssessment();
                 reportCardPanel.Visible = false;
                 printResultBtn.Visible = false;
 
@@ -60,6 +76,8 @@ namespace Perfect_Peace_System.Pages
             }
             else
             {
+                fillLabels();
+                populateResults();
                 reportCardPanel.Visible = true;
                 printResultBtn.Visible = true;
                 printResultBtn.Location = new Point(printResultBtn.Location.X, reportCardPanel.Location.Y + reportCardPanel.Height + 18);
@@ -69,6 +87,8 @@ namespace Perfect_Peace_System.Pages
 
                 assessmentPanel.Visible = false;
                 printAssBtn.Visible = false;
+
+                
             }
         }
 
@@ -297,7 +317,7 @@ namespace Perfect_Peace_System.Pages
                 int length_of_subject = 30 * no_subject;
                 resultDataView.Size = new Size(resultDataView.Width, resultDataView.Height + length_of_subject);
 
-                query = "SELECT subject_id, name, CAST(class_total_marks AS VARCHAR(5)) AS class_total_marks, CAST(exam_total_marks AS VARCHAR(5)) AS exam_total_marks, CAST(pass_marks AS VARCHAR(5)) AS pass_marks, CAST(exam_percentage AS VARCHAR(5)) AS position, CAST(class_percentage AS VARCHAR(10)) AS remarks FROM Subject";
+                query = "SELECT subject_id, name, CAST(class_total_marks AS VARCHAR(5)) AS class_total_marks, CAST(exam_total_marks AS VARCHAR(5)) AS exam_total_marks, CAST(pass_marks AS VARCHAR(5)) AS pass_marks, CAST(exam_percentage AS VARCHAR(5)) AS position, CAST(class_percentage AS VARCHAR(10)) AS remarks, CAST(pass_marks AS VARCHAR(5)) AS grade FROM Subject";
                 DbClient.dataGridFill(resultDataView, query);
 
                 remarksPanel.Location = new Point(remarksPanel.Location.X, remarksPanel.Location.Y + length_of_subject);
@@ -340,6 +360,15 @@ namespace Perfect_Peace_System.Pages
                         }
                     }
                     reader.Close();
+
+                    if (class_section.Equals("JHS"))
+                    {
+                        
+                        grade.Visible = true;
+                        
+                        grading();
+                        //resultDataView.Rows[1].Cells["grade"].Value = 1;
+                    }
                     
                     resultDataView.ReadOnly = true;
 
@@ -353,20 +382,84 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
+        private void grading()
+        {
+            resultDataView.ReadOnly = false;
+            foreach (DataGridViewRow row in resultDataView.Rows)
+            {
+                try
+                {
+                    string score = row.Cells["total_score"].Value.ToString();
+                    
+                    if (!score.Equals("---"))
+                    {
+                        
+                        if (double.Parse(score) >= 80)
+                        {
+                            row.Cells["grade"].Value = "1";
+                            
+                            Console.WriteLine("score : " + row.Cells["grade"].Value.ToString());
+                        }
+                        else if (double.Parse(score) >= 70 && double.Parse(score) < 80)
+                        {
+                            row.Cells["grade"].Value = "2";
+                        }
+                        else if (double.Parse(score) >= 65 && double.Parse(score) < 70)
+                        {
+                            row.Cells["grade"].Value = "3";
+                        }
+                        else if (double.Parse(score) >= 60 && double.Parse(score) < 65)
+                        {
+                            row.Cells["grade"].Value = "4";
+                        }
+                        else if (double.Parse(score) >= 55 && double.Parse(score) < 60)
+                        {
+                            row.Cells["grade"].Value = "5";
+                        }
+                        else if (double.Parse(score) >= 50 && double.Parse(score) < 55)
+                        {
+                            row.Cells["grade"].Value = "6";
+                        }
+                        else if (double.Parse(score) >= 45 && double.Parse(score) < 50)
+                        {
+                            row.Cells["grade"].Value = "7";
+                        }else if (double.Parse(score) >= 40 && double.Parse(score) < 45)
+                        {
+                            row.Cells["grade"].Value = "8";
+                        }
+                        else
+                        {
+                            row.Cells["grade"].Value = "9";
+                        }
+                    }
+                    else
+                    {
+                        row.Cells["grade"].Value = "---";
+                    }
+                }
+                catch (Exception ex){ Console.WriteLine(ex.StackTrace); }
+            }
+        }
+
         private void fillLabelsKg()
         {
             teacherKgLbl.Text = "";
             string _class = "";
             string _class_for_teacher = "";
-            query = "SELECT * FROM Student WHERE student_id='" + student_id + "'";
+            query = "SELECT class, class_id, [f_name]+' '+[m_name]+' '+[l_name] AS name FROM Student WHERE student_id='" + student_id + "'";
             SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())
             {
-                nameKgLbl.Text = reader["f_name"].ToString() + " " + reader["m_name"].ToString() + " " + reader["l_name"].ToString();
+                nameKgLbl.Text = reader["name"].ToString();
                 termKgLbl.Text = term;
                 classKgLbl.Text = class_name;
                 classLbl.Text = reader["class"].ToString();
                 _class = reader["class_id"].ToString();
+
+                stntNameLbl.Text = nameKgLbl.Text;
+                stntClassLbl.Text = classKgLbl.Text;
+                dateLbl.Text = DateTime.Now.ToString("dd-MMM-yyyy");
+                termLbl2.Text = termLbl.Text;
             }
             reader.Close();
 
@@ -433,11 +526,11 @@ namespace Perfect_Peace_System.Pages
                 totalFeesLbl.Text = "---";//
                 promotedClassLbl.Text = "";
 
-                query = "SELECT * FROM Student WHERE student_id='" + student_id + "'";
+                query = "SELECT fees_owing, [f_name]+' '+[m_name]+' '+[l_name] AS name FROM Student WHERE student_id='" + student_id + "'";
                 SqlDataReader reader = DbClient.query_reader(query);
                 while (reader.Read())
                 {
-                    nameLbl.Text = reader["f_name"].ToString() + " " + reader["m_name"].ToString() + " " + reader["l_name"].ToString();
+                    nameLbl.Text = reader["name"].ToString();
                     stntNameLbl.Text = nameLbl.Text;
                     stntClassLbl.Text = nameLbl.Text;
                     termLbl.Text = term;
