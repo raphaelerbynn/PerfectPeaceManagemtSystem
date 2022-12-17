@@ -13,6 +13,7 @@ namespace Perfect_Peace_System
 {
     public partial class Home : Form
     {
+        WaitFunc wait = new WaitFunc(); 
         OpenNewPage openNewPage = new OpenNewPage();
         private Button currentBtn;
         private int tempIndex;
@@ -160,14 +161,14 @@ namespace Perfect_Peace_System
 
         private void studentBtn_Click(object sender, EventArgs e)
         {
-            
-                ActivateBtn(sender);
-                openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), panelView);
-                addStntBtn.Visible = true;
-                addStntBtn.Text = "Add Student";
-                titleLbl.Text = "STUDENTS";
-                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
-           
+            wait.show(this);
+            ActivateBtn(sender);
+            openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), panelView);
+            addStntBtn.Visible = true;
+            addStntBtn.Text = "Add Student";
+            titleLbl.Text = "STUDENTS";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
+            wait.close();
         }
 
         private void addStntBtn_Click(object sender, EventArgs e)
@@ -243,39 +244,39 @@ namespace Perfect_Peace_System
 
         private void teachersBtn_Click(object sender, EventArgs e)
         {
-           
+            wait.show(this);
                 ActivateBtn(sender);
                 addStntBtn.Visible = true;
                 addStntBtn.Text = "Add To Staff";
                 titleLbl.Text = "STAFF";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
                 openNewPage.OpenChildForm(new Pages.TeacherData(), panelView);
-            
+            wait.close();
         }
 
         private void parentsBtn_Click(object sender, EventArgs e)
         {
-            
+            wait.show(this);
                 ActivateBtn(sender);
                 openNewPage.OpenChildForm(new Pages.ParentsData(), panelView);
                 addStntBtn.Visible = true;
                 titleLbl.Text = "WEEKLY REPORT";
                 addStntBtn.Text = "Add Weekly Report";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
-            
+            wait.close();
             
         }
 
         private void classesBtn_Click(object sender, EventArgs e)
         {
-
+            wait.show(this);
                 ActivateBtn(sender);
                 addStntBtn.Visible = true;
                 addStntBtn.Text = "Add Class";
                 titleLbl.Text = "CLASSROOMS";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
                 openNewPage.OpenChildForm(new Pages.ClassData(), panelView);
-           
+            wait.close();
             
         }
 
@@ -283,11 +284,13 @@ namespace Perfect_Peace_System
         {
             if (InternetConnectivity.checkConnectivity())
             {
+                wait.show(this);
                 ActivateBtn(sender);
                 addStntBtn.Visible = false;
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
                 titleLbl.Text = "DASHBOARD";
                 openNewPage.OpenChildForm(new Pages.Dashboard(), panelView);
+                wait.close();
             }
             else
             {
@@ -297,24 +300,24 @@ namespace Perfect_Peace_System
 
         private void feesBtn_Click(object sender, EventArgs e)
         {
-            
+            wait.show(this);
                 ActivateBtn(sender);
                 addStntBtn.Visible = true;
                 addStntBtn.Text = "Pay Fees";
                 titleLbl.Text = "FEES";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
             openNewPage.OpenChildForm(new Pages.FeesData(), panelView);
-
+            wait.close();
         }
         
         private void accBtn_Click(object sender, EventArgs e)
         {
-            
+            wait.show(this);
                 ActivateBtn(sender);
                 addStntBtn.Visible = false;
                 titleLbl.Text = "ACCOUNT";
                 openNewPage.OpenChildForm(new Pages.Account(), panelView);
-            
+            wait.close();
         }
         private void closeBtn_Click(object sender, EventArgs e)
         {
@@ -344,11 +347,13 @@ namespace Perfect_Peace_System
         {
             if (InternetConnectivity.checkConnectivity())
             {
+                wait.show(this);
                 ActivateBtn(sender);
                 addStntBtn.Visible = false;
                 titleLbl.Text = "STUDENT REPORT";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
                 openNewPage.OpenChildForm(new Pages.StudentReport(), panelView);
+                wait.close();
             }
             else
             {
@@ -359,24 +364,26 @@ namespace Perfect_Peace_System
 
         private void subjectBtn_Click(object sender, EventArgs e)
         {
-            
+            wait.show(this);
                 ActivateBtn(sender);
                 addStntBtn.Visible = false;
                 titleLbl.Text = "SUBJECT INFORMATION";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
                 openNewPage.OpenChildForm(new Pages.AddSubject(), panelView);
-            
+            wait.close();
         }
 
         private void payrollBtn_Click(object sender, EventArgs e)
         {
             if (InternetConnectivity.checkConnectivity())
             {
+                wait.show(this);
                 ActivateBtn(sender);
                 addStntBtn.Visible = false;
                 titleLbl.Text = "PAYROLL";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
                 openNewPage.OpenChildForm(new Pages.Payroll(), panelView);
+                wait.close();
             }
             else
             {
@@ -389,11 +396,13 @@ namespace Perfect_Peace_System
         {
             if (InternetConnectivity.checkConnectivity())
             {
+                wait.show(this);
                 ActivateBtn(sender);
                 addStntBtn.Visible = false;
                 titleLbl.Text = "STUDENT ATTENDANCE";
                 panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
                 openNewPage.OpenChildForm(new Pages.Attendance(), panelView);
+                wait.close();
             }
             else
             {
