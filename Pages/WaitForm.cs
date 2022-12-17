@@ -16,5 +16,21 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
         }
+
+        public WaitForm(Form parent)
+        {
+            InitializeComponent();
+            
+        }
+
+        public void closeWaitForm()
+        {
+            this.DialogResult = DialogResult.OK;
+            this.Close();
+            if (pic.Image != null)
+            {
+                pic.Image.Dispose();
+            }
+        }
     }
 }
