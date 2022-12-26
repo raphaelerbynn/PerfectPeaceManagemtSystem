@@ -15,6 +15,8 @@ namespace Perfect_Peace_System.Pages
     {
         private string query;
         private string check;
+        WaitFunc wait = new WaitFunc();
+
         public AddMedicalReport()
         {
             InitializeComponent();
@@ -86,6 +88,7 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                wait.show();
                 //MessageBox.Show(check);
                 if (check.Equals("0")) {
                     query = "INSERT INTO Medical_report " +
@@ -161,7 +164,7 @@ namespace Perfect_Peace_System.Pages
                         TBother.Text + "'" +
                         ")";
                     DbClient.query_execute(query);
-
+                    wait.close();
                     MessageBox.Show("Data saved succcessfully");
                 }
                 else
@@ -202,6 +205,8 @@ namespace Perfect_Peace_System.Pages
                         ", others='" + TBother.Text + "'" +
                         " WHERE student_id = '" + StudentDataDisplay.getIdFromSelectedRow() + "'";
                     DbClient.query_execute(query);
+                    wait.close();
+
                     MessageBox.Show("Data updated succcessfully");
                 }
             }

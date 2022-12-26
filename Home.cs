@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Perfect_Peace_System
 {
     public partial class Home : Form
     {
-        WaitFunc wait = new WaitFunc(); 
+        WaitFunc wait = new WaitFunc();
         OpenNewPage openNewPage = new OpenNewPage();
         private Button currentBtn;
         private int tempIndex;
@@ -47,7 +40,7 @@ namespace Perfect_Peace_System
             user_details();
 
             //user accessibility
-            
+
             if (category.Equals("Class Teacher"))
             {
                 addStntBtn.Visible = false;
@@ -88,12 +81,12 @@ namespace Perfect_Peace_System
                     previousBtn.ForeColor = Color.White;
                     //previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                 }
-                if(previousBtn.GetType() == typeof(PictureBox))
+                if (previousBtn.GetType() == typeof(PictureBox))
                 {
                     previousBtn.BackColor = themeColor;
                 }
             }
-            
+
         }
 
         public void ActivateBtn(object btnSender)
@@ -135,7 +128,8 @@ namespace Perfect_Peace_System
 
                     }
                 }
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
@@ -178,61 +172,81 @@ namespace Perfect_Peace_System
 
                 if (addStntBtn.Text == "Cancel add student")
                 {
+                    wait.show(this);
                     new Pages.AddStudent().Close();
                     openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), panelView);
                     addStntBtn.Text = "Add Student";
+                    wait.close();
                 }
                 else if (addStntBtn.Text == "Add Student")
                 {
+                    wait.show(this);
                     openNewPage.OpenChildForm(new Pages.AddStudent(), panelView);
                     addStntBtn.Text = "Cancel add student";
+                    wait.close();
                 }
 
                 if (addStntBtn.Text == "Add To Staff")
                 {
+                    wait.show(this);
                     openNewPage.OpenChildForm(new Pages.AddTeacher(), panelView);
-                    addStntBtn.Text = "Cancel add add to staff";
+                    addStntBtn.Text = "Cancel add to staff";
+                    wait.close();
                 }
                 else if (addStntBtn.Text == "Cancel add to staff")
                 {
+                    wait.show(this);
                     new Pages.AddTeacher().Close();
                     openNewPage.OpenChildForm(new Pages.TeacherData(), panelView);
                     addStntBtn.Text = "Add To Staff";
+                    wait.close();
                 }
 
                 if (addStntBtn.Text == "Add Class")
                 {
+                    wait.show(this);
                     openNewPage.OpenChildForm(new Pages.AddClass(), panelView);
                     addStntBtn.Text = "Cancel add class";
+                    wait.close();
                 }
                 else if (addStntBtn.Text == "Cancel add class")
                 {
+                    wait.show(this);
                     new Pages.AddClass().Close();
                     openNewPage.OpenChildForm(new Pages.ClassData(), panelView);
                     addStntBtn.Text = "Add Class";
+                    wait.close();
                 }
 
                 if (addStntBtn.Text == "Pay Fees")
                 {
+                    wait.show(this);
                     openNewPage.OpenChildForm(new Pages.FeePaying(), panelView);
                     addStntBtn.Text = "Cancel pay fees";
+                    wait.close();
                 }
                 else if (addStntBtn.Text == "Cancel pay fees")
                 {
+                    wait.show(this);
                     new Pages.FeePaying().Close();
                     openNewPage.OpenChildForm(new Pages.FeesData(), panelView);
                     addStntBtn.Text = "Pay Fees";
+                    wait.close();
                 }
                 if (addStntBtn.Text == "Add Weekly Report")
                 {
+                    wait.show(this);
                     openNewPage.OpenChildForm(new Pages.AddParent(), panelView);
                     addStntBtn.Text = "Cancel Add Weekly Report";
+                    wait.close();
                 }
                 else if (addStntBtn.Text == "Cancel Add Weekly Report")
                 {
+                    wait.show(this);
                     new Pages.AddParent().Close();
                     openNewPage.OpenChildForm(new Pages.ParentsData(), panelView);
                     addStntBtn.Text = "Add Weekly Report";
+                    wait.close();
                 }
             }
             else
@@ -245,39 +259,39 @@ namespace Perfect_Peace_System
         private void teachersBtn_Click(object sender, EventArgs e)
         {
             wait.show(this);
-                ActivateBtn(sender);
-                addStntBtn.Visible = true;
-                addStntBtn.Text = "Add To Staff";
-                titleLbl.Text = "STAFF";
-                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
-                openNewPage.OpenChildForm(new Pages.TeacherData(), panelView);
+            ActivateBtn(sender);
+            addStntBtn.Visible = true;
+            addStntBtn.Text = "Add To Staff";
+            titleLbl.Text = "STAFF";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
+            openNewPage.OpenChildForm(new Pages.TeacherData(), panelView);
             wait.close();
         }
 
         private void parentsBtn_Click(object sender, EventArgs e)
         {
             wait.show(this);
-                ActivateBtn(sender);
-                openNewPage.OpenChildForm(new Pages.ParentsData(), panelView);
-                addStntBtn.Visible = true;
-                titleLbl.Text = "WEEKLY REPORT";
-                addStntBtn.Text = "Add Weekly Report";
-                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
+            ActivateBtn(sender);
+            openNewPage.OpenChildForm(new Pages.ParentsData(), panelView);
+            addStntBtn.Visible = true;
+            titleLbl.Text = "WEEKLY REPORT";
+            addStntBtn.Text = "Add Weekly Report";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
             wait.close();
-            
+
         }
 
         private void classesBtn_Click(object sender, EventArgs e)
         {
             wait.show(this);
-                ActivateBtn(sender);
-                addStntBtn.Visible = true;
-                addStntBtn.Text = "Add Class";
-                titleLbl.Text = "CLASSROOMS";
-                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
-                openNewPage.OpenChildForm(new Pages.ClassData(), panelView);
+            ActivateBtn(sender);
+            addStntBtn.Visible = true;
+            addStntBtn.Text = "Add Class";
+            titleLbl.Text = "CLASSROOMS";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
+            openNewPage.OpenChildForm(new Pages.ClassData(), panelView);
             wait.close();
-            
+
         }
 
         private void dashboardBtn_Click(object sender, EventArgs e)
@@ -301,22 +315,22 @@ namespace Perfect_Peace_System
         private void feesBtn_Click(object sender, EventArgs e)
         {
             wait.show(this);
-                ActivateBtn(sender);
-                addStntBtn.Visible = true;
-                addStntBtn.Text = "Pay Fees";
-                titleLbl.Text = "FEES";
-                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
+            ActivateBtn(sender);
+            addStntBtn.Visible = true;
+            addStntBtn.Text = "Pay Fees";
+            titleLbl.Text = "FEES";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
             openNewPage.OpenChildForm(new Pages.FeesData(), panelView);
             wait.close();
         }
-        
+
         private void accBtn_Click(object sender, EventArgs e)
         {
             wait.show(this);
-                ActivateBtn(sender);
-                addStntBtn.Visible = false;
-                titleLbl.Text = "ACCOUNT";
-                openNewPage.OpenChildForm(new Pages.Account(), panelView);
+            ActivateBtn(sender);
+            addStntBtn.Visible = false;
+            titleLbl.Text = "ACCOUNT";
+            openNewPage.OpenChildForm(new Pages.Account(), panelView);
             wait.close();
         }
         private void closeBtn_Click(object sender, EventArgs e)
@@ -332,15 +346,8 @@ namespace Perfect_Peace_System
 
         private void maxBtn_Click(object sender, EventArgs e)
         {
-            
-            if(this.WindowState == FormWindowState.Maximized)
-            {
-                this.WindowState = FormWindowState.Normal;
-            }
-            else
-            {
-                this.WindowState = FormWindowState.Maximized;
-            }
+
+            this.WindowState = this.WindowState == FormWindowState.Maximized ? FormWindowState.Normal : FormWindowState.Maximized;
         }
 
         private void reportBtn_Click(object sender, EventArgs e)
@@ -359,17 +366,17 @@ namespace Perfect_Peace_System
             {
                 MessageBox.Show("Check your internet connection");
             }
-            
+
         }
 
         private void subjectBtn_Click(object sender, EventArgs e)
         {
             wait.show(this);
-                ActivateBtn(sender);
-                addStntBtn.Visible = false;
-                titleLbl.Text = "SUBJECT INFORMATION";
-                panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
-                openNewPage.OpenChildForm(new Pages.AddSubject(), panelView);
+            ActivateBtn(sender);
+            addStntBtn.Visible = false;
+            titleLbl.Text = "SUBJECT INFORMATION";
+            panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y);
+            openNewPage.OpenChildForm(new Pages.AddSubject(), panelView);
             wait.close();
         }
 
@@ -389,7 +396,7 @@ namespace Perfect_Peace_System
             {
                 MessageBox.Show("Check your internet connection");
             }
-            
+
         }
 
         private void attendanceBtn_Click(object sender, EventArgs e)
@@ -408,12 +415,12 @@ namespace Perfect_Peace_System
             {
                 MessageBox.Show("Check your internet connection");
             }
-            
+
         }
 
         private void topPanel_MouseMove(object sender, MouseEventArgs e)
         {
-            if(e.Button == MouseButtons.Left)
+            if (e.Button == MouseButtons.Left)
             {
                 this.Location = new Point(Cursor.Position.X, Cursor.Position.Y);
             }
@@ -434,7 +441,7 @@ namespace Perfect_Peace_System
 
         private void Home_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void minBtn_Click(object sender, EventArgs e)
@@ -449,7 +456,7 @@ namespace Perfect_Peace_System
                 categoryLbl.Text = Pages.LoginInput.category;
                 usernameLbl.Text = Pages.LoginInput.username;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }

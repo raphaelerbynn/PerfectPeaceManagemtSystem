@@ -12,6 +12,7 @@ namespace Perfect_Peace_System.Pages
 {
     public partial class AddStudent : Form
     {
+        WaitFunc wait = new WaitFunc();
         OpenNewPage openNewPage = new OpenNewPage();
         ClassRoom classroom = new ClassRoom();
         public static string class_name = "";
@@ -139,6 +140,7 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                wait.show(this);
                 string class_id = "", fees_owned = "";
 
                 query = "SELECT * FROM Class WHERE name='" + classCb.Text + "'";
@@ -149,7 +151,6 @@ namespace Perfect_Peace_System.Pages
                     fees_owned = reader["fees"].ToString();
                 }
                 reader.Close();
-
                 Student student;
                 if (classCb.SelectedIndex > -1)
                 {
@@ -167,7 +168,7 @@ namespace Perfect_Peace_System.Pages
                         getRadioBtnValueS(), DateTime.Today.Date.ToString()
                         );
                 }
-                
+                //
 
 
                 if (String.IsNullOrWhiteSpace(fnameTb.Text) ||
@@ -180,10 +181,13 @@ namespace Perfect_Peace_System.Pages
                     String.IsNullOrWhiteSpace(contactTb.Text) ||
                     String.IsNullOrWhiteSpace(relationshipCB.Text))
                 {
+                    wait.close();
                     MessageBox.Show("Fields with * must be filled!");
+                    
                 }
                 else
                 {
+                    //wait.show(this);
                     if (classCb.SelectedIndex > -1 || !String.IsNullOrEmpty(classCb.Text))
                     {
                         if (classroom.maxCapacity(classCb.Text) > classroom.curCapacity(classCb.Text))
@@ -212,16 +216,19 @@ namespace Perfect_Peace_System.Pages
 
                     query = "UPDATE Student SET parent_id=" + DbClient.GetLastId("Parent") + " WHERE student_id=" + DbClient.GetLastId("Student");
                     DbClient.query_execute(query);
-                    MessageBox.Show("Student Registered");
                     clearFeilds();
                     //DataFromDb.getAllParent = DbClient.dataSource("SELECT parent_id,contact,gender,relationship, [f_name]+' '+[l_name] AS name FROM Parent");
 
                     DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
                     DataFromDb.totalStudents = DbClient.query_executeScaler("SELECT COUNT(*) FROM Student");
+                    wait.close();
+                    MessageBox.Show("Student Registered");
                 }
+                //wait.close();
             }
             catch (Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
             }
         }

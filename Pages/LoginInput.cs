@@ -18,7 +18,7 @@ namespace Perfect_Peace_System.Pages
         public static string category;
         public static string teacher_id;
         public static bool logged_in = false;
-        WaitFunc wait = new WaitFunc();
+       WaitFunc wait = new WaitFunc();
 
         public LoginInput()
         {
@@ -81,17 +81,17 @@ namespace Perfect_Peace_System.Pages
                         passwordTb.BackColor = DefaultBackColor;
                     }
 
-                    wait.show(this);
+                    
                     if (checkUserDetails(username, password) == true)
                     {
-                        
+                        //wait.show(this);
                         wrongMeesageLbl.Visible = false;
                         Login login = (Login)Application.OpenForms["Login"];
                         login.Hide();
 
                         Loading loading = new Loading();
                         loading.Show();
-                        wait.close();
+                        //wait.close();
                         usernameTb.Text = null;
                         passwordTb.Text = null;
                     }

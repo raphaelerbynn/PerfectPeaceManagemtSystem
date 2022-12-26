@@ -42,11 +42,13 @@
             this.pic.Image = global::Perfect_Peace_System.Properties.Resources.icons8_spinner__1_;
             this.pic.Name = "pic";
             this.pic.TabStop = false;
+            this.pic.UseWaitCursor = true;
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
+            this.label1.UseWaitCursor = true;
             // 
             // panel1
             // 
@@ -55,6 +57,7 @@
             this.panel1.Controls.Add(this.label1);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
+            this.panel1.UseWaitCursor = true;
             // 
             // WaitForm
             // 
@@ -64,6 +67,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WaitForm";
             this.TopMost = true;
+            this.UseWaitCursor = true;
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

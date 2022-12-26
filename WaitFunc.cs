@@ -28,9 +28,11 @@ namespace Perfect_Peace_System
 
         public void close()
         {
+            //wait.Close();
             if (wait != null)
             {
-                wait.BeginInvoke(new System.Threading.ThreadStart(wait.closeWaitForm));
+                //wait.Hide();
+                wait.BeginInvoke(new ThreadStart(wait.closeWaitForm));
                 wait = null;
                 loadThread = null;
             }

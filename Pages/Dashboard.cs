@@ -15,7 +15,7 @@ namespace Perfect_Peace_System.Pages
     {
         private string query;
         OpenNewPage openNewPage;
-        
+        WaitFunc wait = new WaitFunc();
 
         public Dashboard()
         {
@@ -211,8 +211,10 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
+            wait.show(this);
             this.Close();
             openNewPage.OpenChildForm(new Pages.StudentDataDisplay(), Home.displayPanel);
+            wait.close();
         }
         
         private void teacherPanel_Click(object sender, EventArgs e)
@@ -222,8 +224,10 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
+            wait.show(this);
             this.Close();
             openNewPage.OpenChildForm(new Pages.TeacherData(), Home.displayPanel);
+            wait.close();
         }
         
         private void classPanel_Click(object sender, EventArgs e)
@@ -233,8 +237,10 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
+            wait.show(this);
             this.Close();
             openNewPage.OpenChildForm(new Pages.ClassData(), Home.displayPanel);
+            wait.close();
         }
 
         private void feesLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -250,15 +256,18 @@ namespace Perfect_Peace_System.Pages
 
         private void eventLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-           
+            wait.show(this);
             this.Close();
             openNewPage.OpenChildForm(new Pages.EventData(), Home.displayPanel);
+            wait.close();
         }
 
         private void termBtn_Click(object sender, EventArgs e)
         {
             Pages.ConfirmPassword confirmPassword = new Pages.ConfirmPassword();
             confirmPassword.ShowDialog();
+
+            wait.show(this);
             if (GetData.getConfirmedPassword() == true)
             {
                 Home home = (Home)Application.OpenForms["Home"];
@@ -267,13 +276,15 @@ namespace Perfect_Peace_System.Pages
                 term.Show();
                 GetData.setConfirmPassword(false);
             }
-
+            wait.close();
         }
 
         private void usersBtn_Click(object sender, EventArgs e)
         {
             Pages.ConfirmPassword confirmPassword = new Pages.ConfirmPassword();
             confirmPassword.ShowDialog();
+
+            wait.show(this);
             if (GetData.getConfirmedPassword() == true)
             {
                 Home home = (Home)Application.OpenForms["Home"];
@@ -283,6 +294,7 @@ namespace Perfect_Peace_System.Pages
 
                 GetData.setConfirmPassword(false);
             }
+            wait.close();
         }
     }
 }

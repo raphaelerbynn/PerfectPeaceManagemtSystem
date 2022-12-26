@@ -20,6 +20,8 @@ namespace Perfect_Peace_System.Pages
         public static string stu_name;
         public static string stu_class;
         private string query;
+        WaitFunc wait = new WaitFunc();
+
         public MedicalReport()
         {
             InitializeComponent();
@@ -131,8 +133,10 @@ namespace Perfect_Peace_System.Pages
 
         private void addReportLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+            wait.show();
             OpenNewPage opn = new OpenNewPage();
             opn.OpenChildForm(new Pages.AddMedicalReport(), bgPanel);
+            wait.close();
         }
     }
 }

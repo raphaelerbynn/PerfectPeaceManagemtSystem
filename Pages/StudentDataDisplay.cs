@@ -17,7 +17,7 @@ namespace Perfect_Peace_System.Pages
         Parent parent;
         private string query;
         private static string id;
-
+        WaitFunc wait = new WaitFunc();
         OpenNewPage openNewPage = new OpenNewPage();
 
         public StudentDataDisplay()
@@ -115,6 +115,7 @@ namespace Perfect_Peace_System.Pages
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
+                        wait.show(this);
                         
                         query = "DELETE FROM Fee WHERE student_id='" + id + "'";
                         DbClient.query_execute(query);
@@ -141,32 +142,39 @@ namespace Perfect_Peace_System.Pages
                         student.delete(id);
                         parent.delete(parent_id);
                    
-                        MessageBox.Show(name + " deleted from system");
+                        
                         DataFromDb.totalStudents = DbClient.query_executeScaler("SELECT COUNT(*) FROM Student");
+                        
                         getTotalGendeView();
-
+                        wait.close();
+                        MessageBox.Show(name + " deleted from system");
                     }
 
                 }
 
                 if (studentDataView.Columns[e.ColumnIndex].Name == "view" && e.RowIndex >= 0)
                 {
+                    wait.show(this);
                     StudentDetail studentDetail = new StudentDetail();
                     studentDetail.Show();
                     Home home = (Home)Application.OpenForms["Home"];
                     home.Hide();
+                    wait.close();
                 }
 
                 if (studentDataView.Columns[e.ColumnIndex].Name == "edit")
                 {
                     //update data
+                    wait.show(this);
                     openNewPage.OpenChildForm(new Pages.UpdateStudent(), showDataPanel);
+                    wait.close();
                 }
                 
                 if (studentDataView.Columns[e.ColumnIndex].Name == "medicalReport")
                 {
-                    
+                    wait.show(this);
                     openNewPage.OpenChildForm(new Pages.MedicalReport(), showDataPanel);
+                    wait.close();
                 }
             }catch (Exception ex)
             {
@@ -205,11 +213,7 @@ namespace Perfect_Peace_System.Pages
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity() == false)
-            {
-                MessageBox.Show("Check your internet connection");
-                return;
-            }
+            
             if (!String.IsNullOrEmpty(searchTextBox.Text))
             {
                 try
@@ -227,18 +231,20 @@ namespace Perfect_Peace_System.Pages
             else
             {
                 (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+
                 getTotalGendeView();
             }
         }
 
         private void refeshBtn_Click(object sender, EventArgs e)
         {
+            wait.show(this);
             if (Pages.LoginInput.category.Equals("Administrator"))
             {
                 DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
                 
                 studentDataView.DataSource = DataFromDb.getAllStudentData();
-                MessageBox.Show("Student data refreshed");
+                //MessageBox.Show("Student data refreshed");
                 getTotalGendeView();
 
             }
@@ -248,9 +254,10 @@ namespace Perfect_Peace_System.Pages
                 DataFromDb.getAllStudentForTeacher = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student WHERE class_id='" + DataFromDb.class_id_teacher() + "'");
                 
                 studentDataView.DataSource = DataFromDb.getAllStudentDataForTeacher();
-                MessageBox.Show("Student data refreshed");
+                //MessageBox.Show("Student data refreshed");
                 getTotalGendeView();
             }
+            wait.close();
         }
 
         private void studentDataView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
