@@ -325,6 +325,7 @@ namespace Perfect_Peace_System.Pages
                 printBillBtn.Location = new Point(printBillBtn.Location.X, printBillBtn.Location.Y + length_of_subject);
                 testPanel.Location = new Point(testPanel.Location.X, testPanel.Location.Y + length_of_subject);
                 printResultBtn.Location = new Point(printResultBtn.Location.X, printResultBtn.Location.Y + length_of_subject);
+                feesControls.Location = new Point(feesControls.Location.X, feesControls.Location.Y + length_of_subject);
                 assessmentPanel.Location = new Point(assessmentPanel.Location.X, assessmentPanel.Location.Y + length_of_subject);
                 printAssBtn.Location = new Point(printAssBtn.Location.X, printAssBtn.Location.Y + length_of_subject);
                
@@ -795,8 +796,13 @@ namespace Perfect_Peace_System.Pages
         }
 
         private void backLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
+        { 
             this.Close();
+        }
+
+        private void setFeesBtn_Click(object sender, EventArgs e)
+        {
+            totalFeesLbl.Text = feesTb.Text;
         }
     }
 }

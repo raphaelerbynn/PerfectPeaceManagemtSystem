@@ -55,7 +55,7 @@ namespace Perfect_Peace_System.Pages
             double totalFemale = 0;
             foreach (DataGridViewRow item in studentDataView.Rows)
             {
-                if (item.Cells["gender"].Value.ToString().Equals("Male"))
+                if (item.Cells["gender"].Value.ToString().Equals("Male") || item.Cells["gender"].Value.ToString().Equals("MALE"))
                 {
                     totalMale++;
 
@@ -137,6 +137,8 @@ namespace Perfect_Peace_System.Pages
                         
                         query = "DELETE FROM Medical_report WHERE student_id='" + id + "'";
                         DbClient.query_execute(query);
+                        
+                        
 
                         studentDataView.Rows.RemoveAt(e.RowIndex);
                         student.delete(id);
@@ -192,6 +194,7 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
+                //DbClient.connection_close();
                 query = "SELECT parent_id FROM Student WHERE student_id='" + id + "' AND parent_id IS NOT NULL";
                 string parent_id = "";
                 System.Data.SqlClient.SqlDataReader reader0 = DbClient.query_reader(query);
@@ -205,6 +208,7 @@ namespace Perfect_Peace_System.Pages
             }
             catch (Exception ex)
             {
+                //DbClient.connection_close();
                 Console.WriteLine(ex);
                 return null;
 

@@ -42,6 +42,7 @@
             this.addressTb = new System.Windows.Forms.TextBox();
             this.fnameTb = new System.Windows.Forms.TextBox();
             this.registerPanel = new System.Windows.Forms.Panel();
+            this.backLbl = new System.Windows.Forms.LinkLabel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -66,10 +67,12 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.backLbl = new System.Windows.Forms.LinkLabel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.feesTb = new System.Windows.Forms.NumericUpDown();
             this.registerPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.feesTb)).BeginInit();
             this.SuspendLayout();
             // 
             // registerStntBnt
@@ -81,7 +84,7 @@
             this.registerStntBnt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.registerStntBnt.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerStntBnt.ForeColor = System.Drawing.Color.White;
-            this.registerStntBnt.Location = new System.Drawing.Point(424, 863);
+            this.registerStntBnt.Location = new System.Drawing.Point(414, 920);
             this.registerStntBnt.Name = "registerStntBnt";
             this.registerStntBnt.Size = new System.Drawing.Size(152, 31);
             this.registerStntBnt.TabIndex = 17;
@@ -223,6 +226,8 @@
             // registerPanel
             // 
             this.registerPanel.AutoScroll = true;
+            this.registerPanel.Controls.Add(this.feesTb);
+            this.registerPanel.Controls.Add(this.label11);
             this.registerPanel.Controls.Add(this.backLbl);
             this.registerPanel.Controls.Add(this.panel1);
             this.registerPanel.Controls.Add(this.panel2);
@@ -235,6 +240,18 @@
             this.registerPanel.Name = "registerPanel";
             this.registerPanel.Size = new System.Drawing.Size(972, 706);
             this.registerPanel.TabIndex = 1;
+            // 
+            // backLbl
+            // 
+            this.backLbl.AutoSize = true;
+            this.backLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backLbl.Location = new System.Drawing.Point(41, 23);
+            this.backLbl.Name = "backLbl";
+            this.backLbl.Size = new System.Drawing.Size(33, 19);
+            this.backLbl.TabIndex = 44;
+            this.backLbl.TabStop = true;
+            this.backLbl.Text = "<<<";
+            this.backLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.backLbl_LinkClicked);
             // 
             // panel1
             // 
@@ -346,6 +363,7 @@
             this.label17.Size = new System.Drawing.Size(95, 19);
             this.label17.TabIndex = 19;
             this.label17.Text = "First Name: *";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
             // 
             // fnamePTb
             // 
@@ -356,6 +374,7 @@
             this.fnamePTb.Name = "fnamePTb";
             this.fnamePTb.Size = new System.Drawing.Size(712, 27);
             this.fnamePTb.TabIndex = 21;
+            this.fnamePTb.TextChanged += new System.EventHandler(this.fnamePTb_TextChanged);
             // 
             // femaleRadioBtn
             // 
@@ -506,7 +525,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(332, 931);
+            this.label9.Location = new System.Drawing.Point(332, 1001);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(0, 13);
             this.label9.TabIndex = 19;
@@ -533,17 +552,26 @@
             this.label8.TabIndex = 1;
             this.label8.Text = "UPDATE STUDENT DATA";
             // 
-            // backLbl
+            // label11
             // 
-            this.backLbl.AutoSize = true;
-            this.backLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backLbl.Location = new System.Drawing.Point(41, 23);
-            this.backLbl.Name = "backLbl";
-            this.backLbl.Size = new System.Drawing.Size(33, 19);
-            this.backLbl.TabIndex = 44;
-            this.backLbl.TabStop = true;
-            this.backLbl.Text = "<<<";
-            this.backLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.backLbl_LinkClicked);
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(116, 864);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(131, 19);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Set Fees Manually:";
+            // 
+            // feesTb
+            // 
+            this.feesTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.feesTb.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.feesTb.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesTb.Location = new System.Drawing.Point(254, 862);
+            this.feesTb.Name = "feesTb";
+            this.feesTb.Size = new System.Drawing.Size(584, 27);
+            this.feesTb.TabIndex = 45;
             // 
             // UpdateStudent
             // 
@@ -559,6 +587,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.feesTb)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -603,5 +632,7 @@
         private System.Windows.Forms.TextBox lnamePTb;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.LinkLabel backLbl;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.NumericUpDown feesTb;
     }
 }

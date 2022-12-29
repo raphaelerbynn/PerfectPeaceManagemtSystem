@@ -86,9 +86,9 @@ namespace Perfect_Peace_System.Pages
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
-                        DbClient.query_execute("UPDATE Class SET name=UPPER(name)");
-                        DbClient.query_execute("UPDATE Student SET class=UPPER(class)");
-                        DbClient.query_execute("UPDATE Teacher SET f_name=UPPER(f_name), l_name=UPPER(l_name)");
+                        //DbClient.query_execute("UPDATE Class SET name=UPPER(name)");
+                        DbClient.query_execute("UPDATE Student SET gender=UPPER(gender)");
+                        //DbClient.query_execute("UPDATE Teacher SET f_name=UPPER(f_name), l_name=UPPER(l_name)");
 
 
                         query = "UPDATE Class SET teacher_id=NULL WHERE teacher_id='" + id + "'";
@@ -101,6 +101,9 @@ namespace Perfect_Peace_System.Pages
                         DbClient.query_execute(query);
 
                         query = "DELETE FROM Payroll WHERE teacher_id='" + id + "'";
+                        DbClient.query_execute(query);
+                        
+                        query = "DELETE FROM Teachers_weekly_report WHERE teacher_id='" + id + "'";
                         DbClient.query_execute(query);
                         
                         teacherDataGridView.Rows.RemoveAt(e.RowIndex);

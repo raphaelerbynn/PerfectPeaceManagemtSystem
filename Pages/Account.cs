@@ -36,12 +36,14 @@ namespace Perfect_Peace_System.Pages
         {
             if (InternetConnectivity.checkConnectivity())
             {
-                wait.show();
-                refeshBtn.Visible = true;
+               
+                
                 string queryTeacher = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'";
                 string queryClass = "SELECT name FROM Class";
+                
                 if (categoryCb.SelectedIndex == 0)
                 {
+                    refeshBtn.Visible = true;
                     classesPanel.Visible = false;
                     feedingPanel.Visible = false;
                     expensePanel.Visible = true;
@@ -49,6 +51,9 @@ namespace Perfect_Peace_System.Pages
                 }
                 else if (categoryCb.SelectedIndex == 1)
                 {
+
+                    wait.show();
+                    refeshBtn.Visible = true;
                     expensePanel.Visible = false;
                     feedingPanel.Visible = false;
                     busPanel.Visible = false;
@@ -56,9 +61,12 @@ namespace Perfect_Peace_System.Pages
                     classesPanel.Location = expensePanel.Location;
                     DbClient.query_reader(teacherCb, queryTeacher);
                     DbClient.query_reader(extraClassesClassCb, queryClass);
+                    refeshBtn.Visible = true;
+                    wait.close();
                 }
                 else if (categoryCb.SelectedIndex == 2)
                 {
+                    wait.show();
                     expensePanel.Visible = false;
                     classesPanel.Visible = false;
                     busPanel.Visible = false;
@@ -66,9 +74,12 @@ namespace Perfect_Peace_System.Pages
                     feedingPanel.Location = expensePanel.Location;
                     DbClient.query_reader(feedingTeacherCb, queryTeacher);
                     DbClient.query_reader(feedingClassCb, queryClass);
+                    refeshBtn.Visible = true;
+                    wait.close();
                 }
                 else if (categoryCb.SelectedIndex == 3)
                 {
+                    wait.show();
                     expensePanel.Visible = false;
                     classesPanel.Visible = false;
                     feedingPanel.Visible = false;
@@ -76,6 +87,8 @@ namespace Perfect_Peace_System.Pages
                     busPanel.Location = expensePanel.Location;
                     DbClient.query_reader(busTeacherCb, queryTeacher);
                     DbClient.query_reader(busClassCb, queryClass);
+                    refeshBtn.Visible = true;
+                    wait.close();
                 }
                 else
                 {
@@ -83,9 +96,9 @@ namespace Perfect_Peace_System.Pages
                     classesPanel.Visible = false;
                     feedingPanel.Visible = false;
                     busPanel.Visible = false;
-
+                    //wait.close();
                 }
-                wait.close();
+                
             }
             else
             {
@@ -602,7 +615,7 @@ namespace Perfect_Peace_System.Pages
             }
             else { }
             wait.close();
-            MessageBox.Show("Data refreshed");
+            //MessageBox.Show("Data refreshed");
         }
 
 

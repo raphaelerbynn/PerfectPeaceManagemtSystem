@@ -22,6 +22,7 @@ namespace Perfect_Peace_System.Pages
         public UpdateStudent()
         {
             InitializeComponent();
+            feesTb.Maximum = 10000;
             fillFields();
             registerPanel.BackColor = Home.foreColor;
         }
@@ -41,6 +42,8 @@ namespace Perfect_Peace_System.Pages
                 dobPicker.Text = reader["dob"].ToString();
                 addressTb.Text = reader["address"].ToString();
                 parent_id = reader["parent_id"].ToString();
+                feesTb.Text = reader["fees_owing"].ToString();
+                
 
                 _class = reader["class"].ToString();
                 
@@ -116,53 +119,65 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
-            wait.show();
-            if (classCb.SelectedIndex > -1)
+            try
             {
-                string class_id = DbClient.query_executeScaler("SELECT class_id FROM Class WHERE name='" + classCb.SelectedItem.ToString() + "'");
-                Console.WriteLine("ccccccccccccccllllllllssss:  "+class_id);
-                if (classroom.maxCapacity(classCb.Text) > classroom.curCapacity(classCb.Text))
+                wait.show();
+                if (classCb.SelectedIndex > -1)
+                {
+                    string class_id = DbClient.query_executeScaler("SELECT class_id FROM Class WHERE name='" + classCb.SelectedItem.ToString() + "'");
+                    //Console.WriteLine("ccccccccccccccllllllllssss:  "+class_id);
+                    if (classroom.maxCapacity(classCb.Text) > classroom.curCapacity(classCb.Text))
+                    {
+                        Student student = new Student(dobPicker.Value.Date.ToString(), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Today.Date.ToString());
+                        student.update(id);
+
+                        query = "UPDATE Student SET class_id='" + class_id + "', class='" + classCb.SelectedItem.ToString() + "' WHERE student_id='" + id + "'";
+                        DbClient.query_execute(query);
+
+                        query = "UPDATE Parent SET f_name='" + fnamePTb.Text + "', l_name='" + lnamePTb.Text + "', contact='" + contactTb.Text + "', contact1='" + contact1Tb.Text + "', relationship='" + relationshipCB.Text + "', occupation='" + occupationTb.Text + "', gender='" + getRadioBtnValueParent() + "' WHERE parent_id='" + parent_id + "'";
+                        DbClient.query_execute(query);
+
+                        query = "UPDATE Student SET fees_owing='" + feesTb.Text + "' WHERE student_id='" + id + "'";
+                        DbClient.query_execute(query);
+
+                        DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
+
+                        wait.close();
+
+                        MessageBox.Show("Student updated successfully");
+                    }
+                    else
+                    {
+
+                        wait.close();
+
+                        MessageBox.Show("Class full!!!");
+                    }
+                }
+                else
                 {
                     Student student = new Student(dobPicker.Value.Date.ToString(), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Today.Date.ToString());
                     student.update(id);
-
-                    query = "UPDATE Student SET class_id='"+class_id+"', class='"+classCb.SelectedItem.ToString()+"' WHERE student_id='"+id+"'";
+                    query = "UPDATE Student SET class_id=NULL, class=NULL WHERE student_id='" + id + "'";
                     DbClient.query_execute(query);
 
                     query = "UPDATE Parent SET f_name='" + fnamePTb.Text + "', l_name='" + lnamePTb.Text + "', contact='" + contactTb.Text + "', contact1='" + contact1Tb.Text + "', relationship='" + relationshipCB.Text + "', occupation='" + occupationTb.Text + "', gender='" + getRadioBtnValueParent() + "' WHERE parent_id='" + parent_id + "'";
                     DbClient.query_execute(query);
 
-                    
+                    query = "UPDATE Student SET fees_owing='" + feesTb.Text + "' WHERE student_id='" + id + "'";
+                    DbClient.query_execute(query);
+
                     DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
-                    
+
                     wait.close();
-                    
+
                     MessageBox.Show("Student updated successfully");
                 }
-                else
-                {
-                    
-                    wait.close();
-                    
-                    MessageBox.Show("Class full!!!");
-                }
             }
-            else
+            catch (Exception ex)
             {
-                Student student = new Student(dobPicker.Value.Date.ToString(), classCb.Text, fnameTb.Text, mnameTb.Text, lnameTb.Text, addressTb.Text, getRadioBtnValue(), DateTime.Today.Date.ToString());
-                student.update(id);
-                query = "UPDATE Student SET class_id=NULL, class=NULL WHERE student_id='"+id+"'";
-                DbClient.query_execute(query);
-                
-                query = "UPDATE Parent SET f_name='"+fnamePTb.Text+"', l_name='"+lnamePTb.Text+"', contact='"+contactTb.Text+"', contact1='"+contact1Tb.Text+"', relationship='"+relationshipCB.Text+"', occupation='"+occupationTb.Text+"', gender='"+getRadioBtnValueParent()+"' WHERE parent_id='"+parent_id+"'";
-                DbClient.query_execute(query);
-
-                
-                DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");
-                
                 wait.close();
-                
-                MessageBox.Show("Student updated successfully");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -174,6 +189,16 @@ namespace Perfect_Peace_System.Pages
         private void backLbl_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fnamePTb_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

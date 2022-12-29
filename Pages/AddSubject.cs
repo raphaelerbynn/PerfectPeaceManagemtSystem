@@ -66,6 +66,16 @@ namespace Perfect_Peace_System.Pages
                     if (result == DialogResult.Yes)
                     {
                         wait.show();
+                        string query = "DELETE FROM Student_marks WHERE subject_id='" + id + "'";
+                        DbClient.query_execute(query);
+                        
+                        query = "DELETE FROM Student_result WHERE subject_id='" + id + "'";
+                        DbClient.query_execute(query);
+                        
+                        query = "DELETE FROM Teachers_weekly_report WHERE subject_id='" + id + "'";
+                        DbClient.query_execute(query);
+
+
                         subjectDataView.Rows.RemoveAt(e.RowIndex);
                         subject.delete(id);
                         wait.close();

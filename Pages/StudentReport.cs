@@ -337,6 +337,23 @@ namespace Perfect_Peace_System.Pages
                     openNewpage.OpenChildForm(new Pages.ReportCard(), bgPanel);
                     wait.close();
                 }
+                if (kgDataView.Columns[e.ColumnIndex].Name == "delete_kg" && e.RowIndex >= 0)
+                {
+                    string message = "Do you want to delete result?";
+                    MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, "", deleteAction);
+                    if (result == DialogResult.Yes)
+                    {
+                        wait.show();
+                        query = "DELETE FROM Student_result WHERE student_id='" + id + "' AND term='" + termVal + "' AND class='" + className + "' AND date LIKE '%" + date + "%'";
+                        DbClient.query_execute(query);
+
+                        query = "DELETE FROM Student_marks WHERE student_id='" + id + "' AND term='" + termVal + "' AND class='" + className + "' AND date LIKE '%" + date + "%'";
+                        DbClient.query_execute(query);
+                        wait.close();
+                        MessageBox.Show("Result deleted");
+                    }
+                }
             }
             catch (Exception ex)
             {
@@ -427,9 +444,26 @@ namespace Perfect_Peace_System.Pages
                     openNewpage.OpenChildForm(new Pages.ReportCard(), bgPanel);
                     wait.close();
                 }
+                if (kgDataView.Columns[e.ColumnIndex].Name == "delete_kg" && e.RowIndex >= 0)
+                {
+                    string message = "Do you want to delete result?";
+                    MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
+                    DialogResult result = MessageBox.Show(message, "", deleteAction);
+                    if (result == DialogResult.Yes)
+                    {
+                        wait.show();
+                        query = "DELETE FROM KG_assessment WHERE student_id='" + id + "' AND term='" + termVal + "' AND class='" + className + "' AND date LIKE '%" + date + "%'";
+                        DbClient.query_execute(query);
+                        
+                        
+                        wait.close();
+                        MessageBox.Show("Result deleted");
+                    }
+                }
             }
             catch (Exception ex)
             {
+                wait.close();
                 //MessageBox.Show(ex.Message);
                 Console.WriteLine(ex);
             }
