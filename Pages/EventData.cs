@@ -13,6 +13,7 @@ namespace Perfect_Peace_System.Pages
     public partial class EventData : Form
     {
         private string query;
+        WaitFunc wait = new WaitFunc();
         public EventData()
         {
             InitializeComponent();
@@ -48,14 +49,17 @@ namespace Perfect_Peace_System.Pages
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
+                        wait.show();
                         eventDataView.Rows.RemoveAt(e.RowIndex);
                         query = "DELETE FROM Event WHERE event_id='" + id + "'";
                         DbClient.query_execute(query);
+                        wait.close();
                         MessageBox.Show("Event deleted from system");
                     }
                 }
             }catch(Exception ex)
             {
+                wait.close();
                 //MessageBox.Show(ex.Message);
             }
         }
@@ -75,9 +79,12 @@ namespace Perfect_Peace_System.Pages
 
         private void refeshBtn_Click(object sender, EventArgs e)
         {
+            wait.show();
             DataFromDb.getAllEvent = DbClient.dataSource("SELECT event_id, name, description, FORMAT(date, 'dd-MM-yyyy') AS date, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time FROM Event");
-            MessageBox.Show("Event data refreshed");
+            
             eventDataView.DataSource = DataFromDb.getAllEventData();
+            wait.close();
+            MessageBox.Show("Event data refreshed");
         }
     }
 }

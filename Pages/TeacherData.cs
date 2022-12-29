@@ -15,7 +15,7 @@ namespace Perfect_Peace_System.Pages
         private static string id;
         private string query;
         private Teacher teacher;
-
+        WaitFunc wait = new WaitFunc();
         OpenNewPage openNewPage = new OpenNewPage();
 
         public TeacherData()
@@ -73,6 +73,7 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                wait.show();
                 DataGridViewRow row = teacherDataGridView.Rows[e.RowIndex];
                 id = row.Cells["teacher_id"].Value.ToString();
                 string name = row.Cells["name"].Value.ToString();
@@ -105,6 +106,7 @@ namespace Perfect_Peace_System.Pages
                         teacherDataGridView.Rows.RemoveAt(e.RowIndex);
                         teacher.delete(id);
                         DataFromDb.totalTeachers = DbClient.query_executeScaler("SELECT COUNT(*) FROM Teacher");
+                        wait.close();
                         MessageBox.Show(name + " deleted from system");
                     }
                 }
@@ -115,6 +117,7 @@ namespace Perfect_Peace_System.Pages
                     details.Show();
                     Home home = (Home)Application.OpenForms["Home"];
                     home.Hide();
+                    wait.close();
                 }
 
                 if (teacherDataGridView.Columns[e.ColumnIndex].Name == "edit" && e.RowIndex >= 0)
@@ -122,11 +125,12 @@ namespace Perfect_Peace_System.Pages
                     //update data
                     //teacherDataGridView.Visible = false;
                     openNewPage.OpenChildForm(new Pages.UpdateTeacher(), showDataPanel);
+                    wait.close();
                 }
             }
             catch (Exception ex)
             {
-                
+                wait.close();
                 Console.WriteLine(ex);
             }
         }
@@ -242,6 +246,7 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                wait.show();
                 DataGridViewRow row = nonTeachingDataView.Rows[e.RowIndex];
                 id = row.Cells["teacher_idNt"].Value.ToString();
                 string name = row.Cells["nameNt"].Value.ToString();
@@ -267,6 +272,7 @@ namespace Perfect_Peace_System.Pages
                         teacher.delete(id);
 
                         DataFromDb.totalTeachers = DbClient.query_executeScaler("SELECT COUNT(*) FROM Teacher");
+                        wait.close();
                         MessageBox.Show(name + " deleted from system");
                         
                     }
@@ -278,6 +284,7 @@ namespace Perfect_Peace_System.Pages
                     details.Show();
                     Home home = (Home)Application.OpenForms["Home"];
                     home.Hide();
+                    wait.close();
                 }
 
                 if (nonTeachingDataView.Columns[e.ColumnIndex].Name == "editNt" && e.RowIndex >= 0)
@@ -285,30 +292,31 @@ namespace Perfect_Peace_System.Pages
                     //update data
                     nonTeachingDataView.Visible = false;
                     openNewPage.OpenChildForm(new Pages.UpdateTeacher(), showDataPanel);
+                    wait.close();
                 }
             }
             catch (Exception ex)
             {
+                wait.close();
                 Console.WriteLine(ex);
-
             }
         }
 
         private void refeshBtn_Click(object sender, EventArgs e)
-        {
+        { 
+            wait.show();
             DataFromDb.getAllNonTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, staff_position, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Non-Teaching'");
-
             DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, (SELECT name FROM Class WHERE Class.class_id=Teacher.class_id) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
 
             DbClient.query_execute("UPDATE Class SET name=UPPER(name)");
             DbClient.query_execute("UPDATE Student SET class=UPPER(class)");
             DbClient.query_execute("UPDATE Teacher SET f_name=UPPER(f_name), l_name=UPPER(l_name)");
 
-
-            MessageBox.Show("Staff data refreshed");
             nonTeachingDataView.DataSource = DataFromDb.getAllNonTeacherData();
             teacherDataGridView.DataSource = DataFromDb.getAllTeacherData();
 
+            wait.close();
+            MessageBox.Show("Staff data refreshed");
         }
 
         private void teacherDataGridView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)

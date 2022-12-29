@@ -33,6 +33,8 @@ namespace Perfect_Peace_System.Pages
         private int class_percentage;
         private int exam_percentage;
 
+        WaitFunc wait = new WaitFunc();
+
         public ReportForKG()
         {
             InitializeComponent();
@@ -351,6 +353,7 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
+                wait.show();
                 query = "DELETE FROM KG_assessment WHERE student_id='"+student_id+"' AND term='" + termCb.SelectedItem.ToString() + "' AND class='" + classLbl.Text + "' AND date LIKE '%" + DateTime.Now.Year + "%'";
                 DbClient.query_execute(query);
 
@@ -423,10 +426,12 @@ namespace Perfect_Peace_System.Pages
                 kgScoresToDb(envLbl.Text, envClassTb.Text, envExamTb.Text, envTotalLbl.Text);
                 kgScoresToDb(mathLbl.Text, mathClassTb.Text, mathExamTb.Text, mathTotalLbl.Text);
                 kgScoresToDb(phoLbl.Text, phoClassTb.Text, phoExamTb.Text, phoTotalLbl.Text);
+                wait.close();
 
             }
             catch(Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
                 Console.WriteLine(ex.StackTrace);
             }
@@ -513,7 +518,7 @@ namespace Perfect_Peace_System.Pages
 
                 if (enable == true)
                 {
-
+                    wait.show();
                     DbClient.query_execute("DELETE FROM KG_calc_values");
 
                     query = "INSERT INTO KG_calc_values (exam_total, class_total, class_percentage, exam_percentage) " +
@@ -526,6 +531,7 @@ namespace Perfect_Peace_System.Pages
                     examTotalMarkTB.Enabled = false;
 
                     enable = false;
+                    wait.close();
                 }
 
                 else
@@ -540,6 +546,7 @@ namespace Perfect_Peace_System.Pages
             }
             catch
             {
+                wait.close();
                 MessageBox.Show("Check your input");
             }
         }

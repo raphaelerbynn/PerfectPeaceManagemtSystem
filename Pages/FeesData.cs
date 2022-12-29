@@ -14,6 +14,7 @@ namespace Perfect_Peace_System.Pages
     public partial class FeesData : Form
     {
         Fees fees = new Fees();
+        WaitFunc wait = new WaitFunc();
         private string query;
 
         public FeesData()
@@ -59,6 +60,7 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
+                wait.show();
                 foreach (DataGridViewRow item in feesDataView.Rows)
                 {
                     string student_id = item.Cells["student_id"].Value.ToString();
@@ -79,21 +81,18 @@ namespace Perfect_Peace_System.Pages
                     reader.Close();
                     feesDataView.ReadOnly = true;
                 }
-
+                wait.close();
             }
             catch (Exception ex)
             {
+                wait.close();
                 Console.WriteLine(ex.Message);
             }
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity() == false)
-            {
-                MessageBox.Show("Check your internet connection");
-                return;
-            }
+            
             if (!String.IsNullOrEmpty(searchTextBox.Text))
             {
                 try
@@ -165,16 +164,19 @@ namespace Perfect_Peace_System.Pages
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
+                        wait.show();
                         feesDataView.Rows.RemoveAt(e.RowIndex);
                         //reverse payment
                         query = "DELETE FROM Fee WHERE fee_id='"+id+"'";
                         DbClient.query_execute(query);
+                        wait.close();
                         MessageBox.Show(" Fee data deleted from system");
                     }
                 }
                 
                 if (feesDataView.Columns[e.ColumnIndex].Name == "print" && e.RowIndex >= 0)
                 {
+                    wait.show();
                     string student_id = DbClient.query_executeScaler("SELECT student_id FROM Fee WHERE fee_id='" + id + "'");
                     GetData.setStudentIdReceipt(student_id);
                     GetData.setFeeId(id);
@@ -182,19 +184,23 @@ namespace Perfect_Peace_System.Pages
 
                     OpenNewPage openNewPage = new OpenNewPage();
                     openNewPage.OpenChildForm(new Pages.FeeReceipt(), bgPanel);
+                    wait.close();
                 }
             }
             catch(Exception ex)
             {
+                wait.close();
                 //MessageBox.Show(ex.Message);
             }
         }
 
         private void refeshBtn_Click(object sender, EventArgs e)
         {
+            wait.show();
             DataFromDb.getFees = DbClient.dataSource("SELECT fee_id, student_id, paid, remaining, payment_mode, FORMAT(date_paid, 'dd-MMM-yyyy') AS date_paid, term, (SELECT [f_name]+' '+[l_name] AS name FROM Student WHERE Student.student_id=Fee.student_id) AS student, (SELECT class FROM Student WHERE Student.student_id=Fee.student_id) AS class FROM Fee");
-            MessageBox.Show("Fees data refreshed");
             feesDataView.DataSource = DataFromDb.getFeesData();
+            wait.close();
+            //MessageBox.Show("Fees data refreshed");
         }
     }
 }

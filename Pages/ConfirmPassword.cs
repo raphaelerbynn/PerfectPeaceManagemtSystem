@@ -16,6 +16,7 @@ namespace Perfect_Peace_System.Pages
         static string username = Pages.LoginInput.username;
         private string query;
         private string password;
+        WaitFunc wait = new WaitFunc();
         public ConfirmPassword()
         {
             InitializeComponent();
@@ -23,6 +24,7 @@ namespace Perfect_Peace_System.Pages
 
         public bool passwordConfirmed()
         {
+            wait.show();
             bool val = false;
             password = passwordTb.Text;
             query = "SELECT username, email, password FROM User_account WHERE username='"+username+"'";
@@ -40,6 +42,7 @@ namespace Perfect_Peace_System.Pages
                 }
             }
             reader.Close();
+            wait.close();
             return val;
         }
 

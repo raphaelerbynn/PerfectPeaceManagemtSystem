@@ -16,6 +16,7 @@ namespace Perfect_Peace_System.Pages
         ClassRoom classRoom;
         private string query;
         public static string class_id;
+        WaitFunc wait = new WaitFunc();
 
         public ClassData()
         {
@@ -92,6 +93,7 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
+
             try
             {
                 DataGridViewRow row = classDataView.Rows[e.RowIndex];
@@ -105,6 +107,7 @@ namespace Perfect_Peace_System.Pages
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
+                        wait.show();
                         query = "UPDATE Teacher SET class_id=NULL WHERE class_id='" + class_id + "'";
                         DbClient.query_execute(query);
                         
@@ -119,26 +122,34 @@ namespace Perfect_Peace_System.Pages
 
                         classDataView.Rows.RemoveAt(e.RowIndex);
                         DataFromDb.totalRooms = DbClient.query_executeScaler("SELECT COUNT(*) FROM Class");
+                        wait.close();
                         MessageBox.Show(name + " deleted from system");
                     }
                 }
                 else if(classDataView.Columns[e.ColumnIndex].Name == "edit" && e.RowIndex >= 0)
                 {
+                    wait.show();
                     OpenNewPage openNewPage = new OpenNewPage();
                     openNewPage.OpenChildForm(new Pages.UpdateClass(), showDataPanel);
+                    wait.close();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
+                wait.close();
                // MessageBox.Show(ex.Message);
             }
         }
 
         private void refeshBtn_Click(object sender, EventArgs e)
         {
+            wait.show();
             DataFromDb.getAllClass = DbClient.dataSource("SELECT class_id, name, section, capacity, fees, teacher_id, (SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE Teacher.teacher_id=Class.teacher_id) AS teacher FROM Class");
-            MessageBox.Show("Class data refreshed");
+            
             classDataView.DataSource = DataFromDb.getAllClassData();
+            wait.close();
+            
+            //MessageBox.Show(this,"Class data refreshed");
         }
     }
 

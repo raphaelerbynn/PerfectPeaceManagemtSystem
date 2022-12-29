@@ -13,7 +13,7 @@ namespace Perfect_Peace_System.Pages
     public partial class AddSalary : Form
     {
         private string query;
-        
+        WaitFunc wait = new WaitFunc();
 
         public AddSalary()
         {
@@ -30,6 +30,7 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                wait.show();
                 string salary_id = "";
                 if (!(String.IsNullOrEmpty(titleTb.Text) || String.IsNullOrEmpty(salaryTb.Text)))
                 {
@@ -62,12 +63,14 @@ namespace Perfect_Peace_System.Pages
                     }
 
                     Console.WriteLine(salary_id);
+                    wait.close();
                     MessageBox.Show("Salary Base added to system");
                     clearFields();
                     this.Close();
                 }
                 else
                 {
+                    wait.close();
                     MessageBox.Show("Title and Amount of Salary must be field!");
                 }
                 

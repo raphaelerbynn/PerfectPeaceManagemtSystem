@@ -14,7 +14,7 @@ namespace Perfect_Peace_System.Pages
     {
         private string query;
         public static string user = "";
-
+        WaitFunc wait = new WaitFunc();
         public UsersDetails()
         {
             InitializeComponent();
@@ -74,8 +74,10 @@ namespace Perfect_Peace_System.Pages
                         confirmPassword.ShowDialog();
                         if (GetData.getConfirmedPassword() == true)
                         {
+                            wait.show();
                             DbClient.query_execute("DELETE FROM User_account WHERE username='" + user + "'");
                             accountDataView.Rows.RemoveAt(e.RowIndex);
+                            wait.close();
                             GetData.setConfirmPassword(false);
                         }
                     }
@@ -83,13 +85,16 @@ namespace Perfect_Peace_System.Pages
 
                 if (accountDataView.Columns[e.ColumnIndex].Name == "edit" && e.RowIndex >= 0)
                 {
+                    wait.show();
                     this.Hide();
                     Pages.EditUserDetails edit = new Pages.EditUserDetails();
                     edit.Show();
+                    wait.close();
                 }
             }
-            catch (Exception ex)
+            catch
             {
+                wait.close();
                 //MessageBox.Show(ex.Message);
             }
         }

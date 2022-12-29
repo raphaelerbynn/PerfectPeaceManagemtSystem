@@ -14,6 +14,7 @@ namespace Perfect_Peace_System.Pages
     public partial class CreateAccount : Form
     {
         private string teacher_id;
+        WaitFunc wait = new WaitFunc();
         private List<string> system_keys = new List<string>()
         {
             "master$$$perfect_Peace@2022!",
@@ -112,8 +113,10 @@ namespace Perfect_Peace_System.Pages
                 DialogResult result = MessageBox.Show("Confirm to create this account", "", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
+                    wait.show();
                     if (category.Equals("Class Teacher"))
                     {
+                        
                         teacher_id = DbClient.query_executeScaler("SELECT teacher_id FROM Teacher WHERE [f_name]+' '+[l_name]='"+ nameCb.SelectedItem.ToString()+"'");
                         query = "INSERT INTO User_account(name, username, email, category, password, teacher_id)" +
                             "VALUES('" + name + "', '" + username + "', '" + email + "', '" + category + "', '" + password + "', '" + teacher_id + "')";
@@ -124,7 +127,7 @@ namespace Perfect_Peace_System.Pages
                             "VALUES('" + name + "', '" + username + "', '" + email + "', '" + category + "', '" + password + "')";
                     }
                     DbClient.query_execute(query);
-
+                    wait.close();
                     MessageBox.Show("Account Created Successfully");
                     this.Close();
                 }
@@ -132,6 +135,7 @@ namespace Perfect_Peace_System.Pages
             }
             catch(Exception ex)
             {
+                wait.close();
                 if (ex.ToString().Contains("Violation of PRIMARY KEY"))
                 {
                     MessageBox.Show("Data with same id already exists");
@@ -158,6 +162,7 @@ namespace Perfect_Peace_System.Pages
 
         private bool ckeckValidAdminPassword(string password)
         {
+            wait.show();
             bool value = false;
             query = "SELECT password FROM User_account WHERE category='Administrator'";
             SqlDataReader reader = DbClient.query_reader(query);
@@ -170,6 +175,7 @@ namespace Perfect_Peace_System.Pages
                 }
             }
             reader.Close();
+            wait.close();
             return value;
         }
 

@@ -13,7 +13,7 @@ namespace Perfect_Peace_System.Pages
     public partial class AddClass : Form
     {
         private string query;
-
+        WaitFunc wait = new WaitFunc();
         public AddClass()
         {
             InitializeComponent();
@@ -32,8 +32,10 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
+            wait.show();
             if (!(String.IsNullOrEmpty(nameTb.Text) || String.IsNullOrEmpty(capacityTb.Text)) && sectionCb.SelectedIndex > -1)
             {
+                
                 ClassRoom classRoom = new ClassRoom(
                     nameTb.Text, int.Parse(capacityTb.Text), 
                     sectionCb.SelectedItem.ToString(), 
@@ -61,10 +63,12 @@ namespace Perfect_Peace_System.Pages
                 }
                 DataFromDb.getAllClass = DbClient.dataSource("SELECT class_id, name, section, capacity, fees, teacher_id, (SELECT [f_name]+' '+[l_name] FROM Teacher WHERE Teacher.teacher_id=Class.teacher_id) AS teacher FROM Class");
                 DataFromDb.totalRooms = DbClient.query_executeScaler("SELECT COUNT(*) FROM Class");
+                wait.close();
                 MessageBox.Show("Class Added");
             }
             else
             {
+                wait.close();
                 MessageBox.Show("Fill class name and capacity!!!");
             }
         }

@@ -66,7 +66,6 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WaitForm";
-            this.TopMost = true;
             this.UseWaitCursor = true;
             ((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
             this.panel1.ResumeLayout(false);

@@ -14,6 +14,7 @@ namespace Perfect_Peace_System.Pages
 {
     public partial class AddResult : Form
     {
+        WaitFunc wait = new WaitFunc();
         private string query;
         private string student_id = StudentReport.getIdFromSelectedRow();
 
@@ -337,7 +338,9 @@ namespace Perfect_Peace_System.Pages
             DialogResult result = MessageBox.Show(message, "", action);
             if (result == DialogResult.Yes)
             {
+                
                 detailsToDB();
+                
             }
         }
 
@@ -351,6 +354,7 @@ namespace Perfect_Peace_System.Pages
                 double raw_score = 0;
                 int pass_score = 0;
                 int total_raw_score = 0;
+                wait.show();
                 for (int i = 0; i < subject_ids.Count; i++)
                 {
                     if (!(String.IsNullOrEmpty(classScoreTBs[i].Text) || String.IsNullOrEmpty(examScoreTBs[i].Text)))
@@ -379,18 +383,21 @@ namespace Perfect_Peace_System.Pages
                 if (statusCb.Visible == true)
                 {
                     result_status = statusCb.Text;
-                    if(classCb.Visible == true)
+                    if (classCb.Visible == true)
                     {
                         promoted_to = classCb.Text;
-                        MessageBox.Show("Take Note: After printing all result. Go to student module and update student to promoted class", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                 }
                 query = "INSERT INTO Student_result(student_id, raw_score, pass_raw_score, total_raw_score, result_status, class_total, promoted_to, class, term, conduct, attitude, interest, teacher_remarks, date) " +
                         "VALUES('" + student_id + "', '" + raw_score + "', '" + pass_score + "', '" + total_raw_score + "', '" + result_status + "', '"+class_total+"', '"+promoted_to+"', '" + classLbl.Text + "', '" + termCb.Text + "', '" + conductTB.Text + "', '" + attitudeTB.Text + "', '" + interestTB.Text + "', '" + teacherRemarksTB.Text + "', '" + DateTime.Today + "')";
                 DbClient.query_execute(query);
+                wait.close();
+                MessageBox.Show("Take Note: After printing all result. Go to student module and update student to promoted class", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
                 this.Close();
             }catch(Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
             }
         }
@@ -433,8 +440,10 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
+            wait.show();
             query = "SELECT name FROM Class";
             DbClient.query_reader(classCb, query);
+            wait.close();
         }
 
         private void classCb_SelectedIndexChanged(object sender, EventArgs e)

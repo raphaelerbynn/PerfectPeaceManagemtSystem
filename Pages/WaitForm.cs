@@ -27,10 +27,12 @@ namespace Perfect_Peace_System.Pages
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
+            //MessageBox.Show(msg, "", MessageBoxButtons.OK, MessageBoxIcon.Information);
             if (pic.Image != null)
             {
                 pic.Image.Dispose();
             }
         }
+        
     }
 }

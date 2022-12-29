@@ -10,10 +10,11 @@ using System.Windows.Forms;
 
 namespace Perfect_Peace_System.Pages
 {
+    
     public partial class Account : Form
     {
         private string query;
-
+        WaitFunc wait = new WaitFunc();
         public Account()
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace Perfect_Peace_System.Pages
         {
             if (InternetConnectivity.checkConnectivity())
             {
+                wait.show();
                 refeshBtn.Visible = true;
                 string queryTeacher = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'";
                 string queryClass = "SELECT name FROM Class";
@@ -83,6 +85,7 @@ namespace Perfect_Peace_System.Pages
                     busPanel.Visible = false;
 
                 }
+                wait.close();
             }
             else
             {
@@ -144,6 +147,7 @@ namespace Perfect_Peace_System.Pages
             {
                 try
                 {
+                    wait.show();
                     query = "INSERT INTO Feeding_fee(teacher, class, amount, date) " +
                         "VALUES('" + feedingTeacherCb.Text + "', '" + feedingClassCb.Text + "', '" + feedingAmntTb.Text + "', '" + DateTime.Today + "')";
                     DbClient.query_execute(query);
@@ -154,9 +158,11 @@ namespace Perfect_Peace_System.Pages
                     feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
                     DataFromDb.getFeedingFee = DbClient.dataSource("SELECT feeding_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Feeding_fee");
                     showFeeding();
+                    wait.close();
                 }
                 catch (Exception ex)
                 {
+                    wait.close();
                     Console.WriteLine(ex.Message);
                     MessageBox.Show("Input all fields correctly!");
                 }
@@ -171,56 +177,45 @@ namespace Perfect_Peace_System.Pages
 
         private void feedingSearchBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity())
-            {
-                if (!String.IsNullOrEmpty(feedingSearchTb.Text))
-                {
-                    try
-                    {
-                        (feedingDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("teacher LIKE '%{0}%'", feedingSearchTb.Text);
-                        feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Search Again");
-                        Console.WriteLine(ex.Message);
-                    }
 
-                }
-                else
+            if (!String.IsNullOrEmpty(feedingSearchTb.Text))
+            {
+                try
                 {
-                    (feedingDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                    (feedingDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("teacher LIKE '%{0}%'", feedingSearchTb.Text);
                     feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
+
             }
             else
             {
-                MessageBox.Show("Check your internet connection");
+                (feedingDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
             }
             
         }
 
         private void feedingLoadBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity())
+
+            string loadListDateF = feedingYearPk.Text;
+            if (monthFeedingPk.Visible == true)
             {
-                string loadListDateF = feedingYearPk.Text;
-                if (monthFeedingPk.Visible == true)
+                loadListDateF = monthFeedingPk.Text + "-" + feedingYearPk.Text;
+                if (dayExtraClassesPk.Visible == true)
                 {
-                    loadListDateF = monthFeedingPk.Text + "-" + feedingYearPk.Text;
-                    if (dayExtraClassesPk.Visible == true)
-                    {
-                        loadListDateF = dayFeedingPk.Text + "-" + loadListDateF;
-                    }
+                    loadListDateF = dayFeedingPk.Text + "-" + loadListDateF;
                 }
+            }
             (feedingDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", loadListDateF);
-                feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
-            }
-            else
-            {
-                MessageBox.Show("Check your internet connection");
-            }
+            feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
         }
+        
 
         private void feedingDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -237,9 +232,11 @@ namespace Perfect_Peace_System.Pages
                         DialogResult result = MessageBox.Show(message, "", deleteAction);
                         if (result == DialogResult.Yes)
                         {
+                            wait.show();
                             feedingDataView.Rows.RemoveAt(e.RowIndex);
                             query = "DELETE FROM Feeding_fee WHERE feeding_fee_id='" + id + "'";
                             DbClient.query_execute(query);
+                            wait.close();
                             MessageBox.Show("Data deleted from system");
                             feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
                         }
@@ -248,6 +245,7 @@ namespace Perfect_Peace_System.Pages
                 }
                 catch (Exception ex)
                 {
+                    wait.close();
                     //MessageBox.Show(ex.Message);
                 }
             }
@@ -296,6 +294,7 @@ namespace Perfect_Peace_System.Pages
 
                 try
                 {
+                    wait.show();
                     query = "INSERT INTO Extra_classes(teacher, class, amount, date) " +
                         "VALUES('" + teacherCb.Text + "', '" + extraClassesClassCb.Text + "', '" + extraClassesAmntTb.Text + "', '" + DateTime.Today + "')";
                     DbClient.query_execute(query);
@@ -305,9 +304,11 @@ namespace Perfect_Peace_System.Pages
                     extraClassesAmntTb.Text = null;
                     DataFromDb.getExtraClasses = DbClient.dataSource("SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes");
                     showExtraClasses();
+                    wait.close();
                 }
                 catch (Exception ex)
                 {
+                    wait.close();
                     MessageBox.Show(ex.Message);
                 }
                 
@@ -320,57 +321,44 @@ namespace Perfect_Peace_System.Pages
 
         private void extraClassesSearchBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity())
+            if (!String.IsNullOrEmpty(searchExtraClassesTb.Text))
             {
-                if (!String.IsNullOrEmpty(searchExtraClassesTb.Text))
+                try
                 {
-                    try
-                    {
-                        (extraClassesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("teacher LIKE '%{0}%'", searchExtraClassesTb.Text);
-                        extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Search Again");
-                        Console.WriteLine(ex.Message);
-                    }
-
-                }
-                else
-                {
-                    (extraClassesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                    (extraClassesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("teacher LIKE '%{0}%'", searchExtraClassesTb.Text);
                     extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
+
             }
             else
             {
-                MessageBox.Show("Check your internet connection");
+                (extraClassesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
             }
             
         }
 
         private void loadExtraClassesBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity())
-            {
-                string loadListDateC = yearExtraClassesPk.Text;
-                if (monthExtraClassesPk.Visible == true)
-                {
-                    loadListDateC = monthExtraClassesPk.Text + "-" + yearExtraClassesPk.Text;
-                    if (dayExtraClassesPk.Visible == true)
-                    {
-                        loadListDateC = dayExtraClassesPk.Text + "-" + loadListDateC;
-                    }
-                }
-            (extraClassesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", loadListDateC);
-                extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
-            }
 
-            else
+            string loadListDateC = yearExtraClassesPk.Text;
+            if (monthExtraClassesPk.Visible == true)
             {
-                MessageBox.Show("Check your internet connection");
+                loadListDateC = monthExtraClassesPk.Text + "-" + yearExtraClassesPk.Text;
+                if (dayExtraClassesPk.Visible == true)
+                {
+                    loadListDateC = dayExtraClassesPk.Text + "-" + loadListDateC;
+                }
             }
+            (extraClassesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", loadListDateC);
+            extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
         }
+        
 
         private void extraClassesDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -387,9 +375,11 @@ namespace Perfect_Peace_System.Pages
                         DialogResult result = MessageBox.Show(message, "", deleteAction);
                         if (result == DialogResult.Yes)
                         {
+                            wait.show();
                             extraClassesDataView.Rows.RemoveAt(e.RowIndex);
                             query = "DELETE FROM Extra_classes WHERE extra_classes_id='" + id + "'";
                             DbClient.query_execute(query);
+                            wait.close();
                             MessageBox.Show("Data deleted from system");
                             extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
                         }
@@ -398,6 +388,7 @@ namespace Perfect_Peace_System.Pages
                 }
                 catch (Exception ex)
                 {
+                    wait.close();
                     MessageBox.Show(ex.Message);
                 }
             }
@@ -445,6 +436,7 @@ namespace Perfect_Peace_System.Pages
             {
                 try
                 {
+                    wait.show();
                     query = "INSERT INTO Expense(expense, amount, date) " +
                         "VALUES('" + expenseTb.Text + "', '" + expAmountTb.Text + "', '" + DateTime.Today + "')";
                     DbClient.query_execute(query);
@@ -454,9 +446,11 @@ namespace Perfect_Peace_System.Pages
                     totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
                     DataFromDb.getExpenses = DbClient.dataSource("SELECT expense_id, expense, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Expense");
                     showExpenses();
+                    wait.close();
                 }
                 catch (Exception ex)
                 {
+                    wait.close();
                     Console.WriteLine(ex.Message);
                     MessageBox.Show("Input all fields correctly!");
                 }
@@ -470,43 +464,32 @@ namespace Perfect_Peace_System.Pages
 
         private void searchExpBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity())
-            {
-                if (!String.IsNullOrEmpty(expSearchTb.Text))
-                {
-                    try
-                    {
-                        (expensesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("expense LIKE '%{0}%'", expSearchTb.Text);
-                        totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Search Again");
-                        Console.WriteLine(ex.Message);
-                    }
 
-                }
-                else
+            if (!String.IsNullOrEmpty(expSearchTb.Text))
+            {
+                try
                 {
-                    (expensesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                    (expensesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("expense LIKE '%{0}%'", expSearchTb.Text);
                     totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
+
             }
             else
             {
-                MessageBox.Show("Check your internet connection");
+                (expensesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
             }
             
         }
 
         private void loadExpBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity() == false)
-            {
-                MessageBox.Show("Check your internet connection");
-                return;
-            }
-
+            
             string loadListDateE = expYearPk.Text;
             if (expMonthPk.Visible == true)
             {
@@ -535,9 +518,11 @@ namespace Perfect_Peace_System.Pages
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
+                        wait.show();
                         expensesDataView.Rows.RemoveAt(e.RowIndex);
                         query = "DELETE FROM Expense WHERE expense_id='" + id + "'";
                         DbClient.query_execute(query);
+                        wait.close();
                         MessageBox.Show("Expense deleted from system");
                         totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
                     }
@@ -545,6 +530,7 @@ namespace Perfect_Peace_System.Pages
             }
             catch (Exception ex)
             {
+                wait.close();
                 //MessageBox.Show(ex.Message);
             }
         }
@@ -589,25 +575,34 @@ namespace Perfect_Peace_System.Pages
 
         private void refeshBtn_Click(object sender, EventArgs e)
         {
-            if(feedingPanel.Visible == true)
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
+            wait.show();
+            if (feedingPanel.Visible == true)
             {
                 DataFromDb.getFeedingFee = DbClient.dataSource("SELECT feeding_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Feeding_fee");
-                MessageBox.Show("Feeding data refreshed");
+                //MessageBox.Show("Feeding data refreshed");
                 showFeeding();
             }
             else if(expensePanel.Visible == true)
             {
                 DataFromDb.getExpenses = DbClient.dataSource("SELECT expense_id, expense, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Expense");
-                MessageBox.Show("Expenses data refreshed");
+                //MessageBox.Show("Expenses data refreshed");
                 showExpenses();
             }
             else if(classesPanel.Visible == true)
             {
                 DataFromDb.getExtraClasses = DbClient.dataSource("SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes");
-                MessageBox.Show("Extra classes data refreshed");
+                //MessageBox.Show("Extra classes data refreshed");
                 showExtraClasses();
+
             }
             else { }
+            wait.close();
+            MessageBox.Show("Data refreshed");
         }
 
 
@@ -618,6 +613,7 @@ namespace Perfect_Peace_System.Pages
             {
                 try
                 {
+                    wait.show();
                     query = "INSERT INTO Bus_fee(teacher, class, amount, date) " +
                         "VALUES('" + busTeacherCb.Text + "', '" + busClassCb.Text + "', '" + busAmountTb.Text + "', '" + DateTime.Today + "')";
                     DbClient.query_execute(query);
@@ -628,9 +624,11 @@ namespace Perfect_Peace_System.Pages
                     busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
                     DataFromDb.getBusFee = DbClient.dataSource("SELECT bus_fee_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Bus_fee");
                     showBusFees();
+                    wait.close();
                 }
                 catch (Exception ex)
                 {
+                    wait.close();
                     Console.WriteLine(ex.Message);
                     MessageBox.Show("Input all fields correctly!");
                 }
@@ -644,53 +642,42 @@ namespace Perfect_Peace_System.Pages
 
         private void loadBusList_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity())
+
+            string loadListDateF = busYearPk.Text;
+            if (busMonthPk.Visible == true)
             {
-                string loadListDateF = busYearPk.Text;
-                if (busMonthPk.Visible == true)
+                loadListDateF = busMonthPk.Text + "-" + busYearPk.Text;
+                if (dayExtraClassesPk.Visible == true)
                 {
-                    loadListDateF = busMonthPk.Text + "-" + busYearPk.Text;
-                    if (dayExtraClassesPk.Visible == true)
-                    {
-                        loadListDateF = busDayPk.Text + "-" + loadListDateF;
-                    }
+                    loadListDateF = busDayPk.Text + "-" + loadListDateF;
                 }
+            }
             (busFeeDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", loadListDateF);
-                busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
-            }
-            else
-            {
-                MessageBox.Show("Check your internet connection");
-            }
+            busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
+        
         }
 
         private void busSearchBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity())
-            {
-                if (!String.IsNullOrEmpty(busFeeSearchTb.Text))
-                {
-                    try
-                    {
-                        (busFeeDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("teacher LIKE '%{0}%'", busFeeSearchTb.Text);
-                        busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Search Again");
-                        Console.WriteLine(ex.Message);
-                    }
 
-                }
-                else
+            if (!String.IsNullOrEmpty(busFeeSearchTb.Text))
+            {
+                try
                 {
-                    (busFeeDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                    (busFeeDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("teacher LIKE '%{0}%'", busFeeSearchTb.Text);
                     busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Search Again");
+                    Console.WriteLine(ex.Message);
+                }
+
             }
             else
             {
-                MessageBox.Show("Check your internet connection");
+                (busFeeDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
+                busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
             }
 
         }
@@ -741,9 +728,11 @@ namespace Perfect_Peace_System.Pages
                         DialogResult result = MessageBox.Show(message, "", deleteAction);
                         if (result == DialogResult.Yes)
                         {
+                            wait.show();
                             busFeeDataView.Rows.RemoveAt(e.RowIndex);
                             query = "DELETE FROM Bus_fee WHERE bus_fee_id='" + id + "'";
                             DbClient.query_execute(query);
+                            wait.close();
                             MessageBox.Show("Data deleted from system");
                             busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
                         }
@@ -752,6 +741,7 @@ namespace Perfect_Peace_System.Pages
                 }
                 catch (Exception ex)
                 {
+                    wait.close();
                     //MessageBox.Show(ex.Message);
                 }
             }

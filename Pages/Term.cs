@@ -14,7 +14,7 @@ namespace Perfect_Peace_System.Pages
     public partial class Term : Form
     {
         private string query;
-
+        WaitFunc wait = new WaitFunc();
         public Term()
         {
             InitializeComponent();
@@ -47,6 +47,7 @@ namespace Perfect_Peace_System.Pages
                     confirmPassword.ShowDialog();
                     if (GetData.getConfirmedPassword() == true)
                     {
+                        wait.show();
                         query = "INSERT INTO Total_Attendance (student_id, present, attendance, term_end_date) " +
                         "SELECT " +
                         "student_id, " +
@@ -67,13 +68,14 @@ namespace Perfect_Peace_System.Pages
                         reader.Close();*/
 
                         //query = "SELECT "
-
+                        wait.close();
                         MessageBox.Show("Total Attendance saved... can print report with total attendance now");
                         GetData.setConfirmPassword(false);
                     }
                 }
             }catch(Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
                 Console.WriteLine(ex);
             }
@@ -95,14 +97,14 @@ namespace Perfect_Peace_System.Pages
                 confirmPassword.ShowDialog();
                 if (GetData.getConfirmedPassword() == true)
                 {
-
+                    wait.show();
                     query = "DELETE FROM Term";
                     DbClient.query_execute(query);
 
                     query = "INSERT INTO Term (end_date) VALUES('" + endDatePk.Value + "')";
                     DbClient.query_execute(query);
                     endDatePk.Enabled = false;
-
+                    wait.close();
                     MessageBox.Show("Term end date resetted...");
                     
                 }
@@ -151,9 +153,10 @@ namespace Perfect_Peace_System.Pages
                     confirmPassword.ShowDialog();
                     if (GetData.getConfirmedPassword() == true)
                     {
+                        wait.show();
                         query = "UPDATE Student SET fees_owing=fees_owing+(SELECT fees FROM Class WHERE Class.class_id=Student.class_id) WHERE class_id IS NOT NULL";
                         DbClient.query_execute(query);
-
+                        wait.close();
                         MessageBox.Show("Fees resetted...");
                         GetData.setConfirmPassword(false);
                     }
@@ -161,6 +164,7 @@ namespace Perfect_Peace_System.Pages
             }
             catch (Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
                 Console.WriteLine(ex);
             }
@@ -184,9 +188,10 @@ namespace Perfect_Peace_System.Pages
                     confirmPassword.ShowDialog();
                     if (GetData.getConfirmedPassword() == true)
                     {
+                        wait.show();
                         query = "DELETE FROM EVENT";
                         DbClient.query_execute(query);
-
+                        wait.close();
                         MessageBox.Show("Term Ended... Set end of next term date");
                         GetData.setConfirmPassword(false);
                     }
@@ -194,6 +199,7 @@ namespace Perfect_Peace_System.Pages
             }
             catch (Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
                 Console.WriteLine(ex);
             }

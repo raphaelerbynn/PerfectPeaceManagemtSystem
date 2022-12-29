@@ -22,6 +22,7 @@ namespace Perfect_Peace_System.Pages
         private static string section;
         private static string className;
         OpenNewPage openNewpage;
+        WaitFunc wait = new WaitFunc();
 
         public StudentReport()
         {
@@ -82,6 +83,7 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
+            wait.show();
             titleLbl.Visible = true;
             titleLbl.Text = "CLASS LIST";
             explainTb.Visible = false;
@@ -94,6 +96,7 @@ namespace Perfect_Peace_System.Pages
             studentDataView.Visible = true;
             searchBtn.Enabled = true;
             adjustColumnOrder();
+            wait.close();
         }
 
         private void adjustColumnOrder()
@@ -124,11 +127,6 @@ namespace Perfect_Peace_System.Pages
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity() == false)
-            {
-                MessageBox.Show("Check your internet connection");
-                return;
-            }
             if (!String.IsNullOrEmpty(searchTextBox.Text))
             {
                 try
@@ -209,11 +207,15 @@ namespace Perfect_Peace_System.Pages
                         getClassSection().Equals("Nursury") ||
                         getClassSection().Equals("KG"))
                     {
+                        wait.show();
                         openNewpage.OpenChildForm(new Pages.ReportForKG(), bgPanel);
+                        wait.close();
                     }
                     else
                     {
+                        wait.show();
                         openNewpage.OpenChildForm(new Pages.AddResult(), bgPanel);
+                        wait.close();
                     }
                     
                 }
@@ -232,6 +234,7 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
+            wait.show();
             titleLbl.Visible = true;
             titleLbl.Text = "RESULTS";
             explainTb.Visible = true;
@@ -261,6 +264,7 @@ namespace Perfect_Peace_System.Pages
                 DbClient.dataGridFill(resultsDataView, query);
                 getStudentName();
             }
+            wait.close();
         }
         
 
@@ -329,7 +333,9 @@ namespace Perfect_Peace_System.Pages
 
                 if (resultsDataView.Columns[e.ColumnIndex].Name == "show_result" && e.RowIndex >= 0)
                 {
+                    wait.show();
                     openNewpage.OpenChildForm(new Pages.ReportCard(), bgPanel);
+                    wait.close();
                 }
             }
             catch (Exception ex)
@@ -417,7 +423,9 @@ namespace Perfect_Peace_System.Pages
 
                 if (kgDataView.Columns[e.ColumnIndex].Name == "show_result_kg" && e.RowIndex >= 0)
                 {
+                    wait.show();
                     openNewpage.OpenChildForm(new Pages.ReportCard(), bgPanel);
+                    wait.close();
                 }
             }
             catch (Exception ex)

@@ -15,7 +15,7 @@ namespace Perfect_Peace_System.Pages
     {
         private string query;
         OpenNewPage openNewPage = new OpenNewPage();
-
+        WaitFunc wait = new WaitFunc(); 
         public Payroll()
         {
             InitializeComponent();
@@ -60,6 +60,7 @@ namespace Perfect_Peace_System.Pages
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
+                        wait.show();
                         salaryBaseDataView.Rows.RemoveAt(e.RowIndex);
                         query = "DELETE FROM Salary WHERE salary_id='" + id + "'";
                         DbClient.query_execute(query);
@@ -69,13 +70,14 @@ namespace Perfect_Peace_System.Pages
 
                         query = "DELETE FROM Allowance WHERE salary_id='" + id + "'";
                         DbClient.query_execute(query);
-
+                        wait.close();
                         MessageBox.Show("Data deleted from system");
                     }
                 }
             }
             catch (Exception ex)
             {
+                wait.close();
                 //MessageBox.Show(ex.Message);
             }
         }
@@ -93,16 +95,25 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
-            empSalaryBtn.BackColor = Color.Gray;
-            paymentBtn.BackColor = Color.Gray;
-            salaryBaseBtn.BackColor = Home.foreColor;
+            try
+            {
+                wait.show();
+                empSalaryBtn.BackColor = Color.Gray;
+                paymentBtn.BackColor = Color.Gray;
+                salaryBaseBtn.BackColor = Home.foreColor;
 
-            salaryBasedPanel.Visible = true;
-            addSalaryBtn.Visible = true;
-            empSalaryPanel.Visible = false;
-            paymentPanel.Visible = false;
-            salaryBasedPanel.Location = new Point(salaryBasedPanel.Location.X, paymentPanel.Location.Y);
-            populateSalaryData();
+                salaryBasedPanel.Visible = true;
+                addSalaryBtn.Visible = true;
+                empSalaryPanel.Visible = false;
+                paymentPanel.Visible = false;
+                salaryBasedPanel.Location = new Point(salaryBasedPanel.Location.X, paymentPanel.Location.Y);
+                populateSalaryData();
+                wait.close();
+            }
+            catch
+            {
+                wait.close();
+            }
         }
 
         private void populateSalaryData()
@@ -164,72 +175,73 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
-            empSalaryBtn.BackColor = Home.foreColor;
-            paymentBtn.BackColor = Color.Gray;
-            salaryBaseBtn.BackColor = Color.Gray;
+            try
+            {
 
-            salaryBasedPanel.Visible = false;
-            addSalaryBtn.Visible = false;
-            paymentPanel.Visible = false;
-            empSalaryPanel.Visible = true;
-            empSalaryPanel.Location = new Point(salaryBasedPanel.Location.X, paymentPanel.Location.Y);
+                empSalaryBtn.BackColor = Home.foreColor;
+                paymentBtn.BackColor = Color.Gray;
+                salaryBaseBtn.BackColor = Color.Gray;
 
-            populateEmpSalary();
+                salaryBasedPanel.Visible = false;
+                addSalaryBtn.Visible = false;
+                paymentPanel.Visible = false;
+                empSalaryPanel.Visible = true;
+                empSalaryPanel.Location = new Point(salaryBasedPanel.Location.X, paymentPanel.Location.Y);
+
+                populateEmpSalary();
+                wait.close();
+            }
+            catch
+            {
+                wait.close();
+            }
 
         }
 
         private void populateEmpSalary()
         {
-            try
-            {
-                empSalaryDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
-                empSalaryDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
-                empSalaryDataView.BackgroundColor = Home.foreColor;
 
-                // query = "SELECT teacher_id, [f_name]+' '+[l_name] AS name, email, CAST(teacher_id AS VARCHAR(100)) AS salary_base FROM Teacher";
-                // DbClient.dataGridFill(empSalaryDataView, query);
-                
-                empSalaryDataView.DataSource = DataFromDb.getEmployeeSalaryData();
+            empSalaryDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            empSalaryDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            empSalaryDataView.BackgroundColor = Home.foreColor;
 
-               /* foreach (DataGridViewRow item in empSalaryDataView.Rows)
-                {
-                    string salary_id = "";
-                    item.Cells["emp_salary_base"].Value = null;
-                    string empId = item.Cells["teacher_id"].Value.ToString();
+            // query = "SELECT teacher_id, [f_name]+' '+[l_name] AS name, email, CAST(teacher_id AS VARCHAR(100)) AS salary_base FROM Teacher";
+            // DbClient.dataGridFill(empSalaryDataView, query);
 
-                    query = "SELECT salary_id FROM Employee_salary WHERE teacher_id='" + empId + "'";
-                    SqlDataReader reader = DbClient.query_reader(query);
-                    while (reader.Read())
-                    {
-                        salary_id = reader["salary_id"].ToString();
-                    }
-                    reader.Close();
-                    query = "SELECT [title]+'('+[rank]+')' AS position FROM Salary WHERE salary_id='" + salary_id + "'";
-                    reader = DbClient.query_reader(query);
-                    while (reader.Read())
-                    {
-                        item.Cells["emp_salary_base"].Value = reader["position"].ToString();
-                    }
-                    reader.Close();
-                    
-                }*/
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);  
-            }
+            empSalaryDataView.DataSource = DataFromDb.getEmployeeSalaryData();
+
+            /* foreach (DataGridViewRow item in empSalaryDataView.Rows)
+             {
+                 string salary_id = "";
+                 item.Cells["emp_salary_base"].Value = null;
+                 string empId = item.Cells["teacher_id"].Value.ToString();
+
+                 query = "SELECT salary_id FROM Employee_salary WHERE teacher_id='" + empId + "'";
+                 SqlDataReader reader = DbClient.query_reader(query);
+                 while (reader.Read())
+                 {
+                     salary_id = reader["salary_id"].ToString();
+                 }
+                 reader.Close();
+                 query = "SELECT [title]+'('+[rank]+')' AS position FROM Salary WHERE salary_id='" + salary_id + "'";
+                 reader = DbClient.query_reader(query);
+                 while (reader.Read())
+                 {
+                     item.Cells["emp_salary_base"].Value = reader["position"].ToString();
+                 }
+                 reader.Close();
+
+             }*/
+
         }
 
         private string empSalaryId;
         private void empSalaryDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity() == false)
-            {
-                MessageBox.Show("Check your internet connection");
-                return;
-            }
+           
             try
             {
+                
                 DataGridViewRow row = empSalaryDataView.Rows[e.RowIndex];
                 empSalaryId = row.Cells["teacher_id"].Value.ToString();
                 string salaryBase = row.Cells["emp_salary_base"].Value.ToString();
@@ -260,22 +272,31 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
-            if (salaryBaseCb.SelectedIndex != -1)
+            try
             {
-                query = "SELECT salary_id FROM Salary WHERE [title]+'('+[rank]+')'='" + salaryBaseCb.SelectedItem.ToString() + "'";
-                string salaryId = DbClient.query_executeScaler(query);
-
-                if (!String.IsNullOrEmpty(empNameTb.Text))
+                if (salaryBaseCb.SelectedIndex != -1)
                 {
-                    query = "DELETE FROM Employee_salary WHERE teacher_id='"+empSalaryId+"'";
-                    DbClient.query_execute(query);
+                    query = "SELECT salary_id FROM Salary WHERE [title]+'('+[rank]+')'='" + salaryBaseCb.SelectedItem.ToString() + "'";
+                    string salaryId = DbClient.query_executeScaler(query);
 
-                    query = "INSERT INTO Employee_salary(teacher_id, salary_id) VALUES('" + empSalaryId + "', '" + salaryId + "')";
-                    DbClient.query_execute(query);
+                    if (!String.IsNullOrEmpty(empNameTb.Text))
+                    {
+                        wait.show();
+                        query = "DELETE FROM Employee_salary WHERE teacher_id='" + empSalaryId + "'";
+                        DbClient.query_execute(query);
 
-                    MessageBox.Show("Salary Assigned to Employee");
-                    populateEmpSalary();
+                        query = "INSERT INTO Employee_salary(teacher_id, salary_id) VALUES('" + empSalaryId + "', '" + salaryId + "')";
+                        DbClient.query_execute(query);
+                    
+                        populateEmpSalary();
+                        wait.close();
+                        MessageBox.Show("Salary Assigned to Employee");
+                    }
                 }
+            }
+            catch
+            {
+                wait.close();
             }
         }
 
@@ -293,6 +314,7 @@ namespace Perfect_Peace_System.Pages
             {
                 try
                 {
+                    wait.show();
                     query = "SELECT teacher_id FROM Teacher WHERE [f_name]+' '+[l_name]='" + paymentNameCb.Text + "'";
                     SqlDataReader reader = DbClient.query_reader(query);
                     while (reader.Read())
@@ -305,8 +327,11 @@ namespace Perfect_Peace_System.Pages
                     {
                         openNewPage.OpenChildForm(new Pages.PaySlip(), paymentPanel);
                     }
-                }catch(Exception ex)
+                    wait.close();
+                }
+                catch(Exception ex)
                 {
+                    wait.close();
                     MessageBox.Show(ex.Message);
                 }
             }
@@ -324,6 +349,7 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
+            wait.show();
             empSalaryBtn.BackColor = Color.Gray;
             paymentBtn.BackColor = Home.foreColor;
             salaryBaseBtn.BackColor = Color.Gray;
@@ -335,25 +361,20 @@ namespace Perfect_Peace_System.Pages
 
             paymentPanel.Location = new Point(salaryBasedPanel.Location.X, paymentPanel.Location.Y);
             populatePaymentData();
+            wait.close();
         }
 
         private void populatePaymentData()
         {
-            try
-            {
-                paymentDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
-                paymentDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
-                paymentDataView.BackgroundColor = Home.foreColor;
 
-                //query = "SELECT salary_payment_id, name, amount, net, salary_date, payment_method, FORMAT(date_paid, 'dd-MMM-yyyy') AS date_paid FROM Salary_payment";
-                //DbClient.dataGridFill(paymentDataView, query);
-                paymentDataView.DataSource = DataFromDb.getSalaryPaymentData();
-                adjustPaymentColumns();
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
+            paymentDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
+            paymentDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
+            paymentDataView.BackgroundColor = Home.foreColor;
+
+            //query = "SELECT salary_payment_id, name, amount, net, salary_date, payment_method, FORMAT(date_paid, 'dd-MMM-yyyy') AS date_paid FROM Salary_payment";
+            //DbClient.dataGridFill(paymentDataView, query);
+            paymentDataView.DataSource = DataFromDb.getSalaryPaymentData();
+            adjustPaymentColumns();
         }
 
         private void paymentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -374,16 +395,19 @@ namespace Perfect_Peace_System.Pages
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
+                        wait.show();
                         paymentDataView.Rows.RemoveAt(e.RowIndex);
                         query = "DELETE FROM Salary_payment WHERE salary_payment_id='" + id + "'";
                         DbClient.query_execute(query);
 
+                        wait.close();
                         MessageBox.Show("Data deleted from system");
                     }
                 }
             }
             catch (Exception ex)
             {
+                wait.close();
                 //MessageBox.Show(ex.Message);
             }
         }
@@ -403,11 +427,7 @@ namespace Perfect_Peace_System.Pages
 
         private void searchEmpBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity() == false)
-            {
-                MessageBox.Show("Check your internet connection");
-                return;
-            }
+           
             if (!String.IsNullOrEmpty(searchEmpTb.Text))
             {
                 try
@@ -430,11 +450,7 @@ namespace Perfect_Peace_System.Pages
 
         private void searchPaidEmpBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity() == false)
-            {
-                MessageBox.Show("Check your internet connection");
-                return;
-            }
+            
             if (!String.IsNullOrEmpty(searchPaidEmpTb.Text))
             {
                 try
@@ -461,16 +477,22 @@ namespace Perfect_Peace_System.Pages
 
         private void refeshBtn_Click(object sender, EventArgs e)
         {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
+            wait.show();
             if (salaryBasedPanel.Visible == true)
             {
                 DataFromDb.getSalaryBase = DbClient.dataSource("SELECT *, amount AS net_amount, amount AS gross_amount FROM Salary");
-                MessageBox.Show("Salary base refreshed");
+                //MessageBox.Show("Salary base refreshed");
                 salaryBaseDataView.DataSource = DataFromDb.getSalaryBaseData();
             }
             else if(paymentPanel.Visible == true)
             {
                 DataFromDb.getSalaryPayment = DbClient.dataSource("SELECT salary_payment_id, name, amount, net, salary_date, payment_method, FORMAT(date_paid, 'dd-MMM-yyyy') AS date_paid FROM Salary_payment");
-                MessageBox.Show("Payment data refreshed");
+                //MessageBox.Show("Payment data refreshed");
                 paymentDataView.DataSource = DataFromDb.getSalaryPaymentData();
             }
             else if(empSalaryPanel.Visible == true)
@@ -478,10 +500,12 @@ namespace Perfect_Peace_System.Pages
                 DataFromDb.getEmployeeSalary = DbClient.dataSource("SELECT teacher_id, [f_name] + ' ' +[l_name] AS name, email, " +
                                             "(SELECT [title]+'('+[rank]+')' AS position FROM Salary WHERE Salary.salary_id=(SELECT salary_id FROM Employee_salary WHERE Employee_salary.teacher_id=Teacher.teacher_id)) " +
                                             "AS salary_base FROM Teacher");
-                MessageBox.Show("Employee salary refreshed");
+                //MessageBox.Show("Employee salary refreshed");
                 empSalaryDataView.DataSource = DataFromDb.getEmployeeSalaryData();
             }
             else { }
+            wait.close();
+            MessageBox.Show("Salary base refreshed");
         }
     }
 }

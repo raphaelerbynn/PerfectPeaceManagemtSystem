@@ -15,6 +15,7 @@ namespace Perfect_Peace_System.Pages
         string query;
         private string id = TeacherData.getIdFromSelectedRow();
         private string staffCategory = "";
+        WaitFunc wait = new WaitFunc();
 
         public UpdateTeacher()
         {
@@ -102,6 +103,7 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                wait.show();
                 if (staffCategory.Equals("Teaching"))
                 {
                     if (classCb.SelectedIndex != -1)
@@ -119,8 +121,7 @@ namespace Perfect_Peace_System.Pages
                         query = "UPDATE Class SET teacher_id='" + id + "' WHERE class_id='" + class_id + "'";
                         DbClient.query_execute(query);
 
-
-                        MessageBox.Show("Staff Info Updated");
+                        
                     }
 
                     else
@@ -133,22 +134,26 @@ namespace Perfect_Peace_System.Pages
                         query = "UPDATE Class SET teacher_id=NULL WHERE teacher_id='" + id + "'";
                         DbClient.query_execute(query);
 
-                        MessageBox.Show("Staff Info Updated");
+                        
                     }
                     DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, (SELECT name FROM Class WHERE Class.class_id=Teacher.class_id) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
+                    wait.close();
+                    MessageBox.Show("Staff Info Updated");
                 }
                 else
                 {
                     query = "UPDATE Teacher SET class_id=NULL, f_name='" + fnameTb.Text + "', l_name='" + lnameTb.Text + "', gender='" + getRadioBtnValue() + "', phone='" + phoneTB.Text + "', address='" + addressTb.Text + "', email='" + emailTb.Text + "', bank='" + bankTb.Text + "', account_number='" + accountNumTb.Text + "', ssnit_number='" + ssnitTb.Text + "', tin_number='" + tinTb.Text + "', date_updated='" + DateTime.Today + "' WHERE teacher_id='" + id + "'";
                     DbClient.query_execute(query);
 
-                    MessageBox.Show("Staff Info Updated");
+                    
                     DataFromDb.getAllNonTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, staff_position, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Non-Teaching'");
-
+                    wait.close();
+                    MessageBox.Show("Staff Info Updated");
                 }
             }
             catch (Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
             }
         }

@@ -140,7 +140,7 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
-                wait.show(this);
+                wait.show();
                 string class_id = "", fees_owned = "";
 
                 query = "SELECT * FROM Class WHERE name='" + classCb.Text + "'";
@@ -194,12 +194,14 @@ namespace Perfect_Peace_System.Pages
                         {
 
                             student.save();
+                            //wait.close();
                             /*MessageBox.Show("Student Saved");
                             clearFeilds();
                             openNewPage.OpenChildForm(new Pages.AddParent(), registerPanel);*/
                         }
                         else
                         {
+                            //wait.close();
                             MessageBox.Show("Class full!!!");
                         }
                     }

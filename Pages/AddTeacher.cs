@@ -12,6 +12,7 @@ namespace Perfect_Peace_System.Pages
 {
     public partial class AddTeacher : Form
     {
+        WaitFunc wait = new WaitFunc();
         public AddTeacher()
         {
             InitializeComponent();
@@ -24,9 +25,9 @@ namespace Perfect_Peace_System.Pages
         {
             if (femaleRadio.Checked == true)
             {
-                return "Female";
+                return "FEMALE";
             }
-            return "Male";
+            return "MALE";
         }
 
         private void clearFeilds()
@@ -54,6 +55,7 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                wait.show();
                 Teacher teacher;
                 if (positionCb.Visible == true)
                 {
@@ -72,6 +74,7 @@ namespace Perfect_Peace_System.Pages
                         );
                     }
 
+
                 }
                 else
                 {
@@ -86,20 +89,24 @@ namespace Perfect_Peace_System.Pages
                     String.IsNullOrWhiteSpace(phoneTB.Text) ||
                     String.IsNullOrWhiteSpace(fnameTb.Text))
                 {
+                    wait.close();
                     MessageBox.Show("Feilds with * must be filled");
                 }
                 else
                 {
                     teacher.save();
-                    MessageBox.Show("Staff Personnel Saved");
+                    
                     clearFeilds();
                     DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,email, (SELECT name FROM Class WHERE Class.class_id=Teacher.class_id) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
                     DataFromDb.totalTeachers = DbClient.query_executeScaler("SELECT COUNT(*) FROM Teacher");
+                    wait.close();
+                    MessageBox.Show("Staff Personnel Saved");
                 }
 
             }
             catch (Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
                 Console.WriteLine(ex);
             }

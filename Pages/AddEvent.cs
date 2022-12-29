@@ -13,6 +13,7 @@ namespace Perfect_Peace_System.Pages
 {
     public partial class AddEvent : Form
     {
+        WaitFunc wait = new WaitFunc();
         public AddEvent()
         {
             InitializeComponent();
@@ -49,13 +50,16 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Event name empty!!!");
                 return;
             }
+            wait.show();
             School_Event _event = new School_Event(lblName.Text, lblDescription.Text, datePicker.Value, timePicker.Value);
             _event.insert_event();
-            MessageBox.Show(datePicker.Value + "\n" + new SqlDateTime(datePicker.Value) + "\n" + new SqlDateTime(DateTime.Now) + "\n" + new SqlDateTime(datePicker.Value.Date));
-            MessageBox.Show("Event Added");
+            //MessageBox.Show(datePicker.Value + "\n" + new SqlDateTime(datePicker.Value) + "\n" + new SqlDateTime(DateTime.Now) + "\n" + new SqlDateTime(datePicker.Value.Date));
             
             clearFeild();
             DataFromDb.getAllEvent = DbClient.dataSource("SELECT event_id, name, description, FORMAT(date, 'dd-MM-yyyy') AS date, CONVERT(VARCHAR(10), CAST(time AS TIME), 0) AS time FROM Event");
+            wait.close();
+            MessageBox.Show("Event Added");
+
         }
 
         private void clearBtn_Click(object sender, EventArgs e)

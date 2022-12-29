@@ -65,6 +65,7 @@ namespace Perfect_Peace_System.Pages
             }
             catch (Exception ex)
             {
+                
                 MessageBox.Show(ex.Message);
             }
         }
@@ -118,7 +119,7 @@ namespace Perfect_Peace_System.Pages
             memoryImg = new Bitmap(panel.Width, panel.Height);
             panel.DrawToBitmap(memoryImg, new Rectangle(0, 0, panel.Width, panel.Height));
         }
-*/
+        */
         private void feePanel_Paint(object sender, PaintEventArgs e)
         {
 

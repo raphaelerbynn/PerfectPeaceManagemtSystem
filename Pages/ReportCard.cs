@@ -24,16 +24,17 @@ namespace Perfect_Peace_System.Pages
         private readonly string class_name = StudentReport.getClassName();
         private int no_subject;
         private double total_fees = 0;
-        
+        WaitFunc wait = new WaitFunc();
 
         public ReportCard()
         {
             InitializeComponent();
             
-            MessageBox.Show("Before printing result, Admin must save term attendance to get total student attendance", "Hint", MessageBoxButtons.OK, MessageBoxIcon.Information);
             bgPanel.BackColor = Home.foreColor;
             orderColumn();
             showReport();
+            MessageBox.Show("Before printing result, Admin must save term attendance to get total student attendance", "Hint", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void orderColumn()
@@ -377,6 +378,7 @@ namespace Perfect_Peace_System.Pages
             }
             catch (Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
                 Console.WriteLine(ex.StackTrace);
             }
@@ -689,6 +691,7 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
+                wait.show();
                 double inputTotal = 0;
                 if (!String.IsNullOrEmpty(transportTb.Text))
                 {
@@ -746,9 +749,11 @@ namespace Perfect_Peace_System.Pages
                         Console.WriteLine(reader["attendance"].ToString());
                     }
                     reader.Close();
+                    wait.close();
                 }
             }catch(Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
             }
         }

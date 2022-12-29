@@ -115,7 +115,7 @@ namespace Perfect_Peace_System.Pages
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
-                        wait.show(this);
+                        wait.show();
                         
                         query = "DELETE FROM Fee WHERE student_id='" + id + "'";
                         DbClient.query_execute(query);
@@ -154,7 +154,7 @@ namespace Perfect_Peace_System.Pages
 
                 if (studentDataView.Columns[e.ColumnIndex].Name == "view" && e.RowIndex >= 0)
                 {
-                    wait.show(this);
+                    wait.show();
                     StudentDetail studentDetail = new StudentDetail();
                     studentDetail.Show();
                     Home home = (Home)Application.OpenForms["Home"];
@@ -165,14 +165,14 @@ namespace Perfect_Peace_System.Pages
                 if (studentDataView.Columns[e.ColumnIndex].Name == "edit")
                 {
                     //update data
-                    wait.show(this);
+                    wait.show();
                     openNewPage.OpenChildForm(new Pages.UpdateStudent(), showDataPanel);
                     wait.close();
                 }
                 
                 if (studentDataView.Columns[e.ColumnIndex].Name == "medicalReport")
                 {
-                    wait.show(this);
+                    wait.show();
                     openNewPage.OpenChildForm(new Pages.MedicalReport(), showDataPanel);
                     wait.close();
                 }
@@ -238,7 +238,7 @@ namespace Perfect_Peace_System.Pages
 
         private void refeshBtn_Click(object sender, EventArgs e)
         {
-            wait.show(this);
+            wait.show();
             if (Pages.LoginInput.category.Equals("Administrator"))
             {
                 DataFromDb.getAllStudent = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student");

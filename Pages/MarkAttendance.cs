@@ -13,6 +13,7 @@ namespace Perfect_Peace_System.Pages
 {
     public partial class MarkAttendance : Form
     {
+        WaitFunc wait = new WaitFunc();
         private string query;
         private DateTime _date = Attendance.getDate();
         public MarkAttendance()
@@ -102,6 +103,7 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                wait.show();
                 DateTime date_end = DateTime.Today;
                 query = "SELECT end_date FROM Term";
                 SqlDataReader reader = DbClient.query_reader(query);
@@ -141,10 +143,12 @@ namespace Perfect_Peace_System.Pages
                         "VALUES('" + id + "', '" + classCb.Text + "', '" + status + "', '" + _date + "', '" + date_end + "')";
                         DbClient.query_execute(query);
                     }
+                    wait.close();
                     this.Close();
                 }
             }catch(Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
                 Console.WriteLine(ex.StackTrace);
             }

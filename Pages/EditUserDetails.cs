@@ -12,6 +12,7 @@ namespace Perfect_Peace_System.Pages
 {
     public partial class EditUserDetails : Form
     {
+        WaitFunc wait = new WaitFunc();
         public EditUserDetails()
         {
             InitializeComponent();
@@ -67,19 +68,23 @@ namespace Perfect_Peace_System.Pages
                     confirmPassword.ShowDialog();
                     if (GetData.getConfirmedPassword() == true)
                     {
+                        wait.show();
                         string query = "UPDATE User_account SET name='" + nameCb.Text + "', email='" + emailTb.Text + "', password='" + passwordTb.Text + "' WHERE username='" + UsersDetails.user + "'";
                         DbClient.query_execute(query);
 
-                        MessageBox.Show("Account Updated");
+                        
                         this.Close();
                         UsersDetails details = (UsersDetails)Application.OpenForms["UsersDetails"];
                         details.Show();
 
                         GetData.setConfirmPassword(false);
+                        wait.close();
+                        MessageBox.Show("Account Updated");
                     }
                 }
             }catch(Exception ex)
             {
+                wait.close();
                 MessageBox.Show("Check details, maybe it may exist already");
                 Console.WriteLine(ex);
             }

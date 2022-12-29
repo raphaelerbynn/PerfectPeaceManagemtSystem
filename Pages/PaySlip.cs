@@ -22,6 +22,7 @@ namespace Perfect_Peace_System.Pages
         private string query;
         readonly PrintDocument printdoc = new PrintDocument();
         readonly PrintPreviewDialog printPreview = new PrintPreviewDialog();
+        WaitFunc wait = new WaitFunc();
 
         public PaySlip()
         {
@@ -203,6 +204,7 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                wait.show();
                 /*string template = File.ReadAllText("../email/payment_template.html");
                 template = template.Replace("{name}", empNameLbl.Text);
                 template = template.Replace("{month}", salaryMonthLbl.Text);
@@ -247,11 +249,13 @@ namespace Perfect_Peace_System.Pages
                 //smtp.Credentials = new NetworkCredential("erbynn1234@gmail.com", "mountain500000");
                 //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
                 smtp.Send(mail);
-                MessageBox.Show("Email Sent to Employee");
+                //MessageBox.Show("Email Sent to Employee");
                 //.Dispose();
+                wait.close();
             }
             catch (Exception ex)
             {
+                wait.close();
                 MessageBox.Show("Err: " + ex.Message);
             }
             
@@ -266,16 +270,19 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                wait.show();
                 query = "INSERT INTO Salary_payment (name, amount, net, salary_date, payment_method, date_paid) " +
                     "VALUES('"+empNameLbl.Text+"', '"+amountPaidTb.Text+"', '"+netSalaryLbl.Text+"', '"+salaryMonthLbl.Text+"', '"+modeOfPaymentLbl.Text+"', '"+DateTime.Today+"')";
                 DbClient.query_execute(query);
 
-                MessageBox.Show("Payment Saved");
+               
 
                 MailAddress to = new MailAddress(email);
                 MailAddress from = new MailAddress("perfectpeacepreparatoryschool@gmail.com", "PERFECT PEACE PREPARATORY SCHOOL");
                 sendEmailAfterPayment(to, from, amountPaidLbl.Text);
+                MessageBox.Show("Payment Saved and mail sent");
 
+                wait.close();
                 string message = "Do you want to print PaySlip?";
                 MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
                 DialogResult result = MessageBox.Show(message, "", deleteAction);
@@ -291,6 +298,7 @@ namespace Perfect_Peace_System.Pages
             }
             catch(Exception ex)
             {
+                wait.close();
                 Console.WriteLine(ex.Message);
             }
         }

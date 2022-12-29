@@ -15,7 +15,7 @@ namespace Perfect_Peace_System.Pages
     {
         private string query;
         private static DateTime _date;
-
+        WaitFunc wait = new WaitFunc();
         public Attendance()
         {
             InitializeComponent();
@@ -60,6 +60,7 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                wait.show();
                 if (classCb.SelectedIndex != -1)
                 {
                     query = "SELECT student_id, CAST(student_id AS VARCHAR(60)) AS name, status FROM Attendance WHERE class='"+classCb.Text+"' AND date_marked='"+attendanceDatePk.Text+"'";
@@ -93,12 +94,13 @@ namespace Perfect_Peace_System.Pages
                         reader.Close();
                         roll++;
                     }
-
+                    wait.close();
                     totalPresentLbl.Text = totalPresent.ToString();
                     totalAbsentLbl.Text = totalAbsent.ToString();
                 }
             }catch(Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
             }
         }
@@ -115,9 +117,16 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
+            wait.show();
             _date = attendanceDatePk.Value.Date;
             OpenNewPage openNewPage = new OpenNewPage();
             openNewPage.OpenChildForm(new Pages.MarkAttendance(), attendancePanel);
+            wait.close();
+        }
+
+        private void attendanceDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

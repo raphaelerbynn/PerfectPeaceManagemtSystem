@@ -31,12 +31,13 @@ namespace Perfect_Peace_System
             //wait.Close();
             if (wait != null)
             {
-                //wait.Hide();
+                
                 wait.BeginInvoke(new ThreadStart(wait.closeWaitForm));
                 wait = null;
                 loadThread = null;
             }
         }
+
 
         private void loadingProcess()
         {

@@ -18,8 +18,8 @@ namespace Perfect_Peace_System.Pages
         private string student_id;
         private string class_id = "";
         private string alreadyPaidAmt = "0";
-
         private string query;
+        WaitFunc wait = new WaitFunc();
 
         public FeePaying()
         {
@@ -106,6 +106,7 @@ namespace Perfect_Peace_System.Pages
                 DialogResult result = MessageBox.Show(message, "", deleteAction);
                 if (result == DialogResult.Yes)
                 {
+                    wait.show();
                     fees = new Fees(student_id, class_id, double.Parse(totalAmnt), double.Parse(paidAmnt), double.Parse(remainingAmnt), mode, amntWords, term, DateTime.Today);
                     fees.insert_data();
                     query = "UPDATE Student SET fees_paid='" + paidAmntLbl.Text + "', fees_owing='" + remainAmntLbl.Text + "' WHERE student_id='" + student_id + "'";
@@ -115,9 +116,12 @@ namespace Perfect_Peace_System.Pages
                     GetData.setFromTableReceiptQuery(false);
 
                     openNewPage.OpenChildForm(new Pages.FeeReceipt(), feePanel);
+                    wait.close();
                 }
             }
-            catch { }
+            catch {
+                wait.close();
+            }
 
         }
 
@@ -137,6 +141,7 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                wait.show();
                 payFeesBtn.Enabled = true;
 
                 query = "SELECT * FROM Student WHERE CONCAT(f_name,' ',m_name,' ',l_name)='" + student_nameCb.Text + "'";
@@ -160,8 +165,10 @@ namespace Perfect_Peace_System.Pages
 
                 remainAmntLbl.Text = (double.Parse(totalAmntLbl.Text) - double.Parse(alreadyPaidAmt)).ToString();
                 paidAmntLbl.Text = alreadyPaidAmt;
+                wait.close();
             }catch(Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
             }
         }

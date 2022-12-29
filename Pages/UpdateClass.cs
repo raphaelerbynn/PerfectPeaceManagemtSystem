@@ -15,6 +15,7 @@ namespace Perfect_Peace_System.Pages
     {
         private string query;
         private string id = Pages.ClassData.class_id;
+        WaitFunc wait = new WaitFunc();
         public UpdateClass()
         {
             InitializeComponent();
@@ -32,46 +33,55 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
-            if (!String.IsNullOrEmpty(teacherCb.Text))
+            try
             {
-                query = "UPDATE Class SET name='"+nameTb.Text+"', section='"+sectionCb.SelectedItem.ToString()+"', capacity='"+capacityTb.Text+"', fees='"+totalFeesLbl.Text+"', tuition='" + tuition.Value.ToString() + "', firstAid='" + firstAid.Value.ToString() + "', PTA='" + PTA.Value.ToString() + "', water='" + water.Value.ToString() + "', maintenance='" + maintenance.Value.ToString() + "', stationary='"+stationary.Value.ToString()+ "', cocurricular='" + cocurricular.Value.ToString() + "' WHERE class_id='" + id+"'";
+                wait.show();
+                if (!String.IsNullOrEmpty(teacherCb.Text))
+                {
+                    query = "UPDATE Class SET name='" + nameTb.Text + "', section='" + sectionCb.SelectedItem.ToString() + "', capacity='" + capacityTb.Text + "', fees='" + totalFeesLbl.Text + "', tuition='" + tuition.Value.ToString() + "', firstAid='" + firstAid.Value.ToString() + "', PTA='" + PTA.Value.ToString() + "', water='" + water.Value.ToString() + "', maintenance='" + maintenance.Value.ToString() + "', stationary='" + stationary.Value.ToString() + "', cocurricular='" + cocurricular.Value.ToString() + "' WHERE class_id='" + id + "'";
+                    DbClient.query_execute(query);
+
+                    query = "SELECT teacher_id FROM Teacher WHERE [f_name]+' '+[l_name]='" + teacherCb.SelectedItem.ToString() + "'";
+                    string teacher_id = DbClient.query_executeScaler(query);
+
+                    query = "UPDATE Teacher SET class_id=NULL WHERE class_id='" + id + "'";
+                    DbClient.query_execute(query);
+
+
+                    query = "UPDATE Class SET teacher_id=" + teacher_id + " WHERE name='" + nameTb.Text + "'";
+                    DbClient.query_execute(query);
+
+                    query = "UPDATE Teacher SET class_id='" + id + "' WHERE teacher_id='" + teacher_id + "'";
+                    DbClient.query_execute(query);
+
+
+                    Console.WriteLine(id);
+
+                }
+                else
+                {
+                    query = "UPDATE Class SET name='" + nameTb.Text + "', section='" + sectionCb.SelectedItem.ToString() + "', capacity='" + capacityTb.Text + "', fees='" + totalFeesLbl.Text + "',  tuition='" + tuition.Value.ToString() + "', firstAid='" + firstAid.Value.ToString() + "', PTA='" + PTA.Value.ToString() + "', water='" + water.Value.ToString() + "', maintenance='" + maintenance.Value.ToString() + "', stationary='" + stationary.Value.ToString() + "', cocurricular='" + cocurricular.Value.ToString() + "', teacher_id=NULL  WHERE class_id='" + id + "'";
+                    DbClient.query_execute(query);
+
+                    query = "UPDATE Teacher SET class_id=NULL WHERE class_id='" + id + "'";
+                    DbClient.query_execute(query);
+
+
+
+                    Console.WriteLine(id);
+
+                }
+                query = "UPDATE Student SET class='" + nameTb.Text + "' WHERE class_id='" + id + "'";
                 DbClient.query_execute(query);
 
-                query = "SELECT teacher_id FROM Teacher WHERE [f_name]+' '+[l_name]='" + teacherCb.SelectedItem.ToString() + "'";
-                string teacher_id = DbClient.query_executeScaler(query);
-
-                query = "UPDATE Teacher SET class_id=NULL WHERE class_id='" + id + "'";
-                DbClient.query_execute(query);
-                
-
-                query = "UPDATE Class SET teacher_id=" + teacher_id + " WHERE name='" + nameTb.Text + "'";
-                DbClient.query_execute(query);
-
-                query = "UPDATE Teacher SET class_id='"+id+"' WHERE teacher_id='" + teacher_id + "'";
-                DbClient.query_execute(query);
-
-               
-                Console.WriteLine(id);
-
-            }
-            else
+                DataFromDb.getAllClass = DbClient.dataSource("SELECT class_id, name, section, capacity, fees, teacher_id, (SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE Teacher.teacher_id=Class.teacher_id) AS teacher FROM Class");
+                wait.close();
+                MessageBox.Show("Class Updated");
+            }catch(Exception ex)
             {
-                query = "UPDATE Class SET name='" + nameTb.Text + "', section='" + sectionCb.SelectedItem.ToString() + "', capacity='" + capacityTb.Text + "', fees='" + totalFeesLbl.Text + "',  tuition='" + tuition.Value.ToString() + "', firstAid='" + firstAid.Value.ToString() + "', PTA='" + PTA.Value.ToString() + "', water='" + water.Value.ToString() + "', maintenance='" + maintenance.Value.ToString() + "', stationary='" + stationary.Value.ToString() + "', cocurricular='" + cocurricular.Value.ToString() + "', teacher_id=NULL  WHERE class_id='" + id + "'";
-                DbClient.query_execute(query);
-
-                query = "UPDATE Teacher SET class_id=NULL WHERE class_id='" + id + "'";
-                DbClient.query_execute(query);
-
-
-                
-                Console.WriteLine(id);
-
+                wait.close();
+                MessageBox.Show(ex.Message);
             }
-            query = "UPDATE Student SET class='" + nameTb.Text + "' WHERE class_id='" + id + "'";
-            DbClient.query_execute(query);
-
-            DataFromDb.getAllClass = DbClient.dataSource("SELECT class_id, name, section, capacity, fees, teacher_id, (SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE Teacher.teacher_id=Class.teacher_id) AS teacher FROM Class");
-            MessageBox.Show("Class Updated");
 
         }
 

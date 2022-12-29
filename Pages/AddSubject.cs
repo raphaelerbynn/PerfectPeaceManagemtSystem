@@ -13,6 +13,7 @@ namespace Perfect_Peace_System.Pages
     public partial class AddSubject : Form
     {
         Subject subject;
+        WaitFunc wait = new WaitFunc();
         public AddSubject()
         {
             InitializeComponent();
@@ -64,9 +65,10 @@ namespace Perfect_Peace_System.Pages
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
+                        wait.show();
                         subjectDataView.Rows.RemoveAt(e.RowIndex);
                         subject.delete(id);
-
+                        wait.close();
                         MessageBox.Show(name + " deleted from system");
                     }
 
@@ -74,6 +76,7 @@ namespace Perfect_Peace_System.Pages
             } 
             catch (Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
             }
         }
@@ -87,15 +90,18 @@ namespace Perfect_Peace_System.Pages
             }
             try
             {
+                
                 if (!(String.IsNullOrEmpty(subjectNameTB.Text) && String.IsNullOrEmpty(examTotalMarkTB.Text) &&
                     String.IsNullOrEmpty(classTotalMarksTB.Text) && String.IsNullOrEmpty(examPercentageTB.Text) &&
                     String.IsNullOrEmpty(passMarksTB.Text)))
                 {
+                    wait.show();
                     subject = new Subject(subjectNameTB.Text, int.Parse(examTotalMarkTB.Text), int.Parse(classTotalMarksTB.Text), int.Parse(examPercentageTB.Text), int.Parse(classPercentageLB.Text), int.Parse(passMarksTB.Text));
                     subject.insert_data();
                     clearFeild();
                     DataFromDb.getSubject = DbClient.dataSource("SELECT subject_id, name, exam_total_marks, class_total_marks, exam_percentage, class_percentage, pass_marks FROM Subject");
                     subjectDataView.DataSource = DataFromDb.getSubjectData();
+                    wait.close();
                 }
                 else
                 {
@@ -104,6 +110,7 @@ namespace Perfect_Peace_System.Pages
             }
             catch(Exception ex)
             {
+                wait.close();
                 MessageBox.Show(ex.Message);
             }
         }
