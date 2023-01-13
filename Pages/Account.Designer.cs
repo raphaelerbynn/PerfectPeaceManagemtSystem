@@ -66,7 +66,55 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bgPanel = new System.Windows.Forms.Panel();
+            this.summaryPanel = new System.Windows.Forms.Panel();
+            this.expdDayPk = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.totalExpdLbl = new System.Windows.Forms.Label();
+            this.incomeLbl = new System.Windows.Forms.Label();
+            this.busIncomeLbl = new System.Windows.Forms.Label();
+            this.classesIncomeLbl = new System.Windows.Forms.Label();
+            this.feedingIncomeLbl = new System.Windows.Forms.Label();
+            this.feesIncomeLbl = new System.Windows.Forms.Label();
+            this.label59 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.label62 = new System.Windows.Forms.Label();
+            this.label63 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.expdMonth = new System.Windows.Forms.CheckBox();
+            this.expdAddDay = new System.Windows.Forms.CheckBox();
+            this.expdDayLbl = new System.Windows.Forms.Label();
+            this.expdMonthLbl = new System.Windows.Forms.Label();
+            this.label66 = new System.Windows.Forms.Label();
+            this.expdYearLbl = new System.Windows.Forms.Label();
+            this.print_page = new System.Windows.Forms.Button();
+            this.summaryListBtn = new System.Windows.Forms.Button();
+            this.expdMonthPk = new System.Windows.Forms.DateTimePicker();
+            this.expdYearPk = new System.Windows.Forms.DateTimePicker();
             this.busPanel = new System.Windows.Forms.Panel();
             this.busAddMonth = new System.Windows.Forms.CheckBox();
             this.busAddDay = new System.Windows.Forms.CheckBox();
@@ -200,7 +248,11 @@
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn4 = new System.Windows.Forms.DataGridViewImageColumn();
             this.bgPanel.SuspendLayout();
+            this.summaryPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.busPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.busFeeDataView)).BeginInit();
             this.feedingPanel.SuspendLayout();
@@ -213,6 +265,7 @@
             // 
             // bgPanel
             // 
+            this.bgPanel.Controls.Add(this.summaryPanel);
             this.bgPanel.Controls.Add(this.busPanel);
             this.bgPanel.Controls.Add(this.refeshBtn);
             this.bgPanel.Controls.Add(this.feedingPanel);
@@ -226,6 +279,550 @@
             this.bgPanel.Name = "bgPanel";
             this.bgPanel.Size = new System.Drawing.Size(873, 663);
             this.bgPanel.TabIndex = 0;
+            // 
+            // summaryPanel
+            // 
+            this.summaryPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.summaryPanel.AutoScroll = true;
+            this.summaryPanel.Controls.Add(this.expdDayPk);
+            this.summaryPanel.Controls.Add(this.panel1);
+            this.summaryPanel.Controls.Add(this.expdMonth);
+            this.summaryPanel.Controls.Add(this.expdAddDay);
+            this.summaryPanel.Controls.Add(this.expdDayLbl);
+            this.summaryPanel.Controls.Add(this.expdMonthLbl);
+            this.summaryPanel.Controls.Add(this.label66);
+            this.summaryPanel.Controls.Add(this.expdYearLbl);
+            this.summaryPanel.Controls.Add(this.print_page);
+            this.summaryPanel.Controls.Add(this.summaryListBtn);
+            this.summaryPanel.Controls.Add(this.expdMonthPk);
+            this.summaryPanel.Controls.Add(this.expdYearPk);
+            this.summaryPanel.Location = new System.Drawing.Point(12, 12);
+            this.summaryPanel.Name = "summaryPanel";
+            this.summaryPanel.Size = new System.Drawing.Size(855, 615);
+            this.summaryPanel.TabIndex = 46;
+            this.summaryPanel.Visible = false;
+            // 
+            // expdDayPk
+            // 
+            this.expdDayPk.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.expdDayPk.DropDownHeight = 105;
+            this.expdDayPk.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.expdDayPk.FormattingEnabled = true;
+            this.expdDayPk.IntegralHeight = false;
+            this.expdDayPk.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3"});
+            this.expdDayPk.Location = new System.Drawing.Point(272, 90);
+            this.expdDayPk.Name = "expdDayPk";
+            this.expdDayPk.Size = new System.Drawing.Size(88, 21);
+            this.expdDayPk.TabIndex = 56;
+            this.expdDayPk.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.panel11);
+            this.panel1.Controls.Add(this.panel9);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel10);
+            this.panel1.Controls.Add(this.panel8);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel7);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label27);
+            this.panel1.Controls.Add(this.label32);
+            this.panel1.Controls.Add(this.label35);
+            this.panel1.Controls.Add(this.label41);
+            this.panel1.Controls.Add(this.label42);
+            this.panel1.Controls.Add(this.label43);
+            this.panel1.Controls.Add(this.label44);
+            this.panel1.Controls.Add(this.label45);
+            this.panel1.Controls.Add(this.label47);
+            this.panel1.Controls.Add(this.label49);
+            this.panel1.Controls.Add(this.label50);
+            this.panel1.Controls.Add(this.label51);
+            this.panel1.Controls.Add(this.totalExpdLbl);
+            this.panel1.Controls.Add(this.incomeLbl);
+            this.panel1.Controls.Add(this.busIncomeLbl);
+            this.panel1.Controls.Add(this.classesIncomeLbl);
+            this.panel1.Controls.Add(this.feedingIncomeLbl);
+            this.panel1.Controls.Add(this.feesIncomeLbl);
+            this.panel1.Controls.Add(this.label59);
+            this.panel1.Controls.Add(this.label60);
+            this.panel1.Controls.Add(this.label61);
+            this.panel1.Controls.Add(this.label62);
+            this.panel1.Controls.Add(this.label63);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Location = new System.Drawing.Point(36, 172);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(757, 1181);
+            this.panel1.TabIndex = 55;
+            // 
+            // panel11
+            // 
+            this.panel11.BackColor = System.Drawing.Color.Black;
+            this.panel11.Location = new System.Drawing.Point(73, 1162);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(638, 2);
+            this.panel11.TabIndex = 3;
+            this.panel11.Tag = "";
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.Black;
+            this.panel9.Location = new System.Drawing.Point(73, 453);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(638, 2);
+            this.panel9.TabIndex = 3;
+            this.panel9.Tag = "ex_total";
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Black;
+            this.panel5.Location = new System.Drawing.Point(73, 302);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(638, 2);
+            this.panel5.TabIndex = 3;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Black;
+            this.panel10.Location = new System.Drawing.Point(73, 1133);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(638, 2);
+            this.panel10.TabIndex = 3;
+            this.panel10.Tag = "";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Black;
+            this.panel8.Location = new System.Drawing.Point(73, 424);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(638, 2);
+            this.panel8.TabIndex = 3;
+            this.panel8.Tag = "ex_total";
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Black;
+            this.panel4.Location = new System.Drawing.Point(73, 273);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(638, 2);
+            this.panel4.TabIndex = 3;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Black;
+            this.panel7.Location = new System.Drawing.Point(73, 374);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(638, 2);
+            this.panel7.TabIndex = 3;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(73, 166);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(638, 2);
+            this.panel3.TabIndex = 3;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Black;
+            this.panel6.Location = new System.Drawing.Point(73, 343);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(638, 2);
+            this.panel6.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Location = new System.Drawing.Point(73, 135);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(638, 2);
+            this.panel2.TabIndex = 3;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(69, 348);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(84, 23);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "Expenses";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(403, 1139);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(83, 21);
+            this.label32.TabIndex = 2;
+            this.label32.Tag = "";
+            this.label32.Text = "GHc 20.00";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label35.Location = new System.Drawing.Point(189, 1139);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(210, 21);
+            this.label35.TabIndex = 2;
+            this.label35.Tag = "";
+            this.label35.Text = "Total income && expenditure: ";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(69, 140);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(72, 23);
+            this.label41.TabIndex = 2;
+            this.label41.Text = "Income ";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(69, 429);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(43, 21);
+            this.label42.TabIndex = 2;
+            this.label42.Tag = "ex_total";
+            this.label42.Text = "Total";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(69, 278);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(43, 21);
+            this.label43.TabIndex = 2;
+            this.label43.Text = "Total";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(69, 239);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(67, 21);
+            this.label44.TabIndex = 2;
+            this.label44.Text = "Bus fees";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label45.Location = new System.Drawing.Point(69, 218);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(99, 21);
+            this.label45.TabIndex = 2;
+            this.label45.Text = "Extra Classes";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label47.Location = new System.Drawing.Point(69, 197);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(96, 21);
+            this.label47.TabIndex = 2;
+            this.label47.Text = "Feeding fees";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(403, 239);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(85, 21);
+            this.label49.TabIndex = 2;
+            this.label49.Text = "---------------";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.Location = new System.Drawing.Point(403, 218);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(85, 21);
+            this.label50.TabIndex = 2;
+            this.label50.Text = "---------------";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(403, 197);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(85, 21);
+            this.label51.TabIndex = 2;
+            this.label51.Text = "---------------";
+            // 
+            // totalExpdLbl
+            // 
+            this.totalExpdLbl.AutoSize = true;
+            this.totalExpdLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalExpdLbl.Location = new System.Drawing.Point(534, 429);
+            this.totalExpdLbl.Name = "totalExpdLbl";
+            this.totalExpdLbl.Size = new System.Drawing.Size(58, 21);
+            this.totalExpdLbl.TabIndex = 2;
+            this.totalExpdLbl.Tag = "ex_total";
+            this.totalExpdLbl.Text = "GHc ---";
+            // 
+            // incomeLbl
+            // 
+            this.incomeLbl.AutoSize = true;
+            this.incomeLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incomeLbl.Location = new System.Drawing.Point(534, 278);
+            this.incomeLbl.Name = "incomeLbl";
+            this.incomeLbl.Size = new System.Drawing.Size(58, 21);
+            this.incomeLbl.TabIndex = 2;
+            this.incomeLbl.Text = "GHc ---";
+            // 
+            // busIncomeLbl
+            // 
+            this.busIncomeLbl.AutoSize = true;
+            this.busIncomeLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.busIncomeLbl.Location = new System.Drawing.Point(534, 239);
+            this.busIncomeLbl.Name = "busIncomeLbl";
+            this.busIncomeLbl.Size = new System.Drawing.Size(58, 21);
+            this.busIncomeLbl.TabIndex = 2;
+            this.busIncomeLbl.Text = "GHc ---";
+            // 
+            // classesIncomeLbl
+            // 
+            this.classesIncomeLbl.AutoSize = true;
+            this.classesIncomeLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classesIncomeLbl.Location = new System.Drawing.Point(534, 218);
+            this.classesIncomeLbl.Name = "classesIncomeLbl";
+            this.classesIncomeLbl.Size = new System.Drawing.Size(58, 21);
+            this.classesIncomeLbl.TabIndex = 2;
+            this.classesIncomeLbl.Text = "GHc ---";
+            // 
+            // feedingIncomeLbl
+            // 
+            this.feedingIncomeLbl.AutoSize = true;
+            this.feedingIncomeLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feedingIncomeLbl.Location = new System.Drawing.Point(534, 197);
+            this.feedingIncomeLbl.Name = "feedingIncomeLbl";
+            this.feedingIncomeLbl.Size = new System.Drawing.Size(58, 21);
+            this.feedingIncomeLbl.TabIndex = 2;
+            this.feedingIncomeLbl.Text = "GHc ---";
+            // 
+            // feesIncomeLbl
+            // 
+            this.feesIncomeLbl.AutoSize = true;
+            this.feesIncomeLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.feesIncomeLbl.Location = new System.Drawing.Point(534, 176);
+            this.feesIncomeLbl.Name = "feesIncomeLbl";
+            this.feesIncomeLbl.Size = new System.Drawing.Size(58, 21);
+            this.feesIncomeLbl.TabIndex = 2;
+            this.feesIncomeLbl.Text = "GHc ---";
+            // 
+            // label59
+            // 
+            this.label59.AutoSize = true;
+            this.label59.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label59.Location = new System.Drawing.Point(403, 176);
+            this.label59.Name = "label59";
+            this.label59.Size = new System.Drawing.Size(85, 21);
+            this.label59.TabIndex = 2;
+            this.label59.Text = "---------------";
+            // 
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.Location = new System.Drawing.Point(69, 176);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(88, 21);
+            this.label60.TabIndex = 2;
+            this.label60.Text = "School fees";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.Location = new System.Drawing.Point(179, 76);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(181, 23);
+            this.label61.TabIndex = 2;
+            this.label61.Text = "Income && Expenditure";
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label62.Location = new System.Drawing.Point(179, 48);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(133, 23);
+            this.label62.TabIndex = 1;
+            this.label62.Text = "Financial Report";
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label63.Location = new System.Drawing.Point(179, 19);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(266, 23);
+            this.label63.TabIndex = 1;
+            this.label63.Text = "Perfect Peace Preparatory School";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
+            this.pictureBox1.Location = new System.Drawing.Point(73, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(87, 80);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // expdMonth
+            // 
+            this.expdMonth.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.expdMonth.AutoSize = true;
+            this.expdMonth.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expdMonth.Location = new System.Drawing.Point(367, 42);
+            this.expdMonth.Name = "expdMonth";
+            this.expdMonth.Size = new System.Drawing.Size(90, 21);
+            this.expdMonth.TabIndex = 54;
+            this.expdMonth.Text = "Add Month";
+            this.expdMonth.UseVisualStyleBackColor = true;
+            this.expdMonth.CheckedChanged += new System.EventHandler(this.expdAddMonth_CheckedChanged);
+            // 
+            // expdAddDay
+            // 
+            this.expdAddDay.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.expdAddDay.AutoSize = true;
+            this.expdAddDay.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expdAddDay.Location = new System.Drawing.Point(463, 41);
+            this.expdAddDay.Name = "expdAddDay";
+            this.expdAddDay.Size = new System.Drawing.Size(74, 21);
+            this.expdAddDay.TabIndex = 53;
+            this.expdAddDay.Text = "Add Day";
+            this.expdAddDay.UseVisualStyleBackColor = true;
+            this.expdAddDay.Visible = false;
+            this.expdAddDay.CheckedChanged += new System.EventHandler(this.expdAddDay_CheckedChanged);
+            // 
+            // expdDayLbl
+            // 
+            this.expdDayLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.expdDayLbl.AutoSize = true;
+            this.expdDayLbl.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expdDayLbl.Location = new System.Drawing.Point(269, 75);
+            this.expdDayLbl.Name = "expdDayLbl";
+            this.expdDayLbl.Size = new System.Drawing.Size(30, 13);
+            this.expdDayLbl.TabIndex = 51;
+            this.expdDayLbl.Text = "Term";
+            this.expdDayLbl.Visible = false;
+            // 
+            // expdMonthLbl
+            // 
+            this.expdMonthLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.expdMonthLbl.AutoSize = true;
+            this.expdMonthLbl.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expdMonthLbl.Location = new System.Drawing.Point(364, 75);
+            this.expdMonthLbl.Name = "expdMonthLbl";
+            this.expdMonthLbl.Size = new System.Drawing.Size(38, 13);
+            this.expdMonthLbl.TabIndex = 49;
+            this.expdMonthLbl.Text = "Month";
+            this.expdMonthLbl.Visible = false;
+            // 
+            // label66
+            // 
+            this.label66.AutoSize = true;
+            this.label66.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label66.Location = new System.Drawing.Point(3, 1558);
+            this.label66.Name = "label66";
+            this.label66.Size = new System.Drawing.Size(14, 21);
+            this.label66.TabIndex = 2;
+            this.label66.Text = ".";
+            // 
+            // expdYearLbl
+            // 
+            this.expdYearLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.expdYearLbl.AutoSize = true;
+            this.expdYearLbl.Font = new System.Drawing.Font("Calibri", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.expdYearLbl.Location = new System.Drawing.Point(458, 75);
+            this.expdYearLbl.Name = "expdYearLbl";
+            this.expdYearLbl.Size = new System.Drawing.Size(27, 13);
+            this.expdYearLbl.TabIndex = 48;
+            this.expdYearLbl.Text = "Year";
+            // 
+            // print_page
+            // 
+            this.print_page.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.print_page.AutoSize = true;
+            this.print_page.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.print_page.FlatAppearance.BorderSize = 0;
+            this.print_page.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.print_page.ForeColor = System.Drawing.Color.White;
+            this.print_page.Location = new System.Drawing.Point(362, 1359);
+            this.print_page.Name = "print_page";
+            this.print_page.Size = new System.Drawing.Size(90, 23);
+            this.print_page.TabIndex = 47;
+            this.print_page.Text = "Print Page";
+            this.print_page.UseVisualStyleBackColor = false;
+            // 
+            // summaryListBtn
+            // 
+            this.summaryListBtn.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.summaryListBtn.AutoSize = true;
+            this.summaryListBtn.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.summaryListBtn.FlatAppearance.BorderSize = 0;
+            this.summaryListBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.summaryListBtn.ForeColor = System.Drawing.Color.White;
+            this.summaryListBtn.Location = new System.Drawing.Point(367, 127);
+            this.summaryListBtn.Name = "summaryListBtn";
+            this.summaryListBtn.Size = new System.Drawing.Size(90, 23);
+            this.summaryListBtn.TabIndex = 47;
+            this.summaryListBtn.Text = "Summary List";
+            this.summaryListBtn.UseVisualStyleBackColor = false;
+            this.summaryListBtn.Click += new System.EventHandler(this.summaryListBtn_Click);
+            // 
+            // expdMonthPk
+            // 
+            this.expdMonthPk.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.expdMonthPk.CustomFormat = "MM";
+            this.expdMonthPk.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.expdMonthPk.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.expdMonthPk.Location = new System.Drawing.Point(367, 91);
+            this.expdMonthPk.MaxDate = new System.DateTime(7060, 12, 28, 0, 0, 0, 0);
+            this.expdMonthPk.MinDate = new System.DateTime(2010, 12, 25, 0, 0, 0, 0);
+            this.expdMonthPk.Name = "expdMonthPk";
+            this.expdMonthPk.ShowUpDown = true;
+            this.expdMonthPk.Size = new System.Drawing.Size(88, 20);
+            this.expdMonthPk.TabIndex = 46;
+            this.expdMonthPk.Visible = false;
+            // 
+            // expdYearPk
+            // 
+            this.expdYearPk.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.expdYearPk.CustomFormat = "yyyy";
+            this.expdYearPk.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.expdYearPk.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.expdYearPk.Location = new System.Drawing.Point(461, 91);
+            this.expdYearPk.MaxDate = new System.DateTime(7060, 12, 28, 0, 0, 0, 0);
+            this.expdYearPk.MinDate = new System.DateTime(2010, 12, 25, 0, 0, 0, 0);
+            this.expdYearPk.Name = "expdYearPk";
+            this.expdYearPk.ShowUpDown = true;
+            this.expdYearPk.Size = new System.Drawing.Size(146, 20);
+            this.expdYearPk.TabIndex = 45;
             // 
             // busPanel
             // 
@@ -2039,7 +2636,8 @@
             "Expenses",
             "Extra Classes Fee",
             "Feeding Fee",
-            "Bus Fee"});
+            "Bus Fee",
+            "Income & expenditure"});
             this.categoryCb.Location = new System.Drawing.Point(360, 22);
             this.categoryCb.Name = "categoryCb";
             this.categoryCb.Size = new System.Drawing.Size(265, 23);
@@ -2102,6 +2700,20 @@
             this.dataGridViewImageColumn3.ReadOnly = true;
             this.dataGridViewImageColumn3.Width = 50;
             // 
+            // dataGridViewImageColumn4
+            // 
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle39.NullValue = null;
+            dataGridViewCellStyle39.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            dataGridViewCellStyle39.SelectionBackColor = System.Drawing.Color.Transparent;
+            this.dataGridViewImageColumn4.DefaultCellStyle = dataGridViewCellStyle39;
+            this.dataGridViewImageColumn4.FillWeight = 30F;
+            this.dataGridViewImageColumn4.HeaderText = "";
+            this.dataGridViewImageColumn4.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.dataGridViewImageColumn4.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.dataGridViewImageColumn4.Name = "dataGridViewImageColumn4";
+            this.dataGridViewImageColumn4.Width = 50;
+            // 
             // Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2112,6 +2724,11 @@
             this.Text = "Account";
             this.bgPanel.ResumeLayout(false);
             this.bgPanel.PerformLayout();
+            this.summaryPanel.ResumeLayout(false);
+            this.summaryPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.busPanel.ResumeLayout(false);
             this.busPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.busFeeDataView)).EndInit();
@@ -2264,5 +2881,53 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn busFeeAmount;
         private System.Windows.Forms.DataGridViewTextBoxColumn busDate;
         private System.Windows.Forms.DataGridViewImageColumn busDelete;
+        private System.Windows.Forms.Panel summaryPanel;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label totalExpdLbl;
+        private System.Windows.Forms.Label incomeLbl;
+        private System.Windows.Forms.Label busIncomeLbl;
+        private System.Windows.Forms.Label classesIncomeLbl;
+        private System.Windows.Forms.Label feedingIncomeLbl;
+        private System.Windows.Forms.Label feesIncomeLbl;
+        private System.Windows.Forms.Label label59;
+        private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.Label label61;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox expdMonth;
+        private System.Windows.Forms.CheckBox expdAddDay;
+        private System.Windows.Forms.Label expdDayLbl;
+        private System.Windows.Forms.Label expdMonthLbl;
+        private System.Windows.Forms.Label label66;
+        private System.Windows.Forms.Label expdYearLbl;
+        private System.Windows.Forms.Button print_page;
+        private System.Windows.Forms.Button summaryListBtn;
+        private System.Windows.Forms.DateTimePicker expdMonthPk;
+        private System.Windows.Forms.DateTimePicker expdYearPk;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn4;
+        private System.Windows.Forms.ComboBox expdDayPk;
     }
 }

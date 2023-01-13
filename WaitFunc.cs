@@ -28,6 +28,7 @@ namespace Perfect_Peace_System
 
         public void close()
         {
+
             //wait.Close();
             if (wait != null)
             {

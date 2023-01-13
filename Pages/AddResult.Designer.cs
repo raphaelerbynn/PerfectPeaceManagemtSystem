@@ -63,12 +63,12 @@
             this.examMarkLbl = new System.Windows.Forms.Label();
             this.subjectName = new System.Windows.Forms.Label();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.backLbl = new System.Windows.Forms.LinkLabel();
             this.f = new System.Windows.Forms.Label();
             this.classLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.studentNameLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.backLbl = new System.Windows.Forms.LinkLabel();
             this.bgPanel.SuspendLayout();
             this.teacherRemarksPanel.SuspendLayout();
             this.inputPanel.SuspendLayout();
@@ -518,6 +518,18 @@
             this.topPanel.Size = new System.Drawing.Size(879, 107);
             this.topPanel.TabIndex = 0;
             // 
+            // backLbl
+            // 
+            this.backLbl.AutoSize = true;
+            this.backLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backLbl.Location = new System.Drawing.Point(12, 13);
+            this.backLbl.Name = "backLbl";
+            this.backLbl.Size = new System.Drawing.Size(33, 19);
+            this.backLbl.TabIndex = 28;
+            this.backLbl.TabStop = true;
+            this.backLbl.Text = "<<<";
+            this.backLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.backLbl_LinkClicked);
+            // 
             // f
             // 
             this.f.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -572,18 +584,6 @@
             this.label1.Size = new System.Drawing.Size(120, 20);
             this.label1.TabIndex = 2;
             this.label1.Text = "Student Name: ";
-            // 
-            // backLbl
-            // 
-            this.backLbl.AutoSize = true;
-            this.backLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backLbl.Location = new System.Drawing.Point(12, 13);
-            this.backLbl.Name = "backLbl";
-            this.backLbl.Size = new System.Drawing.Size(33, 19);
-            this.backLbl.TabIndex = 28;
-            this.backLbl.TabStop = true;
-            this.backLbl.Text = "<<<";
-            this.backLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.backLbl_LinkClicked);
             // 
             // AddResult
             // 

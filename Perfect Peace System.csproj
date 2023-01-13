@@ -164,6 +164,12 @@
     <Compile Include="Pages\CreatAccount.Designer.cs">
       <DependentUpon>CreatAccount.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CreateHere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pages\CreateHere.Designer.cs">
+      <DependentUpon>CreateHere.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\EditUserDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -429,6 +435,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\CreatAccount.resx">
       <DependentUpon>CreatAccount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pages\CreateHere.resx">
+      <DependentUpon>CreateHere.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pages\EditUserDetails.resx">
       <DependentUpon>EditUserDetails.cs</DependentUpon>

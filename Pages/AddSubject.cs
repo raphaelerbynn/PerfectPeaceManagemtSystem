@@ -13,10 +13,11 @@ namespace Perfect_Peace_System.Pages
     public partial class AddSubject : Form
     {
         Subject subject;
-        WaitFunc wait = new WaitFunc();
+        WaitFunc wait;
         public AddSubject()
         {
             InitializeComponent();
+            
             subjectDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
             subjectDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
             subjectDataView.BackgroundColor = Home.foreColor;
@@ -26,6 +27,9 @@ namespace Perfect_Peace_System.Pages
             subject = new Subject();
             subjectDataView.DataSource = DataFromDb.getSubjectData();
             columnArrangement();
+
+            string query = "UPDATE Subject SET name=UPPER(name)";
+            DbClient.query_execute(query);
         }
 
         private void columnArrangement()
@@ -69,8 +73,8 @@ namespace Perfect_Peace_System.Pages
                         string query = "DELETE FROM Student_marks WHERE subject_id='" + id + "'";
                         DbClient.query_execute(query);
                         
-                        query = "DELETE FROM Student_result WHERE subject_id='" + id + "'";
-                        DbClient.query_execute(query);
+                        //query = "DELETE FROM Student_result WHERE subject_id='" + id + "'";
+                        //DbClient.query_execute(query)
                         
                         query = "DELETE FROM Teachers_weekly_report WHERE subject_id='" + id + "'";
                         DbClient.query_execute(query);
@@ -78,8 +82,10 @@ namespace Perfect_Peace_System.Pages
 
                         subjectDataView.Rows.RemoveAt(e.RowIndex);
                         subject.delete(id);
+
                         wait.close();
                         MessageBox.Show(name + " deleted from system");
+                        
                     }
 
                 }
@@ -87,25 +93,28 @@ namespace Perfect_Peace_System.Pages
             catch (Exception ex)
             {
                 wait.close();
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.ToString());
             }
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            
             if (InternetConnectivity.checkConnectivity() == false)
             {
                 MessageBox.Show("Check your internet connection");
                 return;
             }
+            wait = new WaitFunc();
+            wait.show();
             try
             {
                 
-                if (!(String.IsNullOrEmpty(subjectNameTB.Text) && String.IsNullOrEmpty(examTotalMarkTB.Text) &&
-                    String.IsNullOrEmpty(classTotalMarksTB.Text) && String.IsNullOrEmpty(examPercentageTB.Text) &&
+                if (!(String.IsNullOrEmpty(subjectNameTB.Text) || String.IsNullOrEmpty(examTotalMarkTB.Text) ||
+                    String.IsNullOrEmpty(classTotalMarksTB.Text) || String.IsNullOrEmpty(examPercentageTB.Text) ||
                     String.IsNullOrEmpty(passMarksTB.Text)))
                 {
-                    wait.show();
+                    
                     subject = new Subject(subjectNameTB.Text, int.Parse(examTotalMarkTB.Text), int.Parse(classTotalMarksTB.Text), int.Parse(examPercentageTB.Text), int.Parse(classPercentageLB.Text), int.Parse(passMarksTB.Text));
                     subject.insert_data();
                     clearFeild();
@@ -115,6 +124,7 @@ namespace Perfect_Peace_System.Pages
                 }
                 else
                 {
+                    wait.close();
                     MessageBox.Show("Every feild must be filled");
                 }
             }
@@ -122,6 +132,7 @@ namespace Perfect_Peace_System.Pages
             {
                 wait.close();
                 MessageBox.Show(ex.Message);
+                
             }
         }
 

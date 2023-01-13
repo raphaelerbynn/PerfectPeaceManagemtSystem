@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,11 +11,14 @@ using System.Windows.Forms;
 
 namespace Perfect_Peace_System.Pages
 {
-    
+
     public partial class Account : Form
     {
         private string query;
         WaitFunc wait = new WaitFunc();
+        List<Label> expdLbls = new List<Label>();
+        List<Point> exp_total_location = new List<Point>();
+
         public Account()
         {
             InitializeComponent();
@@ -28,7 +32,9 @@ namespace Perfect_Peace_System.Pages
             expensePanel.BackColor = Home.foreColor;
             classesPanel.BackColor = Home.foreColor;
             busPanel.BackColor = Home.foreColor;
+            summaryPanel.BackColor = Home.foreColor;
 
+            
 
         }
 
@@ -36,11 +42,11 @@ namespace Perfect_Peace_System.Pages
         {
             if (InternetConnectivity.checkConnectivity())
             {
-               
-                
+
+
                 string queryTeacher = "SELECT [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'";
                 string queryClass = "SELECT name FROM Class";
-                
+
                 if (categoryCb.SelectedIndex == 0)
                 {
                     refeshBtn.Visible = true;
@@ -48,6 +54,7 @@ namespace Perfect_Peace_System.Pages
                     feedingPanel.Visible = false;
                     expensePanel.Visible = true;
                     busPanel.Visible = false;
+                    summaryPanel.Visible = false;
                 }
                 else if (categoryCb.SelectedIndex == 1)
                 {
@@ -58,6 +65,7 @@ namespace Perfect_Peace_System.Pages
                     feedingPanel.Visible = false;
                     busPanel.Visible = false;
                     classesPanel.Visible = true;
+                    summaryPanel.Visible = false;
                     classesPanel.Location = expensePanel.Location;
                     DbClient.query_reader(teacherCb, queryTeacher);
                     DbClient.query_reader(extraClassesClassCb, queryClass);
@@ -71,6 +79,7 @@ namespace Perfect_Peace_System.Pages
                     classesPanel.Visible = false;
                     busPanel.Visible = false;
                     feedingPanel.Visible = true;
+                    summaryPanel.Visible = false;
                     feedingPanel.Location = expensePanel.Location;
                     DbClient.query_reader(feedingTeacherCb, queryTeacher);
                     DbClient.query_reader(feedingClassCb, queryClass);
@@ -84,11 +93,35 @@ namespace Perfect_Peace_System.Pages
                     classesPanel.Visible = false;
                     feedingPanel.Visible = false;
                     busPanel.Visible = true;
+                    summaryPanel.Visible = false;
                     busPanel.Location = expensePanel.Location;
                     DbClient.query_reader(busTeacherCb, queryTeacher);
                     DbClient.query_reader(busClassCb, queryClass);
                     refeshBtn.Visible = true;
                     wait.close();
+                }
+                else if (categoryCb.SelectedIndex == 4)
+                {
+                   
+                    expensePanel.Visible = false;
+                    classesPanel.Visible = false;
+                    feedingPanel.Visible = false;
+                    busPanel.Visible = false;
+                    summaryPanel.Visible = true;
+                    summaryPanel.Location = expensePanel.Location;
+                    refeshBtn.Visible = false;
+
+                    int i = 0;
+                    foreach(Control c in panel1.Controls)
+                    {
+                        if (c.Tag != null && c.Tag?.ToString() == "ex_total")
+                        {
+                            exp_total_location.Add(c.Location);
+                            i++;
+                          
+                        }
+                    }
+                    
                 }
                 else
                 {
@@ -96,9 +129,11 @@ namespace Perfect_Peace_System.Pages
                     classesPanel.Visible = false;
                     feedingPanel.Visible = false;
                     busPanel.Visible = false;
+                    summaryPanel.Visible = false;
+
                     //wait.close();
                 }
-                
+
             }
             else
             {
@@ -153,6 +188,7 @@ namespace Perfect_Peace_System.Pages
         }
 
 
+
         //feeding
         private void addFeedingBtn_Click(object sender, EventArgs e)
         {
@@ -164,7 +200,7 @@ namespace Perfect_Peace_System.Pages
                     query = "INSERT INTO Feeding_fee(teacher, class, amount, date) " +
                         "VALUES('" + feedingTeacherCb.Text + "', '" + feedingClassCb.Text + "', '" + feedingAmntTb.Text + "', '" + DateTime.Today + "')";
                     DbClient.query_execute(query);
-                    
+
                     feedingTeacherCb.SelectedIndex = -1;
                     feedingClassCb.SelectedIndex = -1;
                     feedingAmntTb.Text = null;
@@ -185,7 +221,7 @@ namespace Perfect_Peace_System.Pages
             {
                 MessageBox.Show("Check your internet connection");
             }
-            
+
         }
 
         private void feedingSearchBtn_Click(object sender, EventArgs e)
@@ -210,7 +246,7 @@ namespace Perfect_Peace_System.Pages
                 (feedingDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
                 feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
             }
-            
+
         }
 
         private void feedingLoadBtn_Click(object sender, EventArgs e)
@@ -228,7 +264,7 @@ namespace Perfect_Peace_System.Pages
             (feedingDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", loadListDateF);
             feedinTotalLbl.Text = totalAmountInDataView(feedingDataView, "feedingAmount");
         }
-        
+
 
         private void feedingDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -266,7 +302,7 @@ namespace Perfect_Peace_System.Pages
             {
                 MessageBox.Show("Check your internet connection");
             }
-            
+
         }
 
         private void addMonthCheckBF_CheckedChanged(object sender, EventArgs e)
@@ -311,7 +347,7 @@ namespace Perfect_Peace_System.Pages
                     query = "INSERT INTO Extra_classes(teacher, class, amount, date) " +
                         "VALUES('" + teacherCb.Text + "', '" + extraClassesClassCb.Text + "', '" + extraClassesAmntTb.Text + "', '" + DateTime.Today + "')";
                     DbClient.query_execute(query);
-                    
+
                     teacherCb.SelectedIndex = -1;
                     extraClassesClassCb.SelectedIndex = -1;
                     extraClassesAmntTb.Text = null;
@@ -324,7 +360,7 @@ namespace Perfect_Peace_System.Pages
                     wait.close();
                     MessageBox.Show(ex.Message);
                 }
-                
+
             }
             else
             {
@@ -353,7 +389,7 @@ namespace Perfect_Peace_System.Pages
                 (extraClassesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
                 extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
             }
-            
+
         }
 
         private void loadExtraClassesBtn_Click(object sender, EventArgs e)
@@ -371,7 +407,7 @@ namespace Perfect_Peace_System.Pages
             (extraClassesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", loadListDateC);
             extraClassesTotalLbl.Text = totalAmountInDataView(extraClassesDataView, "extraClassesAmount");
         }
-        
+
 
         private void extraClassesDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -409,7 +445,7 @@ namespace Perfect_Peace_System.Pages
             {
                 //MessageBox.Show("Check your internet connection");
             }
-           
+
         }
 
         private void addDayCheckBC_CheckedChanged(object sender, EventArgs e)
@@ -445,7 +481,7 @@ namespace Perfect_Peace_System.Pages
         //expense
         private void addExpBtn_Click(object sender, EventArgs e)
         {
-            if(InternetConnectivity.checkConnectivity())
+            if (InternetConnectivity.checkConnectivity())
             {
                 try
                 {
@@ -453,7 +489,7 @@ namespace Perfect_Peace_System.Pages
                     query = "INSERT INTO Expense(expense, amount, date) " +
                         "VALUES('" + expenseTb.Text + "', '" + expAmountTb.Text + "', '" + DateTime.Today + "')";
                     DbClient.query_execute(query);
-                    
+
                     expenseTb.Text = null;
                     expAmountTb.Text = null;
                     totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
@@ -472,7 +508,7 @@ namespace Perfect_Peace_System.Pages
             {
                 MessageBox.Show("Check your internet connection");
             }
-            
+
         }
 
         private void searchExpBtn_Click(object sender, EventArgs e)
@@ -497,16 +533,16 @@ namespace Perfect_Peace_System.Pages
                 (expensesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
                 totalExpLbl.Text = totalAmountInDataView(expensesDataView, "exp_amount");
             }
-            
+
         }
 
         private void loadExpBtn_Click(object sender, EventArgs e)
         {
-            
+
             string loadListDateE = expYearPk.Text;
             if (expMonthPk.Visible == true)
             {
-                loadListDateE = expMonthPk.Text + "-" + expYearPk.Text; 
+                loadListDateE = expMonthPk.Text + "-" + expYearPk.Text;
             }
             Console.WriteLine(loadListDateE);
             (expensesDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", loadListDateE);
@@ -579,7 +615,7 @@ namespace Perfect_Peace_System.Pages
         private string totalAmountInDataView(DataGridView data, string amountColumnId)
         {
             double total = 0;
-            foreach(DataGridViewRow item in data.Rows)
+            foreach (DataGridViewRow item in data.Rows)
             {
                 total += double.Parse(item.Cells[amountColumnId].Value.ToString());
             }
@@ -600,13 +636,13 @@ namespace Perfect_Peace_System.Pages
                 //MessageBox.Show("Feeding data refreshed");
                 showFeeding();
             }
-            else if(expensePanel.Visible == true)
+            else if (expensePanel.Visible == true)
             {
                 DataFromDb.getExpenses = DbClient.dataSource("SELECT expense_id, expense, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Expense");
                 //MessageBox.Show("Expenses data refreshed");
                 showExpenses();
             }
-            else if(classesPanel.Visible == true)
+            else if (classesPanel.Visible == true)
             {
                 DataFromDb.getExtraClasses = DbClient.dataSource("SELECT extra_classes_id, teacher, class, amount, FORMAT(date, 'dd-MM-yyyy') AS date FROM Extra_classes");
                 //MessageBox.Show("Extra classes data refreshed");
@@ -667,7 +703,7 @@ namespace Perfect_Peace_System.Pages
             }
             (busFeeDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format("CONVERT(Date, 'System.String') LIKE '%{0}%'", loadListDateF);
             busTotalLbl.Text = totalAmountInDataView(busFeeDataView, "busFeeAmount");
-        
+
         }
 
         private void busSearchBtn_Click(object sender, EventArgs e)
@@ -763,5 +799,186 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
             }
         }
+
+        //expenditure
+        private void expdAddMonth_CheckedChanged(object sender, EventArgs e)
+        {
+
+            if (expdMonth.Checked)
+            {
+                expdAddDay.Visible = true;
+                expdMonthLbl.Visible = true;
+                expdMonthPk.Visible = true;
+            }
+            else
+            {
+                expdAddDay.Visible = false;
+                expdMonthLbl.Visible = false;
+                expdMonthPk.Visible = false;
+            }
+        }
+
+        private void expdAddDay_CheckedChanged(object sender, EventArgs e)
+        {
+            if (expdAddDay.Checked)
+            {
+                expdDayLbl.Visible = true;
+                expdDayPk.Visible = true;
+            }
+            else
+            {
+                expdDayLbl.Visible = false;
+                expdDayPk.Visible = false;
+            }
+        }
+
+        private double incomeTotal(string q)
+        {
+            string t=DbClient.query_executeScaler(q);
+            if (String.IsNullOrEmpty(t))
+            {
+                return double.Parse("0.00");
+            }
+            else
+            {
+                return double.Parse(t);
+            }
+        }
+
+        private void loadExpenditure()
+        {
+            try
+            {
+                wait.show();
+                List<Label> expdNameLbls = new List<Label>();
+                List<Label> expdSeparators = new List<Label>();
+                List<Label> expdAmountLbls = new List<Label>();
+
+                for (int i = 0; i < expdLbls.Count; i++)
+                {
+                    panel1.Controls.Remove(expdLbls[i]);
+                }
+                expdLbls.Clear();
+
+
+                string loadListDateF = expdYearPk.Text;
+                if (expdMonthPk.Visible == true)
+                {
+                    loadListDateF = expdMonthPk.Text + "-" + expdYearPk.Text;
+                    
+                }
+                Console.WriteLine(loadListDateF);
+
+                double total_income = 0;
+                query = "SELECT SUM(amount) FROM Bus_fee WHERE FORMAT(date, 'dd-MM-yyyy') LIKE '%" + loadListDateF + "%'";
+                busIncomeLbl.Text = "GHc " + incomeTotal(query);
+                total_income += incomeTotal(query);
+                
+                query = "SELECT SUM(amount) FROM Feeding_fee WHERE FORMAT(date, 'dd-MM-yyyy') LIKE '%" + loadListDateF + "%'";
+                feedingIncomeLbl.Text = "GHc " + incomeTotal(query);
+                total_income += incomeTotal(query);
+
+                query = "SELECT SUM(amount) FROM Extra_classes WHERE FORMAT(date, 'dd-MM-yyyy') LIKE '%" + loadListDateF + "%'";
+                classesIncomeLbl.Text = "GHc " + incomeTotal(query);
+                total_income += incomeTotal(query);
+
+                incomeLbl.Text = "GHc " + total_income;
+
+                //query = "SELECT SUM(amount) FROM Bus_fee WHERE FORMAT(date, 'dd-MM-yyyy') LIKE '%" + loadListDateF + "%'";
+                //busIncomeLbl.Text = "GHc " + DbClient.query_executeScaler(query);
+
+                int y_location = 384;
+                int exp_count = 0;
+                double total_expd = 0;
+                query = "SELECT SUM(amount) AS amount, expense FROM Expense WHERE FORMAT(date, 'dd-MM-yyyy') LIKE '%" + loadListDateF + "%'  GROUP BY expense";
+                SqlDataReader reader = DbClient.query_reader(query);
+                if (reader != null)
+                {
+                    
+                    while (reader.Read())
+                    {
+                        Label expdNameLbl = new Label();
+                        expdNameLbl.Text = reader["expense"].ToString();
+                        expdNameLbl.Location = new Point(69, y_location);
+                        expdNameLbl.Anchor = AnchorStyles.Top;
+                        expdNameLbl.AutoSize = true;
+                        expdNameLbl.Font = new Font("Calibri", 12);
+                        expdNameLbls.Add(expdNameLbl);
+
+                        Label expdSeparatorLbl = new Label();
+                        expdSeparatorLbl.Text = "----------------------";
+                        expdSeparatorLbl.Location = new Point(403, y_location);
+                        expdSeparatorLbl.Anchor = AnchorStyles.Top;
+                        expdSeparatorLbl.AutoSize = true;
+                        expdSeparatorLbl.Font = new Font("Calibri", 12);
+                        expdSeparators.Add(expdSeparatorLbl);
+
+                        Label expdAmountLbl = new Label();
+                        expdAmountLbl.Text = "GHc "+reader["amount"].ToString();
+                        expdAmountLbl.Location = new Point(534, y_location);
+                        expdAmountLbl.Anchor = AnchorStyles.Top;
+                        expdAmountLbl.AutoSize = true;
+                        expdAmountLbl.Font = new Font("Calibri", 12);
+                        expdAmountLbls.Add(expdAmountLbl);
+
+                        y_location += 21;
+                        exp_count++;
+                        total_expd += double.Parse(reader["amount"].ToString());
+                        
+                    }
+                    reader.Close();
+                }
+
+                totalExpdLbl.Text = "GHc " + Math.Round(total_expd, 2);
+
+                int n = 0;
+                foreach(Control control in panel1.Controls)
+                {
+                    if (control.Tag != null && control.Tag?.ToString() == "ex_total")
+                    {
+                        control.Location = new Point(exp_total_location[n].X, exp_total_location[n].Y + (20*exp_count));
+                        Console.WriteLine(control.Location);
+                        n++;
+                    } 
+                }
+
+                for (int i = 0; i < expdNameLbls.Count; i++)
+                {
+                    expdLbls.Add(expdNameLbls[i]);
+                    panel1.Controls.Add(expdLbls[i]);
+
+                }
+                for (int i = 0; i < expdAmountLbls.Count; i++)
+                {
+                    expdLbls.Add(expdAmountLbls[i]);
+                    panel1.Controls.Add(expdLbls[i + expdAmountLbls.Count]);
+
+                }
+                for (int i = 0; i < expdSeparators.Count; i++)
+                {
+                    expdLbls.Add(expdSeparators[i]);
+                    panel1.Controls.Add(expdLbls[i + expdAmountLbls.Count + expdSeparators.Count]);
+
+                }
+
+                totalExpdLbl.Text = "GHc " + (total_income - total_expd);
+                wait.close();
+            }
+            catch(Exception ex) {
+                
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void summaryListBtn_Click(object sender, EventArgs e)
+        {
+            if (!InternetConnectivity.checkConnectivity())
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
+            loadExpenditure();
+        }
     }
+
 }

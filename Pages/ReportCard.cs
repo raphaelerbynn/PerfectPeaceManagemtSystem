@@ -318,7 +318,16 @@ namespace Perfect_Peace_System.Pages
                 int length_of_subject = 30 * no_subject;
                 resultDataView.Size = new Size(resultDataView.Width, resultDataView.Height + length_of_subject);
 
-                query = "SELECT subject_id, name, CAST(class_total_marks AS VARCHAR(5)) AS class_total_marks, CAST(exam_total_marks AS VARCHAR(5)) AS exam_total_marks, CAST(pass_marks AS VARCHAR(5)) AS pass_marks, CAST(exam_percentage AS VARCHAR(5)) AS position, CAST(class_percentage AS VARCHAR(10)) AS remarks, CAST(pass_marks AS VARCHAR(5)) AS grade FROM Subject";
+                query = "SELECT " +
+                    "subject_id, " +
+                    "name, " +
+                    "CAST(class_total_marks AS VARCHAR(5)) AS class_total_marks, " +
+                    "CAST(exam_total_marks AS VARCHAR(5)) AS exam_total_marks, " +
+                    "CAST(pass_marks AS VARCHAR(5)) AS pass_marks, " +
+                    "CAST(exam_percentage AS VARCHAR(5)) AS position, " +
+                    "CAST(class_percentage AS VARCHAR(10)) AS remarks, " +
+                    "CAST(pass_marks AS VARCHAR(5)) AS grade " +
+                    "FROM Subject";
                 DbClient.dataGridFill(resultDataView, query);
 
                 remarksPanel.Location = new Point(remarksPanel.Location.X, remarksPanel.Location.Y + length_of_subject);
@@ -339,7 +348,8 @@ namespace Perfect_Peace_System.Pages
                     item.Cells["position_in_subject"].Value = "---";
                     item.Cells["remarks"].Value = "--------";
                     string id = item.Cells["subject_id"].Value.ToString();
-                    query = "SELECT * FROM Student_marks WHERE subject_id='"+id+"' AND student_id='"+student_id+"' AND term='"+term+"' AND date LIKE '%"+date+"%'";
+                    query = "SELECT * FROM Student_marks " +
+                        "WHERE subject_id='"+id+"' AND student_id='"+student_id+"' AND term='"+term+"' AND date LIKE '%"+date+"%'";
                     SqlDataReader reader = DbClient.query_reader(query);
                     while (reader.Read())
                     {
