@@ -34,8 +34,6 @@ namespace Perfect_Peace_System.Pages
             busPanel.BackColor = Home.foreColor;
             summaryPanel.BackColor = Home.foreColor;
 
-            
-
         }
 
         private void loadInfoBtn_Click(object sender, EventArgs e)
@@ -942,13 +940,21 @@ namespace Perfect_Peace_System.Pages
                     } 
                 }
 
+                int panelHeight = panel1.Height;
+
                 for (int i = 0; i < expdNameLbls.Count; i++)
                 {
+                    if (expdNameLbls[i].Location.Y < (panelHeight/2))
                     expdLbls.Add(expdNameLbls[i]);
                     panel1.Controls.Add(expdLbls[i]);
 
+                    expdLbls.Add(expdAmountLbls[i]);
+                    panel1.Controls.Add(expdLbls[i + expdAmountLbls.Count]);
+
+                    expdLbls.Add(expdSeparators[i]);
+                    panel1.Controls.Add(expdLbls[i + expdAmountLbls.Count + expdSeparators.Count]);
                 }
-                for (int i = 0; i < expdAmountLbls.Count; i++)
+                /*for (int i = 0; i < expdAmountLbls.Count; i++)
                 {
                     expdLbls.Add(expdAmountLbls[i]);
                     panel1.Controls.Add(expdLbls[i + expdAmountLbls.Count]);
@@ -959,7 +965,7 @@ namespace Perfect_Peace_System.Pages
                     expdLbls.Add(expdSeparators[i]);
                     panel1.Controls.Add(expdLbls[i + expdAmountLbls.Count + expdSeparators.Count]);
 
-                }
+                }*/
 
                 totalExpdLbl.Text = "GHc " + (total_income - total_expd);
                 wait.close();
@@ -978,6 +984,11 @@ namespace Perfect_Peace_System.Pages
                 return;
             }
             loadExpenditure();
+        }
+
+        private void print_page_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

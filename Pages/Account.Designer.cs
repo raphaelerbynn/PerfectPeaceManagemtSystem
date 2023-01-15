@@ -778,6 +778,7 @@
             this.print_page.TabIndex = 47;
             this.print_page.Text = "Print Page";
             this.print_page.UseVisualStyleBackColor = false;
+            this.print_page.Click += new System.EventHandler(this.print_page_Click);
             // 
             // summaryListBtn
             // 

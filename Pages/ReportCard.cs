@@ -71,9 +71,13 @@ namespace Perfect_Peace_System.Pages
                 assessmentPanel.Location = reportCardPanel.Location;
                 printAssBtn.Location = new Point(printAssBtn.Location.X, assessmentPanel.Location.Y + assessmentPanel.Height + 18);
 
-                testPanel.Location = new Point(assessmentPanel.Location.X, assessmentPanel.Location.Y + assessmentPanel.Height + 100);
+                feesControls.Location = new Point(feesControls.Location.X, assessmentPanel.Location.Y + assessmentPanel.Height + 100);
+
+                testPanel.Location = new Point(assessmentPanel.Location.X, assessmentPanel.Location.Y + assessmentPanel.Height + feesControls.Height  + 100);
                 printBillBtn.Location = new Point(printBillBtn.Location.X, testPanel.Location.Y + testPanel.Height + 18);
+
                 
+
             }
             else
             {
@@ -332,11 +336,12 @@ namespace Perfect_Peace_System.Pages
 
                 remarksPanel.Location = new Point(remarksPanel.Location.X, remarksPanel.Location.Y + length_of_subject);
                 printBillBtn.Location = new Point(printBillBtn.Location.X, printBillBtn.Location.Y + length_of_subject);
+
+                feesControls.Location = new Point(feesControls.Location.X, feesControls.Location.Y + length_of_subject - 70);
                 testPanel.Location = new Point(testPanel.Location.X, testPanel.Location.Y + length_of_subject);
                 printResultBtn.Location = new Point(printResultBtn.Location.X, printResultBtn.Location.Y + length_of_subject);
-                feesControls.Location = new Point(feesControls.Location.X, feesControls.Location.Y + length_of_subject);
-                assessmentPanel.Location = new Point(assessmentPanel.Location.X, assessmentPanel.Location.Y + length_of_subject);
-                printAssBtn.Location = new Point(printAssBtn.Location.X, printAssBtn.Location.Y + length_of_subject);
+               // assessmentPanel.Location = new Point(assessmentPanel.Location.X, assessmentPanel.Location.Y + length_of_subject);
+                //printAssBtn.Location = new Point(printAssBtn.Location.X, printAssBtn.Location.Y + length_of_subject);
                
                 foreach (DataGridViewRow item in resultDataView.Rows)
                 {

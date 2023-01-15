@@ -551,6 +551,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\pp.gif" />
     <None Include="Resources\icons8-spinner %281%29.gif" />
     <None Include="Resources\icons8-spinner.gif" />
     <None Include="Resources\report.png" />

@@ -15,12 +15,22 @@ namespace Perfect_Peace_System.Pages
         public WaitForm()
         {
             InitializeComponent();
+            Home parentForm = (Home)Application.OpenForms["Home"];
+            this.Location = new Point((parentForm.Location.X + (parentForm.Width - this.Width)) / 2 + 154, parentForm.Location.Y + 10);
+            this.BackColor = Color.White;
+            pic.BackColor = ColorTranslator.FromHtml(ThemeColor.cellColors[0]);
+
         }
 
         public WaitForm(Form parent)
         {
             InitializeComponent();
+            Home parentForm = (Home)Application.OpenForms["Home"];
+            this.Location = new Point((parentForm.Location.X + (parentForm.Width - this.Width))/2 + 154, parentForm.Location.Y + 10);
+            this.BackColor = Color.White;
+            pic.BackColor = ColorTranslator.FromHtml(ThemeColor.cellColors[0]);
             
+
         }
 
         public void closeWaitForm()
