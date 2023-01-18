@@ -13,6 +13,49 @@ namespace Perfect_Peace_System
 {
     internal class ControlPrinter
     {
+        public static Bitmap ScrollableControlToBitmap(ScrollableControl canvas, int width, int height, bool includeHidden)
+        {
+            canvas.AutoScrollPosition = new Point(0, 0);
+            if (includeHidden)
+            {
+                canvas.SuspendLayout();
+                foreach (Control child in canvas.Controls)
+                {
+                    child.Visible = true;
+                }
+                canvas.ResumeLayout(true);
+            }
+
+            canvas.PerformLayout();
+            Size containerSize = new Size(width, height);
+
+            var bitmap = new Bitmap(containerSize.Width, containerSize.Height, PixelFormat.Format32bppArgb);
+            bitmap.SetResolution(canvas.DeviceDpi, canvas.DeviceDpi);
+
+            var graphics = Graphics.FromImage(bitmap);
+            if (canvas.BackgroundImage != null)
+            {
+                graphics.DrawImage(canvas.BackgroundImage, new Rectangle(Point.Empty, containerSize));
+            }
+            else
+            {
+                graphics.Clear(canvas.BackColor);
+            }
+
+            var rtfPrinter = new RichEditPrinter(graphics);
+
+            try
+            {
+                DrawNestedControls(canvas, canvas, new Rectangle(Point.Empty, containerSize), bitmap, rtfPrinter);
+                return bitmap;
+            }
+            finally
+            {
+                rtfPrinter.Dispose();
+                graphics.Dispose();
+            }
+        }
+        
         public static Bitmap ScrollableControlToBitmap(ScrollableControl canvas, bool fullSize, bool includeHidden)
         {
             canvas.AutoScrollPosition = new Point(0, 0);
@@ -35,7 +78,7 @@ namespace Perfect_Peace_System
             }
             else
             {
-                containerSize = canvas.ClientSize; ;
+                containerSize = canvas.ClientSize;
             }
 
             var bitmap = new Bitmap(containerSize.Width, containerSize.Height, PixelFormat.Format32bppArgb);

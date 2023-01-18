@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,8 +19,14 @@ namespace Perfect_Peace_System.Pages
         WaitFunc wait = new WaitFunc();
         List<Label> expdLbls = new List<Label>();
         List<Point> exp_total_location = new List<Point>();
+        Control[] summaryPanelOriginal;
+        Control[] panel1Original;
 
-        public Account()
+        Point[] originalPositions;
+        Point[] originalPositionsPanel1;
+
+
+    public Account()
         {
             InitializeComponent();
             showExpenses();
@@ -34,6 +41,21 @@ namespace Perfect_Peace_System.Pages
             busPanel.BackColor = Home.foreColor;
             summaryPanel.BackColor = Home.foreColor;
 
+
+            summaryPanelOriginal = summaryPanel.Controls.OfType<Control>().ToArray();
+            panel1Original = panel1.Controls.OfType<Control>().ToArray();
+
+            originalPositions = new Point[summaryPanelOriginal.Length];
+            for (int i = 0; i < summaryPanelOriginal.Length; i++)
+            {
+                originalPositions[i] = summaryPanelOriginal[i].Location;
+            }
+
+            originalPositionsPanel1 = new Point[panel1Original.Length];
+            for (int i = 0; i < panel1Original.Length; i++)
+            {
+                originalPositionsPanel1[i] = panel1Original[i].Location;
+            }
         }
 
         private void loadInfoBtn_Click(object sender, EventArgs e)
@@ -843,6 +865,149 @@ namespace Perfect_Peace_System.Pages
             }
         }
 
+
+        private void Print()
+        {
+
+            PrintDocument printdoc = new PrintDocument();
+            PrintPreviewDialog printPreview = new PrintPreviewDialog();
+            //PrinterSettings ps = new PrinterSettings();
+            //reportCardPanel = panel;
+            //getPrintArea(panel);
+            printPreview.Document = printdoc;
+            printdoc.PrintPage += new PrintPageEventHandler(printResult_printPage);
+            ((Form)printPreview).Size = new Size(950, 539);
+            printPreview.ShowDialog();
+        }
+
+        private Image GetPanelImage(Panel panel)
+        {
+            // Create a new bitmap with the size of the panel
+            Bitmap bmp = new Bitmap(panel.Width, panel.Height);
+
+            // Draw the panel onto the bitmap
+            panel.DrawToBitmap(bmp, new Rectangle(0, 0, bmp.Width, bmp.Height));
+
+            return bmp;
+        }
+
+        private int _currentPrintY = 0;
+
+
+        private void printResult_printPage(object sender, PrintPageEventArgs e)
+        {
+            //e.PageSettings.PaperSize = new PaperSize("A4", 827, );
+            Image panelImage = GetPanelImage(panel1);
+            var height = e.PageSettings.PaperSize.Height;
+            var width = e.PageSettings.PaperSize.Width;
+
+            if (_currentPrintY + height < panelImage.Height)
+            {
+                e.HasMorePages = true;
+                RectangleF source = new RectangleF(0, _currentPrintY, width, height);
+                e.Graphics.DrawImage(panelImage, 0, 0, source, GraphicsUnit.Pixel);
+                _currentPrintY += height;
+            }
+            else
+            {
+                e.HasMorePages = false;
+                RectangleF source = new RectangleF(0, _currentPrintY, width, panelImage.Height - _currentPrintY);
+                e.Graphics.DrawImage(panelImage, 0, 0, source, GraphicsUnit.Pixel);
+                _currentPrintY = 0;
+            }
+        }
+
+
+        /*private void printResult_printPage(object sender, PrintPageEventArgs e)
+        {
+            e.PageSettings.PaperSize = new PaperSize("A4", 827, 150);
+
+            // Get the image of the panel
+            Image panelImage = GetPanelImage(panel1);
+
+            // Calculate the remaining height of the image that needs to be printed
+            int remainingHeight = panelImage.Height - _currentPrintY;
+
+            // Check if the remaining height is greater than the paper size's height
+            if (remainingHeight > e.PageSettings.PaperSize.Height)
+            {
+                // If there is more than one page of content
+                e.HasMorePages = true;
+
+                // Draw the part of the image that fits on the current page
+                e.Graphics.DrawImage(panelImage, 0, _currentPrintY, panel1.Width, e.PageSettings.PaperSize.Height);
+
+                // Update the current print position for the next page
+                _currentPrintY += e.PageSettings.PaperSize.Height;
+            }
+            else
+            {
+                // If all the content has been printed
+                e.HasMorePages = false;
+
+                // Draw the remaining part of the image
+                e.Graphics.DrawImage(panelImage, 0, _currentPrintY, panel1.Width, remainingHeight);
+
+                // Reset the current print position for the next panel
+                _currentPrintY = 0;
+            }
+        }*/
+
+
+        /*private void printResult_printPage(object sender, PrintPageEventArgs e)
+        {
+            //int paperHeight = 600;
+            //var bitMap = ControlPrinter.ScrollableControlToBitmap(panel1, panel1.Width, panel1.Height, true);
+            //Bitmap bmap = bitMap.Clone(new Rectangle(0, 0, bitMap.Width, bitMap.Height / 2), System.Drawing.Imaging.PixelFormat.Format32bppRgb);
+            //e.Graphics.DrawImage(bmap, new Rectangle(0, 0, panel1.Width, paperHeight));
+
+            //    while (paperHeight <= bitMap.Height)
+            //    {
+            //        Console.WriteLine("--->" + paperHeight + "  ----->" + bitMap.Height);
+            //        if (paperHeight <= bitMap.Height)
+            //        {
+            //            // If the control does not fit on the current page, add a new page
+
+            //            e.HasMorePages = true;
+
+            //            paperHeight += 600;
+            //        }
+            //        //paperHeight += 600;
+            //    }
+            //}
+
+            //private void printResult_printPage(object sender, PrintPageEventArgs e)
+            //{
+            //    int paperHeight = 600;
+            //    var bitMap = ControlPrinter.ScrollableControlToBitmap(panel1, panel1.Width, panel1.Height, true);
+
+            //    while (paperHeight < bitMap.Height)
+            //    {
+            //        Bitmap bmap = bitMap.Clone(new Rectangle(0, paperHeight, bitMap.Width, paperHeight + 600), System.Drawing.Imaging.PixelFormat.Format32bppRgb);
+            //        e.Graphics.DrawImage(bmap, new Rectangle(0, 0, panel1.Width, 600));
+
+            //        paperHeight += 600;
+            //        e.HasMorePages = true;
+            //    }
+
+            //    e.HasMorePages = false;
+            //}
+
+            e.PageSettings.PaperSize = new PaperSize("A4", 827, 1169);
+            if (panel1.Height > e.PageSettings.PaperSize.Height)
+            {
+                e.HasMorePages = true;
+            }
+            else
+            {
+                e.HasMorePages= false;
+            }
+
+            e.Graphics.DrawImage(GetPanelImage(panel1), 0, 0, panel1.Width, panel1.Height);
+        }
+*/
+
+
         private void loadExpenditure()
         {
             try
@@ -852,12 +1017,26 @@ namespace Perfect_Peace_System.Pages
                 List<Label> expdSeparators = new List<Label>();
                 List<Label> expdAmountLbls = new List<Label>();
 
-                for (int i = 0; i < expdLbls.Count; i++)
-                {
-                    panel1.Controls.Remove(expdLbls[i]);
-                }
-                expdLbls.Clear();
 
+                panel1.Height = 1089;
+
+
+                summaryPanel.Controls.Clear();
+                panel1.Controls.Clear();
+                summaryPanel.Controls.AddRange(summaryPanelOriginal);
+                panel1.Controls.AddRange(panel1Original);
+
+                for (int i = 0; i < summaryPanelOriginal.Length; i++)
+                {
+                    summaryPanelOriginal[i].Location = originalPositions[i];
+                }
+
+                for (int i = 0; i < panel1Original.Length; i++)
+                {
+                    panel1Original[i].Location = originalPositionsPanel1[i];
+                }
+
+                //Console.WriteLine(summaryListBtn.Location.X);
 
                 string loadListDateF = expdYearPk.Text;
                 if (expdMonthPk.Visible == true)
@@ -865,26 +1044,32 @@ namespace Perfect_Peace_System.Pages
                     loadListDateF = expdMonthPk.Text + "-" + expdYearPk.Text;
                     
                 }
-                Console.WriteLine(loadListDateF);
-
+                //Console.WriteLine(loadListDateF);
                 double total_income = 0;
+                query = "SELECT SUM(paid) FROM Fee WHERE FORMAT(date_paid, 'dd-MM-yyyy') LIKE '%" + loadListDateF + "%'";
+                feesIncomeLbl.Text = "GHc " + incomeTotal(query).ToString("N0");
+                total_income += incomeTotal(query);
+                
                 query = "SELECT SUM(amount) FROM Bus_fee WHERE FORMAT(date, 'dd-MM-yyyy') LIKE '%" + loadListDateF + "%'";
-                busIncomeLbl.Text = "GHc " + incomeTotal(query);
+                busIncomeLbl.Text = "GHc " + incomeTotal(query).ToString("N0");
                 total_income += incomeTotal(query);
                 
                 query = "SELECT SUM(amount) FROM Feeding_fee WHERE FORMAT(date, 'dd-MM-yyyy') LIKE '%" + loadListDateF + "%'";
-                feedingIncomeLbl.Text = "GHc " + incomeTotal(query);
+                feedingIncomeLbl.Text = "GHc " + incomeTotal(query).ToString("N0");
                 total_income += incomeTotal(query);
 
                 query = "SELECT SUM(amount) FROM Extra_classes WHERE FORMAT(date, 'dd-MM-yyyy') LIKE '%" + loadListDateF + "%'";
-                classesIncomeLbl.Text = "GHc " + incomeTotal(query);
+                classesIncomeLbl.Text = "GHc " + incomeTotal(query).ToString("N0");
                 total_income += incomeTotal(query);
 
-                incomeLbl.Text = "GHc " + total_income;
+                incomeLbl.Text = "GHc " + total_income.ToString("N0");
 
+
+               
                 //query = "SELECT SUM(amount) FROM Bus_fee WHERE FORMAT(date, 'dd-MM-yyyy') LIKE '%" + loadListDateF + "%'";
                 //busIncomeLbl.Text = "GHc " + DbClient.query_executeScaler(query);
-
+                int spaceNum = 0;
+                int contentHeight = 970;
                 int y_location = 384;
                 int exp_count = 0;
                 double total_expd = 0;
@@ -895,6 +1080,7 @@ namespace Perfect_Peace_System.Pages
                     
                     while (reader.Read())
                     {
+                        
                         Label expdNameLbl = new Label();
                         expdNameLbl.Text = reader["expense"].ToString();
                         expdNameLbl.Location = new Point(69, y_location);
@@ -902,6 +1088,7 @@ namespace Perfect_Peace_System.Pages
                         expdNameLbl.AutoSize = true;
                         expdNameLbl.Font = new Font("Calibri", 12);
                         expdNameLbls.Add(expdNameLbl);
+                        //Console.WriteLine(expdNameLbl);
 
                         Label expdSeparatorLbl = new Label();
                         expdSeparatorLbl.Text = "----------------------";
@@ -912,7 +1099,7 @@ namespace Perfect_Peace_System.Pages
                         expdSeparators.Add(expdSeparatorLbl);
 
                         Label expdAmountLbl = new Label();
-                        expdAmountLbl.Text = "GHc "+reader["amount"].ToString();
+                        expdAmountLbl.Text = "GHc "+double.Parse(reader["amount"].ToString()).ToString("N0");
                         expdAmountLbl.Location = new Point(534, y_location);
                         expdAmountLbl.Anchor = AnchorStyles.Top;
                         expdAmountLbl.AutoSize = true;
@@ -922,38 +1109,94 @@ namespace Perfect_Peace_System.Pages
                         y_location += 21;
                         exp_count++;
                         total_expd += double.Parse(reader["amount"].ToString());
-                        
+
+                        //Console.WriteLine(expdNameLbl.Location);
+                        if (expdNameLbl.Location.Y > 950)
+                        {
+                            panel1.Height += 21;
+                            foreach (Control control in panel1.Controls)
+                            {
+                                if (control.Tag != null && control.Tag?.ToString() == "inc")
+                                {
+                                    control.Location = new Point(control.Location.X, control.Location.Y + 21);
+                                    //Console.WriteLine(control.Location);
+                                    
+                                }
+                            }
+                            print_page.Location = new Point(print_page.Location.X, print_page.Location.Y + 21);
+                            label66.Location = new Point(label66.Location.X, label66.Location.Y + 21);
+                        }
+
                     }
                     reader.Close();
                 }
-
-                totalExpdLbl.Text = "GHc " + Math.Round(total_expd, 2);
 
                 int n = 0;
                 foreach(Control control in panel1.Controls)
                 {
                     if (control.Tag != null && control.Tag?.ToString() == "ex_total")
                     {
-                        control.Location = new Point(exp_total_location[n].X, exp_total_location[n].Y + (20*exp_count));
-                        Console.WriteLine(control.Location);
+                        control.Location = new Point(exp_total_location[n].X, exp_total_location[n].Y + (20*(exp_count+spaceNum)));
+                        //Console.WriteLine(control.Location);
                         n++;
                     } 
                 }
 
-                int panelHeight = panel1.Height;
+                
 
                 for (int i = 0; i < expdNameLbls.Count; i++)
                 {
-                    if (expdNameLbls[i].Location.Y < (panelHeight/2))
-                    expdLbls.Add(expdNameLbls[i]);
-                    panel1.Controls.Add(expdLbls[i]);
+                    
+                        //Console.WriteLine(panelHeight / 2);
+                        //expdLbls.Add(expdNameLbls[i]);
+                        panel1.Controls.Add(expdNameLbls[i]);
 
-                    expdLbls.Add(expdAmountLbls[i]);
-                    panel1.Controls.Add(expdLbls[i + expdAmountLbls.Count]);
+                        //expdLbls.Add(expdAmountLbls[i]);
+                        panel1.Controls.Add(expdAmountLbls[i]);
 
-                    expdLbls.Add(expdSeparators[i]);
-                    panel1.Controls.Add(expdLbls[i + expdAmountLbls.Count + expdSeparators.Count]);
+                        //expdLbls.Add(expdSeparators[i]);
+                        panel1.Controls.Add(expdSeparators[i]);
+
+                    //Console.WriteLine(expdNameLbls[i]);
+
+
                 }
+
+                
+                while (contentHeight < panel1.Height && panel1.Height > 1169)
+                {
+                    foreach (Control control in panel1.Controls)
+                    {
+                        if (control.Location.Y > contentHeight)
+                        {
+                            
+                            control.Location = new Point(control.Location.X, control.Location.Y + (1169-contentHeight));
+                        }
+                    }
+
+                    print_page.Location = new Point(print_page.Location.X, print_page.Location.Y + 1169 - contentHeight);
+                    label66.Location = new Point(label66.Location.X, label66.Location.Y + 1169 - contentHeight);
+                    panel1.Height += 1169 - contentHeight;
+                    contentHeight += 970;
+
+                    
+                }
+                Console.WriteLine(print_page.Location.Y);
+
+
+                // expdNameLbls.ForEach(el => Console.WriteLine(el));
+
+                /*if (!(expdNameLbls[expdNameLbls.Count - 1].Location.Y < (panelHeight / 2)))
+                {
+                    Console.WriteLine(this);
+                    Panel panel2 = new Panel();
+                    panel2.Size = new System.Drawing.Size(757, 1181);
+                    panel2.BackColor = System.Drawing.Color.White;
+                    panel2.Location = new Point(panel1.Location.X, print_page.Location.Y + print_page.Height);
+                    summaryPanel.Controls.Add(panel2);
+
+                    print_page.Location = new Point(print_page.Location.X, print_page.Location.Y + panel2.Height);
+                }*/
                 /*for (int i = 0; i < expdAmountLbls.Count; i++)
                 {
                     expdLbls.Add(expdAmountLbls[i]);
@@ -966,8 +1209,17 @@ namespace Perfect_Peace_System.Pages
                     panel1.Controls.Add(expdLbls[i + expdAmountLbls.Count + expdSeparators.Count]);
 
                 }*/
+                totalExpdLbl.Text = "GHc " + Math.Round(total_expd, 2).ToString("N0");
+                double profit = total_income - total_expd;
+                if (profit >= 0)
+                {
+                    label32.Text = "GHc " + profit.ToString("N0");
+                }
+                else
+                {
+                    label32.Text = "- GHc " + Math.Abs(profit).ToString("N0");
+                }
 
-                totalExpdLbl.Text = "GHc " + (total_income - total_expd);
                 wait.close();
             }
             catch(Exception ex) {
@@ -983,12 +1235,14 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
+            
+            summaryPanel.Controls.Clear();
             loadExpenditure();
         }
 
         private void print_page_Click(object sender, EventArgs e)
         {
-
+            Print();
         }
     }
 

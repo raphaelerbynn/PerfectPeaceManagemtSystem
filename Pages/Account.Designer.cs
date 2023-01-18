@@ -361,20 +361,22 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(36, 172);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(757, 1181);
+            this.panel1.Size = new System.Drawing.Size(757, 1089);
             this.panel1.TabIndex = 55;
             // 
             // panel11
             // 
+            this.panel11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel11.BackColor = System.Drawing.Color.Black;
-            this.panel11.Location = new System.Drawing.Point(73, 1162);
+            this.panel11.Location = new System.Drawing.Point(74, 1051);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(638, 2);
             this.panel11.TabIndex = 3;
-            this.panel11.Tag = "";
+            this.panel11.Tag = "inc";
             // 
             // panel9
             // 
+            this.panel9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel9.BackColor = System.Drawing.Color.Black;
             this.panel9.Location = new System.Drawing.Point(73, 453);
             this.panel9.Name = "panel9";
@@ -384,6 +386,7 @@
             // 
             // panel5
             // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel5.BackColor = System.Drawing.Color.Black;
             this.panel5.Location = new System.Drawing.Point(73, 302);
             this.panel5.Name = "panel5";
@@ -392,15 +395,17 @@
             // 
             // panel10
             // 
+            this.panel10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel10.BackColor = System.Drawing.Color.Black;
-            this.panel10.Location = new System.Drawing.Point(73, 1133);
+            this.panel10.Location = new System.Drawing.Point(74, 1022);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(638, 2);
             this.panel10.TabIndex = 3;
-            this.panel10.Tag = "";
+            this.panel10.Tag = "inc";
             // 
             // panel8
             // 
+            this.panel8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel8.BackColor = System.Drawing.Color.Black;
             this.panel8.Location = new System.Drawing.Point(73, 424);
             this.panel8.Name = "panel8";
@@ -410,6 +415,7 @@
             // 
             // panel4
             // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel4.BackColor = System.Drawing.Color.Black;
             this.panel4.Location = new System.Drawing.Point(73, 273);
             this.panel4.Name = "panel4";
@@ -418,6 +424,7 @@
             // 
             // panel7
             // 
+            this.panel7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel7.BackColor = System.Drawing.Color.Black;
             this.panel7.Location = new System.Drawing.Point(73, 374);
             this.panel7.Name = "panel7";
@@ -426,6 +433,7 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel3.BackColor = System.Drawing.Color.Black;
             this.panel3.Location = new System.Drawing.Point(73, 166);
             this.panel3.Name = "panel3";
@@ -434,6 +442,7 @@
             // 
             // panel6
             // 
+            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel6.BackColor = System.Drawing.Color.Black;
             this.panel6.Location = new System.Drawing.Point(73, 343);
             this.panel6.Name = "panel6";
@@ -442,6 +451,7 @@
             // 
             // panel2
             // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BackColor = System.Drawing.Color.Black;
             this.panel2.Location = new System.Drawing.Point(73, 135);
             this.panel2.Name = "panel2";
@@ -450,6 +460,7 @@
             // 
             // label27
             // 
+            this.label27.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label27.Location = new System.Drawing.Point(69, 348);
@@ -460,28 +471,31 @@
             // 
             // label32
             // 
+            this.label32.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(403, 1139);
+            this.label32.Location = new System.Drawing.Point(401, 1027);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(83, 21);
             this.label32.TabIndex = 2;
-            this.label32.Tag = "";
+            this.label32.Tag = "inc";
             this.label32.Text = "GHc 20.00";
             // 
             // label35
             // 
+            this.label35.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(189, 1139);
+            this.label35.Location = new System.Drawing.Point(190, 1028);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(210, 21);
             this.label35.TabIndex = 2;
-            this.label35.Tag = "";
+            this.label35.Tag = "inc";
             this.label35.Text = "Total income && expenditure: ";
             // 
             // label41
             // 
+            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label41.Location = new System.Drawing.Point(69, 140);
@@ -492,6 +506,7 @@
             // 
             // label42
             // 
+            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label42.Location = new System.Drawing.Point(69, 429);
@@ -503,6 +518,7 @@
             // 
             // label43
             // 
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label43.Location = new System.Drawing.Point(69, 278);
@@ -513,6 +529,7 @@
             // 
             // label44
             // 
+            this.label44.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label44.Location = new System.Drawing.Point(69, 239);
@@ -523,6 +540,7 @@
             // 
             // label45
             // 
+            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label45.Location = new System.Drawing.Point(69, 218);
@@ -533,6 +551,7 @@
             // 
             // label47
             // 
+            this.label47.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label47.Location = new System.Drawing.Point(69, 197);
@@ -543,6 +562,7 @@
             // 
             // label49
             // 
+            this.label49.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label49.Location = new System.Drawing.Point(403, 239);
@@ -553,6 +573,7 @@
             // 
             // label50
             // 
+            this.label50.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label50.AutoSize = true;
             this.label50.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label50.Location = new System.Drawing.Point(403, 218);
@@ -563,6 +584,7 @@
             // 
             // label51
             // 
+            this.label51.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label51.AutoSize = true;
             this.label51.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label51.Location = new System.Drawing.Point(403, 197);
@@ -573,6 +595,7 @@
             // 
             // totalExpdLbl
             // 
+            this.totalExpdLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.totalExpdLbl.AutoSize = true;
             this.totalExpdLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.totalExpdLbl.Location = new System.Drawing.Point(534, 429);
@@ -584,6 +607,7 @@
             // 
             // incomeLbl
             // 
+            this.incomeLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.incomeLbl.AutoSize = true;
             this.incomeLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incomeLbl.Location = new System.Drawing.Point(534, 278);
@@ -594,6 +618,7 @@
             // 
             // busIncomeLbl
             // 
+            this.busIncomeLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.busIncomeLbl.AutoSize = true;
             this.busIncomeLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.busIncomeLbl.Location = new System.Drawing.Point(534, 239);
@@ -604,6 +629,7 @@
             // 
             // classesIncomeLbl
             // 
+            this.classesIncomeLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.classesIncomeLbl.AutoSize = true;
             this.classesIncomeLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.classesIncomeLbl.Location = new System.Drawing.Point(534, 218);
@@ -614,6 +640,7 @@
             // 
             // feedingIncomeLbl
             // 
+            this.feedingIncomeLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.feedingIncomeLbl.AutoSize = true;
             this.feedingIncomeLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.feedingIncomeLbl.Location = new System.Drawing.Point(534, 197);
@@ -624,6 +651,7 @@
             // 
             // feesIncomeLbl
             // 
+            this.feesIncomeLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.feesIncomeLbl.AutoSize = true;
             this.feesIncomeLbl.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.feesIncomeLbl.Location = new System.Drawing.Point(534, 176);
@@ -634,6 +662,7 @@
             // 
             // label59
             // 
+            this.label59.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label59.Location = new System.Drawing.Point(403, 176);
@@ -644,6 +673,7 @@
             // 
             // label60
             // 
+            this.label60.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label60.AutoSize = true;
             this.label60.Font = new System.Drawing.Font("Calibri", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label60.Location = new System.Drawing.Point(69, 176);
@@ -654,6 +684,7 @@
             // 
             // label61
             // 
+            this.label61.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label61.AutoSize = true;
             this.label61.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label61.Location = new System.Drawing.Point(179, 76);
@@ -664,6 +695,7 @@
             // 
             // label62
             // 
+            this.label62.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label62.AutoSize = true;
             this.label62.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label62.Location = new System.Drawing.Point(179, 48);
@@ -674,6 +706,7 @@
             // 
             // label63
             // 
+            this.label63.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label63.AutoSize = true;
             this.label63.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label63.Location = new System.Drawing.Point(179, 19);
@@ -684,6 +717,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.pictureBox1.Image = global::Perfect_Peace_System.Properties.Resources.schoolLogo;
             this.pictureBox1.Location = new System.Drawing.Point(73, 19);
             this.pictureBox1.Name = "pictureBox1";
@@ -772,7 +806,7 @@
             this.print_page.FlatAppearance.BorderSize = 0;
             this.print_page.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.print_page.ForeColor = System.Drawing.Color.White;
-            this.print_page.Location = new System.Drawing.Point(362, 1359);
+            this.print_page.Location = new System.Drawing.Point(343, 1318);
             this.print_page.Name = "print_page";
             this.print_page.Size = new System.Drawing.Size(90, 23);
             this.print_page.TabIndex = 47;

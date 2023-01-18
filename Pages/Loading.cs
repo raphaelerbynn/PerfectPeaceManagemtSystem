@@ -17,7 +17,6 @@ namespace Perfect_Peace_System.Pages
         public Loading()
         {
             InitializeComponent();
-            string query = "UPDATE Student SET class_id='15' ";
             BackColor = Login.foreColor;
             if (!backgroundWorker.IsBusy)
             {
