@@ -111,7 +111,7 @@ namespace Perfect_Peace_System.Pages
                 cognitiveDataView.Location = new Point(cognitiveDataView.Location.X, cognitiveDataView.Location.Y + lang_length);
                 academicDataView.Location = new Point(academicDataView.Location.X, academicDataView.Location.Y + lang_length);
                 
-                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+ "' AND category LIKE '%LANGUAGE%' AND class='" + classKgLbl.Text + "'";
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+ "' AND category LIKE '%LANGUAGE%' AND class='" + classKgLbl.Text + "' AND term='" + term + "' AND date LIKE '%" + date + "%'";
                 DbClient.dataGridFill(languageDataView, query);
 
                 foreach(DataGridViewRow row in languageDataView.Rows)
@@ -160,7 +160,7 @@ namespace Perfect_Peace_System.Pages
                 cognitiveDataView.Location = new Point(cognitiveDataView.Location.X, cognitiveDataView.Location.Y + emotional_length);
                 academicDataView.Location = new Point(academicDataView.Location.X, academicDataView.Location.Y + emotional_length);
 
-                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+ "' AND category LIKE '%EMOTIONAL%' AND class='" + classKgLbl.Text + "'";
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+ "' AND category LIKE '%EMOTIONAL%' AND class='" + classKgLbl.Text + "' AND term='" + term + "' AND date LIKE '%" + date + "%'";
                 DbClient.dataGridFill(emotioalDataVeiw, query);
 
                 foreach(DataGridViewRow row in emotioalDataVeiw.Rows)
@@ -209,7 +209,7 @@ namespace Perfect_Peace_System.Pages
                 academicDataView.Location = new Point(academicDataView.Location.X, academicDataView.Location.Y + physical_length);
 
                 //cognitiveDataView.Size = new Size(cognitiveDataView.Width, cognitiveDataView.Height + physical_length);
-                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+ "' AND category LIKE '%PHYSICAL%' AND class='" + classKgLbl.Text + "'";
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+ "' AND category LIKE '%PHYSICAL%' AND class='" + classKgLbl.Text + "' AND term='" + term + "' AND date LIKE '%" + date + "%'";
                 DbClient.dataGridFill(physicalDataView, query);
 
                 foreach(DataGridViewRow row in physicalDataView.Rows)
@@ -256,7 +256,7 @@ namespace Perfect_Peace_System.Pages
                 cognitiveDataView.Size = new Size(cognitiveDataView.Width, cognitiveDataView.Height + cognitive_length);
                 academicDataView.Location = new Point(academicDataView.Location.X, academicDataView.Location.Y + cognitive_length+5);
 
-                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+"' AND category LIKE '%COGNITIVE%' AND class='"+classKgLbl.Text+"'";
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+"' AND category LIKE '%COGNITIVE%' AND class='"+classKgLbl.Text+ "' AND term='" + term + "' AND date LIKE '%" + date + "%'";
                 DbClient.dataGridFill(cognitiveDataView, query);
 
                 foreach (DataGridViewRow row in cognitiveDataView.Rows)
@@ -297,11 +297,11 @@ namespace Perfect_Peace_System.Pages
 
                     }
 
-                    int academic_length = academicDataView.RowTemplate.Height * 5;
-                    academicDataView.Size = new Size(academicDataView.Width, academicDataView.Height + academic_length);
+                    int academic_length = 20*6;
+                    academicDataView.Size = new Size(academicDataView.Width, academic_length);
                     titleLbl.Location = new Point(titleLbl.Location.X, academicDataView.Location.Y - 15);
 
-                    query = "SELECT assessment, class_score, exam_score, total_score FROM KG_assessment WHERE student_id='" + student_id + "' AND category LIKE '%ACADEMIC%'";
+                    query = "SELECT assessment, class_score, exam_score, total_score FROM KG_assessment WHERE student_id='" + student_id + "' AND category LIKE '%ACADEMIC%' AND term='" + term + "' AND date LIKE '%" + date + "%'";
                     DbClient.dataGridFill(academicDataView, query);
 
                 }
@@ -464,6 +464,8 @@ namespace Perfect_Peace_System.Pages
             teacherKgLbl.Text = "";
             string _class = "";
             string _class_for_teacher = "";
+            query = "SELECT promoted FROM KG_assessment WHERE student_id='" + student_id + "' AND category LIKE '%ACADEMIC%' AND term='" + term + "' AND date LIKE '%" + date + "%'";
+            promotedLbl.Text = DbClient.query_executeScaler(query);
             query = "SELECT class, class_id, [f_name]+' '+[m_name]+' '+[l_name] AS name FROM Student WHERE student_id='" + student_id + "'";
             SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())

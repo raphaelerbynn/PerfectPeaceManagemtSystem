@@ -142,12 +142,16 @@
             this.cognitiveLbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.topPanel = new System.Windows.Forms.Panel();
+            this.backLbl = new System.Windows.Forms.LinkLabel();
             this.f = new System.Windows.Forms.Label();
             this.classLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.studentNameLbl = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.backLbl = new System.Windows.Forms.LinkLabel();
+            this.statusLbl = new System.Windows.Forms.Label();
+            this.promotedLbl = new System.Windows.Forms.Label();
+            this.classCb = new System.Windows.Forms.ComboBox();
+            this.statusCb = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.bgPanel.SuspendLayout();
             this.academicPanel.SuspendLayout();
@@ -174,6 +178,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.bgPanel.AutoScroll = true;
+            this.bgPanel.Controls.Add(this.statusLbl);
+            this.bgPanel.Controls.Add(this.promotedLbl);
+            this.bgPanel.Controls.Add(this.classCb);
+            this.bgPanel.Controls.Add(this.statusCb);
             this.bgPanel.Controls.Add(this.label2);
             this.bgPanel.Controls.Add(this.categoryCb);
             this.bgPanel.Controls.Add(this.label58);
@@ -244,10 +252,11 @@
             "1",
             "2",
             "3"});
-            this.termCb.Location = new System.Drawing.Point(359, 545);
+            this.termCb.Location = new System.Drawing.Point(359, 538);
             this.termCb.Name = "termCb";
             this.termCb.Size = new System.Drawing.Size(231, 26);
             this.termCb.TabIndex = 13;
+            this.termCb.SelectedIndexChanged += new System.EventHandler(this.termCb_SelectedIndexChanged);
             // 
             // saveBtn
             // 
@@ -257,7 +266,7 @@
             this.saveBtn.FlatAppearance.BorderSize = 0;
             this.saveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.saveBtn.ForeColor = System.Drawing.Color.White;
-            this.saveBtn.Location = new System.Drawing.Point(420, 608);
+            this.saveBtn.Location = new System.Drawing.Point(420, 655);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(93, 23);
             this.saveBtn.TabIndex = 11;
@@ -739,7 +748,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox31.Location = new System.Drawing.Point(334, 515);
             this.comboBox31.Name = "comboBox31";
             this.comboBox31.Size = new System.Drawing.Size(423, 26);
@@ -756,7 +766,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox30.Location = new System.Drawing.Point(334, 450);
             this.comboBox30.Name = "comboBox30";
             this.comboBox30.Size = new System.Drawing.Size(423, 26);
@@ -773,7 +784,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox29.Location = new System.Drawing.Point(334, 396);
             this.comboBox29.Name = "comboBox29";
             this.comboBox29.Size = new System.Drawing.Size(423, 26);
@@ -789,7 +801,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox28.Location = new System.Drawing.Point(334, 331);
             this.comboBox28.Name = "comboBox28";
             this.comboBox28.Size = new System.Drawing.Size(423, 26);
@@ -805,7 +818,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox27.Location = new System.Drawing.Point(334, 265);
             this.comboBox27.Name = "comboBox27";
             this.comboBox27.Size = new System.Drawing.Size(423, 26);
@@ -821,7 +835,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox26.Location = new System.Drawing.Point(334, 205);
             this.comboBox26.Name = "comboBox26";
             this.comboBox26.Size = new System.Drawing.Size(423, 26);
@@ -838,7 +853,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox25.Location = new System.Drawing.Point(334, 143);
             this.comboBox25.Name = "comboBox25";
             this.comboBox25.Size = new System.Drawing.Size(423, 26);
@@ -854,7 +870,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox24.Location = new System.Drawing.Point(334, 81);
             this.comboBox24.Name = "comboBox24";
             this.comboBox24.Size = new System.Drawing.Size(423, 26);
@@ -870,7 +887,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox23.Location = new System.Drawing.Point(334, 18);
             this.comboBox23.Name = "comboBox23";
             this.comboBox23.Size = new System.Drawing.Size(423, 26);
@@ -1007,7 +1025,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox22.Location = new System.Drawing.Point(334, 276);
             this.comboBox22.Name = "comboBox22";
             this.comboBox22.Size = new System.Drawing.Size(423, 26);
@@ -1024,7 +1043,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox21.Location = new System.Drawing.Point(334, 211);
             this.comboBox21.Name = "comboBox21";
             this.comboBox21.Size = new System.Drawing.Size(423, 26);
@@ -1040,7 +1060,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox20.Location = new System.Drawing.Point(334, 149);
             this.comboBox20.Name = "comboBox20";
             this.comboBox20.Size = new System.Drawing.Size(423, 26);
@@ -1056,7 +1077,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox19.Location = new System.Drawing.Point(334, 83);
             this.comboBox19.Name = "comboBox19";
             this.comboBox19.Size = new System.Drawing.Size(423, 26);
@@ -1072,7 +1094,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox18.Location = new System.Drawing.Point(334, 18);
             this.comboBox18.Name = "comboBox18";
             this.comboBox18.Size = new System.Drawing.Size(423, 26);
@@ -1173,7 +1196,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox17.Location = new System.Drawing.Point(334, 335);
             this.comboBox17.Name = "comboBox17";
             this.comboBox17.Size = new System.Drawing.Size(423, 26);
@@ -1189,7 +1213,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox16.Location = new System.Drawing.Point(334, 267);
             this.comboBox16.Name = "comboBox16";
             this.comboBox16.Size = new System.Drawing.Size(423, 26);
@@ -1205,7 +1230,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox15.Location = new System.Drawing.Point(334, 206);
             this.comboBox15.Name = "comboBox15";
             this.comboBox15.Size = new System.Drawing.Size(423, 26);
@@ -1221,7 +1247,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox14.Location = new System.Drawing.Point(334, 146);
             this.comboBox14.Name = "comboBox14";
             this.comboBox14.Size = new System.Drawing.Size(423, 26);
@@ -1237,7 +1264,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox13.Location = new System.Drawing.Point(334, 82);
             this.comboBox13.Name = "comboBox13";
             this.comboBox13.Size = new System.Drawing.Size(423, 26);
@@ -1253,7 +1281,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox12.Location = new System.Drawing.Point(334, 18);
             this.comboBox12.Name = "comboBox12";
             this.comboBox12.Size = new System.Drawing.Size(423, 26);
@@ -1372,7 +1401,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox11.Location = new System.Drawing.Point(334, 539);
             this.comboBox11.Name = "comboBox11";
             this.comboBox11.Size = new System.Drawing.Size(423, 26);
@@ -1388,7 +1418,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox10.Location = new System.Drawing.Point(334, 483);
             this.comboBox10.Name = "comboBox10";
             this.comboBox10.Size = new System.Drawing.Size(423, 26);
@@ -1405,7 +1436,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox9.Location = new System.Drawing.Point(334, 423);
             this.comboBox9.Name = "comboBox9";
             this.comboBox9.Size = new System.Drawing.Size(423, 26);
@@ -1421,7 +1453,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox8.Location = new System.Drawing.Point(334, 363);
             this.comboBox8.Name = "comboBox8";
             this.comboBox8.Size = new System.Drawing.Size(423, 26);
@@ -1437,7 +1470,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox7.Location = new System.Drawing.Point(334, 301);
             this.comboBox7.Name = "comboBox7";
             this.comboBox7.Size = new System.Drawing.Size(423, 26);
@@ -1453,7 +1487,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox6.Location = new System.Drawing.Point(334, 241);
             this.comboBox6.Name = "comboBox6";
             this.comboBox6.Size = new System.Drawing.Size(423, 26);
@@ -1469,7 +1504,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox5.Location = new System.Drawing.Point(334, 183);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(423, 26);
@@ -1486,7 +1522,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox4.Location = new System.Drawing.Point(334, 128);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(423, 26);
@@ -1503,7 +1540,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox3.Location = new System.Drawing.Point(334, 72);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(423, 26);
@@ -1520,7 +1558,8 @@
             "SATISFACTORY",
             "IMPROVED",
             "NEEDS_IMPROVEMENT",
-            "UNSATISFACTORY"});
+            "UNSATISFACTORY",
+            "NOT_APPLICABLE"});
             this.comboBox2.Location = new System.Drawing.Point(334, 18);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(423, 26);
@@ -1712,7 +1751,7 @@
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(306, 545);
+            this.label4.Location = new System.Drawing.Point(307, 540);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(45, 19);
             this.label4.TabIndex = 0;
@@ -1733,6 +1772,18 @@
             this.topPanel.Name = "topPanel";
             this.topPanel.Size = new System.Drawing.Size(907, 107);
             this.topPanel.TabIndex = 17;
+            // 
+            // backLbl
+            // 
+            this.backLbl.AutoSize = true;
+            this.backLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backLbl.Location = new System.Drawing.Point(8, 13);
+            this.backLbl.Name = "backLbl";
+            this.backLbl.Size = new System.Drawing.Size(33, 19);
+            this.backLbl.TabIndex = 28;
+            this.backLbl.TabStop = true;
+            this.backLbl.Text = "<<<";
+            this.backLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.backLbl_LinkClicked);
             // 
             // f
             // 
@@ -1789,17 +1840,58 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Student Name: ";
             // 
-            // backLbl
+            // statusLbl
             // 
-            this.backLbl.AutoSize = true;
-            this.backLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backLbl.Location = new System.Drawing.Point(8, 13);
-            this.backLbl.Name = "backLbl";
-            this.backLbl.Size = new System.Drawing.Size(33, 19);
-            this.backLbl.TabIndex = 28;
-            this.backLbl.TabStop = true;
-            this.backLbl.Text = "<<<";
-            this.backLbl.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.backLbl_LinkClicked);
+            this.statusLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.statusLbl.AutoSize = true;
+            this.statusLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusLbl.Location = new System.Drawing.Point(137, 583);
+            this.statusLbl.Name = "statusLbl";
+            this.statusLbl.Size = new System.Drawing.Size(216, 19);
+            this.statusLbl.TabIndex = 20;
+            this.statusLbl.Text = "Status (Repeated or Promoted): ";
+            this.statusLbl.Visible = false;
+            // 
+            // promotedLbl
+            // 
+            this.promotedLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.promotedLbl.AutoSize = true;
+            this.promotedLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.promotedLbl.Location = new System.Drawing.Point(254, 625);
+            this.promotedLbl.Name = "promotedLbl";
+            this.promotedLbl.Size = new System.Drawing.Size(98, 19);
+            this.promotedLbl.TabIndex = 19;
+            this.promotedLbl.Text = "Promoted To: ";
+            this.promotedLbl.Visible = false;
+            // 
+            // classCb
+            // 
+            this.classCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.classCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.classCb.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classCb.FormattingEnabled = true;
+            this.classCb.Location = new System.Drawing.Point(359, 623);
+            this.classCb.Name = "classCb";
+            this.classCb.Size = new System.Drawing.Size(231, 26);
+            this.classCb.TabIndex = 18;
+            this.classCb.Visible = false;
+            this.classCb.SelectedIndexChanged += new System.EventHandler(this.classCb_SelectedIndexChanged);
+            // 
+            // statusCb
+            // 
+            this.statusCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.statusCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.statusCb.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusCb.FormattingEnabled = true;
+            this.statusCb.Items.AddRange(new object[] {
+            "Repeated",
+            "Promoted"});
+            this.statusCb.Location = new System.Drawing.Point(359, 581);
+            this.statusCb.Name = "statusCb";
+            this.statusCb.Size = new System.Drawing.Size(231, 26);
+            this.statusCb.TabIndex = 17;
+            this.statusCb.Visible = false;
+            this.statusCb.SelectedIndexChanged += new System.EventHandler(this.statusCb_SelectedIndexChanged);
             // 
             // ReportForKG
             // 
@@ -1950,5 +2042,9 @@
         private System.Windows.Forms.TextBox lanExamTb;
         private System.Windows.Forms.TextBox lanClassScoreTb;
         private System.Windows.Forms.LinkLabel backLbl;
+        private System.Windows.Forms.Label statusLbl;
+        private System.Windows.Forms.Label promotedLbl;
+        private System.Windows.Forms.ComboBox classCb;
+        private System.Windows.Forms.ComboBox statusCb;
     }
 }

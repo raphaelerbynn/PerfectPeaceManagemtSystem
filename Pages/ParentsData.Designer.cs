@@ -56,7 +56,6 @@
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._class = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contact = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.view = new System.Windows.Forms.DataGridViewImageColumn();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
@@ -91,7 +90,6 @@
             this.name,
             this._class,
             this.date,
-            this.contact,
             this.view,
             this.edit,
             this.delete});
@@ -293,15 +291,6 @@
             this.date.ReadOnly = true;
             this.date.Width = 89;
             // 
-            // contact
-            // 
-            this.contact.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.contact.HeaderText = "CONTACT";
-            this.contact.Name = "contact";
-            this.contact.ReadOnly = true;
-            this.contact.Visible = false;
-            this.contact.Width = 125;
-            // 
             // view
             // 
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -374,7 +363,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn _class;
         private System.Windows.Forms.DataGridViewTextBoxColumn date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contact;
         private System.Windows.Forms.DataGridViewImageColumn view;
         private System.Windows.Forms.DataGridViewImageColumn edit;
         private System.Windows.Forms.DataGridViewImageColumn delete;

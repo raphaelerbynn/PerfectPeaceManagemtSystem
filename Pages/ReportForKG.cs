@@ -52,13 +52,68 @@ namespace Perfect_Peace_System.Pages
             getStudentInfo();
             compileResults();
             kg_score_values();
+            loadClassrooms();
             categoryCb.SelectedIndex = 0;
             termCb.SelectedIndex = 0;
         }
 
+        private void loadClassrooms()
+        {
+            if (InternetConnectivity.checkConnectivity() == false)
+            {
+                MessageBox.Show("Check your internet connection");
+                return;
+            }
+            wait.show();
+            classCb.Items.Clear();
+            query = "SELECT name FROM Class";
+            DbClient.query_reader(classCb, query);
+            wait.close();
+        }
+
+        private void classCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ClassRoom classRoom = new ClassRoom();
+            if (!(classRoom.maxCapacity(classCb.Text) > classRoom.curCapacity(classCb.Text)))
+            {
+                MessageBox.Show("Class full!!! Change class");
+                classCb.SelectedIndex = -1;
+            }
+        }
+
+        private void statusCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (statusCb.SelectedIndex == 1)
+            {
+                promotedLbl.Visible = true;
+                classCb.Visible = true;
+                loadClassrooms();
+            }
+            else
+            {
+                promotedLbl.Visible = false;
+                classCb.Visible = false;
+            }
+        }
+
+        private void termCb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (termCb.SelectedIndex == 2)
+            {
+                statusLbl.Visible = true;
+                statusCb.Visible = true;
+            }
+            else
+            {
+                statusLbl.Visible = false;
+                statusCb.Visible = false;
+                statusCb.SelectedIndex = -1;
+            }
+        }
+
         private void compileResults()
         {
-            if (class_section.Equals("KG"))
+            /*if (class_section.Equals("KG"))
             {
                 changeLbl.Text = "Shows interest in writing";
                 changeLbl.Location = new Point(changeLbl.Location.X - 20, changeLbl.Location.Y);
@@ -152,7 +207,7 @@ namespace Perfect_Peace_System.Pages
                         }
                     }
                 }
-            }
+            }*/
 
             //
             foreach (Control control in languagePanel.Controls)
@@ -441,8 +496,22 @@ namespace Perfect_Peace_System.Pages
         {
             try
             {
-                query = "INSERT INTO KG_assessment(assessment, category, class_score, exam_score, total_score, term, class, date, student_id) " +
-                              "VALUES('" + assessment + "', 'ACADEMIC PROGRESS/EXAMINATION SCORES', " + cs + ", '" + es + "', '" + ts + "', '" + termCb.SelectedItem.ToString() + "', '" + classLbl.Text + "', '" + DateTime.Today + "', '" + student_id + "')";
+                if (statusCb.Visible && statusCb.SelectedIndex == 0)
+                {
+                    query = "INSERT INTO KG_assessment(assessment, category, class_score, exam_score, total_score, term, class, date, student_id, promoted) " +
+                                  "VALUES('" + assessment + "', 'ACADEMIC PROGRESS/EXAMINATION SCORES', " + cs + ", '" + es + "', '" + ts + "', '" + termCb.SelectedItem.ToString() + "', '" + classLbl.Text + "', '" + DateTime.Today + "', '" + student_id + "', 'REPEATED')";
+                }
+                else if (classCb.Visible)
+                {
+                    query = "INSERT INTO KG_assessment(assessment, category, class_score, exam_score, total_score, term, class, date, student_id, promoted) " +
+                                  "VALUES('" + assessment + "', 'ACADEMIC PROGRESS/EXAMINATION SCORES', " + cs + ", '" + es + "', '" + ts + "', '" + termCb.SelectedItem.ToString() + "', '" + classLbl.Text + "', '" + DateTime.Today + "', '" + student_id + "', '" + classCb.SelectedItem.ToString() + "')";
+                }
+                else
+                {
+                    query = "INSERT INTO KG_assessment(assessment, category, class_score, exam_score, total_score, term, class, date, student_id) " +
+                                  "VALUES('" + assessment + "', 'ACADEMIC PROGRESS/EXAMINATION SCORES', " + cs + ", '" + es + "', '" + ts + "', '" + termCb.SelectedItem.ToString() + "', '" + classLbl.Text + "', '" + DateTime.Today + "', '" + student_id + "')";
+                }
+                
                 DbClient.query_execute(query);
             }catch(Exception ex)
             {

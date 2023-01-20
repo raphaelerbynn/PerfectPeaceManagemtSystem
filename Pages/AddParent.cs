@@ -13,33 +13,28 @@ namespace Perfect_Peace_System.Pages
     public partial class AddParent : Form
     {
         private string query;
+        WaitFunc wait = new WaitFunc();
+        string teacher_id = LoginInput.teacher_id;
 
         public AddParent()
         {
             InitializeComponent();
-            //get_child_name();
-            classDetailsOnStudent();
             bpPanel.BackColor = Home.foreColor;
+            loadClassrooms();
         }
 
-        
-
-        private void classDetailsOnStudent()
+        private void loadClassrooms()
         {
-            string class_id = "", fees_owned="";
-
-            query = "SELECT * FROM Class WHERE name='"+AddStudent.class_name+"'";
-            System.Data.SqlClient.SqlDataReader reader = DbClient.query_reader(query);
-            while (reader.Read())
+            if (InternetConnectivity.checkConnectivity() == false)
             {
-                class_id = reader["class_id"].ToString();
-                fees_owned = reader["fees"].ToString();
+                MessageBox.Show("Check your internet connection");
+                return;
             }
-            reader.Close();
-
-            Console.WriteLine();
-            query = "UPDATE Student SET fees_owing='"+fees_owned+"', class_id='"+class_id+"' WHERE class='"+AddStudent.class_name+"' AND class != ''";
-            DbClient.query_execute(query);
+            wait.show();
+            classCb.Items.Clear();
+            query = "SELECT name FROM Class";
+            DbClient.query_reader(classCb, query);
+            wait.close();
         }
 
 
@@ -50,13 +45,14 @@ namespace Perfect_Peace_System.Pages
                 MessageBox.Show("Check your internet connection");
                 return;
             }
-            //Person parent = new Parent(contactTb.Text, contact1Tb.Text, relationshipCB.Text, occupationTb.Text, fnameTb.Text, lnameTb.Text, getRadioBtnValue(), DateTime.Today.Date.ToString());
-            //parent.save();
 
-            query = "UPDATE Student SET parent_id=" + DbClient.GetLastId("Parent") + " WHERE student_id=" + DbClient.GetLastId("Student");
-            DbClient.query_execute(query);
-            MessageBox.Show("Parent Registered");
-            //DataFromDb.getAllParent = DbClient.dataSource("SELECT parent_id,contact,gender,relationship, [f_name]+' '+[l_name] AS name FROM Parent");
+            foreach(DataGridViewRow row in reportView.Rows)
+            {
+                query = "INSERT INTO Teachers_weekly_report (subject, number_exercises, home_assignment, dictation, project_work, reading_assignment, topics_covered, group_work, week, date, class, teacher_id) " +
+                    "VALUES('" + row.Cells[subject.Name] + "', '" + row.Cells[number_exercises.Name] + "', '" + row.Cells[home_assignment.Name] + "', '" + row.Cells[diction.Name] + "', '" + row.Cells[project_work.Name] + "', '" + row.Cells[reading_assignment.Name] + "', '" + row.Cells[topics_covered.Name] + "', '" + row.Cells[group_work.Name] + "', '"+weekTb.Text+"', '', '"+DateTime.Now+"', '"+classCb.Text+"', '"+teacher_id+"')";
+                DbClient.query_execute(query);
+            }
+            
             this.Close();
             this.Hide();
         }
@@ -68,13 +64,7 @@ namespace Perfect_Peace_System.Pages
 
         private void clearFeild()
         {
-            /*fnameTb.Text = null;
-            lnameTb.Text = null;
-            maleRadioBtn.Checked = true;
-            contactTb.Text = null;
-            contact1Tb.Text = null;
-            relationshipCB.SelectedIndex = -1;*/
-
+            reportView.Rows.Clear();
         }
 
         private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
