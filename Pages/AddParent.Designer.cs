@@ -29,9 +29,14 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bpPanel = new System.Windows.Forms.Panel();
+            this.classCb = new System.Windows.Forms.ComboBox();
+            this.weekTb = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.reportView = new System.Windows.Forms.DataGridView();
             this.clearFeildBtn = new System.Windows.Forms.Button();
             this.registerParent = new System.Windows.Forms.Button();
@@ -44,13 +49,9 @@
             this.reading_assignment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.topics_covered = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.group_work = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label1 = new System.Windows.Forms.Label();
-            this.weekTb = new System.Windows.Forms.NumericUpDown();
-            this.classCb = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.bpPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reportView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.weekTb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportView)).BeginInit();
             this.SuspendLayout();
             // 
             // bpPanel
@@ -68,6 +69,48 @@
             this.bpPanel.Name = "bpPanel";
             this.bpPanel.Size = new System.Drawing.Size(939, 627);
             this.bpPanel.TabIndex = 0;
+            // 
+            // classCb
+            // 
+            this.classCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.classCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.classCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.classCb.FormattingEnabled = true;
+            this.classCb.Location = new System.Drawing.Point(567, 55);
+            this.classCb.Name = "classCb";
+            this.classCb.Size = new System.Drawing.Size(169, 28);
+            this.classCb.TabIndex = 17;
+            // 
+            // weekTb
+            // 
+            this.weekTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.weekTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.weekTb.Location = new System.Drawing.Point(264, 57);
+            this.weekTb.Name = "weekTb";
+            this.weekTb.Size = new System.Drawing.Size(77, 26);
+            this.weekTb.TabIndex = 16;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(507, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(54, 18);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Class :";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(175, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 18);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Week No. :";
             // 
             // reportView
             // 
@@ -93,22 +136,23 @@
             this.reading_assignment,
             this.topics_covered,
             this.group_work});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.Format = "N0";
-            dataGridViewCellStyle3.NullValue = null;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.reportView.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.reportView.DefaultCellStyle = dataGridViewCellStyle4;
             this.reportView.GridColor = System.Drawing.Color.DarkGray;
             this.reportView.Location = new System.Drawing.Point(12, 95);
             this.reportView.Name = "reportView";
             this.reportView.RowHeadersWidth = 15;
             this.reportView.Size = new System.Drawing.Size(915, 460);
             this.reportView.TabIndex = 0;
+            this.reportView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.dataGridView1_CellValidating);
             this.reportView.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
             // clearFeildBtn
@@ -156,106 +200,60 @@
             // 
             // subject
             // 
-            this.subject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.subject.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subject.DefaultCellStyle = dataGridViewCellStyle2;
             this.subject.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.subject.HeaderText = "SUBJECT";
             this.subject.Name = "subject";
             this.subject.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.subject.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.subject.Width = 90;
             // 
             // number_exercises
             // 
-            this.number_exercises.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle2.Format = "N0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.number_exercises.DefaultCellStyle = dataGridViewCellStyle2;
+            this.number_exercises.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle3.Format = "N0";
+            dataGridViewCellStyle3.NullValue = null;
+            this.number_exercises.DefaultCellStyle = dataGridViewCellStyle3;
             this.number_exercises.HeaderText = "NO OF EXERCISES";
             this.number_exercises.Name = "number_exercises";
-            this.number_exercises.Width = 136;
             // 
             // home_assignment
             // 
-            this.home_assignment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.home_assignment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.home_assignment.HeaderText = "HOME ASSIGNMENTS";
             this.home_assignment.Name = "home_assignment";
-            this.home_assignment.Width = 158;
             // 
             // diction
             // 
-            this.diction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.diction.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.diction.HeaderText = "DICTATIONS";
             this.diction.Name = "diction";
-            this.diction.Width = 112;
             // 
             // project_work
             // 
-            this.project_work.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.project_work.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.project_work.HeaderText = "PROJECT WORKS";
             this.project_work.Name = "project_work";
-            this.project_work.Width = 133;
             // 
             // reading_assignment
             // 
-            this.reading_assignment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.reading_assignment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.reading_assignment.HeaderText = "READING ASSIGNMENTS";
             this.reading_assignment.Name = "reading_assignment";
-            this.reading_assignment.Width = 174;
             // 
             // topics_covered
             // 
-            this.topics_covered.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.topics_covered.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.topics_covered.HeaderText = "TOPICS COVERED";
             this.topics_covered.Name = "topics_covered";
-            this.topics_covered.Width = 136;
             // 
             // group_work
             // 
-            this.group_work.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.group_work.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.group_work.HeaderText = "GROUP WORKS";
             this.group_work.Name = "group_work";
-            this.group_work.Width = 124;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(175, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 18);
-            this.label1.TabIndex = 15;
-            this.label1.Text = "Week No. :";
-            // 
-            // weekTb
-            // 
-            this.weekTb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.weekTb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.weekTb.Location = new System.Drawing.Point(264, 57);
-            this.weekTb.Name = "weekTb";
-            this.weekTb.Size = new System.Drawing.Size(77, 26);
-            this.weekTb.TabIndex = 16;
-            // 
-            // classCb
-            // 
-            this.classCb.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.classCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.classCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.classCb.FormattingEnabled = true;
-            this.classCb.Location = new System.Drawing.Point(567, 55);
-            this.classCb.Name = "classCb";
-            this.classCb.Size = new System.Drawing.Size(169, 28);
-            this.classCb.TabIndex = 17;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(507, 60);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 18);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Class :";
             // 
             // AddParent
             // 
@@ -266,8 +264,8 @@
             this.Name = "AddParent";
             this.bpPanel.ResumeLayout(false);
             this.bpPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.reportView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.weekTb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.reportView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,6 +277,10 @@
         private System.Windows.Forms.Button registerParent;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView reportView;
+        private System.Windows.Forms.ComboBox classCb;
+        private System.Windows.Forms.NumericUpDown weekTb;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewComboBoxColumn subject;
         private System.Windows.Forms.DataGridViewTextBoxColumn number_exercises;
         private System.Windows.Forms.DataGridViewTextBoxColumn home_assignment;
@@ -287,9 +289,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn reading_assignment;
         private System.Windows.Forms.DataGridViewTextBoxColumn topics_covered;
         private System.Windows.Forms.DataGridViewTextBoxColumn group_work;
-        private System.Windows.Forms.ComboBox classCb;
-        private System.Windows.Forms.NumericUpDown weekTb;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
     }
 }

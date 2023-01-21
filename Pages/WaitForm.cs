@@ -16,7 +16,16 @@ namespace Perfect_Peace_System.Pages
         {
             InitializeComponent();
             Home parentForm = (Home)Application.OpenForms["Home"];
-            this.Location = new Point((parentForm.Location.X + (parentForm.Width - this.Width)) / 2 + 154, parentForm.Location.Y + 10);
+            if (parentForm != null)
+            {
+                this.Location = new Point((parentForm.Location.X + (parentForm.Width - this.Width)) / 2 + 154, parentForm.Location.Y + 10);
+            }
+            else
+            {
+                int x = (Screen.PrimaryScreen.Bounds.Width - this.Width) / 2;
+                int y = (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2;
+                this.Location = new Point(x, y);
+            }
             this.BackColor = Color.White;
             pic.BackColor = ColorTranslator.FromHtml(ThemeColor.cellColors[0]);
 

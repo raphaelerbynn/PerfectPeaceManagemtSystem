@@ -36,7 +36,7 @@ namespace Perfect_Peace_System.Pages
                 DataFromDb.getAllTeacher = DbClient.dataSource("SELECT teacher_id,phone,gender, email, (SELECT name FROM Class WHERE Class.class_id=Teacher.class_id) AS class, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Teaching'");
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
-                DataFromDb.getAllWeeklyReport = DbClient.dataSource("SELECT weekly_report_id,(SELECT [f_name]+' '+[l_name] FROM Teacher WHERE Teacher.teacher_id=Teachers_weekly_report.teacher_id) AS teacher,(SELECT name FROM Class WHERE Class.class_id=Teachers_weekly_report.class_id) AS class, (SELECT name FROM Subject WHERE Subject.subject_id=Teachers_weekly_report.subject_id) AS subject, number_exercises, home_assignment, dictation, project_work, reading_assignment, topics_covered, group_work, week, FORMAT(date, 'dd-MM-yyyy') AS date FROM Teachers_weekly_report");
+                DataFromDb.getAllWeeklyReport = DbClient.dataSource("SELECT weekly_report_id,(SELECT [f_name]+' '+[l_name] FROM Teacher WHERE Teacher.teacher_id=Teachers_weekly_report.teacher_id) AS teacher, class, subject, number_exercises, home_assignment, dictation, project_work, reading_assignment, topics_covered, group_work, week, FORMAT(date, 'dd-MM-yyyy') AS date FROM Teachers_weekly_report");
                 i += 100 / workNumber;
                 backgroundWorker.ReportProgress(i);
                 DataFromDb.getAllNonTeacher = DbClient.dataSource("SELECT teacher_id,gender, phone,email, staff_position, [f_name]+' '+[l_name] AS name FROM Teacher WHERE category='Non-Teaching'");
@@ -80,7 +80,7 @@ namespace Perfect_Peace_System.Pages
             }
             else if (category.Equals("Class Teacher"))
             {
-                DataFromDb.getAllWeeklyReport = DbClient.dataSource("SELECT weekly_report_id,(SELECT [f_name]+' '+[l_name] FROM Teacher WHERE Teacher.teacher_id=Teachers_weekly_report.teacher_id) AS teacher,(SELECT name FROM Class WHERE Class.class_id=Teachers_weekly_report.class_id) AS class, (SELECT name FROM Subject WHERE Subject.subject_id=Teachers_weekly_report.subject_id) AS subject, number_exercises, home_assignment, dictation, project_work, reading_assignment, topics_covered, group_work, week, FORMAT(date, 'dd-MM-yyyy') AS date FROM Teachers_weekly_report");
+                DataFromDb.getAllWeeklyReport = DbClient.dataSource("SELECT weekly_report_id,(SELECT [f_name]+' '+[l_name] FROM Teacher WHERE Teacher.teacher_id=Teachers_weekly_report.teacher_id) AS teacher, class, subject, number_exercises, home_assignment, dictation, project_work, reading_assignment, topics_covered, group_work, week, FORMAT(date, 'dd-MM-yyyy') AS date FROM Teachers_weekly_report");
                 i += 40;
                 DataFromDb.getAllStudentForTeacher = DbClient.dataSource("SELECT student_id,age,gender,class, fees_owing, [f_name]+' '+[l_name] AS name FROM Student WHERE class_id='" + DataFromDb.class_id_teacher() + "'");
                 

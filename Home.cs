@@ -51,7 +51,7 @@ namespace Perfect_Peace_System
                 payrollBtn.Enabled = false;
                 subjectBtn.Enabled = false;
                 addStntBtn.Enabled = false;
-                parentsBtn.Enabled = false;
+                //parentsBtn.Enabled = false;
 
             }
 
@@ -162,7 +162,12 @@ namespace Perfect_Peace_System
             addStntBtn.Text = "Add Student";
             titleLbl.Text = "STUDENTS";
             panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
-            wait.close();
+
+            if (category.Equals("Class Teacher"))
+            {
+                addStntBtn.Enabled = false;
+            }
+                wait.close();
         }
 
         private void addStntBtn_Click(object sender, EventArgs e)
@@ -276,6 +281,13 @@ namespace Perfect_Peace_System
             addStntBtn.Visible = true;
             titleLbl.Text = "WEEKLY REPORT";
             addStntBtn.Text = "Add Weekly Report";
+
+            if (category.Equals("Class Teacher"))
+            {
+            
+                addStntBtn.Enabled = true;
+            }
+
             panelView.Location = new Point(panelView.Location.X, addStntBtn.Location.Y + 28);
             wait.close();
 
