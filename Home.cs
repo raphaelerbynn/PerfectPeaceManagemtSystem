@@ -432,6 +432,7 @@ namespace Perfect_Peace_System
 
         private void topPanel_MouseMove(object sender, MouseEventArgs e)
         {
+            
             if (e.Button == MouseButtons.Left)
             {
                 this.Location = new Point(Cursor.Position.X, Cursor.Position.Y);

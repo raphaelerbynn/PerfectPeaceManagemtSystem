@@ -111,7 +111,7 @@ namespace Perfect_Peace_System.Pages
                 cognitiveDataView.Location = new Point(cognitiveDataView.Location.X, cognitiveDataView.Location.Y + lang_length);
                 academicDataView.Location = new Point(academicDataView.Location.X, academicDataView.Location.Y + lang_length);
                 
-                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+ "' AND category LIKE '%LANGUAGE%' AND class='" + classKgLbl.Text + "' AND term='" + term + "' AND date LIKE '%" + date + "%'";
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY, CAST(NOT_APPLICABLE AS NVARCHAR(5)) AS NOT_APPLICABLE FROM KG_assessment WHERE student_id='"+student_id+ "' AND category LIKE '%LANGUAGE%' AND class='" + classKgLbl.Text + "' AND term='" + term + "' AND date LIKE '%" + date + "%'";
                 DbClient.dataGridFill(languageDataView, query);
 
                 foreach(DataGridViewRow row in languageDataView.Rows)
@@ -151,7 +151,16 @@ namespace Perfect_Peace_System.Pages
                     {
                         row.Cells["unsatisfactoryR"].Value = " ";
                     }
-                    
+
+                    if (row.Cells["applicableR"].Value.ToString() == "1")
+                    {
+                        row.Cells["applicableR"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["applicableR"].Value = " ";
+                    }
+
                 }
                 
                 int emotional_length = row_height*6;
@@ -160,7 +169,7 @@ namespace Perfect_Peace_System.Pages
                 cognitiveDataView.Location = new Point(cognitiveDataView.Location.X, cognitiveDataView.Location.Y + emotional_length);
                 academicDataView.Location = new Point(academicDataView.Location.X, academicDataView.Location.Y + emotional_length);
 
-                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+ "' AND category LIKE '%EMOTIONAL%' AND class='" + classKgLbl.Text + "' AND term='" + term + "' AND date LIKE '%" + date + "%'";
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY, CAST(NOT_APPLICABLE AS NVARCHAR(5)) AS NOT_APPLICABLE FROM KG_assessment WHERE student_id='" + student_id+ "' AND category LIKE '%EMOTIONAL%' AND class='" + classKgLbl.Text + "' AND term='" + term + "' AND date LIKE '%" + date + "%'";
                 DbClient.dataGridFill(emotioalDataVeiw, query);
 
                 foreach(DataGridViewRow row in emotioalDataVeiw.Rows)
@@ -200,7 +209,16 @@ namespace Perfect_Peace_System.Pages
                     {
                         row.Cells["unsatisfactoryE"].Value = " ";
                     }
-                    
+
+                    if (row.Cells["applicableE"].Value.ToString() == "1")
+                    {
+                        row.Cells["applicableE"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["applicableE"].Value = " ";
+                    }
+
                 }
                 
                 int physical_length = row_height*5;
@@ -209,7 +227,7 @@ namespace Perfect_Peace_System.Pages
                 academicDataView.Location = new Point(academicDataView.Location.X, academicDataView.Location.Y + physical_length);
 
                 //cognitiveDataView.Size = new Size(cognitiveDataView.Width, cognitiveDataView.Height + physical_length);
-                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+ "' AND category LIKE '%PHYSICAL%' AND class='" + classKgLbl.Text + "' AND term='" + term + "' AND date LIKE '%" + date + "%'";
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY, CAST(NOT_APPLICABLE AS NVARCHAR(5)) AS NOT_APPLICABLE FROM KG_assessment WHERE student_id='" + student_id+ "' AND category LIKE '%PHYSICAL%' AND class='" + classKgLbl.Text + "' AND term='" + term + "' AND date LIKE '%" + date + "%'";
                 DbClient.dataGridFill(physicalDataView, query);
 
                 foreach(DataGridViewRow row in physicalDataView.Rows)
@@ -249,14 +267,22 @@ namespace Perfect_Peace_System.Pages
                     {
                         row.Cells["unsatisfactoryP"].Value = " ";
                     }
-                    
+
+                    if (row.Cells["applicableP"].Value.ToString() == "1")
+                    {
+                        row.Cells["applicableP"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["applicableP"].Value = " ";
+                    }
                 }
                 
                 int cognitive_length = row_height*9;
                 cognitiveDataView.Size = new Size(cognitiveDataView.Width, cognitiveDataView.Height + cognitive_length);
                 academicDataView.Location = new Point(academicDataView.Location.X, academicDataView.Location.Y + cognitive_length+5);
 
-                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY FROM KG_assessment WHERE student_id='"+student_id+"' AND category LIKE '%COGNITIVE%' AND class='"+classKgLbl.Text+ "' AND term='" + term + "' AND date LIKE '%" + date + "%'";
+                query = "SELECT assessment, CAST(SATISFACTORY AS NVARCHAR(5)) AS SATISFACTORY, CAST(IMPROVED AS NVARCHAR(5)) AS IMPROVED, CAST(NEEDS_IMPROVEMENT AS NVARCHAR(5)) AS NEEDS_IMPROVEMENT, CAST(UNSATISFACTORY AS NVARCHAR(5)) AS UNSATISFACTORY, CAST(NOT_APPLICABLE AS NVARCHAR(5)) AS NOT_APPLICABLE FROM KG_assessment WHERE student_id='" + student_id+"' AND category LIKE '%COGNITIVE%' AND class='"+classKgLbl.Text+ "' AND term='" + term + "' AND date LIKE '%" + date + "%'";
                 DbClient.dataGridFill(cognitiveDataView, query);
 
                 foreach (DataGridViewRow row in cognitiveDataView.Rows)
@@ -286,15 +312,25 @@ namespace Perfect_Peace_System.Pages
                     else
                     {
                         row.Cells["needs_improvementC"].Value = " ";
-                        if (row.Cells["unsatisfactoryC"].Value.ToString() == "1")
-                        {
-                            row.Cells["unsatisfactoryC"].Value = "✔";
-                        }
-                        else
-                        {
-                            row.Cells["unsatisfactoryC"].Value = " ";
-                        }
+                    }
 
+                    if (row.Cells["unsatisfactoryC"].Value.ToString() == "1")
+                    {
+                        row.Cells["unsatisfactoryC"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["unsatisfactoryC"].Value = " ";
+                    }
+
+
+                    if (row.Cells["applicableC"].Value.ToString() == "1")
+                    {
+                        row.Cells["applicableC"].Value = "✔";
+                    }
+                    else
+                    {
+                        row.Cells["applicableC"].Value = " ";
                     }
 
                     int academic_length = 20*6;
@@ -465,7 +501,7 @@ namespace Perfect_Peace_System.Pages
             string _class = "";
             string _class_for_teacher = "";
             query = "SELECT promoted FROM KG_assessment WHERE student_id='" + student_id + "' AND category LIKE '%ACADEMIC%' AND term='" + term + "' AND date LIKE '%" + date + "%'";
-            promotedLbl.Text = DbClient.query_executeScaler(query);
+            promotedLbl.Text = DbClient.query_executeScaler(query) != null ? DbClient.query_executeScaler(query) : "---";
             query = "SELECT class, class_id, [f_name]+' '+[m_name]+' '+[l_name] AS name FROM Student WHERE student_id='" + student_id + "'";
             SqlDataReader reader = DbClient.query_reader(query);
             while (reader.Read())

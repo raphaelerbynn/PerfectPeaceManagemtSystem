@@ -16,6 +16,12 @@ namespace Perfect_Peace_System.Pages
         private string query;
         WaitFunc wait = new WaitFunc();
         private string category = LoginInput.category;
+        public static string report_name;
+        public static string report_class;
+        public static string report_week;
+        public static string report_date;
+        public static string _teacher_id;
+        public static string _date;
 
         public ParentsData()
         {
@@ -61,11 +67,13 @@ namespace Perfect_Peace_System.Pages
             try
             {
                 DataGridViewRow row = showParentDataView.Rows[e.RowIndex];
-                string _teacher_id = row.Cells["id"].Value.ToString();
-                string _class_name = row.Cells["_class"].Value.ToString();
-                string _week = row.Cells["week"].Value.ToString();
-                string _date = row.Cells["date_raw"].Value.ToString();
-                Console.WriteLine(_date);
+                _teacher_id = row.Cells["id"].Value.ToString();
+                _date = row.Cells["date_raw"].Value.ToString();
+
+                report_name = row.Cells["name"].Value.ToString();
+                report_class = row.Cells["_class"].Value.ToString();
+                report_week = row.Cells["week"].Value.ToString();
+                report_date = row.Cells["date"].Value.ToString();
 
                 if (showParentDataView.Columns[e.ColumnIndex].Name == "delete" && e.RowIndex >= 0)
                 {
@@ -75,20 +83,30 @@ namespace Perfect_Peace_System.Pages
                     if (result == DialogResult.Yes)
                     {
                         wait.show();
-                        query = "DELETE FROM Teachers_weekly_report WHERE teacher_id='"+_teacher_id+"' AND class='"+_class_name+"' AND week='"+_week+"' AND date='"+ _date + "'";
+                        query = "DELETE FROM Teachers_weekly_report WHERE teacher_id='" + _teacher_id + "' AND class='" + report_class + "' AND week='" + report_week + "' AND date='" + _date + "'";
                         DbClient.query_execute(query);
 
                         showParentDataView.Rows.RemoveAt(e.RowIndex);
-                        
+
                         MessageBox.Show("Report deleted from system");
                         wait.close();
                     }
                 }
+
+                if (showParentDataView.Columns[e.ColumnIndex].Name == "view" && e.RowIndex >= 0)
+                {
+                    wait.show();
+                    WeeklyReportDetails detail = new WeeklyReportDetails();
+                    detail.Show();
+                    Home home = (Home)Application.OpenForms["Home"];
+                    home.Hide();
+                    wait.close();
+                }
             }
             catch (Exception ex)
             {
-                
-                MessageBox.Show(ex.Message );
+
+                MessageBox.Show(ex.Message);
                 wait.close();
             }
         }

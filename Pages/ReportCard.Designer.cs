@@ -40,18 +40,38 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -60,26 +80,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bgPanel = new System.Windows.Forms.Panel();
             this.feesControls = new System.Windows.Forms.Panel();
             this.label71 = new System.Windows.Forms.Label();
@@ -98,7 +98,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.nextTermLbl = new System.Windows.Forms.Label();
             this.label61 = new System.Windows.Forms.Label();
+            this.promotedLbl = new System.Windows.Forms.Label();
             this.termKgLbl = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
             this.label60 = new System.Windows.Forms.Label();
             this.teacherKgLbl = new System.Windows.Forms.Label();
             this.classKgLbl = new System.Windows.Forms.Label();
@@ -118,9 +120,33 @@
             this.exam_score_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.total_score_kg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cognitiveDataView = new System.Windows.Forms.DataGridView();
+            this.assessmentC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satisfactoryC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.improvedC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.needs_improvementC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unsatisfactoryC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applicableC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.physicalDataView = new System.Windows.Forms.DataGridView();
+            this.assessmentP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satisfactoryP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.improvedP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.needs_improvementP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unsatisfactoryP = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applicableP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emotioalDataVeiw = new System.Windows.Forms.DataGridView();
+            this.assessmentE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satisfactoryE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.improvedE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.needs_improvementE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unsatisfactoryE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applicableE = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.languageDataView = new System.Windows.Forms.DataGridView();
+            this.assessment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.satisfactoryR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.improvingR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.needs_improvementR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unsatisfactoryR = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.applicableR = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label56 = new System.Windows.Forms.Label();
             this.inputPanel = new System.Windows.Forms.Panel();
             this.backLbl = new System.Windows.Forms.LinkLabel();
@@ -233,32 +259,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.assessment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.satisfactoryR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.improvingR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.needs_improvementR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unsatisfactoryR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.applicableR = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assessmentE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.satisfactoryE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.improvedE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.needs_improvementE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unsatisfactoryE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.applicableE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assessmentP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.satisfactoryP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.improvedP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.needs_improvementP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unsatisfactoryP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.applicableP = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.assessmentC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.satisfactoryC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.improvedC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.needs_improvementC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.unsatisfactoryC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.applicableC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label72 = new System.Windows.Forms.Label();
-            this.promotedLbl = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
             this.bgPanel.SuspendLayout();
             this.feesControls.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.feesTb)).BeginInit();
@@ -419,6 +420,7 @@
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label62);
+            this.panel2.Controls.Add(this.label73);
             this.panel2.Controls.Add(this.label66);
             this.panel2.Controls.Add(this.label65);
             this.panel2.Controls.Add(this.label64);
@@ -444,7 +446,7 @@
             this.label66.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label66.AutoSize = true;
             this.label66.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label66.Location = new System.Drawing.Point(492, 14);
+            this.label66.Location = new System.Drawing.Point(385, 14);
             this.label66.Name = "label66";
             this.label66.Size = new System.Drawing.Size(121, 17);
             this.label66.TabIndex = 40;
@@ -455,7 +457,7 @@
             this.label65.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label65.AutoSize = true;
             this.label65.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(295, 14);
+            this.label65.Location = new System.Drawing.Point(220, 15);
             this.label65.Name = "label65";
             this.label65.Size = new System.Drawing.Size(153, 17);
             this.label65.TabIndex = 40;
@@ -466,7 +468,7 @@
             this.label64.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label64.AutoSize = true;
             this.label64.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(165, 14);
+            this.label64.Location = new System.Drawing.Point(118, 14);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(92, 17);
             this.label64.TabIndex = 40;
@@ -477,7 +479,7 @@
             this.label63.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label63.AutoSize = true;
             this.label63.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(16, 14);
+            this.label63.Location = new System.Drawing.Point(3, 15);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(103, 17);
             this.label63.TabIndex = 40;
@@ -526,6 +528,17 @@
             this.label61.TabIndex = 40;
             this.label61.Text = "NEXT TERM BEGINS:";
             // 
+            // promotedLbl
+            // 
+            this.promotedLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.promotedLbl.AutoSize = true;
+            this.promotedLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.promotedLbl.Location = new System.Drawing.Point(276, 24);
+            this.promotedLbl.Name = "promotedLbl";
+            this.promotedLbl.Size = new System.Drawing.Size(24, 19);
+            this.promotedLbl.TabIndex = 40;
+            this.promotedLbl.Text = "---";
+            // 
             // termKgLbl
             // 
             this.termKgLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -536,6 +549,17 @@
             this.termKgLbl.Size = new System.Drawing.Size(29, 19);
             this.termKgLbl.TabIndex = 40;
             this.termKgLbl.Text = "----";
+            // 
+            // label72
+            // 
+            this.label72.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label72.AutoSize = true;
+            this.label72.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label72.Location = new System.Drawing.Point(204, 27);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(73, 15);
+            this.label72.TabIndex = 40;
+            this.label72.Text = "PROMOTED:";
             // 
             // label60
             // 
@@ -843,6 +867,67 @@
             this.cognitiveDataView.TabIndex = 7;
             this.cognitiveDataView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.languageDataView_DataError);
             // 
+            // assessmentC
+            // 
+            this.assessmentC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.assessmentC.DataPropertyName = "assessment";
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.assessmentC.DefaultCellStyle = dataGridViewCellStyle10;
+            this.assessmentC.HeaderText = "COGNITIVE DEVELOPMENT (POSITION, DIRECTION, THINKING)";
+            this.assessmentC.Name = "assessmentC";
+            this.assessmentC.ReadOnly = true;
+            this.assessmentC.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.assessmentC.Width = 5;
+            // 
+            // satisfactoryC
+            // 
+            this.satisfactoryC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.satisfactoryC.DataPropertyName = "SATISFACTORY";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.satisfactoryC.DefaultCellStyle = dataGridViewCellStyle11;
+            this.satisfactoryC.HeaderText = "1";
+            this.satisfactoryC.Name = "satisfactoryC";
+            this.satisfactoryC.ReadOnly = true;
+            // 
+            // improvedC
+            // 
+            this.improvedC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.improvedC.DataPropertyName = "IMPROVED";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.improvedC.DefaultCellStyle = dataGridViewCellStyle12;
+            this.improvedC.HeaderText = "2";
+            this.improvedC.Name = "improvedC";
+            this.improvedC.ReadOnly = true;
+            // 
+            // needs_improvementC
+            // 
+            this.needs_improvementC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.needs_improvementC.DataPropertyName = "NEEDS_IMPROVEMENT";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.needs_improvementC.DefaultCellStyle = dataGridViewCellStyle13;
+            this.needs_improvementC.HeaderText = "3";
+            this.needs_improvementC.Name = "needs_improvementC";
+            this.needs_improvementC.ReadOnly = true;
+            // 
+            // unsatisfactoryC
+            // 
+            this.unsatisfactoryC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unsatisfactoryC.DataPropertyName = "UNSATISFACTORY";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.unsatisfactoryC.DefaultCellStyle = dataGridViewCellStyle14;
+            this.unsatisfactoryC.HeaderText = "4";
+            this.unsatisfactoryC.Name = "unsatisfactoryC";
+            this.unsatisfactoryC.ReadOnly = true;
+            // 
+            // applicableC
+            // 
+            this.applicableC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.applicableC.DataPropertyName = "NOT_APPLICABLE";
+            this.applicableC.HeaderText = "5";
+            this.applicableC.Name = "applicableC";
+            this.applicableC.ReadOnly = true;
+            // 
             // physicalDataView
             // 
             this.physicalDataView.AllowUserToAddRows = false;
@@ -903,6 +988,67 @@
             this.physicalDataView.Size = new System.Drawing.Size(656, 36);
             this.physicalDataView.TabIndex = 7;
             this.physicalDataView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.languageDataView_DataError);
+            // 
+            // assessmentP
+            // 
+            this.assessmentP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.assessmentP.DataPropertyName = "assessment";
+            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.assessmentP.DefaultCellStyle = dataGridViewCellStyle19;
+            this.assessmentP.HeaderText = "PHYSICAL DEVELOPMENT";
+            this.assessmentP.Name = "assessmentP";
+            this.assessmentP.ReadOnly = true;
+            this.assessmentP.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.assessmentP.Width = 5;
+            // 
+            // satisfactoryP
+            // 
+            this.satisfactoryP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.satisfactoryP.DataPropertyName = "SATISFACTORY";
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.satisfactoryP.DefaultCellStyle = dataGridViewCellStyle20;
+            this.satisfactoryP.HeaderText = "1";
+            this.satisfactoryP.Name = "satisfactoryP";
+            this.satisfactoryP.ReadOnly = true;
+            // 
+            // improvedP
+            // 
+            this.improvedP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.improvedP.DataPropertyName = "IMPROVED";
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.improvedP.DefaultCellStyle = dataGridViewCellStyle21;
+            this.improvedP.HeaderText = "2";
+            this.improvedP.Name = "improvedP";
+            this.improvedP.ReadOnly = true;
+            // 
+            // needs_improvementP
+            // 
+            this.needs_improvementP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.needs_improvementP.DataPropertyName = "NEEDS_IMPROVEMENT";
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.needs_improvementP.DefaultCellStyle = dataGridViewCellStyle22;
+            this.needs_improvementP.HeaderText = "3";
+            this.needs_improvementP.Name = "needs_improvementP";
+            this.needs_improvementP.ReadOnly = true;
+            // 
+            // unsatisfactoryP
+            // 
+            this.unsatisfactoryP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unsatisfactoryP.DataPropertyName = "UNSATISFACTORY";
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.unsatisfactoryP.DefaultCellStyle = dataGridViewCellStyle23;
+            this.unsatisfactoryP.HeaderText = "4";
+            this.unsatisfactoryP.Name = "unsatisfactoryP";
+            this.unsatisfactoryP.ReadOnly = true;
+            // 
+            // applicableP
+            // 
+            this.applicableP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.applicableP.DataPropertyName = "NOT_APPLICABLE";
+            this.applicableP.HeaderText = "5";
+            this.applicableP.Name = "applicableP";
+            this.applicableP.ReadOnly = true;
             // 
             // emotioalDataVeiw
             // 
@@ -965,6 +1111,67 @@
             this.emotioalDataVeiw.TabIndex = 7;
             this.emotioalDataVeiw.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.languageDataView_DataError);
             // 
+            // assessmentE
+            // 
+            this.assessmentE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.assessmentE.DataPropertyName = "assessment";
+            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.assessmentE.DefaultCellStyle = dataGridViewCellStyle28;
+            this.assessmentE.HeaderText = "PERSONAL / SOCIAL / EMOTIONAL DEVELOPMENT";
+            this.assessmentE.Name = "assessmentE";
+            this.assessmentE.ReadOnly = true;
+            this.assessmentE.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.assessmentE.Width = 5;
+            // 
+            // satisfactoryE
+            // 
+            this.satisfactoryE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.satisfactoryE.DataPropertyName = "SATISFACTORY";
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.satisfactoryE.DefaultCellStyle = dataGridViewCellStyle29;
+            this.satisfactoryE.HeaderText = "1";
+            this.satisfactoryE.Name = "satisfactoryE";
+            this.satisfactoryE.ReadOnly = true;
+            // 
+            // improvedE
+            // 
+            this.improvedE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.improvedE.DataPropertyName = "IMPROVED";
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.improvedE.DefaultCellStyle = dataGridViewCellStyle30;
+            this.improvedE.HeaderText = "2";
+            this.improvedE.Name = "improvedE";
+            this.improvedE.ReadOnly = true;
+            // 
+            // needs_improvementE
+            // 
+            this.needs_improvementE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.needs_improvementE.DataPropertyName = "NEEDS_IMPROVEMENT";
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.needs_improvementE.DefaultCellStyle = dataGridViewCellStyle31;
+            this.needs_improvementE.HeaderText = "3";
+            this.needs_improvementE.Name = "needs_improvementE";
+            this.needs_improvementE.ReadOnly = true;
+            // 
+            // unsatisfactoryE
+            // 
+            this.unsatisfactoryE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unsatisfactoryE.DataPropertyName = "UNSATISFACTORY";
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.unsatisfactoryE.DefaultCellStyle = dataGridViewCellStyle32;
+            this.unsatisfactoryE.HeaderText = "4";
+            this.unsatisfactoryE.Name = "unsatisfactoryE";
+            this.unsatisfactoryE.ReadOnly = true;
+            // 
+            // applicableE
+            // 
+            this.applicableE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.applicableE.DataPropertyName = "NOT_APPLICABLE";
+            this.applicableE.HeaderText = "5";
+            this.applicableE.Name = "applicableE";
+            this.applicableE.ReadOnly = true;
+            // 
             // languageDataView
             // 
             this.languageDataView.AllowUserToAddRows = false;
@@ -1025,6 +1232,67 @@
             this.languageDataView.Size = new System.Drawing.Size(656, 41);
             this.languageDataView.TabIndex = 7;
             this.languageDataView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.languageDataView_DataError);
+            // 
+            // assessment
+            // 
+            this.assessment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
+            this.assessment.DataPropertyName = "assessment";
+            dataGridViewCellStyle37.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.assessment.DefaultCellStyle = dataGridViewCellStyle37;
+            this.assessment.HeaderText = "LANGUAGE DEVELOPMENT (READING, LISTENING AND ORAL SKILLS)";
+            this.assessment.Name = "assessment";
+            this.assessment.ReadOnly = true;
+            this.assessment.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.assessment.Width = 5;
+            // 
+            // satisfactoryR
+            // 
+            this.satisfactoryR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.satisfactoryR.DataPropertyName = "SATISFACTORY";
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.satisfactoryR.DefaultCellStyle = dataGridViewCellStyle38;
+            this.satisfactoryR.HeaderText = "1";
+            this.satisfactoryR.Name = "satisfactoryR";
+            this.satisfactoryR.ReadOnly = true;
+            // 
+            // improvingR
+            // 
+            this.improvingR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.improvingR.DataPropertyName = "IMPROVED";
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.improvingR.DefaultCellStyle = dataGridViewCellStyle39;
+            this.improvingR.HeaderText = "2";
+            this.improvingR.Name = "improvingR";
+            this.improvingR.ReadOnly = true;
+            // 
+            // needs_improvementR
+            // 
+            this.needs_improvementR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.needs_improvementR.DataPropertyName = "NEEDS_IMPROVEMENT";
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.needs_improvementR.DefaultCellStyle = dataGridViewCellStyle40;
+            this.needs_improvementR.HeaderText = "3";
+            this.needs_improvementR.Name = "needs_improvementR";
+            this.needs_improvementR.ReadOnly = true;
+            // 
+            // unsatisfactoryR
+            // 
+            this.unsatisfactoryR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.unsatisfactoryR.DataPropertyName = "UNSATISFACTORY";
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.unsatisfactoryR.DefaultCellStyle = dataGridViewCellStyle41;
+            this.unsatisfactoryR.HeaderText = "4";
+            this.unsatisfactoryR.Name = "unsatisfactoryR";
+            this.unsatisfactoryR.ReadOnly = true;
+            // 
+            // applicableR
+            // 
+            this.applicableR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.applicableR.DataPropertyName = "NOT_APPLICABLE";
+            this.applicableR.HeaderText = "5";
+            this.applicableR.Name = "applicableR";
+            this.applicableR.ReadOnly = true;
             // 
             // label56
             // 
@@ -1977,7 +2245,7 @@
             this.exam_score.HeaderText = "EXAM SCORE 50%";
             this.exam_score.Name = "exam_score";
             this.exam_score.ReadOnly = true;
-            this.exam_score.Width = 103;
+            this.exam_score.Width = 90;
             // 
             // class_score
             // 
@@ -2436,271 +2704,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "PERFECT PEACE  PREPARATORY SCHOOL";
             // 
-            // assessment
+            // label73
             // 
-            this.assessment.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.assessment.DataPropertyName = "assessment";
-            dataGridViewCellStyle37.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle37.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.assessment.DefaultCellStyle = dataGridViewCellStyle37;
-            this.assessment.HeaderText = "LANGUAGE DEVELOPMENT (READING, LISTENING AND ORAL SKILLS)";
-            this.assessment.Name = "assessment";
-            this.assessment.ReadOnly = true;
-            this.assessment.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.assessment.Width = 5;
-            // 
-            // satisfactoryR
-            // 
-            this.satisfactoryR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.satisfactoryR.DataPropertyName = "SATISFACTORY";
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.satisfactoryR.DefaultCellStyle = dataGridViewCellStyle38;
-            this.satisfactoryR.HeaderText = "1";
-            this.satisfactoryR.Name = "satisfactoryR";
-            this.satisfactoryR.ReadOnly = true;
-            // 
-            // improvingR
-            // 
-            this.improvingR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.improvingR.DataPropertyName = "IMPROVED";
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.improvingR.DefaultCellStyle = dataGridViewCellStyle39;
-            this.improvingR.HeaderText = "2";
-            this.improvingR.Name = "improvingR";
-            this.improvingR.ReadOnly = true;
-            // 
-            // needs_improvementR
-            // 
-            this.needs_improvementR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.needs_improvementR.DataPropertyName = "NEEDS_IMPROVEMENT";
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.needs_improvementR.DefaultCellStyle = dataGridViewCellStyle40;
-            this.needs_improvementR.HeaderText = "3";
-            this.needs_improvementR.Name = "needs_improvementR";
-            this.needs_improvementR.ReadOnly = true;
-            // 
-            // unsatisfactoryR
-            // 
-            this.unsatisfactoryR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.unsatisfactoryR.DataPropertyName = "UNSATISFACTORY";
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.unsatisfactoryR.DefaultCellStyle = dataGridViewCellStyle41;
-            this.unsatisfactoryR.HeaderText = "4";
-            this.unsatisfactoryR.Name = "unsatisfactoryR";
-            this.unsatisfactoryR.ReadOnly = true;
-            // 
-            // applicableR
-            // 
-            this.applicableR.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.applicableR.DataPropertyName = "NOT_APPLICABLE";
-            this.applicableR.HeaderText = "5";
-            this.applicableR.Name = "applicableR";
-            this.applicableR.ReadOnly = true;
-            // 
-            // assessmentE
-            // 
-            this.assessmentE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.assessmentE.DataPropertyName = "assessment";
-            dataGridViewCellStyle28.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.assessmentE.DefaultCellStyle = dataGridViewCellStyle28;
-            this.assessmentE.HeaderText = "PERSONAL / SOCIAL / EMOTIONAL DEVELOPMENT";
-            this.assessmentE.Name = "assessmentE";
-            this.assessmentE.ReadOnly = true;
-            this.assessmentE.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.assessmentE.Width = 5;
-            // 
-            // satisfactoryE
-            // 
-            this.satisfactoryE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.satisfactoryE.DataPropertyName = "SATISFACTORY";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.satisfactoryE.DefaultCellStyle = dataGridViewCellStyle29;
-            this.satisfactoryE.HeaderText = "1";
-            this.satisfactoryE.Name = "satisfactoryE";
-            this.satisfactoryE.ReadOnly = true;
-            // 
-            // improvedE
-            // 
-            this.improvedE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.improvedE.DataPropertyName = "IMPROVED";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.improvedE.DefaultCellStyle = dataGridViewCellStyle30;
-            this.improvedE.HeaderText = "2";
-            this.improvedE.Name = "improvedE";
-            this.improvedE.ReadOnly = true;
-            // 
-            // needs_improvementE
-            // 
-            this.needs_improvementE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.needs_improvementE.DataPropertyName = "NEEDS_IMPROVEMENT";
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.needs_improvementE.DefaultCellStyle = dataGridViewCellStyle31;
-            this.needs_improvementE.HeaderText = "3";
-            this.needs_improvementE.Name = "needs_improvementE";
-            this.needs_improvementE.ReadOnly = true;
-            // 
-            // unsatisfactoryE
-            // 
-            this.unsatisfactoryE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.unsatisfactoryE.DataPropertyName = "UNSATISFACTORY";
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.unsatisfactoryE.DefaultCellStyle = dataGridViewCellStyle32;
-            this.unsatisfactoryE.HeaderText = "4";
-            this.unsatisfactoryE.Name = "unsatisfactoryE";
-            this.unsatisfactoryE.ReadOnly = true;
-            // 
-            // applicableE
-            // 
-            this.applicableE.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.applicableE.DataPropertyName = "NOT_APPLICABLE";
-            this.applicableE.HeaderText = "5";
-            this.applicableE.Name = "applicableE";
-            this.applicableE.ReadOnly = true;
-            // 
-            // assessmentP
-            // 
-            this.assessmentP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.assessmentP.DataPropertyName = "assessment";
-            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.assessmentP.DefaultCellStyle = dataGridViewCellStyle19;
-            this.assessmentP.HeaderText = "PHYSICAL DEVELOPMENT";
-            this.assessmentP.Name = "assessmentP";
-            this.assessmentP.ReadOnly = true;
-            this.assessmentP.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.assessmentP.Width = 5;
-            // 
-            // satisfactoryP
-            // 
-            this.satisfactoryP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.satisfactoryP.DataPropertyName = "SATISFACTORY";
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.satisfactoryP.DefaultCellStyle = dataGridViewCellStyle20;
-            this.satisfactoryP.HeaderText = "1";
-            this.satisfactoryP.Name = "satisfactoryP";
-            this.satisfactoryP.ReadOnly = true;
-            // 
-            // improvedP
-            // 
-            this.improvedP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.improvedP.DataPropertyName = "IMPROVED";
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.improvedP.DefaultCellStyle = dataGridViewCellStyle21;
-            this.improvedP.HeaderText = "2";
-            this.improvedP.Name = "improvedP";
-            this.improvedP.ReadOnly = true;
-            // 
-            // needs_improvementP
-            // 
-            this.needs_improvementP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.needs_improvementP.DataPropertyName = "NEEDS_IMPROVEMENT";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.needs_improvementP.DefaultCellStyle = dataGridViewCellStyle22;
-            this.needs_improvementP.HeaderText = "3";
-            this.needs_improvementP.Name = "needs_improvementP";
-            this.needs_improvementP.ReadOnly = true;
-            // 
-            // unsatisfactoryP
-            // 
-            this.unsatisfactoryP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.unsatisfactoryP.DataPropertyName = "UNSATISFACTORY";
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.unsatisfactoryP.DefaultCellStyle = dataGridViewCellStyle23;
-            this.unsatisfactoryP.HeaderText = "4";
-            this.unsatisfactoryP.Name = "unsatisfactoryP";
-            this.unsatisfactoryP.ReadOnly = true;
-            // 
-            // applicableP
-            // 
-            this.applicableP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.applicableP.DataPropertyName = "NOT_APPLICABLE";
-            this.applicableP.HeaderText = "5";
-            this.applicableP.Name = "applicableP";
-            this.applicableP.ReadOnly = true;
-            // 
-            // assessmentC
-            // 
-            this.assessmentC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader;
-            this.assessmentC.DataPropertyName = "assessment";
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.assessmentC.DefaultCellStyle = dataGridViewCellStyle10;
-            this.assessmentC.HeaderText = "COGNITIVE DEVELOPMENT (POSITION, DIRECTION, THINKING)";
-            this.assessmentC.Name = "assessmentC";
-            this.assessmentC.ReadOnly = true;
-            this.assessmentC.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.assessmentC.Width = 5;
-            // 
-            // satisfactoryC
-            // 
-            this.satisfactoryC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.satisfactoryC.DataPropertyName = "SATISFACTORY";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.satisfactoryC.DefaultCellStyle = dataGridViewCellStyle11;
-            this.satisfactoryC.HeaderText = "1";
-            this.satisfactoryC.Name = "satisfactoryC";
-            this.satisfactoryC.ReadOnly = true;
-            // 
-            // improvedC
-            // 
-            this.improvedC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.improvedC.DataPropertyName = "IMPROVED";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.improvedC.DefaultCellStyle = dataGridViewCellStyle12;
-            this.improvedC.HeaderText = "2";
-            this.improvedC.Name = "improvedC";
-            this.improvedC.ReadOnly = true;
-            // 
-            // needs_improvementC
-            // 
-            this.needs_improvementC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.needs_improvementC.DataPropertyName = "NEEDS_IMPROVEMENT";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.needs_improvementC.DefaultCellStyle = dataGridViewCellStyle13;
-            this.needs_improvementC.HeaderText = "3";
-            this.needs_improvementC.Name = "needs_improvementC";
-            this.needs_improvementC.ReadOnly = true;
-            // 
-            // unsatisfactoryC
-            // 
-            this.unsatisfactoryC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.unsatisfactoryC.DataPropertyName = "UNSATISFACTORY";
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.unsatisfactoryC.DefaultCellStyle = dataGridViewCellStyle14;
-            this.unsatisfactoryC.HeaderText = "4";
-            this.unsatisfactoryC.Name = "unsatisfactoryC";
-            this.unsatisfactoryC.ReadOnly = true;
-            // 
-            // applicableC
-            // 
-            this.applicableC.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.applicableC.DataPropertyName = "NOT_APPLICABLE";
-            this.applicableC.HeaderText = "5";
-            this.applicableC.Name = "applicableC";
-            this.applicableC.ReadOnly = true;
-            // 
-            // label72
-            // 
-            this.label72.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label72.AutoSize = true;
-            this.label72.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label72.Location = new System.Drawing.Point(204, 27);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(73, 15);
-            this.label72.TabIndex = 40;
-            this.label72.Text = "PROMOTED:";
-            // 
-            // promotedLbl
-            // 
-            this.promotedLbl.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.promotedLbl.AutoSize = true;
-            this.promotedLbl.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.promotedLbl.Location = new System.Drawing.Point(276, 24);
-            this.promotedLbl.Name = "promotedLbl";
-            this.promotedLbl.Size = new System.Drawing.Size(24, 19);
-            this.promotedLbl.TabIndex = 40;
-            this.promotedLbl.Text = "---";
+            this.label73.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label73.AutoSize = true;
+            this.label73.Font = new System.Drawing.Font("Calibri", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label73.Location = new System.Drawing.Point(516, 14);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(118, 17);
+            this.label73.TabIndex = 40;
+            this.label73.Text = "5. NOT APPLICABLE";
             // 
             // ReportCard
             // 
@@ -2925,5 +2938,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn applicableR;
         private System.Windows.Forms.Label promotedLbl;
         private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label73;
     }
 }
