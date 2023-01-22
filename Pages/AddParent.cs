@@ -119,7 +119,7 @@ namespace Perfect_Peace_System.Pages
                 }
                 MessageBox.Show("Report saved");
                 wait.close();
-                this.Close();
+                
             }
             catch(Exception ex)
             {

@@ -14,23 +14,25 @@ namespace Perfect_Peace_System.Pages
     public partial class ParentsData : Form
     {
         private string query;
-        private string parent_id;
-        Person parent;
+        WaitFunc wait = new WaitFunc();
+        private string category = LoginInput.category;
 
         public ParentsData()
         {
-            parent = new Parent();
             InitializeComponent();
 
             showParentDataView.ColumnHeadersDefaultCellStyle.BackColor = Home.themeColor;
             showParentDataView.RowsDefaultCellStyle.BackColor = Home.cellColor;
             showParentDataView.BackgroundColor = Home.foreColor;
             topPanel.BackColor = Home.foreColor;
-            
+
             columnArrangement();
 
             showParentDataView.DataSource = DataFromDb.getAllWeeklyReportData();
-            //getChild();
+            if (category.Equals("Class Teacher"))
+            {
+                delete.Visible = false;
+            }
         }
 
         private void columnArrangement()
@@ -40,41 +42,14 @@ namespace Perfect_Peace_System.Pages
             showParentDataView.Columns["id"].DisplayIndex = 0;
             showParentDataView.Columns["name"].DisplayIndex = 1;
             showParentDataView.Columns["_class"].DisplayIndex = 2;
-            showParentDataView.Columns["date"].DisplayIndex = 3;
-            showParentDataView.Columns["view"].DisplayIndex = 4;
-            showParentDataView.Columns["edit"].DisplayIndex = 5;
+            showParentDataView.Columns["week"].DisplayIndex = 3;
+            showParentDataView.Columns["date"].DisplayIndex = 4;
+            showParentDataView.Columns["view"].DisplayIndex = 5;
             showParentDataView.Columns["delete"].DisplayIndex = 6;
             
             searchCb.SelectedIndex = 0;
         }
 
-        /*private void getChild()
-        {
-            try
-            {
-                foreach (DataGridViewRow item in showParentDataView.Rows)
-                {
-                    
-                    string id = item.Cells["id"].Value.ToString();
-                    item.Cells["child"].Value = "";
-
-                    query = "SELECT [f_name]+' '+[l_name] AS name FROM Student WHERE parent_id='" + id + "'";
-                    SqlDataReader reader = DbClient.query_reader(query);
-                    showParentDataView.ReadOnly = false;
-                    while (reader.Read())
-                    {
-                        if (reader.IsDBNull(0)) { continue; }
-                        item.Cells["child"].Value = reader["name"].ToString();
-                    }
-                    reader.Close();
-                    showParentDataView.ReadOnly = true;
-                }
-
-            }catch (Exception ex) { 
-                Console.WriteLine(ex.Message);
-            }
-            
-        }*/
 
         private void showParentDataView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -86,45 +61,53 @@ namespace Perfect_Peace_System.Pages
             try
             {
                 DataGridViewRow row = showParentDataView.Rows[e.RowIndex];
-                parent_id = row.Cells["id"].Value.ToString();
-                string name = row.Cells["name"].Value.ToString();
-
+                string _teacher_id = row.Cells["id"].Value.ToString();
+                string _class_name = row.Cells["_class"].Value.ToString();
+                string _week = row.Cells["week"].Value.ToString();
+                string _date = row.Cells["date_raw"].Value.ToString();
+                Console.WriteLine(_date);
 
                 if (showParentDataView.Columns[e.ColumnIndex].Name == "delete" && e.RowIndex >= 0)
                 {
-                    string message = "Do you want to delete " + name + "?";
+                    string message = "Do you want to delete this report?";
                     MessageBoxButtons deleteAction = MessageBoxButtons.YesNo;
                     DialogResult result = MessageBox.Show(message, "", deleteAction);
                     if (result == DialogResult.Yes)
                     {
-                        query = "UPDATE Student SET parent_id=NULL WHERE parent_id='"+parent_id+"'";
+                        wait.show();
+                        query = "DELETE FROM Teachers_weekly_report WHERE teacher_id='"+_teacher_id+"' AND class='"+_class_name+"' AND week='"+_week+"' AND date='"+ _date + "'";
                         DbClient.query_execute(query);
 
                         showParentDataView.Rows.RemoveAt(e.RowIndex);
-                        parent.delete(parent_id);
-
-                        MessageBox.Show(name + " deleted from system");
+                        
+                        MessageBox.Show("Report deleted from system");
+                        wait.close();
                     }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                
+                MessageBox.Show(ex.Message );
+                wait.close();
             }
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            if (InternetConnectivity.checkConnectivity() == false)
-            {
-                MessageBox.Show("Check your internet connection");
-                return;
-            }
+           
             if (!String.IsNullOrEmpty(searchTextBox.Text))
             {
                 try
                 {
-                    (showParentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format(searchCb.Text + " LIKE '%{0}%'", searchTextBox.Text);
+                    if (searchCb.SelectedIndex == 1)
+                    {
+                        (showParentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format(searchCb.Text.ToLower() + " = " + int.Parse(searchTextBox.Text));
+                    }
+                    else
+                    {
+                        (showParentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format(searchCb.Text.ToLower() + " LIKE '%{0}%'", searchTextBox.Text);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -140,8 +123,18 @@ namespace Perfect_Peace_System.Pages
 
         private void refeshBtn_Click(object sender, EventArgs e)
         {
-            DataFromDb.getAllTeacher = DbClient.dataSource("SELECT parent_id,contact,gender,relationship, [f_name]+' '+[l_name] AS name FROM Parent");
-            //showParentDataView.DataSource = DataFromDb.getAllParentData();
+            if (!InternetConnectivity.checkConnectivity())
+            {
+                return;
+            }
+            try
+            {
+                wait.show();
+                DataFromDb.getAllWeeklyReport = DbClient.dataSource("SELECT teacher_id, date, (SELECT [f_name]+' '+[l_name] FROM Teacher WHERE Teacher.teacher_id=Teachers_weekly_report.teacher_id) AS name, class, week, FORMAT(date, 'dd-MM-yyyy') AS dateF FROM Teachers_weekly_report GROUP BY teacher_id, class, week, date");
+                showParentDataView.DataSource = DataFromDb.getAllWeeklyReportData();
+                wait.close();
+            }
+            catch { }
         }
     }
 }
