@@ -107,7 +107,7 @@
             this.teacherRemarksPanel.Controls.Add(this.label5);
             this.teacherRemarksPanel.Controls.Add(this.label4);
             this.teacherRemarksPanel.Controls.Add(this.label2);
-            this.teacherRemarksPanel.Location = new System.Drawing.Point(12, 110);
+            this.teacherRemarksPanel.Location = new System.Drawing.Point(817, 113);
             this.teacherRemarksPanel.Margin = new System.Windows.Forms.Padding(3, 40, 3, 3);
             this.teacherRemarksPanel.Name = "teacherRemarksPanel";
             this.teacherRemarksPanel.Size = new System.Drawing.Size(879, 556);

@@ -42,6 +42,7 @@ namespace Perfect_Peace_System.Pages
             InitializeComponent();
             showSubjectsWithFeilds();
             getStudentInfo();
+            getPreviousInput();
 
             topPanel.BackColor = Home.themeColor;
             topPanel.ForeColor = Home.foreColor;
@@ -62,6 +63,41 @@ namespace Perfect_Peace_System.Pages
             reader.Close();
         }
 
+        private void getPreviousInput()
+        {
+            try
+            {
+                query = "SELECT " +
+                    "subject_id, exam_score, exam_score_percentage, class_score, class_score_percentage, total_score, remarks " +
+                    "FROM Student_marks " +
+                    "WHERE student_id='"+student_id+"' AND  class='"+classLbl.Text+"' AND term='"+termCb.Text+"' AND FORMAT(date, 'yyyy')='"+DateTime.Now.Year+"' ";
+                SqlDataReader reader = DbClient.query_reader(query);
+                while (reader.Read())
+                {
+                    
+                    string _subj_id = reader["subject_id"].ToString();
+                    if (_subj_id != null)
+                    {
+                        int _index_sub_id = subject_ids.IndexOf(_subj_id);
+
+                        remarkLbls[_index_sub_id].Text = reader["remarks"].ToString();
+                        //classScoreLbls[_index_sub_id].Text = reader["class_score_percentage"].ToString() + "";
+                        classScoreTBs[_index_sub_id].Text = reader["class_score"].ToString();
+                        examScoreTBs[_index_sub_id].Text = reader["exam_score"].ToString();
+
+                    }
+                    Console.WriteLine(reader["subject_id"].ToString());
+                }
+                reader.Close();
+
+                Console.WriteLine(DateTime.Now.Year);
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void showSubjectsWithFeilds()
         {
@@ -355,6 +391,12 @@ namespace Perfect_Peace_System.Pages
                 int pass_score = 0;
                 int total_raw_score = 0;
                 wait.show();
+                query = "DELETE FROM Student_marks WHERE student_id='" + student_id + "' AND  class='" + classLbl.Text + "' AND term='" + termCb.Text + "' AND FORMAT(date, 'yyyy')='" + DateTime.Now.Year + "' ";
+                DbClient.query_execute(query);
+                
+                query = "DELETE FROM Student_result WHERE student_id='" + student_id + "' AND  class='" + classLbl.Text + "' AND term='" + termCb.Text + "' AND FORMAT(date, 'yyyy')='" + DateTime.Now.Year + "' ";
+                DbClient.query_execute(query);
+
                 for (int i = 0; i < subject_ids.Count; i++)
                 {
                     if (!(String.IsNullOrEmpty(classScoreTBs[i].Text) || String.IsNullOrEmpty(examScoreTBs[i].Text)))
@@ -392,7 +434,7 @@ namespace Perfect_Peace_System.Pages
                         "VALUES('" + student_id + "', '" + raw_score + "', '" + pass_score + "', '" + total_raw_score + "', '" + result_status + "', '"+class_total+"', '"+promoted_to+"', '" + classLbl.Text + "', '" + termCb.Text + "', '" + conductTB.Text + "', '" + attitudeTB.Text + "', '" + interestTB.Text + "', '" + teacherRemarksTB.Text + "', '" + DateTime.Today + "')";
                 DbClient.query_execute(query);
                 wait.close();
-                MessageBox.Show("Take Note: After printing all result. Go to student module and update student to promoted class", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //MessageBox.Show("Take Note: After printing all result. Go to student module and update student to promoted class", "", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 
                 this.Close();
             }catch(Exception ex)

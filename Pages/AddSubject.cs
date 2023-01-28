@@ -13,7 +13,7 @@ namespace Perfect_Peace_System.Pages
     public partial class AddSubject : Form
     {
         Subject subject;
-        WaitFunc wait;
+        WaitFunc wait = new WaitFunc();
         public AddSubject()
         {
             InitializeComponent();
@@ -76,8 +76,8 @@ namespace Perfect_Peace_System.Pages
                         //query = "DELETE FROM Student_result WHERE subject_id='" + id + "'";
                         //DbClient.query_execute(query)
                         
-                        query = "DELETE FROM Teachers_weekly_report WHERE subject_id='" + id + "'";
-                        DbClient.query_execute(query);
+                        //query = "DELETE FROM Teachers_weekly_report WHERE subject_id='" + id + "'";
+                        //DbClient.query_execute(query);
 
 
                         subjectDataView.Rows.RemoveAt(e.RowIndex);
@@ -91,8 +91,7 @@ namespace Perfect_Peace_System.Pages
                 }
             } 
             catch (Exception ex)
-            {
-                wait.close();
+            { 
                 MessageBox.Show(ex.ToString());
             }
         }
@@ -130,7 +129,6 @@ namespace Perfect_Peace_System.Pages
             }
             catch(Exception ex)
             {
-                wait.close();
                 MessageBox.Show(ex.Message);
                 
             }
