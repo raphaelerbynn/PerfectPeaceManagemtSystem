@@ -86,7 +86,7 @@ namespace Perfect_Peace_System.Pages
             printPreview.Document = printdoc;
             printdoc.PrintPage += new PrintPageEventHandler(printResult_printPage);
             ((Form)printPreview).Size = new Size(950, 539);
-            printdoc.DefaultPageSettings.PaperSize = new PaperSize("pprnm", 285, 600);
+            //printdoc.DefaultPageSettings.PaperSize = new PaperSize("pprnm", 285, 600);
             printPreview.ShowDialog();
         }
 

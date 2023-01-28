@@ -120,8 +120,8 @@ namespace Perfect_Peace_System.Pages
                         query = "DELETE FROM Class WHERE class_id='" + class_id + "'";
                         DbClient.query_execute(query);
                         
-                        query = "DELETE FROM Teachers_weekly_report WHERE class_id='" + class_id + "'";
-                        DbClient.query_execute(query);
+                        //query = "DELETE FROM Teachers_weekly_report WHERE class_id='" + class_id + "'";
+                        //DbClient.query_execute(query);
 
                         classDataView.Rows.RemoveAt(e.RowIndex);
                         DataFromDb.totalRooms = DbClient.query_executeScaler("SELECT COUNT(*) FROM Class");
