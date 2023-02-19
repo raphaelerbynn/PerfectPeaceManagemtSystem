@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,8 @@ namespace Perfect_Peace_System.Pages
         private static string id;
         WaitFunc wait = new WaitFunc();
         OpenNewPage openNewPage = new OpenNewPage();
+        private Bitmap bitmap;
+        private int pageNumber = 1;
 
         public StudentDataDisplay()
         {
@@ -224,6 +227,15 @@ namespace Perfect_Peace_System.Pages
                 {
                     (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Format(searchCb.Text + " LIKE '%{0}%'", searchTextBox.Text);
                     getTotalGendeView();
+                    if (!String.IsNullOrEmpty(searchTextBox.Text) && searchCb.Text.Equals("Class"))
+                    {
+                        printBtn.Visible = true;
+                    }
+                    else
+                    {
+                        printBtn.Visible = false;
+                        Console.WriteLine("vanish");
+                    }
                 }
                 catch(Exception ex)
                 {
@@ -235,7 +247,7 @@ namespace Perfect_Peace_System.Pages
             else
             {
                 (studentDataView.DataSource as DataTable).DefaultView.RowFilter = string.Empty;
-
+                printBtn.Visible = false;
                 getTotalGendeView();
             }
         }
@@ -263,6 +275,123 @@ namespace Perfect_Peace_System.Pages
             }
             wait.close();
         }
+
+
+        private int currentPage = 1;
+        private int totalPageCount = 0;
+        private Font printFont;
+        private Font printFontHead;
+
+        private void printClass_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            int rowHeight = studentDataView.Rows[0].Height;
+            int rowsPerPage = e.MarginBounds.Height / rowHeight;
+            int rowCount = studentDataView.Rows.Count;
+            printFont = new Font("sans-sarif", 12, FontStyle.Regular);
+            printFontHead = new Font("sans-sarif", 12, FontStyle.Bold);
+
+            // Calculate the total number of pages
+            totalPageCount = (int)Math.Ceiling((double)rowCount / rowsPerPage);
+
+            // Set the starting row index and y coordinate
+            int rowIndex = (currentPage - 1) * rowsPerPage;
+            int y = e.MarginBounds.Top;
+
+            //writings above table
+            Rectangle topTextRect = new Rectangle(e.MarginBounds.Left, y, 700, rowHeight);
+            string topText = "List for: " + studentDataView.Rows[1].Cells["_class"].Value;
+            e.Graphics.DrawString(topText, printFont, Brushes.Black, topTextRect);
+            y += rowHeight + 20;
+
+            //Draw column headers
+            for (int i = 0; i < 3; i++)
+            {
+                Rectangle cellRect = new Rectangle(e.MarginBounds.Left + i * 270, y, 270, rowHeight);
+                string value;
+                if (i == 0)
+                {
+                    value = studentDataView.Columns["full_name"].HeaderText;
+                }
+                else if (i == 1)
+                {
+                    value = studentDataView.Columns["gender"].HeaderText;
+                    cellRect = new Rectangle(e.MarginBounds.Left + i * 380, y, 200, rowHeight);
+                }
+                else
+                {
+                    value = studentDataView.Columns["fees_details"].HeaderText; 
+                    cellRect = new Rectangle(e.MarginBounds.Left + i * 280, y, 100, rowHeight);
+
+                }
+
+                e.Graphics.DrawString(value, printFontHead, Brushes.Black, cellRect);
+            }
+            y += rowHeight;
+
+            // Draw the rows until the end of the page is reached
+            while (rowIndex < rowCount && y + rowHeight <= e.MarginBounds.Bottom)
+            {
+                
+                DataGridViewRow row = studentDataView.Rows[rowIndex];
+                for (int i = 0; i < 3; i++)
+                {
+                    Rectangle cellRect = new Rectangle(e.MarginBounds.Left + i * 420, y, 420, rowHeight); 
+                    string value;
+                    if(i == 0)
+                    {
+                        value = (rowIndex+1).ToString() + ".   " + row.Cells["full_name"].FormattedValue.ToString();
+                    }
+                    else if(i == 1)
+                    {
+                        value = row.Cells["gender"].FormattedValue.ToString();
+                        cellRect = new Rectangle(e.MarginBounds.Left + i * 380, y, 200, rowHeight);
+                    }
+                    else
+                    {
+                        value = row.Cells["fees_details"].FormattedValue.ToString();
+                        cellRect = new Rectangle(e.MarginBounds.Left + i * 280, y, 100, rowHeight);
+                    }
+
+                    e.Graphics.DrawString(value, printFont, Brushes.Black, cellRect);
+                }
+                y += rowHeight;
+                rowIndex++;
+            }
+
+
+            // If there are more pages, set the HasMorePages property to true
+            if (currentPage < totalPageCount)
+            {
+                currentPage++;
+                e.HasMorePages = true;
+            }
+            else
+            {
+                // Reset the current page and page count
+                currentPage = 1;
+                totalPageCount = 0;
+            }
+        }
+
+        private void printBtn_Click(object sender, EventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+            if (printDialog.ShowDialog() == DialogResult.OK)
+            {
+                PrintDocument printDocument = new PrintDocument();
+                printDocument.DocumentName = "Student List Print";
+                printDocument.PrintPage += printClass_PrintPage;
+
+                // Show print preview dialog or print directly
+                PrintPreviewDialog printPreviewDialog = new PrintPreviewDialog();
+                printPreviewDialog.Document = printDocument;
+                if (printPreviewDialog.ShowDialog() == DialogResult.OK)
+                {
+                    printDocument.Print();
+                }
+            }
+        }
+
 
         private void studentDataView_RowPostPaint(object sender, DataGridViewRowPostPaintEventArgs e)
         {

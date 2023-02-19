@@ -56,8 +56,26 @@ namespace Perfect_Peace_System.Pages
 
             if (Pages.LoginInput.category.Equals("Administrator"))
             {
+                feeCheckOnPortal();
                 termBtn.Visible = true;
                 usersBtn.Visible = true;
+                feeOwingBtn.Visible = true;
+            }
+        }
+
+        private void feeCheckOnPortal()
+        {
+            query = "SELECT value FROM FeeCheck";
+            string value = DbClient.query_executeScaler(query);
+            if (value.Equals("true"))
+            {
+                feeOwingBtn.Text = "Deactivate Fee Dept On Portal";
+                feeOwingBtn.BackColor = Color.DarkRed;
+            }
+            else
+            {
+                feeOwingBtn.Text = "Activate Fee Dept On Portal";
+                feeOwingBtn.BackColor = Color.DarkGreen;
             }
         }
 
@@ -278,6 +296,33 @@ namespace Perfect_Peace_System.Pages
             }
             wait.close();
         }
+        
+        private void feeOwingBtn_Click(object sender, EventArgs e)
+        {
+            Pages.ConfirmPassword confirmPassword = new Pages.ConfirmPassword();
+            confirmPassword.ShowDialog();
+
+            wait.show();
+            if (GetData.getConfirmedPassword() == true)
+            {
+
+                if (feeOwingBtn.Text.Equals("Activate Fee Dept On Portal"))
+                {
+                    query = "UPDATE FeeCheck SET value='true'";
+                    feeOwingBtn.Text = "Deactivate Fee Dept On Portal";
+                    feeOwingBtn.BackColor = Color.DarkRed;
+                }
+                else
+                {
+                    query = "UPDATE FeeCheck SET value='false'";
+                    feeOwingBtn.Text = "Activate Fee Dept On Portal";
+                    feeOwingBtn.BackColor = Color.DarkGreen;
+                }
+                DbClient.query_execute(query);
+                GetData.setConfirmPassword(false);
+            }
+            wait.close();
+        }
 
         private void usersBtn_Click(object sender, EventArgs e)
         {
@@ -298,6 +343,11 @@ namespace Perfect_Peace_System.Pages
         }
 
         private void teacherPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelBg_Paint(object sender, PaintEventArgs e)
         {
 
         }
