@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Perfect Peace System.exe" version="1.0.0.5" publicKeyToken="97d2bf1a28fb5b24" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="icon.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Perfect Peace System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Perfect Peace System.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC Manifest Options
+             If you want to change the Windows User Account Control level replace the 
+             requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            Specifying requestedExecutionLevel element will disable file and registry virtualization. 
+            Remove this element if your application requires this virtualization for backwards
+            compatibility.
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Perfect Peace System.exe" size="1061360">
+      <assemblyIdentity name="Perfect Peace System" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>fXStaApfvUhp7Wydx6HukUT0zvmRWvoeY2+7pIvI2CA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="icon.ico" size="3252">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4aTL9dLehuv9WyFCHYVhOT/FSC6T9WGQwPcPOFHtUaQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Perfect Peace System.exe.config" size="1181">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>A3+UyEul4Xh9dvpyb3jZuaNx+9sU0BkLrXFYHzQfRzE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- A list of the Windows versions that this application has been tested on
+           and is designed to work with. Uncomment the appropriate elements
+           and Windows will automatically select the most compatible environment. -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+<publisherIdentity name="CN=DESKTOP-STONKIE\MOUNTAIN" issuerKeyHash="5bda817db300b61cda6774ce91fb45f0443235ea" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>IBTr1d9ehi/ExETHVltTWB0oM28ebReUCOlB/yvj4mA=</DigestValue></Reference></SignedInfo><SignatureValue>hUeRBLikVjYBqzxiZfimw4/a9qwBRyXYQHkn467iI0ElXaAYx9JkebtLOTDcJk/ifiTce3D/4VPsqiIwkUbTQdqpRJ6V2pQIpPJmV1vKhqQAu61GuurTQoOYZwdcgOilsEVJVcZXC/QWcN4gWyr/H8+uY7PU1N0edjA2mV8a8t0=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>01br1YuEDho5+tM41VbALZpj95fqIKqu6f8mly2aaCJAr2XE2uoKWhIB7oknNWU2prDl8IAf8r1DnvUWAtZ4zC4jHsNWPMc+7SK1SW+QcWxGlCwPkfP01ySqEP0xV3okr9A1vVVh2lb6Mze7QcjZ8ZlN1MnaZHNgQNp1W1kxwsE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="60e2e32bff41e90894176d1e6f33281d58535b56c744c4c42f865edfd5eb1420" Description="" Url=""><as:assemblyIdentity name="Perfect Peace System.exe" version="1.0.0.5" publicKeyToken="97d2bf1a28fb5b24" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=DESKTOP-STONKIE\MOUNTAIN</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>LGO8le+VuOU9hq6j5dJtGV6QEWKwvT/9imhPHjDZKgo=</DigestValue></Reference></SignedInfo><SignatureValue>mzeQYS4e6NLlEoJv6dyd11aVWzn+GZMXWHeZVpY9huiYjyEpsrLXnqbp67iRVbG7r2ndsmnhOnQ/G0/Go9mMJjorfD5Wj09M28bPHX4qgAayLxCdtCYfO1PPP4yVnmonKx606BSm0iFuE77a4A0ge7OnXmJzD+gJ3BvonVEgczU=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>01br1YuEDho5+tM41VbALZpj95fqIKqu6f8mly2aaCJAr2XE2uoKWhIB7oknNWU2prDl8IAf8r1DnvUWAtZ4zC4jHsNWPMc+7SK1SW+QcWxGlCwPkfP01ySqEP0xV3okr9A1vVVh2lb6Mze7QcjZ8ZlN1MnaZHNgQNp1W1kxwsE=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB+TCCAWKgAwIBAgIQGEzVkgfcz5dCShi9fEtMqjANBgkqhkiG9w0BAQsFADA7MTkwNwYDVQQDHjAARABFAFMASwBUAE8AUAAtAFMAVABPAE4ASwBJAEUAXABNAE8AVQBOAFQAQQBJAE4wHhcNMjIwODEyMDcxMzU1WhcNMjMwODEyMTMxMzU1WjA7MTkwNwYDVQQDHjAARABFAFMASwBUAE8AUAAtAFMAVABPAE4ASwBJAEUAXABNAE8AVQBOAFQAQQBJAE4wgZ8wDQYJKoZIhvcNAQEBBQADgY0AMIGJAoGBANNW69WLhA4aOfrTONVWwC2aY/eX6iCqrun/JpctmmgiQK9lxNrqCloSAe6JJzVlNqaw5fCAH/K9Q571FgLWeMwuIx7DVjzHPu0itUlvkHFsRpQsD5Hz9NckqhD9MVd6JK/QNb1VYdpW+jM3u0HI2fGZTdTJ2mRzYEDadVtZMcLBAgMBAAEwDQYJKoZIhvcNAQELBQADgYEAFFCMjKt/wSuUiMvdrc28dV879H65Xul2hadrJLqYNhBShkH6YOzbHu4KEEfG6UYvWJzvR0x5aCl74k64bA72br6SfXab7ndjt5GSIR7vOA3dgJOmrxjBbSbCRmrGzIi9qgqA4ZZfVjRF0GpWti0YUruqIIpva8Fxme44vZmI38Y=</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

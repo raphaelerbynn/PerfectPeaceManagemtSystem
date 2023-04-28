@@ -32,39 +32,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherData));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.teacherDataGridView = new System.Windows.Forms.DataGridView();
-            this.showDataPanel = new System.Windows.Forms.Panel();
-            this.nonTeachingDataView = new System.Windows.Forms.DataGridView();
-            this.topPanel = new System.Windows.Forms.Panel();
-            this.refeshBtn = new System.Windows.Forms.Button();
-            this.nonTeachingRadio = new System.Windows.Forms.RadioButton();
-            this.teahcingRadio = new System.Windows.Forms.RadioButton();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.searchCb = new System.Windows.Forms.ComboBox();
-            this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.maleLbl = new System.Windows.Forms.Label();
-            this.femaleLbl = new System.Windows.Forms.Label();
             this.teacher_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,6 +55,8 @@
             this.view = new System.Windows.Forms.DataGridViewImageColumn();
             this.edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.delete = new System.Windows.Forms.DataGridViewImageColumn();
+            this.showDataPanel = new System.Windows.Forms.Panel();
+            this.nonTeachingDataView = new System.Windows.Forms.DataGridView();
             this.teacher_idNt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameNt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNt = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -83,6 +66,23 @@
             this.viewNt = new System.Windows.Forms.DataGridViewImageColumn();
             this.editNt = new System.Windows.Forms.DataGridViewImageColumn();
             this.deleteNt = new System.Windows.Forms.DataGridViewImageColumn();
+            this.topPanel = new System.Windows.Forms.Panel();
+            this.refeshBtn = new System.Windows.Forms.Button();
+            this.nonTeachingRadio = new System.Windows.Forms.RadioButton();
+            this.teahcingRadio = new System.Windows.Forms.RadioButton();
+            this.searchBtn = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.femaleLbl = new System.Windows.Forms.Label();
+            this.maleLbl = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.searchCb = new System.Windows.Forms.ComboBox();
+            this.searchTextBox = new System.Windows.Forms.TextBox();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.teacherDataGridView)).BeginInit();
             this.showDataPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nonTeachingDataView)).BeginInit();
@@ -151,6 +151,94 @@
             this.teacherDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.teacherDataGridView_CellContentClick);
             this.teacherDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.teacherDataGridView_RowPostPaint);
             // 
+            // teacher_id
+            // 
+            this.teacher_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.teacher_id.DataPropertyName = "teacher_id";
+            this.teacher_id.HeaderText = "ID";
+            this.teacher_id.Name = "teacher_id";
+            this.teacher_id.ReadOnly = true;
+            this.teacher_id.Width = 62;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "gender";
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            this.gender.Visible = false;
+            // 
+            // name
+            // 
+            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = " NAME";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // phone
+            // 
+            this.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.phone.DataPropertyName = "phone";
+            this.phone.HeaderText = "CONTACT";
+            this.phone.Name = "phone";
+            this.phone.ReadOnly = true;
+            this.phone.Width = 125;
+            // 
+            // email
+            // 
+            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "EMAIL";
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 94;
+            // 
+            // _class
+            // 
+            this._class.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this._class.DataPropertyName = "class";
+            this._class.HeaderText = "CLASS";
+            this._class.Name = "_class";
+            this._class.ReadOnly = true;
+            this._class.Width = 99;
+            // 
+            // view
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
+            this.view.DefaultCellStyle = dataGridViewCellStyle2;
+            this.view.HeaderText = "";
+            this.view.Image = global::Perfect_Peace_System.Properties.Resources.view;
+            this.view.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.view.Name = "view";
+            this.view.ReadOnly = true;
+            this.view.Width = 38;
+            // 
+            // edit
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
+            this.edit.DefaultCellStyle = dataGridViewCellStyle3;
+            this.edit.HeaderText = "";
+            this.edit.Image = global::Perfect_Peace_System.Properties.Resources.update;
+            this.edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.edit.Name = "edit";
+            this.edit.ReadOnly = true;
+            this.edit.Width = 38;
+            // 
+            // delete
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
+            this.delete.DefaultCellStyle = dataGridViewCellStyle4;
+            this.delete.HeaderText = "";
+            this.delete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.delete.Name = "delete";
+            this.delete.ReadOnly = true;
+            this.delete.Width = 38;
+            // 
             // showDataPanel
             // 
             this.showDataPanel.Controls.Add(this.nonTeachingDataView);
@@ -215,6 +303,94 @@
             this.nonTeachingDataView.Visible = false;
             this.nonTeachingDataView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.nonTeachingDataView_CellContentClick);
             this.nonTeachingDataView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.teacherDataGridView_RowPostPaint);
+            // 
+            // teacher_idNt
+            // 
+            this.teacher_idNt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.teacher_idNt.DataPropertyName = "teacher_id";
+            this.teacher_idNt.HeaderText = "ID";
+            this.teacher_idNt.Name = "teacher_idNt";
+            this.teacher_idNt.ReadOnly = true;
+            this.teacher_idNt.Width = 62;
+            // 
+            // nameNt
+            // 
+            this.nameNt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameNt.DataPropertyName = "name";
+            this.nameNt.HeaderText = " NAME";
+            this.nameNt.Name = "nameNt";
+            this.nameNt.ReadOnly = true;
+            // 
+            // phoneNt
+            // 
+            this.phoneNt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.phoneNt.DataPropertyName = "phone";
+            this.phoneNt.HeaderText = "CONTACT";
+            this.phoneNt.Name = "phoneNt";
+            this.phoneNt.ReadOnly = true;
+            this.phoneNt.Width = 125;
+            // 
+            // emailNt
+            // 
+            this.emailNt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.emailNt.DataPropertyName = "email";
+            this.emailNt.HeaderText = "EMAIL";
+            this.emailNt.Name = "emailNt";
+            this.emailNt.ReadOnly = true;
+            this.emailNt.Width = 94;
+            // 
+            // staff_position
+            // 
+            this.staff_position.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.staff_position.DataPropertyName = "staff_position";
+            this.staff_position.HeaderText = "WORK";
+            this.staff_position.Name = "staff_position";
+            this.staff_position.ReadOnly = true;
+            this.staff_position.Width = 98;
+            // 
+            // genderNT
+            // 
+            this.genderNT.DataPropertyName = "gender";
+            this.genderNT.HeaderText = "gender";
+            this.genderNT.Name = "genderNT";
+            this.genderNT.ReadOnly = true;
+            this.genderNT.Visible = false;
+            // 
+            // viewNt
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle9.NullValue")));
+            this.viewNt.DefaultCellStyle = dataGridViewCellStyle9;
+            this.viewNt.HeaderText = "";
+            this.viewNt.Image = global::Perfect_Peace_System.Properties.Resources.view;
+            this.viewNt.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.viewNt.Name = "viewNt";
+            this.viewNt.ReadOnly = true;
+            this.viewNt.Width = 38;
+            // 
+            // editNt
+            // 
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle10.NullValue")));
+            this.editNt.DefaultCellStyle = dataGridViewCellStyle10;
+            this.editNt.HeaderText = "";
+            this.editNt.Image = global::Perfect_Peace_System.Properties.Resources.update;
+            this.editNt.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.editNt.Name = "editNt";
+            this.editNt.ReadOnly = true;
+            this.editNt.Width = 38;
+            // 
+            // deleteNt
+            // 
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle11.NullValue")));
+            this.deleteNt.DefaultCellStyle = dataGridViewCellStyle11;
+            this.deleteNt.HeaderText = "";
+            this.deleteNt.Image = global::Perfect_Peace_System.Properties.Resources.delete;
+            this.deleteNt.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
+            this.deleteNt.Name = "deleteNt";
+            this.deleteNt.ReadOnly = true;
+            this.deleteNt.Width = 38;
             // 
             // topPanel
             // 
@@ -305,6 +481,54 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "By:";
             // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(759, 58);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(64, 18);
+            this.label5.TabIndex = 2;
+            this.label5.Text = "Females:";
+            this.label5.Visible = false;
+            // 
+            // femaleLbl
+            // 
+            this.femaleLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.femaleLbl.AutoSize = true;
+            this.femaleLbl.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.femaleLbl.Location = new System.Drawing.Point(828, 56);
+            this.femaleLbl.Name = "femaleLbl";
+            this.femaleLbl.Size = new System.Drawing.Size(28, 22);
+            this.femaleLbl.TabIndex = 2;
+            this.femaleLbl.Text = "00";
+            this.femaleLbl.Visible = false;
+            // 
+            // maleLbl
+            // 
+            this.maleLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.maleLbl.AutoSize = true;
+            this.maleLbl.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maleLbl.Location = new System.Drawing.Point(607, 56);
+            this.maleLbl.Name = "maleLbl";
+            this.maleLbl.Size = new System.Drawing.Size(28, 22);
+            this.maleLbl.TabIndex = 2;
+            this.maleLbl.Text = "00";
+            this.maleLbl.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(559, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(49, 18);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Males:";
+            this.label4.Visible = false;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -384,226 +608,6 @@
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
             this.dataGridViewImageColumn3.ReadOnly = true;
             this.dataGridViewImageColumn3.Width = 44;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(559, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 18);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Males:";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Calibri", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(759, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 18);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Females:";
-            // 
-            // maleLbl
-            // 
-            this.maleLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.maleLbl.AutoSize = true;
-            this.maleLbl.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.maleLbl.Location = new System.Drawing.Point(607, 56);
-            this.maleLbl.Name = "maleLbl";
-            this.maleLbl.Size = new System.Drawing.Size(28, 22);
-            this.maleLbl.TabIndex = 2;
-            this.maleLbl.Text = "00";
-            // 
-            // femaleLbl
-            // 
-            this.femaleLbl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.femaleLbl.AutoSize = true;
-            this.femaleLbl.Font = new System.Drawing.Font("Calibri", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.femaleLbl.Location = new System.Drawing.Point(828, 56);
-            this.femaleLbl.Name = "femaleLbl";
-            this.femaleLbl.Size = new System.Drawing.Size(28, 22);
-            this.femaleLbl.TabIndex = 2;
-            this.femaleLbl.Text = "00";
-            // 
-            // teacher_id
-            // 
-            this.teacher_id.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.teacher_id.DataPropertyName = "teacher_id";
-            this.teacher_id.HeaderText = "ID";
-            this.teacher_id.Name = "teacher_id";
-            this.teacher_id.ReadOnly = true;
-            this.teacher_id.Width = 62;
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "gender";
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
-            this.gender.Visible = false;
-            // 
-            // name
-            // 
-            this.name.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = " NAME";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // phone
-            // 
-            this.phone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phone.DataPropertyName = "phone";
-            this.phone.HeaderText = "CONTACT";
-            this.phone.Name = "phone";
-            this.phone.ReadOnly = true;
-            this.phone.Width = 125;
-            // 
-            // email
-            // 
-            this.email.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "EMAIL";
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Width = 94;
-            // 
-            // _class
-            // 
-            this._class.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this._class.DataPropertyName = "class";
-            this._class.HeaderText = "CLASS";
-            this._class.Name = "_class";
-            this._class.ReadOnly = true;
-            this._class.Width = 99;
-            // 
-            // view
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle2.NullValue")));
-            this.view.DefaultCellStyle = dataGridViewCellStyle2;
-            this.view.HeaderText = "";
-            this.view.Image = global::Perfect_Peace_System.Properties.Resources.view;
-            this.view.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.view.Name = "view";
-            this.view.ReadOnly = true;
-            this.view.Width = 38;
-            // 
-            // edit
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle3.NullValue")));
-            this.edit.DefaultCellStyle = dataGridViewCellStyle3;
-            this.edit.HeaderText = "";
-            this.edit.Image = global::Perfect_Peace_System.Properties.Resources.update;
-            this.edit.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.edit.Name = "edit";
-            this.edit.ReadOnly = true;
-            this.edit.Width = 38;
-            // 
-            // delete
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle4.NullValue")));
-            this.delete.DefaultCellStyle = dataGridViewCellStyle4;
-            this.delete.HeaderText = "";
-            this.delete.Image = global::Perfect_Peace_System.Properties.Resources.delete;
-            this.delete.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.delete.Name = "delete";
-            this.delete.ReadOnly = true;
-            this.delete.Width = 38;
-            // 
-            // teacher_idNt
-            // 
-            this.teacher_idNt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.teacher_idNt.DataPropertyName = "teacher_id";
-            this.teacher_idNt.HeaderText = "ID";
-            this.teacher_idNt.Name = "teacher_idNt";
-            this.teacher_idNt.ReadOnly = true;
-            this.teacher_idNt.Width = 62;
-            // 
-            // nameNt
-            // 
-            this.nameNt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameNt.DataPropertyName = "name";
-            this.nameNt.HeaderText = " NAME";
-            this.nameNt.Name = "nameNt";
-            this.nameNt.ReadOnly = true;
-            // 
-            // phoneNt
-            // 
-            this.phoneNt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.phoneNt.DataPropertyName = "phone";
-            this.phoneNt.HeaderText = "CONTACT";
-            this.phoneNt.Name = "phoneNt";
-            this.phoneNt.ReadOnly = true;
-            this.phoneNt.Width = 125;
-            // 
-            // emailNt
-            // 
-            this.emailNt.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.emailNt.DataPropertyName = "email";
-            this.emailNt.HeaderText = "EMAIL";
-            this.emailNt.Name = "emailNt";
-            this.emailNt.ReadOnly = true;
-            this.emailNt.Width = 94;
-            // 
-            // staff_position
-            // 
-            this.staff_position.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.staff_position.DataPropertyName = "staff_position";
-            this.staff_position.HeaderText = "WORK";
-            this.staff_position.Name = "staff_position";
-            this.staff_position.ReadOnly = true;
-            this.staff_position.Width = 98;
-            // 
-            // genderNT
-            // 
-            this.genderNT.DataPropertyName = "gender";
-            this.genderNT.HeaderText = "gender";
-            this.genderNT.Name = "genderNT";
-            this.genderNT.ReadOnly = true;
-            this.genderNT.Visible = false;
-            // 
-            // viewNt
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle9.NullValue")));
-            this.viewNt.DefaultCellStyle = dataGridViewCellStyle9;
-            this.viewNt.HeaderText = "";
-            this.viewNt.Image = global::Perfect_Peace_System.Properties.Resources.view;
-            this.viewNt.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.viewNt.Name = "viewNt";
-            this.viewNt.ReadOnly = true;
-            this.viewNt.Width = 38;
-            // 
-            // editNt
-            // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle10.NullValue")));
-            this.editNt.DefaultCellStyle = dataGridViewCellStyle10;
-            this.editNt.HeaderText = "";
-            this.editNt.Image = global::Perfect_Peace_System.Properties.Resources.update;
-            this.editNt.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.editNt.Name = "editNt";
-            this.editNt.ReadOnly = true;
-            this.editNt.Width = 38;
-            // 
-            // deleteNt
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.NullValue = ((object)(resources.GetObject("dataGridViewCellStyle11.NullValue")));
-            this.deleteNt.DefaultCellStyle = dataGridViewCellStyle11;
-            this.deleteNt.HeaderText = "";
-            this.deleteNt.Image = global::Perfect_Peace_System.Properties.Resources.delete;
-            this.deleteNt.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.deleteNt.Name = "deleteNt";
-            this.deleteNt.ReadOnly = true;
-            this.deleteNt.Width = 38;
             // 
             // TeacherData
             // 

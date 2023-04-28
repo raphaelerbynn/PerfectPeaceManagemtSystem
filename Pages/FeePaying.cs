@@ -39,12 +39,12 @@ namespace Perfect_Peace_System.Pages
                     
                     double total = double.Parse(totalAmntLbl.Text);
                     
-                    remainAmntLbl.Text = (total - (double.Parse(amntTb.Text) + double.Parse(alreadyPaidAmt))).ToString();
+                    remainAmntLbl.Text = (total - (double.Parse(amntTb.Text))).ToString();
                     paidAmntLbl.Text = (double.Parse(alreadyPaidAmt) + double.Parse(amntTb.Text)).ToString();
                 }
                 else
                 {
-                    remainAmntLbl.Text = (double.Parse(totalAmntLbl.Text) - double.Parse(alreadyPaidAmt)).ToString();
+                    remainAmntLbl.Text = totalAmntLbl.Text;
                     paidAmntLbl.Text = alreadyPaidAmt;
                 }
             }catch(Exception ex)
@@ -152,18 +152,20 @@ namespace Perfect_Peace_System.Pages
                     class_id = reader["class_id"].ToString();
                     classLbl.Text = reader["class"].ToString();
                     alreadyPaidAmt = reader["fees_paid"].ToString();
+                    totalAmntLbl.Text = reader["fees_owing"].ToString();
                 }
                 reader.Close();
 
-                query = "SELECT * FROM Class WHERE class_id='" + class_id + "'";
-                reader = DbClient.query_reader(query);
-                while (reader.Read())
-                {
-                    totalAmntLbl.Text = reader["fees"].ToString();
-                }
-                reader.Close();
+                //query = "SELECT * FROM Class WHERE class_id='" + class_id + "'";
+                //reader = DbClient.query_reader(query);
+                //while (reader.Read())
+                //{
+                //    totalAmntLbl.Text = reader["fees"].ToString();
+                //}
+                //reader.Close();
 
-                remainAmntLbl.Text = (double.Parse(totalAmntLbl.Text) - double.Parse(alreadyPaidAmt)).ToString();
+                //remainAmntLbl.Text = (double.Parse(totalAmntLbl.Text) - double.Parse(alreadyPaidAmt)).ToString();
+                remainAmntLbl.Text = totalAmntLbl.Text ;
                 paidAmntLbl.Text = alreadyPaidAmt;
                 wait.close();
             }catch(Exception ex)

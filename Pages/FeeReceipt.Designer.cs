@@ -400,11 +400,11 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(280, 249);
+            this.label11.Location = new System.Drawing.Point(251, 249);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(203, 19);
+            this.label11.Size = new System.Drawing.Size(237, 19);
             this.label11.TabIndex = 11;
-            this.label11.Text = "Total Amount:_____________";
+            this.label11.Text = "Total Amount Owe:_____________";
             // 
             // label10
             // 
